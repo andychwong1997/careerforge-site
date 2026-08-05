@@ -2,7 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://careerforgehk.com/</loc><priority>1.0</priority></url>
   <url><loc>https://careerforgehk.com/education.html</loc><priority>0.9</priority></url>
-  <url><loc>https://careerforgehk.com/visa.html</loc><priority>0.9</priority></url>
+  <url><loc>https://careerforgehk.com/immigration.html</loc><priority>0.9</priority></url>
+  <url><loc>https://careerforgehk.com/immigration-cn.html</loc><priority>0.9</priority></url>
+  <url><loc>https://careerforgehk.com/immigration-en.html</loc><priority>0.9</priority></url>
   <url><loc>https://careerforgehk.com/career.html</loc><priority>0.9</priority></url>
   <url><loc>https://careerforgehk.com/quiz.html</loc><priority>0.95</priority></url>
 </urlset>

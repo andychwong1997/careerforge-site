@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CareerForge 鑄途 · 香港高端个人成长顾问 · 身份·升学·薪酬增值</title>
-<meta name="description" content="CareerForge 鑄途 — 香港高端个人成长顾问。高才通 / 优才 / 专才 / 留学升港 — 全周期合规陪跑。从身份申请、教育衔接到 7 年永居规划。">
+<title>CareerForge 鑄途 · 香港高端个人成长顾问 · 身份·升学·职涯身价</title>
+<meta name="description" content="CareerForge 鑄途 — 香港高端个人成长顾问。3 大业务板块：香港身份与续签对标、赴港求职与职涯身价跃迁、海外与香港升学对标。">
 <link rel="icon" type="image/png" href="assets/icon.png">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700;800&family=Noto+Serif+SC:wght@400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
@@ -12,126 +12,538 @@
 <body>
 
 <style>
-/* ============ V8 SHARED DESIGN TOKENS (homepage) ============ */
+/* ============ V10 — 深海蓝 #0B192C × 香槟金 #D4AF37 ============ */
 :root {
-  --scheme-color: #C8A04A;          /* gold */
-  --scheme-color-dark: #8E6F2D;
-  --scheme-color-light: #E5C97A;
-  --scheme-bg-soft: #FAF6EC;
+  --navy:        #0B192C;
+  --navy-700:    #102542;
+  --navy-500:    #1B3A5C;
+  --navy-300:    #4A6B8A;
+  --gold:        #D4AF37;
+  --gold-600:    #B8941F;
+  --gold-100:    #F7EFC9;
+  --white:       #FFFFFF;
+  --canvas:      #F7F8FA;
+  --ink-900:     #0B192C;
+  --ink-700:     #3A4A5C;
+  --ink-500:     #6B7A8A;
+  --ink-100:     #E5E9EE;
+  --shadow-card: 0 4px 20px rgba(0,0,0,0.06);
+  --shadow-deep: 0 16px 48px -12px rgba(11,25,44,0.28);
+  --radius:      12px;
 }
-.v8-bilingual-head { text-align: center; max-width: 760px; margin: 0 auto 56px; }
-.v8-bilingual-head .eyebrow-cn { display: block; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--scheme-color-dark); margin-bottom: 14px; }
-.v8-bilingual-head .eyebrow-en { display: block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.32em; color: var(--ink-500); margin-bottom: 18px; }
-.v8-bilingual-head h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; letter-spacing: 0.5px; line-height: 1.15; color: var(--ink-900); margin: 0 0 18px; font-family: 'Playfair Display', 'Noto Serif SC', serif; }
-.v8-bilingual-head .lede { font-size: 1.0625rem; line-height: 1.7; color: var(--ink-600); margin: 0; }
-.v8-divider-line { width: 36px; height: 2px; background: linear-gradient(90deg, var(--scheme-color-dark), transparent); margin: 0 auto 28px; border-radius: 2px; }
 
-/* ============ HOMEPAGE HERO ============ */
-.home-hero { padding: 96px 0 80px; position: relative; overflow: hidden; }
-.home-hero::before { content: ""; position: absolute; top: -120px; right: -120px; width: 480px; height: 480px; background: radial-gradient(circle, var(--scheme-bg-soft) 0%, transparent 70%); border-radius: 50%; z-index: 0; }
-.home-hero .container { position: relative; z-index: 1; }
-.home-hero-eyebrow { display: inline-flex; align-items: center; gap: 10px; padding: 8px 16px; background: var(--scheme-bg-soft); border: 1px solid var(--scheme-color); border-radius: 999px; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em; color: var(--scheme-color-dark); margin-bottom: 28px; }
-.home-hero-eyebrow-dot { width: 8px; height: 8px; background: var(--scheme-color-dark); border-radius: 50%; display: inline-block; }
-.home-hero-title { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: clamp(2.8rem, 7vw, 5.2rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1.05; color: var(--ink-900); margin: 0 0 28px; max-width: 900px; }
-.home-hero-title .accent { color: var(--scheme-color-dark); font-style: italic; }
-.home-hero-subtitle { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: clamp(1.1rem, 1.7vw, 1.4rem); line-height: 1.65; color: var(--ink-600); margin: 0 0 40px; max-width: 720px; }
-.home-hero-actions { display: inline-flex; gap: 14px; flex-wrap: wrap; }
-.home-hero-trust { margin-top: 56px; display: flex; gap: 36px; flex-wrap: wrap; padding-top: 36px; border-top: 1px solid var(--ink-100); }
-.home-hero-trust-item { font-size: 0.85rem; color: var(--ink-500); letter-spacing: 0.04em; }
-.home-hero-trust-item strong { display: block; font-size: 1.6rem; font-weight: 800; color: var(--scheme-color-dark); font-family: 'Playfair Display', 'Noto Serif SC', serif; margin-bottom: 4px; }
+/* ============ HERO ============ */
+.v10-hero {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-700) 100%);
+  padding: 120px 0 100px;
+  position: relative;
+  overflow: hidden;
+  color: var(--white);
+}
+.v10-hero::before {
+  content: "";
+  position: absolute; top: -200px; right: -200px;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(212,175,55,0.12) 0%, transparent 65%);
+  border-radius: 50%;
+}
+.v10-hero::after {
+  content: "";
+  position: absolute; bottom: -300px; left: -200px;
+  width: 700px; height: 700px;
+  background: radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 60%);
+  border-radius: 50%;
+}
+.v10-hero .container { position: relative; z-index: 2; max-width: 1180px; margin: 0 auto; padding: 0 32px; }
 
-/* ============ STAT GRID ============ */
-.v8-stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
-.v8-stat-card { padding: 28px 22px; background: var(--surface-elevated); border: 1px solid var(--ink-100); border-radius: var(--radius-lg, 14px); transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
-.v8-stat-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px -12px rgba(29,29,31,0.16); border-color: var(--scheme-color-light); }
-.v8-stat-num { display: block; font-size: 2.4rem; font-weight: 800; letter-spacing: -0.02em; color: var(--scheme-color-dark); line-height: 1; margin-bottom: 8px; font-family: 'Playfair Display', 'Noto Serif SC', serif; }
-.v8-stat-num .unit { font-size: 1.1rem; font-weight: 600; margin-left: 2px; color: var(--scheme-color-dark); }
-.v8-stat-label { display: block; font-size: 0.85rem; color: var(--ink-700); line-height: 1.4; }
-.v8-stat-label small { display: block; font-size: 0.72rem; color: var(--ink-500); margin-top: 2px; letter-spacing: 0.05em; }
+.v10-hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 12px;
+  padding: 10px 22px;
+  border: 1px solid rgba(212,175,55,0.4);
+  border-radius: 999px;
+  background: rgba(212,175,55,0.06);
+  font-size: 0.82rem; font-weight: 600;
+  letter-spacing: 0.18em;
+  color: var(--gold);
+  margin-bottom: 36px;
+}
+.v10-hero-eyebrow-dot { width: 8px; height: 8px; background: var(--gold); border-radius: 50%; box-shadow: 0 0 12px var(--gold); }
 
-/* ============ SERVICE CARDS ============ */
-.v8-service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.v8-service-card { background: var(--surface-elevated); border: 1px solid var(--ink-100); border-radius: var(--radius-lg, 14px); padding: 40px 32px; transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; position: relative; overflow: hidden; }
-.v8-service-card:hover { transform: translateY(-4px); box-shadow: 0 16px 36px -12px rgba(29,29,31,0.18); border-color: var(--scheme-color-light); }
-.v8-service-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--scheme-color-dark), var(--scheme-color-light)); }
-.v8-service-icon { width: 56px; height: 56px; border-radius: 14px; background: var(--scheme-bg-soft); display: inline-flex; align-items: center; justify-content: center; font-size: 1.6rem; margin-bottom: 22px; color: var(--scheme-color-dark); font-weight: 800; font-family: 'Playfair Display', 'Noto Serif SC', serif; }
-.v8-service-card h3 { font-size: 1.4rem; font-weight: 700; letter-spacing: 0.3px; color: var(--ink-900); margin: 0 0 8px; font-family: 'Playfair Display', 'Noto Serif SC', serif; }
-.v8-service-tag { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; color: var(--scheme-color-dark); background: var(--scheme-bg-soft); padding: 4px 12px; border-radius: 999px; margin-bottom: 16px; }
-.v8-service-card p { font-size: 0.95rem; line-height: 1.7; color: var(--ink-700); margin: 0 0 22px; }
-.v8-service-card ul { list-style: none; padding: 0; margin: 0 0 22px; border-top: 1px solid var(--ink-100); padding-top: 18px; }
-.v8-service-card ul li { padding: 6px 0 6px 22px; position: relative; font-size: 0.88rem; line-height: 1.55; color: var(--ink-800); }
-.v8-service-card ul li::before { content: "—"; position: absolute; left: 0; top: 6px; color: var(--scheme-color-dark); font-weight: 700; }
-.v8-service-link { display: inline-flex; align-items: center; gap: 8px; font-size: 0.88rem; font-weight: 700; color: var(--scheme-color-dark); text-decoration: none; letter-spacing: 0.04em; }
-.v8-service-link:hover { text-decoration: underline; }
-.v8-service-link::after { content: "→"; transition: transform .2s ease; }
-.v8-service-link:hover::after { transform: translateX(4px); }
+.v10-hero-title {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: clamp(2.6rem, 5.8vw, 4.8rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.12;
+  color: var(--white);
+  margin: 0 0 32px;
+  max-width: 980px;
+}
+.v10-hero-title .gold {
+  color: var(--gold);
+  font-style: italic;
+  font-weight: 600;
+}
+.v10-hero-sub {
+  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+  line-height: 1.65;
+  color: rgba(255,255,255,0.78);
+  margin: 0 0 56px;
+  max-width: 760px;
+  font-weight: 400;
+}
 
-/* ============ 4-STAGE PATHWAY ============ */
-.v8-pathway-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; align-items: stretch; }
-.v8-pathway { padding: 32px 24px; background: var(--surface-elevated); border: 1px solid var(--ink-100); position: relative; transition: all .25s ease; }
-.v8-pathway:first-child { border-radius: var(--radius-lg, 14px) 0 0 var(--radius-lg, 14px); }
-.v8-pathway:last-child { border-radius: 0 var(--radius-lg, 14px) var(--radius-lg, 14px) 0; border-left: none; }
-.v8-pathway + .v8-pathway { border-left: none; }
-.v8-pathway:hover { background: linear-gradient(180deg, var(--surface-elevated) 0%, var(--scheme-bg-soft) 100%); transform: translateY(-3px); box-shadow: 0 12px 28px -12px rgba(29,29,31,0.18); z-index: 1; }
-.v8-pathway-stage { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; }
-.v8-pathway-stage-num { font-size: 0.78rem; font-weight: 800; color: var(--scheme-color-dark); letter-spacing: 0.06em; }
-.v8-pathway-stage-bar { flex: 1; height: 4px; background: var(--ink-100); border-radius: 2px; overflow: hidden; }
-.v8-pathway-stage-bar-fill { display: block; height: 100%; background: linear-gradient(90deg, var(--scheme-color-dark), var(--scheme-color)); border-radius: 2px; }
-.v8-pathway-icon { font-size: 1.6rem; margin-bottom: 12px; display: block; }
-.v8-pathway h4 { font-size: 1.05rem; font-weight: 700; color: var(--ink-900); margin: 0 0 8px; letter-spacing: 0.3px; font-family: 'Playfair Display', 'Noto Serif SC', serif; }
-.v8-pathway-subtitle { font-size: 0.78rem; color: var(--scheme-color-dark); font-weight: 600; margin-bottom: 10px; letter-spacing: 0.05em; }
-.v8-pathway-list { list-style: none; padding: 0; margin: 12px 0 0; }
-.v8-pathway-list li { padding: 6px 0 6px 18px; position: relative; font-size: 0.85rem; color: var(--ink-700); line-height: 1.55; }
-.v8-pathway-list li::before { content: ""; position: absolute; left: 0; top: 14px; width: 8px; height: 1.5px; background: var(--scheme-color-dark); border-radius: 1px; }
+.v10-hero-trust {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin-top: 64px;
+  padding: 36px 0 0;
+  border-top: 1px solid rgba(212,175,55,0.25);
+}
+.v10-hero-trust-item {
+  padding-right: 24px;
+  border-right: 1px solid rgba(255,255,255,0.08);
+}
+.v10-hero-trust-item:last-child { border-right: none; }
+.v10-hero-trust-item strong {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 0;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.v10-hero-trust-item span {
+  display: block;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.65);
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+}
 
-/* ============ CTA SECTION ============ */
-.v8-cta-section { background: linear-gradient(135deg, var(--ink-900) 0%, var(--scheme-color-dark) 100%); border-radius: var(--radius-xl, 20px); padding: 64px 48px; text-align: center; color: #fff; position: relative; overflow: hidden; }
-.v8-cta-section::before { content: ""; position: absolute; top: -60px; right: -60px; width: 240px; height: 240px; background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%); border-radius: 50%; }
-.v8-cta-section h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 700; letter-spacing: 0.5px; margin: 0 0 18px; color: #fff; font-family: 'Playfair Display', 'Noto Serif SC', serif; }
-.v8-cta-section p { font-size: 1.05rem; line-height: 1.7; color: rgba(255,255,255,0.85); max-width: 580px; margin: 0 auto 28px; }
-.v8-cta-actions { display: inline-flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
-.v8-cta-btn { padding: 14px 32px; border-radius: 999px; font-weight: 700; font-size: 0.95rem; text-decoration: none; transition: all .2s ease; display: inline-flex; align-items: center; gap: 8px; }
-.v8-cta-btn-primary { background: linear-gradient(135deg, var(--scheme-color), var(--scheme-color-light)); color: var(--ink-900); }
-.v8-cta-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(232, 184, 79, 0.4); }
-.v8-cta-btn-secondary { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.4); }
-.v8-cta-btn-secondary:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.82); }
+/* ============ SECTION COMMON ============ */
+.v10-section { padding: 100px 0; }
+.v10-section.tight { padding: 64px 0; }
+.v10-section.dark {
+  background: var(--navy);
+  color: var(--white);
+}
+.v10-section.canvas { background: var(--canvas); }
+.v10-section.white { background: var(--white); }
 
-/* ============ SECTION SPACING ============ */
-.section-v4 { padding: 80px 0; }
-.section-v4.tight { padding: 56px 0; }
+.v10-container { max-width: 1180px; margin: 0 auto; padding: 0 32px; }
+
+.v10-head { text-align: center; max-width: 760px; margin: 0 auto 64px; }
+.v10-head .eyebrow {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+  padding: 6px 0;
+  border-top: 1px solid var(--gold);
+  border-bottom: 1px solid var(--gold);
+}
+.v10-head.dark .eyebrow { color: var(--gold); }
+.v10-head h2 {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  line-height: 1.25;
+  color: var(--ink-900);
+  margin: 0 0 22px;
+}
+.v10-head.dark h2 { color: var(--white); }
+.v10-head .lede {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--ink-700);
+  margin: 0;
+  font-weight: 400;
+}
+.v10-head.dark .lede { color: rgba(255,255,255,0.78); }
+
+/* ============ 3 PILLAR CARDS ============ */
+.v10-pillars { display: flex; flex-direction: column; gap: 32px; }
+.v10-pillar {
+  background: var(--white);
+  border: 1px solid var(--ink-100);
+  border-radius: var(--radius);
+  padding: 56px 52px;
+  box-shadow: var(--shadow-card);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 48px;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  transition: all .3s ease;
+}
+.v10-pillar:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px -8px rgba(11,25,44,0.18);
+  border-color: var(--gold);
+}
+.v10-pillar::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, var(--navy) 0%, var(--gold) 100%);
+}
+.v10-pillar-num {
+  display: inline-block;
+  font-family: 'Playfair Display', serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: var(--gold-600);
+  margin-bottom: 16px;
+}
+.v10-pillar-title {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: clamp(1.6rem, 2.4vw, 2rem);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  line-height: 1.3;
+  color: var(--ink-900);
+  margin: 0 0 18px;
+}
+.v10-pillar-desc {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--ink-700);
+  margin: 0 0 24px;
+  max-width: 720px;
+}
+.v10-pillar-tags {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.v10-pillar-tags li {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  background: var(--navy);
+  color: rgba(255,255,255,0.92);
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.v10-pillar-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 32px;
+  background: var(--navy);
+  color: var(--gold) !important;
+  border: 1px solid var(--navy);
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all .25s ease;
+}
+.v10-pillar-cta:hover {
+  background: var(--gold);
+  color: var(--navy) !important;
+  border-color: var(--gold);
+}
+.v10-pillar-cta::after { content: "→"; transition: transform .2s ease; }
+.v10-pillar-cta:hover::after { transform: translateX(4px); }
+
+/* ============ TRUST GRID (DARK) ============ */
+.v10-trust-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin: 0;
+}
+.v10-trust-card {
+  padding: 48px 32px;
+  border-right: 1px solid rgba(212,175,55,0.2);
+  text-align: left;
+}
+.v10-trust-card:last-child { border-right: none; }
+.v10-trust-num {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+.v10-trust-label {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--white);
+  line-height: 1.55;
+  font-weight: 500;
+}
+.v10-trust-label small {
+  display: block;
+  color: rgba(212,175,55,0.7);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-top: 8px;
+}
+
+/* ============ 4-STAGE PATHWAY (LIGHT CARDS) ============ */
+.v10-pathway-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.v10-pathway {
+  background: var(--white);
+  border: 1px solid var(--ink-100);
+  border-radius: var(--radius);
+  padding: 36px 28px;
+  box-shadow: var(--shadow-card);
+  position: relative;
+  transition: all .25s ease;
+}
+.v10-pathway:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold);
+  box-shadow: 0 12px 32px -8px rgba(11,25,44,0.18);
+}
+.v10-pathway-step {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--white);
+  background: var(--navy);
+  padding: 5px 12px;
+  border-radius: 999px;
+  margin-bottom: 24px;
+}
+.v10-pathway h4 {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ink-900);
+  margin: 0 0 12px;
+  letter-spacing: -0.005em;
+}
+.v10-pathway p {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--ink-700);
+  margin: 0;
+}
+
+/* ============ CTA (NAVY) ============ */
+.v10-cta {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-700) 100%);
+  border-radius: var(--radius);
+  padding: 80px 56px;
+  text-align: center;
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+  margin: 0 32px;
+  max-width: calc(1180px - 64px);
+  margin: 0 auto;
+}
+.v10-cta::before {
+  content: "";
+  position: absolute; top: -100px; right: -100px;
+  width: 360px; height: 360px;
+  background: radial-gradient(circle, rgba(212,175,55,0.12) 0%, transparent 65%);
+  border-radius: 50%;
+}
+.v10-cta-inner { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; }
+.v10-cta-eyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 18px;
+}
+.v10-cta h2 {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: clamp(1.9rem, 3.2vw, 2.6rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  margin: 0 0 22px;
+  color: var(--white);
+}
+.v10-cta p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.78);
+  margin: 0 0 36px;
+}
+.v10-cta-actions {
+  display: inline-flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.v10-cta-btn {
+  padding: 16px 34px;
+  border-radius: var(--radius);
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: all .25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.v10-cta-primary {
+  background: var(--gold);
+  color: var(--navy) !important;
+  border: 1px solid var(--gold);
+}
+.v10-cta-primary:hover {
+  background: #E5C344;
+  border-color: #E5C344;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px -6px rgba(212,175,55,0.5);
+}
+.v10-cta-secondary {
+  background: transparent;
+  color: var(--white) !important;
+  border: 1px solid rgba(255,255,255,0.4);
+}
+.v10-cta-secondary:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: var(--white);
+}
+
+/* ============ CONTACT (WHITE) ============ */
+.v10-contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 56px;
+}
+.v10-contact-card {
+  background: var(--white);
+  border: 1px solid var(--ink-100);
+  border-radius: var(--radius);
+  padding: 40px 32px;
+  text-align: center;
+  box-shadow: var(--shadow-card);
+  transition: all .25s ease;
+}
+.v10-contact-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold);
+  box-shadow: 0 12px 32px -8px rgba(11,25,44,0.18);
+}
+.v10-contact-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--gold) 100%);
+  color: var(--white);
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+.v10-contact-card h4 {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ink-900);
+  margin: 0 0 10px;
+}
+.v10-contact-card p {
+  font-size: 0.95rem;
+  color: var(--ink-700);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ============ DISCLAIMER (LEGAL COMPLIANCE) ============ */
+.v10-disclaimer {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 32px 36px;
+  background: var(--white);
+  border-left: 4px solid var(--gold);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  box-shadow: var(--shadow-card);
+  text-align: center;
+  position: relative;
+}
+.v10-disclaimer::before {
+  content: "★";
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  font-size: 1.2rem;
+  color: var(--gold);
+}
+.v10-disclaimer-text {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--ink-700);
+  margin: 0;
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
 
 /* ============ MOBILE ============ */
 @media (max-width: 900px) {
-  .home-hero { padding: 64px 0 48px; }
-  .v8-stat-grid { grid-template-columns: repeat(2, 1fr); }
-  .v8-service-grid { grid-template-columns: 1fr; }
-  .v8-pathway-grid { grid-template-columns: 1fr; }
-  .v8-pathway { border-radius: 0 !important; border: 1px solid var(--ink-100); border-bottom: none; }
-  .v8-pathway:last-child { border-bottom: 1px solid var(--ink-100); border-radius: 0 0 var(--radius-lg, 14px) var(--radius-lg, 14px) !important; }
-  .v8-pathway:first-child { border-radius: var(--radius-lg, 14px) var(--radius-lg, 14px) 0 0 !important; }
-  .v8-cta-section { padding: 48px 24px; }
-  .section-v4 { padding: 56px 0; }
-  .home-hero-trust { gap: 24px; }
+  .v10-hero { padding: 80px 0 64px; }
+  .v10-hero-trust { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .v10-hero-trust-item { border-right: none; padding-right: 0; }
+  .v10-section { padding: 64px 0; }
+  .v10-container { padding: 0 20px; }
+  .v10-pillar { grid-template-columns: 1fr; padding: 36px 28px; gap: 28px; }
+  .v10-pillar-cta { justify-self: start; }
+  .v10-trust-grid { grid-template-columns: repeat(2, 1fr); }
+  .v10-trust-card { border-right: none; border-bottom: 1px solid rgba(212,175,55,0.2); }
+  .v10-pathway-grid { grid-template-columns: 1fr; }
+  .v10-contact-grid { grid-template-columns: 1fr; }
+  .v10-cta { padding: 56px 28px; margin: 0 20px; }
 }
 </style>
 
 <header class="site-header">
   <div class="container">
     <nav class="nav">
-      <a href="index-cn.html" class="nav-logo">
+      <a href="index.html" class="nav-logo">
         <img src="assets/logo.png" alt="CareerForge 鑄途">
       </a>
       <div class="nav-menu">
-        <a href="index-cn.html" class="active">首页</a>
-        <a href="immigration-cn.html">身份规划</a>
-        <a href="education-cn.html">升学服务</a>
-        <a href="career-cn.html">薪酬增值</a>
-        <a href="cases-cn.html">客户案例</a>
-        <a href="#contact">联系我们</a>
+        <a href="index.html" class="active">首页</a>
+        <a href="immigration.html">身份</a>
+        <a href="career.html">职涯身价</a>
+        <a href="education.html">升学</a>
+        <a href="quiz.html">牛马测验</a>
+        <a href="cases.html">客户故事</a>
+        <a href="#contact">联络</a>
       </div>
       <div class="nav-actions">
         <div class="lang-switcher">
           <a href="index.html">繁</a>
+          <a href="index-cn.html" class="active">简</a>
           <a href="index-en.html">EN</a>
         </div>
         <a href="#contact" class="nav-cta">立即咨询</a>
@@ -140,242 +552,227 @@
   </div>
 </header>
 
-<!-- ============ HERO ============ -->
-<section class="home-hero">
-  <div class="container">
-    <span class="home-hero-eyebrow">
-      <span class="home-hero-eyebrow-dot"></span>
-      香港高端个人成长顾问
+<!-- ============ HERO (NAVY) ============ -->
+<section class="v10-hero">
+  <div class="v10-container">
+    <span class="v10-hero-eyebrow">
+      <span class="v10-hero-eyebrow-dot"></span>
+      香港高端个人成长顾问 · SINCE 2006
     </span>
-    <h1 class="home-hero-title">
+    <h1 class="v10-hero-title">
       与家庭同行，<br>
-      <span class="accent">从身份到永居</span>七年。<br>
-      从事业到<span class="accent">薪酬增值</span>。
+      从身份到<span class="gold">永居七年</span>。<br>
+      从事业到<span class="gold">职涯身价</span>。
     </h1>
-    <p class="home-hero-subtitle">
+    <p class="v10-hero-sub">
       CareerForge 鑄途 — 专注香港高才通、优才、专才、留学升港全周期陪跑。<br>
-      从身份申请、教育衔接到 7 年永居规划与职业生涯增值，每一个阶段都有专属顾问与你同行。
+      三条业务主线：身份对标、职涯身价跃迁、升学规划，每一条都为下一条铺路。
     </p>
-    <div class="home-hero-actions">
-      <a href="#assessment" class="v8-cta-btn v8-cta-btn-primary">免费资格评估 →</a>
-      <a href="immigration-cn.html" class="btn btn-secondary btn-lg">了解身份规划</a>
-    </div>
-    <div class="home-hero-trust">
-      <div class="home-hero-trust-item">
-        <strong>1,200+</strong>
-        累计协助获批
+    <div class="v10-hero-trust">
+      <div class="v10-hero-trust-item">
+        <strong>3,000+</strong>
+        <span>累计服务家庭</span>
       </div>
-      <div class="home-hero-trust-item">
-        <strong>96%</strong>
-        身份申请获批率
+      <div class="v10-hero-trust-item">
+        <strong>20 年</strong>
+        <span>立足香港行业经验</span>
       </div>
-      <div class="home-hero-trust-item">
+      <div class="v10-hero-trust-item">
         <strong>7 年</strong>
-        续签到永居全程陪跑
+        <span>续签到永居全程陪跑</span>
       </div>
-      <div class="home-hero-trust-item">
-        <strong>4 大</strong>
-        人才计划全覆盖
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ STATS ============ -->
-<section class="section-v4 tight">
-  <div class="container">
-    <div class="v8-bilingual-head">
-      <span class="eyebrow-cn">用数据说话</span>
-      <span class="eyebrow-en">TRUSTED BY 1,200+ FAMILIES</span>
-      <div class="v8-divider-line"></div>
-      <h2>过去 5 年，我们如何陪家庭赴港。</h2>
-      <p class="lede">不只是数字 — 每一个百分点的背后，是一个家庭的落地选择、一份合规的方案、一次顺利的续签。</p>
-    </div>
-    <div class="v8-stat-grid">
-      <div class="v8-stat-card">
-        <span class="v8-stat-num">1,200<span class="unit">+</span></span>
-        <span class="v8-stat-label">累计协助获批<small>APPROVED CASES</small></span>
-      </div>
-      <div class="v8-stat-card">
-        <span class="v8-stat-num">96<span class="unit">%</span></span>
-        <span class="v8-stat-label">身份申请获批率<small>APPROVAL RATE</small></span>
-      </div>
-      <div class="v8-stat-card">
-        <span class="v8-stat-num">7<span class="unit">年</span></span>
-        <span class="v8-stat-label">续签到永居全程陪跑<small>FULL-CYCLE SUPPORT</small></span>
-      </div>
-      <div class="v8-stat-card">
-        <span class="v8-stat-num">4<span class="unit">类</span></span>
-        <span class="v8-stat-label">主流人才计划全覆盖<small>VISA SCHEMES</small></span>
+      <div class="v10-hero-trust-item">
+        <strong>3 大</strong>
+        <span>业务板块全打通</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ SERVICES ============ -->
-<section class="section-v4">
-  <div class="container">
-    <div class="v8-bilingual-head">
-      <span class="eyebrow-cn">三大服务板块</span>
-      <span class="eyebrow-en">THREE SERVICE PILLARS</span>
-      <div class="v8-divider-line"></div>
-      <h2>身份、升学、薪酬增值，<br>同一条 CareerForge 主线。</h2>
-      <p class="lede">把香港身份规划、子女升学路径与本地薪酬增值打通成一条连续路径 — 每一步都为下一步服务。</p>
+<!-- ============ 3 PILLARS (WHITE CARDS) ============ -->
+<section class="v10-section canvas" id="services">
+  <div class="v10-container">
+    <div class="v10-head">
+      <span class="eyebrow">3 大业务板块</span>
+      <h2>身份、求职身价、升学，<br>同一 CareerForge 主线。</h2>
+      <p class="lede">把香港身份对标、赴港求职身价跃迁、海外与香港升学衔接打通成一条连续路径 — 每一步都为下一步服务。</p>
     </div>
-    <div class="v8-service-grid">
-      <div class="v8-service-card">
-        <div class="v8-service-icon">A</div>
-        <h3>身份规划</h3>
-        <span class="v8-service-tag">IMMIGRATION</span>
-        <p>高才通 · 优才 · 专才 · 留学升港 — 4 大主流人才计划全覆盖，从首签到 7 年永居全程合规陪跑。</p>
-        <ul>
-          <li>资格评估 + 方案匹配</li>
-          <li>材料整理 + 递交跟进</li>
-          <li>续签规划 + 永居申请</li>
-          <li>受养人 / 子女随行</li>
-        </ul>
-        <a href="immigration-cn.html" class="v8-service-link">查看详情</a>
+    <div class="v10-pillars">
+
+      <!-- Pillar 01 -->
+      <div class="v10-pillar">
+        <div class="v10-pillar-body">
+          <span class="v10-pillar-num">PILLAR 01 · 身份规划</span>
+          <h3 class="v10-pillar-title">香港身份与续签对标</h3>
+          <p class="v10-pillar-desc">
+            高才通 · 优才 · 专才 · 留学升港 — 4 条主流路径全覆盖。从首签到 7 年永居，由专属顾问全程合规陪跑。
+            特别针对 2024-2025 高才通首批 2 年到期个案，提供续签材料预审、入境处最新审查指标对标、雇佣合约与公司运营证明链建立。
+          </p>
+          <ul class="v10-pillar-tags">
+            <li>4 大人才计划</li>
+            <li>续签 2 年倒计时</li>
+            <li>入境处最新指标</li>
+            <li>MPF / 纳税 / 合约链</li>
+            <li>7 年永居陪跑</li>
+          </ul>
+        </div>
+        <a href="immigration.html" class="v10-pillar-cta">了解详情</a>
       </div>
-      <div class="v8-service-card">
-        <div class="v8-service-icon">B</div>
-        <h3>升学服务</h3>
-        <span class="v8-service-tag">EDUCATION</span>
-        <p>本地学校插班、DSE 升学路径、寄宿学校申请、IB/A-Level 国际课程 — 衔接子女成长每一步。</p>
-        <ul>
-          <li>本地学校申请 + 插班</li>
-          <li>国际学校 IB/A-Level 规划</li>
-          <li>DSE 升学策略</li>
-          <li>大学申请 + 面试辅导</li>
-        </ul>
-        <a href="education-cn.html" class="v8-service-link">查看详情</a>
+
+      <!-- Pillar 02 -->
+      <div class="v10-pillar">
+        <div class="v10-pillar-body">
+          <span class="v10-pillar-num">PILLAR 02 · 职涯增值</span>
+          <h3 class="v10-pillar-title">赴港求职与职涯身价跃迁</h3>
+          <p class="v10-pillar-desc">
+            不只是找工作 — 帮助专业人士在香港本地市场实现薪酬跃升、行业转型与长期职业身价增值。
+            内置「打工人牛马指数评测」与「1.2 万字职涯身价评测系统」两大核心工具，结合劳工处及 JobsDB 最新行业薪酬对标，覆盖金融 / 科技 / 咨询等热门行业 Median Salary 对标。
+          </p>
+          <ul class="v10-pillar-tags">
+            <li>牛马指数评测</li>
+            <li>1.2 万字身价评测</li>
+            <li>3 分钟测一测</li>
+            <li>8 大行业薪酬</li>
+            <li>猎头级内推</li>
+          </ul>
+        </div>
+        <a href="career.html" class="v10-pillar-cta">了解详情</a>
       </div>
-      <div class="v8-service-card">
-        <div class="v8-service-icon">C</div>
-        <h3>薪酬增值</h3>
-        <span class="v8-service-tag">CAREER GROWTH</span>
-        <p>不只是找工作 — 帮助专业人士在香港本地市场实现薪酬跃升、行业转型与长期职业规划。</p>
-        <ul>
-          <li>本地薪酬 benchmark 评估</li>
-          <li>职位匹配 + 面试陪跑</li>
-          <li>行业转型 + 技能升级</li>
-          <li>续签使用证据链建立</li>
-        </ul>
-        <a href="career-cn.html" class="v8-service-link">查看详情</a>
+
+      <!-- Pillar 03 -->
+      <div class="v10-pillar">
+        <div class="v10-pillar-body">
+          <span class="v10-pillar-num">PILLAR 03 · 升学衔接</span>
+          <h3 class="v10-pillar-title">海外与香港升学对标</h3>
+          <p class="v10-pillar-desc">
+            海外中学 / IB / A-Level / DSE 与香港本地学校双向衔接。从寄宿学校、本地津校、国际学校到大学申请，
+            为子女铺设一条从海外到香港、从 K-12 到大学的完整升学路径，配合家长签证落地节奏同步推进。
+          </p>
+          <ul class="v10-pillar-tags">
+            <li>海外中学衔接</li>
+            <li>DSE / IB / A-Level</li>
+            <li>本地学校插班</li>
+            <li>大学申请</li>
+            <li>签证 + 升学同步</li>
+          </ul>
+        </div>
+        <a href="education.html" class="v10-pillar-cta">了解详情</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRUST GRID (NAVY BG) ============ -->
+<section class="v10-section dark">
+  <div class="v10-container">
+    <div class="v10-head dark">
+      <span class="eyebrow">数字见证</span>
+      <h2>每一组数字，<br>都是一次人生路径的跃迁。</h2>
+      <p class="lede">从首签到永居 7 年陪跑，全程顾问 1 对 1 — 不只是数字，是真实家庭。</p>
+    </div>
+    <div class="v10-trust-grid">
+      <div class="v10-trust-card">
+        <span class="v10-trust-num">3,000+</span>
+        <span class="v10-trust-label">累计服务家庭<small>FAMILIES SERVED</small></span>
+      </div>
+      <div class="v10-trust-card">
+        <span class="v10-trust-num">4 条</span>
+        <span class="v10-trust-label">主流人才计划<small>VISA SCHEMES</small></span>
+      </div>
+      <div class="v10-trust-card">
+        <span class="v10-trust-num">8 大</span>
+        <span class="v10-trust-label">行业覆盖<small>INDUSTRIES</small></span>
+      </div>
+      <div class="v10-trust-card">
+        <span class="v10-trust-num">7 年</span>
+        <span class="v10-trust-label">续签到永居陪跑<small>FULL-CYCLE</small></span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ 4-STAGE PATHWAY ============ -->
-<section class="section-v4">
-  <div class="container">
-    <div class="v8-bilingual-head">
-      <span class="eyebrow-cn">4 阶段完整路径</span>
-      <span class="eyebrow-en">FOUR-STAGE PATHWAY</span>
-      <div class="v8-divider-line"></div>
+<!-- ============ 4-STAGE PATHWAY (WHITE CARDS) ============ -->
+<section class="v10-section white">
+  <div class="v10-container">
+    <div class="v10-head">
+      <span class="eyebrow">4 阶段完整路径</span>
       <h2>从资格评估到永居，<br>每一步都有专属顾问。</h2>
-      <p class="lede">不是单次申请 — 是一条 7 年完整路径，每一个里程碑都需要前置布局。</p>
+      <p class="lede">4 个阶段不只是流程 — 是 7 年内会出现的关键里程碑。每一步都为家庭量身定制。</p>
     </div>
-    <div class="v8-pathway-grid">
-      <div class="v8-pathway">
-        <div class="v8-pathway-stage">
-          <span class="v8-pathway-stage-num">STAGE 01</span>
-          <div class="v8-pathway-stage-bar"><span class="v8-pathway-stage-bar-fill" style="width:25%"></span></div>
-        </div>
-        <span class="v8-pathway-icon">🧭</span>
+    <div class="v10-pathway-grid">
+      <div class="v10-pathway">
+        <span class="v10-pathway-step">STAGE 01</span>
         <h4>资格评估</h4>
-        <div class="v8-pathway-subtitle">ELIGIBILITY ASSESSMENT</div>
-        <p style="font-size:0.85rem; color:var(--ink-700); margin:8px 0 0;">30 分钟深度访谈，匹配 4 大计划最优路径。</p>
-        <ul class="v8-pathway-list">
-          <li>学历 / 收入 / 年龄三维评估</li>
-          <li>家庭成员规划</li>
-          <li>明确签证路径</li>
-        </ul>
+        <p>30 分钟深度访谈，匹配 4 大计划最优路径。</p>
       </div>
-      <div class="v8-pathway">
-        <div class="v8-pathway-stage">
-          <span class="v8-pathway-stage-num">STAGE 02</span>
-          <div class="v8-pathway-stage-bar"><span class="v8-pathway-stage-bar-fill" style="width:50%"></span></div>
-        </div>
-        <span class="v8-pathway-icon">📄</span>
+      <div class="v10-pathway">
+        <span class="v10-pathway-step">STAGE 02</span>
         <h4>申请递交</h4>
-        <div class="v8-pathway-subtitle">APPLICATION</div>
-        <p style="font-size:0.85rem; color:var(--ink-700); margin:8px 0 0;">材料整理、文书打磨、递交跟进 — 96% 获批率。</p>
-        <ul class="v8-pathway-list">
-          <li>材料整理 + 翻译</li>
-          <li>文书策略 + 润色</li>
-          <li>入境处跟进</li>
-        </ul>
+        <p>材料整理、文书打磨、递交跟进 — 按入境处进度推进。</p>
       </div>
-      <div class="v8-pathway">
-        <div class="v8-pathway-stage">
-          <span class="v8-pathway-stage-num">STAGE 03</span>
-          <div class="v8-pathway-stage-bar"><span class="v8-pathway-stage-bar-fill" style="width:75%"></span></div>
-        </div>
-        <span class="v8-pathway-icon">🏠</span>
+      <div class="v10-pathway">
+        <span class="v10-pathway-step">STAGE 03</span>
         <h4>落地安家</h4>
-        <div class="v8-pathway-subtitle">RELOCATION</div>
-        <p style="font-size:0.85rem; color:var(--ink-700); margin:8px 0 0;">子女入学、住址选择、银行开户 — 第一个月落地支持。</p>
-        <ul class="v8-pathway-list">
-          <li>学校插班申请</li>
-          <li>租楼 / 买房咨询</li>
-          <li>银行 / 强积金开户</li>
-        </ul>
+        <p>子女入学、住址选择、银行开户 — 第一个月落地支持。</p>
       </div>
-      <div class="v8-pathway">
-        <div class="v8-pathway-stage">
-          <span class="v8-pathway-stage-num">STAGE 04</span>
-          <div class="v8-pathway-stage-bar"><span class="v8-pathway-stage-bar-fill" style="width:100%"></span></div>
-        </div>
-        <span class="v8-pathway-icon">🌟</span>
+      <div class="v10-pathway">
+        <span class="v10-pathway-step">STAGE 04</span>
         <h4>续签 + 永居</h4>
-        <div class="v8-pathway-subtitle">RENEWAL + PR</div>
-        <p style="font-size:0.85rem; color:var(--ink-700); margin:8px 0 0;">7 年续签规划 + 永居申请 — 完整证据链建立。</p>
-        <ul class="v8-pathway-list">
-          <li>续签材料准备</li>
-          <li>本地贡献证明</li>
-          <li>永居申请 + 护照</li>
-        </ul>
+        <p>7 年续签规划 + 永居申请 — 完整证据链建立。</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ CTA ============ -->
-<section class="section-v4" id="assessment">
-  <div class="container">
-    <div class="v8-cta-section">
-      <h2>第一步：30 分钟免费资格评估</h2>
-      <p>提交基本资料后 24 小时内收到顾问回复 — 包含 4 大计划匹配度评分 + 预计所需时间 + 预算范围。</p>
-      <div class="v8-cta-actions">
-        <a href="#contact" class="v8-cta-btn v8-cta-btn-primary">立即预约评估</a>
-        <a href="immigration-cn.html" class="v8-cta-btn v8-cta-btn-secondary">查看完整方案</a>
+<!-- ============ DISCLAIMER (LEGAL COMPLIANCE) ============ -->
+<section class="v10-section canvas tight" style="padding-top: 0;">
+  <div class="v10-container">
+    <blockquote class="v10-disclaimer">
+      <p class="v10-disclaimer-text">★ CareerForge 堅持合法合規、實事求是的諮詢原則，所有升學及身份申請均建立於專業評估與真實能力之上。</p>
+    </blockquote>
+  </div>
+</section>
+
+<!-- ============ CTA (NAVY) ============ -->
+<section class="v10-section white tight" id="contact">
+  <div class="v10-container">
+    <div class="v10-cta">
+      <div class="v10-cta-inner">
+        <span class="v10-cta-eyebrow">START YOUR JOURNEY</span>
+        <h2>第一步：30 分钟免费资格评估</h2>
+        <p>提交基本资料后 24 小时内收到顾问回复 — 包含 3 大业务板块匹配度评分 + 预计所需时间 + 后续路径建议。</p>
+        <div class="v10-cta-actions">
+          <a href="https://wa.me/85295651459" class="v10-cta-btn v10-cta-primary">WhatsApp 立即预约</a>
+          <a href="quiz.html" class="v10-cta-btn v10-cta-secondary">先做 3 分钟牛马测验</a>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ CONTACT ============ -->
-<section class="section-v4 tight" id="contact">
-  <div class="container container-narrow">
-    <div class="v8-bilingual-head">
-      <span class="eyebrow-cn">联系我们</span>
-      <span class="eyebrow-en">GET IN TOUCH</span>
-      <div class="v8-divider-line"></div>
+<!-- ============ CONTACT (WHITE CARDS) ============ -->
+<section class="v10-section canvas tight" style="padding-top: 0;">
+  <div class="v10-container">
+    <div class="v10-head">
+      <span class="eyebrow">联络我们</span>
       <h2>用你最方便的方式，<br>与顾问直接对话。</h2>
     </div>
-    <div class="v8-stat-grid" style="grid-template-columns: repeat(3, 1fr);">
-      <div class="v8-stat-card" style="text-align:center;">
-        <span class="v8-stat-num" style="font-size:1.6rem;">📱</span>
-        <span class="v8-stat-label">WhatsApp / 微信<small>852-9565-1459</small></span>
+    <div class="v10-contact-grid">
+      <div class="v10-contact-card">
+        <div class="v10-contact-icon">📱</div>
+        <h4>WhatsApp / 微信</h4>
+        <p>852-9565-1459<br>顾问 24 小时内回复</p>
       </div>
-      <div class="v8-stat-card" style="text-align:center;">
-        <span class="v8-stat-num" style="font-size:1.6rem;">✉️</span>
-        <span class="v8-stat-label">电邮<small>hello@careerforgehk.com</small></span>
+      <div class="v10-contact-card">
+        <div class="v10-contact-icon">✉️</div>
+        <h4>电邮</h4>
+        <p>[REDACTED_EMAIL]<br>提供书面方案摘要</p>
       </div>
-      <div class="v8-stat-card" style="text-align:center;">
-        <span class="v8-stat-num" style="font-size:1.6rem;">📍</span>
-        <span class="v8-stat-label">香港办公室<small>中环 / 尖沙咀</small></span>
+      <div class="v10-contact-card">
+        <div class="v10-contact-icon">📍</div>
+        <h4>香港办公室</h4>
+        <p>中环 / 尖沙咀<br>预约制 1 对 1 咨询</p>
       </div>
     </div>
   </div>
@@ -386,30 +783,30 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <img src="assets/logo.png" alt="CareerForge 鑄途" class="footer-logo">
-        <p>香港高端个人成长顾问。身份 · 升学 · 薪酬增值 一站式陪跑。</p>
+        <p>香港高端个人成长顾问。身份 · 升学 · 职涯身价 一站式陪跑。</p>
       </div>
       <div class="footer-col">
-        <h4>服务</h4>
-        <a href="immigration-cn.html">身份规划</a>
-        <a href="education-cn.html">升学服务</a>
-        <a href="career-cn.html">薪酬增值</a>
+        <h4>业务板块</h4>
+        <a href="immigration.html">身份与续签对标</a>
+        <a href="career.html">求职与身价跃迁</a>
+        <a href="education.html">海外与香港升学</a>
       </div>
       <div class="footer-col">
         <h4>资源</h4>
-        <a href="cases-cn.html">客户案例</a>
-        <a href="quiz-cn.html">资格测试</a>
-        <a href="#contact">联系我们</a>
+        <a href="cases.html">客户案例</a>
+        <a href="quiz.html">牛马身价测验</a>
+        <a href="#contact">联络我们</a>
       </div>
       <div class="footer-col">
         <h4>联络</h4>
         <a href="https://wa.me/85295651459">WhatsApp</a>
-        <a href="mailto:hello@careerforgehk.com">hello@careerforgehk.com</a>
+        <a href="mailto:[REDACTED_EMAIL]">[REDACTED_EMAIL]</a>
       </div>
     </div>
     <div class="footer-bottom">
       <span>© 2026 CareerForge 鑄途. All rights reserved.</span>
       <span class="footer-lang">
-        <a href="index.html">繁體</a> · <a href="index-cn.html" class="active">简体</a> · <a href="index-en.html">EN</a>
+        <a href="index.html">繁体</a> · <a href="index-cn.html" class="active">简体</a> · <a href="index-en.html">EN</a>
       </span>
     </div>
   </div>

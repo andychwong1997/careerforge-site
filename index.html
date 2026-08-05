@@ -3,486 +3,418 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CareerForge 鑄途 · 香港高端個人成長顧問</title>
-<meta name="description" content="立足香港，面向大中華區。提供升學、簽證、職涯一站式規劃，20 年經驗，500+ 成功個案。">
+<title>CareerForge 鑄途 · 香港高端個人成長顧問 · 身份·升學·薪酬增值</title>
+<meta name="description" content="CareerForge 鑄途 — 香港高端個人成長顧問。高才通 / 優才 / 專才 / 留學升港 — 全週期合規陪跑。從身份申請、教育銜接到 7 年永居規劃。">
 <link rel="icon" type="image/png" href="assets/icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700;800&family=Noto+Serif+SC:wght@400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
-<script>
-(function(){
-  function setLang(lang){
-    document.cookie='cf_lang='+lang+'; path=/; max-age=31536000';
-    try{localStorage.setItem('cf_lang',lang);}catch(e){}
-  }
-  document.addEventListener('click',function(e){
-    var t=e.target.closest('[data-lang-target]');
-    if(!t)return;
-    setLang(t.getAttribute('data-lang-target'));
-  });
-})();
-</script>
 </head>
 <body>
-<script>
-(function(){
-  var lang=(document.cookie.match(/(?:^|; )cf_lang=([^;]+)/)||[])[1];
-  if(!lang){try{lang=localStorage.getItem('cf_lang');}catch(e){}}
-  if(!lang){var nav=(navigator.language||'zh-Hant').toLowerCase();if(nav.startsWith('zh-cn')||nav==='zh-hans')lang='zh-Hans';else if(nav.startsWith('en'))lang='en';else lang='zh-Hant';}
-  var path=location.pathname;
-  var filename=path.substring(path.lastIndexOf('/')+1)||'index.html';
-  if(filename==='index.html'&&lang==='zh-Hans'){location.replace('index-cn.html');return;}
-  if(filename==='index.html'&&lang==='en'){location.replace('index-en.html');return;}
-  if(filename==='index-cn.html'&&lang==='en'){location.replace('index-en.html');return;}
-  if(filename==='index-en.html'&&lang==='zh-Hans'){location.replace('index-cn.html');return;}
-})();
-</script>
+
+<style>
+/* ============ V8 SHARED DESIGN TOKENS (homepage zh-Hant) ============ */
+:root {
+  --scheme-color: #C8A04A;
+  --scheme-color-dark: #8E6F2D;
+  --scheme-color-light: #E5C97A;
+  --scheme-bg-soft: #FAF6EC;
+}
+.v8-bilingual-head { text-align: center; max-width: 760px; margin: 0 auto 56px; }
+.v8-bilingual-head .eyebrow-cn { display: block; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--scheme-color-dark); margin-bottom: 14px; }
+.v8-bilingual-head .eyebrow-en { display: block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.32em; color: var(--ink-500); margin-bottom: 18px; }
+.v8-bilingual-head h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; letter-spacing: 0.5px; line-height: 1.15; color: var(--ink-900); margin: 0 0 18px; font-family: 'Playfair Display', 'Noto Serif SC', serif; }
+.v8-bilingual-head .lede { font-size: 1.0625rem; line-height: 1.7; color: var(--ink-600); margin: 0; }
+.v8-divider-line { width: 36px; height: 2px; background: linear-gradient(90deg, var(--scheme-color-dark), transparent); margin: 0 auto 28px; border-radius: 2px; }
+
+/* ============ HOMEPAGE HERO ============ */
+.home-hero { padding: 96px 0 80px; position: relative; overflow: hidden; }
+.home-hero::before { content: ""; position: absolute; top: -120px; right: -120px; width: 480px; height: 480px; background: radial-gradient(circle, var(--scheme-bg-soft) 0%, transparent 70%); border-radius: 50%; z-index: 0; }
+.home-hero .container { position: relative; z-index: 1; }
+.home-hero-eyebrow { display: inline-flex; align-items: center; gap: 10px; padding: 8px 16px; background: var(--scheme-bg-soft); border: 1px solid var(--scheme-color); border-radius: 999px; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em; color: var(--scheme-color-dark); margin-bottom: 28px; }
+.home-hero-eyebrow-dot { width: 8px; height: 8px; background: var(--scheme-color-dark); border-radius: 50%; display: inline-block; }
+.home-hero-title { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: clamp(2.8rem, 7vw, 5.2rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1.05; color: var(--ink-900); margin: 0 0 28px; max-width: 900px; }
+.home-hero-title .accent { color: var(--scheme-color-dark); font-style: italic; }
+.home-hero-subtitle { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: clamp(1.1rem, 1.7vw, 1.4rem); line-height: 1.65; color: var(--ink-600); margin: 0 0 40px; max-width: 720px; }
+.home-hero-actions { display: inline-flex; gap: 14px; flex-wrap: wrap; }
+.home-hero-trust { margin-top: 56px; display: flex; gap: 36px; flex-wrap: wrap; padding-top: 36px; border-top: 1px solid var(--ink-100); }
+.home-hero-trust-item { font-size: 0.85rem; color: var(--ink-500); letter-spacing: 0.04em; }
+.home-hero-trust-item strong { display: block; font-size: 1.6rem; font-weight: 800; color: var(--scheme-color-dark); font-family: 'Playfair Display', 'Noto Serif SC', serif; margin-bottom: 4px; }
+
+/* ============ STAT GRID ============ */
+.v8-stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.v8-stat-card { padding: 28px 22px; background: var(--surface-elevated); border: 1px solid var(--ink-100); border-radius: var(--radius-lg, 14px); transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+.v8-stat-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px -12px rgba(29,29,31,0.16); border-color: var(--scheme-color-light); }
+.v8-stat-num { display: block; font-size: 2.4rem; font-weight: 800; letter-spacing: -0.02em; color: var(--scheme-color-dark); line-height: 1; margin-bottom: 8px; font-family: 'Playfair Display', 'Noto Serif SC', serif; }
+.v8-stat-num .unit { font-size: 1.1rem; font-weight: 600; margin-left: 2px; color: var(--scheme-color-dark); }
+.v8-stat-label { display: block; font-size: 0.85rem; color: var(--ink-700); line-height: 1.4; }
+.v8-stat-label small { display: block; font-size: 0.72rem; color: var(--ink-500); margin-top: 2px; letter-spacing: 0.05em; }
+
+/* ============ SERVICE CARDS ============ */
+.v8-service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.v8-service-card { background: var(--surface-elevated); border: 1px solid var(--ink-100); border-radius: var(--radius-lg, 14px); padding: 40px 32px; transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; position: relative; overflow: hidden; }
+.v8-service-card:hover { transform: translateY(-4px); box-shadow: 0 16px 36px -12px rgba(29,29,31,0.18); border-color: var(--scheme-color-light); }
+.v8-service-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--scheme-color-dark), var(--scheme-color-light)); }
+.v8-service-icon { width: 56px; height: 56px; border-radius: 14px; background: var(--scheme-bg-soft); display: inline-flex; align-items: center; justify-content: center; font-size: 1.6rem; margin-bottom: 22px; color: var(--scheme-color-dark); font-weight: 800; font-family: 'Playfair Display', 'Noto Serif SC', serif; }
+.v8-service-card h3 { font-size: 1.4rem; font-weight: 700; letter-spacing: 0.3px; color: var(--ink-900); margin: 0 0 8px; font-family: 'Playfair Display', 'Noto Serif SC', serif; }
+.v8-service-tag { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; color: var(--scheme-color-dark); background: var(--scheme-bg-soft); padding: 4px 12px; border-radius: 999px; margin-bottom: 16px; }
+.v8-service-card p { font-size: 0.95rem; line-height: 1.7; color: var(--ink-700); margin: 0 0 22px; }
+.v8-service-card ul { list-style: none; padding: 0; margin: 0 0 22px; border-top: 1px solid var(--ink-100); padding-top: 18px; }
+.v8-service-card ul li { padding: 6px 0 6px 22px; position: relative; font-size: 0.88rem; line-height: 1.55; color: var(--ink-800); }
+.v8-service-card ul li::before { content: "—"; position: absolute; left: 0; top: 6px; color: var(--scheme-color-dark); font-weight: 700; }
+.v8-service-link { display: inline-flex; align-items: center; gap: 8px; font-size: 0.88rem; font-weight: 700; color: var(--scheme-color-dark); text-decoration: none; letter-spacing: 0.04em; }
+.v8-service-link:hover { text-decoration: underline; }
+.v8-service-link::after { content: "→"; transition: transform .2s ease; }
+.v8-service-link:hover::after { transform: translateX(4px); }
+
+/* ============ 4-STAGE PATHWAY ============ */
+.v8-pathway-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; align-items: stretch; }
+.v8-pathway { padding: 32px 24px; background: var(--surface-elevated); border: 1px solid var(--ink-100); position: relative; transition: all .25s ease; }
+.v8-pathway:first-child { border-radius: var(--radius-lg, 14px) 0 0 var(--radius-lg, 14px); }
+.v8-pathway:last-child { border-radius: 0 var(--radius-lg, 14px) var(--radius-lg, 14px) 0; border-left: none; }
+.v8-pathway + .v8-pathway { border-left: none; }
+.v8-pathway:hover { background: linear-gradient(180deg, var(--surface-elevated) 0%, var(--scheme-bg-soft) 100%); transform: translateY(-3px); box-shadow: 0 12px 28px -12px rgba(29,29,31,0.18); z-index: 1; }
+.v8-pathway-stage { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; }
+.v8-pathway-stage-num { font-size: 0.78rem; font-weight: 800; color: var(--scheme-color-dark); letter-spacing: 0.06em; }
+.v8-pathway-stage-bar { flex: 1; height: 4px; background: var(--ink-100); border-radius: 2px; overflow: hidden; }
+.v8-pathway-stage-bar-fill { display: block; height: 100%; background: linear-gradient(90deg, var(--scheme-color-dark), var(--scheme-color)); border-radius: 2px; }
+.v8-pathway-icon { font-size: 1.6rem; margin-bottom: 12px; display: block; }
+.v8-pathway h4 { font-size: 1.05rem; font-weight: 700; color: var(--ink-900); margin: 0 0 8px; letter-spacing: 0.3px; font-family: 'Playfair Display', 'Noto Serif SC', serif; }
+.v8-pathway-subtitle { font-size: 0.78rem; color: var(--scheme-color-dark); font-weight: 600; margin-bottom: 10px; letter-spacing: 0.05em; }
+.v8-pathway-list { list-style: none; padding: 0; margin: 12px 0 0; }
+.v8-pathway-list li { padding: 6px 0 6px 18px; position: relative; font-size: 0.85rem; color: var(--ink-700); line-height: 1.55; }
+.v8-pathway-list li::before { content: ""; position: absolute; left: 0; top: 14px; width: 8px; height: 1.5px; background: var(--scheme-color-dark); border-radius: 1px; }
+
+/* ============ CTA SECTION ============ */
+.v8-cta-section { background: linear-gradient(135deg, var(--ink-900) 0%, var(--scheme-color-dark) 100%); border-radius: var(--radius-xl, 20px); padding: 64px 48px; text-align: center; color: #fff; position: relative; overflow: hidden; }
+.v8-cta-section::before { content: ""; position: absolute; top: -60px; right: -60px; width: 240px; height: 240px; background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%); border-radius: 50%; }
+.v8-cta-section h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 700; letter-spacing: 0.5px; margin: 0 0 18px; color: #fff; font-family: 'Playfair Display', 'Noto Serif SC', serif; }
+.v8-cta-section p { font-size: 1.05rem; line-height: 1.7; color: rgba(255,255,255,0.85); max-width: 580px; margin: 0 auto 28px; }
+.v8-cta-actions { display: inline-flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+.v8-cta-btn { padding: 14px 32px; border-radius: 999px; font-weight: 700; font-size: 0.95rem; text-decoration: none; transition: all .2s ease; display: inline-flex; align-items: center; gap: 8px; }
+.v8-cta-btn-primary { background: linear-gradient(135deg, var(--scheme-color), var(--scheme-color-light)); color: var(--ink-900); }
+.v8-cta-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(232, 184, 79, 0.4); }
+.v8-cta-btn-secondary { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.4); }
+.v8-cta-btn-secondary:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.82); }
+
+/* ============ SECTION SPACING ============ */
+.section-v4 { padding: 80px 0; }
+.section-v4.tight { padding: 56px 0; }
+
+/* ============ MOBILE ============ */
+@media (max-width: 900px) {
+  .home-hero { padding: 64px 0 48px; }
+  .v8-stat-grid { grid-template-columns: repeat(2, 1fr); }
+  .v8-service-grid { grid-template-columns: 1fr; }
+  .v8-pathway-grid { grid-template-columns: 1fr; }
+  .v8-pathway { border-radius: 0 !important; border: 1px solid var(--ink-100); border-bottom: none; }
+  .v8-pathway:last-child { border-bottom: 1px solid var(--ink-100); border-radius: 0 0 var(--radius-lg, 14px) var(--radius-lg, 14px) !important; }
+  .v8-pathway:first-child { border-radius: var(--radius-lg, 14px) var(--radius-lg, 14px) 0 0 !important; }
+  .v8-cta-section { padding: 48px 24px; }
+  .section-v4 { padding: 56px 0; }
+  .home-hero-trust { gap: 24px; }
+}
+</style>
 
 <header class="site-header">
   <div class="container">
     <nav class="nav">
-      <a href="index.html" class="nav-logo"><img src="assets/logo.png" alt="CareerForge 鑄途"></a>
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo.png" alt="CareerForge 鑄途">
+      </a>
       <div class="nav-menu">
         <a href="index.html" class="active">首頁</a>
-        <a href="education.html">升學</a>
-        <a href="immigration.html">簽證</a>
-        <a href="career.html">職涯</a>
-        <a href="quiz.html">牛馬測驗</a>
-        <a href="cases.html">客戶故事</a>
+        <a href="immigration.html">身份規劃</a>
+        <a href="education.html">升學服務</a>
+        <a href="career.html">薪酬增值</a>
+        <a href="cases.html">客戶案例</a>
+        <a href="#contact">聯絡我們</a>
       </div>
       <div class="nav-actions">
         <div class="lang-switcher">
-          <a href="index.html" class="active" data-lang-target="zh-Hant">繁體</a>
-          <a href="index-cn.html" data-lang-target="zh-Hans">简体</a>
-          <a href="index-en.html" data-lang-target="en">EN</a>
+          <a href="index.html" class="active">繁</a>
+          <a href="index-cn.html">简</a>
+          <a href="index-en.html">EN</a>
         </div>
-        <a href="#contact" class="nav-cta">預約諮詢</a>
+        <a href="#contact" class="nav-cta">立即諮詢</a>
       </div>
     </nav>
   </div>
 </header>
 
-<!-- ===== HERO v4.0 ===== -->
-<section class="hero-v4">
-  <div class="hero-v4-inner">
-    <span class="eyebrow reveal">CareerForge · 鑄途</span>
-    <h1 class="reveal" data-reveal-delay="100">由升學到永居。<br/><span class="accent-text">一個旅程，全程同行。</span></h1>
-    <p class="lead reveal" data-reveal-delay="200">立足香港 20 年。3,000+ 家庭嘅選擇。<br/>從升學、簽證到職涯，一站式陪您走完每一步。</p>
-    <div class="hero-v4-actions reveal" data-reveal-delay="300">
-      <a href="#contact" class="btn btn-primary btn-lg">預約 30 分鐘諮詢</a>
-      <a href="#lineup" class="btn btn-secondary btn-lg">睇下三大業務</a>
-    </div>
-    <div class="hero-v4-stats">
-      <div class="hero-v4-stat reveal"><span class="num">20<span class="unit">+</span></span><span class="label">年專業經驗</span></div>
-      <div class="hero-v4-stat reveal" data-reveal-delay="100"><span class="num">500<span class="unit">+</span></span><span class="label">成功申請個案</span></div>
-      <div class="hero-v4-stat reveal" data-reveal-delay="200"><span class="num">95<span class="unit">%</span></span><span class="label">首選錄取率</span></div>
-      <div class="hero-v4-stat reveal" data-reveal-delay="300"><span class="num">98<span class="unit">%</span></span><span class="label">客戶滿意度</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== PRODUCT LINEUP (三條路徑) ===== -->
-<section class="section-v4" id="lineup">
+<!-- ============ HERO ============ -->
+<section class="home-hero">
   <div class="container">
-    <div class="section-v4-head reveal">
-      <span class="eyebrow">三條路徑 · 一個旅程</span>
-      <h2>選一個起點，<br/>走完整段路。</h2>
-      <p>無論您係邊個起點 — 升學、移居、定係已經工作 — 我們都有一條為您度身訂造嘅路徑。</p>
+    <span class="home-hero-eyebrow">
+      <span class="home-hero-eyebrow-dot"></span>
+      香港高端個人成長顧問
+    </span>
+    <h1 class="home-hero-title">
+      與家庭同行，<br>
+      <span class="accent">從身份到永居</span>七年。<br>
+      從事業到<span class="accent">薪酬增值</span>。
+    </h1>
+    <p class="home-hero-subtitle">
+      CareerForge 鑄途 — 專注香港高才通、優才、專才、留學升港全週期陪跑。<br>
+      從身份申請、教育銜接到 7 年永居規劃與職業生涯增值，每一個階段都有專屬顧問與你同行。
+    </p>
+    <div class="home-hero-actions">
+      <a href="#assessment" class="v8-cta-btn v8-cta-btn-primary">免費資格評估 →</a>
+      <a href="immigration.html" class="btn btn-secondary btn-lg">了解身份規劃</a>
     </div>
-    <div class="lineup">
-      <a href="education.html" class="lineup-card reveal" data-cat="education">
-        <span class="lineup-card-tag">升學部 · Education</span>
-        <div class="lineup-card-visual"><span class="big-char">升</span></div>
-        <h3>升學規劃</h3>
-        <p class="tagline">由 DSE 到博士，全程陪跑。</p>
-        <div class="price">
-          <strong>適合</strong>
-          中學生 · IB/A-Level · 副學士 · 大學生
-        </div>
-        <span class="cta-row">了解升學服務 →</span>
-      </a>
-      <a href="immigration.html" class="lineup-card reveal" data-cat="visa" data-reveal-delay="100">
-        <span class="lineup-card-tag">簽證部 · Visa</span>
-        <div class="lineup-card-visual"><span class="big-char">簽</span></div>
-        <h3>簽證移居</h3>
-        <p class="tagline">高才通、優才、IANG，3 個月獲批。</p>
-        <div class="price">
-          <strong>適合</strong>
-          內地專業人士 · 高才家庭 · 投資者
-        </div>
-        <span class="cta-row">了解簽證服務 →</span>
-      </a>
-      <a href="career.html" class="lineup-card reveal" data-cat="career" data-reveal-delay="200">
-        <span class="lineup-card-tag">生涯部 · Career</span>
-        <div class="lineup-card-visual"><span class="big-char">涯</span></div>
-        <h3>職涯規劃</h3>
-        <p class="tagline">履歷、面試、獵頭一條龍。</p>
-        <div class="price">
-          <strong>適合</strong>
-          大學生 · 在職人士 · 轉職者
-        </div>
-        <span class="cta-row">了解職涯服務 →</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ===== BENTO FEATURES ===== -->
-<section class="section-v4 alt">
-  <div class="container">
-    <div class="section-v4-head reveal">
-      <span class="eyebrow">為何選 CareerForge</span>
-      <h2>20 年經驗累積，<br/>6 個關鍵差異化。</h2>
-    </div>
-    <div class="bento">
-      <div class="bento-card bento-large reveal" data-cat="education">
-        <div class="bento-icon">2+2</div>
-        <h3>副學士直通香港八大</h3>
-        <p>前 2 年副學士，後 2 年直升香港八大。GPA ≥ 2.5 自動升讀大三。95% 成功率，500+ 家庭驗證。</p>
-        <div class="bento-stat">
-          <span class="num">95%</span>
-          <span class="label">副學士升學成功率</span>
-        </div>
+    <div class="home-hero-trust">
+      <div class="home-hero-trust-item">
+        <strong>1,200+</strong>
+        累計協助獲批
       </div>
-      <div class="bento-card reveal" data-cat="visa">
-        <div class="bento-icon">3<span style="font-size:1rem;margin-left:2px">月</span></div>
-        <h3>高才通 3 個月獲批</h3>
-        <p>完整文件預備 + 加急審批跟進。</p>
-        <div class="bento-stat">
-          <span class="num">92%</span>
-          <span class="label">高才通 A 類成功率</span>
-        </div>
+      <div class="home-hero-trust-item">
+        <strong>96%</strong>
+        身份申請獲批率
       </div>
-      <div class="bento-card reveal" data-cat="career" data-reveal-delay="100">
-        <div class="bento-icon">24h</div>
-        <h3>WhatsApp 24 小時回覆</h3>
-        <p>所有客戶均加入 VIP 群組，緊急情況即時支援。</p>
-        <div class="bento-stat">
-          <span class="num">4.9/5</span>
-          <span class="label">客戶服務評分</span>
-        </div>
+      <div class="home-hero-trust-item">
+        <strong>7 年</strong>
+        續簽到永居全程陪跑
+      </div>
+      <div class="home-hero-trust-item">
+        <strong>4 大</strong>
+        人才計劃全覆蓋
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== COMPARISON TABLE (三業務對比) ===== -->
-<section class="section-v4">
-  <div class="container">
-    <div class="section-v4-head reveal">
-      <span class="eyebrow">三業務對比</span>
-      <h2>一張表，揀到您嘅路徑。</h2>
-      <p>三個業務可以獨立購買，亦可以組合套餐享有折扣。</p>
-    </div>
-    <div class="spec-table reveal">
-      <div class="spec-table-head">
-        <div>服務</div>
-        <div>升學規劃</div>
-        <div>簽證移居</div>
-        <div>職涯規劃</div>
-      </div>
-      <div class="spec-row">
-        <div>適用對象</div>
-        <div data-cat="升學">中學生 / IB / DSE / 副學士</div>
-        <div data-cat="簽證">內地專業人士 / 高才家庭</div>
-        <div data-cat="職涯">大學生 / 在職 / 轉職者</div>
-      </div>
-      <div class="spec-row">
-        <div>服務期</div>
-        <div data-cat="升學">1 - 4 年</div>
-        <div data-cat="簽證">3 - 7 年</div>
-        <div data-cat="職涯">1 - 3 年</div>
-      </div>
-      <div class="spec-row">
-        <div>成功率</div>
-        <div data-cat="升學"><span class="highlight">95% 首選錄取</span></div>
-        <div data-cat="簽證"><span class="highlight">92% 獲批率</span></div>
-        <div data-cat="職涯"><span class="highlight">88% 加薪轉職</span></div>
-      </div>
-      <div class="spec-row">
-        <div>月費 (HKD)</div>
-        <div data-cat="升學">$8,000 起</div>
-        <div data-cat="簽證">$15,000 起</div>
-        <div data-cat="職涯">$5,000 起</div>
-      </div>
-      <div class="spec-row">
-        <div>組合優惠</div>
-        <div data-cat="升學">升學 + 簽證：9 折</div>
-        <div data-cat="簽證">全套三項：8 折</div>
-        <div data-cat="職涯">升學 + 職涯：9 折</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== STATS SHOWCASE ===== -->
-<section class="section-v4 dark">
-  <div class="container">
-    <div class="section-v4-head reveal">
-      <span class="eyebrow" style="color:rgba(255,255,255,0.6)">20 年數字</span>
-      <h2>唔係 marketing。<br/>係真實個案。</h2>
-    </div>
-    <div class="stat-row">
-      <div class="stat-item reveal">
-        <span class="stat-num">3,000<span class="unit">+</span></span>
-        <span class="stat-label">服務家庭總數</span>
-      </div>
-      <div class="stat-item reveal" data-reveal-delay="100">
-        <span class="stat-num">4.9<span class="unit">/5</span></span>
-        <span class="stat-label">Google 客戶評分</span>
-      </div>
-      <div class="stat-item reveal" data-reveal-delay="200">
-        <span class="stat-num">98<span class="unit">%</span></span>
-        <span class="stat-label">客戶續約率</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== TESTIMONIALS ===== -->
-<section class="section-v4">
-  <div class="container">
-    <div class="section-v4-head reveal">
-      <span class="eyebrow">客戶故事</span>
-      <h2>每一個成功個案，<br/>都係一個家庭嘅未來。</h2>
-    </div>
-    <div class="bento">
-      <div class="bento-card bento-large reveal">
-        <div class="quote-v4">「高才通 vs 優才 vs 專才全部 plan 過，最終批高才通 A 類。丈夫 + 仔女 + 我自己全部受養人簽證過嚟，兩個幾月搞掂。」</div>
-        <div class="case-meta">
-          <div class="case-meta-avatar">L</div>
-          <div class="case-meta-text">
-            <span class="name">L 女士 · 上海</span>
-            <span class="from">高才通 A 類 2024 · 全家 4 人受養人簽證</span>
-          </div>
-        </div>
-      </div>
-      <div class="bento-card reveal">
-        <div class="quote-v4" style="font-size:1.25rem">「Howard 由副學士開始 plan，到港大 BBA 畢業、IANG 留港、入貝恩公司 — 4 年全程有人跟。」</div>
-        <div class="case-meta">
-          <div class="case-meta-avatar">C</div>
-          <div class="case-meta-text">
-            <span class="name">C 同學 · 北京</span>
-            <span class="from">副學士 2+2 · 港大 BBA</span>
-          </div>
-        </div>
-      </div>
-      <div class="bento-card reveal" data-reveal-delay="100">
-        <div class="quote-v4" style="font-size:1.25rem">「3 個月時間，由互聯網公司 PM 轉去投行 Analyst，加薪 40%。Howard 嘅獵頭 network 真係 work。」</div>
-        <div class="case-meta">
-          <div class="case-meta-avatar">M</div>
-          <div class="case-meta-text">
-            <span class="name">M 先生 · 香港</span>
-            <span class="from">3 個月轉職 · 加薪 40%</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:48px">
-      <a href="cases.html" class="btn btn-secondary btn-lg">睇更多客戶故事 →</a>
-    </div>
-  </div>
-</section>
-
-<!-- ===== PROCESS STEPS ===== -->
-<section class="section-v4 alt">
-  <div class="container">
-    <div class="section-v4-head reveal">
-      <span class="eyebrow">服務流程</span>
-      <h2>由查詢到入學，<br/>四步全程有人跟。</h2>
-    </div>
-    <div class="process reveal">
-      <div class="process-step">
-        <span class="step-num">Step 01</span>
-        <h4>初步諮詢</h4>
-        <p>免費 30 分鐘，了解背景、家庭目標、預算區間。</p>
-      </div>
-      <div class="process-step">
-        <span class="step-num">Step 02</span>
-        <h4>深度評估</h4>
-        <p>學術、心理、家庭三方評估，制定 3 條可行路徑。</p>
-      </div>
-      <div class="process-step">
-        <span class="step-num">Step 03</span>
-        <h4>執行落地</h4>
-        <p>申請文件、模擬面試、住宿安頓、簽證辦理全程跟進。</p>
-      </div>
-      <div class="process-step">
-        <span class="step-num">Step 04</span>
-        <h4>持續陪跑</h4>
-        <p>入學後每月家長報告、GPA 監控、應急支援一應俱全。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== FAQ ===== -->
-<section class="section-v4">
-  <div class="container">
-    <div class="section-v4-head reveal">
-      <span class="eyebrow">常見問題</span>
-      <h2>您可能會問嘅事。</h2>
-    </div>
-    <div class="faq reveal">
-      <details class="faq-item">
-        <summary class="faq-q">幾時開始準備最好？</summary>
-        <div class="faq-a">升學建議提前 12-18 個月；簽證建議提前 6-9 個月。但即使您得 3 個月時間，我哋都有 plan 加快版。關鍵係：唔好等到最後一刻先行動。</div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">簽證被拒過仲有救嗎？</summary>
-        <div class="faq-a">有。我哋做過 30+ 個「二次申請」case，全部成功。重點係分析被拒原因、補強文件、換 track。我哋會先做 30 分鐘免費評估，再決定點做。</div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">點解揀 CareerForge 而唔係自己 apply？</summary>
-        <div class="faq-a">DIY 嘅失敗率我哋見過太多。家長時間成本、文件細節、突發狀況 — 全部係隱性成本。我哋嘅顧問全部係「過來人」，親身經歷您要行嘅路。</div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">服務包唔包文件翻譯？</summary>
-        <div class="faq-a">包。所有中英文翻譯、公證、認證，全部包括在月費入面。額外文件如成績單推薦信，無限次修改直到您滿意。</div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">收費幾多？</summary>
-        <div class="faq-a">升學由 HKD $8,000/月起，簽證 $15,000/月起，職涯 $5,000/月起。組合套餐有 9 折優惠，全套三項 8 折。首次諮詢完全免費，唔會 push 您 sign。</div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">如果你哋 fail 點算？</summary>
-        <div class="faq-a">我們嘅收費分階段：35% 起步、35% 中期、30% 結果。如果最終申請失敗，第三期費用全免（特定條款除外）。</div>
-      </details>
-    </div>
-  </div>
-</section>
-
-<!-- ===== CTA BANNER ===== -->
+<!-- ============ STATS ============ -->
 <section class="section-v4 tight">
   <div class="container">
-    <div class="cta-v4 reveal">
-      <h2>想知邊條路徑<br/>最適合您？</h2>
-      <p>30 分鐘免費諮詢，顧問 24 小時內 WhatsApp 您。一個 call，換成 4 年清晰方向。</p>
-      <div class="cta-v4-actions">
-        <a href="#contact" class="btn-v4-primary">預約 30 分鐘諮詢 →</a>
-        <a href="quiz.html" class="btn-v4-secondary">先做牛馬測驗</a>
+    <div class="v8-bilingual-head">
+      <span class="eyebrow-cn">用數據說話</span>
+      <span class="eyebrow-en">TRUSTED BY 1,200+ FAMILIES</span>
+      <div class="v8-divider-line"></div>
+      <h2>過去 5 年，我們如何陪家庭赴港。</h2>
+      <p class="lede">不只是數字 — 每一個百分點的背後，是一個家庭的落地選擇、一份合規的方案、一次順利的續簽。</p>
+    </div>
+    <div class="v8-stat-grid">
+      <div class="v8-stat-card">
+        <span class="v8-stat-num">1,200<span class="unit">+</span></span>
+        <span class="v8-stat-label">累計協助獲批<small>APPROVED CASES</small></span>
+      </div>
+      <div class="v8-stat-card">
+        <span class="v8-stat-num">96<span class="unit">%</span></span>
+        <span class="v8-stat-label">身份申請獲批率<small>APPROVAL RATE</small></span>
+      </div>
+      <div class="v8-stat-card">
+        <span class="v8-stat-num">7<span class="unit">年</span></span>
+        <span class="v8-stat-label">續簽到永居全程陪跑<small>FULL-CYCLE SUPPORT</small></span>
+      </div>
+      <div class="v8-stat-card">
+        <span class="v8-stat-num">4<span class="unit">類</span></span>
+        <span class="v8-stat-label">主流人才計劃全覆蓋<small>VISA SCHEMES</small></span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== CONTACT FORM ===== -->
-<section class="section-v4" id="contact">
+<!-- ============ SERVICES ============ -->
+<section class="section-v4">
   <div class="container">
-    <div class="section-v4-head reveal">
-      <span class="eyebrow">立即聯絡</span>
-      <h2>送出查詢，<br/>24 小時內 WhatsApp 您。</h2>
+    <div class="v8-bilingual-head">
+      <span class="eyebrow-cn">三大服務板塊</span>
+      <span class="eyebrow-en">THREE SERVICE PILLARS</span>
+      <div class="v8-divider-line"></div>
+      <h2>身份、升學、薪酬增值，<br>同一條 CareerForge 主線。</h2>
+      <p class="lede">把香港身份規劃、子女升學路徑與本地薪酬增值打通成一條連續路徑 — 每一步都為下一步服務。</p>
     </div>
-    <form class="reveal" id="lead-form" action="https://api.web3forms.com/submit" method="POST" style="max-width:760px;margin:0 auto;background:var(--surface-elevated);border:1px solid var(--ink-100);border-radius:var(--radius-xl);padding:48px 40px;">
-      <input type="hidden" name="access_key" value="a4d3eb59-2bf6-4a4a-91de-3c9b5f3e6d8c">
-      <input type="hidden" name="subject" value="CareerForge 新客戶查詢">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
-        <div><label style="display:block;font-size:0.875rem;font-weight:500;margin-bottom:8px;color:var(--ink-700)">稱謂 *</label><input type="text" name="name" required style="width:100%;padding:12px 16px;border:1px solid var(--ink-100);border-radius:var(--radius);background:var(--surface-canvas);"></div>
-        <div><label style="display:block;font-size:0.875rem;font-weight:500;margin-bottom:8px;color:var(--ink-700)">聯絡電話 *</label><input type="tel" name="phone" required style="width:100%;padding:12px 16px;border:1px solid var(--ink-100);border-radius:var(--radius);background:var(--surface-canvas);"></div>
-        <div style="grid-column:span 2"><label style="display:block;font-size:0.875rem;font-weight:500;margin-bottom:8px;color:var(--ink-700)">電郵</label><input type="email" name="email" style="width:100%;padding:12px 16px;border:1px solid var(--ink-100);border-radius:var(--radius);background:var(--surface-canvas);"></div>
-        <div><label style="display:block;font-size:0.875rem;font-weight:500;margin-bottom:8px;color:var(--ink-700)">想了解嘅服務</label><select name="service" style="width:100%;padding:12px 16px;border:1px solid var(--ink-100);border-radius:var(--radius);background:var(--surface-canvas);"><option>升學規劃</option><option>簽證移居</option><option>職涯規劃</option><option>牛馬測驗</option><option>套餐查詢</option></select></div>
-        <div><label style="display:block;font-size:0.875rem;font-weight:500;margin-bottom:8px;color:var(--ink-700)">所在城市</label><select name="city" style="width:100%;padding:12px 16px;border:1px solid var(--ink-100);border-radius:var(--radius);background:var(--surface-canvas);"><option>北京</option><option>上海</option><option>廣州</option><option>深圳</option><option>香港</option><option>其他</option></select></div>
-        <div style="grid-column:span 2"><label style="display:block;font-size:0.875rem;font-weight:500;margin-bottom:8px;color:var(--ink-700)">背景簡述</label><textarea name="message" rows="3" style="width:100%;padding:12px 16px;border:1px solid var(--ink-100);border-radius:var(--radius);background:var(--surface-canvas);resize:vertical;"></textarea></div>
-        <div style="grid-column:span 2"><button type="submit" class="btn btn-primary btn-lg" style="width:100%">送出查詢 → 24 小時內 WhatsApp 回覆</button><div class="form-status" id="form-status" style="margin-top:12px;font-size:0.875rem;text-align:center;"></div></div>
+    <div class="v8-service-grid">
+      <div class="v8-service-card">
+        <div class="v8-service-icon">A</div>
+        <h3>身份規劃</h3>
+        <span class="v8-service-tag">IMMIGRATION</span>
+        <p>高才通 · 優才 · 專才 · 留學升港 — 4 大主流人才計劃全覆蓋，從首簽到 7 年永居全程合規陪跑。</p>
+        <ul>
+          <li>資格評估 + 方案匹配</li>
+          <li>材料整理 + 遞交跟進</li>
+          <li>續簽規劃 + 永居申請</li>
+          <li>受養人 / 子女隨行</li>
+        </ul>
+        <a href="immigration.html" class="v8-service-link">查看詳情</a>
       </div>
-    </form>
+      <div class="v8-service-card">
+        <div class="v8-service-icon">B</div>
+        <h3>升學服務</h3>
+        <span class="v8-service-tag">EDUCATION</span>
+        <p>本地學校插班、DSE 升學路徑、寄宿學校申請、IB/A-Level 國際課程 — 銜接子女成長每一步。</p>
+        <ul>
+          <li>本地學校申請 + 插班</li>
+          <li>國際學校 IB/A-Level 規劃</li>
+          <li>DSE 升學策略</li>
+          <li>大學申請 + 面試輔導</li>
+        </ul>
+        <a href="education.html" class="v8-service-link">查看詳情</a>
+      </div>
+      <div class="v8-service-card">
+        <div class="v8-service-icon">C</div>
+        <h3>薪酬增值</h3>
+        <span class="v8-service-tag">CAREER GROWTH</span>
+        <p>不只是找工作 — 幫助專業人士在香港本地市場實現薪酬躍升、行業轉型與長期職業規劃。</p>
+        <ul>
+          <li>本地薪酬 benchmark 評估</li>
+          <li>職位匹配 + 面試陪跑</li>
+          <li>行業轉型 + 技能升級</li>
+          <li>續簽使用證據鏈建立</li>
+        </ul>
+        <a href="career.html" class="v8-service-link">查看詳情</a>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- ===== FOOTER v4.0 ===== -->
-<footer class="footer-v4">
+<!-- ============ 4-STAGE PATHWAY ============ -->
+<section class="section-v4">
   <div class="container">
-    <div class="footer-v4-grid">
-      <div class="footer-v4-brand">
-        <img src="assets/logo.png" alt="CareerForge" style="height:32px;filter:brightness(0) invert(1);opacity:0.92">
-        <p>立足香港，面向大中華區。20 年來，3,000+ 家庭嘅升學、簽證、職涯選擇。</p>
-      </div>
-      <div class="footer-v4-col">
-        <h5>服務</h5>
-        <ul>
-          <li><a href="education.html">升學規劃</a></li>
-          <li><a href="immigration.html">簽證移居</a></li>
-          <li><a href="career.html">職涯規劃</a></li>
-          <li><a href="quiz.html">牛馬測驗</a></li>
+    <div class="v8-bilingual-head">
+      <span class="eyebrow-cn">4 階段完整路徑</span>
+      <span class="eyebrow-en">FOUR-STAGE PATHWAY</span>
+      <div class="v8-divider-line"></div>
+      <h2>從資格評估到永居，<br>每一步都有專屬顧問。</h2>
+      <p class="lede">不是單次申請 — 是一條 7 年完整路徑，每一個里程碑都需要前置佈局。</p>
+    </div>
+    <div class="v8-pathway-grid">
+      <div class="v8-pathway">
+        <div class="v8-pathway-stage">
+          <span class="v8-pathway-stage-num">STAGE 01</span>
+          <div class="v8-pathway-stage-bar"><span class="v8-pathway-stage-bar-fill" style="width:25%"></span></div>
+        </div>
+        <span class="v8-pathway-icon">🧭</span>
+        <h4>資格評估</h4>
+        <div class="v8-pathway-subtitle">ELIGIBILITY ASSESSMENT</div>
+        <p style="font-size:0.85rem; color:var(--ink-700); margin:8px 0 0;">30 分鐘深度訪談，匹配 4 大計劃最優路徑。</p>
+        <ul class="v8-pathway-list">
+          <li>學歷 / 收入 / 年齡三維評估</li>
+          <li>家庭成員規劃</li>
+          <li>明確簽證路徑</li>
         </ul>
       </div>
-      <div class="footer-v4-col">
-        <h5>關於</h5>
-        <ul>
-          <li><a href="cases.html">客戶故事</a></li>
-          <li><a href="#contact">聯絡我們</a></li>
-          <li><a href="#">價目表</a></li>
-          <li><a href="#">私隱政策</a></li>
+      <div class="v8-pathway">
+        <div class="v8-pathway-stage">
+          <span class="v8-pathway-stage-num">STAGE 02</span>
+          <div class="v8-pathway-stage-bar"><span class="v8-pathway-stage-bar-fill" style="width:50%"></span></div>
+        </div>
+        <span class="v8-pathway-icon">📄</span>
+        <h4>申請遞交</h4>
+        <div class="v8-pathway-subtitle">APPLICATION</div>
+        <p style="font-size:0.85rem; color:var(--ink-700); margin:8px 0 0;">材料整理、文書打磨、遞交跟進 — 96% 獲批率。</p>
+        <ul class="v8-pathway-list">
+          <li>材料整理 + 翻譯</li>
+          <li>文書策略 + 潤色</li>
+          <li>入境處跟進</li>
         </ul>
       </div>
-      <div class="footer-v4-col">
-        <h5>聯絡</h5>
-        <ul>
-          <li><a href="https://wa.me/85295651459">WhatsApp</a></li>
-          <li><a href="mailto:hello@careerforgehk.com">hello@careerforgehk.com</a></li>
-          <li>微信: careerforgehk</li>
-          <li>中環皇后大道中 81 號</li>
+      <div class="v8-pathway">
+        <div class="v8-pathway-stage">
+          <span class="v8-pathway-stage-num">STAGE 03</span>
+          <div class="v8-pathway-stage-bar"><span class="v8-pathway-stage-bar-fill" style="width:75%"></span></div>
+        </div>
+        <span class="v8-pathway-icon">🏠</span>
+        <h4>落地安家</h4>
+        <div class="v8-pathway-subtitle">RELOCATION</div>
+        <p style="font-size:0.85rem; color:var(--ink-700); margin:8px 0 0;">子女入學、住址選擇、銀行開戶 — 第一個月落地支持。</p>
+        <ul class="v8-pathway-list">
+          <li>學校插班申請</li>
+          <li>租樓 / 買房諮詢</li>
+          <li>銀行 / 強積金開戶</li>
+        </ul>
+      </div>
+      <div class="v8-pathway">
+        <div class="v8-pathway-stage">
+          <span class="v8-pathway-stage-num">STAGE 04</span>
+          <div class="v8-pathway-stage-bar"><span class="v8-pathway-stage-bar-fill" style="width:100%"></span></div>
+        </div>
+        <span class="v8-pathway-icon">🌟</span>
+        <h4>續簽 + 永居</h4>
+        <div class="v8-pathway-subtitle">RENEWAL + PR</div>
+        <p style="font-size:0.85rem; color:var(--ink-700); margin:8px 0 0;">7 年續簽規劃 + 永居申請 — 完整證據鏈建立。</p>
+        <ul class="v8-pathway-list">
+          <li>續簽材料準備</li>
+          <li>本地貢獻證明</li>
+          <li>永居申請 + 護照</li>
         </ul>
       </div>
     </div>
-    <div class="footer-v4-bottom">
-      <div>© 2026 CareerForge 鑄途 · 香港商業登記 BR 71508236</div>
-      <div class="footer-v4-lang">
-        <a href="index.html" class="active">繁體</a>
-        <a href="index-cn.html">简体</a>
-        <a href="index-en.html">EN</a>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="section-v4" id="assessment">
+  <div class="container">
+    <div class="v8-cta-section">
+      <h2>第一步：30 分鐘免費資格評估</h2>
+      <p>提交基本資料後 24 小時內收到顧問回覆 — 包含 4 大計劃匹配度評分 + 預計所需時間 + 預算範圍。</p>
+      <div class="v8-cta-actions">
+        <a href="#contact" class="v8-cta-btn v8-cta-btn-primary">立即預約評估</a>
+        <a href="immigration.html" class="v8-cta-btn v8-cta-btn-secondary">查看完整方案</a>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section-v4 tight" id="contact">
+  <div class="container container-narrow">
+    <div class="v8-bilingual-head">
+      <span class="eyebrow-cn">聯絡我們</span>
+      <span class="eyebrow-en">GET IN TOUCH</span>
+      <div class="v8-divider-line"></div>
+      <h2>用你最方便的方式，<br>與顧問直接對話。</h2>
+    </div>
+    <div class="v8-stat-grid" style="grid-template-columns: repeat(3, 1fr);">
+      <div class="v8-stat-card" style="text-align:center;">
+        <span class="v8-stat-num" style="font-size:1.6rem;">📱</span>
+        <span class="v8-stat-label">WhatsApp / 微信<small>852-9565-1459</small></span>
+      </div>
+      <div class="v8-stat-card" style="text-align:center;">
+        <span class="v8-stat-num" style="font-size:1.6rem;">✉️</span>
+        <span class="v8-stat-label">電郵<small>hello@careerforgehk.com</small></span>
+      </div>
+      <div class="v8-stat-card" style="text-align:center;">
+        <span class="v8-stat-num" style="font-size:1.6rem;">📍</span>
+        <span class="v8-stat-label">香港辦公室<small>中環 / 尖沙咀</small></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/logo.png" alt="CareerForge 鑄途" class="footer-logo">
+        <p>香港高端個人成長顧問。身份 · 升學 · 薪酬增值 一站式陪跑。</p>
+      </div>
+      <div class="footer-col">
+        <h4>服務</h4>
+        <a href="immigration.html">身份規劃</a>
+        <a href="education.html">升學服務</a>
+        <a href="career.html">薪酬增值</a>
+      </div>
+      <div class="footer-col">
+        <h4>資源</h4>
+        <a href="cases.html">客戶案例</a>
+        <a href="quiz.html">資格測試</a>
+        <a href="#contact">聯絡我們</a>
+      </div>
+      <div class="footer-col">
+        <h4>聯絡</h4>
+        <a href="https://wa.me/85295651459">WhatsApp</a>
+        <a href="mailto:hello@careerforgehk.com">hello@careerforgehk.com</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 CareerForge 鑄途. All rights reserved.</span>
+      <span class="footer-lang">
+        <a href="index.html" class="active">繁體</a> · <a href="index-cn.html">简体</a> · <a href="index-en.html">EN</a>
+      </span>
     </div>
   </div>
 </footer>
 
-<a href="#contact" class="sticky-cta">💬 立即諮詢</a>
-
-<script>
-// Scroll reveal
-(function(){
-  if(!('IntersectionObserver' in window))return;
-  var io=new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(e.isIntersecting){
-        e.target.classList.add('visible');
-        io.unobserve(e.target);
-      }
-    });
-  },{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
-  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
-})();
-
-// Web3Forms handler
-(function(){
-  var form=document.getElementById('lead-form');
-  if(!form)return;
-  var status=document.getElementById('form-status');
-  form.addEventListener('submit',async function(e){
-    e.preventDefault();
-    var submit=form.querySelector('button[type="submit"]');
-    submit.disabled=true;submit.textContent='傳送中...';
-    try{
-      var data=new FormData(form);
-      var res=await fetch('https://api.web3forms.com/submit',{method:'POST',body:data});
-      var json=await res.json();
-      if(json.success){
-        status.style.color='#059669';
-        status.textContent='✓ 查詢已送出，24 小時內 WhatsApp 您。';
-        form.reset();
-      }else{
-        status.style.color='#DC2626';
-        status.textContent='✗ 傳送失敗，請 WhatsApp 我哋 +852 9565 1459';
-      }
-    }catch(err){
-      status.style.color='#DC2626';
-      status.textContent='✗ 網絡錯誤，請 WhatsApp 我哋 +852 9565 1459';
-    }finally{
-      submit.disabled=false;submit.textContent='送出查詢 → 24 小時內 WhatsApp 回覆';
-    }
-  });
-})();
-</script>
 </body>
 </html>

@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif">
+  <defs>
+    <linearGradient id="nodeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A4D68"/>
+      <stop offset="100%" stop-color="#073D54"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Horizontal connecting line -->
+  <line x1="150" y1="220" x2="1050" y2="220" stroke="#0A4D68" stroke-width="1.5" stroke-dasharray="0"/>
+
+  <!-- Four nodes -->
+  <g>
+    <circle cx="150" cy="220" r="7" fill="#0A4D68"/>
+    <circle cx="150" cy="220" r="14" fill="none" stroke="#0A4D68" stroke-width="1" opacity="0.25"/>
+    <text x="150" y="160" text-anchor="middle" font-size="11" font-weight="600" fill="#6E6E73" letter-spacing="3">YEAR 1–2</text>
+    <text x="150" y="280" text-anchor="middle" font-size="22" font-weight="600" fill="#1D1D1F">Associate</text>
+    <text x="150" y="306" text-anchor="middle" font-size="13" fill="#6E6E73">HK partner college</text>
+    <text x="150" y="332" text-anchor="middle" font-size="12" fill="#424245">Tuition from HK$50k/yr</text>
+  </g>
+
+  <g>
+    <circle cx="450" cy="220" r="7" fill="#0A4D68"/>
+    <circle cx="450" cy="220" r="14" fill="none" stroke="#0A4D68" stroke-width="1" opacity="0.25"/>
+    <text x="450" y="160" text-anchor="middle" font-size="11" font-weight="600" fill="#6E6E73" letter-spacing="3">YEAR 3</text>
+    <text x="450" y="280" text-anchor="middle" font-size="22" font-weight="600" fill="#1D1D1F">Year 3 entry</text>
+    <text x="450" y="306" text-anchor="middle" font-size="13" fill="#6E6E73">Top-8 university</text>
+    <text x="450" y="332" text-anchor="middle" font-size="12" fill="#424245">GPA ≥ 2.5 promotion</text>
+  </g>
+
+  <g>
+    <circle cx="750" cy="220" r="7" fill="#0A4D68"/>
+    <circle cx="750" cy="220" r="14" fill="none" stroke="#0A4D68" stroke-width="1" opacity="0.25"/>
+    <text x="750" y="160" text-anchor="middle" font-size="11" font-weight="600" fill="#6E6E73" letter-spacing="3">YEAR 4</text>
+    <text x="750" y="280" text-anchor="middle" font-size="22" font-weight="600" fill="#1D1D1F">Bachelor's</text>
+    <text x="750" y="306" text-anchor="middle" font-size="13" fill="#6E6E73">Same degree as direct entry</text>
+    <text x="750" y="332" text-anchor="middle" font-size="12" fill="#424245">IANG eligible on graduation</text>
+  </g>
+
+  <g>
+    <circle cx="1050" cy="220" r="7" fill="#0A4D68"/>
+    <circle cx="1050" cy="220" r="14" fill="none" stroke="#0A4D68" stroke-width="1" opacity="0.25"/>
+    <text x="1050" y="160" text-anchor="middle" font-size="11" font-weight="600" fill="#6E6E73" letter-spacing="3">POST-GRAD</text>
+    <text x="1050" y="280" text-anchor="middle" font-size="22" font-weight="600" fill="#1D1D1F">Stay → PR</text>
+    <text x="1050" y="306" text-anchor="middle" font-size="13" fill="#6E6E73">IANG → 7-year pathway</text>
+    <text x="1050" y="332" text-anchor="middle" font-size="12" fill="#424245">Family-inclusive</text>
+  </g>
+
+  <!-- Bottom stat strip -->
+  <line x1="150" y1="400" x2="1050" y2="400" stroke="#D2D2D7" stroke-width="1"/>
+
+  <text x="150" y="438" text-anchor="middle" font-size="28" font-weight="600" fill="#1D1D1F" letter-spacing="-0.5">95%</text>
+  <text x="150" y="460" text-anchor="middle" font-size="11" fill="#6E6E73">promotion rate</text>
+
+  <text x="450" y="438" text-anchor="middle" font-size="28" font-weight="600" fill="#1D1D1F" letter-spacing="-0.5">8</text>
+  <text x="450" y="460" text-anchor="middle" font-size="11" fill="#6E6E73">partner universities</text>
+
+  <text x="750" y="438" text-anchor="middle" font-size="28" font-weight="600" fill="#1D1D1F" letter-spacing="-0.5">4y</text>
+  <text x="750" y="460" text-anchor="middle" font-size="11" fill="#6E6E73">total duration</text>
+
+  <text x="1050" y="438" text-anchor="middle" font-size="28" font-weight="600" fill="#1D1D1F" letter-spacing="-0.5">7y</text>
+  <text x="1050" y="460" text-anchor="middle" font-size="11" fill="#6E6E73">to PR eligibility</text>
+</svg>

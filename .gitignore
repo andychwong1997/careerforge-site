@@ -1,0 +1,16 @@
+# OS junk
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Editor junk
+.vscode/
+.idea/
+
+# Local preview / build
+node_modules/
+.netlify/
+.vercel/
+*.log

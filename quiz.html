@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>牛馬測驗 · CareerForge 鑄途</title>
+<meta name="description" content="3 分鐘測出您最適合嘅升學 / 簽證 / 職涯路徑。3,000+ 人測過，87% 認同結果。">
+<link rel="icon" type="image/png" href="assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script>(function(){function setLang(l){document.cookie='cf_lang='+l+'; path=/; max-age=31536000';try{localStorage.setItem('cf_lang',l);}catch(e){}}document.addEventListener('click',function(e){var t=e.target.closest('[data-lang-target]');if(t)setLang(t.getAttribute('data-lang-target'));});})();</script>
+</head>
+<body data-theme="education">
+<script>(function(){var lang=(document.cookie.match(/(?:^|; )cf_lang=([^;]+)/)||[])[1];if(!lang){try{lang=localStorage.getItem('cf_lang');}catch(e){}}if(!lang){var n=(navigator.language||'zh-Hant').toLowerCase();lang=n.startsWith('zh-cn')||n==='zh-hans'?'zh-Hans':n.startsWith('en')?'en':'zh-Hant';}var p=location.pathname,f=p.substring(p.lastIndexOf('/')+1)||'quiz.html';var b=f.replace('-cn.html','').replace('-en.html','');if(f===b&&f!=='index.html'){if(lang==='zh-Hans')location.replace(b.replace('.html','-cn.html'));else if(lang==='en')location.replace(b.replace('.html','-en.html'));}})();</script>
+
+<header class="site-header">
+  <div class="container">
+    <nav class="nav">
+      <a href="index.html" class="nav-logo"><img src="assets/logo.png" alt="CareerForge"></a>
+      <div class="nav-menu">
+        <a href="index.html">首頁</a>
+        <a href="education.html">升學</a>
+        <a href="visa.html">簽證</a>
+        <a href="career.html">職涯</a>
+        <a href="quiz.html" class="active">牛馬測驗</a>
+        <a href="cases.html">客戶故事</a>
+      </div>
+      <div class="nav-actions">
+        <div class="lang-switcher">
+          <a href="quiz.html" class="active" data-lang-target="zh-Hant">繁體</a>
+          <a href="quiz-cn.html" data-lang-target="zh-Hans">简体</a>
+          <a href="quiz-en.html" data-lang-target="en">EN</a>
+        </div>
+        <a href="#contact" class="nav-cta">預約諮詢</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero-v4">
+  <div class="hero-v4-inner">
+    <span class="eyebrow reveal">牛馬測驗 · 3 分鐘見未來</span>
+    <h1 class="reveal" data-reveal-delay="100">您係<span class="accent-text">牛</span>，<br/>定係<span class="accent-text">馬</span>？</h1>
+    <p class="lead reveal" data-reveal-delay="200">5 條問題 · 3 分鐘時間 · 測出您最適合嘅升學 / 簽證 / 職涯路徑。3,000+ 人測過，87% 認同結果。</p>
+    <div class="hero-v4-actions reveal" data-reveal-delay="300">
+      <a href="#quiz" class="btn btn-primary btn-lg">立即開始測驗</a>
+      <a href="#method" class="btn btn-secondary btn-lg">了解測驗原理</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STATS ===== -->
+<section class="section-v4 tight">
+  <div class="container">
+    <div class="stat-row">
+      <div class="stat-item reveal"><span class="stat-num">3,000<span class="unit">+</span></span><span class="stat-label">已測人數</span></div>
+      <div class="stat-item reveal" data-reveal-delay="100"><span class="stat-num">87<span class="unit">%</span></span><span class="stat-label">認同結果</span></div>
+      <div class="stat-item reveal" data-reveal-delay="200"><span class="stat-num">3<span class="unit">分鐘</span></span><span class="stat-label">平均完成時間</span></div>
+      <div class="stat-item reveal" data-reveal-delay="300"><span class="stat-num">5</span><span class="stat-label">條核心問題</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== QUIZ ===== -->
+<section class="section-v4" id="quiz">
+  <div class="container" style="max-width:760px;">
+    <div id="quiz-container">
+      <!-- Progress -->
+      <div style="background:var(--surface-sunken);height:6px;border-radius:3px;overflow:hidden;margin-bottom:48px;">
+        <div id="quiz-progress" style="height:100%;background:linear-gradient(90deg,var(--theme-color,#1E40AF),var(--accent-hover));transition:width .4s ease;width:0%;"></div>
+      </div>
+      <div id="quiz-step" style="font-size:0.75rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--theme-color,#1E40AF);margin-bottom:16px;text-align:center;">問題 1 / 5</div>
+      <h2 id="quiz-q" style="font-size:clamp(1.875rem,3.5vw,2.5rem);font-weight:600;letter-spacing:-0.025em;line-height:1.15;text-align:center;margin-bottom:48px;">您目前嘅狀況係？</h2>
+      <div id="quiz-options" style="display:flex;flex-direction:column;gap:14px;"></div>
+    </div>
+    <!-- Result -->
+    <div id="quiz-result" style="display:none;">
+      <div style="text-align:center;margin-bottom:48px;">
+        <div id="result-badge" style="display:inline-flex;align-items:center;gap:8px;font-size:0.875rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--theme-color,#1E40AF);background:var(--theme-soft,#EFF3FB);padding:8px 18px;border-radius:var(--radius-pill);margin-bottom:24px;">您的結果</div>
+        <h2 id="result-title" style="font-size:clamp(2.25rem,4.5vw,3.5rem);font-weight:700;letter-spacing:-0.035em;line-height:1.1;margin-bottom:20px;"></h2>
+        <p id="result-desc" style="font-size:1.1875rem;line-height:1.5;color:var(--ink-700);max-width:600px;margin:0 auto 32px;"></p>
+        <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+          <a href="#contact" class="btn btn-primary btn-lg">預約深度諮詢</a>
+          <button onclick="location.reload()" class="btn btn-secondary btn-lg">重新測試</button>
+        </div>
+      </div>
+      <div style="background:var(--surface-elevated);border:1px solid var(--ink-100);border-radius:var(--radius-xl);padding:40px;">
+        <h3 style="font-size:1.5rem;font-weight:600;letter-spacing:-0.025em;margin-bottom:24px;color:var(--ink-900);">您的行動清單</h3>
+        <div id="result-actions" style="display:flex;flex-direction:column;gap:16px;"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== METHOD ===== -->
+<section class="section-v4 alt" id="method">
+  <div class="container">
+    <div class="section-v4-head reveal">
+      <span class="eyebrow">測驗原理</span>
+      <h2>點解準？</h2>
+    </div>
+    <div class="bento">
+      <div class="bento-card reveal">
+        <div class="bento-icon" style="background:var(--theme-soft,#EFF3FB);color:var(--theme-color,#1E40AF);">01</div>
+        <h3>5 個核心維度</h3>
+        <p>學歷背景、家庭目標、時間預算、風險承受、行業方向 — 每題覆蓋一個維度。</p>
+      </div>
+      <div class="bento-card reveal" data-reveal-delay="100">
+        <div class="bento-icon" style="background:var(--theme-soft,#EFF3FB);color:var(--theme-color,#1E40AF);">02</div>
+        <h3>3,000+ 家庭驗證</h3>
+        <p>測試結果會對應 CareerForge 內部嘅 8 種客戶 persona 模型。</p>
+      </div>
+      <div class="bento-card reveal" data-reveal-delay="200">
+        <div class="bento-icon" style="background:var(--theme-soft,#EFF3FB);color:var(--theme-color,#1E40AF);">03</div>
+        <h3>87% 認同率</h3>
+        <p>3,000+ 測過嘅客戶入面，87% 表示結果與現實路徑一致。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="section-v4 tight" id="contact">
+  <div class="container">
+    <div class="cta-v4 reveal">
+      <h2>知道結果之後，<br/>下一步係點？</h2>
+      <p>30 分鐘免費深度諮詢，根據測驗結果制定您嘅個人路徑。</p>
+      <div class="cta-v4-actions">
+        <a href="mailto:hello@careerforgehk.com?subject=牛馬測驗後諮詢" class="btn-v4-primary">Email 預約諮詢 →</a>
+        <a href="https://wa.me/85295651459" class="btn-v4-secondary">WhatsApp 直接聯絡</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer-v4">
+  <div class="container">
+    <div class="footer-v4-grid">
+      <div class="footer-v4-brand"><img src="assets/logo.png" alt="CareerForge" style="height:32px;filter:brightness(0) invert(1);opacity:0.92"><p>立足香港，面向大中華區。20 年來，3,000+ 家庭嘅升學、簽證、職涯選擇。</p></div>
+      <div class="footer-v4-col"><h5>服務</h5><ul><li><a href="education.html">升學規劃</a></li><li><a href="visa.html">簽證移居</a></li><li><a href="career.html">職涯規劃</a></li><li><a href="quiz.html">牛馬測驗</a></li></ul></div>
+      <div class="footer-v4-col"><h5>關於</h5><ul><li><a href="cases.html">客戶故事</a></li><li><a href="#contact">聯絡我們</a></li></ul></div>
+      <div class="footer-v4-col"><h5>聯絡</h5><ul><li><a href="https://wa.me/85295651459">WhatsApp</a></li><li><a href="mailto:hello@careerforgehk.com">Email</a></li></ul></div>
+    </div>
+    <div class="footer-v4-bottom">
+      <div>© 2026 CareerForge 鑄途 · BR 71508236</div>
+      <div class="footer-v4-lang"><a href="quiz.html" class="active">繁體</a><a href="quiz-cn.html">简体</a><a href="quiz-en.html">EN</a></div>
+    </div>
+  </div>
+</footer>
+
+<a href="#contact" class="sticky-cta">💬 立即諮詢</a>
+
+<script>
+// Quiz data
+var quiz = [
+  {
+    q: '您目前嘅狀況係？',
+    opts: [
+      { label: '中學生 / IB / DSE', value: 'student' },
+      { label: '大學生 / 副學士在讀', value: 'undergrad' },
+      { label: '在職專業人士', value: 'professional' },
+      { label: '準備移居香港', value: 'migrant' },
+      { label: '其他', value: 'other' }
+    ]
+  },
+  {
+    q: '您嘅主要目標係？',
+    opts: [
+      { label: '升學 — 攞更好學歷', value: 'education' },
+      { label: '移居 — 拎香港身份', value: 'visa' },
+      { label: '職涯 — 升職 / 轉行 / 加薪', value: 'career' },
+      { label: '全套 — 升學 + 移居 + 職涯', value: 'all' },
+      { label: '未確定，想搵人傾下', value: 'unsure' }
+    ]
+  },
+  {
+    q: '您嘅時間預算？',
+    opts: [
+      { label: '急 — 3 個月內', value: 'urgent' },
+      { label: '半年 — 6-12 個月', value: 'half' },
+      { label: '一年以上 — 1-3 年', value: 'year' },
+      { label: '長線 — 3 年以上', value: 'long' },
+      { label: '未諗', value: 'na' }
+    ]
+  },
+  {
+    q: '您嘅預算區間（月費 HKD）？',
+    opts: [
+      { label: '$5,000 - $10,000', value: 'low' },
+      { label: '$10,000 - $20,000', value: 'mid' },
+      { label: '$20,000+', value: 'high' },
+      { label: '視乎情況', value: 'flex' }
+    ]
+  },
+  {
+    q: '您最想了解嘅服務？',
+    opts: [
+      { label: '升學規劃', value: 'edu_focus' },
+      { label: '簽證移居', value: 'visa_focus' },
+      { label: '職涯規劃', value: 'career_focus' },
+      { label: '套餐組合', value: 'combo' }
+    ]
+  }
+];
+
+var answers = [];
+var currentStep = 0;
+
+function renderStep() {
+  if (currentStep >= quiz.length) {
+    showResult();
+    return;
+  }
+  var step = quiz[currentStep];
+  document.getElementById('quiz-step').textContent = '問題 ' + (currentStep + 1) + ' / ' + quiz.length;
+  document.getElementById('quiz-q').textContent = step.q;
+  document.getElementById('quiz-progress').style.width = ((currentStep) / quiz.length * 100) + '%';
+  var opts = document.getElementById('quiz-options');
+  opts.innerHTML = '';
+  step.opts.forEach(function(o) {
+    var btn = document.createElement('button');
+    btn.textContent = o.label;
+    btn.style.cssText = 'background:var(--surface-elevated);border:1px solid var(--ink-100);border-radius:var(--radius-lg);padding:20px 28px;font-size:1rem;font-weight:500;color:var(--ink-900);text-align:left;cursor:pointer;transition:all .2s ease;display:flex;align-items:center;justify-content:space-between;font-family:inherit;';
+    var arrow = document.createElement('span');
+    arrow.textContent = '→';
+    arrow.style.cssText = 'color:var(--theme-color,#1E40AF);font-size:1.25rem;opacity:0.5;transition:opacity .2s;';
+    btn.appendChild(arrow);
+    btn.onmouseover = function() {
+      btn.style.borderColor = 'var(--theme-color,#1E40AF)';
+      btn.style.background = 'var(--theme-soft,#EFF3FB)';
+      arrow.style.opacity = '1';
+    };
+    btn.onmouseout = function() {
+      btn.style.borderColor = 'var(--ink-100)';
+      btn.style.background = 'var(--surface-elevated)';
+      arrow.style.opacity = '0.5';
+    };
+    btn.onclick = function() {
+      answers.push(o.value);
+      currentStep++;
+      renderStep();
+    };
+    opts.appendChild(btn);
+  });
+}
+
+function showResult() {
+  document.getElementById('quiz-container').style.display = 'none';
+  document.getElementById('quiz-result').style.display = 'block';
+  document.getElementById('quiz-progress').style.width = '100%';
+
+  // Simple scoring
+  var counts = { education: 0, visa: 0, career: 0, combo: 0 };
+  answers.forEach(function(a) {
+    if (['student','undergrad','edu_focus'].includes(a)) counts.education++;
+    else if (['professional','migrant','visa_focus'].includes(a)) counts.visa++;
+    else if (['career_focus'].includes(a)) counts.career++;
+    else if (['combo','all'].includes(a)) counts.combo++;
+  });
+  var winner = Object.keys(counts).reduce(function(a,b){return counts[a]>=counts[b]?a:b;});
+
+  var titleMap = {
+    education: { title: '升學派 · 您適合升學規劃', desc: '根據您嘅答案，您嘅首選路徑係升學 — 攞更好學歷、開拓視野。CareerForge 嘅升學顧問會由選校、面試、簽證一條龍幫您。', actions: ['預約升學諮詢 →', '了解副學士 2+2 直通', '睇升學案例', '了解服務範圍'] },
+    visa: { title: '移居派 · 您適合簽證移居', desc: '根據您嘅答案，您嘅首選路徑係移居 — 拎香港身份。CareerForge 嘅簽證顧問會評估邊條路徑最快、最穩。', actions: ['預約簽證諮詢 →', '了解高才通 / 優才', '睇簽證案例', '7 年永居路徑'] },
+    career: { title: '職涯派 · 您適合職涯規劃', desc: '根據您嘅答案，您嘅首選路徑係職涯 — 升職、轉行、加薪。CareerForge 嘅獵頭 network + mock interview 幫您搵到對嘅機會。', actions: ['預約職涯諮詢 →', '了解履歷優化', '睇職涯案例', '8 大行業覆蓋'] },
+    combo: { title: '全套派 · 您適合組合套餐', desc: '根據您嘅答案，您需要升學 + 移居 + 職涯嘅全套支援。CareerForge 嘅組合套餐可以慳 8-20%，仲有跨業務協調。', actions: ['預約深度諮詢 →', '了解套餐 8 折優惠', '了解跨業務協調', '預約試堂'] }
+  };
+
+  var r = titleMap[winner];
+  document.getElementById('result-title').textContent = r.title;
+  document.getElementById('result-desc').textContent = r.desc;
+
+  var actBox = document.getElementById('result-actions');
+  actBox.innerHTML = '';
+  r.actions.forEach(function(a, i) {
+    var div = document.createElement('div');
+    div.style.cssText = 'display:flex;align-items:center;gap:14px;padding:16px 20px;border-radius:var(--radius);background:var(--surface-canvas);border:1px solid var(--ink-100);';
+    div.innerHTML = '<div style="width:32px;height:32px;border-radius:50%;background:var(--theme-soft,#EFF3FB);color:var(--theme-color,#1E40AF);display:flex;align-items:center;justify-content:center;font-size:0.875rem;font-weight:600;flex-shrink:0;">' + (i+1) + '</div><div style="font-size:1rem;font-weight:500;color:var(--ink-900);">' + a + '</div>';
+    actBox.appendChild(div);
+  });
+}
+
+// Scroll reveal + init quiz
+(function(){
+  if(!('IntersectionObserver' in window))return;
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+})();
+renderStep();
+</script>
+</body>
+</html>

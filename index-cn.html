@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CareerForge 铸途 · 香港高端个人成长顾问</title>
+<meta name="description" content="立足香港，面向大中华区。提供升学、签证、职涯一站式规划，20 年经验，500+ 成功个案。">
+<link rel="icon" type="image/png" href="assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script>
+(function(){
+  function setLang(lang){
+    document.cookie='cf_lang='+lang+'; path=/; max-age=31536000';
+    try{localStorage.setItem('cf_lang',lang);}catch(e){}
+  }
+  document.addEventListener('click',function(e){
+    var t=e.target.closest('[data-lang-target]');
+    if(!t)return;
+    setLang(t.getAttribute('data-lang-target'));
+  });
+})();
+</script>
+</head>
+<body>
+<script>
+(function(){
+  var lang=(document.cookie.match(/(?:^|; )cf_lang=([^;]+)/)||[])[1];
+  if(!lang){try{lang=localStorage.getItem('cf_lang');}catch(e){}}
+  if(!lang){var nav=(navigator.language||'zh-Hant').toLowerCase();if(nav.startsWith('zh-cn')||nav==='zh-hans')lang='zh-Hans';else if(nav.startsWith('en'))lang='en';else lang='zh-Hant';}
+  var path=location.pathname;
+  var filename=path.substring(path.lastIndexOf('/')+1)||'index.html';
+  if(filename==='index.html'&&lang==='zh-Hans'){location.replace('index-cn.html');return;}
+  if(filename==='index.html'&&lang==='en'){location.replace('index-en.html');return;}
+  if(filename==='index-cn.html'&&lang==='en'){location.replace('index-en.html');return;}
+  if(filename==='index-en.html'&&lang==='zh-Hans'){location.replace('index-cn.html');return;}
+})();
+</script>
+
+<header class="site-header">
+  <div class="container">
+    <nav class="nav">
+      <a href="index-cn.html" class="nav-logo"><img src="assets/logo.png" alt="CareerForge 铸途"></a>
+      <div class="nav-menu">
+        <a href="index-cn.html" class="active">首页</a>
+        <a href="education-cn.html">升学</a>
+        <a href="visa-cn.html">签证</a>
+        <a href="career-cn.html">职涯</a>
+        <a href="quiz-cn.html">牛马测验</a>
+        <a href="cases-cn.html">客户故事</a>
+      </div>
+      <div class="nav-actions">
+        <div class="lang-switcher">
+          <a href="index-cn.html" class="active" data-lang-target="zh-Hant">繁体</a>
+          <a href="index-cn.html" data-lang-target="zh-Hans">简体</a>
+          <a href="index-en.html" data-lang-target="en">EN</a>
+        </div>
+        <a href="#contact" class="nav-cta">预约咨询</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== HERO v4.0 ===== -->
+<section class="hero-v4">
+  <div class="hero-v4-inner">
+    <span class="eyebrow reveal">CareerForge · 铸途</span>
+    <h1 class="reveal" data-reveal-delay="100">由升学到永居。<br/><span class="accent-text">一个旅程，全程同行。</span></h1>
+    <p class="lead reveal" data-reveal-delay="200">立足香港 20 年。3,000+ 家庭嘅选择。<br/>从升学、签证到职涯，一站式陪您走完每一步。</p>
+    <div class="hero-v4-actions reveal" data-reveal-delay="300">
+      <a href="#contact" class="btn btn-primary btn-lg">预约 30 分钟咨询</a>
+      <a href="#lineup" class="btn btn-secondary btn-lg">睇下三大业务</a>
+    </div>
+    <div class="hero-v4-stats">
+      <div class="hero-v4-stat reveal"><span class="num">20<span class="unit">+</span></span><span class="label">年专业经验</span></div>
+      <div class="hero-v4-stat reveal" data-reveal-delay="100"><span class="num">500<span class="unit">+</span></span><span class="label">成功申请个案</span></div>
+      <div class="hero-v4-stat reveal" data-reveal-delay="200"><span class="num">95<span class="unit">%</span></span><span class="label">首选录取率</span></div>
+      <div class="hero-v4-stat reveal" data-reveal-delay="300"><span class="num">98<span class="unit">%</span></span><span class="label">客户满意度</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRODUCT LINEUP (三条路径) ===== -->
+<section class="section-v4" id="lineup">
+  <div class="container">
+    <div class="section-v4-head reveal">
+      <span class="eyebrow">三条路径 · 一个旅程</span>
+      <h2>选一个起点，<br/>走完整段路。</h2>
+      <p>无论您系边个起点 — 升学、移居、定系已经工作 — 我们都有一条为您度身订造嘅路径。</p>
+    </div>
+    <div class="lineup">
+      <a href="education-cn.html" class="lineup-card reveal" data-cat="education">
+        <span class="lineup-card-tag">升学部 · Education</span>
+        <div class="lineup-card-visual"><span class="big-char">升</span></div>
+        <h3>升学规划</h3>
+        <p class="tagline">由 DSE 到博士，全程陪跑。</p>
+        <div class="price">
+          <strong>适合</strong>
+          中学生 · IB/A-Level · 副学士 · 大学生
+        </div>
+        <span class="cta-row">了解升学服务 →</span>
+      </a>
+      <a href="visa-cn.html" class="lineup-card reveal" data-cat="visa" data-reveal-delay="100">
+        <span class="lineup-card-tag">签证部 · Visa</span>
+        <div class="lineup-card-visual"><span class="big-char">签</span></div>
+        <h3>签证移居</h3>
+        <p class="tagline">高才通、优才、IANG，3 个月获批。</p>
+        <div class="price">
+          <strong>适合</strong>
+          内地专业人士 · 高才家庭 · 投资者
+        </div>
+        <span class="cta-row">了解签证服务 →</span>
+      </a>
+      <a href="career-cn.html" class="lineup-card reveal" data-cat="career" data-reveal-delay="200">
+        <span class="lineup-card-tag">生涯部 · Career</span>
+        <div class="lineup-card-visual"><span class="big-char">涯</span></div>
+        <h3>职涯规划</h3>
+        <p class="tagline">履历、面试、猎头一条龙。</p>
+        <div class="price">
+          <strong>适合</strong>
+          大学生 · 在职人士 · 转职者
+        </div>
+        <span class="cta-row">了解职涯服务 →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BENTO FEATURES ===== -->
+<section class="section-v4 alt">
+  <div class="container">
+    <div class="section-v4-head reveal">
+      <span class="eyebrow">为何选 CareerForge</span>
+      <h2>20 年经验累积，<br/>6 个关键差异化。</h2>
+    </div>
+    <div class="bento">
+      <div class="bento-card bento-large reveal" data-cat="education">
+        <div class="bento-icon">2+2</div>
+        <h3>副学士直通香港八大</h3>
+        <p>前 2 年副学士，后 2 年直升香港八大。GPA ≥ 2.5 自动升读大三。95% 成功率，500+ 家庭验证。</p>
+        <div class="bento-stat">
+          <span class="num">95%</span>
+          <span class="label">副学士升学成功率</span>
+        </div>
+      </div>
+      <div class="bento-card reveal" data-cat="visa">
+        <div class="bento-icon">3<span style="font-size:1rem;margin-left:2px">月</span></div>
+        <h3>高才通 3 个月获批</h3>
+        <p>完整文件预备 + 加急审批跟进。</p>
+        <div class="bento-stat">
+          <span class="num">92%</span>
+          <span class="label">高才通 A 类成功率</span>
+        </div>
+      </div>
+      <div class="bento-card reveal" data-cat="career" data-reveal-delay="100">
+        <div class="bento-icon">24h</div>
+        <h3>WhatsApp 24 小时回复</h3>
+        <p>所有客户均加入 VIP 群组，紧急情况即时支援。</p>
+        <div class="bento-stat">
+          <span class="num">4.9/5</span>
+          <span class="label">客户服务评分</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COMPARISON TABLE (三业务对比) ===== -->
+<section class="section-v4">
+  <div class="container">
+    <div class="section-v4-head reveal">
+      <span class="eyebrow">三业务对比</span>
+      <h2>一张表，拣到您嘅路径。</h2>
+      <p>三个业务可以独立购买，亦可以组合套餐享有折扣。</p>
+    </div>
+    <div class="spec-table reveal">
+      <div class="spec-table-head">
+        <div>服务</div>
+        <div>升学规划</div>
+        <div>签证移居</div>
+        <div>职涯规划</div>
+      </div>
+      <div class="spec-row">
+        <div>适用对象</div>
+        <div data-cat="升学">中学生 / IB / DSE / 副学士</div>
+        <div data-cat="签证">内地专业人士 / 高才家庭</div>
+        <div data-cat="职涯">大学生 / 在职 / 转职者</div>
+      </div>
+      <div class="spec-row">
+        <div>服务期</div>
+        <div data-cat="升学">1 - 4 年</div>
+        <div data-cat="签证">3 - 7 年</div>
+        <div data-cat="职涯">1 - 3 年</div>
+      </div>
+      <div class="spec-row">
+        <div>成功率</div>
+        <div data-cat="升学"><span class="highlight">95% 首选录取</span></div>
+        <div data-cat="签证"><span class="highlight">92% 获批率</span></div>
+        <div data-cat="职涯"><span class="highlight">88% 加薪转职</span></div>
+      </div>
+      <div class="spec-row">
+        <div>月费 (HKD)</div>
+        <div data-cat="升学">$8,000 起</div>
+        <div data-cat="签证">$15,000 起</div>
+        <div data-cat="职涯">$5,000 起</div>
+      </div>
+      <div class="spec-row">
+        <div>组合优惠</div>
+        <div data-cat="升学">升学 + 签证：9 折</div>
+        <div data-cat="签证">全套三项：8 折</div>
+        <div data-cat="职涯">升学 + 职涯：9 折</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STATS SHOWCASE ===== -->
+<section class="section-v4 dark">
+  <div class="container">
+    <div class="section-v4-head reveal">
+      <span class="eyebrow" style="color:rgba(255,255,255,0.6)">20 年数字</span>
+      <h2>唔系 marketing。<br/>系真实个案。</h2>
+    </div>
+    <div class="stat-row">
+      <div class="stat-item reveal">
+        <span class="stat-num">3,000<span class="unit">+</span></span>
+        <span class="stat-label">服务家庭总数</span>
+      </div>
+      <div class="stat-item reveal" data-reveal-delay="100">
+        <span class="stat-num">4.9<span class="unit">/5</span></span>
+        <span class="stat-label">Google 客户评分</span>
+      </div>
+      <div class="stat-item reveal" data-reveal-delay="200">
+        <span class="stat-num">98<span class="unit">%</span></span>
+        <span class="stat-label">客户续约率</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="section-v4">
+  <div class="container">
+    <div class="section-v4-head reveal">
+      <span class="eyebrow">客户故事</span>
+      <h2>每一个成功个案，<br/>都系一个家庭嘅未来。</h2>
+    </div>
+    <div class="bento">
+      <div class="bento-card bento-large reveal">
+        <div class="quote-v4">「高才通 vs 优才 vs 专才全部 plan 过，最终批高才通 A 类。丈夫 + 仔女 + 我自己全部受养人签证过嚟，两个几月搞掂。」</div>
+        <div class="case-meta">
+          <div class="case-meta-avatar">L</div>
+          <div class="case-meta-text">
+            <span class="name">L 女士 · 上海</span>
+            <span class="from">高才通 A 类 2024 · 全家 4 人受养人签证</span>
+          </div>
+        </div>
+      </div>
+      <div class="bento-card reveal">
+        <div class="quote-v4" style="font-size:1.25rem">「Howard 由副学士开始 plan，到港大 BBA 毕业、IANG 留港、入贝恩公司 — 4 年全程有人跟。」</div>
+        <div class="case-meta">
+          <div class="case-meta-avatar">C</div>
+          <div class="case-meta-text">
+            <span class="name">C 同学 · 北京</span>
+            <span class="from">副学士 2+2 · 港大 BBA</span>
+          </div>
+        </div>
+      </div>
+      <div class="bento-card reveal" data-reveal-delay="100">
+        <div class="quote-v4" style="font-size:1.25rem">「3 个月时间，由互联网公司 PM 转去投行 Analyst，加薪 40%。Howard 嘅猎头 network 真系 work。」</div>
+        <div class="case-meta">
+          <div class="case-meta-avatar">M</div>
+          <div class="case-meta-text">
+            <span class="name">M 先生 · 香港</span>
+            <span class="from">3 个月转职 · 加薪 40%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:48px">
+      <a href="cases-cn.html" class="btn btn-secondary btn-lg">睇更多客户故事 →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROCESS STEPS ===== -->
+<section class="section-v4 alt">
+  <div class="container">
+    <div class="section-v4-head reveal">
+      <span class="eyebrow">服务流程</span>
+      <h2>由查询到入学，<br/>四步全程有人跟。</h2>
+    </div>
+    <div class="process reveal">
+      <div class="process-step">
+        <span class="step-num">Step 01</span>
+        <h4>初步咨询</h4>
+        <p>免费 30 分钟，了解背景、家庭目标、预算区间。</p>
+      </div>
+      <div class="process-step">
+        <span class="step-num">Step 02</span>
+        <h4>深度评估</h4>
+        <p>学术、心理、家庭三方评估，制定 3 条可行路径。</p>
+      </div>
+      <div class="process-step">
+        <span class="step-num">Step 03</span>
+        <h4>执行落地</h4>
+        <p>申请文件、模拟面试、住宿安顿、签证办理全程跟进。</p>
+      </div>
+      <div class="process-step">
+        <span class="step-num">Step 04</span>
+        <h4>持续陪跑</h4>
+        <p>入学后每月家长报告、GPA 监控、应急支援一应俱全。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="section-v4">
+  <div class="container">
+    <div class="section-v4-head reveal">
+      <span class="eyebrow">常见问题</span>
+      <h2>您可能会问嘅事。</h2>
+    </div>
+    <div class="faq reveal">
+      <details class="faq-item">
+        <summary class="faq-q">几时开始准备最好？</summary>
+        <div class="faq-a">升学建议提前 12-18 个月；签证建议提前 6-9 个月。但即使您得 3 个月时间，我哋都有 plan 加快版。关键系：唔好等到最后一刻先行动。</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">签证被拒过仲有救吗？</summary>
+        <div class="faq-a">有。我哋做过 30+ 个「二次申请」case，全部成功。重点系分析被拒原因、补强文件、换 track。我哋会先做 30 分钟免费评估，再决定点做。</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">点解拣 CareerForge 而唔系自己 apply？</summary>
+        <div class="faq-a">DIY 嘅失败率我哋见过太多。家长时间成本、文件细节、突发状况 — 全部系隐性成本。我哋嘅顾问全部系「过来人」，亲身经历您要行嘅路。</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">服务包唔包文件翻译？</summary>
+        <div class="faq-a">包。所有中英文翻译、公证、认证，全部包括在月费入面。额外文件如成绩单推荐信，无限次修改直到您满意。</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">收费几多？</summary>
+        <div class="faq-a">升学由 HKD $8,000/月起，签证 $15,000/月起，职涯 $5,000/月起。组合套餐有 9 折优惠，全套三项 8 折。首次咨询完全免费，唔会 push 您 sign。</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">如果你哋 fail 点算？</summary>
+        <div class="faq-a">我们嘅收费分阶段：35% 起步、35% 中期、30% 结果。如果最终申请失败，第三期费用全免（特定条款除外）。</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA BANNER ===== -->
+<section class="section-v4 tight">
+  <div class="container">
+    <div class="cta-v4 reveal">
+      <h2>想知边条路径<br/>最适合您？</h2>
+      <p>30 分钟免费咨询，顾问 24 小时内 WhatsApp 您。一个 call，换成 4 年清晰方向。</p>
+      <div class="cta-v4-actions">
+        <a href="#contact" class="btn-v4-primary">预约 30 分钟咨询 →</a>
+        <a href="quiz-cn.html" class="btn-v4-secondary">先做牛马测验</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT FORM ===== -->
+<section class="section-v4" id="contact">
+  <div class="container">
+    <div class="section-v4-head reveal">
+      <span class="eyebrow">立即联络</span>
+      <h2>送出查询，<br/>24 小时内 WhatsApp 您。</h2>
+    </div>
+    <form class="reveal" id="lead-form" action="https://api.web3forms.com/submit" method="POST" style="max-width:760px;margin:0 auto;background:var(--surface-elevated);border:1px solid var(--ink-100);border-radius:var(--radius-xl);padding:48px 40px;">
+      <input type="hidden" name="access_key" value="a4d3eb59-2bf6-4a4a-91de-3c9b5f3e6d8c">
+      <input type="hidden" name="subject" value="CareerForge 新客户查询">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+        <div><label style="display:block;font-size:0.875rem;font-weight:500;margin-bottom:8px;color:var(--ink-700)">称谓 *</label><input type="text" name="name" required style="width:100%;padding:12px 16px;border:1px solid var(--ink-100);border-radius:var(--radius);background:var(--surface-canvas);"></div>
+        <div><label style="display:block;font-size:0.875rem;font-weight:500;margin-bottom:8px;color:var(--ink-700)">联络电话 *</label><input type="tel" name="phone" required style="width:100%;padding:12px 16px;border:1px solid var(--ink-100);border-radius:var(--radius);background:var(--surface-canvas);"></div>
+        <div style="grid-column:span 2"><label style="display:block;font-size:0.875rem;font-weight:500;margin-bottom:8px;color:var(--ink-700)">电邮</label><input type="email" name="email" style="width:100%;padding:12px 16px;border:1px solid var(--ink-100);border-radius:var(--radius);background:var(--surface-canvas);"></div>
+        <div><label style="display:block;font-size:0.875rem;font-weight:500;margin-bottom:8px;color:var(--ink-700)">想了解嘅服务</label><select name="service" style="width:100%;padding:12px 16px;border:1px solid var(--ink-100);border-radius:var(--radius);background:var(--surface-canvas);"><option>升学规划</option><option>签证移居</option><option>职涯规划</option><option>牛马测验</option><option>套餐查询</option></select></div>
+        <div><label style="display:block;font-size:0.875rem;font-weight:500;margin-bottom:8px;color:var(--ink-700)">所在城市</label><select name="city" style="width:100%;padding:12px 16px;border:1px solid var(--ink-100);border-radius:var(--radius);background:var(--surface-canvas);"><option>北京</option><option>上海</option><option>广州</option><option>深圳</option><option>香港</option><option>其他</option></select></div>
+        <div style="grid-column:span 2"><label style="display:block;font-size:0.875rem;font-weight:500;margin-bottom:8px;color:var(--ink-700)">背景简述</label><textarea name="message" rows="3" style="width:100%;padding:12px 16px;border:1px solid var(--ink-100);border-radius:var(--radius);background:var(--surface-canvas);resize:vertical;"></textarea></div>
+        <div style="grid-column:span 2"><button type="submit" class="btn btn-primary btn-lg" style="width:100%">送出查询 → 24 小时内 WhatsApp 回复</button><div class="form-status" id="form-status" style="margin-top:12px;font-size:0.875rem;text-align:center;"></div></div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ===== FOOTER v4.0 ===== -->
+<footer class="footer-v4">
+  <div class="container">
+    <div class="footer-v4-grid">
+      <div class="footer-v4-brand">
+        <img src="assets/logo.png" alt="CareerForge" style="height:32px;filter:brightness(0) invert(1);opacity:0.92">
+        <p>立足香港，面向大中华区。20 年来，3,000+ 家庭嘅升学、签证、职涯选择。</p>
+      </div>
+      <div class="footer-v4-col">
+        <h5>服务</h5>
+        <ul>
+          <li><a href="education-cn.html">升学规划</a></li>
+          <li><a href="visa-cn.html">签证移居</a></li>
+          <li><a href="career-cn.html">职涯规划</a></li>
+          <li><a href="quiz-cn.html">牛马测验</a></li>
+        </ul>
+      </div>
+      <div class="footer-v4-col">
+        <h5>关于</h5>
+        <ul>
+          <li><a href="cases-cn.html">客户故事</a></li>
+          <li><a href="#contact">联络我们</a></li>
+          <li><a href="#">价目表</a></li>
+          <li><a href="#">私隐政策</a></li>
+        </ul>
+      </div>
+      <div class="footer-v4-col">
+        <h5>联络</h5>
+        <ul>
+          <li><a href="https://wa.me/85295651459">WhatsApp</a></li>
+          <li><a href="mailto:hello@careerforgehk.com">hello@careerforgehk.com</a></li>
+          <li>微信: careerforgehk</li>
+          <li>中环皇后大道中 81 号</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-v4-bottom">
+      <div>© 2026 CareerForge 铸途 · 香港商业登记 BR 71508236</div>
+      <div class="footer-v4-lang">
+        <a href="index-cn.html" class="active">繁体</a>
+        <a href="index-cn.html">简体</a>
+        <a href="index-en.html">EN</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a href="#contact" class="sticky-cta">💬 立即咨询</a>
+
+<script>
+// Scroll reveal
+(function(){
+  if(!('IntersectionObserver' in window))return;
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+})();
+
+// Web3Forms handler
+(function(){
+  var form=document.getElementById('lead-form');
+  if(!form)return;
+  var status=document.getElementById('form-status');
+  form.addEventListener('submit',async function(e){
+    e.preventDefault();
+    var submit=form.querySelector('button[type="submit"]');
+    submit.disabled=true;submit.textContent='传送中...';
+    try{
+      var data=new FormData(form);
+      var res=await fetch('https://api.web3forms.com/submit',{method:'POST',body:data});
+      var json=await res.json();
+      if(json.success){
+        status.style.color='#059669';
+        status.textContent='✓ 查询已送出，24 小时内 WhatsApp 您。';
+        form.reset();
+      }else{
+        status.style.color='#DC2626';
+        status.textContent='✗ 传送失败，请 WhatsApp 我哋 +852 9565 1459';
+      }
+    }catch(err){
+      status.style.color='#DC2626';
+      status.textContent='✗ 网络错误，请 WhatsApp 我哋 +852 9565 1459';
+    }finally{
+      submit.disabled=false;submit.textContent='送出查询 → 24 小时内 WhatsApp 回复';
+    }
+  });
+})();
+</script>
+</body>
+</html>

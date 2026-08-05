@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CareerForge · Hong Kong Premium Personal Growth Advisory · Visa · Education · Career</title>
-<meta name="description" content="CareerForge — Hong Kong's premium personal growth advisory. Top Talent Pass, Quality Migrant, Professional Visa, Study Pathways — full-cycle compliance support from first visa to 7-year PR.">
+<title>CareerForge 鑄途 · Hong Kong Premium Personal Growth Consultancy · Identity · Education · Career Value</title>
+<meta name="description" content="CareerForge 鑄途 — Hong Kong premium personal growth consultancy. Three core pillars: Identity & Renewal Benchmarking, Hong Kong Job Search & Career Value Leap, Overseas & Hong Kong Education Benchmarking.">
 <link rel="icon" type="image/png" href="assets/icon.png">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700;800&family=Noto+Serif+SC:wght@400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
@@ -12,121 +12,123 @@
 <body>
 
 <style>
-/* ============ V8 SHARED DESIGN TOKENS (homepage EN) ============ */
+/* ============ V9 HOMEPAGE — 3 business pillars, no pricing, single CTA ============ */
 :root {
   --scheme-color: #C8A04A;
   --scheme-color-dark: #8E6F2D;
   --scheme-color-light: #E5C97A;
   --scheme-bg-soft: #FAF6EC;
+  --section-red: #B23A48;
+  --section-red-dark: #8C2A36;
+  --section-red-soft: #F9EAEC;
+  --section-blue: #1E40AF;
+  --section-blue-dark: #1E3A8A;
+  --section-blue-soft: #EEF2FF;
+  --section-green: #047857;
+  --section-green-dark: #065F46;
+  --section-green-soft: #ECFDF5;
 }
-.v8-bilingual-head { text-align: center; max-width: 760px; margin: 0 auto 56px; }
-.v8-bilingual-head .eyebrow-cn { display: block; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--scheme-color-dark); margin-bottom: 14px; }
-.v8-bilingual-head .eyebrow-en { display: block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.32em; color: var(--ink-500); margin-bottom: 18px; }
-.v8-bilingual-head h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; letter-spacing: 0.5px; line-height: 1.15; color: var(--ink-900); margin: 0 0 18px; font-family: 'Playfair Display', 'Noto Serif SC', serif; }
-.v8-bilingual-head .lede { font-size: 1.0625rem; line-height: 1.7; color: var(--ink-600); margin: 0; }
-.v8-divider-line { width: 36px; height: 2px; background: linear-gradient(90deg, var(--scheme-color-dark), transparent); margin: 0 auto 28px; border-radius: 2px; }
+.v9-head { text-align: center; max-width: 760px; margin: 0 auto 56px; }
+.v9-head .eyebrow-cn { display: block; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--scheme-color-dark); margin-bottom: 14px; }
+.v9-head .eyebrow-en { display: block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.32em; color: var(--ink-500); margin-bottom: 18px; }
+.v9-head h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; letter-spacing: 0.5px; line-height: 1.15; color: var(--ink-900); margin: 0 0 18px; font-family: 'Playfair Display', 'Noto Serif SC', serif; }
+.v9-head .lede { font-size: 1.0625rem; line-height: 1.7; color: var(--ink-600); margin: 0; }
+.v9-divider { width: 36px; height: 2px; background: linear-gradient(90deg, var(--scheme-color-dark), transparent); margin: 0 auto 28px; border-radius: 2px; }
 
-/* ============ HOMEPAGE HERO ============ */
-.home-hero { padding: 96px 0 80px; position: relative; overflow: hidden; }
-.home-hero::before { content: ""; position: absolute; top: -120px; right: -120px; width: 480px; height: 480px; background: radial-gradient(circle, var(--scheme-bg-soft) 0%, transparent 70%); border-radius: 50%; z-index: 0; }
-.home-hero .container { position: relative; z-index: 1; }
-.home-hero-eyebrow { display: inline-flex; align-items: center; gap: 10px; padding: 8px 16px; background: var(--scheme-bg-soft); border: 1px solid var(--scheme-color); border-radius: 999px; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em; color: var(--scheme-color-dark); margin-bottom: 28px; }
-.home-hero-eyebrow-dot { width: 8px; height: 8px; background: var(--scheme-color-dark); border-radius: 50%; display: inline-block; }
-.home-hero-title { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: clamp(2.8rem, 7vw, 5.2rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1.05; color: var(--ink-900); margin: 0 0 28px; max-width: 900px; }
-.home-hero-title .accent { color: var(--scheme-color-dark); font-style: italic; }
-.home-hero-subtitle { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: clamp(1.1rem, 1.7vw, 1.4rem); line-height: 1.65; color: var(--ink-600); margin: 0 0 40px; max-width: 720px; }
-.home-hero-actions { display: inline-flex; gap: 14px; flex-wrap: wrap; }
-.home-hero-trust { margin-top: 56px; display: flex; gap: 36px; flex-wrap: wrap; padding-top: 36px; border-top: 1px solid var(--ink-100); }
-.home-hero-trust-item { font-size: 0.85rem; color: var(--ink-500); letter-spacing: 0.04em; }
-.home-hero-trust-item strong { display: block; font-size: 1.6rem; font-weight: 800; color: var(--scheme-color-dark); font-family: 'Playfair Display', 'Noto Serif SC', serif; margin-bottom: 4px; }
+/* ============ HERO ============ */
+.v9-hero { padding: 96px 0 80px; position: relative; overflow: hidden; }
+.v9-hero::before { content: ""; position: absolute; top: -120px; right: -120px; width: 480px; height: 480px; background: radial-gradient(circle, var(--scheme-bg-soft) 0%, transparent 70%); border-radius: 50%; z-index: 0; }
+.v9-hero .container { position: relative; z-index: 1; }
+.v9-hero-eyebrow { display: inline-flex; align-items: center; gap: 10px; padding: 8px 16px; background: var(--scheme-bg-soft); border: 1px solid var(--scheme-color); border-radius: 999px; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em; color: var(--scheme-color-dark); margin-bottom: 28px; }
+.v9-hero-eyebrow-dot { width: 8px; height: 8px; background: var(--scheme-color-dark); border-radius: 50%; display: inline-block; }
+.v9-hero-title { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: clamp(2.8rem, 7vw, 5.2rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1.05; color: var(--ink-900); margin: 0 0 28px; max-width: 900px; }
+.v9-hero-title .accent { color: var(--scheme-color-dark); font-style: italic; }
+.v9-hero-sub { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: clamp(1.1rem, 1.7vw, 1.4rem); line-height: 1.65; color: var(--ink-600); margin: 0 0 40px; max-width: 720px; }
+.v9-hero-trust { margin-top: 56px; display: flex; gap: 36px; flex-wrap: wrap; padding-top: 36px; border-top: 1px solid var(--ink-100); }
+.v9-hero-trust-item { font-size: 0.85rem; color: var(--ink-500); letter-spacing: 0.04em; }
+.v9-hero-trust-item strong { display: block; font-size: 1.6rem; font-weight: 800; color: var(--scheme-color-dark); font-family: 'Playfair Display', 'Noto Serif SC', serif; margin-bottom: 4px; }
 
-/* ============ STAT GRID ============ */
-.v8-stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
-.v8-stat-card { padding: 28px 22px; background: var(--surface-elevated); border: 1px solid var(--ink-100); border-radius: var(--radius-lg, 14px); transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
-.v8-stat-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px -12px rgba(29,29,31,0.16); border-color: var(--scheme-color-light); }
-.v8-stat-num { display: block; font-size: 2.4rem; font-weight: 800; letter-spacing: -0.02em; color: var(--scheme-color-dark); line-height: 1; margin-bottom: 8px; font-family: 'Playfair Display', 'Noto Serif SC', serif; }
-.v8-stat-num .unit { font-size: 1.1rem; font-weight: 600; margin-left: 2px; color: var(--scheme-color-dark); }
-.v8-stat-label { display: block; font-size: 0.85rem; color: var(--ink-700); line-height: 1.4; }
-.v8-stat-label small { display: block; font-size: 0.72rem; color: var(--ink-500); margin-top: 2px; letter-spacing: 0.05em; }
+/* ============ 3 SECTIONS — BIG TILES ============ */
+.v9-section-grid { display: grid; grid-template-columns: 1fr; gap: 28px; }
+.v9-section { position: relative; padding: 56px 52px; border-radius: var(--radius-xl, 24px); background: var(--surface-elevated); border: 1px solid var(--ink-100); overflow: hidden; transition: all .3s ease; display: grid; grid-template-columns: 1fr auto; gap: 36px; align-items: center; }
+.v9-section::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 6px; background: var(--section-accent, var(--scheme-color-dark)); }
+.v9-section:hover { transform: translateY(-3px); box-shadow: 0 24px 48px -16px rgba(29,29,31,0.18); border-color: var(--section-accent, var(--scheme-color-light)); }
+.v9-section[data-color="red"] { --section-accent: var(--section-red); --section-bg-soft: var(--section-red-soft); }
+.v9-section[data-color="blue"] { --section-accent: var(--section-blue); --section-bg-soft: var(--section-blue-soft); }
+.v9-section[data-color="green"] { --section-accent: var(--section-green); --section-bg-soft: var(--section-green-soft); }
+.v9-section-body { min-width: 0; }
+.v9-section-num { display: inline-block; font-family: 'Playfair Display', serif; font-size: 0.9rem; font-weight: 800; letter-spacing: 0.18em; color: var(--section-accent); margin-bottom: 14px; }
+.v9-section-title { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: clamp(1.7rem, 2.6vw, 2.3rem); font-weight: 700; letter-spacing: -0.01em; line-height: 1.2; color: var(--ink-900); margin: 0 0 14px; }
+.v9-section-subtitle { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--section-accent); margin-bottom: 16px; }
+.v9-section-desc { font-size: 1.0625rem; line-height: 1.75; color: var(--ink-700); margin: 0 0 22px; max-width: 720px; }
+.v9-section-highlights { list-style: none; padding: 0; margin: 0 0 0; display: flex; flex-wrap: wrap; gap: 8px 10px; }
+.v9-section-highlights li { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: var(--section-bg-soft); color: var(--section-accent); border-radius: 999px; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.02em; }
+.v9-section-highlights li::before { content: "✦"; font-size: 0.7rem; }
+.v9-section-cta { display: inline-flex; align-items: center; gap: 10px; padding: 16px 28px; background: var(--section-accent); color: #fff !important; border-radius: 999px; font-size: 0.95rem; font-weight: 700; text-decoration: none; transition: all .2s ease; white-space: nowrap; }
+.v9-section-cta:hover { transform: translateY(-2px); box-shadow: 0 12px 28px -8px var(--section-accent); }
+.v9-section-cta::after { content: "→"; transition: transform .2s ease; }
+.v9-section-cta:hover::after { transform: translateX(4px); }
 
-/* ============ SERVICE CARDS ============ */
-.v8-service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.v8-service-card { background: var(--surface-elevated); border: 1px solid var(--ink-100); border-radius: var(--radius-lg, 14px); padding: 40px 32px; transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; position: relative; overflow: hidden; }
-.v8-service-card:hover { transform: translateY(-4px); box-shadow: 0 16px 36px -12px rgba(29,29,31,0.18); border-color: var(--scheme-color-light); }
-.v8-service-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--scheme-color-dark), var(--scheme-color-light)); }
-.v8-service-icon { width: 56px; height: 56px; border-radius: 14px; background: var(--scheme-bg-soft); display: inline-flex; align-items: center; justify-content: center; font-size: 1.6rem; margin-bottom: 22px; color: var(--scheme-color-dark); font-weight: 800; font-family: 'Playfair Display', 'Noto Serif SC', serif; }
-.v8-service-card h3 { font-size: 1.4rem; font-weight: 700; letter-spacing: 0.3px; color: var(--ink-900); margin: 0 0 8px; font-family: 'Playfair Display', 'Noto Serif SC', serif; }
-.v8-service-tag { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; color: var(--scheme-color-dark); background: var(--scheme-bg-soft); padding: 4px 12px; border-radius: 999px; margin-bottom: 16px; }
-.v8-service-card p { font-size: 0.95rem; line-height: 1.7; color: var(--ink-700); margin: 0 0 22px; }
-.v8-service-card ul { list-style: none; padding: 0; margin: 0 0 22px; border-top: 1px solid var(--ink-100); padding-top: 18px; }
-.v8-service-card ul li { padding: 6px 0 6px 22px; position: relative; font-size: 0.88rem; line-height: 1.55; color: var(--ink-800); }
-.v8-service-card ul li::before { content: "—"; position: absolute; left: 0; top: 6px; color: var(--scheme-color-dark); font-weight: 700; }
-.v8-service-link { display: inline-flex; align-items: center; gap: 8px; font-size: 0.88rem; font-weight: 700; color: var(--scheme-color-dark); text-decoration: none; letter-spacing: 0.04em; }
-.v8-service-link:hover { text-decoration: underline; }
-.v8-service-link::after { content: "→"; transition: transform .2s ease; }
-.v8-service-link:hover::after { transform: translateX(4px); }
+/* ============ TRUST STRIP ============ */
+.v9-trust-strip { padding: 56px 0; background: var(--surface-sunken); }
+.v9-trust-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.v9-trust-num { display: block; font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 800; color: var(--scheme-color-dark); line-height: 1; margin-bottom: 6px; }
+.v9-trust-label { font-size: 0.85rem; color: var(--ink-700); line-height: 1.4; }
+.v9-trust-label small { display: block; color: var(--ink-500); font-size: 0.72rem; letter-spacing: 0.05em; margin-top: 2px; }
 
-/* ============ 4-STAGE PATHWAY ============ */
-.v8-pathway-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; align-items: stretch; }
-.v8-pathway { padding: 32px 24px; background: var(--surface-elevated); border: 1px solid var(--ink-100); position: relative; transition: all .25s ease; }
-.v8-pathway:first-child { border-radius: var(--radius-lg, 14px) 0 0 var(--radius-lg, 14px); }
-.v8-pathway:last-child { border-radius: 0 var(--radius-lg, 14px) var(--radius-lg, 14px) 0; border-left: none; }
-.v8-pathway + .v8-pathway { border-left: none; }
-.v8-pathway:hover { background: linear-gradient(180deg, var(--surface-elevated) 0%, var(--scheme-bg-soft) 100%); transform: translateY(-3px); box-shadow: 0 12px 28px -12px rgba(29,29,31,0.18); z-index: 1; }
-.v8-pathway-stage { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; }
-.v8-pathway-stage-num { font-size: 0.78rem; font-weight: 800; color: var(--scheme-color-dark); letter-spacing: 0.06em; }
-.v8-pathway-stage-bar { flex: 1; height: 4px; background: var(--ink-100); border-radius: 2px; overflow: hidden; }
-.v8-pathway-stage-bar-fill { display: block; height: 100%; background: linear-gradient(90deg, var(--scheme-color-dark), var(--scheme-color)); border-radius: 2px; }
-.v8-pathway-icon { font-size: 1.6rem; margin-bottom: 12px; display: block; }
-.v8-pathway h4 { font-size: 1.05rem; font-weight: 700; color: var(--ink-900); margin: 0 0 8px; letter-spacing: 0.3px; font-family: 'Playfair Display', 'Noto Serif SC', serif; }
-.v8-pathway-subtitle { font-size: 0.78rem; color: var(--scheme-color-dark); font-weight: 600; margin-bottom: 10px; letter-spacing: 0.05em; }
-.v8-pathway-list { list-style: none; padding: 0; margin: 12px 0 0; }
-.v8-pathway-list li { padding: 6px 0 6px 18px; position: relative; font-size: 0.85rem; color: var(--ink-700); line-height: 1.55; }
-.v8-pathway-list li::before { content: ""; position: absolute; left: 0; top: 14px; width: 8px; height: 1.5px; background: var(--scheme-color-dark); border-radius: 1px; }
+/* ============ FOOTER PATHWAY STRIP ============ */
+.v9-pathway-strip { padding: 64px 0; }
+.v9-pathway-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; align-items: stretch; border: 1px solid var(--ink-100); border-radius: var(--radius-lg, 18px); overflow: hidden; }
+.v9-pathway { padding: 28px 22px; background: var(--surface-elevated); transition: all .25s ease; }
+.v9-pathway + .v9-pathway { border-left: 1px solid var(--ink-100); }
+.v9-pathway:hover { background: linear-gradient(180deg, var(--surface-elevated) 0%, var(--scheme-bg-soft) 100%); }
+.v9-pathway-num { font-size: 0.78rem; font-weight: 800; color: var(--scheme-color-dark); letter-spacing: 0.06em; margin-bottom: 14px; display: block; }
+.v9-pathway h4 { font-size: 1.05rem; font-weight: 700; color: var(--ink-900); margin: 0 0 6px; font-family: 'Playfair Display', 'Noto Serif SC', serif; }
+.v9-pathway p { font-size: 0.85rem; line-height: 1.55; color: var(--ink-700); margin: 0; }
 
-/* ============ CTA SECTION ============ */
-.v8-cta-section { background: linear-gradient(135deg, var(--ink-900) 0%, var(--scheme-color-dark) 100%); border-radius: var(--radius-xl, 20px); padding: 64px 48px; text-align: center; color: #fff; position: relative; overflow: hidden; }
-.v8-cta-section::before { content: ""; position: absolute; top: -60px; right: -60px; width: 240px; height: 240px; background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%); border-radius: 50%; }
-.v8-cta-section h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 700; letter-spacing: 0.5px; margin: 0 0 18px; color: #fff; font-family: 'Playfair Display', 'Noto Serif SC', serif; }
-.v8-cta-section p { font-size: 1.05rem; line-height: 1.7; color: rgba(255,255,255,0.85); max-width: 580px; margin: 0 auto 28px; }
-.v8-cta-actions { display: inline-flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
-.v8-cta-btn { padding: 14px 32px; border-radius: 999px; font-weight: 700; font-size: 0.95rem; text-decoration: none; transition: all .2s ease; display: inline-flex; align-items: center; gap: 8px; }
-.v8-cta-btn-primary { background: linear-gradient(135deg, var(--scheme-color), var(--scheme-color-light)); color: var(--ink-900); }
-.v8-cta-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(232, 184, 79, 0.4); }
-.v8-cta-btn-secondary { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.4); }
-.v8-cta-btn-secondary:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.82); }
+/* ============ CTA STRIP ============ */
+.v9-cta { background: linear-gradient(135deg, var(--ink-900) 0%, var(--scheme-color-dark) 100%); border-radius: var(--radius-xl, 24px); padding: 64px 48px; text-align: center; color: #fff; position: relative; overflow: hidden; }
+.v9-cta::before { content: ""; position: absolute; top: -60px; right: -60px; width: 240px; height: 240px; background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%); border-radius: 50%; }
+.v9-cta h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 700; letter-spacing: 0.5px; margin: 0 0 18px; color: #fff; font-family: 'Playfair Display', 'Noto Serif SC', serif; }
+.v9-cta p { font-size: 1.05rem; line-height: 1.7; color: rgba(255,255,255,0.85); max-width: 580px; margin: 0 auto 28px; }
+.v9-cta-actions { display: inline-flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+.v9-cta-btn { padding: 14px 32px; border-radius: 999px; font-weight: 700; font-size: 0.95rem; text-decoration: none; transition: all .2s ease; display: inline-flex; align-items: center; gap: 8px; }
+.v9-cta-primary { background: linear-gradient(135deg, var(--scheme-color), var(--scheme-color-light)); color: var(--ink-900); }
+.v9-cta-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(232, 184, 79, 0.4); }
+.v9-cta-secondary { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.4); }
+.v9-cta-secondary:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.82); }
 
-/* ============ SECTION SPACING ============ */
-.section-v4 { padding: 80px 0; }
-.section-v4.tight { padding: 56px 0; }
+/* ============ SECTIONS SPACING ============ */
+.v9-section-block { padding: 80px 0; }
+.v9-section-block.tight { padding: 56px 0; }
 
 /* ============ MOBILE ============ */
 @media (max-width: 900px) {
-  .home-hero { padding: 64px 0 48px; }
-  .v8-stat-grid { grid-template-columns: repeat(2, 1fr); }
-  .v8-service-grid { grid-template-columns: 1fr; }
-  .v8-pathway-grid { grid-template-columns: 1fr; }
-  .v8-pathway { border-radius: 0 !important; border: 1px solid var(--ink-100); border-bottom: none; }
-  .v8-pathway:last-child { border-bottom: 1px solid var(--ink-100); border-radius: 0 0 var(--radius-lg, 14px) var(--radius-lg, 14px) !important; }
-  .v8-pathway:first-child { border-radius: var(--radius-lg, 14px) var(--radius-lg, 14px) 0 0 !important; }
-  .v8-cta-section { padding: 48px 24px; }
-  .section-v4 { padding: 56px 0; }
-  .home-hero-trust { gap: 24px; }
+  .v9-hero { padding: 64px 0 48px; }
+  .v9-section { grid-template-columns: 1fr; padding: 36px 28px; gap: 24px; }
+  .v9-section-cta { justify-self: start; }
+  .v9-trust-row { grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  .v9-pathway-grid { grid-template-columns: 1fr; }
+  .v9-pathway + .v9-pathway { border-left: none; border-top: 1px solid var(--ink-100); }
+  .v9-cta { padding: 48px 24px; }
+  .v9-section-block { padding: 56px 0; }
+  .v9-hero-trust { gap: 24px; }
 }
 </style>
 
 <header class="site-header">
   <div class="container">
     <nav class="nav">
-      <a href="index-en.html" class="nav-logo">
-        <img src="assets/logo.png" alt="CareerForge">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo.png" alt="CareerForge 鑄途">
       </a>
       <div class="nav-menu">
-        <a href="index-en.html" class="active">Home</a>
-        <a href="immigration-en.html">Immigration</a>
-        <a href="education-en.html">Education</a>
-        <a href="career-en.html">Career Growth</a>
-        <a href="cases-en.html">Case Studies</a>
+        <a href="index.html" class="active">Home</a>
+        <a href="immigration.html">Identity</a>
+        <a href="career.html">Career Value</a>
+        <a href="education.html">Education</a>
+        <a href="quiz.html">Career Quiz</a>
+        <a href="cases.html">Client Stories</a>
         <a href="#contact">Contact</a>
       </div>
       <div class="nav-actions">
@@ -142,241 +144,211 @@
 </header>
 
 <!-- ============ HERO ============ -->
-<section class="home-hero">
+<section class="v9-hero">
   <div class="container">
-    <span class="home-hero-eyebrow">
-      <span class="home-hero-eyebrow-dot"></span>
-      Hong Kong Premium Personal Growth Advisory
+    <span class="v9-hero-eyebrow">
+      <span class="v9-hero-eyebrow-dot"></span>
+      Hong Kong Premium Personal Growth Consultancy
     </span>
-    <h1 class="home-hero-title">
-      Walk with your family,<br>
-      from <span class="accent">first visa to PR</span> in 7 years.<br>
-      from career to <span class="accent">salary growth</span>.
+    <h1 class="v9-hero-title">
+      Walking with families,<br>
+      <span class="accent">from identity to 7-year</span> PR.<br>
+      From a career to <span class="accent">career value</span>.
     </h1>
-    <p class="home-hero-subtitle">
-      CareerForge specialises in Hong Kong's Top Talent Pass, Quality Migrant Admission Scheme, Professional Visa, and Study Pathways — full-cycle, compliance-first support.<br>
-      From visa application to education routing to 7-year PR planning and career growth — every step has a dedicated advisor.
+    <p class="v9-hero-sub">
+      CareerForge 鑄途 — Focused on Hong Kong's Top Talent Pass, Quality Migrant Admission, Employment Visa and Study-to-HK pathways, with full-cycle support.<br>
+      Three core pillars: Identity benchmarking, career value leap, and education planning — each one laying the groundwork for the next.
     </p>
-    <div class="home-hero-actions">
-      <a href="#assessment" class="v8-cta-btn v8-cta-btn-primary">Free Eligibility Check →</a>
-      <a href="immigration-en.html" class="btn btn-secondary btn-lg">Explore Immigration</a>
-    </div>
-    <div class="home-hero-trust">
-      <div class="home-hero-trust-item">
-        <strong>1,200+</strong>
-        Approvals to date
+    <div class="v9-hero-trust">
+      <div class="v9-hero-trust-item">
+        <strong>3,000+</strong>
+        Families served
       </div>
-      <div class="home-hero-trust-item">
-        <strong>96%</strong>
-        Approval rate
+      <div class="v9-hero-trust-item">
+        <strong>20 yrs</strong>
+        Hong Kong industry experience
       </div>
-      <div class="home-hero-trust-item">
+      <div class="v9-hero-trust-item">
         <strong>7 yrs</strong>
-        Full-cycle support
+        Full-cycle renewal to PR support
       </div>
-      <div class="home-hero-trust-item">
-        <strong>4</strong>
-        Visa schemes covered
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ STATS ============ -->
-<section class="section-v4 tight">
-  <div class="container">
-    <div class="v8-bilingual-head">
-      <span class="eyebrow-cn">BY THE NUMBERS</span>
-      <span class="eyebrow-en">TRUSTED BY 1,200+ FAMILIES</span>
-      <div class="v8-divider-line"></div>
-      <h2>How we've walked families to Hong Kong<br>over the past 5 years.</h2>
-      <p class="lede">Numbers tell a story — every percentage point is a family's choice to relocate, a compliant plan, and a successful visa renewal.</p>
-    </div>
-    <div class="v8-stat-grid">
-      <div class="v8-stat-card">
-        <span class="v8-stat-num">1,200<span class="unit">+</span></span>
-        <span class="v8-stat-label">Approvals to date<small>APPROVED CASES</small></span>
-      </div>
-      <div class="v8-stat-card">
-        <span class="v8-stat-num">96<span class="unit">%</span></span>
-        <span class="v8-stat-label">Visa approval rate<small>APPROVAL RATE</small></span>
-      </div>
-      <div class="v8-stat-card">
-        <span class="v8-stat-num">7<span class="unit">yrs</span></span>
-        <span class="v8-stat-label">Renewal to PR support<small>FULL-CYCLE SUPPORT</small></span>
-      </div>
-      <div class="v8-stat-card">
-        <span class="v8-stat-num">4<span class="unit">x</span></span>
-        <span class="v8-stat-label">Major visa schemes<small>VISA SCHEMES</small></span>
+      <div class="v9-hero-trust-item">
+        <strong>3 pillars</strong>
+        Fully integrated practice
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ SERVICES ============ -->
-<section class="section-v4">
+<!-- ============ 3 SECTIONS (CORE — 3 business pillars) ============ -->
+<section class="v9-section-block" id="services">
   <div class="container">
-    <div class="v8-bilingual-head">
-      <span class="eyebrow-cn">THREE SERVICE PILLARS</span>
-      <span class="eyebrow-en">WHAT WE DO</span>
-      <div class="v8-divider-line"></div>
-      <h2>Immigration, education, career growth —<br>one continuous CareerForge pathway.</h2>
-      <p class="lede">We string Hong Kong visa planning, children's education routing, and local salary growth into a single continuous path — every step serves the next.</p>
+    <div class="v9-head">
+      <span class="eyebrow-cn">Three Core Pillars</span>
+      <span class="eyebrow-en">THREE CORE PILLARS</span>
+      <div class="v9-divider"></div>
+      <h2>Identity, career value, education —<br>one continuous CareerForge pathway.</h2>
+      <p class="lede">We connect Hong Kong identity benchmarking, career value leap in HK, and overseas-to-HK education placement into a single, sequential route — every step serves the next.</p>
     </div>
-    <div class="v8-service-grid">
-      <div class="v8-service-card">
-        <div class="v8-service-icon">A</div>
-        <h3>Immigration</h3>
-        <span class="v8-service-tag">IMMIGRATION</span>
-        <p>Top Talent Pass · Quality Migrant · Professional Visa · Study Pathways — all 4 major schemes covered, full-cycle from first visa to 7-year PR.</p>
-        <ul>
-          <li>Eligibility assessment + matching</li>
-          <li>Docs preparation + submission</li>
-          <li>Renewal planning + PR application</li>
-          <li>Dependents + family inclusion</li>
-        </ul>
-        <a href="immigration-en.html" class="v8-service-link">Learn more</a>
+    <div class="v9-section-grid">
+
+      <!-- Pillar 1 — Identity & Renewal Benchmarking -->
+      <div class="v9-section" data-color="red">
+        <div class="v9-section-body">
+          <span class="v9-section-num">PILLAR 01 · IDENTITY PLANNING</span>
+          <h3 class="v9-section-title">【Identity & Renewal Benchmarking】</h3>
+          <p class="v9-section-desc">
+            Top Talent Pass · Quality Migrant Admission · Employment · Study-to-HK — full coverage of four mainstream pathways. From first visa to 7-year Permanent Residence, with a dedicated advisor guiding you in full compliance.
+            Special focus on the 2024–2025 cohort of Top Talent Pass holders approaching their 2-year renewal, providing document pre-review, the latest Immigration Department benchmark indicators, and robust employment-contract and operating-evidence chain support.
+          </p>
+          <ul class="v9-section-highlights">
+            <li>4 Talent Schemes</li>
+            <li>2-Year Renewal Countdown</li>
+            <li>ImmD Latest Indicators</li>
+            <li>MPF / Tax / Contract Chain</li>
+            <li>7-Year PR Support</li>
+          </ul>
+        </div>
+        <a href="immigration.html" class="v9-section-cta">Learn More / View Plans</a>
       </div>
-      <div class="v8-service-card">
-        <div class="v8-service-icon">B</div>
-        <h3>Education</h3>
-        <span class="v8-service-tag">EDUCATION</span>
-        <p>Local school placement, DSE pathways, boarding school admissions, IB/A-Level international curriculum — every step of your child's journey.</p>
-        <ul>
-          <li>Local school admission + mid-year transfer</li>
-          <li>International school IB/A-Level planning</li>
-          <li>DSE strategy</li>
-          <li>University applications + interview prep</li>
-        </ul>
-        <a href="education-en.html" class="v8-service-link">Learn more</a>
+
+      <!-- Pillar 2 — HK Job Search & Career Value Leap -->
+      <div class="v9-section" data-color="green">
+        <div class="v9-section-body">
+          <span class="v9-section-num">PILLAR 02 · CAREER ADVANCEMENT</span>
+          <h3 class="v9-section-title">【HK Job Search & Career Value Leap】</h3>
+          <p class="v9-section-desc">
+            More than job placement — we help professionals in Hong Kong's local market achieve salary uplift, industry transition and long-term career value growth.
+            Built around two flagship tools: the Working-Person Index Assessment and a 12,000-word Career Value Report, benchmarked against Labour Department and JobsDB salary data across finance, technology, consulting and other high-demand sectors.
+          </p>
+          <ul class="v9-section-highlights">
+            <li>Working-Person Index</li>
+            <li>12K-Word Value Report</li>
+            <li>3-Min Self-Test</li>
+            <li>8 Sector Salary Benchmarks</li>
+            <li>Headhunter Referrals</li>
+          </ul>
+        </div>
+        <a href="career.html" class="v9-section-cta">Learn More / View Plans</a>
       </div>
-      <div class="v8-service-card">
-        <div class="v8-service-icon">C</div>
-        <h3>Career Growth</h3>
-        <span class="v8-service-tag">CAREER GROWTH</span>
-        <p>Not just job hunting — we help professionals achieve salary uplifts, industry pivots, and long-term career planning in Hong Kong's local market.</p>
-        <ul>
-          <li>Local salary benchmarking</li>
-          <li>Role matching + interview coaching</li>
-          <li>Industry pivot + skill upgrade</li>
-          <li>Visa-renewal evidence chain</li>
-        </ul>
-        <a href="career-en.html" class="v8-service-link">Learn more</a>
+
+      <!-- Pillar 3 — Overseas & HK Education Benchmarking -->
+      <div class="v9-section" data-color="blue">
+        <div class="v9-section-body">
+          <span class="v9-section-num">PILLAR 03 · EDUCATION PLACEMENT</span>
+          <h3 class="v9-section-title">【Overseas & Hong Kong Education Benchmarking】</h3>
+          <p class="v9-section-desc">
+            Two-way placement between overseas secondary / IB / A-Level / DSE programmes and Hong Kong local schools. From boarding schools and aided schools to international schools and university applications,
+            we build a complete K-12-to-university pathway from overseas to Hong Kong, sequenced in step with the family's visa landing timeline.
+          </p>
+          <ul class="v9-section-highlights">
+            <li>Overseas Secondary Placement</li>
+            <li>DSE / IB / A-Level</li>
+            <li>Local School Transfer</li>
+            <li>University Applications</li>
+            <li>Visa + Education Sync</li>
+          </ul>
+        </div>
+        <a href="education.html" class="v9-section-cta">Learn More / View Plans</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRUST STRIP ============ -->
+<section class="v9-trust-strip">
+  <div class="container">
+    <div class="v9-trust-row">
+      <div>
+        <span class="v9-trust-num">3,000+</span>
+        <span class="v9-trust-label">Families served<small>FAMILIES SERVED</small></span>
+      </div>
+      <div>
+        <span class="v9-trust-num">4</span>
+        <span class="v9-trust-label">Mainstream talent schemes<small>VISA SCHEMES</small></span>
+      </div>
+      <div>
+        <span class="v9-trust-num">8</span>
+        <span class="v9-trust-label">Industry coverage (Finance / Tech / Consulting…)<small>INDUSTRIES</small></span>
+      </div>
+      <div>
+        <span class="v9-trust-num">7 yrs</span>
+        <span class="v9-trust-label">Renewal to PR full-cycle support<small>FULL-CYCLE</small></span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ 4-STAGE PATHWAY ============ -->
-<section class="section-v4">
+<!-- ============ 4-STAGE PATHWAY (HOMEPAGE FOOTER) ============ -->
+<section class="v9-pathway-strip">
   <div class="container">
-    <div class="v8-bilingual-head">
-      <span class="eyebrow-cn">4-STAGE PATHWAY</span>
-      <span class="eyebrow-en">FROM ASSESSMENT TO PR</span>
-      <div class="v8-divider-line"></div>
-      <h2>From eligibility check to PR —<br>every step has a dedicated advisor.</h2>
-      <p class="lede">Not a one-off application — a 7-year path where every milestone needs front-loaded planning.</p>
+    <div class="v9-head">
+      <span class="eyebrow-cn">Four-Stage Pathway</span>
+      <span class="eyebrow-en">FOUR-STAGE PATHWAY</span>
+      <div class="v9-divider"></div>
+      <h2>From eligibility assessment to PR,<br>a dedicated advisor at every step.</h2>
     </div>
-    <div class="v8-pathway-grid">
-      <div class="v8-pathway">
-        <div class="v8-pathway-stage">
-          <span class="v8-pathway-stage-num">STAGE 01</span>
-          <div class="v8-pathway-stage-bar"><span class="v8-pathway-stage-bar-fill" style="width:25%"></span></div>
-        </div>
-        <span class="v8-pathway-icon">🧭</span>
-        <h4>Eligibility</h4>
-        <div class="v8-pathway-subtitle">ELIGIBILITY ASSESSMENT</div>
-        <p style="font-size:0.85rem; color:var(--ink-700); margin:8px 0 0;">30-min deep-dive interview, matched to the optimal of 4 schemes.</p>
-        <ul class="v8-pathway-list">
-          <li>Education / income / age 3-axis score</li>
-          <li>Family planning</li>
-          <li>Path selected</li>
-        </ul>
+    <div class="v9-pathway-grid">
+      <div class="v9-pathway">
+        <span class="v9-pathway-num">STAGE 01</span>
+        <h4>Eligibility Assessment</h4>
+        <p>A 30-minute in-depth interview to identify the optimal pathway across four major schemes.</p>
       </div>
-      <div class="v8-pathway">
-        <div class="v8-pathway-stage">
-          <span class="v8-pathway-stage-num">STAGE 02</span>
-          <div class="v8-pathway-stage-bar"><span class="v8-pathway-stage-bar-fill" style="width:50%"></span></div>
-        </div>
-        <span class="v8-pathway-icon">📄</span>
-        <h4>Application</h4>
-        <div class="v8-pathway-subtitle">DOCS & SUBMISSION</div>
-        <p style="font-size:0.85rem; color:var(--ink-700); margin:8px 0 0;">Docs, narrative polish, submission tracking — 96% approval rate.</p>
-        <ul class="v8-pathway-list">
-          <li>Docs + translation</li>
-          <li>Narrative strategy</li>
-          <li>Immigration Dept follow-up</li>
-        </ul>
+      <div class="v9-pathway">
+        <span class="v9-pathway-num">STAGE 02</span>
+        <h4>Application Filing</h4>
+        <p>Document collation, statement polishing and submission follow-up — aligned with ImmD timelines.</p>
       </div>
-      <div class="v8-pathway">
-        <div class="v8-pathway-stage">
-          <span class="v8-pathway-stage-num">STAGE 03</span>
-          <div class="v8-pathway-stage-bar"><span class="v8-pathway-stage-bar-fill" style="width:75%"></span></div>
-        </div>
-        <span class="v8-pathway-icon">🏠</span>
-        <h4>Relocation</h4>
-        <div class="v8-pathway-subtitle">FIRST MONTH</div>
-        <p style="font-size:0.85rem; color:var(--ink-700); margin:8px 0 0;">School admission, housing, banking — first-month landing support.</p>
-        <ul class="v8-pathway-list">
-          <li>School transfer</li>
-          <li>Rent / buy advisory</li>
-          <li>Bank / MPF setup</li>
-        </ul>
+      <div class="v9-pathway">
+        <span class="v9-pathway-num">STAGE 03</span>
+        <h4>Settling In</h4>
+        <p>School placement for children, address selection and bank account opening — first-month landing support.</p>
       </div>
-      <div class="v8-pathway">
-        <div class="v8-pathway-stage">
-          <span class="v8-pathway-stage-num">STAGE 04</span>
-          <div class="v8-pathway-stage-bar"><span class="v8-pathway-stage-bar-fill" style="width:100%"></span></div>
-        </div>
-        <span class="v8-pathway-icon">🌟</span>
+      <div class="v9-pathway">
+        <span class="v9-pathway-num">STAGE 04</span>
         <h4>Renewal + PR</h4>
-        <div class="v8-pathway-subtitle">RENEWAL + PR</div>
-        <p style="font-size:0.85rem; color:var(--ink-700); margin:8px 0 0;">7-year renewal planning + PR — full evidence chain.</p>
-        <ul class="v8-pathway-list">
-          <li>Renewal docs</li>
-          <li>Local contribution proof</li>
-          <li>PR + passport</li>
-        </ul>
+        <p>7-year renewal planning plus PR application — building a complete evidence chain.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============ CTA ============ -->
-<section class="section-v4" id="assessment">
+<section class="v9-section-block" id="contact">
   <div class="container">
-    <div class="v8-cta-section">
-      <h2>Step 1: 30-min free eligibility check</h2>
-      <p>Submit basic info — receive advisor reply within 24 hours with 4-scheme match score, estimated timeline, and budget range.</p>
-      <div class="v8-cta-actions">
-        <a href="#contact" class="v8-cta-btn v8-cta-btn-primary">Book Assessment</a>
-        <a href="immigration-en.html" class="v8-cta-btn v8-cta-btn-secondary">View Full Plans</a>
+    <div class="v9-cta">
+      <h2>Step one: a complimentary 30-minute eligibility assessment</h2>
+      <p>Submit your details and receive a response from an advisor within 24 hours — including a fit score across our three pillars, indicative timeline, and recommended next steps.</p>
+      <div class="v9-cta-actions">
+        <a href="https://wa.me/85295651459" class="v9-cta-btn v9-cta-primary">Book via WhatsApp</a>
+        <a href="quiz.html" class="v9-cta-btn v9-cta-secondary">Take the 3-Minute Quiz First</a>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============ CONTACT ============ -->
-<section class="section-v4 tight" id="contact">
+<section class="v9-section-block tight" style="padding-top:0">
   <div class="container container-narrow">
-    <div class="v8-bilingual-head">
-      <span class="eyebrow-cn">GET IN TOUCH</span>
-      <span class="eyebrow-en">CONTACT US</span>
-      <div class="v8-divider-line"></div>
-      <h2>Reach us however suits you best —<br>direct line to an advisor.</h2>
+    <div class="v9-head">
+      <span class="eyebrow-cn">Get in Touch</span>
+      <span class="eyebrow-en">GET IN TOUCH</span>
+      <div class="v9-divider"></div>
+      <h2>Reach us the way that's easiest for you,<br>and speak directly with an advisor.</h2>
     </div>
-    <div class="v8-stat-grid" style="grid-template-columns: repeat(3, 1fr);">
-      <div class="v8-stat-card" style="text-align:center;">
-        <span class="v8-stat-num" style="font-size:1.6rem;">📱</span>
-        <span class="v8-stat-label">WhatsApp / WeChat<small>+852-9565-1459</small></span>
+    <div class="v9-trust-row" style="grid-template-columns: repeat(3, 1fr); text-align:center;">
+      <div>
+        <span class="v9-trust-num" style="font-size:1.6rem;">📱</span>
+        <span class="v9-trust-label">WhatsApp / WeChat<small>852-9565-1459</small></span>
       </div>
-      <div class="v8-stat-card" style="text-align:center;">
-        <span class="v8-stat-num" style="font-size:1.6rem;">✉️</span>
-        <span class="v8-stat-label">Email<small>hello@careerforgehk.com</small></span>
+      <div>
+        <span class="v9-trust-num" style="font-size:1.6rem;">✉️</span>
+        <span class="v9-trust-label">Email<small>[REDACTED_EMAIL]</small></span>
       </div>
-      <div class="v8-stat-card" style="text-align:center;">
-        <span class="v8-stat-num" style="font-size:1.6rem;">📍</span>
-        <span class="v8-stat-label">HK Office<small>Central / Tsim Sha Tsui</small></span>
+      <div>
+        <span class="v9-trust-num" style="font-size:1.6rem;">📍</span>
+        <span class="v9-trust-label">Hong Kong Offices<small>Central / Tsim Sha Tsui</small></span>
       </div>
     </div>
   </div>
@@ -386,29 +358,29 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="assets/logo.png" alt="CareerForge" class="footer-logo">
-        <p>Hong Kong's premium personal growth advisory. Immigration · Education · Career Growth — one continuous journey.</p>
+        <img src="assets/logo.png" alt="CareerForge 鑄途" class="footer-logo">
+        <p>Hong Kong premium personal growth consultancy. One-stop support for identity, education and career value.</p>
       </div>
       <div class="footer-col">
-        <h4>Services</h4>
-        <a href="immigration-en.html">Immigration</a>
-        <a href="education-en.html">Education</a>
-        <a href="career-en.html">Career Growth</a>
+        <h4>Service Pillars</h4>
+        <a href="immigration.html">Identity & Renewal Benchmarking</a>
+        <a href="career.html">Job Search & Career Value Leap</a>
+        <a href="education.html">Overseas & HK Education</a>
       </div>
       <div class="footer-col">
         <h4>Resources</h4>
-        <a href="cases-en.html">Case Studies</a>
-        <a href="quiz-en.html">Eligibility Quiz</a>
-        <a href="#contact">Contact</a>
+        <a href="cases.html">Client Stories</a>
+        <a href="quiz.html">Career Value Quiz</a>
+        <a href="#contact">Contact Us</a>
       </div>
       <div class="footer-col">
-        <h4>Reach</h4>
+        <h4>Contact</h4>
         <a href="https://wa.me/85295651459">WhatsApp</a>
-        <a href="mailto:hello@careerforgehk.com">hello@careerforgehk.com</a>
+        <a href="mailto:[REDACTED_EMAIL]">[REDACTED_EMAIL]</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 CareerForge. All rights reserved.</span>
+      <span>© 2026 CareerForge 鑄途. All rights reserved.</span>
       <span class="footer-lang">
         <a href="index.html">繁體</a> · <a href="index-cn.html">简体</a> · <a href="index-en.html" class="active">EN</a>
       </span>

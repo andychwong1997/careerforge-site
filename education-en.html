@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hong Kong Education Pathway · DSE / IB / A-Level / Top Universities · CareerForge</title>
-<meta name="description" content="CareerForge — Your end-to-end Hong Kong education partner. From kindergarten through secondary to DSE / IB / A-Level and university applications — timed to your family arrival and visa milestones.">
+<title>Hong Kong Education Planning · DSE / IB / A-Level / Top Universities Worldwide · CareerForge</title>
+<meta name="description" content="CareerForge — End-to-end Hong Kong education planning. From kindergarten, primary, secondary through DSE / IB / A-Level and university applications, syncing with parents\' visa landing timeline.">
 <link rel="icon" type="image/png" href="assets/icon.png">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700;800&family=Noto+Serif+SC:wght@400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
@@ -808,22 +808,234 @@
   .v10-director-stats { grid-template-columns: repeat(2, 1fr); gap: 16px; }
   .v10-cta { padding: 56px 28px; margin: 0 20px; }
 }
+
+
+/* ============ v10-tutor-summary (replaces individual tutor cards) ============ */
+.v10-tutor-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+.v10-tutor-summary-card {
+  background: linear-gradient(135deg, #f8f6f1 0%, #ffffff 100%);
+  border-radius: var(--radius);
+  padding: 32px 28px;
+  border-left: 4px solid var(--gold);
+  box-shadow: var(--shadow-card);
+}
+.v10-tutor-summary-eyebrow {
+  display: inline-block;
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.v10-tutor-summary-card h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0 0 14px;
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+}
+.v10-tutor-summary-card p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--ink-700);
+  margin: 0;
+}
+.v10-tutor-summary-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.v10-tutor-summary-list li {
+  padding: 10px 0;
+  border-bottom: 1px dashed var(--ink-100);
+  font-size: 14.5px;
+  color: var(--ink-700);
+  line-height: 1.6;
+}
+.v10-tutor-summary-list li:last-child { border-bottom: none; }
+.v10-tutor-summary-list li strong {
+  color: var(--navy);
+  font-weight: 700;
+  display: inline-block;
+  min-width: 120px;
+}
+
+/* ============ v10-packages (3 cards, point form) ============ */
+.v10-packages {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+.v10-package {
+  background: #fff;
+  border: 1px solid var(--ink-100);
+  border-radius: var(--radius);
+  padding: 32px 28px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+.v10-package:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px -8px rgba(11,25,44,0.18);
+  border-color: var(--gold);
+}
+.v10-package.featured {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-700) 100%);
+  color: #fff;
+  border: none;
+}
+.v10-package.featured h4,
+.v10-package.featured .v10-package-points li {
+  color: #fff;
+}
+.v10-package.featured .v10-package-desc {
+  color: rgba(255,255,255,0.85);
+}
+.v10-package-tag {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  padding: 4px 12px;
+  background: rgba(212,175,55,0.1);
+  border-radius: 16px;
+}
+.v10-package.featured .v10-package-tag {
+  background: rgba(212,175,55,0.25);
+  color: var(--gold-100);
+}
+.v10-package h4 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0 0 14px;
+  letter-spacing: 0.5px;
+}
+.v10-package-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--ink-500);
+  margin: 0 0 18px;
+}
+.v10-package-points {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.v10-package-points li {
+  padding: 8px 0 8px 22px;
+  position: relative;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--ink-700);
+  border-bottom: 1px dashed rgba(11,25,44,0.06);
+}
+.v10-package-points li:last-child { border-bottom: none; }
+.v10-package-points li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-weight: 700;
+}
+.v10-package.featured .v10-package-points li {
+  border-bottom-color: rgba(255,255,255,0.1);
+}
+.v10-pricing-note {
+  text-align: center;
+  margin-top: 28px;
+  font-size: 14px;
+  color: var(--ink-500);
+  font-style: italic;
+}
+
+/* ============ v10-diff-table (vs 一般中介) ============ */
+.v10-diff-table {
+  background: #fff;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  margin-top: 40px;
+}
+.v10-diff-row {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1.5fr;
+  border-bottom: 1px solid var(--ink-100);
+}
+.v10-diff-row:last-child { border-bottom: none; }
+.v10-diff-row.v10-diff-header {
+  background: var(--navy);
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+.v10-diff-row.v10-diff-header .v10-diff-cell {
+  padding: 16px 20px;
+  text-align: center;
+}
+.v10-diff-cell {
+  padding: 16px 20px;
+  font-size: 14.5px;
+  line-height: 1.6;
+  border-right: 1px solid var(--ink-100);
+  display: flex;
+  align-items: center;
+}
+.v10-diff-cell:last-child { border-right: none; }
+.v10-diff-label {
+  font-weight: 700;
+  color: var(--navy);
+  background: #f8f6f1;
+}
+.v10-diff-us {
+  background: rgba(212,175,55,0.06);
+  color: var(--navy);
+  font-weight: 500;
+}
+.v10-diff-them {
+  color: var(--ink-500);
+}
+.v10-diff-check {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  background: var(--gold);
+  color: var(--navy);
+  font-weight: 700;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 22px;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
 </style>
 
 <header class="site-header">
   <div class="container">
     <nav class="nav">
-      <a href="index.html" class="nav-logo">
+      <a href="index-en.html" class="nav-logo">
         <img src="assets/logo.png" alt="CareerForge 鑄途">
       </a>
       <div class="nav-menu">
-        <a href="index.html">Home</a>
-        <a href="immigration.html">Visa & Identity</a>
-        <a href="career.html">Career Capital</a>
-        <a href="education.html" class="active">Education</a>
-        <a href="quiz.html">Self-Assessment</a>
-        <a href="cases.html">Case Studies</a>
-        <a href="#contact">Contact</a>
+        <a href="index-en.html">首頁</a>
+        <a href="immigration-en.html">身份</a>
+        <a href="career-en.html">職涯身價</a>
+        <a href="education-en.html" class="active">升學</a>
+        <a href="quiz-en.html">牛馬測驗</a>
+        <a href="cases-en.html">客戶故事</a>
+        <a href="#contact">聯絡</a>
       </div>
       <div class="nav-actions">
         <div class="lang-switcher">
@@ -831,7 +1043,7 @@
           <a href="education-cn.html">简</a>
           <a href="education-en.html" class="active">EN</a>
         </div>
-        <a href="#contact" class="nav-cta">Book Now</a>
+        <a href="#contact" class="nav-cta">立即諮詢</a>
       </div>
     </nav>
   </div>
@@ -846,28 +1058,28 @@
     </span>
     <h1 class="v10-hero-title">
       From kindergarten to<span class="gold">world-leading universities</span>，<br>
-      — one CareerForge roadmap.
+      one CareerForge pathway.
     </h1>
     <p class="v10-hero-sub">
-      CareerForge — One-stop education advisor for HK-bound families.<br>
-      Kindergarten, primary, secondary transfer, DSE / IB / A-Level and university applications — timed to your family arrival and visa milestones.
+      CareerForge — One-stop Hong Kong education planning.<br>
+      Kindergarten, primary, secondary school transfer, DSE / IB / A-Level, university applications — synced with parents\' visa landing schedule.
     </p>
     <div class="v10-hero-trust">
       <div class="v10-hero-trust-item">
-        <strong>15 years</strong>
-        <span>Years in HK education</span>
+        <strong>15 年</strong>
+        <span>Years in Hong Kong education</span>
       </div>
       <div class="v10-hero-trust-item">
         <strong>30+</strong>
-        <span>HK tutoring centres</span>
+        <span>全港教育中心分校</span>
       </div>
       <div class="v10-hero-trust-item">
         <strong>3,000+</strong>
         <span>Families served</span>
       </div>
       <div class="v10-hero-trust-item">
-        <strong>HKD 60K</strong>
-        <span>From · with refund guarantee</span>
+        <strong>15 年</strong>
+        <span>Years in Hong Kong education</span>
       </div>
     </div>
   </div>
@@ -877,54 +1089,54 @@
 <section class="v10-section canvas" id="why-hk">
   <div class="v10-container">
     <div class="v10-head">
-      <span class="eyebrow">WHY HONG KONG</span>
-      <h2>Same effort,<br>wider runway with HK residency + DSE.</h2>
-      <p class="lede">From kindergarten through university, Hong Kong offers a wider, more flexible and more international track than the mainland system — and our job is to walk it with you.</p>
+      <span class="eyebrow">Why Hong Kong</span>
+      <h2>Same effort,<br>Hong Kong status + DSE — a wider runway.</h2>
+      <p class="lede">From kindergarten to university, Hong Kong\'s system offers a wider, more flexible, more international runway than mainland peers — and we run it with you.</p>
     </div>
 
     <div class="v10-why-grid">
       <div class="v10-why-card">
         <span class="v10-why-num">22.1%</span>
-        <span class="v10-why-label">HKU+CUHK+HKUST DSE admit rate</span>
-        <p class="v10-why-desc">HKU, CUHK, HKUST — versus 0.054% Tsinghua/Peking admit rate, DSE is a realistic fast track.</p>
+        <span class="v10-why-label">HKU / CUHK / HKUST DSE rate</span>
+        <p class="v10-why-desc">HKU, CUHK, HKUST — versus mainland Tsinghua/Peking at 0.054%, DSE is a real shortcut.</p>
       </div>
       <div class="v10-why-card">
         <span class="v10-why-num">300+</span>
-        <span class="v10-why-label">Universities worldwide</span>
-        <p class="v10-why-desc">DSE is the only Chinese-medium international exam, accepted by top universities in the UK, US, Australia and Canada.</p>
+        <span class="v10-why-label">Overseas universities</span>
+        <p class="v10-why-desc">DSE is the only international exam answered in Chinese — directly recognized by top UK, US, AU, CA universities.</p>
       </div>
       <div class="v10-why-card">
         <span class="v10-why-num">138</span>
         <span class="v10-why-label">Mainland universities</span>
-        <p class="v10-why-desc">Tsinghua, Peking, Fudan, SJTU — 129 top mainland universities accept DSE with a minimum threshold of 3-3-2-2.</p>
+        <p class="v10-why-desc">Tsinghua, Peking, Fudan, Jiao Tong — 129 top mainland universities admit by DSE results, minimum 3-3-2-2.</p>
       </div>
       <div class="v10-why-card">
         <span class="v10-why-num">172</span>
         <span class="v10-why-label">Visa-free countries</span>
-        <p class="v10-why-desc">After 7 years of residency, obtain an HK passport with visa-free access to 172 countries and dual-identity benefits.</p>
+        <p class="v10-why-desc">After 7-year PR, get HK passport — visa-free to 172 countries with dual-identity benefits.</p>
       </div>
     </div>
 
     <div class="v10-why-grid" style="margin-top: 24px;">
       <div class="v10-why-card">
         <span class="v10-why-num">2,300+</span>
-        <span class="v10-why-label">HK schools & international schools</span>
-        <p class="v10-why-desc">Government, aided, DSS, private and international — diverse options with 85+ international schools, Ivy League feeders.</p>
+        <span class="v10-why-label">HK primary/secondary + international schools</span>
+        <p class="v10-why-desc">Government / aided / DSS / private / international — 85+ international schools, an Ivy League cradle.</p>
       </div>
       <div class="v10-why-card">
         <span class="v10-why-num">3 + 3</span>
-        <span class="v10-why-label">No zhongkao bottleneck</span>
-        <p class="v10-why-desc">3 years junior + 3 years senior (senior is part of compulsory education), no mainland zhongkao gatekeeping.</p>
+        <span class="v10-why-label">No high-stakes exam</span>
+        <p class="v10-why-desc">Junior 3 years + senior 3 years (senior is compulsory) — no mainland "zhongkao" streaming pressure.</p>
       </div>
       <div class="v10-why-card">
         <span class="v10-why-num">38.5%</span>
-        <span class="v10-why-label">HK UGC 8 DSE admit rate</span>
-        <p class="v10-why-desc">Combined admit rate across 8 public HK universities, well above mainland Project 985 average — a more reliable university path.</p>
+        <span class="v10-why-label">8 public unis DSE rate</span>
+        <p class="v10-why-desc">Hong Kong\'s 8 public unis overall rate — much higher than mainland 985 average, providing a safer path.</p>
       </div>
       <div class="v10-why-card">
         <span class="v10-why-num">2+2</span>
-        <span class="v10-why-label">Associate degree bridge</span>
-        <p class="v10-why-desc">2-year associate + 2-year undergraduate = full bachelor degree (identical to 4-year track) — a second chance to reach university.</p>
+        <span class="v10-why-label">Associate degree springboard</span>
+        <p class="v10-why-desc">2-year associate + 2-year bachelor = full bachelor degree (identical to 4-year), one more chance.</p>
       </div>
     </div>
   </div>
@@ -934,55 +1146,34 @@
 <section class="v10-section white" id="curriculum">
   <div class="v10-container">
     <div class="v10-head">
-      <span class="eyebrow">3 PATHWAYS</span>
-      <h2>DSE / IB / A-Level,<br>pick the one that fits your child.</h2>
-      <p class="lede">HKDSE, IBDP and A-Level — three mainstream tracks, each with its own positioning. We match the right one to your family goals, child ability, English level and target destination.</p>
+      <span class="eyebrow">3 education pathways</span>
+      <h2>DSE / IB / A-Level —<br>pick the path that fits your child.</h2>
+      <p class="lede">HKDSE, IBDP, A-Level — 3 mainstream curricula, each with a clear position. We match the best fit by family goals, child ability, English level, university direction.</p>
     </div>
 
     <div class="v10-tracks">
       <!-- DSE -->
       <div class="v10-track">
         <span class="v10-track-icon">D</span>
-        <span class="v10-track-tag">HKDSE · MAIN LOCAL TRACK</span>
+        <span class="v10-track-tag">HKDSE · Local mainstream</span>
         <h3>Hong Kong Diploma of Secondary Education</h3>
-        <p>A public exam unified by the HKEAA, launched in 2012. The only Chinese-medium international exam globally — the mainstream track for HK-resident students.</p>
-        <ul class="v10-track-list">
-          <li>5 grade levels (5** is the highest)</li>
-          <li>4 core subjects + 2+ electives</li>
-          <li>Category A subjects + B applied learning + C other languages</li>
-          <li>Recognised by HK UGC 8, 138 mainland and 300+ overseas universities</li>
-          <li>Choosing science / M1/M2 extended maths = wider university course options</li>
-        </ul>
+        <p>Public exam by HKEAA — the only international exam answered in Chinese. Ideal for HK-status families. Detailed structure and elective strategy, consult an advisor.</p>
       </div>
 
       <!-- IB -->
       <div class="v10-track">
         <span class="v10-track-icon">IB</span>
-        <span class="v10-track-tag">IBDP · INTERNATIONAL</span>
+        <span class="v10-track-tag">IBDP · International Baccalaureate</span>
         <h3>International Baccalaureate Diploma</h3>
-        <p>A 2-year pre-university programme designed by the IBO. Emphasises interdisciplinary thinking and global perspectives — broadly accepted by top universities worldwide.</p>
-        <ul class="v10-track-list">
-          <li>6 subject groups (language, second language, individuals & societies, sciences, mathematics, arts)</li>
-          <li>Emphasises critical thinking, CAS activities and the Extended Essay</li>
-          <li>30+ international schools in HK offer IB</li>
-          <li>Pathways: top overseas universities + some HK universities accept IB to DSE bridge</li>
-          <li>Best for students with strong English and self-directed learning habits</li>
-        </ul>
+        <p>2-year pre-university programme by IBO, emphasising interdisciplinary thinking and global perspective. Offered by 30+ HK international schools. Suits students with strong English and self-learning ability.</p>
       </div>
 
       <!-- A-Level -->
       <div class="v10-track">
         <span class="v10-track-icon">AL</span>
-        <span class="v10-track-tag">GCE A-LEVEL · BRITISH</span>
-        <h3>Advanced Level Qualification</h3>
-        <p>The General Certificate of Education Advanced Level — a long-established British pre-university qualification with flexible subject combinations of 3-4 subjects.</p>
-        <ul class="v10-track-list">
-          <li>Students pick 3-4 subjects for in-depth study</li>
-          <li>Deep subject mastery with clear exam structure</li>
-          <li>Directly recognised by top universities in the UK, Australia, Canada and Singapore</li>
-          <li>Some HK international and private schools offer A-Level</li>
-          <li>Best for students with clear goals and standout subject strengths</li>
-        </ul>
+        <span class="v10-track-tag">GCE A-Level · British pre-university</span>
+        <h3>British A-Level programme</h3>
+        <p>Students choose 3-4 subjects for deep study. High single-subject depth. Directly recognized by top UK / AU / CA / Singapore universities. Suits students with clear targets and strong subject specialisation.</p>
       </div>
     </div>
   </div>
@@ -992,166 +1183,183 @@
 <section class="v10-section canvas" id="service">
   <div class="v10-container">
     <div class="v10-head">
-      <span class="eyebrow">PROCESS · 3–6 MONTHS</span>
-      <h2>From consultation to admission,<br>4 steps with a dedicated lead.</h2>
-      <p class="lede">Not a piecemeal service with separate charges — a 4-step flow led by one senior consultant and a subject tutor team. Each step has clear deliverables, no vague "we'll see what's next".</p>
+      <span class="eyebrow">Service process · 3–6 months</span>
+      <h2>From consultation to enrolment,<br>4 steps, fully supported.</h2>
+      <p class="lede">Not a piecemeal, per-stage service — a single senior consultant + subject tutor team supports you through all 4 steps. Each step has a clear deliverable. No "let\'s see later" gaps.</p>
     </div>
 
     <div class="v10-process">
       <div class="v10-process-step">
         <span class="v10-process-step-num">01</span>
         <span class="v10-process-step-tag">STEP 01</span>
-        <h4>Initial Consultation</h4>
-        <p>Understand family needs, explain the HK education system, gather student transcripts.</p>
-        <p class="step-detail">A 30-minute free interview — we combine family goals, child ability and budget into a preliminary pathway recommendation.</p>
+        <h4>Initial consultation</h4>
+        <p>Understand parents\' needs, explain HK education system, gather school records.</p>
+        <p class="step-detail">30-min free interview with initial pathway recommendation based on goals, ability, budget.</p>
       </div>
 
       <div class="v10-process-step">
         <span class="v10-process-step-num">02</span>
         <span class="v10-process-step-tag">STEP 02</span>
-        <h4>Academic Assessment</h4>
-        <p>Trial-class format, charged per subject, led by experienced teachers.</p>
-        <p class="step-detail">3 hours (English + Mathematics, 1.5 hours each), flexible scheduling. Full assessment report + commentary delivered within 1 week.</p>
+        <h4>Academic assessment</h4>
+        <p>Trial-class format, per-subject fee, guided by senior tutors.</p>
+        <p class="step-detail">3 hours (English + Math, 1.5 each), flexible scheduling. Report + comments within 1 week.</p>
       </div>
 
       <div class="v10-process-step">
         <span class="v10-process-step-num">03</span>
         <span class="v10-process-step-tag">STEP 03</span>
-        <h4>School Selection Strategy</h4>
-        <p>Combining grades, interests and family goals, identify 8–20 target schools.</p>
-        <p class="step-detail">First-choice / second-choice / safety tier, covering aided schools, DSS, private and international schools.</p>
+        <h4>School selection strategy</h4>
+        <p>Combine results, interests, family goals to identify 8–20 target schools.</p>
+        <p class="step-detail">First-choice / second / safety tier — across aided, DSS, private, international schools.</p>
       </div>
 
       <div class="v10-process-step">
         <span class="v10-process-step-num">04</span>
         <span class="v10-process-step-tag">STEP 04</span>
-        <h4>Application + Enrolment</h4>
-        <p>Registration, document preparation, interview coaching and academic tutoring — end to end.</p>
-        <p class="step-detail">A dedicated consultant plus subject tutor team run in lockstep, ensuring smooth transition into HK schooling.</p>
+        <h4>Application + enrolment</h4>
+        <p>Registration, documents, interview training, subject tutoring — all in one.</p>
+        <p class="step-detail">Dedicated consultant + subject tutor team in sync — ensures smooth integration into HK education.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ TUTOR TEAM ============ -->
+<!-- ============ TUTOR TEAM SUMMARY ============ -->
 <section class="v10-section white" id="tutor-team">
   <div class="v10-container">
     <div class="v10-head">
-      <span class="eyebrow">OUR TUTORS</span>
-      <h2>Veteran educators,<br>trusted by top-school students.</h2>
-      <p class="lede">The CareerForge education team is staffed by graduates of CUHK, HKU, Peking University and other leading institutions — not part-time undergraduates, but full-time specialists with 10+ years of teaching, curriculum design and interview coaching experience.</p>
+      <span class="eyebrow">Tutor team</span>
+      <h2>Top-university tutors,<br>in-house team, full support.</h2>
+      <p class="lede">CareerForge\'s tutor team — all in-house, 10+ years experience, from CUHK, HKU, Peking University and other top schools. We deeply understand each family\'s unique needs.</p>
     </div>
 
-    <!-- Director feature -->
-    <div class="v10-director">
-      <div class="v10-director-inner">
-        <span class="v10-director-eyebrow">DIRECTOR · LEADERSHIP</span>
-        <h3>Asan Chan</h3>
-        <h4>Managing Director, Master Classroom Group</h4>
-        <p>15 years in the education industry with extensive experience in curriculum design and interview-class tutor training. Bachelor of Business Administration from CUHK. Leads Master Classroom Group in delivering end-to-end education advisory services to Hong Kong families — from kindergarten to university.</p>
-        <div class="v10-director-stats">
-          <div class="v10-director-stat">
-            <strong>15 years</strong>
-            <span>Years in education</span>
-          </div>
-          <div class="v10-director-stat">
-            <strong>30+</strong>
-            <span>HK tutoring centres</span>
-          </div>
-          <div class="v10-director-stat">
-            <strong>50</strong>
-            <span>Schools served yearly</span>
-          </div>
-          <div class="v10-director-stat">
-            <strong>3,000+</strong>
-            <span>Families served</span>
-          </div>
-        </div>
+    <!-- 師資總括 -->
+    <div class="v10-tutor-summary">
+      <div class="v10-tutor-summary-card">
+        <span class="v10-tutor-summary-eyebrow">Academic credentials</span>
+        <h3>Top universities · HK education experts</h3>
+        <p>我們的Tutor team均畢業或任教於香港中文大學、香港大學、北京大學、英屬哥倫比亞大學等頂尖學府，覆蓋商科、法律、工程、文學、教育等多個專業範疇。</p>
+      </div>
+
+      <div class="v10-tutor-summary-card">
+        <span class="v10-tutor-summary-eyebrow">Teaching experience</span>
+        <h3>15+ years · curriculum + interview training</h3>
+        <p>15+ years HK education experience. Authored school-based materials for multiple Band 1 secondary schools. Regular internal training to keep quality consistent.</p>
+      </div>
+
+      <div class="v10-tutor-summary-card">
+        <span class="v10-tutor-summary-eyebrow">Why our tutors</span>
+        <h3>5 core advantages</h3>
+        <ul class="v10-tutor-summary-list">
+          <li><strong>In-house, not outsourced</strong> — Full-time staff — not external university students or part-timers</li>
+          <li><strong>Curriculum authorship</strong> — Internal materials library, authors school-based content annually</li>
+          <li><strong>HK exam specialists</strong> — Deep knowledge of DSE / IB / A-Level exam patterns and marking</li>
+          <li><strong>Interview training expertise</strong> — Years training top-school interview panels — Chinese & English</li>
+          <li><strong>Bilingual + trilingual</strong> — Cantonese / Mandarin / English — all supported</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICING PACKAGES ============ -->
+<section class="v10-section white" id="pricing">
+  <div class="v10-container">
+    <div class="v10-head">
+      <span class="eyebrow">Transparent pricing · Refund guarantee</span>
+      <h2>2–3 package combinations,<br>pick what fits your family.</h2>
+      <p class="lede">唔同家庭嘅需要唔同，所以我們設計咗幾個套餐，由Initial consultation到一條龍服務都有。具體費用按家庭情況、學生年級、學校類別而定 — 諮詢後會有明確報價。</p>
+    </div>
+
+    <div class="v10-packages">
+      <!-- 套餐 A：Assessment + consultation -->
+      <div class="v10-package">
+        <span class="v10-package-tag">A · Starter</span>
+        <h4>Assessment + consultation</h4>
+        <p class="v10-package-desc">For families just starting — want to understand child\'s ability + suitable pathway direction.</p>
+        <ul class="v10-package-points">
+          <li>30 分鐘免費Initial consultation</li>
+          <li>3 小時Academic assessment（英文 + 數學）</li>
+          <li>Report + pathway recommendation within 1 week</li>
+          <li>3 education pathways分析（DSE / IB / A-Level）</li>
+          <li>Draft school list (8–20 targets)</li>
+        </ul>
+      </div>
+
+      <!-- 套餐 B：Education consultancy -->
+      <div class="v10-package featured">
+        <span class="v10-package-tag">B · Standard</span>
+        <h4>Education consultancy</h4>
+        <p class="v10-package-desc">For families with clear targets — end-to-end from assessment to enrolment.</p>
+        <ul class="v10-package-points">
+          <li>All Package A items</li>
+          <li>1 位資深顧問 + 學科Tutor team全程跟進</li>
+          <li>School selection strategy + 三層梯隊（首選 / 次選 / 保底）</li>
+          <li>Registration, documents, interview training — all-in</li>
+          <li>3–6 month service + 1 term post-enrolment follow-up</li>
+          <li>Refund guarantee in contract (25% / 50% conditions)</li>
+        </ul>
+      </div>
+
+      <!-- 套餐 C：升學 + 補習 -->
+      <div class="v10-package">
+        <span class="v10-package-tag">C · All-in</span>
+        <h4>Education + tutoring</h4>
+        <p class="v10-package-desc">For families needing both academic + school-application support.</p>
+        <ul class="v10-package-points">
+          <li>套餐 B 全部內容</li>
+          <li>1-on-1 tutoring (20+ sessions as needed)</li>
+          <li>Subject tutor + interview tutor dual-track</li>
+          <li>DSE / IB / A-Level subject strengthening</li>
+          <li>Local + international school pathways in parallel</li>
+          <li>Unlimited consultations year-round</li>
+        </ul>
       </div>
     </div>
 
-    <!-- 5 Tutors -->
-    <div class="v10-tutor-grid">
-      <div class="v10-tutor">
-        <div class="v10-tutor-avatar">YB</div>
-        <h4 class="v10-tutor-name">Ms Yeung</h4>
-        <span class="v10-tutor-role">Head, Interview Coaching</span>
-        <p class="v10-tutor-bio">Years of interview and presentation training experience, focusing on language ability and bearing to lift student performance across the board.</p>
-        <ul class="v10-tutor-cred">
-          <li>MSc in Corporate Communication, CUHK</li>
-          <li>LLB in International Politics, Peking University</li>
-          <li>HK Alumni Ambassador, Peking University Admissions</li>
-          <li>HKCEE Grade A in Chinese Language & Chinese History</li>
-          <li>Global Career Development Facilitator (GCDF)</li>
-        </ul>
-      </div>
+    <p class="v10-pricing-note">All fees depend on family situation, grade, school type — clear quote after consultation, no hidden charges. Refund terms in formal contract.</p>
+  </div>
+</section>
 
-      <div class="v10-tutor">
-        <div class="v10-tutor-avatar">LC</div>
-        <h4 class="v10-tutor-name">Ms Liu</h4>
-        <span class="v10-tutor-role">Head, Chinese Assessment</span>
-        <p class="v10-tutor-bio">20+ years teaching secondary Chinese, with deep familiarity in curriculum design and exam requirements. Maintains an extensive resource library and excels at teaching set texts and classical Chinese.</p>
-        <ul class="v10-tutor-cred">
-          <li>BA in Chinese, CUHK</li>
-          <li>20+ years secondary Chinese teaching</li>
-          <li>Yearly develops school-based materials for multiple Band 1 secondary schools</li>
-          <li>Former editor and contributor at Ming Pao and other newspapers</li>
-          <li>Published dozens of DSE Chinese study guides and practice papers</li>
-        </ul>
-      </div>
+<!-- ============ DIFFERENTIATION vs 一般中介 ============ -->
+<section class="v10-section canvas" id="differences">
+  <div class="v10-container">
+    <div class="v10-head">
+      <span class="eyebrow">CareerForge vs typical agencies</span>
+      <h2>Why we differ<br>because someone is always with you.</h2>
+      <p class="lede">Typical agencies outsource, do one-off matching. CareerForge is end-to-end, in-house, with curriculum + interview training — same team from consultation to enrolment.</p>
+    </div>
 
-      <div class="v10-tutor">
-        <div class="v10-tutor-avatar">EL</div>
-        <h4 class="v10-tutor-name">Ms Lee</h4>
-        <span class="v10-tutor-role">Head, English Assessment</span>
-        <p class="v10-tutor-bio">3+ years of clinical practice in speech therapy, with exposure to a wide range of teaching methods. Strong grasp of HK exam systems and question patterns — specialises in oral training and exam technique.</p>
-        <ul class="v10-tutor-cred">
-          <li>Faculty of Speech & Hearing Sciences, HKU</li>
-          <li>Marymount Secondary School, Kowloon Tong graduate</li>
-          <li>HKDSE English Speaking: 5** (top grade)</li>
-          <li>IELTS overall 8.0</li>
-          <li>5+ years tutoring experience</li>
-        </ul>
+    <div class="v10-diff-table">
+      <div class="v10-diff-row v10-diff-header">
+        <div class="v10-diff-cell"></div>
+        <div class="v10-diff-cell v10-diff-us">CareerForge</div>
+        <div class="v10-diff-cell v10-diff-them">一般中介</div>
       </div>
-
-      <div class="v10-tutor">
-        <div class="v10-tutor-avatar">AL</div>
-        <h4 class="v10-tutor-name">Mr. Lee</h4>
-        <span class="v10-tutor-role">Head, Science Tutoring</span>
-        <p class="v10-tutor-bio">16 years of teaching experience — skilled at combining online and offline practice with visual problem-solving methods, turning complex topics into clear, accessible learning.</p>
-        <ul class="v10-tutor-cred">
-          <li>MSc Computer Science Engineering, HKU</li>
-          <li>BSc Computer Physics & Software Engineering, HKU</li>
-          <li>Students from St Paul's College, St Louis School, King's College, Ying Wa Girls' School, St Stephen's Girls' College, St Paul's Co-educational College, Australian International School and more</li>
-        </ul>
+      <div class="v10-diff-row">
+        <div class="v10-diff-cell v10-diff-label">Tutor quality</div>
+        <div class="v10-diff-cell v10-diff-us"><span class="v10-diff-check">✓</span> 公司專職團隊，10+ 年Teaching experience</div>
+        <div class="v10-diff-cell v10-diff-them">Outsourced 3rd parties, part-time students</div>
       </div>
-
-      <div class="v10-tutor">
-        <div class="v10-tutor-avatar">CT</div>
-        <h4 class="v10-tutor-name">Ms Tsui</h4>
-        <span class="v10-tutor-role">English & Translation Tutor</span>
-        <p class="v10-tutor-bio">HKU double-major in English (literature & linguistics) and translation. Specialises in DSE, IGCSE and IELTS — 20+ years of teaching experience.</p>
-        <ul class="v10-tutor-cred">
-          <li>Double Major in English (Lit & Ling) + Translation, HKU</li>
-          <li>Professional translator qualifications</li>
-          <li>20+ years teaching experience</li>
-          <li>Specialising in DSE, IGCSE, IELTS</li>
-          <li>Local & international school entrance interview and written test prep</li>
-        </ul>
+      <div class="v10-diff-row">
+        <div class="v10-diff-cell v10-diff-label">Materials</div>
+        <div class="v10-diff-cell v10-diff-us"><span class="v10-diff-check">✓</span> 內部Materials庫，每年編制校本材料</div>
+        <div class="v10-diff-cell v10-diff-them">Off-the-shelf practice books</div>
       </div>
-
-      <div class="v10-tutor">
-        <div class="v10-tutor-avatar">CL</div>
-        <h4 class="v10-tutor-name">Ms Lau</h4>
-        <span class="v10-tutor-role">Cross-disciplinary Tutor</span>
-        <p class="v10-tutor-bio">A registered school teacher with 10+ years of classroom experience. Teaches Chinese, Chinese History and English, plus interview coaching. Trilingual (Cantonese, English, Mandarin) with Korean and German working knowledge.</p>
-        <ul class="v10-tutor-cred">
-          <li>BSS (Hons) in Policy & Administration, CityU</li>
-          <li>PGDE, HKBU</li>
-          <li>Registered school teacher, 10+ years classroom experience</li>
-          <li>Trilingual; working knowledge of Korean and German</li>
-          <li>Teaches Chinese, Chinese History, English, and interview coaching</li>
-        </ul>
+      <div class="v10-diff-row">
+        <div class="v10-diff-cell v10-diff-label">Progress reporting</div>
+        <div class="v10-diff-cell v10-diff-us"><span class="v10-diff-check">✓</span> Direct from consultant + tutor</div>
+        <div class="v10-diff-cell v10-diff-them">Customer service delivers official answers</div>
+      </div>
+      <div class="v10-diff-row">
+        <div class="v10-diff-cell v10-diff-label">Teaching locations</div>
+        <div class="v10-diff-cell v10-diff-us"><span class="v10-diff-check">✓</span> 30+ HK centres + door-to-door tutoring</div>
+        <div class="v10-diff-cell v10-diff-them">少量Teaching locations，只可線上</div>
+      </div>
+      <div class="v10-diff-row">
+        <div class="v10-diff-cell v10-diff-label">Refund commitment</div>
+        <div class="v10-diff-cell v10-diff-us"><span class="v10-diff-check">✓</span> 25% / 50% refund written in contract</div>
+        <div class="v10-diff-cell v10-diff-them">Generally no clear refund terms</div>
       </div>
     </div>
   </div>
@@ -1161,109 +1369,46 @@
 <section class="v10-section canvas" id="success-cases">
   <div class="v10-container">
     <div class="v10-head">
-      <span class="eyebrow">CASE STUDIES</span>
-      <h2>Every case<br>is a real family's education turnaround.</h2>
-      <p class="lede">These are real cases handled by the CareerForge education team in the 2024-2026 academic years — school names are listed based on public information to protect family privacy.</p>
+      <span class="eyebrow">Success cases</span>
+      <h2>Each case,<br>is a real family\'s education breakthrough.</h2>
+      <p class="lede">Real cases from the CareerForge education team, 2024–2026 academic years. School names labelled per public information to protect family privacy.</p>
     </div>
 
     <div class="v10-cases">
       <div class="v10-case">
         <span class="v10-case-icon">★</span>
-        <p class="v10-case-quote">"Secured a Top-100 primary school placement within one month"</p>
-        <span class="v10-case-meta">Primary admission · AY 2024</span>
+        <p class="v10-case-quote">"Enrolled at a Top-100 primary school within one month"</p>
+        <span class="v10-case-meta">Primary admission · 2024</span>
       </div>
 
       <div class="v10-case">
         <span class="v10-case-icon">★</span>
-        <p class="v10-case-quote">"Exceeded expectations — original plan was to repeat Primary 2; successfully transferred into Primary 3"</p>
-        <span class="v10-case-meta">Mid-year transfer · AY 2024</span>
+        <p class="v10-case-quote">"Results exceeded expectations — planned to repeat P2, successfully transferred to P3"</p>
+        <span class="v10-case-meta">Transfer application · 2024</span>
       </div>
 
       <div class="v10-case">
         <span class="v10-case-icon">★</span>
-        <p class="v10-case-quote">"A CDNIS IBMYP student — began tutoring in September, secured a Singapore international school placement next term"</p>
-        <span class="v10-case-meta">International school transfer · AY 2025</span>
+        <p class="v10-case-quote">"Clementi Secondary IBMYP student, tutoring from Sept — admitted to Singapore international school next term"</p>
+        <span class="v10-case-meta">International school transfer · 2025</span>
       </div>
 
       <div class="v10-case">
         <span class="v10-case-icon">★</span>
-        <p class="v10-case-quote">"Newly arrived HK student — months of English tutoring led to a top Band 1 placement at Bishop Hall Jubilee College"</p>
-        <span class="v10-case-meta">Band 1 secondary transfer · AY 2025</span>
+        <p class="v10-case-quote">"New-to-HK student, English tutoring for several months — admitted to top Band 1 (Bishop Hall Jubilee Sec)"</p>
+        <span class="v10-case-meta">Band 1 secondary transfer · 2025</span>
       </div>
 
       <div class="v10-case">
         <span class="v10-case-icon">★</span>
-        <p class="v10-case-quote">"Arrived in HK late August — from a 'blank paper' English transfer test to a senior secondary offer in October"</p>
-        <span class="v10-case-meta">Senior secondary transfer · AY 2025</span>
+        <p class="v10-case-quote">"Arrived late August — from blank English paper in placement test to senior secondary offer in October"</p>
+        <span class="v10-case-meta">Senior secondary transfer · 2025</span>
       </div>
 
       <div class="v10-case">
         <span class="v10-case-icon">★</span>
-        <p class="v10-case-quote">"Two sisters applied to 8 leading kindergartens, received 7 offers — chose Holy Angel (Kindergarten Section)"</p>
-        <span class="v10-case-meta">Kindergarten admission · AY 2024</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ PRICING & REFUND ============ -->
-<section class="v10-section white" id="pricing">
-  <div class="v10-container">
-    <div class="v10-head">
-      <span class="eyebrow">TRANSPARENT PRICING · REFUND GUARANTEE</span>
-      <h2>From HKD 60,000,<br>with full or partial refund guarantee.</h2>
-      <p class="lede">Every fee is itemised by stage; the package includes the academic assessment plus back-end school application services. Academic tutoring is quoted separately. We understand every family has its own budget — so we provide a clear fee structure and refund terms.</p>
-    </div>
-
-    <div class="v10-pricing-grid">
-      <div class="v10-pricing">
-        <h4>Academic Assessment</h4>
-        <p class="v10-pricing-price">Per-grade pricing · HKD 3,000 – 5,000 per session</p>
-        <ul>
-          <li>Primary: 3 hours, HKD 3,000</li>
-          <li>Junior secondary: 3 hours, HKD 4,000</li>
-          <li>Senior secondary: 3 hours, HKD 5,000</li>
-          <li>Covers English + Mathematics, 1.5 hours each</li>
-          <li>Report delivered within 1 week</li>
-          <li>Includes HKD 1,000 AI English learning programme (2 months)</li>
-          <li>Guided by experienced teachers with detailed commentary</li>
-          <li>Flexible scheduling, charged per subject</li>
-        </ul>
-      </div>
-
-      <div class="v10-pricing featured">
-        <span class="v10-pricing-tag">Full Package</span>
-        <h4>Admissions Package</h4>
-        <p class="v10-pricing-price">From HKD 60,000 · assessment + back-end application</p>
-        <ul>
-          <li>Package fee: from HKD 60,000</li>
-          <li>Includes: academic assessment + back-end application services</li>
-          <li>Optional add-on: 1-on-1 tutoring (20 sessions at HKD 550/hour)</li>
-          <li>Example: HKD 3,000 assessment + 20 sessions (11,000) + 60,000 package = approx. HKD 74,000</li>
-          <li>School selection: identify 8–20 target schools / programmes</li>
-          <li>One senior consultant + subject tutor team throughout</li>
-          <li>Interview coaching: HKD 6,500 / hour (separately quoted)</li>
-          <li>Flexible combinations to suit your family</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Refund guarantee -->
-    <div class="v10-refund">
-      <div class="v10-refund-inner">
-        <h4>REFUND GUARANTEE · IN WRITING</h4>
-        <p>If the student does not gain admission to a target school specified in the service agreement, a partial service fee refund is payable per the stated terms. All refund mechanisms are explicitly written into the agreement signed by both parties.</p>
-
-        <div class="v10-refund-grid">
-          <div class="v10-refund-card">
-            <span class="percent">25%</span>
-            <span class="label">All first-choice applications rejected — 25% refund</span>
-          </div>
-          <div class="v10-refund-card">
-            <span class="percent">50%</span>
-            <span class="label">Both first- and second-choice applications rejected — 50% refund</span>
-          </div>
-        </div>
+        <p class="v10-case-quote">"Two sisters applied to 8 top kindergartens, 7 offers — chose Kowloon True Light (KG section)"</p>
+        <span class="v10-case-meta">Kindergarten admission · 2024</span>
       </div>
     </div>
   </div>
@@ -1273,7 +1418,7 @@
 <section class="v10-section canvas tight" style="padding-top: 0;">
   <div class="v10-container">
     <blockquote class="v10-disclaimer">
-      <p class="v10-disclaimer-text">★ CareerForge is committed to lawful, evidence-based advisory work. All education and residency applications are built on professional assessment and genuine capability.</p>
+      <p class="v10-disclaimer-text">★ CareerForge upholds legal, honest, fact-based consultation principles. All education and immigration applications are built on professional assessment and genuine capability.</p>
     </blockquote>
   </div>
 </section>
@@ -1285,10 +1430,10 @@
       <div class="v10-cta-inner">
         <span class="v10-cta-eyebrow">START YOUR JOURNEY</span>
         <h2>Step 1: 30-min free education assessment</h2>
-        <p>Submit your details and receive a consultant reply within 24 hours — including a preliminary child assessment, 3 pathway recommendations (DSE / IB / A-Level), time estimates and a follow-up plan.</p>
+        <p>提交基本資料後 24 小時內收到顧問回覆 — 包含子女學業初步評估 + 3 education pathways建議（DSE / IB / A-Level）+ 預計所需時間 + 後續路徑規劃。</p>
         <div class="v10-cta-actions">
-          <a href="https://wa.me/85295651459" class="v10-cta-btn v10-cta-primary">WhatsApp to Book</a>
-          <a href="quiz.html" class="v10-cta-btn v10-cta-secondary">Try the 3-min Self-Assessment</a>
+          <a href="https://wa.me/85295651459" class="v10-cta-btn v10-cta-primary">WhatsApp 立即預約</a>
+          <a href="quiz-en.html" class="v10-cta-btn v10-cta-secondary">先做 3 分鐘牛馬測驗</a>
         </div>
       </div>
     </div>
@@ -1299,24 +1444,24 @@
 <section class="v10-section canvas tight" style="padding-top: 0;">
   <div class="v10-container">
     <div class="v10-head">
-      <span class="eyebrow">CONTACT US</span>
-      <h2>Pick your preferred channel<br>to talk to a consultant.</h2>
+      <span class="eyebrow">聯絡我們</span>
+      <h2>用你最方便的方式，<br>與顧問直接對話。</h2>
     </div>
     <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 56px;">
       <div style="background: var(--white); border: 1px solid var(--ink-100); border-radius: var(--radius); padding: 40px 32px; text-align: center; box-shadow: var(--shadow-card);">
         <div style="display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, var(--navy) 0%, var(--gold) 100%); color: var(--white); font-size: 1.5rem; margin-bottom: 20px;">📱</div>
-        <h4 style="font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 1.15rem; font-weight: 700; color: var(--ink-900); margin: 0 0 10px;">WhatsApp / WeChat</h4>
-        <p style="font-size: 0.95rem; color: var(--ink-700); margin: 0; line-height: 1.6;">852-9565-1459<br>Reply within 24 hours</p>
+        <h4 style="font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 1.15rem; font-weight: 700; color: var(--ink-900); margin: 0 0 10px;">WhatsApp / 微信</h4>
+        <p style="font-size: 0.95rem; color: var(--ink-700); margin: 0; line-height: 1.6;">852-9565-1459<br>顧問 24 小時內回覆</p>
       </div>
       <div style="background: var(--white); border: 1px solid var(--ink-100); border-radius: var(--radius); padding: 40px 32px; text-align: center; box-shadow: var(--shadow-card);">
         <div style="display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, var(--navy) 0%, var(--gold) 100%); color: var(--white); font-size: 1.5rem; margin-bottom: 20px;">✉️</div>
-        <h4 style="font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 1.15rem; font-weight: 700; color: var(--ink-900); margin: 0 0 10px;">Email</h4>
-        <p style="font-size: 0.95rem; color: var(--ink-700); margin: 0; line-height: 1.6;">careerforgehk@gmail.com<br>Written plan summary on request</p>
+        <h4 style="font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 1.15rem; font-weight: 700; color: var(--ink-900); margin: 0 0 10px;">電郵</h4>
+        <p style="font-size: 0.95rem; color: var(--ink-700); margin: 0; line-height: 1.6;">careerforgehk@gmail.com<br>提供書面方案摘要</p>
       </div>
       <div style="background: var(--white); border: 1px solid var(--ink-100); border-radius: var(--radius); padding: 40px 32px; text-align: center; box-shadow: var(--shadow-card);">
         <div style="display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, var(--navy) 0%, var(--gold) 100%); color: var(--white); font-size: 1.5rem; margin-bottom: 20px;">📍</div>
-        <h4 style="font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 1.15rem; font-weight: 700; color: var(--ink-900); margin: 0 0 10px;">Hong Kong Office</h4>
-        <p style="font-size: 0.95rem; color: var(--ink-700); margin: 0; line-height: 1.6;">Central / Tsim Sha Tsui<br>By-appointment 1-on-1 consultation</p>
+        <h4 style="font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 1.15rem; font-weight: 700; color: var(--ink-900); margin: 0 0 10px;">香港辦公室</h4>
+        <p style="font-size: 0.95rem; color: var(--ink-700); margin: 0; line-height: 1.6;">中環 / 尖沙咀<br>預約制 1 對 1 諮詢</p>
       </div>
     </div>
   </div>
@@ -1327,30 +1472,30 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <img src="assets/logo.png" alt="CareerForge 鑄途" class="footer-logo">
-        <p>Hong Kong high-end personal-growth consultancy. Visa · Education · Career capital — all under one roof.</p>
+        <p>香港高端個人成長顧問。身份 · 升學 · 職涯身價 一站式陪跑。</p>
       </div>
       <div class="footer-col">
-        <h4>Services</h4>
-        <a href="immigration.html">Visa & Residency</a>
-        <a href="career.html">Career Capital</a>
-        <a href="education.html">Overseas & HK Education</a>
+        <h4>業務板塊</h4>
+        <a href="immigration-en.html">身份與續簽對標</a>
+        <a href="career-en.html">求職與身價躍遷</a>
+        <a href="education-en.html">海外與香港升學</a>
       </div>
       <div class="footer-col">
-        <h4>Resources</h4>
-        <a href="cases.html">Case Studies</a>
-        <a href="quiz.html">Career Self-Assessment</a>
-        <a href="#contact">Contact</a>
+        <h4>資源</h4>
+        <a href="cases-en.html">客戶案例</a>
+        <a href="quiz-en.html">牛馬身價測驗</a>
+        <a href="#contact">聯絡我們</a>
       </div>
       <div class="footer-col">
-        <h4>Contact</h4>
+        <h4>聯絡</h4>
         <a href="https://wa.me/85295651459">WhatsApp</a>
         <a href="mailto:careerforgehk@gmail.com">careerforgehk@gmail.com</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 CareerForge. All rights reserved.</span>
-<span class="footer-lang">
-        <a href="education.html">繁體</a> · <a href="education-cn.html">简体</a> · <a href="education-en.html" class="active">EN</a>
+      <span>© 2026 CareerForge 鑄途. All rights reserved.</span>
+      <span class="footer-lang">
+        <a href="index.html">繁體</a> · <a href="index-cn.html">简体</a> · <a href="index-en.html" class="active">EN</a>
       </span>
     </div>
   </div>

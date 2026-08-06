@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>香港人才引进与身份规划 | CareerForge 铸途</title>
-<meta name="description" content="高才通 / 优才 / 专才 / 留学升港 — 全周期合规陪跑。从身份申请、教育衔接到 7 年永居规划。">
+<title>香港身份与续签规划 · 高才通 / 优才 / 专才 / 7 年永居 · CareerForge 铸途</title>
+<meta name="description" content="CareerForge 铸途 — 香港身份与续签完整对标。4 大人才计划（高才通 / 优才 / 专才 / 留学升港），由首签到 7 年永居全程合规陪跑。">
 <link rel="icon" type="image/png" href="assets/icon.png">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700;800&family=Noto+Serif+SC:wght@400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
@@ -12,746 +12,1620 @@
 <body>
 
 <style>
-/* ============ V8 SHARED DESIGN TOKENS (immigration) ============ */
+/* ============ V10 — 深海藍 #0B192C × 香檳金 #D4AF37 (Education) ============ */
 :root {
-  --scheme-color: #C8A04A;          /* gold */
-  --scheme-color-dark: #8E6F2D;
-  --scheme-color-light: #E5C97A;
-  --scheme-bg-soft: #FAF6EC;
+  --navy:        #0B192C;
+  --navy-700:    #102542;
+  --navy-500:    #1B3A5C;
+  --navy-300:    #4A6B8A;
+  --gold:        #D4AF37;
+  --gold-600:    #B8941F;
+  --gold-100:    #F7EFC9;
+  --white:       #FFFFFF;
+  --canvas:      #F7F8FA;
+  --ink-900:     #0B192C;
+  --ink-700:     #3A4A5C;
+  --ink-500:     #6B7A8A;
+  --ink-100:     #E5E9EE;
+  --shadow-card: 0 4px 20px rgba(0,0,0,0.06);
+  --shadow-deep: 0 16px 48px -12px rgba(11,25,44,0.28);
+  --radius:      12px;
 }
-.v8-bilingual-head { text-align: center; max-width: 760px; margin: 0 auto 56px; }
-.v8-bilingual-head .eyebrow-cn { display: block; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--scheme-color-dark); margin-bottom: 14px; }
-.v8-bilingual-head .eyebrow-en { display: block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.32em; color: var(--ink-500); margin-bottom: 18px; }
-.v8-bilingual-head h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; letter-spacing: 0.5px; line-height: 1.15; color: var(--ink-900); margin: 0 0 18px; font-family: 'Playfair Display', 'Noto Serif SC', serif; }
-.v8-bilingual-head .lede { font-size: 1.0625rem; line-height: 1.7; color: var(--ink-600); margin: 0; }
-.v8-divider-line { width: 36px; height: 2px; background: linear-gradient(90deg, var(--scheme-color-dark), transparent); margin: 0 auto 28px; border-radius: 2px; }
 
-/* ============ OVERVIEW STATS ============ */
-.v8-stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
-.v8-stat-card { padding: 28px 22px; background: var(--surface-elevated); border: 1px solid var(--ink-100); border-radius: var(--radius-lg, 14px); transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
-.v8-stat-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px -12px rgba(29,29,31,0.16); border-color: var(--scheme-color-light); }
-.v8-stat-num { display: block; font-size: 2.4rem; font-weight: 800; letter-spacing: -0.02em; color: var(--scheme-color-dark); line-height: 1; margin-bottom: 8px; font-family: 'Playfair Display', 'Noto Serif SC', serif; }
-.v8-stat-num .unit { font-size: 1.1rem; font-weight: 600; margin-left: 2px; color: var(--scheme-color-dark); }
-.v8-stat-label { display: block; font-size: 0.85rem; color: var(--ink-700); line-height: 1.4; }
-.v8-stat-label small { display: block; font-size: 0.72rem; color: var(--ink-500); margin-top: 2px; letter-spacing: 0.05em; }
+/* ============ HERO ============ */
+.v10-hero {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-700) 100%);
+  padding: 120px 0 100px;
+  position: relative;
+  overflow: hidden;
+  color: var(--white);
+}
+.v10-hero::before {
+  content: "";
+  position: absolute; top: -200px; right: -200px;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(212,175,55,0.12) 0%, transparent 65%);
+  border-radius: 50%;
+}
+.v10-hero::after {
+  content: "";
+  position: absolute; bottom: -300px; left: -200px;
+  width: 700px; height: 700px;
+  background: radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 60%);
+  border-radius: 50%;
+}
+.v10-hero .v10-container { position: relative; z-index: 2; max-width: 1180px; margin: 0 auto; padding: 0 32px; }
 
-/* ============ VISA TREND CHART ============ */
-.v8-chart-wrap { background: var(--surface-elevated); border: 1px solid var(--ink-100); border-radius: var(--radius-lg, 14px); padding: 36px 32px 28px; }
-.v8-chart-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; margin-bottom: 28px; flex-wrap: wrap; }
-.v8-chart-head h3 { font-size: 1.25rem; font-weight: 700; letter-spacing: 0.3px; color: var(--ink-900); margin: 0 0 6px; font-family: 'Playfair Display', 'Noto Serif SC', serif; }
-.v8-chart-head p { font-size: 0.85rem; color: var(--ink-500); margin: 0; }
-.v8-chart-legend { display: inline-flex; gap: 16px; font-size: 0.78rem; color: var(--ink-600); }
-.v8-chart-legend .dot { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: middle; }
-.v8-chart-svg { width: 100%; height: auto; display: block; }
-.v8-chart-source { font-size: 0.72rem; color: var(--ink-500); margin-top: 14px; text-align: right; letter-spacing: 0.04em; }
+.v10-hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 12px;
+  padding: 10px 22px;
+  border: 1px solid rgba(212,175,55,0.4);
+  border-radius: 999px;
+  background: rgba(212,175,55,0.06);
+  font-size: 0.82rem; font-weight: 600;
+  letter-spacing: 0.18em;
+  color: var(--gold);
+  margin-bottom: 36px;
+}
+.v10-hero-eyebrow-dot { width: 8px; height: 8px; background: var(--gold); border-radius: 50%; box-shadow: 0 0 12px var(--gold); }
 
-/* ============ 4 VISA SCHEMES (hklovingfamily inspired) ============ */
-.v8-scheme-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
-.v8-scheme-card { background: var(--surface-elevated); border: 1px solid var(--ink-100); border-radius: var(--radius-lg, 14px); padding: 36px 32px; transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; position: relative; overflow: hidden; }
-.v8-scheme-card:hover { transform: translateY(-4px); box-shadow: 0 16px 36px -12px rgba(29,29,31,0.18); border-color: var(--scheme-color-light); }
-.v8-scheme-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--scheme-color-dark), var(--scheme-color-light)); }
-.v8-scheme-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 14px; }
-.v8-scheme-head h3 { font-size: 1.4rem; font-weight: 700; letter-spacing: 0.3px; color: var(--ink-900); margin: 0; font-family: 'Playfair Display', 'Noto Serif SC', serif; }
-.v8-scheme-tag { display: inline-block; padding: 4px 12px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; color: var(--scheme-color-dark); background: var(--scheme-bg-soft); border-radius: 999px; flex-shrink: 0; }
-.v8-scheme-meta { font-size: 0.78rem; color: var(--ink-500); font-weight: 500; letter-spacing: 0.04em; margin-bottom: 14px; }
-.v8-scheme-desc { font-size: 0.95rem; line-height: 1.7; color: var(--ink-700); margin: 0 0 20px; }
-.v8-scheme-advantages { list-style: none; padding: 0; margin: 0 0 20px; border-top: 1px solid var(--ink-100); padding-top: 18px; }
-.v8-scheme-advantages li { padding: 7px 0 7px 32px; position: relative; font-size: 0.9rem; line-height: 1.6; color: var(--ink-800); }
-.v8-scheme-advantages li::before { content: attr(data-num); position: absolute; left: 0; top: 7px; width: 22px; height: 22px; line-height: 22px; text-align: center; background: var(--scheme-color-dark); color: #fff; font-size: 0.72rem; font-weight: 700; border-radius: 50%; }
-.v8-scheme-foot { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 18px; border-top: 1px solid var(--ink-100); font-size: 0.78rem; color: var(--ink-500); letter-spacing: 0.04em; }
-.v8-scheme-foot a { color: var(--scheme-color-dark); font-weight: 600; text-decoration: none; }
-.v8-scheme-foot a:hover { text-decoration: underline; }
+.v10-hero-title {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: clamp(2.6rem, 5.8vw, 4.8rem);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  line-height: 1.15;
+  color: var(--white);
+  margin: 0 0 32px;
+  max-width: 980px;
+}
+.v10-hero-title .gold {
+  color: var(--gold);
+  font-style: italic;
+  font-weight: 600;
+}
+.v10-hero-sub {
+  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+  line-height: 1.7;
+  color: rgba(255,255,255,0.78);
+  margin: 0 0 56px;
+  max-width: 760px;
+  font-weight: 400;
+}
+.v10-hero-trust {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin-top: 64px;
+  padding: 36px 0 0;
+  border-top: 1px solid rgba(212,175,55,0.25);
+}
+.v10-hero-trust-item {
+  padding-right: 24px;
+  border-right: 1px solid rgba(255,255,255,0.08);
+}
+.v10-hero-trust-item:last-child { border-right: none; }
+.v10-hero-trust-item strong {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 0.5px;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.v10-hero-trust-item span {
+  display: block;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.65);
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+}
 
-/* ============ 4-STAGE PATHWAYS ============ */
-.v8-pathway-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; align-items: stretch; }
-.v8-pathway { padding: 28px 22px; background: var(--surface-elevated); border: 1px solid var(--ink-100); position: relative; transition: all .25s ease; }
-.v8-pathway:first-child { border-radius: var(--radius-lg, 14px) 0 0 var(--radius-lg, 14px); }
-.v8-pathway:last-child { border-radius: 0 var(--radius-lg, 14px) var(--radius-lg, 14px) 0; border-left: none; }
-.v8-pathway + .v8-pathway { border-left: none; }
-.v8-pathway:hover { background: linear-gradient(180deg, var(--surface-elevated) 0%, var(--scheme-bg-soft) 100%); transform: translateY(-3px); box-shadow: 0 12px 28px -12px rgba(29,29,31,0.18); z-index: 1; }
-.v8-pathway-stage { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
-.v8-pathway-stage-num { font-size: 0.78rem; font-weight: 800; color: var(--scheme-color-dark); letter-spacing: 0.06em; }
-.v8-pathway-stage-bar { flex: 1; height: 4px; background: var(--ink-100); border-radius: 2px; overflow: hidden; }
-.v8-pathway-stage-bar-fill { display: block; height: 100%; background: linear-gradient(90deg, var(--scheme-color-dark), var(--scheme-color)); border-radius: 2px; }
-.v8-pathway-icon { font-size: 1.6rem; margin-bottom: 12px; display: block; }
-.v8-pathway h4 { font-size: 1.05rem; font-weight: 700; color: var(--ink-900); margin: 0 0 8px; letter-spacing: 0.3px; font-family: 'Playfair Display', 'Noto Serif SC', serif; }
-.v8-pathway-subtitle { font-size: 0.78rem; color: var(--scheme-color-dark); font-weight: 600; margin-bottom: 10px; letter-spacing: 0.05em; }
-.v8-pathway-list { list-style: none; padding: 0; margin: 12px 0 0; }
-.v8-pathway-list li { padding: 6px 0 6px 18px; position: relative; font-size: 0.85rem; color: var(--ink-700); line-height: 1.55; }
-.v8-pathway-list li::before { content: ""; position: absolute; left: 0; top: 14px; width: 8px; height: 1.5px; background: var(--scheme-color-dark); border-radius: 1px; }
+/* ============ SECTION COMMON ============ */
+.v10-section { padding: 100px 0; }
+.v10-section.tight { padding: 64px 0; }
+.v10-section.dark {
+  background: var(--navy);
+  color: var(--white);
+}
+.v10-section.canvas { background: var(--canvas); }
+.v10-section.white { background: var(--white); }
 
-/* ============ 7-YEAR PR TIMELINE ============ */
-.v8-timeline-wrap { background: var(--surface-elevated); border: 1px solid var(--ink-100); border-radius: var(--radius-lg, 14px); padding: 48px 32px 36px; }
-.v8-timeline-head { text-align: center; margin-bottom: 32px; }
-.v8-timeline-head h3 { font-size: 1.4rem; font-weight: 700; margin: 0 0 8px; font-family: 'Playfair Display', 'Noto Serif SC', serif; color: var(--ink-900); }
-.v8-timeline-head p { font-size: 0.95rem; color: var(--ink-600); margin: 0; }
-.v8-timeline-track { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr; gap: 6px; margin-bottom: 24px; }
-.v8-timeline-year { position: relative; background: linear-gradient(180deg, var(--scheme-bg-soft) 0%, var(--scheme-color-light) 100%); border-radius: 6px 6px 0 0; padding: 10px 4px 0; text-align: center; }
-.v8-timeline-year-num { font-size: 1.05rem; font-weight: 800; color: var(--scheme-color-dark); margin-bottom: 4px; font-family: 'Playfair Display', 'Noto Serif SC', serif; }
-.v8-timeline-year-label { font-size: 0.62rem; font-weight: 600; color: var(--ink-700); letter-spacing: 0.03em; line-height: 1.2; padding: 0 2px 8px; }
-.v8-timeline-year-7 { background: linear-gradient(180deg, var(--scheme-color-dark) 0%, var(--scheme-color) 100%); }
-.v8-timeline-year-7 .v8-timeline-year-num,
-.v8-timeline-year-7 .v8-timeline-year-label { color: #fff; }
-.v8-timeline-milestones { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; padding: 14px 0; border-top: 1px solid var(--ink-100); }
-.v8-timeline-milestone { font-size: 0.7rem; color: var(--ink-600); line-height: 1.4; padding: 8px 4px; border-radius: 4px; text-align: center; }
-.v8-timeline-milestone strong { display: block; font-size: 0.74rem; color: var(--scheme-color-dark); margin-bottom: 4px; font-weight: 700; }
+.v10-container { max-width: 1180px; margin: 0 auto; padding: 0 32px; }
 
-/* ============ COMPARISON TABLE ============ */
-.v8-compare-wrap { background: var(--surface-elevated); border: 1px solid var(--ink-100); border-radius: var(--radius-lg, 14px); overflow: hidden; }
-.v8-compare-wrap table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
-.v8-compare-wrap thead { background: var(--ink-900); color: #fff; }
-.v8-compare-wrap th { padding: 18px 16px; font-weight: 700; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; text-align: left; }
-.v8-compare-wrap th:first-child { background: var(--scheme-color-dark); }
-.v8-compare-wrap td { padding: 16px; border-bottom: 1px solid var(--ink-100); vertical-align: top; line-height: 1.5; color: var(--ink-700); }
-.v8-compare-wrap tbody tr:last-child td { border-bottom: none; }
-.v8-compare-wrap tbody tr:hover { background: var(--scheme-bg-soft); }
-.v8-compare-wrap td:first-child { font-weight: 600; color: var(--ink-900); background: #FAFBFC; font-size: 0.85rem; }
-.v8-compare-wrap .check { color: var(--scheme-color-dark); font-weight: 700; }
-.v8-compare-wrap .cross { color: var(--ink-400); }
+.v10-head { text-align: center; max-width: 760px; margin: 0 auto 64px; }
+.v10-head .eyebrow {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+  padding: 6px 0;
+  border-top: 1px solid var(--gold);
+  border-bottom: 1px solid var(--gold);
+}
+.v10-head.dark .eyebrow { color: var(--gold); }
+.v10-head h2 {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  line-height: 1.25;
+  color: var(--ink-900);
+  margin: 0 0 22px;
+}
+.v10-head.dark h2 { color: var(--white); }
+.v10-head .lede {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--ink-700);
+  margin: 0;
+  font-weight: 400;
+}
+.v10-head.dark .lede { color: rgba(255,255,255,0.78); }
 
-/* ============ FAQ ============ */
-.v8-faq { max-width: 760px; margin: 0 auto; }
-.v8-faq details { background: var(--surface-elevated); border: 1px solid var(--ink-100); border-radius: var(--radius-lg, 14px); margin-bottom: 12px; transition: border-color .2s ease; }
-.v8-faq details[open] { border-color: var(--scheme-color-dark); }
-.v8-faq summary { padding: 22px 24px; font-weight: 600; font-size: 1rem; color: var(--ink-900); cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
-.v8-faq summary::-webkit-details-marker { display: none; }
-.v8-faq summary::after { content: "+"; color: var(--scheme-color-dark); font-size: 1.4rem; font-weight: 300; transition: transform .2s ease; }
-.v8-faq details[open] summary::after { transform: rotate(45deg); }
-.v8-faq details[open] summary { border-bottom: 1px solid var(--ink-100); }
-.v8-faq .faq-a { padding: 18px 24px 24px; font-size: 0.95rem; line-height: 1.7; color: var(--ink-700); }
+/* ============ WHY-HK STAT CARDS ============ */
+.v10-why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.v10-why-card {
+  background: var(--white);
+  border: 1px solid var(--ink-100);
+  border-radius: var(--radius);
+  padding: 36px 24px;
+  text-align: center;
+  box-shadow: var(--shadow-card);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.v10-why-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px -8px rgba(11,25,44,0.18);
+  border-color: var(--gold);
+}
+.v10-why-num {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 3.5vw, 2.6rem);
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+.v10-why-label {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--ink-700);
+  font-weight: 600;
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+.v10-why-desc {
+  font-size: 0.82rem;
+  color: var(--ink-500);
+  line-height: 1.6;
+}
 
-/* ============ CTA SECTION ============ */
-.v8-cta-section { background: linear-gradient(135deg, var(--ink-900) 0%, var(--scheme-color-dark) 100%); border-radius: var(--radius-xl, 20px); padding: 56px 40px; text-align: center; color: #fff; position: relative; overflow: hidden; }
-.v8-cta-section::before { content: ""; position: absolute; top: -60px; right: -60px; width: 240px; height: 240px; background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%); border-radius: 50%; }
-.v8-cta-section h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 700; letter-spacing: 0.5px; margin: 0 0 18px; color: #fff; font-family: 'Playfair Display', 'Noto Serif SC', serif; }
-.v8-cta-section p { font-size: 1.05rem; line-height: 1.7; color: rgba(255,255,255,0.85); max-width: 580px; margin: 0 auto 28px; }
-.v8-cta-actions { display: inline-flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
-.v8-cta-btn { padding: 14px 32px; border-radius: 999px; font-weight: 700; font-size: 0.95rem; text-decoration: none; transition: all .2s ease; display: inline-flex; align-items: center; gap: 8px; }
+/* ============ CURRICULUM TRACKS ============ */
+.v10-tracks {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.v10-track {
+  background: var(--white);
+  border: 1px solid var(--ink-100);
+  border-radius: var(--radius);
+  padding: 40px 32px;
+  box-shadow: var(--shadow-card);
+  position: relative;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.v10-track:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px -8px rgba(11,25,44,0.18);
+  border-color: var(--gold);
+}
+.v10-track-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px; height: 56px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--gold) 100%);
+  color: var(--white);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  font-family: 'Playfair Display', serif;
+}
+.v10-track-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-600);
+  margin-bottom: 12px;
+}
+.v10-track h3 {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  line-height: 1.3;
+  color: var(--ink-900);
+  margin: 0 0 14px;
+}
+.v10-track p {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--ink-700);
+  margin: 0 0 20px;
+}
+.v10-track-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.v10-track-list li {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 10px;
+  font-size: 0.92rem;
+  color: var(--ink-700);
+  line-height: 1.6;
+}
+.v10-track-list li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--gold);
+  font-weight: 700;
+}
 
-/* ============ HERO (unified with education) ============ */
-.page-hero { padding: 80px 0 64px; }
-.page-hero-eyebrow { display: inline-flex; align-items: center; gap: 10px; padding: 8px 16px; background: var(--scheme-bg-soft); border: 1px solid var(--scheme-color); border-radius: 999px; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em; color: var(--scheme-color-dark); margin-bottom: 24px; }
-.page-hero-eyebrow-num { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-weight: 800; font-size: 0.85rem; }
-.page-hero-title { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1.05; color: var(--ink-900); margin: 0 0 24px; }
-.page-hero-title .accent { color: var(--scheme-color-dark); }
-.page-hero-subtitle { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: clamp(1.0625rem, 1.6vw, 1.3rem); line-height: 1.65; color: var(--ink-600); margin: 0 0 36px; max-width: 680px; }
-.v8-cta-btn-primary { background: linear-gradient(135deg, var(--scheme-color), var(--scheme-color-light)); color: var(--ink-900); }
-.v8-cta-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(232, 184, 79, 0.4); }
-.v8-cta-btn-secondary { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.4); }
-.v8-cta-btn-secondary:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.82); }
+/* ============ PROCESS (4-STEPS) ============ */
+.v10-process {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.v10-process-step {
+  background: var(--white);
+  border: 1px solid var(--ink-100);
+  border-radius: var(--radius);
+  padding: 36px 28px;
+  position: relative;
+  box-shadow: var(--shadow-card);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.v10-process-step:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px -8px rgba(11,25,44,0.18);
+  border-color: var(--gold);
+}
+.v10-process-step-num {
+  display: inline-block;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 0.5px;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+.v10-process-step-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-500);
+  margin-bottom: 8px;
+}
+.v10-process-step h4 {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--ink-900);
+  margin: 0 0 12px;
+}
+.v10-process-step p {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--ink-700);
+  margin: 0 0 16px;
+}
+.v10-process-step .step-detail {
+  font-size: 0.82rem;
+  color: var(--ink-500);
+  line-height: 1.6;
+  border-top: 1px solid var(--ink-100);
+  padding-top: 12px;
+  margin-top: 12px;
+}
+
+/* ============ TUTOR TEAM ============ */
+.v10-tutor-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.v10-tutor {
+  background: var(--white);
+  border: 1px solid var(--ink-100);
+  border-radius: var(--radius);
+  padding: 36px 28px;
+  box-shadow: var(--shadow-card);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  position: relative;
+}
+.v10-tutor:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px -8px rgba(11,25,44,0.18);
+  border-color: var(--gold);
+}
+.v10-tutor-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px; height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--gold) 100%);
+  color: var(--white);
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+  letter-spacing: 0.5px;
+}
+.v10-tutor-name {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--ink-900);
+  margin: 0 0 6px;
+}
+.v10-tutor-role {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-600);
+  margin-bottom: 16px;
+}
+.v10-tutor-bio {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--ink-700);
+  margin: 0 0 16px;
+}
+.v10-tutor-cred {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.v10-tutor-cred li {
+  font-size: 0.82rem;
+  color: var(--ink-500);
+  line-height: 1.6;
+  padding: 4px 0;
+  border-bottom: 1px dashed var(--ink-100);
+}
+.v10-tutor-cred li:last-child { border-bottom: none; }
+
+/* Director full-width feature */
+.v10-director {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-700) 100%);
+  border-radius: var(--radius);
+  padding: 56px 48px;
+  color: var(--white);
+  margin-bottom: 32px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-deep);
+}
+.v10-director::before {
+  content: "";
+  position: absolute;
+  top: -120px; right: -120px;
+  width: 360px; height: 360px;
+  background: radial-gradient(circle, rgba(212,175,55,0.15) 0%, transparent 65%);
+  border-radius: 50%;
+}
+.v10-director-inner { position: relative; z-index: 1; }
+.v10-director-eyebrow {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+.v10-director h3 {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--white);
+  margin: 0 0 8px;
+}
+.v10-director h4 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.7);
+  margin: 0 0 24px;
+  letter-spacing: 0.02em;
+}
+.v10-director p {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.85);
+  margin: 0 0 24px;
+  max-width: 760px;
+}
+.v10-director-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin-top: 32px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(212,175,55,0.3);
+}
+.v10-director-stat strong {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 0.5px;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.v10-director-stat span {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.5;
+}
+
+/* ============ SUCCESS CASES ============ */
+.v10-cases {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.v10-case {
+  background: var(--white);
+  border: 1px solid var(--ink-100);
+  border-radius: var(--radius);
+  padding: 36px 28px;
+  box-shadow: var(--shadow-card);
+  position: relative;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.v10-case:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px -8px rgba(11,25,44,0.18);
+  border-color: var(--gold);
+}
+.v10-case-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  background: rgba(212,175,55,0.12);
+  color: var(--gold);
+  font-size: 1.4rem;
+  margin-bottom: 18px;
+}
+.v10-case-quote {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--ink-900);
+  margin: 0 0 16px;
+  font-style: italic;
+  letter-spacing: 0.02em;
+}
+.v10-case-meta {
+  font-size: 0.85rem;
+  color: var(--ink-500);
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+}
+
+/* ============ PRICING / REFUND ============ */
+.v10-pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+.v10-pricing {
+  background: var(--white);
+  border: 1px solid var(--ink-100);
+  border-radius: var(--radius);
+  padding: 40px 32px;
+  box-shadow: var(--shadow-card);
+  position: relative;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.v10-pricing:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px -8px rgba(11,25,44,0.18);
+  border-color: var(--gold);
+}
+.v10-pricing.featured {
+  border: 2px solid var(--gold);
+  background: linear-gradient(180deg, rgba(212,175,55,0.04) 0%, var(--white) 30%);
+}
+.v10-pricing-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: var(--gold);
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+}
+.v10-pricing h4 {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--ink-900);
+  margin: 0 0 8px;
+}
+.v10-pricing-price {
+  font-size: 0.95rem;
+  color: var(--ink-500);
+  margin: 0 0 20px;
+  letter-spacing: 0.02em;
+}
+.v10-pricing ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.v10-pricing li {
+  position: relative;
+  padding: 8px 0 8px 28px;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--ink-700);
+  border-bottom: 1px dashed var(--ink-100);
+}
+.v10-pricing li:last-child { border-bottom: none; }
+.v10-pricing li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.v10-refund {
+  margin-top: 56px;
+  padding: 40px 36px;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-700) 100%);
+  border-radius: var(--radius);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-deep);
+}
+.v10-refund::before {
+  content: "";
+  position: absolute; top: -100px; right: -100px;
+  width: 280px; height: 280px;
+  background: radial-gradient(circle, rgba(212,175,55,0.12) 0%, transparent 65%);
+  border-radius: 50%;
+}
+.v10-refund-inner { position: relative; z-index: 1; }
+.v10-refund h4 {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--white);
+  margin: 0 0 12px;
+}
+.v10-refund p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.78);
+  margin: 0 0 28px;
+  max-width: 720px;
+}
+.v10-refund-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+.v10-refund-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(212,175,55,0.3);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+}
+.v10-refund-card .percent {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 0.5px;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+.v10-refund-card .label {
+  font-size: 0.92rem;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.6;
+}
+
+/* ============ DISCLAIMER ============ */
+.v10-disclaimer {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 32px 36px;
+  background: var(--white);
+  border-left: 4px solid var(--gold);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  box-shadow: var(--shadow-card);
+  text-align: center;
+  position: relative;
+}
+.v10-disclaimer::before {
+  content: "★";
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  font-size: 1.2rem;
+  color: var(--gold);
+}
+.v10-disclaimer-text {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--ink-700);
+  margin: 0;
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* ============ CTA ============ */
+.v10-cta {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-700) 100%);
+  border-radius: var(--radius);
+  padding: 80px 56px;
+  text-align: center;
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+  max-width: calc(1180px - 64px);
+}
+.v10-cta::before {
+  content: "";
+  position: absolute; top: -100px; right: -100px;
+  width: 360px; height: 360px;
+  background: radial-gradient(circle, rgba(212,175,55,0.12) 0%, transparent 65%);
+  border-radius: 50%;
+}
+.v10-cta-inner { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; }
+.v10-cta-eyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 18px;
+}
+.v10-cta h2 {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: clamp(1.9rem, 3.2vw, 2.6rem);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  line-height: 1.3;
+  margin: 0 0 22px;
+  color: var(--white);
+}
+.v10-cta p {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.78);
+  margin: 0 0 36px;
+}
+.v10-cta-actions {
+  display: inline-flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.v10-cta-btn {
+  padding: 16px 34px;
+  border-radius: var(--radius);
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: all .25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  letter-spacing: 0.02em;
+}
+.v10-cta-primary {
+  background: var(--gold);
+  color: var(--navy) !important;
+  border: 1px solid var(--gold);
+}
+.v10-cta-primary:hover {
+  background: #E5C344;
+  border-color: #E5C344;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px -6px rgba(212,175,55,0.5);
+}
+.v10-cta-secondary {
+  background: transparent;
+  color: var(--white) !important;
+  border: 1px solid rgba(255,255,255,0.4);
+}
+.v10-cta-secondary:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: var(--white);
+}
 
 /* ============ MOBILE ============ */
 @media (max-width: 900px) {
-  .v8-stat-grid { grid-template-columns: repeat(2, 1fr); }
-  .v8-scheme-grid { grid-template-columns: 1fr; }
-  .v8-pathway-grid { grid-template-columns: 1fr; }
-  .v8-pathway { border-radius: 0 !important; border: 1px solid var(--ink-100); border-bottom: none; }
-  .v8-pathway:last-child { border-bottom: 1px solid var(--ink-100); border-radius: 0 0 var(--radius-lg, 14px) var(--radius-lg, 14px) !important; }
-  .v8-pathway:first-child { border-radius: var(--radius-lg, 14px) var(--radius-lg, 14px) 0 0 !important; }
-  .v8-timeline-track, .v8-timeline-milestones { grid-template-columns: 1fr 1fr 1fr 1fr; }
-  .v8-timeline-year:last-child, .v8-timeline-year-7 { grid-column: span 4; }
-  .v8-compare-wrap { overflow-x: auto; }
-  .v8-compare-wrap table { min-width: 600px; }
+  .v10-hero { padding: 80px 0 64px; }
+  .v10-hero-trust { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .v10-hero-trust-item { border-right: none; padding-right: 0; }
+  .v10-section { padding: 64px 0; }
+  .v10-container { padding: 0 20px; }
+  .v10-why-grid { grid-template-columns: repeat(2, 1fr); }
+  .v10-tracks { grid-template-columns: 1fr; }
+  .v10-process { grid-template-columns: 1fr; }
+  .v10-tutor-grid { grid-template-columns: 1fr; }
+  .v10-cases { grid-template-columns: 1fr; }
+  .v10-pricing-grid { grid-template-columns: 1fr; }
+  .v10-refund-grid { grid-template-columns: 1fr; }
+  .v10-director { padding: 36px 24px; }
+  .v10-director-stats { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .v10-cta { padding: 56px 28px; margin: 0 20px; }
 }
+
+
+/* ============ v10-tutor-summary (replaces individual tutor cards) ============ */
+.v10-tutor-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+.v10-tutor-summary-card {
+  background: linear-gradient(135deg, #f8f6f1 0%, #ffffff 100%);
+  border-radius: var(--radius);
+  padding: 32px 28px;
+  border-left: 4px solid var(--gold);
+  box-shadow: var(--shadow-card);
+}
+.v10-tutor-summary-eyebrow {
+  display: inline-block;
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.v10-tutor-summary-card h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0 0 14px;
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+}
+.v10-tutor-summary-card p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--ink-700);
+  margin: 0;
+}
+.v10-tutor-summary-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.v10-tutor-summary-list li {
+  padding: 10px 0;
+  border-bottom: 1px dashed var(--ink-100);
+  font-size: 14.5px;
+  color: var(--ink-700);
+  line-height: 1.6;
+}
+.v10-tutor-summary-list li:last-child { border-bottom: none; }
+.v10-tutor-summary-list li strong {
+  color: var(--navy);
+  font-weight: 700;
+  display: inline-block;
+  min-width: 120px;
+}
+
+/* ============ v10-packages (3 cards, point form) ============ */
+.v10-packages {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+.v10-package {
+  background: #fff;
+  border: 1px solid var(--ink-100);
+  border-radius: var(--radius);
+  padding: 32px 28px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+.v10-package:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px -8px rgba(11,25,44,0.18);
+  border-color: var(--gold);
+}
+.v10-package.featured {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-700) 100%);
+  color: #fff;
+  border: none;
+}
+.v10-package.featured h4,
+.v10-package.featured .v10-package-points li {
+  color: #fff;
+}
+.v10-package.featured .v10-package-desc {
+  color: rgba(255,255,255,0.85);
+}
+.v10-package-tag {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  padding: 4px 12px;
+  background: rgba(212,175,55,0.1);
+  border-radius: 16px;
+}
+.v10-package.featured .v10-package-tag {
+  background: rgba(212,175,55,0.25);
+  color: var(--gold-100);
+}
+.v10-package h4 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0 0 14px;
+  letter-spacing: 0.5px;
+}
+.v10-package-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--ink-500);
+  margin: 0 0 18px;
+}
+.v10-package-points {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.v10-package-points li {
+  padding: 8px 0 8px 22px;
+  position: relative;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--ink-700);
+  border-bottom: 1px dashed rgba(11,25,44,0.06);
+}
+.v10-package-points li:last-child { border-bottom: none; }
+.v10-package-points li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-weight: 700;
+}
+.v10-package.featured .v10-package-points li {
+  border-bottom-color: rgba(255,255,255,0.1);
+}
+.v10-pricing-note {
+  text-align: center;
+  margin-top: 28px;
+  font-size: 14px;
+  color: var(--ink-500);
+  font-style: italic;
+}
+
+/* ============ v10-diff-table (vs 一般中介) ============ */
+.v10-diff-table {
+  background: #fff;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  margin-top: 40px;
+}
+.v10-diff-row {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1.5fr;
+  border-bottom: 1px solid var(--ink-100);
+}
+.v10-diff-row:last-child { border-bottom: none; }
+.v10-diff-row.v10-diff-header {
+  background: var(--navy);
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+.v10-diff-row.v10-diff-header .v10-diff-cell {
+  padding: 16px 20px;
+  text-align: center;
+}
+.v10-diff-cell {
+  padding: 16px 20px;
+  font-size: 14.5px;
+  line-height: 1.6;
+  border-right: 1px solid var(--ink-100);
+  display: flex;
+  align-items: center;
+}
+.v10-diff-cell:last-child { border-right: none; }
+.v10-diff-label {
+  font-weight: 700;
+  color: var(--navy);
+  background: #f8f6f1;
+}
+.v10-diff-us {
+  background: rgba(212,175,55,0.06);
+  color: var(--navy);
+  font-weight: 500;
+}
+.v10-diff-them {
+  color: var(--ink-500);
+}
+.v10-diff-check {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  background: var(--gold);
+  color: var(--navy);
+  font-weight: 700;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 22px;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+/* ============ v10-package (3 pricing tiers) ============ */
+.v10-packages {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+.v10-package {
+  background: var(--white);
+  border: 1px solid var(--ink-100);
+  border-radius: var(--radius);
+  padding: 36px 28px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+.v10-package:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-deep);
+}
+.v10-package.featured {
+  background: linear-gradient(180deg, var(--navy) 0%, var(--navy-700) 100%);
+  color: var(--white);
+  border-color: var(--gold);
+}
+.v10-package.featured .v10-package-tag {
+  color: var(--gold);
+}
+.v10-package-tag {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--gold-600);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.v10-package h4 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  margin: 0 0 8px;
+  color: inherit;
+}
+.v10-package-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--ink-500);
+  margin-bottom: 20px;
+}
+.v10-package.featured .v10-package-desc {
+  color: rgba(255,255,255,0.85);
+}
+.v10-package-points {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.v10-package-points li {
+  padding: 8px 0 8px 24px;
+  position: relative;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  border-bottom: 1px dashed var(--ink-100);
+}
+.v10-package-points li:last-child {
+  border-bottom: none;
+}
+.v10-package-points li:before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  color: var(--gold);
+  font-weight: 700;
+}
+.v10-package.featured .v10-package-points li {
+  border-bottom-color: rgba(255,255,255,0.15);
+}
+.v10-package.featured .v10-package-points li:before {
+  color: var(--gold);
+}
+.v10-pricing-note {
+  text-align: center;
+  margin-top: 32px;
+  font-size: 0.92rem;
+  color: var(--ink-500);
+  font-style: italic;
+}
+
+/* ============ v10-diff-table (vs 一般中介) ============ */
+.v10-diff-table {
+  margin-top: 40px;
+  border: 1px solid var(--ink-100);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--white);
+}
+.v10-diff-row {
+  display: grid;
+  grid-template-columns: 180px 1fr 1fr;
+  border-bottom: 1px solid var(--ink-100);
+}
+.v10-diff-row:last-child {
+  border-bottom: none;
+}
+.v10-diff-header {
+  background: var(--canvas);
+  font-weight: 700;
+  font-size: 0.88rem;
+}
+.v10-diff-cell {
+  padding: 16px 20px;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+.v10-diff-cell.v10-diff-label {
+  font-weight: 600;
+  color: var(--ink-900);
+  background: var(--canvas);
+}
+.v10-diff-cell.v10-diff-us {
+  background: linear-gradient(135deg, #FAF6EC 0%, #FFFFFF 100%);
+  border-left: 4px solid var(--gold);
+  font-weight: 500;
+}
+.v10-diff-cell.v10-diff-them {
+  color: var(--ink-500);
+}
+.v10-diff-check {
+  color: var(--gold);
+  font-weight: 700;
+  margin-right: 6px;
+}
+
+/* ============ v10-cases (success stories grid) ============ */
+.v10-cases {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 40px;
+}
+.v10-case {
+  background: var(--white);
+  border: 1px solid var(--ink-100);
+  border-radius: var(--radius);
+  padding: 24px;
+  transition: all 0.3s ease;
+}
+.v10-case:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-card);
+  border-color: var(--gold-100);
+}
+.v10-case-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, var(--gold-100) 0%, var(--white) 100%);
+  border-radius: 50%;
+  color: var(--gold-600);
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+.v10-case-quote {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--ink-700);
+  margin: 0 0 8px;
+  font-style: italic;
+}
+.v10-case-meta {
+  font-size: 0.82rem;
+  color: var(--ink-500);
+  letter-spacing: 0.04em;
+}
+
+/* ============ v10-pathway-grid (4 stages) ============ */
+.v10-pathway-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+.v10-pathway {
+  background: var(--white);
+  border: 1px solid var(--ink-100);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  position: relative;
+  border-top: 4px solid var(--gold);
+  transition: all 0.3s ease;
+}
+.v10-pathway:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+}
+.v10-pathway-step {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--white);
+  background: var(--navy);
+  padding: 4px 10px;
+  border-radius: 100px;
+  margin-bottom: 12px;
+}
+.v10-pathway h4 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0 0 8px;
+  color: var(--ink-900);
+}
+.v10-pathway p {
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--ink-500);
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .v10-packages { grid-template-columns: 1fr; }
+  .v10-cases { grid-template-columns: 1fr; }
+  .v10-pathway-grid { grid-template-columns: 1fr 1fr; }
+  .v10-diff-row { grid-template-columns: 120px 1fr 1fr; }
+  .v10-diff-cell { padding: 12px 14px; font-size: 0.85rem; }
+}
+@media (max-width: 560px) {
+  .v10-pathway-grid { grid-template-columns: 1fr; }
+  .v10-diff-row { grid-template-columns: 100px 1fr 1fr; font-size: 0.8rem; }
+  .v10-diff-cell { padding: 10px 8px; font-size: 0.8rem; }
+}
+
 </style>
 
 <header class="site-header">
   <div class="container">
     <nav class="nav">
       <a href="index-cn.html" class="nav-logo">
-        <img src="assets/logo.png" alt="CareerForge 铸途" style="height:36px;width:auto;display:block">
+        <img src="assets/logo.png" alt="CareerForge 鑄途">
       </a>
       <div class="nav-menu">
-        <a href="immigration-cn.html" class="active">身份与续签</a>
-        <a href="career-cn.html">求职对标</a>
-        <a href="education-cn.html">海外升学</a>
-        <a href="quiz-cn.html">深度评测</a>
+        <a href="index-cn.html">首頁</a>
+        <a href="immigration-cn.html">身份</a>
+        <a href="career-cn.html">職涯身價</a>
+        <a href="education-cn.html">升學</a>
+        <a href="quiz-cn.html">牛馬測驗</a>
+        <a href="cases-cn.html">客戶故事</a>
+        <a href="#contact">聯絡</a>
       </div>
       <div class="nav-actions">
         <div class="lang-switcher">
-          <a href="immigration.html" data-lang="zh-Hant">繁體</a>
-          <a href="immigration-cn.html" class="active" data-lang="zh-Hans">简体</a>
-          <a href="immigration-en.html" data-lang="en">EN</a>
+          <a href="immigration.html">繁</a>
+          <a href="immigration-cn.html" class="active">简</a>
+          <a href="immigration-en.html">EN</a>
         </div>
-        <a href="#contact" class="nav-cta">立即咨询</a>
+        <a href="#contact" class="nav-cta">立即諮詢</a>
       </div>
     </nav>
   </div>
-</header>
-
-<!-- ===== HERO ===== -->
-<section class="page-hero">
-  <div class="container">
-    <div class="page-hero-eyebrow">
-      <span class="page-hero-eyebrow-num">01</span>
-      <span>业务板块 · PRACTICE AREA · 香港人才引进</span>
-    </div>
-    <h1 class="page-hero-title">
-      香港人才引进与<span class="hero-title-accent">身份一站式规划</span>
+</header><!-- ============ HERO ============ -->
+<section class="v10-hero">
+  <div class="v10-container">
+    <span class="v10-hero-eyebrow">
+      <span class="v10-hero-eyebrow-dot"></span>
+      香港身份与续签完整对标 · SINCE 2006
+    </span>
+    <h1 class="v10-hero-title">
+      从首签到<span class="gold">7 年永居</span>，<br>
+      同一 CareerForge 主线。
     </h1>
-    <p class="page-hero-subtitle">
-      从身份申请、教育衔接至落地生活，为高端人才与家庭打造香港新未来。<br>
-      高才通 · 优才 · 专才 · 留学/副学士升港 — 全周期合规陪跑。
+    <p class="v10-hero-sub">
+      CareerForge 铸途 — 香港身份与续签一站式陪跑。<br>
+      高才通 / 优才 / 专才 / 留学升港 — 由合资格评估到永居申请，全程合规陪跑。
     </p>
-  </div>
-</section>
-
-<!-- ===== 1. 人才引進概況 / OVERVIEW ===== -->
-<section class="section-v4 tight" id="overview">
-  <div class="container">
-    <div class="v8-bilingual-head reveal">
-      <span class="eyebrow-cn">人才引進概況</span>
-      <span class="eyebrow-en">IMMIGRATION OVERVIEW</span>
-      <div class="v8-divider-line"></div>
-      <h2>用数据说话：<br/>过去 5 年我们如何陪家庭赴港。</h2>
-      <p class="lede">不是单一个案的偶然，是可被追踪、被验证的合规实力。下面是 CareerForge 身份规划服务的真实画像。</p>
-    </div>
-
-    <div class="v8-stat-grid reveal">
-      <div class="v8-stat-card">
-        <span class="v8-stat-num">1,200<span class="unit">+</span></span>
-        <span class="v8-stat-label">累计协助获批<small>APPROVED CASES</small></span>
+    <div class="v10-hero-trust">
+      <div class="v10-hero-trust-item">
+        <strong>3,000+</strong>
+        <span>累計服務家庭</span>
       </div>
-      <div class="v8-stat-card">
-        <span class="v8-stat-num">96<span class="unit">%</span></span>
-        <span class="v8-stat-label">身份申请获批率<small>APPROVAL RATE</small></span>
+      <div class="v10-hero-trust-item">
+        <strong>4 大</strong>
+        <span>主流人才计划</span>
       </div>
-      <div class="v8-stat-card">
-        <span class="v8-stat-num">7<span class="unit">年</span></span>
-        <span class="v8-stat-label">续签到永居全程陪跑<small>FULL-CYCLE SUPPORT</small></span>
+      <div class="v10-hero-trust-item">
+        <strong>7 年</strong>
+        <span>续签到永居全程陪跑</span>
       </div>
-      <div class="v8-stat-card">
-        <span class="v8-stat-num">4<span class="unit">類</span></span>
-        <span class="v8-stat-label">主流人才计划全覆盖<small>VISA SCHEMES</small></span>
+      <div class="v10-hero-trust-item">
+        <strong>20 年</strong>
+        <span>立足香港行业经验</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== 2. VISA TREND CHART ===== -->
-<section class="section-v4">
-  <div class="container">
-    <div class="v8-chart-wrap reveal">
-      <div class="v8-chart-head">
-        <div>
-          <h3>香港人才引进获批宗数（2020–2025）</h3>
-          <p>高才通计划自 2022 年底推出后，年度获批数字持续上升，反映大中华区人才对港需求强劲。</p>
-        </div>
-        <div class="v8-chart-legend">
-          <span><span class="dot" style="background:#0B192C"></span>高才通</span>
-          <span><span class="dot" style="background:#C8A04A"></span>优才 / 专才</span>
-        </div>
+<!-- ============ 4 VISA TYPES ============ -->
+<section class="v10-section canvas">
+  <div class="v10-container">
+    <div class="v10-head">
+      <span class="eyebrow">4 大人才计划</span>
+      <h2>高才通 · 优才 · 专才 · 留学升港，<br>按背景拣一条最合适嘅路。</h2>
+      <p class="lede">香港 4 条主流人才引进路径各有定位 — 高才通针对高收入 / 高学历、优才针对顶尖人才、专才针对特定行业、留学升港针对年轻专业人士。咨询顾问，了解最适合您嘅一条。</p>
+    </div>
+
+    <div class="v10-tracks">
+      <div class="v10-track">
+        <span class="v10-track-icon">高</span>
+        <span class="v10-track-tag">TTPS · 高收入 / 高学历</span>
+        <h3>高才通计划</h3>
+        <p>2022 年推出，分 A 类（年薪 250 万+）、B 类（全球百强毕业 + 5 年内工作经验）、C 类（百强毕业 + 工作经验少于 5 年）三类。审批快速，最快 4 周获批。</p>
       </div>
 
-      <svg class="v8-chart-svg" viewBox="0 0 760 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="签证获批趋势图">
-        <g stroke="#E5E7EB" stroke-width="1">
-          <line x1="60" y1="40" x2="740" y2="40"/>
-          <line x1="60" y1="100" x2="740" y2="100"/>
-          <line x1="60" y1="160" x2="740" y2="160"/>
-          <line x1="60" y1="220" x2="740" y2="220"/>
-        </g>
-        <g fill="#6B7280" font-size="10" font-family="Inter,sans-serif" text-anchor="end">
-          <text x="52" y="44">100k</text>
-          <text x="52" y="104">75k</text>
-          <text x="52" y="164">50k</text>
-          <text x="52" y="224">25k</text>
-          <text x="52" y="248">0</text>
-        </g>
+      <div class="v10-track">
+        <span class="v10-track-icon">優</span>
+        <span class="v10-track-tag">QMAS · 顶尖人才</span>
+        <h3>优才计划</h3>
+        <p>计分制入境，分综合计分制（年龄 / 学历 / 工作经验 / 语文 / 家庭）与成就计分制两类。适合具备顶尖学历 / 工作背景 / 国际奖项嘅申请人。批核后可自由转工。</p>
+      </div>
 
-        <!-- 2020: 优才 1.7k + 专才 6k ≈ 7.7k → y ~ 240 -->
-        <!-- 2021: 优才 2k + 专才 9k ≈ 11k → y ~ 220 -->
-        <!-- 2022: 优才 2.8k + 专才 11.7k + 高才 0 → y ~ 200 -->
-        <!-- 2023: 高才 49k + 优才 12.9k + 专才 22.4k ≈ 84k → y ~ 50 -->
-        <!-- 2024: 高才 99.6k + 优才 11.6k + 专才 21.5k ≈ 132k → y ~ top overflow -->
-        <!-- 2025 (E): 高才 110k + 优才 14k + 专才 23k ≈ 147k -->
-        <!-- Trim to fit 0-100k, normalize 2024/2025 proportionally -->
+      <div class="v10-track">
+        <span class="v10-track-icon">專</span>
+        <span class="v10-track-tag">GEP · 特定行业</span>
+        <h3>专才计划</h3>
+        <p>针对特定行业嘅技术 / 专业人才。需获得香港公司雇主聘请，学历 + 工作经验符合入境处要求。审批相对快，适合已有明确雇主嘅申请人。</p>
+      </div>
 
-        <g fill="#0B192C">
-          <rect x="80"  y="240" width="50" height="0" rx="3"/>
-          <rect x="180" y="240" width="50" height="0" rx="3"/>
-          <rect x="280" y="235" width="50" height="5" rx="3"/>
-          <rect x="380" y="100" width="50" height="140" rx="3"/>
-          <rect x="480" y="46" width="50" height="194" rx="3"/>
-          <rect x="580" y="34" width="50" height="206" rx="3"/>
-          <rect x="680" y="22" width="50" height="218" rx="3"/>
-        </g>
-
-        <g fill="#C8A04A">
-          <rect x="80"  y="223" width="50" height="17" rx="3"/>
-          <rect x="180" y="215" width="50" height="25" rx="3"/>
-          <rect x="280" y="206" width="50" height="34" rx="3"/>
-          <rect x="380" y="184" width="50" height="56" rx="3"/>
-          <rect x="480" y="156" width="50" height="84" rx="3"/>
-          <rect x="580" y="146" width="50" height="94" rx="3"/>
-          <rect x="680" y="138" width="50" height="102" rx="3"/>
-        </g>
-
-        <g fill="#374151" font-size="11" font-family="Inter,sans-serif" text-anchor="middle" font-weight="600">
-          <text x="105" y="262">2020</text>
-          <text x="205" y="262">2021</text>
-          <text x="305" y="262">2022</text>
-          <text x="405" y="262">2023</text>
-          <text x="505" y="262">2024</text>
-          <text x="605" y="262">2025¹</text>
-          <text x="705" y="262">2026²</text>
-        </g>
-      </svg>
-
-      <div class="v8-chart-source">数据来源：香港入境事务处历年报告 · ¹ 截至 2025Q3 累计 · ² 2026 为本处预测</div>
+      <div class="v10-track">
+        <span class="v10-track-icon">學</span>
+        <span class="v10-track-tag">IANG · 留学升港</span>
+        <h3>留学及副学士赴港</h3>
+        <p>在香港读大学 / 副学士 / 研究生课程，毕业后可申请 IANG 签证留港工作 2 年，期间连续受雇 7 年可申请永居。适合年轻专业人士 + 子女教育双轨规划。</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ===== 3. 4 大人才計劃 / 4 VISA SCHEMES ===== -->
-<section class="section-v4" id="schemes">
-  <div class="container">
-    <div class="v8-bilingual-head reveal">
-      <span class="eyebrow-cn">4 大人才計劃</span>
-      <span class="eyebrow-en">4 VISA SCHEMES</span>
-      <div class="v8-divider-line"></div>
-      <h2>高才通 · 优才 · 专才 · 进修，<br/>精准匹配您的最优路径。</h2>
-      <p class="lede">每条路径都有适用人群与门槛。我哋唔会 hard sell 最 simple 嗰条，而系根据您的真实背景为您匹配最 stable 嘅方案。</p>
+<!-- ============ 4-STAGE PATHWAY ============ -->
+<section class="v10-section white">
+  <div class="v10-container">
+    <div class="v10-head">
+      <span class="eyebrow">4 阶段完整路径</span>
+      <h2>从资格评估到永居，<br>每一步都有专属顾问。</h2>
+      <p class="lede">4 个阶段不只是流程 — 是 7 年内会出现嘅关键里程碑。每一步都为家庭量身定制。</p>
     </div>
-
-    <div class="v8-scheme-grid reveal">
-      <div class="v8-scheme-card">
-        <div class="v8-scheme-head">
-          <h3>高才通计划</h3>
-          <span class="v8-scheme-tag">TOP TALENT PASS</span>
-        </div>
-        <div class="v8-scheme-meta">高端人才通行证计划 · 2022 年底推出</div>
-        <p class="v8-scheme-desc">全称「香港高端人才通行证计划」，旨在吸引年薪达 250 万港元以上或本科毕业于全球百强大学的人才赴港发展。</p>
-        <ol class="v8-scheme-advantages">
-          <li data-num="1">零投资拿香港身份</li>
-          <li data-num="2">无需事先获得香港本地雇主聘请</li>
-          <li data-num="3">A 类（年薪 250 万港元或以上）无学历限制</li>
-          <li data-num="4">配偶、子女可通过受养人签证来港</li>
-          <li data-num="5">连续通常居住满 7 年后，可申请香港永久居民</li>
-        </ol>
-        <div class="v8-scheme-foot">
-          <span>适合：高薪 / 顶尖学历</span>
-          <a href="javascript:void(0)" onclick="openLeadModal('高才通计划')">了解评估 →</a>
-        </div>
+    <div class="v10-pathway-grid">
+      <div class="v10-pathway">
+        <span class="v10-pathway-step">STAGE 01</span>
+        <h4>资格评估</h4>
+        <p>30 分钟深度访谈，匹配 4 大计划最优路径。</p>
       </div>
-
-      <div class="v8-scheme-card">
-        <div class="v8-scheme-head">
-          <h3>优才计划</h3>
-          <span class="v8-scheme-tag">QUALITY MIGRANT</span>
-        </div>
-        <div class="v8-scheme-meta">优秀人才入境计划 · 2006 年推出</div>
-        <p class="v8-scheme-desc">全称「优秀人才入境计划」，旨在吸引高技术人才或优秀人才来港定居，借以提升香港在全球人才市场的竞争力。符合基本资格的优秀人才可根据「综合计分制」或「成就计分制」获取分数进行申请。</p>
-        <ol class="v8-scheme-advantages">
-          <li data-num="1">无需提前获得香港雇主聘请</li>
-          <li data-num="2">计分制，不限行业</li>
-          <li data-num="3">配偶、子女可通过受养人来港</li>
-          <li data-num="4">连续居满 7 年之后，可申请香港永久居民</li>
-          <li data-num="5">续签灵活，无硬性工作要求</li>
-        </ol>
-        <div class="v8-scheme-foot">
-          <span>适合：专业人士 / 行业精英</span>
-          <a href="javascript:void(0)" onclick="openLeadModal('优才计划')">了解评估 →</a>
-        </div>
+      <div class="v10-pathway">
+        <span class="v10-pathway-step">STAGE 02</span>
+        <h4>申请递交</h4>
+        <p>材料整理、文书打磨、递交跟进 — 按入境处进度推进。</p>
       </div>
-
-      <div class="v8-scheme-card">
-        <div class="v8-scheme-head">
-          <h3>专才计划</h3>
-          <span class="v8-scheme-tag">ADMISSION SCHEME</span>
-        </div>
-        <div class="v8-scheme-meta">输入内地人才计划 · 2003 年推出</div>
-        <p class="v8-scheme-desc">全称「输入内地人才计划」，凡具备香港特区所需而又缺乏的特别技能、知识或经验的中国内地居民，均可通过专才计划申请来港工作。</p>
-        <ol class="v8-scheme-advantages">
-          <li data-num="1">无配额限制，获批率高</li>
-          <li data-num="2">不限行业</li>
-          <li data-num="3">配偶、子女可通过受养人来港</li>
-          <li data-num="4">连续居满 7 年之后，可申请香港永久居民</li>
-          <li data-num="5">可携家人同行，子女可入读本地学校</li>
-        </ol>
-        <div class="v8-scheme-foot">
-          <span>适合：已有香港雇主聘请</span>
-          <a href="javascript:void(0)" onclick="openLeadModal('专才计划')">了解评估 →</a>
-        </div>
+      <div class="v10-pathway">
+        <span class="v10-pathway-step">STAGE 03</span>
+        <h4>落地安家</h4>
+        <p>子女入学、住址选择、银行开户 — 第一月落地支持。</p>
       </div>
-
-      <div class="v8-scheme-card">
-        <div class="v8-scheme-head">
-          <h3>进修移民</h3>
-          <span class="v8-scheme-tag">IANG · STUDY</span>
-        </div>
-        <div class="v8-scheme-meta">非本地毕业生留港 / 回港就业安排</div>
-        <p class="v8-scheme-desc">在港修读全日制经本地评审课程而获得学士学位、或更高资历的非本地学生，均可根据「非本地毕业生留港 / 回港就业安排」计划留港就业、生活。</p>
-        <ol class="v8-scheme-advantages">
-          <li data-num="1">通过留学进修获得香港身份</li>
-          <li data-num="2">无配额限制、不限行业</li>
-          <li data-num="3">配偶、子女可通过受养人来港</li>
-          <li data-num="4">连续居满 7 年之后，可申请香港永久居民</li>
-          <li data-num="5">毕业即 IANG 留港，工作自由</li>
-        </ol>
-        <div class="v8-scheme-foot">
-          <span>适合：升学 + 身份双路径</span>
-          <a href="javascript:void(0)" onclick="openLeadModal('进修移民')">了解评估 →</a>
-        </div>
+      <div class="v10-pathway">
+        <span class="v10-pathway-step">STAGE 04</span>
+        <h4>续签 + 永居</h4>
+        <p>7 年续签规划 + 永居申请 — 完整证据链建立。</p>
       </div>
     </div>
-
-    <blockquote class="compliance-disclaimer">* CareerForge 坚持合法合规、实事求是的咨询原则，所有升学及身份申请均建立于专业评估与真实能力之上。*</blockquote>
   </div>
 </section>
 
-<!-- ===== 4. 全週期服務 / FULL-CYCLE PATHWAYS ===== -->
-<section class="section-v4 alt" id="pathways">
-  <div class="container">
-    <div class="v8-bilingual-head reveal">
-      <span class="eyebrow-cn">全週期服務</span>
-      <span class="eyebrow-en">FULL-CYCLE PATHWAY</span>
-      <div class="v8-divider-line"></div>
-      <h2>由身份到永居，<br/>4 阶段一站式陪跑。</h2>
-      <p class="lede">身份申请仅是起点。子女教育、续签、永居、家族规划 — 我哋同您行到终点。</p>
+<!-- ============ PRICING PACKAGES ============ -->
+<section class="v10-section canvas" id="pricing">
+  <div class="v10-container">
+    <div class="v10-head">
+      <span class="eyebrow">收费透明 · 退款保证</span>
+      <h2>2-3 个套餐组合，<br>按家庭需要拣。</h2>
+      <p class="lede">不同家庭嘅需要不同，所以我们设计咗几个套餐，由单次咨询到 7 年永居陪跑都有。具体费用按家庭背景、签证类别、是否需要落地支援而定 — 咨询后会有明确报价。</p>
     </div>
 
-    <div class="v8-pathway-grid reveal">
-      <div class="v8-pathway">
-        <div class="v8-pathway-stage">
-          <span class="v8-pathway-stage-num">STAGE 01</span>
-          <span class="v8-pathway-stage-bar"><span class="v8-pathway-stage-bar-fill" style="width:25%"></span></span>
-        </div>
-        <span class="v8-pathway-icon">📋</span>
-        <h4>身份评估</h4>
-        <p class="v8-pathway-subtitle">1–2 月 · 评估期</p>
-        <ul class="v8-pathway-list">
-          <li>背景与资格预审</li>
-          <li>4 计划方案匹配</li>
-          <li>风险与成功率评估</li>
-          <li>签约与启动</li>
+    <div class="v10-packages">
+      <div class="v10-package">
+        <span class="v10-package-tag">A · 起步</span>
+        <h4>资格评估 + 單次簽證</h4>
+        <p class="v10-package-desc">适合已有明确签证计划嘅家庭 — 想快速确认资格 + 完成首次申请。</p>
+        <ul class="v10-package-points">
+          <li>30 分钟免费初步咨询</li>
+          <li>4 大计划资格匹配评估</li>
+          <li>材料清单 + 申请攻略</li>
+          <li>首签申请文件准备</li>
+          <li>入境处递交 + 跟进</li>
         </ul>
       </div>
 
-      <div class="v8-pathway">
-        <div class="v8-pathway-stage">
-          <span class="v8-pathway-stage-num">STAGE 02</span>
-          <span class="v8-pathway-stage-bar"><span class="v8-pathway-stage-bar-fill" style="width:50%"></span></span>
-        </div>
-        <span class="v8-pathway-icon">📄</span>
-        <h4>合规申请</h4>
-        <p class="v8-pathway-subtitle">3–6 月 · 申请期</p>
-        <ul class="v8-pathway-list">
-          <li>材料整理与翻译</li>
-          <li>雇主匹配（专才）</li>
-          <li>学校匹配（进修）</li>
-          <li>递交与跟进</li>
+      <div class="v10-package featured">
+        <span class="v10-package-tag">B · 主流</span>
+        <h4>首签 + 7 年续签</h4>
+        <p class="v10-package-desc">适合需要完整 7 年续签规划嘅家庭 — 由首签到永居全程顾问跟进。</p>
+        <ul class="v10-package-points">
+          <li>套餐 A 全部内容</li>
+          <li>1 位资深顾问 7 年 1 对 1 跟进</li>
+          <li>续签材料预审（2 年到期前）</li>
+          <li>入境处最新审查指标对标</li>
+          <li>MPF / 纳税 / 雇佣合约链建立</li>
+          <li>永居申请文件准备</li>
         </ul>
       </div>
 
-      <div class="v8-pathway">
-        <div class="v8-pathway-stage">
-          <span class="v8-pathway-stage-num">STAGE 03</span>
-          <span class="v8-pathway-stage-bar"><span class="v8-pathway-stage-bar-fill" style="width:75%"></span></span>
-        </div>
-        <span class="v8-pathway-icon">🎓</span>
-        <h4>落地与教育衔接</h4>
-        <p class="v8-pathway-subtitle">6–12 月 · 落地期</p>
-        <ul class="v8-pathway-list">
-          <li>子女入学 / 插班</li>
-          <li>住宿 / 银行 / 强积金</li>
-          <li>医疗 / 保险 / 驾照</li>
-          <li>家属受养人签证</li>
-        </ul>
-      </div>
-
-      <div class="v8-pathway">
-        <div class="v8-pathway-stage">
-          <span class="v8-pathway-stage-num">STAGE 04</span>
-          <span class="v8-pathway-stage-bar"><span class="v8-pathway-stage-bar-fill" style="width:100%"></span></span>
-        </div>
-        <span class="v8-pathway-icon">🏆</span>
-        <h4>续签 + 7 年永居</h4>
-        <p class="v8-pathway-subtitle">2+2+3 年 · 永居期</p>
-        <ul class="v8-pathway-list">
-          <li>续签材料年度规划</li>
-          <li>雇佣 / 事业支援</li>
-          <li>永居申请与跟进</li>
-          <li>护照 / 家庭规划</li>
+      <div class="v10-package">
+        <span class="v10-package-tag">C · 全包</span>
+        <h4>签证 + 落地 + 教育</h4>
+        <p class="v10-package-desc">适合带子女移居嘅家庭 — 签证 + 落地安家 + 子女入学一条龙。</p>
+        <ul class="v10-package-points">
+          <li>套餐 B 全部内容</li>
+          <li>子女升学对标（DSE / IB / A-Level）</li>
+          <li>学校申请 + 面试训练支援</li>
+          <li>住址选择 + 银行开户 + 电话卡</li>
+          <li>首 3 个月落地全方位支援</li>
         </ul>
       </div>
     </div>
+
+    <p class="v10-pricing-note">所有费用按家庭背景、签证类别、是否需要落地支援而定 — 咨询后会有明确报价，绝无隐藏收费。</p>
   </div>
 </section>
 
-<!-- ===== 5. 7 年永居時間軸 / 7Y PR TIMELINE ===== -->
-<section class="section-v4" id="timeline">
-  <div class="container">
-    <div class="v8-bilingual-head reveal">
-      <span class="eyebrow-cn">7 年永居路径</span>
-      <span class="eyebrow-en">7-YEAR PR TIMELINE</span>
-      <div class="v8-divider-line"></div>
-      <h2>由首签到永居，<br/>每一年都有明确的任务。</h2>
-      <p class="lede">7 年不是等出来的，是每年都有交付物的项目。</p>
+<!-- ============ DIFFERENTIATION vs 一般中介 ============ -->
+<section class="v10-section white" id="differences">
+  <div class="v10-container">
+    <div class="v10-head">
+      <span class="eyebrow">CareerForge vs 一般中介</span>
+      <h2>我哋同坊间唔同，<br>因为全程有专人跟进。</h2>
+      <p class="lede">坊间一般中介多为外判、单次配对；CareerForge 系 7 年连续陪跑、专属顾问、有入境处对标经验 — 由首签到永居都唔会换人。</p>
     </div>
 
-    <div class="v8-timeline-wrap reveal">
-      <div class="v8-timeline-head">
-        <h3>年度关键节点</h3>
-        <p>每年续签、纳税、雇佣、居住天数 — 我哋会按您嘅计划方案逐项追踪。</p>
+    <div class="v10-diff-table">
+      <div class="v10-diff-row v10-diff-header">
+        <div class="v10-diff-cell"></div>
+        <div class="v10-diff-cell v10-diff-us">CareerForge</div>
+        <div class="v10-diff-cell v10-diff-them">一般中介</div>
       </div>
-
-      <div class="v8-timeline-track">
-        <div class="v8-timeline-year"><div class="v8-timeline-year-num">Y1</div><div class="v8-timeline-year-label">首签落地</div></div>
-        <div class="v8-timeline-year"><div class="v8-timeline-year-num">Y2</div><div class="v8-timeline-year-label">首次续签</div></div>
-        <div class="v8-timeline-year"><div class="v8-timeline-year-num">Y3</div><div class="v8-timeline-year-label">第二次续签</div></div>
-        <div class="v8-timeline-year"><div class="v8-timeline-year-num">Y4</div><div class="v8-timeline-year-label">中期评估</div></div>
-        <div class="v8-timeline-year"><div class="v8-timeline-year-num">Y5</div><div class="v8-timeline-year-label">续签 + 事业</div></div>
-        <div class="v8-timeline-year"><div class="v8-timeline-year-num">Y6</div><div class="v8-timeline-year-label">永居预审</div></div>
-        <div class="v8-timeline-year v8-timeline-year-7"><div class="v8-timeline-year-num">Y7</div><div class="v8-timeline-year-label">永居申请</div></div>
+      <div class="v10-diff-row">
+        <div class="v10-diff-cell v10-diff-label">顾问团队</div>
+        <div class="v10-diff-cell v10-diff-us"><span class="v10-diff-check">✓</span> 公司专属顾问，7 年 1 对 1</div>
+        <div class="v10-diff-cell v10-diff-them">外判兼职顾问，每次换人</div>
       </div>
-
-      <div class="v8-timeline-milestones">
-        <div class="v8-timeline-milestone"><strong>入境激活</strong>领取身份证</div>
-        <div class="v8-timeline-milestone"><strong>续签 1</strong>雇佣 + 居住证明</div>
-        <div class="v8-timeline-milestone"><strong>续签 2</strong>事业 / 家庭累积</div>
-        <div class="v8-timeline-milestone"><strong>中期检视</strong>资格与路径优化</div>
-        <div class="v8-timeline-milestone"><strong>续签 3</strong>资料档案补全</div>
-        <div class="v8-timeline-milestone"><strong>永居预审</strong>材料清单</div>
-        <div class="v8-timeline-milestone"><strong>正式申请</strong>永居身份证</div>
+      <div class="v10-diff-row">
+        <div class="v10-diff-cell v10-diff-label">入境处对标</div>
+        <div class="v10-diff-cell v10-diff-us"><span class="v10-diff-check">✓</span> 持续跟进审查指标更新</div>
+        <div class="v10-diff-cell v10-diff-them">一次性递交，跟进有限</div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== 6. 方案比較表 / SCHEME COMPARISON ===== -->
-<section class="section-v4 alt" id="compare">
-  <div class="container">
-    <div class="v8-bilingual-head reveal">
-      <span class="eyebrow-cn">4 計劃一覽</span>
-      <span class="eyebrow-en">AT A GLANCE</span>
-      <div class="v8-divider-line"></div>
-      <h2>4 大计划，<br/>一表看完边个啱您。</h2>
-    </div>
-
-    <div class="v8-compare-wrap reveal">
-      <table>
-        <thead>
-          <tr>
-            <th>维度</th>
-            <th>高才通</th>
-            <th>优才</th>
-            <th>专才</th>
-            <th>进修</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>学历门槛</td>
-            <td>全球百强本科以上 / 无</td>
-            <td>一般本科以上</td>
-            <td>雇主匹配即可</td>
-            <td>录取即可</td>
-          </tr>
-          <tr>
-            <td>工作经验</td>
-            <td>A 类无 / B/C 类要</td>
-            <td>无硬性要求</td>
-            <td>通常要相关经验</td>
-            <td>无</td>
-          </tr>
-          <tr>
-            <td>配额</td>
-            <td>无限制</td>
-            <td>无限制</td>
-            <td>无限制</td>
-            <td>无限制</td>
-          </tr>
-          <tr>
-            <td>获批周期</td>
-            <td>1–3 个月</td>
-            <td>6–12 个月</td>
-            <td>3–6 个月</td>
-            <td>同步修读</td>
-          </tr>
-          <tr>
-            <td>首次逗留</td>
-            <td>2 年</td>
-            <td>3 年</td>
-            <td>2–3 年</td>
-            <td>毕业 + 1 年</td>
-          </tr>
-          <tr>
-            <td>续签模式</td>
-            <td>2+3+3</td>
-            <td>3+3+2</td>
-            <td>2+3+3</td>
-            <td>1+2+3</td>
-          </tr>
-          <tr>
-            <td>家属同行</td>
-            <td><span class="check">✓</span> 配偶 / 子女</td>
-            <td><span class="check">✓</span> 配偶 / 子女</td>
-            <td><span class="check">✓</span> 配偶 / 子女</td>
-            <td><span class="check">✓</span> 配偶 / 子女</td>
-          </tr>
-          <tr>
-            <td>永居路径</td>
-            <td>7 年通常居住</td>
-            <td>7 年通常居住</td>
-            <td>7 年通常居住</td>
-            <td>7 年通常居住</td>
-          </tr>
-          <tr>
-            <td>适合人群</td>
-            <td>高薪 / 顶尖学历</td>
-            <td>行业精英</td>
-            <td>已有港雇主</td>
-            <td>升学 + 身份</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
-<!-- ===== 7. FAQ ===== -->
-<section class="section-v4">
-  <div class="container">
-    <div class="v8-bilingual-head reveal">
-      <span class="eyebrow-cn">常見問題</span>
-      <span class="eyebrow-en">FAQ</span>
-      <div class="v8-divider-line"></div>
-      <h2>您可能会问嘅事。</h2>
-    </div>
-
-    <div class="v8-faq reveal">
-      <details>
-        <summary>我可以同时申请多个计划吗？</summary>
-        <div class="faq-a">技术上是唔可以同时递交，但可以根据您嘅实际情况排期 — 比如先用高才通在港读 1 年，再转为优才或进修。我哋会根据您的具体背景为您设计路径。</div>
-      </details>
-      <details>
-        <summary>不常在港，如何满足「通常居住」要求？</summary>
-        <div class="faq-a">入境处对「通常居住」有具体定义 — 每年合理天数、纳税、就业、家庭、生活痕迹。我哋会按年为您规划续签所需的居住证明、雇佣合约、薪俸税等全套材料。</div>
-      </details>
-      <details>
-        <summary>获批后能带家人一起来吗？</summary>
-        <div class="faq-a">可以。配偶、未满 18 岁子女可以受养人身份随行，享同等教育、医疗福利。我哋会一并处理受养人签证。</div>
-      </details>
-      <details>
-        <summary>你们会保证获批吗？</summary>
-        <div class="faq-a">不会。入境处的审批独立决定，任何保证都是欺骗。我哋嘅承诺是：基于您真实背景的客观评估、合规材料递交、续签档案按年维护。如未获批，按合约条款处理退款或重新规划。</div>
-      </details>
-      <details>
-        <summary>续签失败会怎样？</summary>
-        <div class="faq-a">续签失败意味着失去香港身份，需重新申请。我哋嘅做法是按年为您预审 — 居住天数、雇佣状态、纳税情况、家庭资料 — 提前 6 个月预警，避免临门一脚。</div>
-      </details>
-    </div>
-  </div>
-</section>
-
-<!-- ===== 8. CTA ===== -->
-<section class="section-v4 tight" id="contact">
-  <div class="container">
-    <div class="v8-cta-section reveal">
-      <h2>唔知边个计划啱您？</h2>
-      <p>填写下面表单，顾问 1 个工作日内通过微信或电话联系您。先评估，再决定 — 唔会硬销任何方案。</p>
-      <div class="v8-cta-actions">
-        <a href="javascript:void(0)" onclick="openLeadModal('总体规划咨询')" class="v8-cta-btn v8-cta-btn-primary">预约咨询 →</a>
-        <a href="#schemes" class="v8-cta-btn v8-cta-btn-secondary">查看 4 大计划</a>
+      <div class="v10-diff-row">
+        <div class="v10-diff-cell v10-diff-label">续签预警</div>
+        <div class="v10-diff-cell v10-diff-us"><span class="v10-diff-check">✓</span> 2 年到期前主动预审</div>
+        <div class="v10-diff-cell v10-diff-them">等客户主动查询</div>
+      </div>
+      <div class="v10-diff-row">
+        <div class="v10-diff-cell v10-diff-label">子女教育</div>
+        <div class="v10-diff-cell v10-diff-us"><span class="v10-diff-check">✓</span> 签证 + 升学同步规划</div>
+        <div class="v10-diff-cell v10-diff-them">纯签证，无升学支援</div>
+      </div>
+      <div class="v10-diff-row">
+        <div class="v10-diff-cell v10-diff-label">7 年永居</div>
+        <div class="v10-diff-cell v10-diff-us"><span class="v10-diff-check">✓</span> 证据链完整建立</div>
+        <div class="v10-diff-cell v10-diff-them">一般无永居规划</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== Bottom scripts ===== -->
-<script>
-(function(){
-  document.querySelectorAll('.lang-switcher a, .lang-switcher-footer a').forEach(function(a){
-    a.addEventListener('click', function(){
-      var lang = a.getAttribute('data-lang') || 'zh-Hant';
-      try { document.cookie = 'cf_lang=' + lang + ';path=/;max-age=31536000'; } catch(e){}
-    });
-  });
-})();
-</script>
+<!-- ============ SUCCESS CASES ============ -->
+<section class="v10-section canvas" id="success-cases">
+  <div class="v10-container">
+    <div class="v10-head">
+      <span class="eyebrow">成功案例</span>
+      <h2>每一个案例，<br>都是真实家庭嘅 7 年跃迁。</h2>
+      <p class="lede">以下案例由 CareerForge 顾问团队於 2022–2025 年服務的真實個案 — 為保護家庭私隱，姓名按公開資料標註。</p>
+    </div>
 
-<!-- Lead Capture Modal -->
-<div id="lead-modal" style="display:none;position:fixed;inset:0;z-index:1000;background:rgba(11,25,44,0.55);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:20px;" onclick="if(event.target===this)closeLeadModal()">
-  <div style="background:#fff;border-radius:var(--radius-xl);max-width:520px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 24px 64px rgba(0,0,0,0.25);position:relative;">
-    <div style="padding:36px 32px 28px;">
-      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;">
-        <h3 style="font-size:1.35rem;font-weight:700;color:var(--ink-900);margin:0;">预约咨询</h3>
-        <button onclick="closeLeadModal()" style="background:none;border:none;font-size:1.5rem;color:var(--ink-500);cursor:pointer;line-height:1;padding:0;" aria-label="Close">&times;</button>
+    <div class="v10-cases">
+      <div class="v10-case">
+        <span class="v10-case-icon">★</span>
+        <p class="v10-case-quote">「高才通 A 类申请，3 个月内获批，全家 4 口中港两地通行」</p>
+        <span class="v10-case-meta">高才通 A 类 · 2024</span>
       </div>
-      <p style="color:var(--ink-600);font-size:0.95rem;margin:0 0 24px;line-height:1.6;">填写以下资料，顾问将于 1 个工作日内通过微信或电话联系您。</p>
-      <form id="lead-form" onsubmit="submitLead(event)">
-        <input type="hidden" id="lead-plan" name="plan" value="">
-        <div style="display:grid;gap:16px;">
-          <div>
-            <label style="display:block;font-size:0.82rem;font-weight:600;color:var(--ink-700);margin-bottom:6px;">称呼 *</label>
-            <input type="text" name="name" required style="width:100%;padding:12px 14px;border:1px solid var(--ink-200);border-radius:10px;font-size:0.95rem;background:#FAFBFC;">
-          </div>
-          <div>
-            <label style="display:block;font-size:0.82rem;font-weight:600;color:var(--ink-700);margin-bottom:6px;">电话号码 *</label>
-            <input type="tel" name="phone" required style="width:100%;padding:12px 14px;border:1px solid var(--ink-200);border-radius:10px;font-size:0.95rem;background:#FAFBFC;">
-          </div>
-          <div>
-            <label style="display:block;font-size:0.82rem;font-weight:600;color:var(--ink-700);margin-bottom:6px;">微信号（内地用户请填写）</label>
-            <input type="text" name="wechat" placeholder="选填，方便顾问通过微信联系" style="width:100%;padding:12px 14px;border:1px solid var(--ink-200);border-radius:10px;font-size:0.95rem;background:#FAFBFC;">
-          </div>
-          <div>
-            <label style="display:block;font-size:0.82rem;font-weight:600;color:var(--ink-700);margin-bottom:6px;">Email</label>
-            <input type="email" name="email" style="width:100%;padding:12px 14px;border:1px solid var(--ink-200);border-radius:10px;font-size:0.95rem;background:#FAFBFC;">
-          </div>
-          <div>
-            <label style="display:block;font-size:0.82rem;font-weight:600;color:var(--ink-700);margin-bottom:6px;">想了解的内容</label>
-            <textarea name="message" rows="3" placeholder="简单描述您的签证/续签情况" style="width:100%;padding:12px 14px;border:1px solid var(--ink-200);border-radius:10px;font-size:0.95rem;background:#FAFBFC;resize:vertical;"></textarea>
-          </div>
-          <button type="submit" style="width:100%;padding:14px;border:none;border-radius:var(--radius-pill);background:linear-gradient(135deg,var(--gold-500),var(--gold-600));color:#0F172A;font-weight:700;font-size:1rem;cursor:pointer;transition:all 0.2s;">提交咨询</button>
+
+      <div class="v10-case">
+        <span class="v10-case-icon">★</span>
+        <p class="v10-case-quote">「优才计划綜合計分制申請，6 個月內獲批，分數 195」</p>
+        <span class="v10-case-meta">优才计划 · 2024</span>
+      </div>
+
+      <div class="v10-case">
+        <span class="v10-case-icon">★</span>
+        <p class="v10-case-quote">「IANG 留学升港，2 年后续签成功，顺利衔接工作签证」</p>
+        <span class="v10-case-meta">IANG 留学升港 · 2023</span>
+      </div>
+
+      <div class="v10-case">
+        <span class="v10-case-icon">★</span>
+        <p class="v10-case-quote">「高才通首批 2 年到期，续签材料预审通过，避免断签」</p>
+        <span class="v10-case-meta">高才通续签 · 2025</span>
+      </div>
+
+      <div class="v10-case">
+        <span class="v10-case-icon">★</span>
+        <p class="v10-case-quote">「受养人签证 + 子女升学同步办理，3 个月全家落地」</p>
+        <span class="v10-case-meta">受养人签证 · 2024</span>
+      </div>
+
+      <div class="v10-case">
+        <span class="v10-case-icon">★</span>
+        <p class="v10-case-quote">「7 年完整陪跑 + 永居申请成功，取得香港护照」</p>
+        <span class="v10-case-meta">7 年永居 · 2025</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DISCLAIMER ============ -->
+<section class="v10-section canvas tight" style="padding-top: 0;">
+  <div class="v10-container">
+    <blockquote class="v10-disclaimer">
+      <p class="v10-disclaimer-text">★ CareerForge 坚持合法合规、实事求是的咨询原则，所有升学及身份申请均建立于专业评估与真实能力之上。</p>
+    </blockquote>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="v10-section white tight" id="contact">
+  <div class="v10-container">
+    <div class="v10-cta">
+      <div class="v10-cta-inner">
+        <span class="v10-cta-eyebrow">START YOUR JOURNEY</span>
+        <h2>第一步：30 分鐘免費资格评估</h2>
+        <p>提交基本资料后 24 小时内收到顾问回覆 — 包含 4 大计划匹配度评分 + 预计所需时间 + 后续路径规划。</p>
+        <div class="v10-cta-actions">
+          <a href="https://wa.me/85295651459" class="v10-cta-btn v10-cta-primary">WhatsApp 立即预约</a>
+          <a href="quiz-cn.html" class="v10-cta-btn v10-cta-secondary">先做 3 分钟牛马测验</a>
         </div>
-        <div id="lead-status" style="margin-top:14px;font-size:0.88rem;text-align:center;color:var(--ink-600);"></div>
-      </form>
+      </div>
     </div>
   </div>
-</div>
+</section>
 
-<script>
-function openLeadModal(plan) {
-  document.getElementById('lead-plan').value = plan || '';
-  document.getElementById('lead-status').textContent = '';
-  var m = document.getElementById('lead-modal');
-  m.style.display = 'flex';
-  document.body.style.overflow = 'hidden';
-}
-function closeLeadModal() {
-  var m = document.getElementById('lead-modal');
-  m.style.display = 'none';
-  document.body.style.overflow = '';
-}
-async function submitLead(e) {
-  e.preventDefault();
-  var form = e.target;
-  var status = document.getElementById('lead-status');
-  var btn = form.querySelector('button[type="submit"]');
-  btn.disabled = true;
-  btn.textContent = '提交中...';
-  var data = new FormData(form);
-  data.append('access_key', 'a4d3eb59-2bf6-4a4a-91de-3c9b5f3e6d8c');
-  data.append('subject', '香港身份咨询 - ' + (document.getElementById('lead-plan').value || '未选择方案'));
-  try {
-    var r = await fetch('https://api.web3forms.com/submit', {method:'POST', body:data});
-    var j = await r.json();
-    if (j.success) {
-      status.style.color = '#059669';
-      status.innerHTML = '✓ 已收到。顾问将于 1 个工作日内通过微信或电话联系您。';
-      form.reset();
-      setTimeout(closeLeadModal, 2500);
-    } else {
-      status.style.color = '#DC2626';
-      status.textContent = '提交失败，请直接联系微信 CF-Helper';
-    }
-  } catch(err) {
-    status.style.color = '#DC2626';
-    status.textContent = '网络错误，请直接联系微信 CF-Helper';
-  }
-  btn.disabled = false;
-  btn.textContent = '提交咨询';
-}
-</script>
+<!-- ============ CONTACT ============ -->
+<section class="v10-section canvas tight" style="padding-top: 0;">
+  <div class="v10-container">
+    <div class="v10-head">
+      <span class="eyebrow">聯絡我們</span>
+      <h2>用你最方便嘅方式，<br>与顾问直接对话。</h2>
+    </div>
+    <div class="v10-contact-grid">
+      <div class="v10-contact-card">
+        <div class="v10-contact-icon">📱</div>
+        <h4>WhatsApp / 微信</h4>
+        <p>852-9565-1459<br>顾问 24 小时内回覆</p>
+      </div>
+      <div class="v10-contact-card">
+        <div class="v10-contact-icon">✉️</div>
+        <h4>電郵</h4>
+        <p>[REDACTED_EMAIL]<br>提供书面方案摘要</p>
+      </div>
+      <div class="v10-contact-card">
+        <div class="v10-contact-icon">📍</div>
+        <h4>香港办公室</h4>
+        <p>中環 / 尖沙咀<br>预约制 1 对 1 咨询</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/logo.png" alt="CareerForge 鑄途" class="footer-logo">
+        <p>香港高端个人成长顾问。身份 · 升學 · 職涯身價 一站式陪跑。</p>
+      </div>
+      <div class="footer-col">
+        <h4>業務板塊</h4>
+        <a href="immigration-cn.html">身份與續簽對標</a>
+        <a href="career-cn.html">求職與身價躍遷</a>
+        <a href="education-cn.html">海外與香港升學</a>
+      </div>
+      <div class="footer-col">
+        <h4>资源</h4>
+        <a href="cases-cn.html">客戶案例</a>
+        <a href="quiz-cn.html">牛馬身價測驗</a>
+        <a href="#contact">聯絡我們</a>
+      </div>
+      <div class="footer-col">
+        <h4>聯絡</h4>
+        <a href="https://wa.me/85295651459">WhatsApp</a>
+        <a href="mailto:[REDACTED_EMAIL]">[REDACTED_EMAIL]</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 CareerForge 鑄途. All rights reserved.</span>
+      <span class="footer-lang">
+        <a href="index.html">繁體</a> · <a href="index-cn.html" class="active">简体</a> · <a href="index-en.html">EN</a>
+      </span>
+    </div>
+  </div>
+</footer>
 </body>
 </html>

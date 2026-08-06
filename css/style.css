@@ -129,12 +129,22 @@ p { color: var(--ink-700); }
 .text-muted { color: var(--ink-500); }
 .text-center { text-align: center; }
 
-/* CJK line-height adjustments */
+/* CJK line-height + orphan prevention */
 :lang(zh-Hant) body, :lang(zh-Hant) p, :lang(zh-Hant) h1, :lang(zh-Hant) h2, :lang(zh-Hant) h3,
 :lang(zh-Hans) body, :lang(zh-Hans) p, :lang(zh-Hans) h1, :lang(zh-Hans) h2, :lang(zh-Hans) h3 {
   line-height: 1.7;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 :lang(zh-Hant) .lead, :lang(zh-Hans) .lead { line-height: 1.6; }
+
+/* Balance headlines — prevent single-char orphans like 「的」「了」「與」 */
+.v10-hero-title, .v10-head h2, h1, h2 {
+  text-wrap: balance;
+  word-break: keep-all;
+}
+/* allow long phrases to wrap nicely */
+p { text-wrap: pretty; }
 
 /* ===== Lang switcher ===== */
 .lang-switcher {

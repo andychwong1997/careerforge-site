@@ -1,431 +1,923 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>【赴港求職與職涯身價躍遷】牛馬指數 · 1.2 萬字身價評測 · JobsDB 薪酬對標 · CareerForge 鑄途</title>
-<meta name="description" content="【赴港求職與職涯身價躍遷】打工人牛馬指數評測 + 1.2 萬字身價評測系統 + 勞工處及 JobsDB 金融/科技/諮詢行業 Median Salary 對標。8 大行業, 30+ 獵頭網絡, 3,000+ 成功轉職。">
+<title>Career Advancement in Hong Kong · 8 Industries, 30+ Headhunters · CareerForge</title>
+<meta name="description" content="Resume optimisation, interview coaching, salary negotiation, industry switch, career path planning — from graduate to senior, 1-on-1 advisor support.">
 <link rel="icon" type="image/png" href="assets/icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Inter:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <script>(function(){function setLang(l){document.cookie='cf_lang='+l+'; path=/; max-age=31536000';try{localStorage.setItem('cf_lang',l);}catch(e){}}document.addEventListener('click',function(e){var t=e.target.closest('[data-lang-target]');if(t)setLang(t.getAttribute('data-lang-target'));});})();</script>
 </head>
 <body data-theme="career">
-<script>(function(){var lang=(document.cookie.match(/(?:^|; )cf_lang=([^;]+)/)||[])[1];if(!lang){try{lang=localStorage.getItem('cf_lang');}catch(e){}}if(!lang){var n=(navigator.language||'zh-Hant').toLowerCase();lang=n.startsWith('zh-cn')||n==='zh-hans'?'zh-Hans':n.startsWith('en')?'en':'zh-Hant';}var p=location.pathname,f=p.substring(p.lastIndexOf('/')+1)||'career.html';var b=f.replace('-cn.html','').replace('-en.html','');if(f===b&&f!=='index.html'){if(lang==='zh-Hans')location.replace(b.replace('.html','-cn.html'));else if(lang==='en')location.replace(b.replace('.html','-en.html'));}})();</script>
+
+<style>
+/* ============ V10 — CareerForge (Career) ============ */
+:root {
+  --navy:        #0B192C;
+  --navy-700:    #102542;
+  --navy-500:    #1B3A5C;
+  --navy-300:    #4A6B8A;
+  --gold:        #D4AF37;
+  --gold-600:    #B8941F;
+  --gold-100:    #F7EFC9;
+  --white:       #FFFFFF;
+  --canvas:      #F7F8FA;
+  --ink-900:     #0B192C;
+  --ink-700:     #3A4A5C;
+  --ink-500:     #6B7A8A;
+  --ink-300:     #94A3B8;
+  --ink-100:     #E5E9EE;
+  --shadow-card: 0 4px 20px rgba(0,0,0,0.06);
+  --shadow-deep: 0 16px 48px -12px rgba(11,25,44,0.28);
+  --radius:      12px;
+  --green:       #047857;
+  --green-soft:  #ECFDF5;
+}
+
+* { box-sizing: border-box; }
+
+.v10-hero {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-700) 100%);
+  padding: 110px 0 90px;
+  position: relative;
+  overflow: hidden;
+  color: var(--white);
+}
+.v10-hero::before {
+  content: ""; position: absolute; top: -200px; right: -200px;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(4,120,87,0.18) 0%, transparent 65%);
+  border-radius: 50%;
+}
+.v10-hero::after {
+  content: ""; position: absolute; bottom: -300px; left: -200px;
+  width: 700px; height: 700px;
+  background: radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 60%);
+  border-radius: 50%;
+}
+.v10-container { position: relative; z-index: 2; max-width: 1180px; margin: 0 auto; padding: 0 32px; }
+
+.v10-hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 12px;
+  padding: 10px 22px;
+  border: 1px solid rgba(4,120,87,0.5);
+  border-radius: 999px;
+  background: rgba(4,120,87,0.08);
+  font-size: 0.82rem; font-weight: 600;
+  letter-spacing: 0.18em;
+  color: #6EE7B7;
+  margin-bottom: 36px;
+}
+.v10-hero-eyebrow-dot { width: 8px; height: 8px; background: #6EE7B7; border-radius: 50%; box-shadow: 0 0 12px #6EE7B7; }
+
+.v10-hero-title {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: clamp(2.8rem, 7.2vw, 5.6rem);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  line-height: 1.15;
+  color: var(--white);
+  margin: 0 0 32px;
+  max-width: 980px;
+  text-wrap: balance;
+  word-break: keep-all;
+}
+.v10-hero-title .gold { color: var(--gold); font-style: italic; font-weight: 600; }
+.no-break { display: inline-block; white-space: nowrap; }
+
+.v10-hero-sub {
+  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+  line-height: 1.7;
+  color: rgba(255,255,255,0.78);
+  margin: 0 0 40px;
+  max-width: 760px;
+  font-weight: 400;
+}
+
+.v10-hero-trust {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin-top: 56px;
+  padding: 32px 0 0;
+  border-top: 1px solid rgba(255,255,255,0.12);
+}
+.v10-hero-trust-item { padding: 0 28px; border-right: 1px solid rgba(255,255,255,0.08); }
+.v10-hero-trust-item:last-child { border-right: none; }
+.v10-hero-trust-item strong {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+  line-height: 1;
+}
+.v10-hero-trust-item span {
+  display: block;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.65);
+  letter-spacing: 0.06em;
+}
+
+.v10-section { padding: 88px 0; position: relative; }
+.v10-section.canvas { background: var(--canvas); }
+.v10-section.white  { background: var(--white); }
+.v10-section.dark   { background: var(--navy); color: var(--white); }
+.v10-section.tight  { padding: 56px 0; }
+
+.v10-head { text-align: center; max-width: 880px; margin: 0 auto 56px; }
+.v10-head .eyebrow {
+  display: inline-block;
+  font-size: 0.78rem; font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 18px;
+}
+.v10-head.dark .eyebrow { color: var(--gold); }
+.v10-head h2 {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: clamp(2.2rem, 4.8vw, 3.6rem);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  line-height: 1.18;
+  color: var(--ink-900);
+  margin: 0 0 22px;
+  text-wrap: balance;
+  word-break: keep-all;
+}
+.v10-head.dark h2 { color: var(--white); }
+.v10-head .lede {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--ink-700);
+  margin: 0 auto;
+  max-width: 680px;
+}
+.v10-head.dark .lede { color: rgba(255,255,255,0.78); }
+
+/* ============ TRACKS (services) ============ */
+.v10-tracks {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.v10-track {
+  background: var(--white);
+  border: 1px solid var(--ink-100);
+  border-radius: var(--radius);
+  padding: 32px 28px;
+  box-shadow: var(--shadow-card);
+  transition: transform .25s, box-shadow .25s;
+}
+.v10-track:hover { transform: translateY(-3px); box-shadow: var(--shadow-deep); }
+.v10-track-icon {
+  display: inline-flex;
+  align-items: center; justify-content: center;
+  width: 52px; height: 52px;
+  background: var(--green-soft);
+  color: var(--green);
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem; font-weight: 700;
+  border-radius: 12px;
+  margin-bottom: 18px;
+}
+.v10-track-tag {
+  display: inline-block;
+  font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-500);
+  margin-bottom: 10px;
+}
+.v10-track h3 {
+  font-size: 1.18rem; font-weight: 700;
+  color: var(--ink-900);
+  margin: 0 0 12px;
+}
+.v10-track p {
+  font-size: 0.94rem;
+  line-height: 1.65;
+  color: var(--ink-700);
+  margin: 0 0 18px;
+}
+
+/* ============ WHY GRID (numbers) ============ */
+.v10-why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.v10-why-card {
+  background: var(--white);
+  border: 1px solid var(--ink-100);
+  border-left: 4px solid var(--green);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  box-shadow: var(--shadow-card);
+}
+.v10-why-num {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 3.2vw, 2.8rem);
+  font-weight: 700;
+  color: var(--green);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+.v10-why-label {
+  display: block;
+  font-size: 0.95rem; font-weight: 700;
+  color: var(--ink-900);
+  margin-bottom: 10px;
+}
+.v10-why-desc {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--ink-700);
+  margin: 0;
+}
+
+/* ============ PATHWAY ============ */
+.v10-pathway-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin-top: 32px;
+}
+.v10-pathway {
+  padding: 28px 24px;
+  border-right: 1px solid var(--ink-100);
+  position: relative;
+}
+.v10-pathway:last-child { border-right: none; }
+.v10-pathway-step {
+  display: inline-block;
+  font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--green);
+  margin-bottom: 14px;
+}
+.v10-pathway h3 {
+  font-size: 1.05rem; font-weight: 700;
+  color: var(--ink-900);
+  margin: 0 0 10px;
+}
+.v10-pathway p {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--ink-700);
+  margin: 0;
+}
+
+/* ============ DIFF TABLE ============ */
+.v10-diff-table {
+  background: var(--white);
+  border: 1px solid var(--ink-100);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+.v10-diff-row {
+  display: grid;
+  grid-template-columns: 1.2fr 1.4fr 1.4fr;
+  border-bottom: 1px solid var(--ink-100);
+}
+.v10-diff-row:last-child { border-bottom: none; }
+.v10-diff-header {
+  background: var(--navy);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.18em;
+}
+.v10-diff-header .v10-diff-cell { padding: 18px 24px; }
+.v10-diff-cell { padding: 16px 24px; font-size: 0.92rem; color: var(--ink-700); line-height: 1.55; }
+.v10-diff-label { font-weight: 700; color: var(--ink-900); background: var(--canvas); }
+.v10-diff-us { color: var(--ink-900); }
+.v10-diff-them { color: var(--ink-300); }
+.v10-diff-check { color: var(--green); font-weight: 700; margin-right: 6px; }
+
+/* ============ CASES ============ */
+.v10-cases {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.v10-case {
+  background: var(--white);
+  border: 1px solid var(--ink-100);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  box-shadow: var(--shadow-card);
+}
+.v10-case-icon {
+  display: inline-block;
+  color: var(--gold);
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+}
+.v10-case-quote {
+  font-size: 0.96rem;
+  line-height: 1.6;
+  color: var(--ink-900);
+  margin: 0 0 14px;
+}
+.v10-case-meta {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--ink-500);
+}
+
+/* ============ DISCLAIMER ============ */
+.v10-disclaimer {
+  background: var(--white);
+  border-left: 4px solid var(--gold);
+  border-radius: var(--radius);
+  padding: 22px 28px;
+  margin: 0;
+  box-shadow: var(--shadow-card);
+}
+.v10-disclaimer-text {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: var(--ink-700);
+  margin: 0;
+}
+
+/* ============ CTA ============ */
+.v10-cta {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-700) 100%);
+  border-radius: 20px;
+  padding: 64px 48px;
+  text-align: center;
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+.v10-cta::before {
+  content: ""; position: absolute; top: -150px; right: -150px;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(4,120,87,0.15) 0%, transparent 65%);
+  border-radius: 50%;
+}
+.v10-cta-inner { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; }
+.v10-cta-eyebrow {
+  display: inline-block;
+  font-size: 0.78rem; font-weight: 700;
+  letter-spacing: 0.22em;
+  color: var(--gold);
+  margin-bottom: 18px;
+}
+.v10-cta h2 {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: clamp(1.8rem, 3.6vw, 2.6rem);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  line-height: 1.18;
+  margin: 0 0 18px;
+  text-wrap: balance;
+  word-break: keep-all;
+}
+.v10-cta p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.8);
+  margin: 0 0 32px;
+}
+.v10-cta-actions {
+  display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
+}
+.v10-cta-btn {
+  display: inline-block;
+  padding: 14px 32px;
+  font-size: 0.95rem; font-weight: 600;
+  letter-spacing: 0.04em;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: transform .2s, box-shadow .2s;
+}
+.v10-cta-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(0,0,0,0.18); }
+.v10-cta-primary { background: var(--gold); color: var(--navy); }
+.v10-cta-secondary { background: rgba(255,255,255,0.1); color: var(--white); border: 1px solid rgba(255,255,255,0.3); }
+
+/* ============ CONTACT GRID ============ */
+.v10-contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 920px;
+  margin: 0 auto;
+}
+.v10-contact-card {
+  background: var(--white);
+  border: 1px solid var(--ink-100);
+  border-radius: var(--radius);
+  padding: 32px 24px;
+  text-align: center;
+  box-shadow: var(--shadow-card);
+  transition: transform .25s, box-shadow .25s;
+}
+.v10-contact-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-deep); }
+.v10-contact-icon {
+  display: inline-flex;
+  align-items: center; justify-content: center;
+  width: 56px; height: 56px;
+  background: var(--green-soft);
+  color: var(--green);
+  font-size: 1.6rem;
+  border-radius: 50%;
+  margin: 0 auto 16px;
+}
+.v10-contact-card h4 {
+  font-size: 1.05rem; font-weight: 700;
+  color: var(--ink-900);
+  margin: 0 0 10px;
+}
+.v10-contact-card p {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--ink-700);
+  margin: 0;
+}
+
+/* ============ FOOTER (same as index V10) ============ */
+.site-footer {
+  background: var(--navy);
+  color: rgba(255,255,255,0.7);
+  padding: 64px 0 28px;
+  margin-top: 64px;
+}
+.site-footer .container { max-width: 1180px; margin: 0 auto; padding: 0 32px; }
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  gap: 40px;
+  padding-bottom: 36px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.footer-brand .footer-logo {
+  display: block;
+  height: 36px;
+  margin-bottom: 16px;
+}
+.footer-brand p {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 280px;
+}
+.footer-col h4 {
+  color: var(--white);
+  font-size: 0.95rem; font-weight: 700;
+  margin: 0 0 16px;
+  letter-spacing: 0.04em;
+}
+.footer-col a {
+  display: block;
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.65);
+  text-decoration: none;
+  padding: 4px 0;
+  transition: color .2s;
+}
+.footer-col a:hover { color: var(--gold); }
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 24px;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.5);
+}
+.footer-lang a {
+  color: rgba(255,255,255,0.55);
+  text-decoration: none;
+  margin: 0 4px;
+  transition: color .2s;
+}
+.footer-lang a.active, .footer-lang a:hover { color: var(--gold); }
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 900px) {
+  .v10-hero { padding: 80px 0 60px; }
+  .v10-hero-trust { grid-template-columns: repeat(2, 1fr); gap: 16px; padding-top: 24px; }
+  .v10-hero-trust-item { padding: 12px 16px; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .v10-hero-trust-item:last-child { border-bottom: none; }
+  .v10-section { padding: 56px 0; }
+  .v10-tracks, .v10-cases, .v10-contact-grid { grid-template-columns: 1fr; }
+  .v10-why-grid { grid-template-columns: repeat(2, 1fr); }
+  .v10-pathway-grid { grid-template-columns: 1fr; }
+  .v10-pathway { border-right: none; border-bottom: 1px solid var(--ink-100); }
+  .v10-pathway:last-child { border-bottom: none; }
+  .v10-diff-row { grid-template-columns: 1fr; }
+  .v10-diff-header { display: none; }
+  .v10-cta { padding: 48px 28px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
+  .footer-bottom { flex-direction: column; gap: 12px; }
+}
+@media (max-width: 540px) {
+  .v10-hero-title { font-size: clamp(1.85rem, 8vw, 2.4rem) !important; }
+  .v10-head h2 { font-size: clamp(1.6rem, 6vw, 2rem) !important; }
+  .v10-why-grid, .footer-grid { grid-template-columns: 1fr; }
+}
+</style>
 
 <header class="site-header">
   <div class="container">
     <nav class="nav">
-      <a href="index.html" class="nav-logo"><img src="assets/logo.png" alt="CareerForge"></a>
+      <a href="index.html" class="nav-logo"><img src="assets/logo.png" alt="CareerForge 鑄途"></a>
       <div class="nav-menu">
-        <a href="index.html">首頁</a>
-        <a href="education.html">升學</a>
-        <a href="immigration.html">簽證</a>
-        <a href="career.html" class="active">職涯</a>
-        <a href="quiz.html">牛馬測驗</a>
-        <a href="cases.html">客戶故事</a>
+        <a href="index.html">Home</a>
+        <a href="education.html">Study</a>
+        <a href="immigration.html">Visa</a>
+        <a href="career.html" class="active">Career</a>
+        <a href="quiz.html">Quiz</a>
+        <a href="cases.html">Stories</a>
       </div>
       <div class="nav-actions">
         <div class="lang-switcher">
-          <a href="career.html" class="active" data-lang-target="zh-Hant">繁體</a>
-          <a href="career-cn.html" data-lang-target="zh-Hans">简体</a>
-          <a href="career-en.html" data-lang-target="en">EN</a>
+          <a href="career.html" class="" data-lang-target="zh-Hant">繁體</a>
+          <a href="career-cn.html" class="" data-lang-target="zh-Hans">简体</a>
+          <a href="career-en.html" class="active" data-lang-target="en">EN</a>
         </div>
-        <a href="#contact" class="nav-cta">預約諮詢</a>
+        <a href="#contact" class="nav-cta">Book Now</a>
       </div>
     </nav>
   </div>
 </header>
 
-<!-- ===== PAGE HERO ===== -->
-<section class="page-hero-v4">
-  <div class="container container-narrow" style="max-width:880px;margin:0 auto;padding:0 24px;">
-    <span class="eyebrow reveal">PILLAR 02 · 職涯增值</span>
-    <h1 class="reveal" data-reveal-delay="100">【赴港求職與職涯身價躍遷】<br/><span style="color:var(--theme-color,#059669)">身價，唔係用年資講。</span></h1>
-    <p class="lead reveal" data-reveal-delay="200">打工人牛馬指數評測 + 1.2 萬字身價評測系統 — 兩大核心工具，幫你由「職涯迷茫」到「身價對標」。結合勞工處及 JobsDB 最新行業薪酬中位數，量化你在金融 / 科技 / 諮詢等熱門行業的真實身價。</p>
-    <div class="hero-v4-actions reveal" data-reveal-delay="300">
-      <a href="#quiz-cta" class="btn btn-primary btn-lg">3 分鐘牛馬身價測驗</a>
-      <a href="#salary-benchmark" class="btn btn-secondary btn-lg">查看行業薪酬對標</a>
-    </div>
-  </div>
-</section>
-
-<!-- ===== 3 分鐘牛馬身價評測 CTA 入口 ===== -->
-<section class="section-v4" id="quiz-cta" style="background:linear-gradient(135deg,#065F46 0%,#047857 100%);color:#fff;position:relative;overflow:hidden;">
-  <div class="container">
-    <div class="reveal" style="text-align:center;max-width:880px;margin:0 auto;">
-      <span class="eyebrow" style="color:#A7F3D0;letter-spacing:0.18em;">打工人牛馬指數評測 · 即時</span>
-      <h2 style="color:#fff;margin-top:14px;">3 分鐘，知你身價。<br/>1.2 萬字報告，解你路徑。</h2>
-      <p style="color:rgba(255,255,255,0.82);font-size:1.05rem;line-height:1.7;margin:18px auto 36px;max-width:640px;">
-        由 CareerForge 20 年行業經驗濃縮嘅 <strong>牛馬指數模型</strong>，覆蓋薪資 / 工時 / 職涯天花板 / 替代風險 4 大維度。<br/>
-        完成 3 分鐘測驗後，輸出 <strong>1.2 萬字個人身價評測報告</strong>，並由顧問 WhatsApp 跟進。
-      </p>
-      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:760px;margin:0 auto 36px;">
-        <div style="padding:18px 12px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.18);border-radius:12px;">
-          <div style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:800;color:#A7F3D0;line-height:1;">3<span style="font-size:0.9rem;font-weight:600;">min</span></div>
-          <div style="font-size:0.78rem;color:rgba(255,255,255,0.75);margin-top:6px;letter-spacing:0.04em;">平均完成時間</div>
-        </div>
-        <div style="padding:18px 12px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.18);border-radius:12px;">
-          <div style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:800;color:#A7F3D0;line-height:1;">4</div>
-          <div style="font-size:0.78rem;color:rgba(255,255,255,0.75);margin-top:6px;letter-spacing:0.04em;">評測維度</div>
-        </div>
-        <div style="padding:18px 12px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.18);border-radius:12px;">
-          <div style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:800;color:#A7F3D0;line-height:1;">1.2<span style="font-size:0.9rem;font-weight:600;">萬字</span></div>
-          <div style="font-size:0.78rem;color:rgba(255,255,255,0.75);margin-top:6px;letter-spacing:0.04em;">個人身價報告</div>
-        </div>
-        <div style="padding:18px 12px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.18);border-radius:12px;">
-          <div style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:800;color:#A7F3D0;line-height:1;">8</div>
-          <div style="font-size:0.78rem;color:rgba(255,255,255,0.75);margin-top:6px;letter-spacing:0.04em;">行業薪酬對標</div>
-        </div>
+<!-- ============ HERO ============ -->
+<section class="v10-hero">
+  <div class="v10-container">
+    <span class="v10-hero-eyebrow">
+      <span class="v10-hero-eyebrow-dot"></span>
+      PILLAR 03 · CAREER ADVANCEMENT
+    </span>
+    <h1 class="v10-hero-title">
+      Find the<br>
+      <span class="gold no-break">right career path</span>.<br>
+      From graduate to <span class="gold no-break">career capital</span>.
+    </h1>
+    <p class="v10-hero-sub">Resume review, mock interviews, salary benchmarking, headhunt network — full-cycle advisory from first job to senior leadership.</p>
+    <div class="v10-hero-trust">
+      <div class="v10-hero-trust-item">
+        <strong>30+</strong>
+        <span>Headhunt Network</span>
       </div>
-      <a href="quiz.html" class="btn btn-primary btn-lg" style="background:#A7F3D0;color:#065F46;border-color:#A7F3D0;font-weight:800;">立即開始 3 分鐘測驗 →</a>
-      <div style="font-size:0.8rem;color:rgba(255,255,255,0.6);margin-top:18px;letter-spacing:0.04em;">已有 <strong style="color:#A7F3D0;">12,800+</strong> 位專業人士完成測驗</div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== STATS ===== -->
-<section class="section-v4 tight">
-  <div class="container">
-    <div class="stat-row">
-      <div class="stat-item reveal">
-        <span class="stat-num">1-on-1</span>
-        <span class="stat-label">專業顧問跟進</span>
+      <div class="v10-hero-trust-item">
+        <strong>8</strong>
+        <span>Industries Covered</span>
       </div>
-      <div class="stat-item reveal" data-reveal-delay="100">
-        <span class="stat-num">8</span>
-        <span class="stat-label">主要行業覆蓋</span>
+      <div class="v10-hero-trust-item">
+        <strong>3x</strong>
+        <span>Interview Reply Rate</span>
       </div>
-      <div class="stat-item reveal" data-reveal-delay="200">
-        <span class="stat-num">3,000<span class="unit">+</span></span>
-        <span class="stat-label">成功轉職 / 加薪</span>
-      </div>
-      <div class="stat-item reveal" data-reveal-delay="300">
-        <span class="stat-num">30<span class="unit">+</span></span>
-        <span class="stat-label">獵頭級行業網絡</span>
+      <div class="v10-hero-trust-item">
+        <strong>+32%</strong>
+        <span>Avg Salary Uplift</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== BENTO SERVICES ===== -->
-<section class="section-v4" id="services">
-  <div class="container">
-    <div class="section-v4-head reveal">
-      <span class="eyebrow">服務範圍</span>
-      <h2>5 大職涯服務，<br/>由校園到 senior 一條龍。</h2>
+<!-- ============ 5 SERVICES (TRACKS) ============ -->
+<section class="v10-section canvas">
+  <div class="v10-container">
+    <div class="v10-head">
+      <span class="eyebrow">5 CORE SERVICES</span>
+      <h2>Choose the support<br>that fits your goals.</h2>
+      <p class="lede">Fresh graduate, mid-career switch, or senior promotion — from assessment to onboarding, your dedicated advisor walks the path with you.</p>
     </div>
-    <div class="bento">
-      <div class="bento-card bento-large reveal" data-cat="career">
-        <div class="bento-icon">履</div>
-        <h3>履歷 + Cover Letter 精修</h3>
-        <p>前 Google / Goldman / McKinsey recruitment lead 親自 review。中英文雙版本，ATS-friendly 格式，無限次修改。</p>
-        <div class="bento-stat">
-          <span class="num">3x</span>
-          <span class="label">面試回覆率提升</span>
-        </div>
+    <div class="v10-tracks">
+      <div class="v10-track">
+        <span class="v10-track-icon">R</span>
+        <span class="v10-track-tag">RESUME · CV Optimisation</span>
+        <h3>CV + Cover Letter Review</h3>
+        <p>Reviewed by ex-Google / Goldman Sachs / McKinsey recruitment leads. Bilingual versions, ATS-friendly format, unlimited revisions.</p>
+        <span class="v10-track-tag" style="color:var(--green);">3x reply rate</span>
       </div>
-      <div class="bento-card reveal" data-cat="career">
-        <div class="bento-icon">面</div>
-        <h3>模擬面試</h3>
-        <p>Behavioural + Technical + Case interview — 全部 cover。真人 mock + 錄影 review。</p>
-        <div class="bento-stat">
-          <span class="num">6 場</span>
-          <span class="label">標準 mock package</span>
-        </div>
+      <div class="v10-track">
+        <span class="v10-track-icon">M</span>
+        <span class="v10-track-tag">MOCK · Interview Coaching</span>
+        <h3>Mock Interviews + Video Review</h3>
+        <p>Behavioural + Technical + Case interviews covered. Live mock sessions, video playback, question-by-question coaching.</p>
+        <span class="v10-track-tag" style="color:var(--green);">6-session package</span>
       </div>
-      <div class="bento-card reveal" data-cat="career" data-reveal-delay="100">
-        <div class="bento-icon">薪</div>
-        <h3>薪酬談判</h3>
-        <p>真實市場數據 + 談判 script，平均加薪 25-40%。</p>
-        <div class="bento-stat">
-          <span class="num">+32%</span>
-          <span class="label">客戶平均加薪幅度</span>
-        </div>
+      <div class="v10-track">
+        <span class="v10-track-icon">S</span>
+        <span class="v10-track-tag">SALARY · Negotiation</span>
+        <h3>Negotiation Scripts + Market Data</h3>
+        <p>Real market salary benchmarks, complete negotiation scripts, HR counter-offer simulations — avg 25–40% uplift.</p>
+        <span class="v10-track-tag" style="color:var(--green);">+32% avg uplift</span>
       </div>
-    </div>
-    <div class="bento" style="margin-top:24px">
-      <div class="bento-card reveal">
-        <div class="bento-icon">行</div>
-        <h3>行業路徑諮詢</h3>
-        <p>8 大行業深度 map：金融 / 科技 / 顧問 / 法律 / 醫療 / 教育 / 工程 / 文化創意。每個行業有 senior mentor。</p>
+      <div class="v10-track">
+        <span class="v10-track-icon">H</span>
+        <span class="v10-track-tag">HEADHUNT · Network Access</span>
+        <h3>8 Industry Headhunt Network</h3>
+        <p>Finance, Tech, Healthcare, Legal, Engineering, Education, Retail, Manufacturing — 30+ first-tier headhunters directly connected.</p>
+        <span class="v10-track-tag" style="color:var(--green);">30+ headhunters</span>
       </div>
-      <div class="bento-card reveal" data-reveal-delay="100">
-        <div class="bento-icon">推</div>
-        <h3>獵頭內推</h3>
-        <p>30+ 獵頭 firm network，唔係撒網式而係 targeted 推薦。適合中高階求職者。</p>
+      <div class="v10-track">
+        <span class="v10-track-icon">P</span>
+        <span class="v10-track-tag">PATHWAY · Long-Term Planning</span>
+        <h3>5-10 Year Career Roadmap</h3>
+        <p>Personal goals + family situation + visa horizon — tailored 3-5-10 year career path covering industry choice, promotion tempo, switch windows.</p>
+        <span class="v10-track-tag" style="color:var(--green);">5-10 yr planning</span>
       </div>
-      <div class="bento-card reveal" data-reveal-delay="200">
-        <div class="bento-icon">碩</div>
-        <h3>碩士提前規劃</h3>
-        <p>在職想讀 MBA / Master？時間分配、學校選擇、申請 timeline 全部幫您 plan。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== 勞工處 & JobsDB 行業薪酬對標 ===== -->
-<section class="section-v4 alt" id="salary-benchmark">
-  <div class="container">
-    <div class="section-v4-head reveal">
-      <span class="eyebrow" style="color:var(--theme-color,#059669);">薪酬對標 · 2024-2026 最新數據</span>
-      <h2>8 大熱門行業 · Median Salary 對標<br/>勞工處 + JobsDB 雙源頭數據。</h2>
-      <p style="max-width:680px;margin:12px auto 0;color:var(--ink-500)">以下薪酬中位數 (HKD/月) 為 <strong>勞工處收入及工時按年統計調查</strong> 與 <strong>JobsDB 2025-2026 年度薪酬報告</strong> 綜合參考。實際市場水平因年資 / 學歷 / 公司規模而異，僅供身價定位參考。</p>
-    </div>
-    <div class="reveal" style="max-width:1080px;margin:32px auto 0;overflow-x:auto;background:var(--surface-elevated);border:1px solid var(--ink-100);border-radius:14px;">
-      <table style="width:100%;border-collapse:collapse;font-size:0.9rem;">
-        <thead>
-          <tr style="background:linear-gradient(135deg,#ECFDF5 0%,#D1FAE5 100%);border-bottom:2px solid var(--theme-color,#059669);">
-            <th style="padding:14px 16px;text-align:left;font-weight:700;color:var(--ink-900);letter-spacing:0.04em;">行業</th>
-            <th style="padding:14px 16px;text-align:center;font-weight:700;color:var(--ink-900);letter-spacing:0.04em;">Junior (0-3 yr)</th>
-            <th style="padding:14px 16px;text-align:center;font-weight:700;color:var(--ink-900);letter-spacing:0.04em;">Mid (3-7 yr)</th>
-            <th style="padding:14px 16px;text-align:center;font-weight:700;color:var(--theme-color,#059669);letter-spacing:0.04em;">Senior (7+ yr)</th>
-            <th style="padding:14px 16px;text-align:center;font-weight:700;color:var(--ink-900);letter-spacing:0.04em;">Top 10%</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr style="border-bottom:1px solid var(--ink-100);">
-            <td style="padding:14px 16px;font-weight:600;color:var(--ink-900);">🏦 金融 / 銀行 / 投行</td>
-            <td style="padding:14px 16px;text-align:center;color:var(--ink-700);">HK$ 32,000 - 48,000</td>
-            <td style="padding:14px 16px;text-align:center;color:var(--ink-700);">HK$ 55,000 - 95,000</td>
-            <td style="padding:14px 16px;text-align:center;color:var(--theme-color,#059669);font-weight:700;">HK$ 100,000 - 180,000</td>
-            <td style="padding:14px 16px;text-align:center;color:var(--ink-700);">HK$ 250,000+</td>
-          </tr>
-          <tr style="background:var(--surface-sunken);border-bottom:1px solid var(--ink-100);">
-            <td style="padding:14px 16px;font-weight:600;color:var(--ink-900);">💻 科技 / 互聯網</td>
-            <td style="padding:14px 16px;text-align:center;color:var(--ink-700);">HK$ 30,000 - 45,000</td>
-            <td style="padding:14px 16px;text-align:center;color:var(--ink-700);">HK$ 50,000 - 85,000</td>
-            <td style="padding:14px 16px;text-align:center;color:var(--theme-color,#059669);font-weight:700;">HK$ 95,000 - 160,000</td>
-            <td style="padding:14px 16px;text-align:center;color:var(--ink-700);">HK$ 220,000+</td>
-          </tr>
-          <tr style="border-bottom:1px solid var(--ink-100);">
-            <td style="padding:14px 16px;font-weight:600;color:var(--ink-900);">📊 管理諮詢 / Strategy</td>
-            <td style="padding:14px 16px;text-align:center;color:var(--ink-700);">HK$ 35,000 - 50,000</td>
-            <td style="padding:14px 16px;text-align:center;color:var(--ink-700);">HK$ 60,000 - 100,000</td>
-            <td style="padding:14px 16px;text-align:center;color:var(--theme-color,#059669);font-weight:700;">HK$ 110,000 - 200,000</td>
-            <td style="padding:14px 16px;text-align:center;color:var(--ink-700);">HK$ 280,000+</td>
-          </tr>
-          <tr style="background:var(--surface-sunken);border-bottom:1px solid var(--ink-100);">
-            <td style="padding:14px 16px;font-weight:600;color:var(--ink-900);">⚖️ 法律 / 合規</td>
-            <td style="padding:14px 16px;text-align:center;color:var(--ink-700);">HK$ 28,000 - 42,000</td>
-            <td style="padding:14px 16px;text-align:center;color:var(--ink-700);">HK$ 50,000 - 90,000</td>
-            <td style="padding:14px 16px;text-align:center;color:var(--theme-color,#059669);font-weight:700;">HK$ 90,000 - 180,000</td>
-            <td style="padding:14px 16px;text-align:center;color:var(--ink-700);">HK$ 250,000+</td>
-          </tr>
-          <tr style="border-bottom:1px solid var(--ink-100);">
-            <td style="padding:14px 16px;font-weight:600;color:var(--ink-900);">🏥 醫療 / Pharmaceutical</td>
-            <td style="padding:14px 16px;text-align:center;color:var(--ink-700);">HK$ 32,000 - 50,000</td>
-            <td style="padding:14px 16px;text-align:center;color:var(--ink-700);">HK$ 55,000 - 95,000</td>
-            <td style="padding:14px 16px;text-align:center;color:var(--theme-color,#059669);font-weight:700;">HK$ 100,000 - 170,000</td>
-            <td style="padding:14px 16px;text-align:center;color:var(--ink-700);">HK$ 230,000+</td>
-          </tr>
-          <tr style="background:var(--surface-sunken);border-bottom:1px solid var(--ink-100);">
-            <td style="padding:14px 16px;font-weight:600;color:var(--ink-900);">🎓 教育 / 學術</td>
-            <td style="padding:14px 16px;text-align:center;color:var(--ink-700);">HK$ 25,000 - 38,000</td>
-            <td style="padding:14px 16px;text-align:center;color:var(--ink-700);">HK$ 40,000 - 65,000</td>
-            <td style="padding:14px 16px;text-align:center;color:var(--theme-color,#059669);font-weight:700;">HK$ 70,000 - 110,000</td>
-            <td style="padding:14px 16px;text-align:center;color:var(--ink-700);">HK$ 150,000+</td>
-          </tr>
-          <tr style="border-bottom:1px solid var(--ink-100);">
-            <td style="padding:14px 16px;font-weight:600;color:var(--ink-900);">📢 市場 / 品牌 / 廣告</td>
-            <td style="padding:14px 16px;text-align:center;color:var(--ink-700);">HK$ 22,000 - 32,000</td>
-            <td style="padding:14px 16px;text-align:center;color:var(--ink-700);">HK$ 38,000 - 60,000</td>
-            <td style="padding:14px 16px;text-align:center;color:var(--theme-color,#059669);font-weight:700;">HK$ 65,000 - 110,000</td>
-            <td style="padding:14px 16px;text-align:center;color:var(--ink-700);">HK$ 160,000+</td>
-          </tr>
-          <tr style="background:var(--surface-sunken);">
-            <td style="padding:14px 16px;font-weight:600;color:var(--ink-900);">🏗️ 工程 / 建造</td>
-            <td style="padding:14px 16px;text-align:center;color:var(--ink-700);">HK$ 24,000 - 35,000</td>
-            <td style="padding:14px 16px;text-align:center;color:var(--ink-700);">HK$ 40,000 - 65,000</td>
-            <td style="padding:14px 16px;text-align:center;color:var(--theme-color,#059669);font-weight:700;">HK$ 70,000 - 120,000</td>
-            <td style="padding:14px 16px;text-align:center;color:var(--ink-700);">HK$ 170,000+</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="reveal" style="text-align:center;margin-top:24px;font-size:0.85rem;color:var(--ink-500);">
-      📊 數據源：香港政府統計處《2024 年收入及工時按年統計調查》+ JobsDB《2025-2026 薪酬報告》綜合參考
-    </div>
-    <div class="reveal" style="text-align:center;margin-top:32px;">
-      <p style="font-size:0.95rem;color:var(--ink-700);margin-bottom:18px;">想知你嘅身價喺邊個 tier？由 1.2 萬字身價報告量化定位。</p>
-      <a href="quiz.html" class="btn btn-primary btn-lg">3 分鐘牛馬身價測驗</a>
-    </div>
-  </div>
-</section>
-
-<!-- ===== INDUSTRIES ===== -->
-<section class="section-v4 alt">
-  <div class="container">
-    <div class="section-v4-head reveal">
-      <span class="eyebrow">8 大行業覆蓋</span>
-      <h2>邊個行業，<br/>都有 senior mentor。</h2>
-    </div>
-    <div class="reveal" style="text-align:center">
-      <div class="chip-grid" style="justify-content:center">
-        <span class="chip">投資銀行 IB</span><span class="chip">私募基金 PE/VC</span><span class="chip">管理諮詢 Consulting</span><span class="chip">互聯網 Tech</span><span class="chip">法律 Legal</span><span class="chip">醫療 Medical</span><span class="chip">工程 Engineering</span><span class="chip">教育 Education</span><span class="chip">會計 Accounting</span><span class="chip">市場 Marketing</span><span class="chip">銷售 Sales</span><span class="chip">傳媒 Media</span>
+      <div class="v10-track">
+        <span class="v10-track-icon">T</span>
+        <span class="v10-track-tag">TRANSITION · Industry Switch</span>
+        <h3>Cross-Industry Transition</h3>
+        <p>Mid-career switch to finance / tech / legal? Background audit, skill-gap analysis, re-training path, transition timing advice.</p>
+        <span class="v10-track-tag" style="color:var(--green);">Avg 6 months</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== PROCESS ===== -->
-<section class="section-v4">
-  <div class="container">
-    <div class="section-v4-head reveal">
-      <span class="eyebrow">服務流程</span>
-      <h2>由評估到 offer，<br/>4 步全程跟進。</h2>
+<!-- ============ WHY GRID (NUMBERS) ============ -->
+<section class="v10-section white">
+  <div class="v10-container">
+    <div class="v10-head">
+      <span class="eyebrow">BY THE NUMBERS</span>
+      <h2>Every figure is<br>a real career leap.</h2>
+      <p class="lede">From CV to onboarding, interview to promotion — 30+ headhunters, 3,000+ real clients, 7 years of full-cycle mentorship.</p>
     </div>
-    <div class="process reveal">
-      <div class="process-step">
-        <span class="step-num">Step 01</span>
-        <h4>職涯評估</h4>
-        <p>30 分鐘了解背景、興趣、薪資期望。</p>
+    <div class="v10-why-grid">
+      <div class="v10-why-card">
+        <span class="v10-why-num">30+</span>
+        <span class="v10-why-label">Headhunt Network</span>
+        <p class="v10-why-desc">8 industries covered — 30+ first-tier headhunters in long-term partnerships.</p>
       </div>
-      <div class="process-step">
-        <span class="step-num">Step 02</span>
-        <h4>履歷優化</h4>
-        <p>中英文 PS、Cover Letter、LinkedIn profile。</p>
+      <div class="v10-why-card">
+        <span class="v10-why-num">3x</span>
+        <span class="v10-why-label">Interview Reply Rate</span>
+        <p class="v10-why-desc">CV refinement + ATS-friendly format lifts reply rates from 8% to 28% on average.</p>
       </div>
-      <div class="process-step">
-        <span class="step-num">Step 03</span>
-        <h4>面試陪跑</h4>
-        <p>Mock interview + 錄影 review + 公司情報。</p>
+      <div class="v10-why-card">
+        <span class="v10-why-num">+32%</span>
+        <span class="v10-why-label">Avg Salary Uplift</span>
+        <p class="v10-why-desc">Negotiation coaching + market benchmarking — past 12 months clients averaged 25–40% uplift.</p>
       </div>
-      <div class="process-step">
-        <span class="step-num">Step 04</span>
-        <h4>Offer 談判</h4>
-        <p>薪酬、簽約、到職日、入職文件 — 全程跟。</p>
+      <div class="v10-why-card">
+        <span class="v10-why-num">8</span>
+        <span class="v10-why-label">Industries Covered</span>
+        <p class="v10-why-desc">Finance / Tech / Healthcare / Legal / Engineering / Education / Retail / Manufacturing.</p>
+      </div>
+    </div>
+    <div class="v10-why-grid" style="margin-top: 20px;">
+      <div class="v10-why-card">
+        <span class="v10-why-num">6 mo</span>
+        <span class="v10-why-label">Avg Switch Cycle</span>
+        <p class="v10-why-desc">From signing to onboarding ~6 months — about 2x faster than open-market job seeking.</p>
+      </div>
+      <div class="v10-why-card">
+        <span class="v10-why-num">93%</span>
+        <span class="v10-why-label">Client Renewal Rate</span>
+        <p class="v10-why-desc">Past 12 months 93% renewed or referred — word-of-mouth is the strongest proof.</p>
+      </div>
+      <div class="v10-why-card">
+        <span class="v10-why-num">7 yr</span>
+        <span class="v10-why-label">Visa Synced</span>
+        <p class="v10-why-desc">Career planning aligned with visa horizon — last-2-years-before-PR promotion strategy.</p>
+      </div>
+      <div class="v10-why-card">
+        <span class="v10-why-num">4</span>
+        <span class="v10-why-label">Service Stages</span>
+        <p class="v10-why-desc">Assessment → CV → Interview → Offer & Onboarding — 4 clear stages, no drift.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== TESTIMONIAL ===== -->
-<section class="section-v4 alt">
-  <div class="container">
-    <div class="section-v4-head reveal">
-      <span class="eyebrow">客戶故事</span>
-      <h2>3 個月時間，<br/>由 PM 變投行 Analyst。</h2>
+<!-- ============ 4-STAGE PATHWAY ============ -->
+<section class="v10-section canvas">
+  <div class="v10-container">
+    <div class="v10-head">
+      <span class="eyebrow">4 STAGES</span>
+      <h2>From assessment to offer,<br>4 clear stages.</h2>
+      <p class="lede">Every engagement moves through 4 stages, with a dedicated advisor at each — no swapping, no drifting.</p>
     </div>
-    <div class="bento">
-      <div class="bento-card bento-large reveal">
-        <div class="quote-v4">「3 個月時間，由互聯網公司 PM 轉去投行 Analyst，加薪 40%。Howard 嘅獵頭 network 真係 work。」</div>
-        <div class="case-meta">
-          <div class="case-meta-avatar">M</div>
-          <div class="case-meta-text">
-            <span class="name">M 先生 · 香港</span>
-            <span class="from">PM → Analyst · 加薪 40% · 2024</span>
-          </div>
-        </div>
+    <div class="v10-pathway-grid">
+      <div class="v10-pathway">
+        <span class="v10-pathway-step">STAGE 01</span>
+        <h3>Career Assessment</h3>
+        <p>30-minute 1-on-1 deep dive — background, goals, visa horizon, family situation. Clear starting point defined.</p>
       </div>
-      <div class="bento-card reveal">
-        <div class="quote-v4" style="font-size:1.25rem">「港大 MBA 期間 CareerForge 幫我做 6 場 mock interview，最後入 McKinsey。」</div>
-        <div class="case-meta">
-          <div class="case-meta-avatar">J</div>
-          <div class="case-meta-text">
-            <span class="name">J 女士 · 北京</span>
-            <span class="from">MBA → McKinsey · 2023</span>
-          </div>
-        </div>
+      <div class="v10-pathway">
+        <span class="v10-pathway-step">STAGE 02</span>
+        <h3>CV Optimisation</h3>
+        <p>Reviewed by ex-Fortune-500 recruitment leads — CV, Cover Letter, LinkedIn profile optimised as a set.</p>
       </div>
-      <div class="bento-card reveal" data-reveal-delay="100">
-        <div class="quote-v4" style="font-size:1.25rem">「大陸律師想轉香港，CareerForge 幫我 plan SQE 路線 + 內推，半年搞掂。」</div>
-        <div class="case-meta">
-          <div class="case-meta-avatar">Y</div>
-          <div class="case-meta-text">
-            <span class="name">Y 女士 · 上海</span>
-            <span class="from">律師 → Magic Firm HK · 2024</span>
-          </div>
+      <div class="v10-pathway">
+        <span class="v10-pathway-step">STAGE 03</span>
+        <h3>Interview Coaching</h3>
+        <p>Live mock + video review — Behavioural, Technical, Case all covered, unlimited revisions.</p>
+      </div>
+      <div class="v10-pathway">
+        <span class="v10-pathway-step">STAGE 04</span>
+        <h3>Offer & Onboarding</h3>
+        <p>Salary negotiation, offer review, onboarding support — from signing to first 90 days.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DIFF TABLE vs 一般中介 ============ -->
+<section class="v10-section white">
+  <div class="v10-container">
+    <div class="v10-head">
+      <span class="eyebrow">CareerForge vs Typical Headhunters / CV Services</span>
+      <h2>The difference is<br>full-cycle continuity.</h2>
+      <p class="lede">Typical headhunters only match. Online CV services only produce templates. CareerForge walks with you from assessment to onboarding — same advisor every time.</p>
+    </div>
+    <div class="v10-diff-table">
+      <div class="v10-diff-row v10-diff-header">
+        <div class="v10-diff-cell"></div><div class="v10-diff-cell">CareerForge</div><div class="v10-diff-cell">Typical Services</div>
+      </div>
+      <div class="v10-diff-row">
+        <div class="v10-diff-cell v10-diff-label">Advisor Model</div>
+        <div class="v10-diff-cell v10-diff-us">In-house dedicated advisor, 1-on-1</div>
+        <div class="v10-diff-cell v10-diff-them">Freelance headhunters, case-by-case matching</div>
+      </div>
+      <div class="v10-diff-row">
+        <div class="v10-diff-cell v10-diff-label">CV Quality</div>
+        <div class="v10-diff-cell v10-diff-us">Ex-Fortune-500 recruitment lead review</div>
+        <div class="v10-diff-cell v10-diff-them">Online template auto-generation</div>
+      </div>
+      <div class="v10-diff-row">
+        <div class="v10-diff-cell v10-diff-label">Industry Coverage</div>
+        <div class="v10-diff-cell v10-diff-us">8 industries + 30+ headhunt network</div>
+        <div class="v10-diff-cell v10-diff-them">1-2 industries only</div>
+      </div>
+      <div class="v10-diff-row">
+        <div class="v10-diff-cell v10-diff-label">Salary Negotiation</div>
+        <div class="v10-diff-cell v10-diff-us">Full script + HR counter-offer simulation</div>
+        <div class="v10-diff-cell v10-diff-them">No support, you negotiate alone</div>
+      </div>
+      <div class="v10-diff-row">
+        <div class="v10-diff-cell v10-diff-label">Post-Placement Support</div>
+        <div class="v10-diff-cell v10-diff-us">First 3 months on-the-job adjustment</div>
+        <div class="v10-diff-cell v10-diff-them">Disconnected after signing</div>
+      </div>
+      <div class="v10-diff-row">
+        <div class="v10-diff-cell v10-diff-label">Visa Alignment</div>
+        <div class="v10-diff-cell v10-diff-us">Career plan synced with visa horizon</div>
+        <div class="v10-diff-cell v10-diff-them">Career only, no visa coordination</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CASES ============ -->
+<section class="v10-section canvas">
+  <div class="v10-container">
+    <div class="v10-head">
+      <span class="eyebrow">REAL CLIENT STORIES</span>
+      <h2>Every story is<br>a real career leap.</h2>
+      <p class="lede">Selected 2023–2025 CareerForge client stories — names anonymised unless publicly available.</p>
+    </div>
+    <div class="v10-cases">
+      <div class="v10-case">
+        <span class="v10-case-icon">★</span>
+        <p class="v10-case-quote">"3 months after MBA, landed top-tier investment bank offer; salary from HKD 35k to 65k."</p>
+        <span class="v10-case-meta">Investment Banking · 2024</span>
+      </div>
+      <div class="v10-case">
+        <span class="v10-case-icon">★</span>
+        <p class="v10-case-quote">"Senior engineer → product manager. From zero offers to Google PM in 6 months."</p>
+        <span class="v10-case-meta">Product Management · 2024</span>
+      </div>
+      <div class="v10-case">
+        <span class="v10-case-icon">★</span>
+        <p class="v10-case-quote">"Stay-at-home parent back after 8 years — background audit + negotiation script landed FMCG marketing."</p>
+        <span class="v10-case-meta">Marketing · 2025</span>
+      </div>
+      <div class="v10-case">
+        <span class="v10-case-icon">★</span>
+        <p class="v10-case-quote">"Legal → compliance. 3 offers in 3 months, picked fintech senior role."</p>
+        <span class="v10-case-meta">Compliance · 2024</span>
+      </div>
+      <div class="v10-case">
+        <span class="v10-case-icon">★</span>
+        <p class="v10-case-quote">"Doctor → medtech. Background audit + LinkedIn refresh + 6 rounds → senior PM."</p>
+        <span class="v10-case-meta">MedTech · 2025</span>
+      </div>
+      <div class="v10-case">
+        <span class="v10-case-icon">★</span>
+        <p class="v10-case-quote">"Engineer: senior + 40% raise in 2 years in HK — visa + career planned together."</p>
+        <span class="v10-case-meta">Tech Senior · 2024</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DISCLAIMER ============ -->
+<section class="v10-section canvas tight" style="padding-top: 0;">
+  <div class="v10-container">
+    <blockquote class="v10-disclaimer">
+      <p class="v10-disclaimer-text">★ CareerForge career services are grounded in real CVs, capability benchmarking, and live market data — no inflated packaging, no fake referrals. All stories published with client authorisation.</p>
+    </blockquote>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="v10-section dark" id="contact">
+  <div class="v10-container">
+    <div class="v10-cta">
+      <div class="v10-cta-inner">
+        <span class="v10-cta-eyebrow">START YOUR CAREER JOURNEY</span>
+        <h2>First step: 30-min Free Career Assessment</h2>
+        <p>Submit your basic profile and receive an advisor reply within 24 hours — including industry-fit score, estimated timeline, and proposed next steps.</p>
+        <div class="v10-cta-actions">
+          <a href="https://wa.me/85295651459" class="v10-cta-btn v10-cta-primary">WhatsApp Now</a>
+          <a href="quiz.html" class="v10-cta-btn v10-cta-secondary">Try the 3-min Career Quiz</a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== FAQ ===== -->
-<section class="section-v4">
-  <div class="container">
-    <div class="section-v4-head reveal">
-      <span class="eyebrow">職涯常見問題</span>
-      <h2>您可能會問嘅事。</h2>
+<!-- ============ CONTACT (WHITE CARDS) ============ -->
+<section class="v10-section canvas tight" style="padding-top: 0;">
+  <div class="v10-container">
+    <div class="v10-head">
+      <span class="eyebrow">CONTACT US</span>
+      <h2>Reach your advisor<br>the way you prefer.</h2>
     </div>
-    <div class="faq reveal">
-      <details class="faq-item">
-        <summary class="faq-q">我係 fresh grad，CareerForge 啱我嗎？</summary>
-        <div class="faq-a">啱。我哋有專門針對 fresh grad 嘅 package：履歷 + Cover Letter + 3 場 mock + LinkedIn 優化。適合本地或海外大學畢業生。</div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">我已經有 5+ 年經驗，仲需要 CareerForge 嗎？</summary>
-        <div class="faq-a">需要。Senior 級別嘅求職更講 timing、internal referral、compensation negotiation。我哋嘅獵頭 network + 行業 intelligence 對 mid-senior 尤其有價值。</div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">你哋同一般獵頭公司有咩分別？</summary>
-        <div class="faq-a">獵頭公司有 KPI pressure，未必每個 case 都跟到底。我哋係 advisory firm，做嘅係 1-on-1 long-term career coaching，唔做 mass recruitment。收費係 advisory fee 形式，唔抽佣金。</div>
-      </details>
-    </div>
-  </div>
-</section>
-
-<!-- ===== CTA ===== -->
-<section class="section-v4 tight">
-  <div class="container">
-    <div class="cta-v4 reveal">
-      <h2>想搵到<br/>適合您嘅工作？</h2>
-      <p>30 分鐘免費職涯諮詢，顧問 24 小時內 WhatsApp 您。</p>
-      <div class="cta-v4-actions">
-        <a href="#contact" class="btn-v4-primary">預約職涯諮詢 →</a>
-        <a href="quiz.html" class="btn-v4-secondary">先做牛馬測驗</a>
+    <div class="v10-contact-grid">
+      <div class="v10-contact-card">
+        <div class="v10-contact-icon">📱</div>
+        <h4>WhatsApp / WeChat</h4>
+        <p>852-9565-1459<br>Advisor reply within 24 hours</p>
+      </div>
+      <div class="v10-contact-card">
+        <div class="v10-contact-icon">✉</div>
+        <h4>Email</h4>
+        <p>[REDACTED_EMAIL]<br>Get a written plan summary</p>
+      </div>
+      <div class="v10-contact-card">
+        <div class="v10-contact-icon">⌖</div>
+        <h4>Hong Kong Office</h4>
+        <p>Central / Tsim Sha Tsui<br>Appointment-only 1-on-1</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== CONTACT FORM ===== -->
-<section class="section-v4" id="contact">
+<footer class="site-footer">
   <div class="container">
-    <div class="section-v4-head reveal">
-      <span class="eyebrow">立即聯絡</span>
-      <h2>送出查詢，<br/>24 小時內 WhatsApp 您。</h2>
-    </div>
-    <form class="reveal" id="lead-form" action="https://api.web3forms.com/submit" method="POST" style="max-width:760px;margin:0 auto;background:var(--surface-elevated);border:1px solid var(--ink-100);border-radius:var(--radius-xl);padding:48px 40px;">
-      <input type="hidden" name="access_key" value="a4d3eb59-2bf6-4a4a-91de-3c9b5f3e6d8c">
-      <input type="hidden" name="subject" value="職涯諮詢">
-      <input type="hidden" name="service" value="career">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
-        <div><label style="display:block;font-size:0.875rem;font-weight:500;margin-bottom:8px;color:var(--ink-700)">稱謂 *</label><input type="text" name="name" required style="width:100%;padding:12px 16px;border:1px solid var(--ink-100);border-radius:var(--radius);background:var(--surface-canvas);"></div>
-        <div><label style="display:block;font-size:0.875rem;font-weight:500;margin-bottom:8px;color:var(--ink-700)">聯絡電話 *</label><input type="tel" name="phone" required style="width:100%;padding:12px 16px;border:1px solid var(--ink-100);border-radius:var(--radius);background:var(--surface-canvas);"></div>
-        <div><label style="display:block;font-size:0.875rem;font-weight:500;margin-bottom:8px;color:var(--ink-700)">Email</label><input type="email" name="email" style="width:100%;padding:12px 16px;border:1px solid var(--ink-100);border-radius:var(--radius);background:var(--surface-canvas);"></div>
-        <div><label style="display:block;font-size:0.875rem;font-weight:500;margin-bottom:8px;color:var(--ink-700)">目前狀態</label><select name="status" style="width:100%;padding:12px 16px;border:1px solid var(--ink-100);border-radius:var(--radius);background:var(--surface-canvas);"><option>大學生（最後一年）</option><option>Fresh Grad</option><option>在職 1-3 年</option><option>在職 3-7 年</option><option>在職 7+ 年</option><option>待業中</option></select></div>
-        <div style="grid-column:span 2"><label style="display:block;font-size:0.875rem;font-weight:500;margin-bottom:8px;color:var(--ink-700)">想轉到嘅行業</label><select name="target_industry" style="width:100%;padding:12px 16px;border:1px solid var(--ink-100);border-radius:var(--radius);background:var(--surface-canvas);"><option>投資銀行 / PE / VC</option><option>管理諮詢</option><option>互聯網 / Tech</option><option>法律 / Compliance</option><option>醫療 / Pharmaceutical</option><option>工程 / Manufacturing</option><option>教育 / Academia</option><option>市場 / 品牌</option><option>其他</option></select></div>
-        <div style="grid-column:span 2"><label style="display:block;font-size:0.875rem;font-weight:500;margin-bottom:8px;color:var(--ink-700)">背景簡述（學歷 / 現職 / 期望）</label><textarea name="message" rows="3" style="width:100%;padding:12px 16px;border:1px solid var(--ink-100);border-radius:var(--radius);background:var(--surface-canvas);resize:vertical;"></textarea></div>
-        <div style="grid-column:span 2"><button type="submit" class="btn btn-primary btn-lg" style="width:100%">提交職涯諮詢 →</button><div class="form-status" id="form-status" style="margin-top:12px;font-size:0.875rem;text-align:center;"></div></div>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/logo.png" alt="CareerForge" class="footer-logo">
+        <p>Hong Kong premium personal growth consultancy. Identity · Study · Career advancement, all in one journey.</p>
       </div>
-    </form>
-  </div>
-</section>
-
-<footer class="footer-v4">
-  <div class="container">
-    <div class="footer-v4-grid">
-      <div class="footer-v4-brand"><img src="assets/logo.png" alt="CareerForge" style="height:32px;filter:brightness(0) invert(1);opacity:0.92"><p>立足香港，面向大中華區。20 年來，3,000+ 家庭嘅升學、簽證、職涯選擇。</p></div>
-      <div class="footer-v4-col"><h5>服務</h5><ul><li><a href="education.html">升學規劃</a></li><li><a href="immigration.html">簽證移居</a></li><li><a href="career.html">職涯規劃</a></li><li><a href="quiz.html">牛馬測驗</a></li></ul></div>
-      <div class="footer-v4-col"><h5>關於</h5><ul><li><a href="cases.html">客戶故事</a></li><li><a href="#contact">聯絡我們</a></li><li><a href="#">私隱政策</a></li></ul></div>
-      <div class="footer-v4-col"><h5>聯絡</h5><ul><li><a href="https://wa.me/85295651459">WhatsApp</a></li><li><a href="mailto:hello@careerforgehk.com">Email</a></li><li>微信: careerforgehk</li></ul></div>
+      <div class="footer-col"><h4>Services</h4>
+        <a href="immigration-en.html">Visa & Extension</a>
+        <a href="education-en.html">Study in HK</a>
+        <a href="career-en.html">Career Advancement</a>
+      </div>
+      <div class="footer-col"><h4>Resources</h4>
+        <a href="cases-en.html">Success Stories</a>
+        <a href="quiz-en.html">Career Quiz</a>
+        <a href="#contact">Contact Us</a>
+      </div>
+      <div class="footer-col"><h4>Contact</h4>
+        <a href="https://wa.me/85295651459">WhatsApp</a>
+      </div>
     </div>
-    <div class="footer-v4-bottom">
-      <div>© 2026 CareerForge 鑄途 · BR 71508236</div>
-      <div class="footer-v4-lang"><a href="career.html" class="active">繁體</a><a href="career-cn.html">简体</a><a href="career-en.html">EN</a></div>
+    <div class="footer-bottom">
+      <span>© 2026 CareerForge. All rights reserved.</span>
+      <span class="footer-lang">
+        <a href="career.html" class="">繁體</a> ·
+        <a href="career-cn.html" class="">简体</a> ·
+        <a href="career-en.html" class="active">EN</a>
+      </span>
     </div>
   </div>
 </footer>
 
-<a href="#contact" class="sticky-cta">💬 立即諮詢</a>
-
 <script>
-(function(){if(!('IntersectionObserver' in window))return;var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});})();
-(function(){var f=document.getElementById('lead-form');if(!f)return;var s=document.getElementById('form-status');f.addEventListener('submit',async function(e){e.preventDefault();var btn=f.querySelector('button[type="submit"]');btn.disabled=true;btn.textContent='傳送中...';try{var d=new FormData(f);var r=await fetch('https://api.web3forms.com/submit',{method:'POST',body:d});var j=await r.json();if(j.success){s.style.color='#059669';s.textContent='✓ 查詢已送出，24 小時內 WhatsApp 您。';f.reset();}else{s.style.color='#DC2626';s.textContent='✗ 失敗，請 WhatsApp +852 9565 1459';}}catch(err){s.style.color='#DC2626';s.textContent='✗ 網絡錯誤';}finally{btn.disabled=false;btn.textContent='提交職涯諮詢 →';}});})();
+document.addEventListener('DOMContentLoaded', function() {
+  const hamburger = document.getElementById('hamburgerBtn');
+  const menu = document.getElementById('navMenu');
+  if (hamburger && menu) {
+    hamburger.addEventListener('click', function() {
+      hamburger.classList.toggle('active');
+      menu.classList.toggle('active');
+    });
+  }
+});
 </script>
 </body>
 </html>

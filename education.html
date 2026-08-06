@@ -3,356 +3,1358 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>【海外與香港升學對標】海外中學 + DSE / IB / A-Level + 本地學校插班 · CareerForge 鑄途</title>
-<meta name="description" content="【海外與香港升學對標】海外中學 + DSE / IB / A-Level + 本地學校插班 + 大學申請。20 年香港升學經驗, 配合家長簽證落地節奏同步推進子女教育路徑。">
+<title>香港升學規劃 · DSE / IB / A-Level / 海外名校對標 · CareerForge 鑄途</title>
+<meta name="description" content="CareerForge 鑄途 — 香港升學完整對標。從幼稚園、小學、中學到 DSE / IB / A-Level / 大學申請，配合家長簽證落地節奏同步推進子女教育路徑。">
 <link rel="icon" type="image/png" href="assets/icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700;800&family=Noto+Serif+SC:wght@400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
-<script>(function(){function setLang(l){document.cookie='cf_lang='+l+'; path=/; max-age=31536000';try{localStorage.setItem('cf_lang',l);}catch(e){}}document.addEventListener('click',function(e){var t=e.target.closest('[data-lang-target]');if(t)setLang(t.getAttribute('data-lang-target'));});})();</script>
 </head>
-<body data-theme="education">
-<script>(function(){var lang=(document.cookie.match(/(?:^|; )cf_lang=([^;]+)/)||[])[1];if(!lang){try{lang=localStorage.getItem('cf_lang');}catch(e){}}if(!lang){var n=(navigator.language||'zh-Hant').toLowerCase();lang=n.startsWith('zh-cn')||n==='zh-hans'?'zh-Hans':n.startsWith('en')?'en':'zh-Hant';}var p=location.pathname,f=p.substring(p.lastIndexOf('/')+1)||'education.html';var b=f.replace('-cn.html','').replace('-en.html','');if(f===b&&f!=='index.html'){if(lang==='zh-Hans')location.replace(b.replace('.html','-cn.html'));else if(lang==='en')location.replace(b.replace('.html','-en.html'));}})();</script>
+<body>
+
+<style>
+/* ============ V10 — 深海藍 #0B192C × 香檳金 #D4AF37 (Education) ============ */
+:root {
+  --navy:        #0B192C;
+  --navy-700:    #102542;
+  --navy-500:    #1B3A5C;
+  --navy-300:    #4A6B8A;
+  --gold:        #D4AF37;
+  --gold-600:    #B8941F;
+  --gold-100:    #F7EFC9;
+  --white:       #FFFFFF;
+  --canvas:      #F7F8FA;
+  --ink-900:     #0B192C;
+  --ink-700:     #3A4A5C;
+  --ink-500:     #6B7A8A;
+  --ink-100:     #E5E9EE;
+  --shadow-card: 0 4px 20px rgba(0,0,0,0.06);
+  --shadow-deep: 0 16px 48px -12px rgba(11,25,44,0.28);
+  --radius:      12px;
+}
+
+/* ============ HERO ============ */
+.v10-hero {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-700) 100%);
+  padding: 120px 0 100px;
+  position: relative;
+  overflow: hidden;
+  color: var(--white);
+}
+.v10-hero::before {
+  content: "";
+  position: absolute; top: -200px; right: -200px;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(212,175,55,0.12) 0%, transparent 65%);
+  border-radius: 50%;
+}
+.v10-hero::after {
+  content: "";
+  position: absolute; bottom: -300px; left: -200px;
+  width: 700px; height: 700px;
+  background: radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 60%);
+  border-radius: 50%;
+}
+.v10-hero .v10-container { position: relative; z-index: 2; max-width: 1180px; margin: 0 auto; padding: 0 32px; }
+
+.v10-hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 12px;
+  padding: 10px 22px;
+  border: 1px solid rgba(212,175,55,0.4);
+  border-radius: 999px;
+  background: rgba(212,175,55,0.06);
+  font-size: 0.82rem; font-weight: 600;
+  letter-spacing: 0.18em;
+  color: var(--gold);
+  margin-bottom: 36px;
+}
+.v10-hero-eyebrow-dot { width: 8px; height: 8px; background: var(--gold); border-radius: 50%; box-shadow: 0 0 12px var(--gold); }
+
+.v10-hero-title {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: clamp(2.8rem, 7.2vw, 5.6rem);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  line-height: 1.15;
+  color: var(--white);
+  margin: 0 0 32px;
+  max-width: 980px;
+}
+.v10-hero-title .gold {
+  color: var(--gold);
+  font-style: italic;
+  font-weight: 600;
+}
+.v10-hero-sub {
+  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+  line-height: 1.7;
+  color: rgba(255,255,255,0.78);
+  margin: 0 0 56px;
+  max-width: 760px;
+  font-weight: 400;
+}
+.v10-hero-trust {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin-top: 64px;
+  padding: 36px 0 0;
+  border-top: 1px solid rgba(212,175,55,0.25);
+}
+.v10-hero-trust-item {
+  padding-right: 24px;
+  border-right: 1px solid rgba(255,255,255,0.08);
+}
+.v10-hero-trust-item:last-child { border-right: none; }
+.v10-hero-trust-item strong {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 0.5px;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.v10-hero-trust-item span {
+  display: block;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.65);
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+}
+
+/* ============ SECTION COMMON ============ */
+.v10-section { padding: 100px 0; }
+.v10-section.tight { padding: 64px 0; }
+.v10-section.dark {
+  background: var(--navy);
+  color: var(--white);
+}
+.v10-section.canvas { background: var(--canvas); }
+.v10-section.white { background: var(--white); }
+
+.v10-container { max-width: 1180px; margin: 0 auto; padding: 0 32px; }
+
+.v10-head { text-align: center; max-width: 760px; margin: 0 auto 64px; }
+.v10-head .eyebrow {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+  padding: 6px 0;
+  border-top: 1px solid var(--gold);
+  border-bottom: 1px solid var(--gold);
+}
+.v10-head.dark .eyebrow { color: var(--gold); }
+.v10-head h2 {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  line-height: 1.25;
+  color: var(--ink-900);
+  margin: 0 0 22px;
+}
+.v10-head.dark h2 { color: var(--white); }
+.v10-head .lede {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--ink-700);
+  margin: 0;
+  font-weight: 400;
+}
+.v10-head.dark .lede { color: rgba(255,255,255,0.78); }
+
+/* ============ WHY-HK STAT CARDS ============ */
+.v10-why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.v10-why-card {
+  background: var(--white);
+  border: 1px solid var(--ink-100);
+  border-radius: var(--radius);
+  padding: 36px 24px;
+  text-align: center;
+  box-shadow: var(--shadow-card);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.v10-why-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px -8px rgba(11,25,44,0.18);
+  border-color: var(--gold);
+}
+.v10-why-num {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 3.5vw, 2.6rem);
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+.v10-why-label {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--ink-700);
+  font-weight: 600;
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+.v10-why-desc {
+  font-size: 0.82rem;
+  color: var(--ink-500);
+  line-height: 1.6;
+}
+
+/* ============ CURRICULUM TRACKS ============ */
+.v10-tracks {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.v10-track {
+  background: var(--white);
+  border: 1px solid var(--ink-100);
+  border-radius: var(--radius);
+  padding: 40px 32px;
+  box-shadow: var(--shadow-card);
+  position: relative;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.v10-track:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px -8px rgba(11,25,44,0.18);
+  border-color: var(--gold);
+}
+.v10-track-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px; height: 56px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--gold) 100%);
+  color: var(--white);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  font-family: 'Playfair Display', serif;
+}
+.v10-track-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-600);
+  margin-bottom: 12px;
+}
+.v10-track h3 {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  line-height: 1.3;
+  color: var(--ink-900);
+  margin: 0 0 14px;
+}
+.v10-track p {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--ink-700);
+  margin: 0 0 20px;
+}
+.v10-track-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.v10-track-list li {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 10px;
+  font-size: 0.92rem;
+  color: var(--ink-700);
+  line-height: 1.6;
+}
+.v10-track-list li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+/* ============ PROCESS (4-STEPS) ============ */
+.v10-process {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.v10-process-step {
+  background: var(--white);
+  border: 1px solid var(--ink-100);
+  border-radius: var(--radius);
+  padding: 36px 28px;
+  position: relative;
+  box-shadow: var(--shadow-card);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.v10-process-step:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px -8px rgba(11,25,44,0.18);
+  border-color: var(--gold);
+}
+.v10-process-step-num {
+  display: inline-block;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 0.5px;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+.v10-process-step-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-500);
+  margin-bottom: 8px;
+}
+.v10-process-step h4 {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--ink-900);
+  margin: 0 0 12px;
+}
+.v10-process-step p {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--ink-700);
+  margin: 0 0 16px;
+}
+.v10-process-step .step-detail {
+  font-size: 0.82rem;
+  color: var(--ink-500);
+  line-height: 1.6;
+  border-top: 1px solid var(--ink-100);
+  padding-top: 12px;
+  margin-top: 12px;
+}
+
+/* ============ TUTOR TEAM ============ */
+.v10-tutor-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.v10-tutor {
+  background: var(--white);
+  border: 1px solid var(--ink-100);
+  border-radius: var(--radius);
+  padding: 36px 28px;
+  box-shadow: var(--shadow-card);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  position: relative;
+}
+.v10-tutor:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px -8px rgba(11,25,44,0.18);
+  border-color: var(--gold);
+}
+.v10-tutor-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px; height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--gold) 100%);
+  color: var(--white);
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+  letter-spacing: 0.5px;
+}
+.v10-tutor-name {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--ink-900);
+  margin: 0 0 6px;
+}
+.v10-tutor-role {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-600);
+  margin-bottom: 16px;
+}
+.v10-tutor-bio {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--ink-700);
+  margin: 0 0 16px;
+}
+.v10-tutor-cred {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.v10-tutor-cred li {
+  font-size: 0.82rem;
+  color: var(--ink-500);
+  line-height: 1.6;
+  padding: 4px 0;
+  border-bottom: 1px dashed var(--ink-100);
+}
+.v10-tutor-cred li:last-child { border-bottom: none; }
+
+/* Director full-width feature */
+.v10-director {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-700) 100%);
+  border-radius: var(--radius);
+  padding: 56px 48px;
+  color: var(--white);
+  margin-bottom: 32px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-deep);
+}
+.v10-director::before {
+  content: "";
+  position: absolute;
+  top: -120px; right: -120px;
+  width: 360px; height: 360px;
+  background: radial-gradient(circle, rgba(212,175,55,0.15) 0%, transparent 65%);
+  border-radius: 50%;
+}
+.v10-director-inner { position: relative; z-index: 1; }
+.v10-director-eyebrow {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+.v10-director h3 {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--white);
+  margin: 0 0 8px;
+}
+.v10-director h4 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.7);
+  margin: 0 0 24px;
+  letter-spacing: 0.02em;
+}
+.v10-director p {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.85);
+  margin: 0 0 24px;
+  max-width: 760px;
+}
+.v10-director-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin-top: 32px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(212,175,55,0.3);
+}
+.v10-director-stat strong {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 0.5px;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.v10-director-stat span {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.5;
+}
+
+/* ============ SUCCESS CASES ============ */
+.v10-cases {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.v10-case {
+  background: var(--white);
+  border: 1px solid var(--ink-100);
+  border-radius: var(--radius);
+  padding: 36px 28px;
+  box-shadow: var(--shadow-card);
+  position: relative;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.v10-case:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px -8px rgba(11,25,44,0.18);
+  border-color: var(--gold);
+}
+.v10-case-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  background: rgba(212,175,55,0.12);
+  color: var(--gold);
+  font-size: 1.4rem;
+  margin-bottom: 18px;
+}
+.v10-case-quote {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--ink-900);
+  margin: 0 0 16px;
+  font-style: italic;
+  letter-spacing: 0.02em;
+}
+.v10-case-meta {
+  font-size: 0.85rem;
+  color: var(--ink-500);
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+}
+
+/* ============ PRICING / REFUND ============ */
+.v10-pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+.v10-pricing {
+  background: var(--white);
+  border: 1px solid var(--ink-100);
+  border-radius: var(--radius);
+  padding: 40px 32px;
+  box-shadow: var(--shadow-card);
+  position: relative;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.v10-pricing:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px -8px rgba(11,25,44,0.18);
+  border-color: var(--gold);
+}
+.v10-pricing.featured {
+  border: 2px solid var(--gold);
+  background: linear-gradient(180deg, rgba(212,175,55,0.04) 0%, var(--white) 30%);
+}
+.v10-pricing-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: var(--gold);
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+}
+.v10-pricing h4 {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--ink-900);
+  margin: 0 0 8px;
+}
+.v10-pricing-price {
+  font-size: 0.95rem;
+  color: var(--ink-500);
+  margin: 0 0 20px;
+  letter-spacing: 0.02em;
+}
+.v10-pricing ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.v10-pricing li {
+  position: relative;
+  padding: 8px 0 8px 28px;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--ink-700);
+  border-bottom: 1px dashed var(--ink-100);
+}
+.v10-pricing li:last-child { border-bottom: none; }
+.v10-pricing li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.v10-refund {
+  margin-top: 56px;
+  padding: 40px 36px;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-700) 100%);
+  border-radius: var(--radius);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-deep);
+}
+.v10-refund::before {
+  content: "";
+  position: absolute; top: -100px; right: -100px;
+  width: 280px; height: 280px;
+  background: radial-gradient(circle, rgba(212,175,55,0.12) 0%, transparent 65%);
+  border-radius: 50%;
+}
+.v10-refund-inner { position: relative; z-index: 1; }
+.v10-refund h4 {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--white);
+  margin: 0 0 12px;
+}
+.v10-refund p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.78);
+  margin: 0 0 28px;
+  max-width: 720px;
+}
+.v10-refund-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+.v10-refund-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(212,175,55,0.3);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+}
+.v10-refund-card .percent {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 0.5px;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+.v10-refund-card .label {
+  font-size: 0.92rem;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.6;
+}
+
+/* ============ DISCLAIMER ============ */
+.v10-disclaimer {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 32px 36px;
+  background: var(--white);
+  border-left: 4px solid var(--gold);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  box-shadow: var(--shadow-card);
+  text-align: center;
+  position: relative;
+}
+.v10-disclaimer::before {
+  content: "★";
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  font-size: 1.2rem;
+  color: var(--gold);
+}
+.v10-disclaimer-text {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--ink-700);
+  margin: 0;
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* ============ CTA ============ */
+.v10-cta {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-700) 100%);
+  border-radius: var(--radius);
+  padding: 80px 56px;
+  text-align: center;
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+  max-width: calc(1180px - 64px);
+}
+.v10-cta::before {
+  content: "";
+  position: absolute; top: -100px; right: -100px;
+  width: 360px; height: 360px;
+  background: radial-gradient(circle, rgba(212,175,55,0.12) 0%, transparent 65%);
+  border-radius: 50%;
+}
+.v10-cta-inner { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; }
+.v10-cta-eyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 18px;
+}
+.v10-cta h2 {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: clamp(1.9rem, 3.2vw, 2.6rem);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  line-height: 1.3;
+  margin: 0 0 22px;
+  color: var(--white);
+}
+.v10-cta p {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.78);
+  margin: 0 0 36px;
+}
+.v10-cta-actions {
+  display: inline-flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.v10-cta-btn {
+  padding: 16px 34px;
+  border-radius: var(--radius);
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: all .25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  letter-spacing: 0.02em;
+}
+.v10-cta-primary {
+  background: var(--gold);
+  color: var(--navy) !important;
+  border: 1px solid var(--gold);
+}
+.v10-cta-primary:hover {
+  background: #E5C344;
+  border-color: #E5C344;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px -6px rgba(212,175,55,0.5);
+}
+.v10-cta-secondary {
+  background: transparent;
+  color: var(--white) !important;
+  border: 1px solid rgba(255,255,255,0.4);
+}
+.v10-cta-secondary:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: var(--white);
+}
+
+/* ============ MOBILE ============ */
+@media (max-width: 900px) {
+  .v10-hero { padding: 80px 0 64px; }
+  .v10-hero-trust { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .v10-hero-trust-item { border-right: none; padding-right: 0; }
+  .v10-section { padding: 64px 0; }
+  .v10-container { padding: 0 20px; }
+  .v10-why-grid { grid-template-columns: repeat(2, 1fr); }
+  .v10-tracks { grid-template-columns: 1fr; }
+  .v10-process { grid-template-columns: 1fr; }
+  .v10-tutor-grid { grid-template-columns: 1fr; }
+  .v10-cases { grid-template-columns: 1fr; }
+  .v10-pricing-grid { grid-template-columns: 1fr; }
+  .v10-refund-grid { grid-template-columns: 1fr; }
+  .v10-director { padding: 36px 24px; }
+  .v10-director-stats { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .v10-cta { padding: 56px 28px; margin: 0 20px; }
+}
+</style>
 
 <header class="site-header">
   <div class="container">
     <nav class="nav">
-      <a href="index.html" class="nav-logo"><img src="assets/logo.png" alt="CareerForge"></a>
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo.png" alt="CareerForge 鑄途">
+      </a>
       <div class="nav-menu">
         <a href="index.html">首頁</a>
+        <a href="immigration.html">身份</a>
+        <a href="career.html">職涯身價</a>
         <a href="education.html" class="active">升學</a>
-        <a href="immigration.html">簽證</a>
-        <a href="career.html">職涯</a>
         <a href="quiz.html">牛馬測驗</a>
         <a href="cases.html">客戶故事</a>
+        <a href="#contact">聯絡</a>
       </div>
       <div class="nav-actions">
         <div class="lang-switcher">
-          <a href="education.html" class="active" data-lang-target="zh-Hant">繁體</a>
-          <a href="education-cn.html" data-lang-target="zh-Hans">简体</a>
-          <a href="education-en.html" data-lang-target="en">EN</a>
+          <a href="education.html" class="active">繁</a>
+          <a href="education-cn.html">簡</a>
+          <a href="education-en.html">EN</a>
         </div>
-        <a href="#contact" class="nav-cta">預約諮詢</a>
+        <a href="#contact" class="nav-cta">立即諮詢</a>
       </div>
     </nav>
   </div>
 </header>
 
-<!-- ===== PAGE HERO v4.0 ===== -->
-<section class="page-hero-v4">
-  <div class="container container-narrow" style="max-width:880px;margin:0 auto;padding:0 24px;">
-    <span class="eyebrow reveal">PILLAR 03 · 升學銜接</span>
-    <h1 class="reveal" data-reveal-delay="100">【海外與香港升學對標】<br/><span style="color:var(--theme-color,#1E40AF)">海外起步 · 香港落地</span></h1>
-    <p class="lead reveal" data-reveal-delay="200">海外中學 + IB / A-Level + DSE + 本地學校插班 + 大學申請 — 為子女鋪一條從海外到香港、從 K-12 到大學的完整升學路徑，配合家長簽證落地節奏同步推進。</p>
-    <div class="hero-v4-actions reveal" data-reveal-delay="300">
-      <a href="#overseas-hk" class="btn btn-primary btn-lg">海外 → 香港 銜接路徑</a>
-      <a href="#contact" class="btn btn-secondary btn-lg">預約升學諮詢</a>
+<!-- ============ HERO ============ -->
+<section class="v10-hero">
+  <div class="v10-container">
+    <span class="v10-hero-eyebrow">
+      <span class="v10-hero-eyebrow-dot"></span>
+      香港升學完整對標 · SINCE 2006
+    </span>
+    <h1 class="v10-hero-title">
+      從幼稚園到<span class="gold">世界頂尖大學</span>，<br>
+      同一 CareerForge 主線。
+    </h1>
+    <p class="v10-hero-sub">
+      CareerForge 鑄途 — 香港升學一站式陪跑。<br>
+      幼稚園、小學、中學插班、DSE / IB / A-Level、大學申請 — 配合家長簽證落地節奏同步推進子女教育路徑。
+    </p>
+    <div class="v10-hero-trust">
+      <div class="v10-hero-trust-item">
+        <strong>15 年</strong>
+        <span>立足香港教育經驗</span>
+      </div>
+      <div class="v10-hero-trust-item">
+        <strong>30+</strong>
+        <span>全港教育中心分校</span>
+      </div>
+      <div class="v10-hero-trust-item">
+        <strong>3,000+</strong>
+        <span>累計服務家庭</span>
+      </div>
+      <div class="v10-hero-trust-item">
+        <strong>6 萬</strong>
+        <span>套餐起 · 退款保證</span>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ===== 海外 → 香港 升學對標 概覽 ===== -->
-<section class="section-v4" id="overseas-hk">
-  <div class="container">
-    <div class="section-v4-head reveal">
-      <span class="eyebrow" style="color:var(--theme-color,#1E40AF);">海外與香港升學對標</span>
-      <h2>海外起步 · 香港落地。<br/>一條子女升學完整路徑。</h2>
-      <p style="max-width:680px;margin:12px auto 0;color:var(--ink-500)">不論你哋喺海外升中、IB / A-Level 定 DSE，我哋會按家庭簽證落地節奏，規劃子女由海外銜接到香港本地學校嘅時間表、學校清單、入學文件。</p>
+<!-- ============ WHY HK ============ -->
+<section class="v10-section canvas" id="why-hk">
+  <div class="v10-container">
+    <div class="v10-head">
+      <span class="eyebrow">為何選擇香港升學</span>
+      <h2>同樣努力，<br>港籍身份 + DSE 給你更寬跑道。</h2>
+      <p class="lede">從幼稚園、小學、中學到大學，香港教育體系提供一條比內地同齡人更寬、更靈活、更國際化的跑道 — 而我們的工作就是陪你跑完。</p>
     </div>
-    <div class="bento" style="margin-top:32px;">
-      <div class="bento-card bento-large reveal" style="border-left:4px solid var(--theme-color,#1E40AF);">
-        <div class="bento-icon" style="background:rgba(30,64,175,0.1);color:var(--theme-color,#1E40AF);">海外</div>
-        <h3>海外起步 — 中學 / 國際課程</h3>
-        <p>海外寄宿中學 (UK / US / CA / AU / SG)、IB 國際學校、A-Level 學院 — 喺海外完成初中 / 高中階段，再銜接到香港大學或海外大學。</p>
-        <div class="bento-stat">
-          <span class="num">4 大</span>
-          <span class="label">海外升學主流地</span>
-        </div>
-        <ul style="list-style:none;padding:0;margin:18px 0 0;font-size:0.88rem;color:var(--ink-700);">
-          <li style="padding:5px 0 5px 18px;position:relative;"><span style="position:absolute;left:0;color:var(--theme-color,#1E40AF);font-weight:700;">✓</span> UK 英國寄宿中學 (Year 9-13)</li>
-          <li style="padding:5px 0 5px 18px;position:relative;"><span style="position:absolute;left:0;color:var(--theme-color,#1E40AF);font-weight:700;">✓</span> US / CA 北美頂尖私校 + IB</li>
-          <li style="padding:5px 0 5px 18px;position:relative;"><span style="position:absolute;left:0;color:var(--theme-color,#1E40AF);font-weight:700;">✓</span> SG / AU 亞太寄宿中學</li>
+
+    <div class="v10-why-grid">
+      <div class="v10-why-card">
+        <span class="v10-why-num">22.1%</span>
+        <span class="v10-why-label">港三 DSE 錄取率</span>
+        <p class="v10-why-desc">香港大學、中文大學、科技大學 — 對比內地清北錄取率 0.054%，DSE 是一條實在的捷徑。</p>
+      </div>
+      <div class="v10-why-card">
+        <span class="v10-why-num">300+</span>
+        <span class="v10-why-label">海外認可高校</span>
+        <p class="v10-why-desc">DSE 是全球唯一可用中文作答的國際化考試，獲英美澳加頂尖大學直接認可。</p>
+      </div>
+      <div class="v10-why-card">
+        <span class="v10-why-num">138</span>
+        <span class="v10-why-label">內地高校招收</span>
+        <p class="v10-why-desc">清華、北大、復旦、交大 — 129 所內地頂尖學府以 DSE 成績直接錄取，最低門檻僅 3-3-2-2。</p>
+      </div>
+      <div class="v10-why-card">
+        <span class="v10-why-num">172</span>
+        <span class="v10-why-label">免簽國家護照</span>
+        <p class="v10-why-desc">完成 7 年永居後取得香港護照，免簽全球 172 個國家及地區，雙重身份優勢。</p>
+      </div>
+    </div>
+
+    <div class="v10-why-grid" style="margin-top: 24px;">
+      <div class="v10-why-card">
+        <span class="v10-why-num">2,300+</span>
+        <span class="v10-why-label">香港中小學及國際學校</span>
+        <p class="v10-why-desc">官立 / 資助 / 直資 / 私立 / 國際學校 — 多元選擇，85+ 所國際學校雲集，是常春藤的搖籃。</p>
+      </div>
+      <div class="v10-why-card">
+        <span class="v10-why-num">3 + 3</span>
+        <span class="v10-why-label">無中考直通高中</span>
+        <p class="v10-why-desc">香港中學初中 3 年 + 高中 3 年（高中屬義務教育），沒有內地「中考」分流壓力。</p>
+      </div>
+      <div class="v10-why-card">
+        <span class="v10-why-num">38.5%</span>
+        <span class="v10-why-label">港八 DSE 錄取率</span>
+        <p class="v10-why-desc">香港 8 大公立大學整體錄取率，遠高於內地 985 平均水平，提供更穩妥的大學路徑。</p>
+      </div>
+      <div class="v10-why-card">
+        <span class="v10-why-num">2+2</span>
+        <span class="v10-why-label">副學士黃金跳板</span>
+        <p class="v10-why-desc">香港 2 年副學士 + 2 年本科 = 完整本科學歷（與 4 年制本科完全一致），多一次選擇機會。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CURRICULUM TRACKS ============ -->
+<section class="v10-section white" id="curriculum">
+  <div class="v10-container">
+    <div class="v10-head">
+      <span class="eyebrow">3 條升學路徑</span>
+      <h2>DSE / IB / A-Level，<br>按孩子節奏揀一條路。</h2>
+      <p class="lede">香港中學文憑（DSE）、國際預科（IB）、英國高中（A-Level）— 3 個主流課程各有定位。我們按家庭目標、孩子能力、英語水平、升學方向，配對最合適的一條。</p>
+    </div>
+
+    <div class="v10-tracks">
+      <!-- DSE -->
+      <div class="v10-track">
+        <span class="v10-track-icon">D</span>
+        <span class="v10-track-tag">HKDSE · 本地主流</span>
+        <h3>香港中學文憑</h3>
+        <p>由香港考評局統一舉辦的公開考試，2012 年推出。全球唯一可用中文作答的國際化考試，是港籍學生的主流升學路徑。</p>
+        <ul class="v10-track-list">
+          <li>5 個等級評分（5** 為最高）</li>
+          <li>4 科必修核心 + 2+ 科選修</li>
+          <li>甲類學科 + 乙類應用學習 + 丙類其他語言</li>
+          <li>成績獲港八、內地 138、海外 300+ 大學認可</li>
+          <li>選修理科 / M1/M2 數學延伸 = 更多大學選課空間</li>
         </ul>
       </div>
-      <div class="bento-card reveal" style="border-left:4px solid var(--theme-color,#1E40AF);">
-        <div class="bento-icon" style="background:rgba(30,64,175,0.1);color:var(--theme-color,#1E40AF);">IB</div>
-        <h3>IB 國際課程</h3>
-        <p>IBDP（國際文憑大學預科）— 全球認可嘅大學預科課程。適合目標海外頂尖大學嘅學生。香港有 10+ 國際學校提供 IBDP。</p>
+
+      <!-- IB -->
+      <div class="v10-track">
+        <span class="v10-track-icon">IB</span>
+        <span class="v10-track-tag">IBDP · 國際預科</span>
+        <h3>國際預科證書</h3>
+        <p>由國際文憑組織（IBO）設計的 2 年制預科課程，強調跨學科思考與全球視野，被世界各地頂尖大學廣泛認可。</p>
+        <ul class="v10-track-list">
+          <li>6 個學科領域（語言、第二語言、社會、科學、數學、藝術）</li>
+          <li>強調批判思考、CAS 活動、延伸論文（EE）</li>
+          <li>香港 30+ 所國際學校提供 IB 課程</li>
+          <li>升學方向：海外頂尖大學 + 部分港校接受 IB 轉 DSE 預備</li>
+          <li>適合英語能力強、自主學習能力高的學生</li>
+        </ul>
       </div>
-      <div class="bento-card reveal" data-reveal-delay="100" style="border-left:4px solid var(--theme-color,#1E40AF);">
-        <div class="bento-icon" style="background:rgba(30,64,175,0.1);color:var(--theme-color,#1E40AF);">A-L</div>
-        <h3>A-Level 學院</h3>
-        <p>英國 GCE A-Level — 全球大學認可度最高嘅預科之一。香港 5+ 直資 / 私立學校提供 A-Level 課程。</p>
-      </div>
-    </div>
-    <div class="bento" style="margin-top:24px;">
-      <div class="bento-card reveal" style="border-left:4px solid var(--theme-color,#1E40AF);">
-        <div class="bento-icon" style="background:rgba(30,64,175,0.1);color:var(--theme-color,#1E40AF);">DSE</div>
-        <h3>DSE 本地課程</h3>
-        <p>香港中學文憑試 (DSE) — 銜接本地大學（港大 / 中大 / 科大）及透過 JUPAS 收生嘅教資會資助學位。適合以香港大學為目標嘅家庭。</p>
-      </div>
-      <div class="bento-card reveal" data-reveal-delay="100" style="border-left:4px solid var(--theme-color,#1E40AF);">
-        <div class="bento-icon" style="background:rgba(30,64,175,0.1);color:var(--theme-color,#1E40AF);">本地</div>
-        <h3>本地學校插班</h3>
-        <p>津校 / 私立 / 直資 / 國際學校 — 按子女能力、語言程度、家庭意願，匹配最適合嘅入學路徑。</p>
-      </div>
-      <div class="bento-card reveal" data-reveal-delay="200" style="border-left:4px solid var(--theme-color,#1E40AF);">
-        <div class="bento-icon" style="background:rgba(30,64,175,0.1);color:var(--theme-color,#1E40AF);">銜接</div>
-        <h3>簽證 + 升學同步規劃</h3>
-        <p>家長簽證落地時間表，與子女入學申請時間表 <strong>同步推進</strong>，避免落地後先知插班已截止嘅尷尬。</p>
+
+      <!-- A-Level -->
+      <div class="v10-track">
+        <span class="v10-track-icon">AL</span>
+        <span class="v10-track-tag">GCE A-Level · 英式預科</span>
+        <h3>英國高中課程</h3>
+        <p>英國 General Certificate of Education Advanced Level — 歷史悠久的英式預科，靈活的選科機制讓學生按興趣組合 3-4 科。</p>
+        <ul class="v10-track-list">
+          <li>學生自選 3-4 科深入研讀</li>
+          <li>單科深度高、考試形式清晰</li>
+          <li>英國、澳洲、加拿大、新加坡頂尖大學直接認可</li>
+          <li>香港部分國際學校及私立學校提供 A-Level 課程</li>
+          <li>適合目標明確、單科特長突出的學生</li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== STATS SHOWCASE ===== -->
-<section class="section-v4 tight">
-  <div class="container">
-    <div class="stat-row">
-      <div class="stat-item reveal">
-        <span class="stat-num">8</span>
-        <span class="stat-label">港八大升學策略</span>
-      </div>
-      <div class="stat-item reveal" data-reveal-delay="100">
-        <span class="stat-num">2+2</span>
-        <span class="stat-label">副學士直通學位</span>
-      </div>
-      <div class="stat-item reveal" data-reveal-delay="200">
-        <span class="stat-num">500<span class="unit">+</span></span>
-        <span class="stat-label">成功申請個案</span>
-      </div>
-      <div class="stat-item reveal" data-reveal-delay="300">
-        <span class="stat-num">95<span class="unit">%</span></span>
-        <span class="stat-label">首選學校錄取率</span>
-      </div>
+<!-- ============ SERVICE PROCESS ============ -->
+<section class="v10-section canvas" id="service">
+  <div class="v10-container">
+    <div class="v10-head">
+      <span class="eyebrow">服務流程 · 3–6 個月</span>
+      <h2>由諮詢到入學，<br>4 步全程有人跟。</h2>
+      <p class="lede">不是分階段計費的拼湊服務 — 是由 1 位資深顧問 + 學科導師團隊全程跟進的 4 步流程。每一步都有明確交付物，唔會「下一步再算」。</p>
     </div>
-  </div>
-</section>
 
-<!-- ===== BENTO FEATURES ===== -->
-<section class="section-v4" id="features">
-  <div class="container">
-    <div class="section-v4-head reveal">
-      <span class="eyebrow">服務範圍</span>
-      <h2>三大實力保障，<br/>穩健升學承諾。</h2>
-    </div>
-    <div class="bento">
-      <div class="bento-card bento-large reveal" data-cat="education">
-        <div class="bento-icon">師</div>
-        <h3>實力型師資與獨家教材庫</h3>
-        <p>由具備 15–20 年經驗之香港本地名校前教師、港大/中大碩士團隊親身指導。擁有全港逾 30 間實體教學中心與龐大校本教材庫支援。</p>
-        <div class="bento-stat">
-          <span class="num">30<span class="unit">+</span></span>
-          <span class="label">全港實體教學中心</span>
-        </div>
-      </div>
-      <div class="bento-card reveal" data-cat="education">
-        <div class="bento-icon">測</div>
-        <h3>嚴謹測評與小班/1 對 1 精準輔導</h3>
-        <p>摒棄公式化套路，入學前進行 3 小時嚴謹雙語學業測評。採用小班制（10 人內）或 1 對 1 定制化補習，針對語文、理科及英文面試實戰提升。</p>
-        <div class="bento-stat">
-          <span class="num">1 : 10</span>
-          <span class="label">小班師生比例上限</span>
-        </div>
-      </div>
-      <div class="bento-card reveal" data-cat="education" data-reveal-delay="100">
-        <div class="bento-icon">約</div>
-        <h3>合法合規與穩健退款保障</h3>
-        <p>嚴格遵守香港教育局規範，真材實料應考。提供清晰合約條款與首選/次選學校未獲錄取的清晰退款保障機制，專業透明。</p>
-        <div class="bento-stat">
-          <span class="num">100<span class="unit">%</span></span>
-          <span class="label">合約透明 · 合規應考</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<blockquote class="compliance-disclaimer">* CareerForge 堅持合法合規、實事求是的諮詢原則，所有升學及身份申請均建立於專業評估與真實能力之上。*</blockquote>
-
-<!-- ===== SCHOOLS COVERAGE ===== -->
-<section class="section-v4 alt">
-  <div class="container">
-    <div class="section-v4-head reveal">
-      <span class="eyebrow">學校覆蓋</span>
-      <h2>香港 8 大院校 + 海外名校，<br/>全部都有 plan。</h2>
-    </div>
-    <div class="reveal" style="text-align:center">
-      <h4 style="font-size:0.75rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-500);margin-bottom:24px;">香港 8 大</h4>
-      <div class="chip-grid" style="justify-content:center;margin-bottom:48px;">
-        <span class="chip">香港大學 HKU</span><span class="chip">中文大學 CUHK</span><span class="chip">科技大學 HKUST</span><span class="chip">城市大學 CityU</span><span class="chip">理工大學 PolyU</span><span class="chip">浸會大學 HKBU</span><span class="chip">嶺南大學 LingnanU</span><span class="chip">教育大學 EdUHK</span>
-      </div>
-      <h4 style="font-size:0.75rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-500);margin-bottom:24px;">國際學校</h4>
-      <div class="chip-grid" style="justify-content:center;margin-bottom:48px;">
-        <span class="chip">HKIS</span><span class="chip">CIS</span><span class="chip">DBS</span><span class="chip">GSIS</span><span class="chip">FIS</span><span class="chip">CDNIS</span><span class="chip">St. Paul's</span><span class="chip">DI</span>
-      </div>
-      <h4 style="font-size:0.75rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-500);margin-bottom:24px;">海外名校</h4>
-      <div class="chip-grid" style="justify-content:center;">
-        <span class="chip">Oxford</span><span class="chip">Cambridge</span><span class="chip">Imperial</span><span class="chip">LSE</span><span class="chip">UCL</span><span class="chip">Harvard</span><span class="chip">MIT</span><span class="chip">Stanford</span><span class="chip">Yale</span><span class="chip">Princeton</span><span class="chip">UofT</span><span class="chip">NUS</span><span class="chip">NTU</span><span class="chip">Melbourne</span><span class="chip">Sydney</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== PROCESS ===== -->
-<section class="section-v4">
-  <div class="container">
-    <div class="section-v4-head reveal">
-      <span class="eyebrow">服務流程</span>
-      <h2>由查詢到入學，<br/>4 步全程有人跟。</h2>
-    </div>
-    <div class="process reveal">
-      <div class="process-step">
-        <span class="step-num">Step 01</span>
+    <div class="v10-process">
+      <div class="v10-process-step">
+        <span class="v10-process-step-num">01</span>
+        <span class="v10-process-step-tag">STEP 01</span>
         <h4>初步諮詢</h4>
-        <p>免費 30 分鐘，了解背景、學科、預算區間。</p>
+        <p>了解家長需求、說明香港教育制度、搜集學生校內成績。</p>
+        <p class="step-detail">30 分鐘免費訪談，結合家庭目標、孩子能力、預算區間給出初步路徑建議。</p>
       </div>
-      <div class="process-step">
-        <span class="step-num">Step 02</span>
+
+      <div class="v10-process-step">
+        <span class="v10-process-step-num">02</span>
+        <span class="v10-process-step-tag">STEP 02</span>
+        <h4>學業評估</h4>
+        <p>以試堂模式進行，按科收費，由資深老師指導。</p>
+        <p class="step-detail">3 小時（英文 + 數學各 1.5 小時），彈性安排。完成後 1 周出具評估結果 + 評語建議。</p>
+      </div>
+
+      <div class="v10-process-step">
+        <span class="v10-process-step-num">03</span>
+        <span class="v10-process-step-tag">STEP 03</span>
         <h4>選校策略</h4>
-        <p>結合 GPA、興趣、家庭目標制定 3 條可行路徑。</p>
+        <p>結合成績、興趣、家庭目標，找出 8–20 間目標學校。</p>
+        <p class="step-detail">首選 / 次選 / 保底三層梯隊，覆蓋本地津校、直資、私立、國際學校 4 大類別。</p>
       </div>
-      <div class="process-step">
-        <span class="step-num">Step 03</span>
-        <h4>申請執行</h4>
-        <p>PS 精修、推薦信、模擬面試、文件翻譯一條龍。</p>
-      </div>
-      <div class="process-step">
-        <span class="step-num">Step 04</span>
-        <h4>入學陪跑</h4>
-        <p>選課、住宿、簽證延期、每月家長報告 — 4 年持續。</p>
+
+      <div class="v10-process-step">
+        <span class="v10-process-step-num">04</span>
+        <span class="v10-process-step-tag">STEP 04</span>
+        <h4>申請執行 + 入學</h4>
+        <p>報名、文件準備、面試訓練、學業輔導一條龍。</p>
+        <p class="step-detail">由專屬顧問 + 學科導師團隊同步跟進，確保學生順利融入香港教育體系。</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== TESTIMONIAL ===== -->
-<section class="section-v4 alt">
-  <div class="container">
-    <div class="section-v4-head reveal">
-      <span class="eyebrow">客戶故事</span>
-      <h2>副學士到港大 BBA，<br/>4 年全程有人跟。</h2>
+<!-- ============ TUTOR TEAM ============ -->
+<section class="v10-section white" id="tutor-team">
+  <div class="v10-container">
+    <div class="v10-head">
+      <span class="eyebrow">導師團隊</span>
+      <h2>經驗豐富，<br>名校學生之選。</h2>
+      <p class="lede">CareerForge 教育團隊由香港中文大學、香港大學、北京大學等頂尖學府導師組成 — 不是兼職大學生，是有 10+ 年教學經驗、教材編制經驗、面試培訓經驗的專職團隊。</p>
     </div>
-    <div class="bento">
-      <div class="bento-card bento-large reveal">
-        <div class="quote-v4">「Howard 由副學士開始 plan，到港大 BBA 畢業、IANG 留港、入貝恩公司 — 4 年全程有人跟。」</div>
-        <div class="case-meta">
-          <div class="case-meta-avatar">C</div>
-          <div class="case-meta-text">
-            <span class="name">C 同學 · 北京</span>
-            <span class="from">副學士 2+2 · 港大 BBA · 2018-2022</span>
+
+    <!-- Director feature -->
+    <div class="v10-director">
+      <div class="v10-director-inner">
+        <span class="v10-director-eyebrow">管理團隊 · 總監</span>
+        <h3>陳頴生 Asan Chan</h3>
+        <h4>碩士教室集團 董事總經理</h4>
+        <p>從事教育行業 15 年，具教材編制及面試班導師培訓經驗。香港中文大學工商管理學學士。帶領碩士教室集團為香港家庭提供從幼稚園到大學的一條龍升學顧問服務。</p>
+        <div class="v10-director-stats">
+          <div class="v10-director-stat">
+            <strong>15 年</strong>
+            <span>教育行業經驗</span>
           </div>
-        </div>
-      </div>
-      <div class="bento-card reveal">
-        <div class="quote-v4" style="font-size:1.25rem">「IB 39 分，由 HKIS 升 Oxford PPE，Howard 幫我做模擬面試整整 6 次。」</div>
-        <div class="case-meta">
-          <div class="case-meta-avatar">J</div>
-          <div class="case-meta-text">
-            <span class="name">J 同學 · 上海</span>
-            <span class="from">IB 39 · Oxford PPE · 2023</span>
+          <div class="v10-director-stat">
+            <strong>30+</strong>
+            <span>全港教育中心</span>
           </div>
-        </div>
-      </div>
-      <div class="bento-card reveal" data-reveal-delay="100">
-        <div class="quote-v4" style="font-size:1.25rem">「DSE 失利後直接上 2+2，3 年後中大 MBA — CareerForge 改變咗我條路。」</div>
-        <div class="case-meta">
-          <div class="case-meta-avatar">L</div>
-          <div class="case-meta-text">
-            <span class="name">L 同學 · 廣州</span>
-            <span class="from">DSE 5* · 副學士 · 中大 MBA · 2020</span>
+          <div class="v10-director-stat">
+            <strong>50 間</strong>
+            <span>每年服務學校</span>
+          </div>
+          <div class="v10-director-stat">
+            <strong>3,000+</strong>
+            <span>累計服務家庭</span>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- ===== FAQ ===== -->
-<section class="section-v4">
-  <div class="container">
-    <div class="section-v4-head reveal">
-      <span class="eyebrow">升學常見問題</span>
-      <h2>您可能會問嘅事。</h2>
-    </div>
-    <div class="faq reveal">
-      <details class="faq-item">
-        <summary class="faq-q">我個成績唔夠好，副學士係咪唯一出路？</summary>
-        <div class="faq-a">唔係。我哋會根據您嘅實際情況做評估 — GPA、雅思、課外活動、家庭資源 — 制定 3 條可行路徑。有啲個案直入八大，有啲靠 IB / A-Level 重考，有啲真係 2+2 最啱。關鍵係客觀評估，而唔係 hard sell 一條路。</div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">PS 同推薦信要改幾多次？</summary>
-        <div class="faq-a">無限次修改。我哋嘅目標係「您自己睇完都想 submit」，唔係達標就停。一般 PS 改 5-8 輪，推薦信改 2-3 輪。</div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">升學成功之後，你哋仲跟嗎？</summary>
-        <div class="faq-a">跟。入學後 4 年內，每月家長報告（出勤、GPA、課業）、應急支援（家校溝通、心理輔導轉介）、暑期實習推薦、碩士提前規劃 — 全部包括。</div>
-      </details>
-    </div>
-  </div>
-</section>
+    <!-- 5 Tutors -->
+    <div class="v10-tutor-grid">
+      <div class="v10-tutor">
+        <div class="v10-tutor-avatar">YB</div>
+        <h4 class="v10-tutor-name">Ms Yeung</h4>
+        <span class="v10-tutor-role">面試訓練導師主任</span>
+        <p class="v10-tutor-bio">多年面試及說話技巧教學經驗，針對語言能力與儀態行為兩大範疇高效提升學生表現。</p>
+        <ul class="v10-tutor-cred">
+          <li>香港中文大學企業傳播碩士</li>
+          <li>北京大學法學學士（國際政治）</li>
+          <li>北京大學招生宣傳香港校友大使</li>
+          <li>HKCEE 中國語文、中國歷史 A 級</li>
+          <li>全球職業發展師認證（GCDF）</li>
+        </ul>
+      </div>
 
-<!-- ===== CTA ===== -->
-<section class="section-v4 tight">
-  <div class="container">
-    <div class="cta-v4 reveal">
-      <h2>想知邊間學校<br/>最適合您？</h2>
-      <p>填寫下面 form，30 分鐘免費初步評估，升學顧問 24 小時內 WhatsApp 您。</p>
-      <div class="cta-v4-actions">
-        <a href="#contact" class="btn-v4-primary">預約升學諮詢 →</a>
-        <a href="quiz.html" class="btn-v4-secondary">先做牛馬測驗</a>
+      <div class="v10-tutor">
+        <div class="v10-tutor-avatar">廖</div>
+        <h4 class="v10-tutor-name">廖老師</h4>
+        <span class="v10-tutor-role">中文評估及導師主任</span>
+        <p class="v10-tutor-bio">20+ 年教授中學中國語文經驗，熟悉課程設計及考試要求，擁有龐大教材庫，擅長教授範文篇章及文言文解讀。</p>
+        <ul class="v10-tutor-cred">
+          <li>香港中文大學中文系學士</li>
+          <li>20+ 年中學中文教學經驗</li>
+          <li>每年為多間 Band 1 中學編制校本教材</li>
+          <li>曾任明報等多份報章編輯及顧問</li>
+          <li>出版數十本中文科 DSE 精讀及應考練習</li>
+        </ul>
+      </div>
+
+      <div class="v10-tutor">
+        <div class="v10-tutor-avatar">EL</div>
+        <h4 class="v10-tutor-name">Ms Lee</h4>
+        <span class="v10-tutor-role">英文評估及導師主任</span>
+        <p class="v10-tutor-bio">3+ 年言語治療實習，熟習各種教學法。了解香港考試制度和出題模式，擅長口語訓練及應試技巧。</p>
+        <ul class="v10-tutor-cred">
+          <li>香港大學言語治療系</li>
+          <li>九龍塘瑪利諾修院學校（中学部）畢業</li>
+          <li>HKDSE 英文口試 5** 最高等級</li>
+          <li>IELTS 8.0 高分</li>
+          <li>5+ 年補習經驗</li>
+        </ul>
+      </div>
+
+      <div class="v10-tutor">
+        <div class="v10-tutor-avatar">AL</div>
+        <h4 class="v10-tutor-name">Mr. Lee</h4>
+        <span class="v10-tutor-role">理科導師主任</span>
+        <p class="v10-tutor-bio">16 年豐富教學經驗，善於運用多元化線上線下練習和圖像化解題方法，幫助學生將複雜課題變得簡單易懂。</p>
+        <ul class="v10-tutor-cred">
+          <li>香港大學計算器科學工程碩士</li>
+          <li>香港大學計算器物理及軟件工程學士</li>
+          <li>學生來自聖保羅書院、聖類斯中學、英皇書院、英華女學校、聖士提反女書院、聖保羅男女中學、澳洲國際學校等</li>
+        </ul>
+      </div>
+
+      <div class="v10-tutor">
+        <div class="v10-tutor-avatar">CT</div>
+        <h4 class="v10-tutor-name">Ms Tsui</h4>
+        <span class="v10-tutor-role">英文及翻譯導師</span>
+        <p class="v10-tutor-bio">港大雙主修英文（文學及語言學）及翻譯，主攻 DSE、IGCSE 及雅思考試，具 20+ 年教學經驗。</p>
+        <ul class="v10-tutor-cred">
+          <li>香港大學英文（文學及語言學）+ 翻譯雙主修</li>
+          <li>專業翻譯資格</li>
+          <li>20+ 年教學經驗</li>
+          <li>主攻 DSE、IGCSE、IELTS 考試</li>
+          <li>本地 / 國際學校入學面試及筆試訓練</li>
+        </ul>
+      </div>
+
+      <div class="v10-tutor">
+        <div class="v10-tutor-avatar">CL</div>
+        <h4 class="v10-tutor-name">Ms Lau</h4>
+        <span class="v10-tutor-role">跨學科導師</span>
+        <p class="v10-tutor-bio">學校註冊教師，10+ 年教學經驗。除中文、中國歷史等主科，亦負責英文及面試訓練。兩文三語外，懂韓語及德文。</p>
+        <ul class="v10-tutor-cred">
+          <li>香港城市大學政策與行政榮譽社會科學學士</li>
+          <li>香港浸會大學教育文憑</li>
+          <li>學校註冊教師，10+ 年教學經驗</li>
+          <li>兩文三語，懂韓語及德文</li>
+          <li>主授中文、中國歷史、英文、面試訓練</li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== CONTACT FORM ===== -->
-<section class="section-v4" id="contact">
-  <div class="container">
-    <div class="section-v4-head reveal">
-      <span class="eyebrow">立即聯絡</span>
-      <h2>送出查詢，<br/>24 小時內 WhatsApp 您。</h2>
+<!-- ============ SUCCESS CASES ============ -->
+<section class="v10-section canvas" id="success-cases">
+  <div class="v10-container">
+    <div class="v10-head">
+      <span class="eyebrow">成功案例</span>
+      <h2>每一個案例，<br>都是真實家庭的升學逆襲。</h2>
+      <p class="lede">以下案例由 CareerForge 教育團隊於 2024-2026 學年服務的真實個案 — 為保護家庭私隱，學校名稱按公開資料標註。</p>
     </div>
-    <form class="reveal" id="lead-form" action="https://api.web3forms.com/submit" method="POST" style="max-width:760px;margin:0 auto;background:var(--surface-elevated);border:1px solid var(--ink-100);border-radius:var(--radius-xl);padding:48px 40px;">
-      <input type="hidden" name="access_key" value="a4d3eb59-2bf6-4a4a-91de-3c9b5f3e6d8c">
-      <input type="hidden" name="subject" value="升學諮詢">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
-        <div><label style="display:block;font-size:0.875rem;font-weight:500;margin-bottom:8px;color:var(--ink-700)">學生姓名 *</label><input type="text" name="name" required style="width:100%;padding:12px 16px;border:1px solid var(--ink-100);border-radius:var(--radius);background:var(--surface-canvas);"></div>
-        <div><label style="display:block;font-size:0.875rem;font-weight:500;margin-bottom:8px;color:var(--ink-700)">家長聯絡 *</label><input type="tel" name="phone" required style="width:100%;padding:12px 16px;border:1px solid var(--ink-100);border-radius:var(--radius);background:var(--surface-canvas);"></div>
-        <div><label style="display:block;font-size:0.875rem;font-weight:500;margin-bottom:8px;color:var(--ink-700)">Email</label><input type="email" name="email" style="width:100%;padding:12px 16px;border:1px solid var(--ink-100);border-radius:var(--radius);background:var(--surface-canvas);"></div>
-        <div><label style="display:block;font-size:0.875rem;font-weight:500;margin-bottom:8px;color:var(--ink-700)">目前年級</label><select name="grade" style="width:100%;padding:12px 16px;border:1px solid var(--ink-100);border-radius:var(--radius);background:var(--surface-canvas);"><option>IB / A-Level</option><option>DSE 高中</option><option>高考 / 內地高中</option><option>副學士在讀</option><option>學士在讀</option><option>其他</option></select></div>
-        <div style="grid-column:span 2"><label style="display:block;font-size:0.875rem;font-weight:500;margin-bottom:8px;color:var(--ink-700)">目標學校類型</label><select name="target" style="width:100%;padding:12px 16px;border:1px solid var(--ink-100);border-radius:var(--radius);background:var(--surface-canvas);"><option>香港八大</option><option>香港國際學校</option><option>英國 G5 / Russell Group</option><option>US Ivy + T30</option><option>加拿大 / 澳洲 / 新加坡</option><option>未確定，想由顧問建議</option></select></div>
-        <div style="grid-column:span 2"><label style="display:block;font-size:0.875rem;font-weight:500;margin-bottom:8px;color:var(--ink-700)">背景補充</label><textarea name="message" rows="3" style="width:100%;padding:12px 16px;border:1px solid var(--ink-100);border-radius:var(--radius);background:var(--surface-canvas);resize:vertical;"></textarea></div>
-        <div style="grid-column:span 2"><button type="submit" class="btn btn-primary btn-lg" style="width:100%">提交升學諮詢 →</button><div class="form-status" id="form-status" style="margin-top:12px;font-size:0.875rem;text-align:center;"></div></div>
+
+    <div class="v10-cases">
+      <div class="v10-case">
+        <span class="v10-case-icon">★</span>
+        <p class="v10-case-quote">「一個月內成功入讀 100 強小學」</p>
+        <span class="v10-case-meta">小學入學 · 2024 學年</span>
       </div>
-    </form>
+
+      <div class="v10-case">
+        <span class="v10-case-icon">★</span>
+        <p class="v10-case-quote">「超出預期成績，原定計劃重讀小二，成功插班小三」</p>
+        <span class="v10-case-meta">插班申請 · 2024 學年</span>
+      </div>
+
+      <div class="v10-case">
+        <span class="v10-case-icon">★</span>
+        <p class="v10-case-quote">「啟思中學 IBMYP 學生，9 月開始補習，下學期成功考入新加坡國際學校」</p>
+        <span class="v10-case-meta">國際學校轉學 · 2025 學年</span>
+      </div>
+
+      <div class="v10-case">
+        <span class="v10-case-icon">★</span>
+        <p class="v10-case-quote">「新來港學生，英文科補習數月，考進 BAND 1 前列 — 何明華會督銀禧中學」</p>
+        <span class="v10-case-meta">Band 1 中學插班 · 2025 學年</span>
+      </div>
+
+      <div class="v10-case">
+        <span class="v10-case-icon">★</span>
+        <p class="v10-case-quote">「8 月下旬來港，由插班試英文『白卷』到 10 月份成功獲得高中取錄」</p>
+        <span class="v10-case-meta">高中插班 · 2025 學年</span>
+      </div>
+
+      <div class="v10-case">
+        <span class="v10-case-icon">★</span>
+        <p class="v10-case-quote">「兩姊妹申請 8 間一線幼稚園，7 間取錄，最終選定九龍真光中學（幼稚園部）」</p>
+        <span class="v10-case-meta">幼稚園入學 · 2024 學年</span>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- ===== FOOTER ===== -->
-<footer class="footer-v4">
-  <div class="container">
-    <div class="footer-v4-grid">
-      <div class="footer-v4-brand"><img src="assets/logo.png" alt="CareerForge" style="height:32px;filter:brightness(0) invert(1);opacity:0.92"><p>立足香港，面向大中華區。20 年來，3,000+ 家庭嘅升學、簽證、職涯選擇。</p></div>
-      <div class="footer-v4-col"><h5>服務</h5><ul><li><a href="education.html">升學規劃</a></li><li><a href="immigration.html">簽證移居</a></li><li><a href="career.html">職涯規劃</a></li><li><a href="quiz.html">牛馬測驗</a></li></ul></div>
-      <div class="footer-v4-col"><h5>關於</h5><ul><li><a href="cases.html">客戶故事</a></li><li><a href="#contact">聯絡我們</a></li><li><a href="#">私隱政策</a></li></ul></div>
-      <div class="footer-v4-col"><h5>聯絡</h5><ul><li><a href="https://wa.me/85295651459">WhatsApp</a></li><li><a href="mailto:hello@careerforgehk.com">Email</a></li><li>微信: careerforgehk</li></ul></div>
+<!-- ============ PRICING & REFUND ============ -->
+<section class="v10-section white" id="pricing">
+  <div class="v10-container">
+    <div class="v10-head">
+      <span class="eyebrow">收費透明 · 退款保證</span>
+      <h2>套餐服務 $6 萬起，<br>全額或半額退款保障。</h2>
+      <p class="lede">所有費用按階段列明，套餐包括學業評估 + 學校申請後端服務。學科補習另議。我們明白每個家庭的預算同考量，所以提供清晰的費用結構 + 退款保證條款。</p>
     </div>
-    <div class="footer-v4-bottom">
-      <div>© 2026 CareerForge 鑄途 · BR 71508236</div>
-      <div class="footer-v4-lang"><a href="education.html" class="active">繁體</a><a href="education-cn.html">简体</a><a href="education-en.html">EN</a></div>
+
+    <div class="v10-pricing-grid">
+      <div class="v10-pricing">
+        <h4>學業評估</h4>
+        <p class="v10-pricing-price">按年級定價 · 單次 $3,000 – $5,000 HKD</p>
+        <ul>
+          <li>小學評估：3 小時，HKD 3,000</li>
+          <li>初中評估：3 小時，HKD 4,000</li>
+          <li>高中評估：3 小時，HKD 5,000</li>
+          <li>包括英文 + 數學兩門，每門 1.5 小時</li>
+          <li>1 周後出具評估結果</li>
+          <li>贈送價值 HKD 1,000 的 AI 英文輔助課程（2 個月）</li>
+          <li>由資深老師指導，給予評語和建議</li>
+          <li>彈性安排，按科收費</li>
+        </ul>
+      </div>
+
+      <div class="v10-pricing featured">
+        <span class="v10-pricing-tag">完整套餐</span>
+        <h4>升學套餐服務</h4>
+        <p class="v10-pricing-price">$6 萬港幣起 · 含評估 + 學校申請後端服務</p>
+        <ul>
+          <li>套餐費用：HKD 60,000 起</li>
+          <li>包含：學業評估 + 學校申請後端服務</li>
+          <li>可選加配：一對一補習（20 節，每節 HKD 550 / 小時）</li>
+          <li>範例：HKD 3,000 評估 + 20 堂課（11,000）+ 60,000 套餐 = 約 HKD 74,000</li>
+          <li>選校策略：找出 8–20 間目標學校 / 專業</li>
+          <li>全程 1 位資深顧問 + 學科導師團隊同步跟進</li>
+          <li>面試訓練：HKD 6,500 / 1 小時（單獨計）</li>
+          <li>按家庭需求靈活組合</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Refund guarantee -->
+    <div class="v10-refund">
+      <div class="v10-refund-inner">
+        <h4>退款保證 · 寫入正式合約</h4>
+        <p>如學生未能入讀委託協議內之目標學校，可按條款退回部分服務費。所有退款機制均於雙方簽訂之服務協議內明確列明。</p>
+
+        <div class="v10-refund-grid">
+          <div class="v10-refund-card">
+            <span class="percent">25%</span>
+            <span class="label">目標學校首選名單之申請均被拒絕 — 退回 25% 服務費</span>
+          </div>
+          <div class="v10-refund-card">
+            <span class="percent">50%</span>
+            <span class="label">目標學校首選及次選名單之申請均被拒絕 — 退回 50% 服務費</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DISCLAIMER ============ -->
+<section class="v10-section canvas tight" style="padding-top: 0;">
+  <div class="v10-container">
+    <blockquote class="v10-disclaimer">
+      <p class="v10-disclaimer-text">★ CareerForge 堅持合法合規、實事求是的諮詢原則，所有升學及身份申請均建立於專業評估與真實能力之上。</p>
+    </blockquote>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="v10-section white tight" id="contact">
+  <div class="v10-container">
+    <div class="v10-cta">
+      <div class="v10-cta-inner">
+        <span class="v10-cta-eyebrow">START YOUR JOURNEY</span>
+        <h2>第一步：30 分鐘免費升學評估</h2>
+        <p>提交基本資料後 24 小時內收到顧問回覆 — 包含子女學業初步評估 + 3 條升學路徑建議（DSE / IB / A-Level）+ 預計所需時間 + 後續路徑規劃。</p>
+        <div class="v10-cta-actions">
+          <a href="https://wa.me/85295651459" class="v10-cta-btn v10-cta-primary">WhatsApp 立即預約</a>
+          <a href="quiz.html" class="v10-cta-btn v10-cta-secondary">先做 3 分鐘牛馬測驗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="v10-section canvas tight" style="padding-top: 0;">
+  <div class="v10-container">
+    <div class="v10-head">
+      <span class="eyebrow">聯絡我們</span>
+      <h2>用你最方便的方式，<br>與顧問直接對話。</h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 56px;">
+      <div style="background: var(--white); border: 1px solid var(--ink-100); border-radius: var(--radius); padding: 40px 32px; text-align: center; box-shadow: var(--shadow-card);">
+        <div style="display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, var(--navy) 0%, var(--gold) 100%); color: var(--white); font-size: 1.5rem; margin-bottom: 20px;">📱</div>
+        <h4 style="font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 1.15rem; font-weight: 700; color: var(--ink-900); margin: 0 0 10px;">WhatsApp / 微信</h4>
+        <p style="font-size: 0.95rem; color: var(--ink-700); margin: 0; line-height: 1.6;">852-9565-1459<br>顧問 24 小時內回覆</p>
+      </div>
+      <div style="background: var(--white); border: 1px solid var(--ink-100); border-radius: var(--radius); padding: 40px 32px; text-align: center; box-shadow: var(--shadow-card);">
+        <div style="display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, var(--navy) 0%, var(--gold) 100%); color: var(--white); font-size: 1.5rem; margin-bottom: 20px;">✉️</div>
+        <h4 style="font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 1.15rem; font-weight: 700; color: var(--ink-900); margin: 0 0 10px;">電郵</h4>
+        <p style="font-size: 0.95rem; color: var(--ink-700); margin: 0; line-height: 1.6;">careerforgehk@gmail.com<br>提供書面方案摘要</p>
+      </div>
+      <div style="background: var(--white); border: 1px solid var(--ink-100); border-radius: var(--radius); padding: 40px 32px; text-align: center; box-shadow: var(--shadow-card);">
+        <div style="display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, var(--navy) 0%, var(--gold) 100%); color: var(--white); font-size: 1.5rem; margin-bottom: 20px;">📍</div>
+        <h4 style="font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 1.15rem; font-weight: 700; color: var(--ink-900); margin: 0 0 10px;">香港辦公室</h4>
+        <p style="font-size: 0.95rem; color: var(--ink-700); margin: 0; line-height: 1.6;">中環 / 尖沙咀<br>預約制 1 對 1 諮詢</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/logo.png" alt="CareerForge 鑄途" class="footer-logo">
+        <p>香港高端個人成長顧問。身份 · 升學 · 職涯身價 一站式陪跑。</p>
+      </div>
+      <div class="footer-col">
+        <h4>業務板塊</h4>
+        <a href="immigration.html">身份與續簽對標</a>
+        <a href="career.html">求職與身價躍遷</a>
+        <a href="education.html">海外與香港升學</a>
+      </div>
+      <div class="footer-col">
+        <h4>資源</h4>
+        <a href="cases.html">客戶案例</a>
+        <a href="quiz.html">牛馬身價測驗</a>
+        <a href="#contact">聯絡我們</a>
+      </div>
+      <div class="footer-col">
+        <h4>聯絡</h4>
+        <a href="https://wa.me/85295651459">WhatsApp</a>
+        <a href="mailto:careerforgehk@gmail.com">careerforgehk@gmail.com</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 CareerForge 鑄途. All rights reserved.</span>
+      <span class="footer-lang">
+        <a href="education.html" class="active">繁體</a> · <a href="education-cn.html">簡體</a> · <a href="education-en.html">EN</a>
+      </span>
     </div>
   </div>
 </footer>
 
-<a href="#contact" class="sticky-cta">💬 立即諮詢</a>
-
-<script>
-// Scroll reveal
-(function(){if(!('IntersectionObserver' in window))return;var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});})();
-// Web3Forms handler
-(function(){var f=document.getElementById('lead-form');if(!f)return;var s=document.getElementById('form-status');f.addEventListener('submit',async function(e){e.preventDefault();var btn=f.querySelector('button[type="submit"]');btn.disabled=true;btn.textContent='傳送中...';try{var d=new FormData(f);var r=await fetch('https://api.web3forms.com/submit',{method:'POST',body:d});var j=await r.json();if(j.success){s.style.color='#059669';s.textContent='✓ 查詢已送出，24 小時內 WhatsApp 您。';f.reset();}else{s.style.color='#DC2626';s.textContent='✗ 失敗，請 WhatsApp +852 9565 1459';}}catch(err){s.style.color='#DC2626';s.textContent='✗ 網絡錯誤';}finally{btn.disabled=false;btn.textContent='提交升學諮詢 →';}});})();
-</script>
 </body>
 </html>

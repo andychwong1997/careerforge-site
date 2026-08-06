@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hong Kong Education Planning · DSE / IB / A-Level / Top Universities Worldwide · CareerForge</title>
-<meta name="description" content="CareerForge — End-to-end Hong Kong education planning. From kindergarten, primary, secondary through DSE / IB / A-Level and university applications, syncing with parents\' visa landing timeline.">
+<title>Hong Kong education規劃 · DSE / IB / A-Level / 海外名校對標 · CareerForge 鑄途</title>
+<meta name="description" content="CareerForge 鑄途 — Hong Kong education pathway。從幼稚園、小學、中學到 DSE / IB / A-Level / universityapplication，Aligning children's education path with parents' visa timeline。">
 <link rel="icon" type="image/png" href="assets/icon.png">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700;800&family=Noto+Serif+SC:wght@400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
@@ -1020,30 +1020,469 @@
   margin-right: 10px;
   flex-shrink: 0;
 }
+
+/* ============ v10-package (3 pricing tiers) ============ */
+.v10-packages {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+.v10-package {
+  background: var(--white);
+  border: 1px solid var(--ink-100);
+  border-radius: var(--radius);
+  padding: 36px 28px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+.v10-package:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-deep);
+}
+.v10-package.featured {
+  background: linear-gradient(180deg, var(--navy) 0%, var(--navy-700) 100%);
+  color: var(--white);
+  border-color: var(--gold);
+}
+.v10-package.featured .v10-package-tag {
+  color: var(--gold);
+}
+.v10-package-tag {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--gold-600);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.v10-package h4 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  margin: 0 0 8px;
+  color: inherit;
+}
+.v10-package-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--ink-500);
+  margin-bottom: 20px;
+}
+.v10-package.featured .v10-package-desc {
+  color: rgba(255,255,255,0.85);
+}
+.v10-package-points {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.v10-package-points li {
+  padding: 8px 0 8px 24px;
+  position: relative;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  border-bottom: 1px dashed var(--ink-100);
+}
+.v10-package-points li:last-child {
+  border-bottom: none;
+}
+.v10-package-points li:before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  color: var(--gold);
+  font-weight: 700;
+}
+.v10-package.featured .v10-package-points li {
+  border-bottom-color: rgba(255,255,255,0.15);
+}
+.v10-package.featured .v10-package-points li:before {
+  color: var(--gold);
+}
+.v10-pricing-note {
+  text-align: center;
+  margin-top: 32px;
+  font-size: 0.92rem;
+  color: var(--ink-500);
+  font-style: italic;
+}
+
+/* ============ v10-diff-table (vs 一般中介) ============ */
+.v10-diff-table {
+  margin-top: 40px;
+  border: 1px solid var(--ink-100);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--white);
+}
+.v10-diff-row {
+  display: grid;
+  grid-template-columns: 180px 1fr 1fr;
+  border-bottom: 1px solid var(--ink-100);
+}
+.v10-diff-row:last-child {
+  border-bottom: none;
+}
+.v10-diff-header {
+  background: var(--canvas);
+  font-weight: 700;
+  font-size: 0.88rem;
+}
+.v10-diff-cell {
+  padding: 16px 20px;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+.v10-diff-cell.v10-diff-label {
+  font-weight: 600;
+  color: var(--ink-900);
+  background: var(--canvas);
+}
+.v10-diff-cell.v10-diff-us {
+  background: linear-gradient(135deg, #FAF6EC 0%, #FFFFFF 100%);
+  border-left: 4px solid var(--gold);
+  font-weight: 500;
+}
+.v10-diff-cell.v10-diff-them {
+  color: var(--ink-500);
+}
+.v10-diff-check {
+  color: var(--gold);
+  font-weight: 700;
+  margin-right: 6px;
+}
+
+/* ============ v10-cases (success stories grid) ============ */
+.v10-cases {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 40px;
+}
+.v10-case {
+  background: var(--white);
+  border: 1px solid var(--ink-100);
+  border-radius: var(--radius);
+  padding: 24px;
+  transition: all 0.3s ease;
+}
+.v10-case:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-card);
+  border-color: var(--gold-100);
+}
+.v10-case-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, var(--gold-100) 0%, var(--white) 100%);
+  border-radius: 50%;
+  color: var(--gold-600);
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+.v10-case-quote {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--ink-700);
+  margin: 0 0 8px;
+  font-style: italic;
+}
+.v10-case-meta {
+  font-size: 0.82rem;
+  color: var(--ink-500);
+  letter-spacing: 0.04em;
+}
+
+/* ============ v10-pathway-grid (4 stages) ============ */
+.v10-pathway-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+.v10-pathway {
+  background: var(--white);
+  border: 1px solid var(--ink-100);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  position: relative;
+  border-top: 4px solid var(--gold);
+  transition: all 0.3s ease;
+}
+.v10-pathway:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+}
+.v10-pathway-step {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--white);
+  background: var(--navy);
+  padding: 4px 10px;
+  border-radius: 100px;
+  margin-bottom: 12px;
+}
+.v10-pathway h4 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0 0 8px;
+  color: var(--ink-900);
+}
+.v10-pathway p {
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--ink-500);
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .v10-packages { grid-template-columns: 1fr; }
+  .v10-cases { grid-template-columns: 1fr; }
+  .v10-pathway-grid { grid-template-columns: 1fr 1fr; }
+  .v10-diff-row { grid-template-columns: 120px 1fr 1fr; }
+  .v10-diff-cell { padding: 12px 14px; font-size: 0.85rem; }
+}
+@media (max-width: 560px) {
+  .v10-pathway-grid { grid-template-columns: 1fr; }
+  .v10-diff-row { grid-template-columns: 100px 1fr 1fr; font-size: 0.8rem; }
+  .v10-diff-cell { padding: 10px 8px; font-size: 0.8rem; }
+}
+
+
+/* ============ V11 NAVBAR (logo redesign) ============ */
+.site-header {
+  background: #FFFFFF !important;
+  box-shadow: 0 1px 0 rgba(11,25,44,0.06);
+  border-bottom: 1px solid rgba(11,25,44,0.06);
+  padding: 14px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.site-header .nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.site-header .nav-logo {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  text-decoration: none;
+}
+.site-header .nav-logo .logo-en {
+  font-family: 'Playfair Display', 'Noto Serif TC', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: 0.5px;
+}
+.site-header .nav-logo .logo-cn {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 2px;
+}
+.site-header .nav-menu {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+.site-header .nav-menu a {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--ink-700);
+  padding: 8px 14px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background .2s, color .2s;
+}
+.site-header .nav-menu a:hover {
+  background: var(--gold-100);
+  color: var(--navy);
+}
+.site-header .nav-menu a.active {
+  background: var(--navy);
+  color: #FFFFFF;
+}
+.site-header .nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.site-header .lang-switcher {
+  display: inline-flex;
+  background: var(--ink-100);
+  border-radius: 999px;
+  padding: 4px;
+  gap: 2px;
+}
+.site-header .lang-switcher a {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink-500);
+  padding: 6px 12px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background .2s, color .2s;
+  min-width: 32px;
+  text-align: center;
+}
+.site-header .lang-switcher a.active {
+  background: var(--navy);
+  color: #FFFFFF;
+}
+.site-header .lang-switcher a:hover:not(.active) {
+  color: var(--navy);
+}
+.site-header .hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.site-header .hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--navy);
+  margin: 0 auto;
+  border-radius: 2px;
+  transition: transform .25s;
+}
+
+/* Mobile (hamburger) */
+@media (max-width: 900px) {
+  .site-header .nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #FFFFFF;
+    flex-direction: column;
+    gap: 0;
+    padding: 12px 24px;
+    box-shadow: 0 8px 24px -8px rgba(11,25,44,0.18);
+    border-top: 1px solid var(--ink-100);
+    transform: translateY(-8px);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform .25s, opacity .25s;
+  }
+  .site-header .nav-menu.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .site-header .nav-menu a {
+    width: 100%;
+    text-align: left;
+    border-radius: 8px;
+    padding: 14px 16px;
+  }
+  .site-header .hamburger {
+    display: flex;
+  }
+  .site-header .nav-logo .logo-en { font-size: 1.3rem; }
+  .site-header .nav-logo .logo-cn { font-size: 1.15rem; }
+}
+
+/* Hamburger JS toggle */
+.site-header .hamburger.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.site-header .hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.site-header .hamburger.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+
+/* ============ V11 MOBILE TYPOGRAPHY FIX ============ */
+/* Fix orphan chars like 年。 / 價。 wrapping on small screens */
+.v10-hero-title,
+.v10-head h2,
+.v10-section h2 {
+  text-wrap: balance;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  -webkit-hyphens: none;
+  hyphens: none;
+}
+
+/* Reduce hero title min size on mobile */
+.v10-hero-title {
+  font-size: clamp(1.75rem, 5.5vw, 4.8rem) !important;
+  line-height: 1.18 !important;
+  max-width: 100% !important;
+}
+
+/* Show lang switcher pill on mobile (smaller) */
+@media (max-width: 900px) {
+  .site-header .lang-switcher {
+    display: inline-flex;
+  }
+  .site-header .lang-switcher a {
+    font-size: 0.7rem;
+    padding: 4px 8px;
+    min-width: 24px;
+  }
+  .site-header .nav-logo .logo-en { font-size: 1.05rem !important; }
+  .site-header .nav-logo .logo-cn { font-size: 0.95rem !important; letter-spacing: 1px; }
+  .site-header .container { padding: 0 16px; }
+  .v10-hero-title { font-size: clamp(1.75rem, 7vw, 4.8rem) !important; }
+  .v10-hero-sub { font-size: 0.95rem !important; }
+  .v10-head h2 { font-size: 1.6rem !important; line-height: 1.25 !important; }
+  .v10-section { padding: 56px 0 !important; }
+  .v10-pillar-title { font-size: 1.2rem !important; }
+}
+
+/* Ensure no-break on key phrases */
+.no-break { white-space: nowrap; display: inline-block; }
+
 </style>
 
 <header class="site-header">
   <div class="container">
     <nav class="nav">
       <a href="index-en.html" class="nav-logo">
-        <img src="assets/logo.png" alt="CareerForge 鑄途">
+        <span class="logo-en">CareerForge</span>
+        <span class="logo-cn">鑄途</span>
       </a>
-      <div class="nav-menu">
+      <div class="nav-menu" id="navMenu">
         <a href="index-en.html">首頁</a>
-        <a href="immigration-en.html">身份</a>
-        <a href="career-en.html">職涯身價</a>
-        <a href="education-en.html" class="active">升學</a>
-        <a href="quiz-en.html">牛馬測驗</a>
+        <a href="immigration-en.html">身份規劃</a>
+        <a href="education.html" class="active">Education planning</a>
+        <a href="career-en.html">求職身價</a>
+        <a href="quiz-en.html">牛馬test</a>
         <a href="cases-en.html">客戶故事</a>
-        <a href="#contact">聯絡</a>
+        <a href="#contact">聯絡我們</a>
       </div>
       <div class="nav-actions">
         <div class="lang-switcher">
-          <a href="education.html">繁</a>
-          <a href="education-cn.html">简</a>
-          <a href="education-en.html" class="active">EN</a>
+          <a href="index-en.html" class="active">繁</a>
+          <a href="index-cn.html">简</a>
+          <a href="index-en.html">EN</a>
         </div>
-        <a href="#contact" class="nav-cta">立即諮詢</a>
+        <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </nav>
   </div>
@@ -1054,32 +1493,32 @@
   <div class="v10-container">
     <span class="v10-hero-eyebrow">
       <span class="v10-hero-eyebrow-dot"></span>
-      Hong Kong Education · SINCE 2006
+      Hong Kong education pathway · SINCE 2006
     </span>
     <h1 class="v10-hero-title">
-      From kindergarten to<span class="gold">world-leading universities</span>，<br>
-      one CareerForge pathway.
+      從幼稚園到<span class="gold">world-leading universities</span>，<br>
+      同一 CareerForge 主線。
     </h1>
     <p class="v10-hero-sub">
-      CareerForge — One-stop Hong Kong education planning.<br>
-      Kindergarten, primary, secondary school transfer, DSE / IB / A-Level, university applications — synced with parents\' visa landing schedule.
+      CareerForge 鑄途 — Hong Kong education一站式陪跑。<br>
+      幼稚園、小學、中學插班、DSE / IB / A-Level、universityapplication — Aligning children's education path with parents' visa timeline。
     </p>
     <div class="v10-hero-trust">
       <div class="v10-hero-trust-item">
         <strong>15 年</strong>
-        <span>Years in Hong Kong education</span>
+        <span>Rooted in Hong Kongexperience</span>
       </div>
       <div class="v10-hero-trust-item">
         <strong>30+</strong>
-        <span>全港教育中心分校</span>
+        <span>Centers across Hong Kong</span>
       </div>
       <div class="v10-hero-trust-item">
         <strong>3,000+</strong>
-        <span>Families served</span>
+        <span>累計服務family</span>
       </div>
       <div class="v10-hero-trust-item">
         <strong>15 年</strong>
-        <span>Years in Hong Kong education</span>
+        <span>Rooted in Hong Kongexperience</span>
       </div>
     </div>
   </div>
@@ -1089,54 +1528,54 @@
 <section class="v10-section canvas" id="why-hk">
   <div class="v10-container">
     <div class="v10-head">
-      <span class="eyebrow">Why Hong Kong</span>
-      <h2>Same effort,<br>Hong Kong status + DSE — a wider runway.</h2>
-      <p class="lede">From kindergarten to university, Hong Kong\'s system offers a wider, more flexible, more international runway than mainland peers — and we run it with you.</p>
+      <span class="eyebrow">為何選擇Hong Kong education</span>
+      <h2>同樣努力，<br>港籍身份 + DSE 給你更寬跑道。</h2>
+      <p class="lede">從幼稚園、小學、中學到university，Hong Kong education system offers a broader path than mainland peers、更靈活、更國際化 跑道 — Our job is to walk with you to the end。</p>
     </div>
 
     <div class="v10-why-grid">
       <div class="v10-why-card">
         <span class="v10-why-num">22.1%</span>
-        <span class="v10-why-label">HKU / CUHK / HKUST DSE rate</span>
-        <p class="v10-why-desc">HKU, CUHK, HKUST — versus mainland Tsinghua/Peking at 0.054%, DSE is a real shortcut.</p>
+        <span class="v10-why-label">港三 DSE admission率</span>
+        <p class="v10-why-desc">香港university、中文university、科技university — 對比內地清北admission率 0.054%，DSE 是一實在 捷徑。</p>
       </div>
       <div class="v10-why-card">
         <span class="v10-why-num">300+</span>
-        <span class="v10-why-label">Overseas universities</span>
-        <p class="v10-why-desc">DSE is the only international exam answered in Chinese — directly recognized by top UK, US, AU, CA universities.</p>
+        <span class="v10-why-label">海外認可高校</span>
+        <p class="v10-why-desc">DSE Is the only international exam allowing Chinese-language answers，Directly recognized by top universities in UK, US, Australia, Canada。</p>
       </div>
       <div class="v10-why-card">
         <span class="v10-why-num">138</span>
-        <span class="v10-why-label">Mainland universities</span>
-        <p class="v10-why-desc">Tsinghua, Peking, Fudan, Jiao Tong — 129 top mainland universities admit by DSE results, minimum 3-3-2-2.</p>
+        <span class="v10-why-label">內地高校招收</span>
+        <p class="v10-why-desc">清華、北大、復旦、交大 — 129 所內地top universities以 DSE 成績直接admission，最低門檻僅 3-3-2-2。</p>
       </div>
       <div class="v10-why-card">
         <span class="v10-why-num">172</span>
-        <span class="v10-why-label">Visa-free countries</span>
-        <p class="v10-why-desc">After 7-year PR, get HK passport — visa-free to 172 countries with dual-identity benefits.</p>
+        <span class="v10-why-label">免簽國家護照</span>
+        <p class="v10-why-desc">完成 7 Obtained Hong Kong passport after 7 years of PR，免簽全球 172 cases國家及地區，雙重身份優勢。</p>
       </div>
     </div>
 
     <div class="v10-why-grid" style="margin-top: 24px;">
       <div class="v10-why-card">
         <span class="v10-why-num">2,300+</span>
-        <span class="v10-why-label">HK primary/secondary + international schools</span>
-        <p class="v10-why-desc">Government / aided / DSS / private / international — 85+ international schools, an Ivy League cradle.</p>
+        <span class="v10-why-label">香港中小學及國際school</span>
+        <p class="v10-why-desc">官立 / 資助 / 直資 / 私立 / 國際school — 多元選擇，85+ 所國際school雲集，是常春藤 搖籃。</p>
       </div>
       <div class="v10-why-card">
         <span class="v10-why-num">3 + 3</span>
-        <span class="v10-why-label">No high-stakes exam</span>
-        <p class="v10-why-desc">Junior 3 years + senior 3 years (senior is compulsory) — no mainland "zhongkao" streaming pressure.</p>
+        <span class="v10-why-label">無中考直通高中</span>
+        <p class="v10-why-desc">香港中學初中 3 年 + 高中 3 年（高中屬義務教育），沒有內地「中考」分流壓力。</p>
       </div>
       <div class="v10-why-card">
         <span class="v10-why-num">38.5%</span>
-        <span class="v10-why-label">8 public unis DSE rate</span>
-        <p class="v10-why-desc">Hong Kong\'s 8 public unis overall rate — much higher than mainland 985 average, providing a safer path.</p>
+        <span class="v10-why-label">港八 DSE admission率</span>
+        <p class="v10-why-desc">香港 8 大公立university整體admission率，遠高於內地 985 平均水平，provide更穩妥 universitypathway。</p>
       </div>
       <div class="v10-why-card">
         <span class="v10-why-num">2+2</span>
-        <span class="v10-why-label">Associate degree springboard</span>
-        <p class="v10-why-desc">2-year associate + 2-year bachelor = full bachelor degree (identical to 4-year), one more chance.</p>
+        <span class="v10-why-label">副學士黃金跳板</span>
+        <p class="v10-why-desc">香港 2 年副學士 + 2 年本科 = complete本科學歷（與 4 Year undergraduate degree fully aligned），多一次選擇機會。</p>
       </div>
     </div>
   </div>
@@ -1146,34 +1585,34 @@
 <section class="v10-section white" id="curriculum">
   <div class="v10-container">
     <div class="v10-head">
-      <span class="eyebrow">3 education pathways</span>
-      <h2>DSE / IB / A-Level —<br>pick the path that fits your child.</h2>
-      <p class="lede">HKDSE, IBDP, A-Level — 3 mainstream curricula, each with a clear position. We match the best fit by family goals, child ability, English level, university direction.</p>
+      <span class="eyebrow">3 升學pathway</span>
+      <h2>DSE / IB / A-Level，<br>perchildren節奏揀一路。</h2>
+      <p class="lede">Hong Kong Diploma of Secondary Education（DSE）、國際預科（IB）、英國高中（A-Level）— 3 cases主流course各有定位。我們perfamilygoal、children能力、英語水平、升學方向，配對最合適 一。</p>
     </div>
 
     <div class="v10-tracks">
       <!-- DSE -->
       <div class="v10-track">
         <span class="v10-track-icon">D</span>
-        <span class="v10-track-tag">HKDSE · Local mainstream</span>
+        <span class="v10-track-tag">HKDSE · 本地主流</span>
         <h3>Hong Kong Diploma of Secondary Education</h3>
-        <p>Public exam by HKEAA — the only international exam answered in Chinese. Ideal for HK-status families. Detailed structure and elective strategy, consult an advisor.</p>
+        <p>Public exam administered by HKEAA — 全球唯一可use中文作答 國際化exam，suitable港籍family主流升學pathway。detailedcourse結構與選修策略，諮詢consultantsunderstand。</p>
       </div>
 
       <!-- IB -->
       <div class="v10-track">
         <span class="v10-track-icon">IB</span>
-        <span class="v10-track-tag">IBDP · International Baccalaureate</span>
-        <h3>International Baccalaureate Diploma</h3>
-        <p>2-year pre-university programme by IBO, emphasising interdisciplinary thinking and global perspective. Offered by 30+ HK international schools. Suits students with strong English and self-learning ability.</p>
+        <span class="v10-track-tag">IBDP · 國際預科</span>
+        <h3>國際預科證書</h3>
+        <p>FromInternational Baccalaureate組織（IBO）design  2 年制預科，Emphasizes interdisciplinary thinking and global perspective。香港 30+ 所國際schoolprovide。suitable英語能力強、自學能力高 學生。</p>
       </div>
 
       <!-- A-Level -->
       <div class="v10-track">
         <span class="v10-track-icon">AL</span>
-        <span class="v10-track-tag">GCE A-Level · British pre-university</span>
-        <h3>British A-Level programme</h3>
-        <p>Students choose 3-4 subjects for deep study. High single-subject depth. Directly recognized by top UK / AU / CA / Singapore universities. Suits students with clear targets and strong subject specialisation.</p>
+        <span class="v10-track-tag">GCE A-Level · 英式預科</span>
+        <h3>英國高中course</h3>
+        <p>學生自選 3-4 科深入研讀，單科deep高，Directly recognized by top UK, Australian, Canadian, Singapore universities。suitablegoal明確、單科特長突出 學生。</p>
       </div>
     </div>
   </div>
@@ -1183,42 +1622,42 @@
 <section class="v10-section canvas" id="service">
   <div class="v10-container">
     <div class="v10-head">
-      <span class="eyebrow">Service process · 3–6 months</span>
-      <h2>From consultation to enrolment,<br>4 steps, fully supported.</h2>
-      <p class="lede">Not a piecemeal, per-stage service — a single senior consultant + subject tutor team supports you through all 4 steps. Each step has a clear deliverable. No "let\'s see later" gaps.</p>
+      <span class="eyebrow">Service flow · 3–6 cases月</span>
+      <h2>From諮詢到enrollment，<br>4 步全程有人跟。</h2>
+      <p class="lede">Not piecemeal tiered pricing — 是From 1 位資深consultants + 學科Tutor Team全程跟進  4 步流程。eachEach step has clear deliverables，不會「下一步再算」。</p>
     </div>
 
     <div class="v10-process">
       <div class="v10-process-step">
         <span class="v10-process-step-num">01</span>
         <span class="v10-process-step-tag">STEP 01</span>
-        <h4>Initial consultation</h4>
-        <p>Understand parents\' needs, explain HK education system, gather school records.</p>
-        <p class="step-detail">30-min free interview with initial pathway recommendation based on goals, ability, budget.</p>
+        <h4>初步諮詢</h4>
+        <p>understandparents需求、說明香港教育制度、搜集學生校內成績。</p>
+        <p class="step-detail">30 分鐘免費訪談，結合familygoal、children能力、Initial pathway recommendations within budget range。</p>
       </div>
 
       <div class="v10-process-step">
         <span class="v10-process-step-num">02</span>
         <span class="v10-process-step-tag">STEP 02</span>
-        <h4>Academic assessment</h4>
-        <p>Trial-class format, per-subject fee, guided by senior tutors.</p>
-        <p class="step-detail">3 hours (English + Math, 1.5 each), flexible scheduling. Report + comments within 1 week.</p>
+        <h4>學業assessment</h4>
+        <p>以試堂模式進行，per科Pricing，From資深老師指導。</p>
+        <p class="step-detail">3 小時（英文 + 數學各 1.5 小時），彈性安排。完成後 1 周出具assessment結果 + 評語建議。</p>
       </div>
 
       <div class="v10-process-step">
         <span class="v10-process-step-num">03</span>
         <span class="v10-process-step-tag">STEP 03</span>
-        <h4>School selection strategy</h4>
-        <p>Combine results, interests, family goals to identify 8–20 target schools.</p>
-        <p class="step-detail">First-choice / second / safety tier — across aided, DSS, private, international schools.</p>
+        <h4>選校策略</h4>
+        <p>結合成績、興趣、familygoal，找出 8–20 間goalschool。</p>
+        <p class="step-detail">首選 / 次選 / 保底三層梯隊，cover本地津校、直資、私立、國際school 4 大類別。</p>
       </div>
 
       <div class="v10-process-step">
         <span class="v10-process-step-num">04</span>
         <span class="v10-process-step-tag">STEP 04</span>
-        <h4>Application + enrolment</h4>
-        <p>Registration, documents, interview training, subject tutoring — all in one.</p>
-        <p class="step-detail">Dedicated consultant + subject tutor team in sync — ensures smooth integration into HK education.</p>
+        <h4>application執行 + enrollment</h4>
+        <p>報名、文件準備、Interview training、學業輔導comprehensive。</p>
+        <p class="step-detail">Fromdedicatedconsultants + 學科Tutor Team同步跟進，Ensuring smooth integration into Hong Kong education system。</p>
       </div>
     </div>
   </div>
@@ -1228,34 +1667,34 @@
 <section class="v10-section white" id="tutor-team">
   <div class="v10-container">
     <div class="v10-head">
-      <span class="eyebrow">Tutor team</span>
-      <h2>Top-university tutors,<br>in-house team, full support.</h2>
-      <p class="lede">CareerForge\'s tutor team — all in-house, 10+ years experience, from CUHK, HKU, Peking University and other top schools. We deeply understand each family\'s unique needs.</p>
+      <span class="eyebrow">Tutor Team</span>
+      <h2>Top-university tutors，<br>專職團隊全程跟進。</h2>
+      <p class="lede">CareerForge 教育團隊FromCUHKuniversity、香港university、北京universityand other top institutionstutors組成 — All full-time tutors，10+ years teaching experience。deep understanding of each family's unique needs。</p>
     </div>
 
     <!-- 師資總括 -->
     <div class="v10-tutor-summary">
       <div class="v10-tutor-summary-card">
-        <span class="v10-tutor-summary-eyebrow">Academic credentials</span>
-        <h3>Top universities · HK education experts</h3>
-        <p>我們的Tutor team均畢業或任教於香港中文大學、香港大學、北京大學、英屬哥倫比亞大學等頂尖學府，覆蓋商科、法律、工程、文學、教育等多個專業範疇。</p>
+        <span class="v10-tutor-summary-eyebrow">學歷總覽</span>
+        <h3>top universities · 全港教育專家</h3>
+        <p>我們 Tutor Team均graduated from or taught atCUHKuniversity、香港university、北京university、英屬哥倫比亞universityand other top institutions，cover商科、法律、工程、文學、教育等多casesprofessionaldomains。</p>
       </div>
 
       <div class="v10-tutor-summary-card">
-        <span class="v10-tutor-summary-eyebrow">Teaching experience</span>
-        <h3>15+ years · curriculum + interview training</h3>
-        <p>15+ years HK education experience. Authored school-based materials for multiple Band 1 secondary schools. Regular internal training to keep quality consistent.</p>
+        <span class="v10-tutor-summary-eyebrow">教學experience</span>
+        <h3>15+ 年 · 教材編制及interviewtraining</h3>
+        <p>團隊具 15+ 年香港教育experience，曾為多間 Band 1 中學編制校本教材，And regular internal training to maintain consistent teaching quality。</p>
       </div>
 
       <div class="v10-tutor-summary-card">
-        <span class="v10-tutor-summary-eyebrow">Why our tutors</span>
-        <h3>5 core advantages</h3>
+        <span class="v10-tutor-summary-eyebrow">師資優勢</span>
+        <h3>5 大核心優勢</h3>
         <ul class="v10-tutor-summary-list">
-          <li><strong>In-house, not outsourced</strong> — Full-time staff — not external university students or part-timers</li>
-          <li><strong>Curriculum authorship</strong> — Internal materials library, authors school-based content annually</li>
-          <li><strong>HK exam specialists</strong> — Deep knowledge of DSE / IB / A-Level exam patterns and marking</li>
-          <li><strong>Interview training expertise</strong> — Years training top-school interview panels — Chinese & English</li>
-          <li><strong>Bilingual + trilingual</strong> — Cantonese / Mandarin / English — all supported</li>
+          <li><strong>專職而非兼職</strong> — 全職員工，非外判university生或兼職tutors</li>
+          <li><strong>教材編制能力</strong> — 內部龐大教材庫，each年為school編制校本材料</li>
+          <li><strong>香港exam專家</strong> — 熟悉 DSE / IB / A-Level 出題模式及評分Standard</li>
+          <li><strong>Interview trainingexperience</strong> — Years of training experience with top school admission officers，cover中英文interview</li>
+          <li><strong>兩文三語</strong> — 粵語 / 普通話 / English 全語言支援</li>
         </ul>
       </div>
     </div>
@@ -1266,58 +1705,58 @@
 <section class="v10-section white" id="pricing">
   <div class="v10-container">
     <div class="v10-head">
-      <span class="eyebrow">Transparent pricing · Refund guarantee</span>
-      <h2>2–3 package combinations,<br>pick what fits your family.</h2>
-      <p class="lede">唔同家庭嘅需要唔同，所以我們設計咗幾個套餐，由Initial consultation到一條龍服務都有。具體費用按家庭情況、學生年級、學校類別而定 — 諮詢後會有明確報價。</p>
+      <span class="eyebrow">Pricing透明 · 退款保證</span>
+      <h2>2-3 casesPackage組合，<br>perfamilyneeds揀。</h2>
+      <p class="lede">Different families have different needs，所以We design了a fewcasesPackage，From initial consultation tocomprehensive服務都有。Specific fees depend on family circumstances、學生年級、school類別而定 — A clear quote after consultation。</p>
     </div>
 
     <div class="v10-packages">
-      <!-- 套餐 A：Assessment + consultation -->
+      <!-- Package A：assessment + 諮詢 -->
       <div class="v10-package">
-        <span class="v10-package-tag">A · Starter</span>
-        <h4>Assessment + consultation</h4>
-        <p class="v10-package-desc">For families just starting — want to understand child\'s ability + suitable pathway direction.</p>
+        <span class="v10-package-tag">A · 起步</span>
+        <h4>assessment + 諮詢</h4>
+        <p class="v10-package-desc">suitable剛開始考慮升學 family — 想先understandchildren能力 + suitable pathway方向。</p>
         <ul class="v10-package-points">
-          <li>30 分鐘免費Initial consultation</li>
-          <li>3 小時Academic assessment（英文 + 數學）</li>
-          <li>Report + pathway recommendation within 1 week</li>
-          <li>3 education pathways分析（DSE / IB / A-Level）</li>
-          <li>Draft school list (8–20 targets)</li>
+          <li>30 分鐘免費初步諮詢</li>
+          <li>3 小時學業assessment（英文 + 數學）</li>
+          <li>1 周後assessment報告 + 升學pathway建議</li>
+          <li>3 升學pathway分析（DSE / IB / A-Level）</li>
+          <li>選校方向初稿（8–20 間goalschool）</li>
         </ul>
       </div>
 
-      <!-- 套餐 B：Education consultancy -->
+      <!-- Package B：Education consultant服務 -->
       <div class="v10-package featured">
-        <span class="v10-package-tag">B · Standard</span>
-        <h4>Education consultancy</h4>
-        <p class="v10-package-desc">For families with clear targets — end-to-end from assessment to enrolment.</p>
+        <span class="v10-package-tag">B · 主流</span>
+        <h4>Education consultant服務</h4>
+        <p class="v10-package-desc">Suitable for families with clear education goals — From assessment toenrollment全程full support。</p>
         <ul class="v10-package-points">
-          <li>All Package A items</li>
-          <li>1 位資深顧問 + 學科Tutor team全程跟進</li>
-          <li>School selection strategy + 三層梯隊（首選 / 次選 / 保底）</li>
-          <li>Registration, documents, interview training — all-in</li>
-          <li>3–6 month service + 1 term post-enrolment follow-up</li>
-          <li>Refund guarantee in contract (25% / 50% conditions)</li>
+          <li>Package A all內容</li>
+          <li>1 位資深consultants + 學科Tutor Team全程跟進</li>
+          <li>選校策略 + 三層梯隊（首選 / 次選 / 保底）</li>
+          <li>報名、文件準備、Interview trainingcomprehensive</li>
+          <li>3–6 cases月服務期，enrollment後跟進 1 學期</li>
+          <li>Refund guarantee in contract（25% / 50% 件）</li>
         </ul>
       </div>
 
-      <!-- 套餐 C：升學 + 補習 -->
+      <!-- Package C：升學 + 補習 -->
       <div class="v10-package">
-        <span class="v10-package-tag">C · All-in</span>
-        <h4>Education + tutoring</h4>
-        <p class="v10-package-desc">For families needing both academic + school-application support.</p>
+        <span class="v10-package-tag">C · 全包</span>
+        <h4>升學 + 補習Package</h4>
+        <p class="v10-package-desc">suitableneeds學業 + School application雙重支援 family — 全方位配套。</p>
         <ul class="v10-package-points">
-          <li>套餐 B 全部內容</li>
-          <li>1-on-1 tutoring (20+ sessions as needed)</li>
-          <li>Subject tutor + interview tutor dual-track</li>
-          <li>DSE / IB / A-Level subject strengthening</li>
-          <li>Local + international school pathways in parallel</li>
-          <li>Unlimited consultations year-round</li>
+          <li>Package B all內容</li>
+          <li>一對一補習（perneeds安排 20+ 堂）</li>
+          <li>學科tutors + interviewtutors雙軌支援</li>
+          <li>DSE / IB / A-Level 學科強化</li>
+          <li>本地 / 國際school兩路線同步準備</li>
+          <li>全年無限次諮詢</li>
         </ul>
       </div>
     </div>
 
-    <p class="v10-pricing-note">All fees depend on family situation, grade, school type — clear quote after consultation, no hidden charges. Refund terms in formal contract.</p>
+    <p class="v10-pricing-note">All費useperfamilysituation、學生年級、school類別而定 — A clear quote after consultation，絕無隱藏Pricing。Refund terms written into formal contract。</p>
   </div>
 </section>
 
@@ -1325,9 +1764,9 @@
 <section class="v10-section canvas" id="differences">
   <div class="v10-container">
     <div class="v10-head">
-      <span class="eyebrow">CareerForge vs typical agencies</span>
-      <h2>Why we differ<br>because someone is always with you.</h2>
-      <p class="lede">Typical agencies outsource, do one-off matching. CareerForge is end-to-end, in-house, with curriculum + interview training — same team from consultation to enrolment.</p>
+      <span class="eyebrow">CareerForge vs 一般中介</span>
+      <h2>我哋同坊間不同，<br>Because of dedicated end-to-end support。</h2>
+      <p class="lede">General agencies often outsource、單次配對；CareerForge 是comprehensive、專職、有教材庫、有interviewtraining — From諮詢到enrollment都不會換人。</p>
     </div>
 
     <div class="v10-diff-table">
@@ -1337,29 +1776,29 @@
         <div class="v10-diff-cell v10-diff-them">一般中介</div>
       </div>
       <div class="v10-diff-row">
-        <div class="v10-diff-cell v10-diff-label">Tutor quality</div>
-        <div class="v10-diff-cell v10-diff-us"><span class="v10-diff-check">✓</span> 公司專職團隊，10+ 年Teaching experience</div>
-        <div class="v10-diff-cell v10-diff-them">Outsourced 3rd parties, part-time students</div>
+        <div class="v10-diff-cell v10-diff-label">tutors質素</div>
+        <div class="v10-diff-cell v10-diff-us"><span class="v10-diff-check">✓</span> 公司專職團隊，10+ years teaching experience</div>
+        <div class="v10-diff-cell v10-diff-them">外判第三方，兼職university生</div>
       </div>
       <div class="v10-diff-row">
-        <div class="v10-diff-cell v10-diff-label">Materials</div>
-        <div class="v10-diff-cell v10-diff-us"><span class="v10-diff-check">✓</span> 內部Materials庫，每年編制校本材料</div>
-        <div class="v10-diff-cell v10-diff-them">Off-the-shelf practice books</div>
+        <div class="v10-diff-cell v10-diff-label">教材</div>
+        <div class="v10-diff-cell v10-diff-us"><span class="v10-diff-check">✓</span> 內部教材庫，each年編制校本材料</div>
+        <div class="v10-diff-cell v10-diff-them">坊間補充練習</div>
       </div>
       <div class="v10-diff-row">
-        <div class="v10-diff-cell v10-diff-label">Progress reporting</div>
-        <div class="v10-diff-cell v10-diff-us"><span class="v10-diff-check">✓</span> Direct from consultant + tutor</div>
-        <div class="v10-diff-cell v10-diff-them">Customer service delivers official answers</div>
+        <div class="v10-diff-cell v10-diff-label">學習進度</div>
+        <div class="v10-diff-cell v10-diff-us"><span class="v10-diff-check">✓</span> consultants + tutors直接匯報</div>
+        <div class="v10-diff-cell v10-diff-them">客戶服務員provide官方答案</div>
       </div>
       <div class="v10-diff-row">
-        <div class="v10-diff-cell v10-diff-label">Teaching locations</div>
-        <div class="v10-diff-cell v10-diff-us"><span class="v10-diff-check">✓</span> 30+ HK centres + door-to-door tutoring</div>
-        <div class="v10-diff-cell v10-diff-them">少量Teaching locations，只可線上</div>
+        <div class="v10-diff-cell v10-diff-label">教學點</div>
+        <div class="v10-diff-cell v10-diff-us"><span class="v10-diff-check">✓</span> 30+ 全港教學中心 + 上門補習</div>
+        <div class="v10-diff-cell v10-diff-them">少量教學點，只可線上</div>
       </div>
       <div class="v10-diff-row">
-        <div class="v10-diff-cell v10-diff-label">Refund commitment</div>
-        <div class="v10-diff-cell v10-diff-us"><span class="v10-diff-check">✓</span> 25% / 50% refund written in contract</div>
-        <div class="v10-diff-cell v10-diff-them">Generally no clear refund terms</div>
+        <div class="v10-diff-cell v10-diff-label">退費承諾</div>
+        <div class="v10-diff-cell v10-diff-us"><span class="v10-diff-check">✓</span> 25% / 50% 退款寫入合約</div>
+        <div class="v10-diff-cell v10-diff-them">一般無明確退款款</div>
       </div>
     </div>
   </div>
@@ -1370,45 +1809,45 @@
   <div class="v10-container">
     <div class="v10-head">
       <span class="eyebrow">Success cases</span>
-      <h2>Each case,<br>is a real family\'s education breakthrough.</h2>
-      <p class="lede">Real cases from the CareerForge education team, 2024–2026 academic years. School names labelled per public information to protect family privacy.</p>
+      <h2>each一cases案例，<br>都是真實family 升學逆襲。</h2>
+      <p class="lede">以下案例From CareerForge 教育團隊於 2024-2026 學年服務 真實cases案 — 為保護family私隱，school名稱per公開data標註。</p>
     </div>
 
     <div class="v10-cases">
       <div class="v10-case">
         <span class="v10-case-icon">★</span>
-        <p class="v10-case-quote">"Enrolled at a Top-100 primary school within one month"</p>
-        <span class="v10-case-meta">Primary admission · 2024</span>
+        <p class="v10-case-quote">「一cases月內成功入讀 100 強小學」</p>
+        <span class="v10-case-meta">小學enrollment · 2024 學年</span>
       </div>
 
       <div class="v10-case">
         <span class="v10-case-icon">★</span>
-        <p class="v10-case-quote">"Results exceeded expectations — planned to repeat P2, successfully transferred to P3"</p>
-        <span class="v10-case-meta">Transfer application · 2024</span>
+        <p class="v10-case-quote">「超出預期成績，原定plan重讀小二，成功插班小三」</p>
+        <span class="v10-case-meta">插班application · 2024 學年</span>
       </div>
 
       <div class="v10-case">
         <span class="v10-case-icon">★</span>
-        <p class="v10-case-quote">"Clementi Secondary IBMYP student, tutoring from Sept — admitted to Singapore international school next term"</p>
-        <span class="v10-case-meta">International school transfer · 2025</span>
+        <p class="v10-case-quote">「啟思中學 IBMYP 學生，9 月開始補習，Successfully enrolled in Singapore international school next semester」</p>
+        <span class="v10-case-meta">國際school轉學 · 2025 學年</span>
       </div>
 
       <div class="v10-case">
         <span class="v10-case-icon">★</span>
-        <p class="v10-case-quote">"New-to-HK student, English tutoring for several months — admitted to top Band 1 (Bishop Hall Jubilee Sec)"</p>
-        <span class="v10-case-meta">Band 1 secondary transfer · 2025</span>
+        <p class="v10-case-quote">「新來港學生，英文科補習數月，考進 BAND 1 前列 — Bishop Hall Jubilee Secondary School」</p>
+        <span class="v10-case-meta">Band 1 中學插班 · 2025 學年</span>
       </div>
 
       <div class="v10-case">
         <span class="v10-case-icon">★</span>
-        <p class="v10-case-quote">"Arrived late August — from blank English paper in placement test to senior secondary offer in October"</p>
-        <span class="v10-case-meta">Senior secondary transfer · 2025</span>
+        <p class="v10-case-quote">「8 月下旬來港，From插班試英文『白卷』到 10 月份成功obtain高中取錄」</p>
+        <span class="v10-case-meta">高中插班 · 2025 學年</span>
       </div>
 
       <div class="v10-case">
         <span class="v10-case-icon">★</span>
-        <p class="v10-case-quote">"Two sisters applied to 8 top kindergartens, 7 offers — chose Kowloon True Light (KG section)"</p>
-        <span class="v10-case-meta">Kindergarten admission · 2024</span>
+        <p class="v10-case-quote">「兩姊妹application 8 間一線幼稚園，7 間取錄，Ultimately chose Kowloon True Light Secondary School（幼稚園部）」</p>
+        <span class="v10-case-meta">幼稚園enrollment · 2024 學年</span>
       </div>
     </div>
   </div>
@@ -1418,7 +1857,7 @@
 <section class="v10-section canvas tight" style="padding-top: 0;">
   <div class="v10-container">
     <blockquote class="v10-disclaimer">
-      <p class="v10-disclaimer-text">★ CareerForge upholds legal, honest, fact-based consultation principles. All education and immigration applications are built on professional assessment and genuine capability.</p>
+      <p class="v10-disclaimer-text">★ CareerForge 堅持合法合規、實事求是 諮詢原則，All education and status applications built on professional assessment and genuine capability。</p>
     </blockquote>
   </div>
 </section>
@@ -1429,11 +1868,11 @@
     <div class="v10-cta">
       <div class="v10-cta-inner">
         <span class="v10-cta-eyebrow">START YOUR JOURNEY</span>
-        <h2>Step 1: 30-min free education assessment</h2>
-        <p>提交基本資料後 24 小時內收到顧問回覆 — 包含子女學業初步評估 + 3 education pathways建議（DSE / IB / A-Level）+ 預計所需時間 + 後續路徑規劃。</p>
+        <h2>第一步：30 分鐘免費升學assessment</h2>
+        <p>After submitting basic information 24 consultant will reply within 24 hours — Includeschildren學業Initial assessment + 3 升學pathway建議（DSE / IB / A-Level）+ 預計所需time + 後續pathway規劃。</p>
         <div class="v10-cta-actions">
           <a href="https://wa.me/85295651459" class="v10-cta-btn v10-cta-primary">WhatsApp 立即預約</a>
-          <a href="quiz-en.html" class="v10-cta-btn v10-cta-secondary">先做 3 分鐘牛馬測驗</a>
+          <a href="quiz-en.html" class="v10-cta-btn v10-cta-secondary">Take the 3-minute Quiz</a>
         </div>
       </div>
     </div>
@@ -1445,18 +1884,18 @@
   <div class="v10-container">
     <div class="v10-head">
       <span class="eyebrow">聯絡我們</span>
-      <h2>用你最方便的方式，<br>與顧問直接對話。</h2>
+      <h2>use你最方便 方式，<br>與consultants直接對話。</h2>
     </div>
     <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 56px;">
       <div style="background: var(--white); border: 1px solid var(--ink-100); border-radius: var(--radius); padding: 40px 32px; text-align: center; box-shadow: var(--shadow-card);">
         <div style="display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, var(--navy) 0%, var(--gold) 100%); color: var(--white); font-size: 1.5rem; margin-bottom: 20px;">📱</div>
         <h4 style="font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 1.15rem; font-weight: 700; color: var(--ink-900); margin: 0 0 10px;">WhatsApp / 微信</h4>
-        <p style="font-size: 0.95rem; color: var(--ink-700); margin: 0; line-height: 1.6;">852-9565-1459<br>顧問 24 小時內回覆</p>
+        <p style="font-size: 0.95rem; color: var(--ink-700); margin: 0; line-height: 1.6;">852-9565-1459<br>consultants 24 小時內回覆</p>
       </div>
       <div style="background: var(--white); border: 1px solid var(--ink-100); border-radius: var(--radius); padding: 40px 32px; text-align: center; box-shadow: var(--shadow-card);">
         <div style="display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, var(--navy) 0%, var(--gold) 100%); color: var(--white); font-size: 1.5rem; margin-bottom: 20px;">✉️</div>
-        <h4 style="font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 1.15rem; font-weight: 700; color: var(--ink-900); margin: 0 0 10px;">電郵</h4>
-        <p style="font-size: 0.95rem; color: var(--ink-700); margin: 0; line-height: 1.6;">careerforgehk@gmail.com<br>提供書面方案摘要</p>
+        <h4 style="font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 1.15rem; font-weight: 700; color: var(--ink-900); margin: 0 0 10px;">email</h4>
+        <p style="font-size: 0.95rem; color: var(--ink-700); margin: 0; line-height: 1.6;">careerforgehk@gmail.com<br>provide書面方案摘要</p>
       </div>
       <div style="background: var(--white); border: 1px solid var(--ink-100); border-radius: var(--radius); padding: 40px 32px; text-align: center; box-shadow: var(--shadow-card);">
         <div style="display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, var(--navy) 0%, var(--gold) 100%); color: var(--white); font-size: 1.5rem; margin-bottom: 20px;">📍</div>
@@ -1472,18 +1911,18 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <img src="assets/logo.png" alt="CareerForge 鑄途" class="footer-logo">
-        <p>香港高端個人成長顧問。身份 · 升學 · 職涯身價 一站式陪跑。</p>
+        <p>香港高端cases人成長consultants。身份 · 升學 · 職涯身價 一站式陪跑。</p>
       </div>
       <div class="footer-col">
         <h4>業務板塊</h4>
         <a href="immigration-en.html">身份與續簽對標</a>
+        <a href="education.html">海外與Hong Kong education</a>
         <a href="career-en.html">求職與身價躍遷</a>
-        <a href="education-en.html">海外與香港升學</a>
       </div>
       <div class="footer-col">
         <h4>資源</h4>
         <a href="cases-en.html">客戶案例</a>
-        <a href="quiz-en.html">牛馬身價測驗</a>
+        <a href="quiz-en.html">牛馬身價test</a>
         <a href="#contact">聯絡我們</a>
       </div>
       <div class="footer-col">
@@ -1495,11 +1934,24 @@
     <div class="footer-bottom">
       <span>© 2026 CareerForge 鑄途. All rights reserved.</span>
       <span class="footer-lang">
-        <a href="index.html">繁體</a> · <a href="index-cn.html">简体</a> · <a href="index-en.html" class="active">EN</a>
+        <a href="index-en.html" class="active">繁體</a> · <a href="index-cn.html">简体</a> · <a href="index-en.html">EN</a>
       </span>
     </div>
   </div>
 </footer>
 
+
+<script>
+(function(){
+  var btn = document.getElementById('hamburgerBtn');
+  var menu = document.getElementById('navMenu');
+  if (btn && menu) {
+    btn.addEventListener('click', function(){
+      btn.classList.toggle('open');
+      menu.classList.toggle('open');
+    });
+  }
+})();
+</script>
 </body>
 </html>

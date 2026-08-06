@@ -523,22 +523,66 @@
   .v10-contact-grid { grid-template-columns: 1fr; }
   .v10-cta { padding: 56px 28px; margin: 0 20px; }
 }
+
+/* ============ V11 MOBILE TYPOGRAPHY FIX ============ */
+/* Fix orphan chars like 年。 / 價。 wrapping on small screens */
+.v10-hero-title,
+.v10-head h2,
+.v10-section h2 {
+  text-wrap: balance;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  -webkit-hyphens: none;
+  hyphens: none;
+}
+
+/* Reduce hero title min size on mobile */
+.v10-hero-title {
+  font-size: clamp(1.75rem, 5.5vw, 4.8rem) !important;
+  line-height: 1.18 !important;
+  max-width: 100% !important;
+}
+
+/* Show lang switcher pill on mobile (smaller) */
+@media (max-width: 900px) {
+  .site-header .lang-switcher {
+    display: inline-flex;
+  }
+  .site-header .lang-switcher a {
+    font-size: 0.7rem;
+    padding: 4px 8px;
+    min-width: 24px;
+  }
+  .site-header .nav-logo .logo-en { font-size: 1.05rem !important; }
+  .site-header .nav-logo .logo-cn { font-size: 0.95rem !important; letter-spacing: 1px; }
+  .site-header .container { padding: 0 16px; }
+  .v10-hero-title { font-size: clamp(1.75rem, 7vw, 4.8rem) !important; }
+  .v10-hero-sub { font-size: 0.95rem !important; }
+  .v10-head h2 { font-size: 1.6rem !important; line-height: 1.25 !important; }
+  .v10-section { padding: 56px 0 !important; }
+  .v10-pillar-title { font-size: 1.2rem !important; }
+}
+
+/* Ensure no-break on key phrases */
+.no-break { white-space: nowrap; display: inline-block; }
+
 </style>
 
 <header class="site-header">
   <div class="container">
     <nav class="nav">
       <a href="index.html" class="nav-logo">
-        <img src="assets/logo.png" alt="CareerForge 鑄途">
+        <span class="logo-en">CareerForge</span>
+        <span class="logo-cn">鑄途</span>
       </a>
-      <div class="nav-menu">
+      <div class="nav-menu" id="navMenu">
         <a href="index.html" class="active">首頁</a>
-        <a href="immigration.html">身份</a>
-        <a href="career.html">職涯身價</a>
-        <a href="education.html">升學</a>
+        <a href="immigration.html">身份規劃</a>
+        <a href="education.html">升學規劃</a>
+        <a href="career.html">求職身價</a>
         <a href="quiz.html">牛馬測驗</a>
         <a href="cases.html">客戶故事</a>
-        <a href="#contact">聯絡</a>
+        <a href="#contact">聯絡我們</a>
       </div>
       <div class="nav-actions">
         <div class="lang-switcher">
@@ -546,7 +590,9 @@
           <a href="index-cn.html">简</a>
           <a href="index-en.html">EN</a>
         </div>
-        <a href="#contact" class="nav-cta">立即諮詢</a>
+        <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </nav>
   </div>
@@ -561,12 +607,12 @@
     </span>
     <h1 class="v10-hero-title">
       與家庭同行，<br>
-      從身份到<span class="gold">永居七年</span>。<br>
-      從事業到<span class="gold">職涯身價</span>。
+      從身份到<span class="gold no-break">永居七年</span>。<br>
+      從事業到<span class="gold no-break">職涯身價</span>。
     </h1>
     <p class="v10-hero-sub">
       CareerForge 鑄途 — 專注香港高才通、優才、專才、留學升港全週期陪跑。<br>
-      三條業務主線：身份對標、職涯身價躍遷、升學規劃，每一條都為下一條鋪路。
+      三條業務主線：身份對標、升學規劃、職涯身價躍遷，每一條都為下一條鋪路。
     </p>
     <div class="v10-hero-trust">
       <div class="v10-hero-trust-item">
@@ -594,8 +640,8 @@
   <div class="v10-container">
     <div class="v10-head">
       <span class="eyebrow">3 大業務板塊</span>
-      <h2>身份、求職身價、升學，<br>同一 CareerForge 主線。</h2>
-      <p class="lede">把香港身份對標、赴港求職身價躍遷、海外與香港升學銜接打通成一條連續路徑 — 詳情請瀏覽各業務板塊頁面。</p>
+      <h2>身份、升學、職涯身價，<br>同一 CareerForge 主線。</h2>
+      <p class="lede">把香港身份對標、海外與香港升學銜接、赴港求職身價躍遷打通成一條連續路徑 — 詳情請瀏覽各業務板塊頁面。</p>
     </div>
     <div class="v10-pillars">
 
@@ -614,19 +660,7 @@
       <!-- Pillar 02 -->
       <div class="v10-pillar">
         <div class="v10-pillar-body">
-          <span class="v10-pillar-num">PILLAR 02 · 職涯增值</span>
-          <h3 class="v10-pillar-title">赴港求職與職涯身價躍遷</h3>
-          <p class="v10-pillar-desc">
-            幫助專業人士在香港本地市場實現薪酬躍升、行業轉型與長期職業身價增值。
-          </p>
-        </div>
-        <a href="career.html" class="v10-pillar-cta">了解詳情</a>
-      </div>
-
-      <!-- Pillar 03 -->
-      <div class="v10-pillar">
-        <div class="v10-pillar-body">
-          <span class="v10-pillar-num">PILLAR 03 · 升學銜接</span>
+          <span class="v10-pillar-num">PILLAR 02 · 升學銜接</span>
           <h3 class="v10-pillar-title">海外與香港升學對標</h3>
           <p class="v10-pillar-desc">
             海外中學 / IB / A-Level / DSE 與香港本地學校雙向銜接，配合家長簽證落地節奏同步推進子女教育路徑。
@@ -637,15 +671,27 @@
 
     </div>
   </div>
-</section>
+<!-- Pillar 03 -->
+      <div class="v10-pillar">
+        <div class="v10-pillar-body">
+          <span class="v10-pillar-num">PILLAR 03 · 職涯增值</span>
+          <h3 class="v10-pillar-title">赴港求職與職涯身價躍遷</h3>
+          <p class="v10-pillar-desc">
+            幫助專業人士在香港本地市場實現薪酬躍升、行業轉型與長期職業身價增值。
+          </p>
+        </div>
+        <a href="career.html" class="v10-pillar-cta">了解詳情</a>
+      </div>
+
+      </section>
 
 <!-- ============ QUIZ CTA (NAVY BG) ============ -->
 <section class="v10-section dark">
   <div class="v10-container">
     <div class="v10-head dark">
       <span class="eyebrow">3 分鐘牛馬測驗</span>
-      <h2>唔知自己適合邊條路？<br>3 分鐘測一測。</h2>
-      <p class="lede">回答 5 條問題，了解自己嘅牛馬指數 + 適合嘅香港身份 + 升學 + 職涯路徑方向。</p>
+      <h2>不知自己適合哪一條路？<br>3 分鐘測一測。</h2>
+      <p class="lede">回答 5 條問題，了解自己的牛馬指數 + 適合的香港身份、升學、職涯路徑方向。</p>
     </div>
     <div class="v10-quiz-cta-actions" style="text-align: center; margin-top: 32px;">
       <a href="quiz.html" class="v10-cta-btn v10-cta-primary">立即做牛馬測驗</a>
@@ -667,7 +713,7 @@
         <span class="v10-trust-label">累計服務家庭<small>FAMILIES SERVED</small></span>
       </div>
       <div class="v10-trust-card">
-        <span class="v10-trust-num">4 条</span>
+        <span class="v10-trust-num">4 種</span>
         <span class="v10-trust-label">主流人才計劃<small>VISA SCHEMES</small></span>
       </div>
       <div class="v10-trust-card">
@@ -697,7 +743,7 @@
     <div class="v10-cta">
       <div class="v10-cta-inner">
         <span class="v10-cta-eyebrow">START YOUR JOURNEY</span>
-        <h2>第一步：30 分钟免费資格評估</h2>
+        <h2>第一步：30 分鐘免費資格評估</h2>
         <p>提交基本资料后 24 小时内收到顾问回复 — 包含 3 大業務板塊匹配度评分 + 预计所需时间 + 后续路径建议。</p>
         <div class="v10-cta-actions">
           <a href="https://wa.me/85295651459" class="v10-cta-btn v10-cta-primary">WhatsApp 立即預約</a>
@@ -745,8 +791,8 @@
       <div class="footer-col">
         <h4>業務板塊</h4>
         <a href="immigration.html">身份與續簽對標</a>
-        <a href="career.html">求職與身價躍遷</a>
         <a href="education.html">海外與香港升學</a>
+        <a href="career.html">求職與身價躍遷</a>
       </div>
       <div class="footer-col">
         <h4>资源</h4>

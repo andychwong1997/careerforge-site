@@ -1020,30 +1020,233 @@
   margin-right: 10px;
   flex-shrink: 0;
 }
+
+/* ============ V11 NAVBAR (logo redesign) ============ */
+.site-header {
+  background: #FFFFFF !important;
+  box-shadow: 0 1px 0 rgba(11,25,44,0.06);
+  border-bottom: 1px solid rgba(11,25,44,0.06);
+  padding: 14px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.site-header .nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.site-header .nav-logo {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  text-decoration: none;
+}
+.site-header .nav-logo .logo-en {
+  font-family: 'Playfair Display', 'Noto Serif TC', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: 0.5px;
+}
+.site-header .nav-logo .logo-cn {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 2px;
+}
+.site-header .nav-menu {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+.site-header .nav-menu a {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--ink-700);
+  padding: 8px 14px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background .2s, color .2s;
+}
+.site-header .nav-menu a:hover {
+  background: var(--gold-100);
+  color: var(--navy);
+}
+.site-header .nav-menu a.active {
+  background: var(--navy);
+  color: #FFFFFF;
+}
+.site-header .nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.site-header .lang-switcher {
+  display: inline-flex;
+  background: var(--ink-100);
+  border-radius: 999px;
+  padding: 4px;
+  gap: 2px;
+}
+.site-header .lang-switcher a {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink-500);
+  padding: 6px 12px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background .2s, color .2s;
+  min-width: 32px;
+  text-align: center;
+}
+.site-header .lang-switcher a.active {
+  background: var(--navy);
+  color: #FFFFFF;
+}
+.site-header .lang-switcher a:hover:not(.active) {
+  color: var(--navy);
+}
+.site-header .hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.site-header .hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--navy);
+  margin: 0 auto;
+  border-radius: 2px;
+  transition: transform .25s;
+}
+
+/* Mobile (hamburger) */
+@media (max-width: 900px) {
+  .site-header .nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #FFFFFF;
+    flex-direction: column;
+    gap: 0;
+    padding: 12px 24px;
+    box-shadow: 0 8px 24px -8px rgba(11,25,44,0.18);
+    border-top: 1px solid var(--ink-100);
+    transform: translateY(-8px);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform .25s, opacity .25s;
+  }
+  .site-header .nav-menu.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .site-header .nav-menu a {
+    width: 100%;
+    text-align: left;
+    border-radius: 8px;
+    padding: 14px 16px;
+  }
+  .site-header .hamburger {
+    display: flex;
+  }
+  .site-header .nav-logo .logo-en { font-size: 1.3rem; }
+  .site-header .nav-logo .logo-cn { font-size: 1.15rem; }
+}
+
+/* Hamburger JS toggle */
+.site-header .hamburger.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.site-header .hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.site-header .hamburger.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+
+/* ============ V11 MOBILE TYPOGRAPHY FIX ============ */
+/* Fix orphan chars like 年。 / 價。 wrapping on small screens */
+.v10-hero-title,
+.v10-head h2,
+.v10-section h2 {
+  text-wrap: balance;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  -webkit-hyphens: none;
+  hyphens: none;
+}
+
+/* Reduce hero title min size on mobile */
+.v10-hero-title {
+  font-size: clamp(1.75rem, 5.5vw, 4.8rem) !important;
+  line-height: 1.18 !important;
+  max-width: 100% !important;
+}
+
+/* Show lang switcher pill on mobile (smaller) */
+@media (max-width: 900px) {
+  .site-header .lang-switcher {
+    display: inline-flex;
+  }
+  .site-header .lang-switcher a {
+    font-size: 0.7rem;
+    padding: 4px 8px;
+    min-width: 24px;
+  }
+  .site-header .nav-logo .logo-en { font-size: 1.05rem !important; }
+  .site-header .nav-logo .logo-cn { font-size: 0.95rem !important; letter-spacing: 1px; }
+  .site-header .container { padding: 0 16px; }
+  .v10-hero-title { font-size: clamp(1.75rem, 7vw, 4.8rem) !important; }
+  .v10-hero-sub { font-size: 0.95rem !important; }
+  .v10-head h2 { font-size: 1.6rem !important; line-height: 1.25 !important; }
+  .v10-section { padding: 56px 0 !important; }
+  .v10-pillar-title { font-size: 1.2rem !important; }
+}
+
+/* Ensure no-break on key phrases */
+.no-break { white-space: nowrap; display: inline-block; }
+
 </style>
 
 <header class="site-header">
   <div class="container">
     <nav class="nav">
-      <a href="index-cn.html" class="nav-logo">
-        <img src="assets/logo.png" alt="CareerForge 鑄途">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-en">CareerForge</span>
+        <span class="logo-cn">鑄途</span>
       </a>
-      <div class="nav-menu">
-        <a href="index-cn.html">首頁</a>
-        <a href="immigration-cn.html">身份</a>
-        <a href="career-cn.html">職涯身價</a>
-        <a href="education-cn.html" class="active">升學</a>
-        <a href="quiz-cn.html">牛馬測驗</a>
-        <a href="cases-cn.html">客戶故事</a>
-        <a href="#contact">聯絡</a>
+      <div class="nav-menu" id="navMenu">
+        <a href="index-cn.html">首页</a>
+        <a href="immigration-cn.html">身份规划</a>
+        <a href="education-cn.html" class="active">升学规划</a>
+        <a href="career-cn.html">求职身价</a>
+        <a href="quiz-cn.html">牛马测验</a>
+        <a href="cases-cn.html">客户故事</a>
+        <a href="#contact">联系我们</a>
       </div>
       <div class="nav-actions">
         <div class="lang-switcher">
-          <a href="education.html">繁</a>
-          <a href="education-cn.html" class="active">简</a>
-          <a href="education-en.html">EN</a>
+          <a href="index.html">繁</a>
+          <a href="index-cn.html" class="active">简</a>
+          <a href="index-en.html">EN</a>
         </div>
-        <a href="#contact" class="nav-cta">立即諮詢</a>
+        <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </nav>
   </div>
@@ -1233,12 +1436,12 @@
       <p class="lede">CareerForge 教育团队由香港中文大学、香港大学、北京大学等顶尖学府导师组成 — 全部为专职导师，10+ 年教学经验。深入了解每个家庭的独特需求。</p>
     </div>
 
-    <!-- 師資總括 -->
+    <!-- 師资總括 -->
     <div class="v10-tutor-summary">
       <div class="v10-tutor-summary-card">
         <span class="v10-tutor-summary-eyebrow">学历总览</span>
         <h3>顶尖学府 · 全港教育专家</h3>
-        <p>我們的导师团队均畢業或任教於香港中文大學、香港大學、北京大學、英屬哥倫比亞大學等頂尖學府，覆蓋商科、法律、工程、文學、教育等多個專業範疇。</p>
+        <p>我們的导师团队均畢业或任教于香港中文大学、香港大学、北京大学、英屬哥倫比亞大学等頂尖学府，覆蓋商科、法律、工程、文学、教育等多個专业範疇。</p>
       </div>
 
       <div class="v10-tutor-summary-card">
@@ -1268,7 +1471,7 @@
     <div class="v10-head">
       <span class="eyebrow">收费透明 · 退款保证</span>
       <h2>2-3 个套餐组合，<br>按家庭需要拣。</h2>
-      <p class="lede">唔同家庭嘅需要唔同，所以我們設計咗幾個套餐，由初步咨询到一條龍服務都有。具體費用按家庭情況、學生年級、學校類別而定 — 諮詢後會有明確報價。</p>
+      <p class="lede">不同家庭的需要不同，所以我們设計了幾個套餐，由初步咨询到一条龍服务都有。具体費用按家庭情況、学生年級、学校類別而定 — 諮詢後会有明確報價。</p>
     </div>
 
     <div class="v10-packages">
@@ -1276,10 +1479,10 @@
       <div class="v10-package">
         <span class="v10-package-tag">A · 起步</span>
         <h4>评估 + 咨询</h4>
-        <p class="v10-package-desc">适合刚开始考虑升学嘅家庭 — 想先了解子女能力 + 适合嘅路径方向。</p>
+        <p class="v10-package-desc">适合刚开始考虑升学的家庭 — 想先了解子女能力 + 适合的路径方向。</p>
         <ul class="v10-package-points">
           <li>30 分鐘免費初步咨询</li>
-          <li>3 小時学业评估（英文 + 數學）</li>
+          <li>3 小时学业评估（英文 + 數学）</li>
           <li>1 周后评估报告 + 升学路径建议</li>
           <li>3 条升学路径分析（DSE / IB / A-Level）</li>
           <li>选校方向初稿（8–20 间目标学校）</li>
@@ -1290,22 +1493,22 @@
       <div class="v10-package featured">
         <span class="v10-package-tag">B · 主流</span>
         <h4>升学顾问服务</h4>
-        <p class="v10-package-desc">适合已有明确升学目标嘅家庭 — 由评估到入学全程一条龙跟进。</p>
+        <p class="v10-package-desc">适合已有明确升学目标的家庭 — 由评估到入学全程一条龙跟进。</p>
         <ul class="v10-package-points">
           <li>套餐 A 全部内容</li>
-          <li>1 位資深顧問 + 學科导师团队全程跟進</li>
-          <li>选校策略 + 三層梯隊（首選 / 次選 / 保底）</li>
+          <li>1 位资深顧問 + 学科导师团队全程跟进</li>
+          <li>选校策略 + 三層梯隊（首选 / 次选 / 保底）</li>
           <li>报名、文件准备、面试训练一条龙</li>
           <li>3–6 个月服务期，入学后跟进 1 学期</li>
           <li>退款保证写入合约（25% / 50% 条件）</li>
         </ul>
       </div>
 
-      <!-- 套餐 C：升學 + 補習 -->
+      <!-- 套餐 C：升学 + 補習 -->
       <div class="v10-package">
         <span class="v10-package-tag">C · 全包</span>
         <h4>升学 + 补习套餐</h4>
-        <p class="v10-package-desc">适合需要学业 + 学校申请双重支援嘅家庭 — 全方位配套。</p>
+        <p class="v10-package-desc">适合需要学业 + 学校申请双重支援的家庭 — 全方位配套。</p>
         <ul class="v10-package-points">
           <li>套餐 B 全部內容</li>
           <li>一对一补习（按需要安排 20+ 堂）</li>
@@ -1326,8 +1529,8 @@
   <div class="v10-container">
     <div class="v10-head">
       <span class="eyebrow">CareerForge vs 一般中介</span>
-      <h2>我哋同坊间唔同，<br>因为全程有专人跟进。</h2>
-      <p class="lede">坊间一般中介多为外判、单次配对；CareerForge 系一条龙、专职、有教材库、有面试培训 — 由咨询到入学都唔会换人。</p>
+      <h2>我哋同坊间不同，<br>因为全程有专人跟进。</h2>
+      <p class="lede">坊间一般中介多为外判、单次配对；CareerForge 系一条龙、专职、有教材库、有面试培训 — 由咨询到入学都不会换人。</p>
     </div>
 
     <div class="v10-diff-table">
@@ -1338,7 +1541,7 @@
       </div>
       <div class="v10-diff-row">
         <div class="v10-diff-cell v10-diff-label">导师质素</div>
-        <div class="v10-diff-cell v10-diff-us"><span class="v10-diff-check">✓</span> 公司專職團隊，10+ 年教学经验</div>
+        <div class="v10-diff-cell v10-diff-us"><span class="v10-diff-check">✓</span> 公司专職團隊，10+ 年教学经验</div>
         <div class="v10-diff-cell v10-diff-them">外判第三方，兼职大学生</div>
       </div>
       <div class="v10-diff-row">
@@ -1430,9 +1633,9 @@
       <div class="v10-cta-inner">
         <span class="v10-cta-eyebrow">START YOUR JOURNEY</span>
         <h2>第一步：30 分钟免费升学评估</h2>
-        <p>提交基本資料後 24 小時內收到顧問回覆 — 包含子女學業初步評估 + 3 条升学路径建議（DSE / IB / A-Level）+ 預計所需時間 + 後續路徑規劃。</p>
+        <p>提交基本资料後 24 小时內收到顧問回覆 — 包含子女学业初步評估 + 3 条升学路径建議（DSE / IB / A-Level）+ 预計所需时间 + 後續路徑規劃。</p>
         <div class="v10-cta-actions">
-          <a href="https://wa.me/85295651459" class="v10-cta-btn v10-cta-primary">WhatsApp 立即預約</a>
+          <a href="https://wa.me/85295651459" class="v10-cta-btn v10-cta-primary">WhatsApp 立即预約</a>
           <a href="quiz-cn.html" class="v10-cta-btn v10-cta-secondary">先做 3 分鐘牛馬測驗</a>
         </div>
       </div>
@@ -1444,24 +1647,24 @@
 <section class="v10-section canvas tight" style="padding-top: 0;">
   <div class="v10-container">
     <div class="v10-head">
-      <span class="eyebrow">聯絡我們</span>
-      <h2>用你最方便的方式，<br>與顧問直接對話。</h2>
+      <span class="eyebrow">聯络我們</span>
+      <h2>用你最方便的方式，<br>與顧問直接对话。</h2>
     </div>
     <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 56px;">
       <div style="background: var(--white); border: 1px solid var(--ink-100); border-radius: var(--radius); padding: 40px 32px; text-align: center; box-shadow: var(--shadow-card);">
         <div style="display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, var(--navy) 0%, var(--gold) 100%); color: var(--white); font-size: 1.5rem; margin-bottom: 20px;">📱</div>
         <h4 style="font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 1.15rem; font-weight: 700; color: var(--ink-900); margin: 0 0 10px;">WhatsApp / 微信</h4>
-        <p style="font-size: 0.95rem; color: var(--ink-700); margin: 0; line-height: 1.6;">852-9565-1459<br>顧問 24 小時內回覆</p>
+        <p style="font-size: 0.95rem; color: var(--ink-700); margin: 0; line-height: 1.6;">852-9565-1459<br>顧問 24 小时內回覆</p>
       </div>
       <div style="background: var(--white); border: 1px solid var(--ink-100); border-radius: var(--radius); padding: 40px 32px; text-align: center; box-shadow: var(--shadow-card);">
         <div style="display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, var(--navy) 0%, var(--gold) 100%); color: var(--white); font-size: 1.5rem; margin-bottom: 20px;">✉️</div>
-        <h4 style="font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 1.15rem; font-weight: 700; color: var(--ink-900); margin: 0 0 10px;">電郵</h4>
+        <h4 style="font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 1.15rem; font-weight: 700; color: var(--ink-900); margin: 0 0 10px;">电郵</h4>
         <p style="font-size: 0.95rem; color: var(--ink-700); margin: 0; line-height: 1.6;">careerforgehk@gmail.com<br>提供書面方案摘要</p>
       </div>
       <div style="background: var(--white); border: 1px solid var(--ink-100); border-radius: var(--radius); padding: 40px 32px; text-align: center; box-shadow: var(--shadow-card);">
         <div style="display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, var(--navy) 0%, var(--gold) 100%); color: var(--white); font-size: 1.5rem; margin-bottom: 20px;">📍</div>
-        <h4 style="font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 1.15rem; font-weight: 700; color: var(--ink-900); margin: 0 0 10px;">香港辦公室</h4>
-        <p style="font-size: 0.95rem; color: var(--ink-700); margin: 0; line-height: 1.6;">中環 / 尖沙咀<br>預約制 1 對 1 諮詢</p>
+        <h4 style="font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 1.15rem; font-weight: 700; color: var(--ink-900); margin: 0 0 10px;">香港办公室</h4>
+        <p style="font-size: 0.95rem; color: var(--ink-700); margin: 0; line-height: 1.6;">中環 / 尖沙咀<br>预約制 1 对 1 諮詢</p>
       </div>
     </div>
   </div>
@@ -1472,22 +1675,22 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <img src="assets/logo.png" alt="CareerForge 鑄途" class="footer-logo">
-        <p>香港高端個人成長顧問。身份 · 升學 · 職涯身價 一站式陪跑。</p>
+        <p>香港高端個人成长顧問。身份 · 升学 · 職涯身價 一站式陪跑。</p>
       </div>
       <div class="footer-col">
-        <h4>業務板塊</h4>
-        <a href="immigration-cn.html">身份與續簽對標</a>
+        <h4>业务板塊</h4>
+        <a href="immigration-cn.html">身份與續簽对標</a>
+        <a href="education-cn.html">海外與香港升学</a>
         <a href="career-cn.html">求職與身價躍遷</a>
-        <a href="education-cn.html">海外與香港升學</a>
       </div>
       <div class="footer-col">
-        <h4>資源</h4>
+        <h4>资源</h4>
         <a href="cases-cn.html">客戶案例</a>
         <a href="quiz-cn.html">牛馬身價測驗</a>
-        <a href="#contact">聯絡我們</a>
+        <a href="#contact">聯络我們</a>
       </div>
       <div class="footer-col">
-        <h4>聯絡</h4>
+        <h4>聯络</h4>
         <a href="https://wa.me/85295651459">WhatsApp</a>
         <a href="mailto:careerforgehk@gmail.com">careerforgehk@gmail.com</a>
       </div>
@@ -1495,11 +1698,24 @@
     <div class="footer-bottom">
       <span>© 2026 CareerForge 鑄途. All rights reserved.</span>
       <span class="footer-lang">
-        <a href="index.html">繁體</a> · <a href="index-cn.html" class="active">简体</a> · <a href="index-en.html">EN</a>
+        <a href="index.html">繁体</a> · <a href="index-cn.html" class="active">简体</a> · <a href="index-en.html">EN</a>
       </span>
     </div>
   </div>
 </footer>
 
+
+<script>
+(function(){
+  var btn = document.getElementById('hamburgerBtn');
+  var menu = document.getElementById('navMenu');
+  if (btn && menu) {
+    btn.addEventListener('click', function(){
+      btn.classList.toggle('open');
+      menu.classList.toggle('open');
+    });
+  }
+})();
+</script>
 </body>
 </html>

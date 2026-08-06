@@ -1256,30 +1256,233 @@
   .v10-diff-cell { padding: 10px 8px; font-size: 0.8rem; }
 }
 
+
+/* ============ V11 NAVBAR (logo redesign) ============ */
+.site-header {
+  background: #FFFFFF !important;
+  box-shadow: 0 1px 0 rgba(11,25,44,0.06);
+  border-bottom: 1px solid rgba(11,25,44,0.06);
+  padding: 14px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.site-header .nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.site-header .nav-logo {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  text-decoration: none;
+}
+.site-header .nav-logo .logo-en {
+  font-family: 'Playfair Display', 'Noto Serif TC', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: 0.5px;
+}
+.site-header .nav-logo .logo-cn {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 2px;
+}
+.site-header .nav-menu {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+.site-header .nav-menu a {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--ink-700);
+  padding: 8px 14px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background .2s, color .2s;
+}
+.site-header .nav-menu a:hover {
+  background: var(--gold-100);
+  color: var(--navy);
+}
+.site-header .nav-menu a.active {
+  background: var(--navy);
+  color: #FFFFFF;
+}
+.site-header .nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.site-header .lang-switcher {
+  display: inline-flex;
+  background: var(--ink-100);
+  border-radius: 999px;
+  padding: 4px;
+  gap: 2px;
+}
+.site-header .lang-switcher a {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink-500);
+  padding: 6px 12px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background .2s, color .2s;
+  min-width: 32px;
+  text-align: center;
+}
+.site-header .lang-switcher a.active {
+  background: var(--navy);
+  color: #FFFFFF;
+}
+.site-header .lang-switcher a:hover:not(.active) {
+  color: var(--navy);
+}
+.site-header .hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.site-header .hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--navy);
+  margin: 0 auto;
+  border-radius: 2px;
+  transition: transform .25s;
+}
+
+/* Mobile (hamburger) */
+@media (max-width: 900px) {
+  .site-header .nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #FFFFFF;
+    flex-direction: column;
+    gap: 0;
+    padding: 12px 24px;
+    box-shadow: 0 8px 24px -8px rgba(11,25,44,0.18);
+    border-top: 1px solid var(--ink-100);
+    transform: translateY(-8px);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform .25s, opacity .25s;
+  }
+  .site-header .nav-menu.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .site-header .nav-menu a {
+    width: 100%;
+    text-align: left;
+    border-radius: 8px;
+    padding: 14px 16px;
+  }
+  .site-header .hamburger {
+    display: flex;
+  }
+  .site-header .nav-logo .logo-en { font-size: 1.3rem; }
+  .site-header .nav-logo .logo-cn { font-size: 1.15rem; }
+}
+
+/* Hamburger JS toggle */
+.site-header .hamburger.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.site-header .hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.site-header .hamburger.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+
+/* ============ V11 MOBILE TYPOGRAPHY FIX ============ */
+/* Fix orphan chars like 年。 / 價。 wrapping on small screens */
+.v10-hero-title,
+.v10-head h2,
+.v10-section h2 {
+  text-wrap: balance;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  -webkit-hyphens: none;
+  hyphens: none;
+}
+
+/* Reduce hero title min size on mobile */
+.v10-hero-title {
+  font-size: clamp(1.75rem, 5.5vw, 4.8rem) !important;
+  line-height: 1.18 !important;
+  max-width: 100% !important;
+}
+
+/* Show lang switcher pill on mobile (smaller) */
+@media (max-width: 900px) {
+  .site-header .lang-switcher {
+    display: inline-flex;
+  }
+  .site-header .lang-switcher a {
+    font-size: 0.7rem;
+    padding: 4px 8px;
+    min-width: 24px;
+  }
+  .site-header .nav-logo .logo-en { font-size: 1.05rem !important; }
+  .site-header .nav-logo .logo-cn { font-size: 0.95rem !important; letter-spacing: 1px; }
+  .site-header .container { padding: 0 16px; }
+  .v10-hero-title { font-size: clamp(1.75rem, 7vw, 4.8rem) !important; }
+  .v10-hero-sub { font-size: 0.95rem !important; }
+  .v10-head h2 { font-size: 1.6rem !important; line-height: 1.25 !important; }
+  .v10-section { padding: 56px 0 !important; }
+  .v10-pillar-title { font-size: 1.2rem !important; }
+}
+
+/* Ensure no-break on key phrases */
+.no-break { white-space: nowrap; display: inline-block; }
+
 </style>
 
 <header class="site-header">
   <div class="container">
     <nav class="nav">
-      <a href="index-cn.html" class="nav-logo">
-        <img src="assets/logo.png" alt="CareerForge 鑄途">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-en">CareerForge</span>
+        <span class="logo-cn">鑄途</span>
       </a>
-      <div class="nav-menu">
-        <a href="index-cn.html">首頁</a>
-        <a href="immigration-cn.html">身份</a>
-        <a href="career-cn.html">職涯身價</a>
-        <a href="education-cn.html">升學</a>
-        <a href="quiz-cn.html">牛馬測驗</a>
-        <a href="cases-cn.html">客戶故事</a>
-        <a href="#contact">聯絡</a>
+      <div class="nav-menu" id="navMenu">
+        <a href="index-cn.html">首页</a>
+        <a href="immigration-cn.html" class="active">身份规划</a>
+        <a href="education-cn.html">升学规划</a>
+        <a href="career-cn.html">求职身价</a>
+        <a href="quiz-cn.html">牛马测验</a>
+        <a href="cases-cn.html">客户故事</a>
+        <a href="#contact">联系我们</a>
       </div>
       <div class="nav-actions">
         <div class="lang-switcher">
-          <a href="immigration.html">繁</a>
-          <a href="immigration-cn.html" class="active">简</a>
-          <a href="immigration-en.html">EN</a>
+          <a href="index.html">繁</a>
+          <a href="index-cn.html" class="active">简</a>
+          <a href="index-en.html">EN</a>
         </div>
-        <a href="#contact" class="nav-cta">立即諮詢</a>
+        <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </nav>
   </div>
@@ -1291,7 +1494,7 @@
       香港身份与续签完整对标 · SINCE 2006
     </span>
     <h1 class="v10-hero-title">
-      从首签到<span class="gold">7 年永居</span>，<br>
+      从首签到<span class="gold no-break">7 年永居</span>，<br>
       同一 CareerForge 主线。
     </h1>
     <p class="v10-hero-sub">
@@ -1301,7 +1504,7 @@
     <div class="v10-hero-trust">
       <div class="v10-hero-trust-item">
         <strong>3,000+</strong>
-        <span>累計服務家庭</span>
+        <span>累計服务家庭</span>
       </div>
       <div class="v10-hero-trust-item">
         <strong>4 大</strong>
@@ -1324,8 +1527,8 @@
   <div class="v10-container">
     <div class="v10-head">
       <span class="eyebrow">4 大人才计划</span>
-      <h2>高才通 · 优才 · 专才 · 留学升港，<br>按背景拣一条最合适嘅路。</h2>
-      <p class="lede">香港 4 条主流人才引进路径各有定位 — 高才通针对高收入 / 高学历、优才针对顶尖人才、专才针对特定行业、留学升港针对年轻专业人士。咨询顾问，了解最适合您嘅一条。</p>
+      <h2>高才通 · 优才 · 专才 · 留学升港，<br>按背景拣一条最合适的路。</h2>
+      <p class="lede">香港 4 種主流人才引进路径各有定位 — 高才通针对高收入 / 高学历、优才针对顶尖人才、专才针对特定行业、留学升港针对年轻专业人士。咨询顾问，了解最适合您的一条。</p>
     </div>
 
     <div class="v10-tracks">
@@ -1340,18 +1543,18 @@
         <span class="v10-track-icon">優</span>
         <span class="v10-track-tag">QMAS · 顶尖人才</span>
         <h3>优才计划</h3>
-        <p>计分制入境，分综合计分制（年龄 / 学历 / 工作经验 / 语文 / 家庭）与成就计分制两类。适合具备顶尖学历 / 工作背景 / 国际奖项嘅申请人。批核后可自由转工。</p>
+        <p>计分制入境，分综合计分制（年龄 / 学历 / 工作经验 / 语文 / 家庭）与成就计分制两类。适合具备顶尖学历 / 工作背景 / 国际奖项的申请人。批核后可自由转工。</p>
       </div>
 
       <div class="v10-track">
-        <span class="v10-track-icon">專</span>
+        <span class="v10-track-icon">专</span>
         <span class="v10-track-tag">GEP · 特定行业</span>
         <h3>专才计划</h3>
-        <p>针对特定行业嘅技术 / 专业人才。需获得香港公司雇主聘请，学历 + 工作经验符合入境处要求。审批相对快，适合已有明确雇主嘅申请人。</p>
+        <p>针对特定行业的技术 / 专业人才。需获得香港公司雇主聘请，学历 + 工作经验符合入境处要求。审批相对快，适合已有明确雇主的申请人。</p>
       </div>
 
       <div class="v10-track">
-        <span class="v10-track-icon">學</span>
+        <span class="v10-track-icon">学</span>
         <span class="v10-track-tag">IANG · 留学升港</span>
         <h3>留学及副学士赴港</h3>
         <p>在香港读大学 / 副学士 / 研究生课程，毕业后可申请 IANG 签证留港工作 2 年，期间连续受雇 7 年可申请永居。适合年轻专业人士 + 子女教育双轨规划。</p>
@@ -1366,7 +1569,7 @@
     <div class="v10-head">
       <span class="eyebrow">4 阶段完整路径</span>
       <h2>从资格评估到永居，<br>每一步都有专属顾问。</h2>
-      <p class="lede">4 个阶段不只是流程 — 是 7 年内会出现嘅关键里程碑。每一步都为家庭量身定制。</p>
+      <p class="lede">4 个阶段不只是流程 — 是 7 年内会出现的关键里程碑。每一步都为家庭量身定制。</p>
     </div>
     <div class="v10-pathway-grid">
       <div class="v10-pathway">
@@ -1399,14 +1602,14 @@
     <div class="v10-head">
       <span class="eyebrow">收费透明 · 退款保证</span>
       <h2>2-3 个套餐组合，<br>按家庭需要拣。</h2>
-      <p class="lede">不同家庭嘅需要不同，所以我们设计咗几个套餐，由单次咨询到 7 年永居陪跑都有。具体费用按家庭背景、签证类别、是否需要落地支援而定 — 咨询后会有明确报价。</p>
+      <p class="lede">不同家庭的需要不同，所以我们设计了几个套餐，由单次咨询到 7 年永居陪跑都有。具体费用按家庭背景、签证类别、是否需要落地支援而定 — 咨询后会有明确报价。</p>
     </div>
 
     <div class="v10-packages">
       <div class="v10-package">
         <span class="v10-package-tag">A · 起步</span>
         <h4>资格评估 + 單次簽證</h4>
-        <p class="v10-package-desc">适合已有明确签证计划嘅家庭 — 想快速确认资格 + 完成首次申请。</p>
+        <p class="v10-package-desc">适合已有明确签证计划的家庭 — 想快速确认资格 + 完成首次申请。</p>
         <ul class="v10-package-points">
           <li>30 分钟免费初步咨询</li>
           <li>4 大计划资格匹配评估</li>
@@ -1419,7 +1622,7 @@
       <div class="v10-package featured">
         <span class="v10-package-tag">B · 主流</span>
         <h4>首签 + 7 年续签</h4>
-        <p class="v10-package-desc">适合需要完整 7 年续签规划嘅家庭 — 由首签到永居全程顾问跟进。</p>
+        <p class="v10-package-desc">适合需要完整 7 年续签规划的家庭 — 由首签到永居全程顾问跟进。</p>
         <ul class="v10-package-points">
           <li>套餐 A 全部内容</li>
           <li>1 位资深顾问 7 年 1 对 1 跟进</li>
@@ -1433,7 +1636,7 @@
       <div class="v10-package">
         <span class="v10-package-tag">C · 全包</span>
         <h4>签证 + 落地 + 教育</h4>
-        <p class="v10-package-desc">适合带子女移居嘅家庭 — 签证 + 落地安家 + 子女入学一条龙。</p>
+        <p class="v10-package-desc">适合带子女移居的家庭 — 签证 + 落地安家 + 子女入学一条龙。</p>
         <ul class="v10-package-points">
           <li>套餐 B 全部内容</li>
           <li>子女升学对标（DSE / IB / A-Level）</li>
@@ -1453,8 +1656,8 @@
   <div class="v10-container">
     <div class="v10-head">
       <span class="eyebrow">CareerForge vs 一般中介</span>
-      <h2>我哋同坊间唔同，<br>因为全程有专人跟进。</h2>
-      <p class="lede">坊间一般中介多为外判、单次配对；CareerForge 系 7 年连续陪跑、专属顾问、有入境处对标经验 — 由首签到永居都唔会换人。</p>
+      <h2>我哋同坊间不同，<br>因为全程有专人跟进。</h2>
+      <p class="lede">坊间一般中介多为外判、单次配对；CareerForge 系 7 年连续陪跑、专属顾问、有入境处对标经验 — 由首签到永居都不会换人。</p>
     </div>
 
     <div class="v10-diff-table">
@@ -1497,8 +1700,8 @@
   <div class="v10-container">
     <div class="v10-head">
       <span class="eyebrow">成功案例</span>
-      <h2>每一个案例，<br>都是真实家庭嘅 7 年跃迁。</h2>
-      <p class="lede">以下案例由 CareerForge 顾问团队於 2022–2025 年服務的真實個案 — 為保護家庭私隱，姓名按公開資料標註。</p>
+      <h2>每一个案例，<br>都是真实家庭的 7 年跃迁。</h2>
+      <p class="lede">以下案例由 CareerForge 顾问团队于 2022–2025 年服务的真实個案 — 為保護家庭私隱，姓名按公開资料標註。</p>
     </div>
 
     <div class="v10-cases">
@@ -1571,8 +1774,8 @@
 <section class="v10-section canvas tight" style="padding-top: 0;">
   <div class="v10-container">
     <div class="v10-head">
-      <span class="eyebrow">聯絡我們</span>
-      <h2>用你最方便嘅方式，<br>与顾问直接对话。</h2>
+      <span class="eyebrow">聯络我們</span>
+      <h2>用你最方便的方式，<br>与顾问直接对话。</h2>
     </div>
     <div class="v10-contact-grid">
       <div class="v10-contact-card">
@@ -1582,7 +1785,7 @@
       </div>
       <div class="v10-contact-card">
         <div class="v10-contact-icon">✉️</div>
-        <h4>電郵</h4>
+        <h4>电郵</h4>
         <p>[REDACTED_EMAIL]<br>提供书面方案摘要</p>
       </div>
       <div class="v10-contact-card">
@@ -1599,22 +1802,22 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <img src="assets/logo.png" alt="CareerForge 鑄途" class="footer-logo">
-        <p>香港高端个人成长顾问。身份 · 升學 · 職涯身價 一站式陪跑。</p>
+        <p>香港高端个人成长顾问。身份 · 升学 · 職涯身價 一站式陪跑。</p>
       </div>
       <div class="footer-col">
-        <h4>業務板塊</h4>
-        <a href="immigration-cn.html">身份與續簽對標</a>
+        <h4>业务板塊</h4>
+        <a href="immigration-cn.html">身份與續簽对標</a>
+        <a href="education-cn.html">海外與香港升学</a>
         <a href="career-cn.html">求職與身價躍遷</a>
-        <a href="education-cn.html">海外與香港升學</a>
       </div>
       <div class="footer-col">
         <h4>资源</h4>
         <a href="cases-cn.html">客戶案例</a>
         <a href="quiz-cn.html">牛馬身價測驗</a>
-        <a href="#contact">聯絡我們</a>
+        <a href="#contact">聯络我們</a>
       </div>
       <div class="footer-col">
-        <h4>聯絡</h4>
+        <h4>聯络</h4>
         <a href="https://wa.me/85295651459">WhatsApp</a>
         <a href="mailto:[REDACTED_EMAIL]">[REDACTED_EMAIL]</a>
       </div>
@@ -1622,10 +1825,23 @@
     <div class="footer-bottom">
       <span>© 2026 CareerForge 鑄途. All rights reserved.</span>
       <span class="footer-lang">
-        <a href="index.html">繁體</a> · <a href="index-cn.html" class="active">简体</a> · <a href="index-en.html">EN</a>
+        <a href="index.html">繁体</a> · <a href="index-cn.html" class="active">简体</a> · <a href="index-en.html">EN</a>
       </span>
     </div>
   </div>
 </footer>
+
+<script>
+(function(){
+  var btn = document.getElementById('hamburgerBtn');
+  var menu = document.getElementById('navMenu');
+  if (btn && menu) {
+    btn.addEventListener('click', function(){
+      btn.classList.toggle('open');
+      menu.classList.toggle('open');
+    });
+  }
+})();
+</script>
 </body>
 </html>

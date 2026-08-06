@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-CareerForge 鑄途 · 香港高端個人成長顧問 · 身份·升學·職涯身價</title>
-<meta name="description" content="CareerForge — Hong Kong high-end personal growth consultancy. 3 main service lines: Hong Kong status alignment, career value growth, education planning.">
+<title>CareerForge 鑄途 · Hong Kong Personal Growth Consultancy · Status·Education·career value</title>
+<meta name="description" content="CareerForge 鑄途 — Hong Kong Personal Growth Consultancy.3 service lines:Hong Kong status & renewal,Hong Kong career advancement,Overseas & Hong Kong education alignment.">
 <link rel="icon" type="image/png" href="assets/icon.png">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700;800&family=Noto+Serif+SC:wght@400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
@@ -12,7 +12,7 @@ CareerForge 鑄途 · 香港高端個人成長顧問 · 身份·升學·職涯�
 <body>
 
 <style>
-/* ============ V10 — 深海蓝 #0B192C × 香槟金 #D4AF37 ============ */
+/* ============ V10 — deep海蓝 #0B192C × fragrant槟gold #D4AF37 ============ */
 :root {
   --navy:        #0B192C;
   --navy-700:    #102542;
@@ -523,30 +523,76 @@ CareerForge 鑄途 · 香港高端個人成長顧問 · 身份·升學·職涯�
   .v10-contact-grid { grid-template-columns: 1fr; }
   .v10-cta { padding: 56px 28px; margin: 0 20px; }
 }
+
+/* ============ V11 MOBILE TYPOGRAPHY FIX ============ */
+/* Fix orphan chars like years. / 價. wrapping on small screens */
+.v10-hero-title,
+.v10-head h2,
+.v10-section h2 {
+  text-wrap: balance;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  -webkit-hyphens: none;
+  hyphens: none;
+}
+
+/* Reduce hero title min size on mobile */
+.v10-hero-title {
+  font-size: clamp(1.75rem, 5.5vw, 4.8rem) !important;
+  line-height: 1.18 !important;
+  max-width: 100% !important;
+}
+
+/* Show lang switcher pill on mobile (smaller) */
+@media (max-width: 900px) {
+  .site-header .lang-switcher {
+    display: inline-flex;
+  }
+  .site-header .lang-switcher a {
+    font-size: 0.7rem;
+    padding: 4px 8px;
+    min-width: 24px;
+  }
+  .site-header .nav-logo .logo-en { font-size: 1.05rem !important; }
+  .site-header .nav-logo .logo-cn { font-size: 0.95rem !important; letter-spacing: 1px; }
+  .site-header .container { padding: 0 16px; }
+  .v10-hero-title { font-size: clamp(1.75rem, 7vw, 4.8rem) !important; }
+  .v10-hero-sub { font-size: 0.95rem !important; }
+  .v10-head h2 { font-size: 1.6rem !important; line-height: 1.25 !important; }
+  .v10-section { padding: 56px 0 !important; }
+  .v10-pillar-title { font-size: 1.2rem !important; }
+}
+
+/* Ensure no-break on key phrases */
+.no-break { white-space: nowrap; display: inline-block; }
+
 </style>
 
 <header class="site-header">
   <div class="container">
     <nav class="nav">
       <a href="index-en.html" class="nav-logo">
-        <img src="assets/logo.png" alt="CareerForge 鑄途">
+        <span class="logo-en">CareerForge</span>
+        <span class="logo-cn">鑄途</span>
       </a>
-      <div class="nav-menu">
-        <a href="index-en.html" class="active">首頁</a>
-        <a href="immigration-en.html">身份</a>
-        <a href="career-en.html">職涯身價</a>
-        <a href="education-en.html">升學</a>
-        <a href="quiz-en.html">牛馬測驗</a>
-        <a href="cases-en.html">客戶故事</a>
+      <div class="nav-menu" id="navMenu">
+        <a href="index-en.html" class="active">Home</a>
+        <a href="immigration-en.html">Visa Status</a>
+        <a href="education-en.html">EducationPlanning</a>
+        <a href="career-en.html">requestcareer value</a>
+        <a href="quiz-en.html">Career Quiz</a>
+        <a href="cases-en.html">Client stories</a>
         <a href="#contact">Contact</a>
       </div>
       <div class="nav-actions">
         <div class="lang-switcher">
-          <a href="index.html">繁</a>
+          <a href="index-en.html" class="active">繁</a>
           <a href="index-cn.html">简</a>
-          <a href="index-en.html" class="active">EN</a>
+          <a href="index-en.html">EN</a>
         </div>
-        <a href="#contact" class="nav-cta">Get advice</a>
+        <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </nav>
   </div>
@@ -561,12 +607,12 @@ CareerForge 鑄途 · 香港高端個人成長顧問 · 身份·升學·職涯�
     </span>
     <h1 class="v10-hero-title">
       Walking with families,<br>
-      from status to<span class="gold">永居七年</span>。<br>
-      from career to<span class="gold">職涯身價</span>。
+      from status to<span class="gold no-break">PRsevenyears</span>.<br>
+      from career path to<span class="gold no-break">career value</span>.
     </h1>
     <p class="v10-hero-sub">
-      CareerForge — focused on Hong Kong Top Talent Pass, Quality Migrant Admission, General Employment, Study → HK pathways.<br>
-      Three service lines — status, career value, education planning — each paving the way for the next.
+      CareerForge 鑄途 — specializedHKhighconnect,better,only,leavelearn Study to HK allweekissuesupport.<br>
+      Three service lines — status matching, career value growth, and education planning — each paving the way for the next.
     </p>
     <div class="v10-hero-trust">
       <div class="v10-hero-trust-item">
@@ -574,16 +620,16 @@ CareerForge 鑄途 · 香港高端個人成長顧問 · 身份·升學·職涯�
         <span>Families served</span>
       </div>
       <div class="v10-hero-trust-item">
-        <strong>20 年</strong>
-        <span>Years in Hong Kong</span>
+        <strong>20 years</strong>
+        <span>Years in Hong Kong industry</span>
       </div>
       <div class="v10-hero-trust-item">
-        <strong>7 年</strong>
-        <span>Renewal to PR, full-cycle</span>
+        <strong>7 years</strong>
+        <span>Renewal to PR full-service</span>
       </div>
       <div class="v10-hero-trust-item">
-        <strong>3 大</strong>
-        <span>Service lines integrated</span>
+        <strong>3 very</strong>
+        <span>Servicesfully integrated</span>
       </div>
     </div>
   </div>
@@ -594,61 +640,61 @@ CareerForge 鑄途 · 香港高端個人成長顧問 · 身份·升學·職涯�
   <div class="v10-container">
     <div class="v10-head">
       <span class="eyebrow">3 service lines</span>
-      <h2>Status, career value, education —<br>one CareerForge pathway.</h2>
-      <p class="lede">Hong Kong status, career value growth, education planning — woven into one continuous path. Details in each service page.</p>
+      <h2>Hong Kong status, career value, education —<br>one CareerForge pathway.</h2>
+      <p class="lede">Hong Kong status, career advancement, and education pathways — all integrated into one continuous journey. See individual service pages for details.</p>
     </div>
     <div class="v10-pillars">
 
       <!-- Pillar 01 -->
       <div class="v10-pillar">
         <div class="v10-pillar-body">
-          <span class="v10-pillar-num">PILLAR 01 · Status</span>
-          <h3 class="v10-pillar-title">HK status & renewal</h3>
+          <span class="v10-pillar-num">PILLAR 01 · Visa Status</span>
+          <h3 class="v10-pillar-title">Hong Kong status & renewal</h3>
           <p class="v10-pillar-desc">
-            Top Talent · Quality Migrant · Employment · Study → HK — all 4 paths covered. From first visa to 7-year PR, fully guided.
+            Top Talent Pass · Quality Migrant · Employment · Study-to-HK — all 4 mainstream paths covered. From first visa to 7-year PR, with dedicated consultant compliance support throughout.
           </p>
         </div>
-        <a href="immigration-en.html" class="v10-pillar-cta">了解詳情</a>
+        <a href="immigration-en.html" class="v10-pillar-cta">Learn more</a>
       </div>
 
       <!-- Pillar 02 -->
       <div class="v10-pillar">
         <div class="v10-pillar-body">
-          <span class="v10-pillar-num">PILLAR 02 · Career value</span>
-          <h3 class="v10-pillar-title">HK career & value growth</h3>
+          <span class="v10-pillar-num">PILLAR 02 · Education</span>
+          <h3 class="v10-pillar-title">Overseas & Hong Kong education alignment</h3>
           <p class="v10-pillar-desc">
-            Helping professionals achieve salary uplift, industry pivots, and long-term career value growth in HK.
+            Overseas secondary schools (IB / A-Level / DSE) and Hong Kong local schools — bi-directional placement aligned with parents' visa timeline.
           </p>
         </div>
-        <a href="career-en.html" class="v10-pillar-cta">了解詳情</a>
-      </div>
-
-      <!-- Pillar 03 -->
-      <div class="v10-pillar">
-        <div class="v10-pillar-body">
-          <span class="v10-pillar-num">PILLAR 03 · Education</span>
-          <h3 class="v10-pillar-title">Overseas & HK education</h3>
-          <p class="v10-pillar-desc">
-            Overseas secondary / IB / A-Level / DSE — dual-track with HK local schools. Synced with parents\' visa timeline.
-          </p>
-        </div>
-        <a href="education-en.html" class="v10-pillar-cta">了解詳情</a>
+        <a href="education-en.html" class="v10-pillar-cta">Learn more</a>
       </div>
 
     </div>
   </div>
-</section>
+<!-- Pillar 03 -->
+      <div class="v10-pillar">
+        <div class="v10-pillar-body">
+          <span class="v10-pillar-num">PILLAR 03 · Career Value</span>
+          <h3 class="v10-pillar-title">Hong Kong career advancement</h3>
+          <p class="v10-pillar-desc">
+            Helping professionals achieve salary growth, industry transitions, and long-term career value in Hong Kong.
+          </p>
+        </div>
+        <a href="career-en.html" class="v10-pillar-cta">Learn more</a>
+      </div>
+
+      </section>
 
 <!-- ============ QUIZ CTA (NAVY BG) ============ -->
 <section class="v10-section dark">
   <div class="v10-container">
     <div class="v10-head dark">
-      <span class="eyebrow">3-min quiz</span>
-      <h2>Not sure which path fits?<br>3 分鐘測一測。</h2>
-      <p class="lede">5 questions — find your fit across HK status, education, and career.</p>
+      <span class="eyebrow">3 minutesCareer Quiz</span>
+      <h2>Not sure which path fits you?<br>3 minutestesttogethertest.</h2>
+      <p class="lede">Answer 5 questions,Discover your Career Index + Suitable Hong Kong visa + Education + Career path direction.</p>
     </div>
     <div class="v10-quiz-cta-actions" style="text-align: center; margin-top: 32px;">
-      <a href="quiz-en.html" class="v10-cta-btn v10-cta-primary">Take the quiz</a>
+      <a href="quiz-en.html" class="v10-cta-btn v10-cta-primary">Start nowCareer Quiz</a>
     </div>
   </div>
 </section>
@@ -658,8 +704,8 @@ CareerForge 鑄途 · 香港高端個人成長顧問 · 身份·升學·職涯�
   <div class="v10-container">
     <div class="v10-head dark">
       <span class="eyebrow">By the numbers</span>
-      <h2>Each number,<br>is a life-path uplift.</h2>
-      <p class="lede">First visa to PR — full 7 years, 1-on-1 consultant. Real families, not just statistics.</p>
+      <h2>Every number,<br>represents a life-path transition.</h2>
+      <p class="lede">From first visa to PR 7 yearssupport,full-processconsultant 1 correct 1 — is not just a number,is a real family.</p>
     </div>
     <div class="v10-trust-grid">
       <div class="v10-trust-card">
@@ -667,16 +713,16 @@ CareerForge 鑄途 · 香港高端個人成長顧問 · 身份·升學·職涯�
         <span class="v10-trust-label">Families served<small>FAMILIES SERVED</small></span>
       </div>
       <div class="v10-trust-card">
-        <span class="v10-trust-num">4 条</span>
-        <span class="v10-trust-label">Visa schemes<small>VISA SCHEMES</small></span>
+        <span class="v10-trust-num">4 </span>
+        <span class="v10-trust-label">Mainstream talent schemes<small>VISA SCHEMES</small></span>
       </div>
       <div class="v10-trust-card">
-        <span class="v10-trust-num">8 大</span>
-        <span class="v10-trust-label">Industries<small>INDUSTRIES</small></span>
+        <span class="v10-trust-num">8 very</span>
+        <span class="v10-trust-label">Industries covered<small>INDUSTRIES</small></span>
       </div>
       <div class="v10-trust-card">
-        <span class="v10-trust-num">7 年</span>
-        <span class="v10-trust-label">Renewal to PR<small>FULL-CYCLE</small></span>
+        <span class="v10-trust-num">7 years</span>
+        <span class="v10-trust-label">Renewal to PR support<small>FULL-CYCLE</small></span>
       </div>
     </div>
   </div>
@@ -686,7 +732,7 @@ CareerForge 鑄途 · 香港高端個人成長顧問 · 身份·升學·職涯�
 <section class="v10-section canvas tight" style="padding-top: 0;">
   <div class="v10-container">
     <blockquote class="v10-disclaimer">
-      <p class="v10-disclaimer-text">★ CareerForge upholds legal, honest, fact-based consultation. All education and immigration applications are built on professional assessment and genuine capability.</p>
+      <p class="v10-disclaimer-text">★ CareerForge Compliance-first,Pragmatic consulting principles,All education and visa applications are built on professional assessment and genuine capability.</p>
     </blockquote>
   </div>
 </section>
@@ -697,11 +743,11 @@ CareerForge 鑄途 · 香港高端個人成長顧問 · 身份·升學·職涯�
     <div class="v10-cta">
       <div class="v10-cta-inner">
         <span class="v10-cta-eyebrow">START YOUR JOURNEY</span>
-        <h2>Step 1: 30-min free assessment</h2>
-        <p>提交基本资料后 24 小时内收到顾问回复 — 包含 3 service lines匹配度评分 + 预计所需时间 + 后续路径建议。</p>
+        <h2>Step 1:30 minutesfree qualification assessment</h2>
+        <p>After basic info submission 24 reply within 24 hours by consultant — includes 3 service linesMatch score + Estimated time + Next-step recommendations.</p>
         <div class="v10-cta-actions">
-          <a href="https://wa.me/85295651459" class="v10-cta-btn v10-cta-primary">WhatsApp now</a>
-          <a href="quiz-en.html" class="v10-cta-btn v10-cta-secondary">先做 3-min quiz</a>
+          <a href="https://wa.me/85295651459" class="v10-cta-btn v10-cta-primary">WhatsApp Book now</a>
+          <a href="quiz-en.html" class="v10-cta-btn v10-cta-secondary">firstmake 3 minutesCareer Quiz</a>
         </div>
       </div>
     </div>
@@ -712,24 +758,24 @@ CareerForge 鑄途 · 香港高端個人成長顧問 · 身份·升學·職涯�
 <section class="v10-section canvas tight" style="padding-top: 0;">
   <div class="v10-container">
     <div class="v10-head">
-      <span class="eyebrow">Contact us</span>
-      <h2>Use whichever is easiest,<br>to talk to an advisor.</h2>
+      <span class="eyebrow">Contact</span>
+      <h2>Choose your preferred channel,<br>Direct consultant chat.</h2>
     </div>
     <div class="v10-contact-grid">
       <div class="v10-contact-card">
         <div class="v10-contact-icon">📱</div>
         <h4>WhatsApp / WeChat</h4>
-        <p>852-9565-1459<br>Advisor responds within 24 hours</p>
+        <p>852-9565-1459<br>consultant 24 reply within hours</p>
       </div>
       <div class="v10-contact-card">
         <div class="v10-contact-icon">✉️</div>
         <h4>Email</h4>
-        <p>[REDACTED_EMAIL]<br>Written summary on request</p>
+        <p>[REDACTED_EMAIL]<br>Written summary provided</p>
       </div>
       <div class="v10-contact-card">
         <div class="v10-contact-icon">📍</div>
-        <h4>HK office</h4>
-        <p>中環 / 尖沙咀<br>By-appointment 1-on-1</p>
+        <h4>Hong Kong office</h4>
+        <p>Central / Tsim Sha Tsui<br>By appointment 1 correct 1 Consultation</p>
       </div>
     </div>
   </div>
@@ -740,22 +786,22 @@ CareerForge 鑄途 · 香港高端個人成長顧問 · 身份·升學·職涯�
     <div class="footer-grid">
       <div class="footer-brand">
         <img src="assets/logo.png" alt="CareerForge 鑄途" class="footer-logo">
-        <p>香港高端个人成长顾问。身份 · 升學 · 職涯身價 一站式陪跑。</p>
+        <p>Hong Kong Personal Growth Consultancy.Status · Education · career value one-stop support.</p>
       </div>
       <div class="footer-col">
         <h4>Services</h4>
         <a href="immigration-en.html">Status & renewal</a>
-        <a href="career-en.html">Career value</a>
-        <a href="education-en.html">Education</a>
+        <a href="education-en.html">Overseas & Hong Kong education</a>
+        <a href="career-en.html">Career advancement</a>
       </div>
       <div class="footer-col">
-        <h4>资源</h4>
+        <h4>Resources</h4>
         <a href="cases-en.html">Client cases</a>
-        <a href="quiz-en.html">Career quiz</a>
-        <a href="#contact">Contact us</a>
+        <a href="quiz-en.html">Career Index Quiz</a>
+        <a href="#contact">Contact</a>
       </div>
       <div class="footer-col">
-        <h4>Contact</h4>
+        <h4>contact</h4>
         <a href="https://wa.me/85295651459">WhatsApp</a>
         <a href="mailto:[REDACTED_EMAIL]">[REDACTED_EMAIL]</a>
       </div>
@@ -763,7 +809,7 @@ CareerForge 鑄途 · 香港高端個人成長顧問 · 身份·升學·職涯�
     <div class="footer-bottom">
       <span>© 2026 CareerForge 鑄途. All rights reserved.</span>
 <span class="footer-lang">
-        <a href="index.html">繁體</a> · <a href="index-cn.html">简体</a> · <a href="index-en.html" class="active">EN</a>
+        <a href="index-en.html" class="active">繁</a> · <a href="index-cn.html">简</a> · <a href="index-en.html">EN</a>
       </span>
     </div>
   </div>

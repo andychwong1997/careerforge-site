@@ -185,6 +185,10 @@ p { text-wrap: pretty; }
 .nav-logo-text { display: inline-flex; align-items: baseline; gap: 6px; text-decoration: none; font-weight: 600; font-size: 1.25rem; letter-spacing: -0.01em; line-height: 1.2; }
 .nav-logo-text .nl-en { color: var(--navy, #0B192C); }
 .nav-logo-text .nl-zh { color: var(--gold, #D4AF37); font-weight: 500; }
+/* V11/V12 legacy span pattern — used by index/immigration/education/quiz/cases */
+.nav-logo { display: inline-flex; align-items: baseline; gap: 6px; text-decoration: none; font-weight: 600; font-size: 1.25rem; letter-spacing: -0.01em; line-height: 1.2; }
+.nav-logo .logo-en { color: var(--navy, #0B192C); }
+.nav-logo .logo-cn { color: var(--gold, #D4AF37); font-weight: 500; }
 .nav-menu { display: flex; align-items: center; gap: 32px; }
 .nav-menu a {
   font-size: 0.875rem;

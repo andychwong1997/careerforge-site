@@ -129,12 +129,22 @@ p { color: var(--ink-700); }
 .text-muted { color: var(--ink-500); }
 .text-center { text-align: center; }
 
-/* CJK line-height adjustments */
+/* CJK line-height + orphan prevention */
 :lang(zh-Hant) body, :lang(zh-Hant) p, :lang(zh-Hant) h1, :lang(zh-Hant) h2, :lang(zh-Hant) h3,
 :lang(zh-Hans) body, :lang(zh-Hans) p, :lang(zh-Hans) h1, :lang(zh-Hans) h2, :lang(zh-Hans) h3 {
   line-height: 1.7;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 :lang(zh-Hant) .lead, :lang(zh-Hans) .lead { line-height: 1.6; }
+
+/* Balance headlines — prevent single-char orphans like 「的」「了」「與」 */
+.v10-hero-title, .v10-head h2, h1, h2 {
+  text-wrap: balance;
+  word-break: keep-all;
+}
+/* allow long phrases to wrap nicely */
+p { text-wrap: pretty; }
 
 /* ===== Lang switcher ===== */
 .lang-switcher {
@@ -172,8 +182,9 @@ p { color: var(--ink-700); }
   border-bottom: 1px solid var(--ink-100);
 }
 .nav { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 32px; }
-.nav-logo { display: flex; align-items: center; }
-.nav-logo img { height: 28px; width: auto; }
+.nav-logo-text { display: inline-flex; align-items: baseline; gap: 6px; text-decoration: none; font-weight: 600; font-size: 1.25rem; letter-spacing: -0.01em; line-height: 1.2; }
+.nav-logo-text .nl-en { color: var(--navy, #0B192C); }
+.nav-logo-text .nl-zh { color: var(--gold, #D4AF37); font-weight: 500; }
 .nav-menu { display: flex; align-items: center; gap: 32px; }
 .nav-menu a {
   font-size: 0.875rem;
@@ -914,7 +925,9 @@ p { color: var(--ink-700); }
 }
 @media (max-width: 880px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; } }
 @media (max-width: 540px) { .footer-grid { grid-template-columns: 1fr; gap: 32px; } }
-.footer-brand img { height: 32px; margin-bottom: 16px; filter: brightness(0) invert(1); }
+.footer-logo-text { display: inline-flex; align-items: baseline; gap: 6px; text-decoration: none; font-weight: 600; font-size: 1.5rem; letter-spacing: -0.01em; line-height: 1.2; margin-bottom: 16px; }
+.footer-logo-text .fl-en { color: #FFFFFF; }
+.footer-logo-text .fl-zh { color: var(--gold, #D4AF37); font-weight: 500; }
 .footer-brand p { color: #A1A1A6; font-size: 0.875rem; line-height: 1.6; max-width: 320px; }
 .footer-col h4 { color: #F5F5F7; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.16em; margin-bottom: 16px; font-weight: 600; }
 .footer-col ul { display: flex; flex-direction: column; gap: 12px; }

@@ -83,7 +83,9 @@
   color: var(--gold);
   font-style: italic;
   font-weight: 600;
+  white-space: nowrap;
 }
+.v10-hero-title { white-space: normal; }
 .v10-hero-sub {
   font-size: clamp(1.05rem, 1.4vw, 1.25rem);
   line-height: 1.7;
@@ -167,6 +169,14 @@
   font-weight: 400;
 }
 .v10-head.dark .lede { color: rgba(255,255,255,0.78); }
+
+/* ============ CONTACT GRID (3 cards: WhatsApp / Email / Office) ============ */
+.v10-contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 56px;
+}
 
 /* ============ WHY-HK STAT CARDS ============ */
 .v10-why-grid {
@@ -806,7 +816,16 @@
   .v10-refund-grid { grid-template-columns: 1fr; }
   .v10-director { padding: 36px 24px; }
   .v10-director-stats { grid-template-columns: repeat(2, 1fr); gap: 16px; }
-  .v10-cta { padding: 56px 28px; margin: 0 20px; }
+@media (max-width: 560px) {
+  .v10-pathway-grid { grid-template-columns: 1fr; }
+  .v10-diff-row { grid-template-columns: 100px 1fr 1fr; font-size: 0.8rem; }
+  .v10-diff-cell { padding: 10px 8px; font-size: 0.8rem; min-width: 0; overflow-wrap: break-word; word-break: break-word; }
+  .v10-why-grid { grid-template-columns: 1fr; }
+  .v10-why-num { white-space: nowrap; }
+  .v10-hero-title, .v10-cta-title { text-wrap: pretty; word-break: keep-all; overflow-wrap: break-word; }
+  .v10-hero-sub { text-wrap: pretty; word-break: keep-all; }
+  .v10-container { padding: 0 16px; }
+  .v10-contact-grid { grid-template-columns: 1fr; gap: 20px; margin-top: 32px; }
 }
 
 
@@ -1260,12 +1279,13 @@
       香港升学完整对标 · SINCE 2006
     </span>
     <h1 class="v10-hero-title">
-      从幼稚园到<span class="gold">世界顶尖大学</span>，<br>
+      从幼稚园到<span class="gold">世界顶尖大学，</span><br>
       同一 CareerForge 主线。
     </h1>
     <p class="v10-hero-sub">
       CareerForge 铸途 — 香港升学一站式陪跑。<br>
-      幼稚园、小学、中学插班、DSE / IB / A-Level、大学申请 — 配合家长签证落地节奏同步推进子女教育路径。
+      幼稚园至 DSE / IB / A-Level<br>
+      大学申请 — 配合家长签证节奏，同步推进子女教育路径。
     </p>
     <div class="v10-hero-trust">
       <div class="v10-hero-trust-item">
@@ -1281,8 +1301,8 @@
         <span>累计服务家庭</span>
       </div>
       <div class="v10-hero-trust-item">
-        <strong>15 年</strong>
-        <span>立足香港教育经验</span>
+        <strong>98%</strong>
+        <span>升学录取率</span>
       </div>
     </div>
   </div>
@@ -1529,8 +1549,8 @@
   <div class="v10-container">
     <div class="v10-head">
       <span class="eyebrow">CareerForge vs 一般中介</span>
-      <h2>我哋同坊间不同，<br>因为全程有专人跟进。</h2>
-      <p class="lede">坊间一般中介多为外判、单次配对；CareerForge 系一条龙、专职、有教材库、有面试培训 — 由咨询到入学都不会换人。</p>
+      <h2>我们与同行不同，<br>因为全程有专人跟进。</h2>
+      <p class="lede">同行一般中介多为外判、单次配对；CareerForge 是一条龙、专职、有教材库、有面试培训 — 由咨询到入学都不会换人。</p>
     </div>
 
     <div class="v10-diff-table">
@@ -1547,7 +1567,7 @@
       <div class="v10-diff-row">
         <div class="v10-diff-cell v10-diff-label">教材</div>
         <div class="v10-diff-cell v10-diff-us"><span class="v10-diff-check">✓</span> 内部教材库，每年编制校本材料</div>
-        <div class="v10-diff-cell v10-diff-them">坊间补充练习</div>
+        <div class="v10-diff-cell v10-diff-them">同行补充练习</div>
       </div>
       <div class="v10-diff-row">
         <div class="v10-diff-cell v10-diff-label">学习进度</div>
@@ -1650,7 +1670,7 @@
       <span class="eyebrow">聯络我們</span>
       <h2>用你最方便的方式，<br>與顧問直接对话。</h2>
     </div>
-    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 56px;">
+    <div class="v10-contact-grid">
       <div style="background: var(--white); border: 1px solid var(--ink-100); border-radius: var(--radius); padding: 40px 32px; text-align: center; box-shadow: var(--shadow-card);">
         <div style="display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, var(--navy) 0%, var(--gold) 100%); color: var(--white); font-size: 1.5rem; margin-bottom: 20px;">📱</div>
         <h4 style="font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 1.15rem; font-weight: 700; color: var(--ink-900); margin: 0 0 10px;">WhatsApp / 微信</h4>

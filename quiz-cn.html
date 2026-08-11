@@ -43,7 +43,7 @@
 <section class="hero-v4">
   <div class="hero-v4-inner">
     <span class="eyebrow reveal">牛马测验 · 3 分钟见未来</span>
-    <h1 class="reveal" data-reveal-delay="100">你系<span class="accent-text">牛</span>，<br/>定系<span class="accent-text">马</span>？</h1>
+    <h1 class="reveal" data-reveal-delay="100">你是<span class="accent-text">牛</span>，<br/>还是<span class="accent-text">马</span>？</h1>
     <p class="lead reveal" data-reveal-delay="200">5 条问题 · 3 分钟时间 · 测出你最适合的升学 / 签证 / 职涯路径。3,000+ 人测过，87% 认同结果。</p>
     <div class="hero-v4-actions reveal" data-reveal-delay="300">
       <a href="#quiz" class="btn btn-primary btn-lg">立即开始测验</a>
@@ -73,7 +73,7 @@
         <div id="quiz-progress" style="height:100%;background:linear-gradient(90deg,var(--theme-color,#1E40AF),var(--accent-hover));transition:width .4s ease;width:0%;"></div>
       </div>
       <div id="quiz-step" style="font-size:0.75rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--theme-color,#1E40AF);margin-bottom:16px;text-align:center;">问题 1 / 5</div>
-      <h2 id="quiz-q" style="font-size:clamp(1.875rem,3.5vw,2.5rem);font-weight:600;letter-spacing:-0.025em;line-height:1.15;text-align:center;margin-bottom:48px;">你目前的状况系？</h2>
+      <h2 id="quiz-q" style="font-size:clamp(1.875rem,3.5vw,2.5rem);font-weight:600;letter-spacing:-0.025em;line-height:1.15;text-align:center;margin-bottom:48px;">你目前的状况是？</h2>
       <div id="quiz-options" style="display:flex;flex-direction:column;gap:14px;"></div>
     </div>
     <!-- Result -->
@@ -126,7 +126,7 @@
 <section class="section-v4 tight" id="contact">
   <div class="container">
     <div class="cta-v4 reveal">
-      <h2>知道结果之后，<br/>下一步系点？</h2>
+      <h2>知道结果之后，<br/>下一步是什么？</h2>
       <p>30 分钟免费深度咨询，根据测验结果制定你的个人路径。</p>
       <div class="cta-v4-actions">
         <a href="mailto:hello@careerforgehk.com?subject=牛马测验后咨询" class="btn-v4-primary">Email 预约咨询 →</a>
@@ -157,7 +157,7 @@
 // Quiz data
 var quiz = [
   {
-    q: '你目前的状况系？',
+    q: '你目前的状况是？',
     opts: [
       { label: '中学生 / IB / DSE', value: 'student' },
       { label: '大学生 / 副学士在读', value: 'undergrad' },
@@ -167,13 +167,13 @@ var quiz = [
     ]
   },
   {
-    q: '你的主要目标系？',
+    q: '你的主要目标是？',
     opts: [
       { label: '升学 — 拿更好学历', value: 'education' },
-      { label: '移居 — 拎香港身份', value: 'visa' },
+      { label: '移居 — 拿香港身份', value: 'visa' },
       { label: '职涯 — 升职 / 转行 / 加薪', value: 'career' },
       { label: '全套 — 升学 + 移居 + 职涯', value: 'all' },
-      { label: '未确定，想揾人倾下', value: 'unsure' }
+      { label: '未确定，想找人聊一下', value: 'unsure' }
     ]
   },
   {
@@ -263,10 +263,10 @@ function showResult() {
   var winner = Object.keys(counts).reduce(function(a,b){return counts[a]>=counts[b]?a:b;});
 
   var titleMap = {
-    education: { title: '升学派 · 你适合升学规划', desc: '根据你的答案，你的首选路径系升学 — 拿更好学历、开拓视野。CareerForge 的升学顾问会由选校、面试、签证一条龙帮你。', actions: ['预约升学咨询 →', '了解副学士 2+2 直通', '看升学案例', '了解服务范围'] },
-    visa: { title: '移居派 · 你适合签证移居', desc: '根据你的答案，你的首选路径系移居 — 拎香港身份。CareerForge 的签证顾问会评估边条路径最快、最稳。', actions: ['预约签证咨询 →', '了解高才通 / 优才', '看签证案例', '7 年永居路径'] },
-    career: { title: '职涯派 · 你适合职涯规划', desc: '根据你的答案，你的首选路径系职涯 — 升职、转行、加薪。CareerForge 的猎头 network + mock interview 帮你揾到对的机会。', actions: ['预约职涯咨询 →', '了解履历优化', '看职涯案例', '8 大行业覆盖'] },
-    combo: { title: '全套派 · 你适合组合套餐', desc: '根据你的答案，你需要升学 + 移居 + 职涯的全套支援。CareerForge 的组合套餐可以悭 8-20%，仲有跨业务协调。', actions: ['预约深度咨询 →', '了解套餐 8 折优惠', '了解跨业务协调', '预约试堂'] }
+    education: { title: '升学派 · 你适合升学规划', desc: '根据你的答案，你的首选路径是升学 — 拿更好学历、开拓视野。CareerForge 的升学顾问会由选校、面试、签证一条龙帮你。', actions: ['预约升学咨询 →', '了解副学士 2+2 直通', '看升学案例', '了解服务范围'] },
+    visa: { title: '移居派 · 你适合签证移居', desc: '根据你的答案，你的首选路径是移居 — 获得香港身份。CareerForge 的签证顾问会评估哪条路径最快、最稳。', actions: ['预约签证咨询 →', '了解高才通 / 优才', '看签证案例', '7 年永居路径'] },
+    career: { title: '职涯派 · 你适合职涯规划', desc: '根据你的答案，你的首选路径是职涯 — 升职、转行、加薪。CareerForge 的猎头 network + mock interview 帮你找到对的机会。', actions: ['预约职涯咨询 →', '了解履历优化', '看职涯案例', '8 大行业覆盖'] },
+    combo: { title: '全套派 · 你适合组合套餐', desc: '根据你的答案，你需要升学 + 移居 + 职涯的全套支援。CareerForge 的组合套餐可以省 8-20%，还有跨业务协调。', actions: ['预约深度咨询 →', '了解套餐 8 折优惠', '了解跨业务协调', '预约试堂'] }
   };
 
   var r = titleMap[winner];

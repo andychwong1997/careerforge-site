@@ -83,7 +83,9 @@
   color: var(--gold);
   font-style: italic;
   font-weight: 600;
+  white-space: nowrap;
 }
+.v10-hero-title { white-space: normal; }
 .v10-hero-sub {
   font-size: clamp(1.05rem, 1.4vw, 1.25rem);
   line-height: 1.7;
@@ -167,6 +169,14 @@
   font-weight: 400;
 }
 .v10-head.dark .lede { color: rgba(255,255,255,0.78); }
+
+/* ============ CONTACT GRID (3 cards: WhatsApp / Email / Office) ============ */
+.v10-contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 56px;
+}
 
 /* ============ WHY-HK STAT CARDS ============ */
 .v10-why-grid {
@@ -1253,7 +1263,13 @@
 @media (max-width: 560px) {
   .v10-pathway-grid { grid-template-columns: 1fr; }
   .v10-diff-row { grid-template-columns: 100px 1fr 1fr; font-size: 0.8rem; }
-  .v10-diff-cell { padding: 10px 8px; font-size: 0.8rem; }
+  .v10-diff-cell { padding: 10px 8px; font-size: 0.8rem; min-width: 0; overflow-wrap: break-word; word-break: break-word; }
+  .v10-why-grid { grid-template-columns: 1fr; }
+  .v10-why-num { white-space: nowrap; }
+  .v10-hero-title, .v10-cta-title { text-wrap: pretty; word-break: keep-all; overflow-wrap: break-word; }
+  .v10-hero-sub { text-wrap: pretty; word-break: keep-all; }
+  .v10-container { padding: 0 16px; }
+  .v10-contact-grid { grid-template-columns: 1fr; gap: 20px; margin-top: 32px; }
 }
 
 
@@ -1496,12 +1512,13 @@
       香港升學完整對標 · SINCE 2006
     </span>
     <h1 class="v10-hero-title">
-      從幼稚園到<span class="gold">世界頂尖大學</span>，<br>
+      從幼稚園到<span class="gold">世界頂尖大學，</span><br>
       同一 CareerForge 主線。
     </h1>
     <p class="v10-hero-sub">
       CareerForge 鑄途 — 香港升學一站式陪跑。<br>
-      幼稚園、小學、中學插班、DSE / IB / A-Level、大學申請 — 配合家長簽證落地節奏同步推進子女教育路徑。
+      幼稚園至 DSE / IB / A-Level<br>
+      大學申請 — 配合家長簽證節奏，同步推進子女教育路徑。
     </p>
     <div class="v10-hero-trust">
       <div class="v10-hero-trust-item">
@@ -1517,8 +1534,8 @@
         <span>累計服務家庭</span>
       </div>
       <div class="v10-hero-trust-item">
-        <strong>15 年</strong>
-        <span>立足香港教育經驗</span>
+        <strong>98%</strong>
+        <span>升學錄取率</span>
       </div>
     </div>
   </div>
@@ -1886,7 +1903,7 @@
       <span class="eyebrow">聯絡我們</span>
       <h2>用你最方便的方式，<br>與顧問直接對話。</h2>
     </div>
-    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 56px;">
+    <div class="v10-contact-grid">
       <div style="background: var(--white); border: 1px solid var(--ink-100); border-radius: var(--radius); padding: 40px 32px; text-align: center; box-shadow: var(--shadow-card);">
         <div style="display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, var(--navy) 0%, var(--gold) 100%); color: var(--white); font-size: 1.5rem; margin-bottom: 20px;">📱</div>
         <h4 style="font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 1.15rem; font-weight: 700; color: var(--ink-900); margin: 0 0 10px;">WhatsApp / 微信</h4>

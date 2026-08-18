@@ -17,3 +17,4 @@ node_modules/
 
 # Internal review docs (not for production)
 _*.md
+_cap/

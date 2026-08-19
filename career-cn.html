@@ -530,6 +530,16 @@
   .v10-track-tag { font-size: 0.62rem; letter-spacing: 0.14em; margin-bottom: 8px; }
   .v10-track h3 { font-size: 1.15rem; margin: 0 0 8px; line-height: 1.3; }
   .v10-track p { font-size: 0.88rem; line-height: 1.55; margin: 0 0 12px; }
+  /* v15.4 — pricing card mobile fix (was 3-col horizontal scroll, now 1-col stack) */
+  .v10-packages { grid-template-columns: 1fr !important; gap: 16px; }
+  .v10-package:nth-child(4),
+  .v10-package:nth-child(5) { grid-column: auto !important; }
+  .v10-package { padding: 24px 20px; }
+  .v10-package h4 { font-size: 1.15rem !important; margin: 0 0 10px; line-height: 1.3; }
+  .v10-package-desc { font-size: 0.85rem !important; line-height: 1.5; margin-bottom: 14px; }
+  .v10-package-points li { padding: 6px 0 6px 22px; font-size: 0.82rem !important; line-height: 1.45; }
+  .v10-package-tag { font-size: 0.65rem !important; padding: 3px 10px; margin-bottom: 10px; }
+
 
 }
 @media (max-width: 540px) {

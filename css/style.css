@@ -1960,3 +1960,30 @@ body[data-theme] .sticky-cta:hover {
 .compliance-disclaimer::after { display: none; }
 
 /* ---- End v4.0 ---- */
+
+/* ============================================
+   v15 — Mobile Safety (defensive)
+   Prevents horizontal overflow + forces mobile containers to fit viewport
+   ============================================ */
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+img, video, iframe, table {
+  max-width: 100%;
+}
+@media (max-width: 900px) {
+  .v10-container, .v10-cta-inner, .v10-head,
+  .v10-track, .v10-package, .v10-case, .v10-pricing,
+  .v10-tutor-summary-card,
+  .v10-tracks, .v10-cases, .v10-packages, .v10-pricing-grid, .v10-tutor-grid {
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .v10-hero { padding-left: 0; padding-right: 0; }
+  .v10-container { padding-left: 16px; padding-right: 16px; }
+}

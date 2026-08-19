@@ -1021,13 +1021,16 @@
   flex-shrink: 0;
 }
 
-/* ============ v10-package (3 pricing tiers) ============ */
+/* ============ v10-package (5 plan-based tiers, 3+2 grid) ============ */
 .v10-packages {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   margin-top: 40px;
 }
+/* v14: center the 2 cards in row 2 (cards 4 & 5 → col 1 & col 3, leave col 2 empty) */
+.v10-package:nth-child(4) { grid-column: 1; }
+.v10-package:nth-child(5) { grid-column: 3; }
 .v10-package {
   background: var(--white);
   border: 1px solid var(--ink-100);

@@ -1987,3 +1987,34 @@ img, video, iframe, table {
   .v10-hero { padding-left: 0; padding-right: 0; }
   .v10-container { padding-left: 16px; padding-right: 16px; }
 }
+
+/* ============================================
+   v15.1 — Typography & Layout polish
+   Prevents orphan single-char lines, balances heading wrap,
+   protects CJK+digit tokens (e.g. "一家4口") from splitting.
+   ============================================ */
+@media (max-width: 900px) {
+  /* Balance heading wraps so the last line is not a single orphan */
+  h1, h2, h3, .v10-head h1, .v10-head h2 {
+    text-wrap: balance;
+    -webkit-text-wrap: balance;
+  }
+  /* Long English word safety (Safari/older browsers) */
+  body, p, li, h1, h2, h3, h4 {
+    overflow-wrap: anywhere;
+  }
+  /* Keep CJK+digit token together (e.g. "一家4口", "TTPS 3", "IANG 5") */
+  .case-headline, .case-summary, .reveal, .hero-v4 h1, .hero-v4 h2 {
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+  /* Defend against sticky-CTA overlap on lower sections */
+  body.has-sticky-cta main,
+  body.has-sticky-cta .hero-v4,
+  body.has-sticky-cta section.section-v4 {
+    padding-bottom: 80px;
+  }
+  /* Tighter line-height on very large hero headlines for mobile */
+  .hero-v4 h1 { line-height: 1.1; }
+  .hero-v4 h2 { line-height: 1.2; }
+}

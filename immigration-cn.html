@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="zh-Hans">
 <head>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <meta name="version" content="v17.0-$(date +%s)">
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>香港身份与续签规划 · 高才通 / 优才 / 专才 / 新资本投资者入境 / 留学升港 · 7 年永居 · CareerForge 铸途</title>
@@ -1493,6 +1498,69 @@ img, video, iframe, table { max-width: 100%; }
   .v10-container { padding-left: 16px; padding-right: 16px; }
 }
 
+/* ============ MOBILE SAFETY v17.1 (ND 2026-08-20 pushback hardening) ============ */
+/* Lock all box-sizing + force 100% width on mobile; kill min-widths that overflow nav/ cards */
+*, *::before, *::after { box-sizing: border-box; }
+
+@media (max-width: 768px) {
+  html, body {
+    width: 100% !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+  }
+
+  /* All card-like containers: full width, no fixed pixel widths */
+  .v10-package, .v10-track, .v10-case, .v10-pricing, .v10-cta, .v10-cta-inner,
+  .v10-tutor-summary-card, .v10-why-grid > *, .v10-process > *,
+  .v10-tracks, .v10-cases, .v10-packages, .v10-pricing-grid, .v10-tutor-grid,
+  .v10-hero, .v10-section, .v10-container, .v10-head, .v10-director,
+  .site-header, .site-header .nav, .site-header .nav-actions,
+  .v10-diff-cell, .v10-diff-row, .v10-pathway-grid {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Parent containers control padding only — cards stay edge-to-edge inside */
+  .v10-container { padding-left: 16px !important; padding-right: 16px !important; }
+  .v10-cta { margin-left: 16px !important; margin-right: 16px !important; padding: 48px 20px !important; }
+
+  /* Nav actions + hamburger: never overflow right edge */
+  .site-header .nav-actions { display: flex !important; gap: 8px !important; }
+  .site-header .hamburger { padding: 6px 10px !important; min-width: 36px !important; }
+  .site-header .nav-logo { flex-shrink: 1 !important; min-width: 0 !important; }
+
+  /* Tag/badge: kill min-width that forces 120px pill */
+  .v10-track-tag, .v10-package-tag, .v10-tag {
+    min-width: 0 !important;
+  }
+
+  /* Nav menu items: kill min-width 32px */
+  .site-header .nav-menu a {
+    min-width: 0 !important;
+    padding: 6px 10px !important;
+  }
+
+  /* Comparison table cells: stack / shrink to avoid overflow */
+  .v10-diff-cell {
+    min-width: 0 !important;
+    word-break: break-word !important;
+    overflow-wrap: anywhere !important;
+  }
+  .v10-diff-row {
+    grid-template-columns: 1fr !important;
+  }
+  .v10-diff-row > .v10-diff-them,
+  .v10-diff-row > .v10-diff-us {
+    grid-column: 1 !important;
+    border-left: none !important;
+    border-top: 1px solid rgba(11,25,44,0.08) !important;
+  }
+}
+
 </style>
 
 <header class="site-header">
@@ -1504,7 +1572,7 @@ img, video, iframe, table { max-width: 100%; }
       </a>
       <div class="nav-menu" id="navMenu">
         <a href="index-cn.html">首页</a>
-        <a href="immigration-cn-v17.html" class="active">身份规划</a>
+        <a href="immigration-cn.html" class="active">身份规划</a>
         <a href="education-cn.html">升学规划</a>
         <a href="career-cn.html">求职身价</a>
         <a href="quiz-cn.html">牛马测验</a>
@@ -1875,7 +1943,7 @@ img, video, iframe, table { max-width: 100%; }
       </div>
       <div class="footer-col">
         <h4>业务板塊</h4>
-        <a href="immigration-cn-v17.html">身份與續簽对標</a>
+        <a href="immigration-cn.html">身份與續簽对標</a>
         <a href="education-cn.html">海外與香港升学</a>
         <a href="career-cn.html">求職與身價躍遷</a>
       </div>

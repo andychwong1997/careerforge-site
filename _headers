@@ -1,6 +1,12 @@
-# CareerForge cache-control: HTML 永遠 fetch 最新版
+# CareerForge cache-control: 永遠 fetch 最新版
 # Browser + CDN 都 no-cache，reload 直接見新 deploy
 # https://developers.cloudflare.com/pages/configuration/headers/
+
+/
+  Cache-Control: no-cache, no-store, must-revalidate
+  CDN-Cache-Control: no-cache
+  Pragma: no-cache
+  Expires: 0
 
 /*.html
   Cache-Control: no-cache, no-store, must-revalidate

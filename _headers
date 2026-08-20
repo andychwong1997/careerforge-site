@@ -2,23 +2,15 @@
 # Browser + CDN 都 no-cache，reload 直接見新 deploy
 # https://developers.cloudflare.com/pages/configuration/headers/
 #
-# CRITICAL: CF Pages 自動 308 redirect `/immigration-cn.html` → `/immigration-cn`
-# (extensionless). `/immigration-cn` 唔 match `/*.html` rule，所以要用 wildcard
-# `/immigration*` cover extensionless paths，否則 default cache = 永久 stale。
+# CRITICAL: CF Pages auto 308 redirect `/immigration-cn.html` → `/immigration-cn`
+# (extensionless). 任何 user-facing path (包括 extensionless 同 .html) 都必須 no-cache，
+# 否則 iOS Safari / Telegram WKWebView 永久 cache stale 內容。
+#
+# Trade-off: catch-all `/*` 會 cache-bust 所有 paths 包括 CSS / JS / images.
+# 但 careerforge 而家 stage assets 唔大，每次 reload cost 可接受。
+# 如日後 assets 變大需要 immutable cache, 再 explicit add exception rules.
 
-/
-  Cache-Control: no-cache, no-store, must-revalidate
-  CDN-Cache-Control: no-cache
-  Pragma: no-cache
-  Expires: 0
-
-/*.html
-  Cache-Control: no-cache, no-store, must-revalidate
-  CDN-Cache-Control: no-cache
-  Pragma: no-cache
-  Expires: 0
-
-/immigration*
+/*
   Cache-Control: no-cache, no-store, must-revalidate
   CDN-Cache-Control: no-cache
   Pragma: no-cache

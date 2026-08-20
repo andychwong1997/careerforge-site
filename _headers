@@ -1,6 +1,10 @@
 # CareerForge cache-control: 永遠 fetch 最新版
 # Browser + CDN 都 no-cache，reload 直接見新 deploy
 # https://developers.cloudflare.com/pages/configuration/headers/
+#
+# CRITICAL: CF Pages 自動 308 redirect `/immigration-cn.html` → `/immigration-cn`
+# (extensionless). `/immigration-cn` 唔 match `/*.html` rule，所以要用 wildcard
+# `/immigration*` cover extensionless paths，否則 default cache = 永久 stale。
 
 /
   Cache-Control: no-cache, no-store, must-revalidate
@@ -9,6 +13,12 @@
   Expires: 0
 
 /*.html
+  Cache-Control: no-cache, no-store, must-revalidate
+  CDN-Cache-Control: no-cache
+  Pragma: no-cache
+  Expires: 0
+
+/immigration*
   Cache-Control: no-cache, no-store, must-revalidate
   CDN-Cache-Control: no-cache
   Pragma: no-cache

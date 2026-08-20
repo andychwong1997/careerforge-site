@@ -1,3 +1,5 @@
 /visa         /immigration.html       301
-/visa-cn      /immigration-cn.html    301
+/visa-cn      /immigration-cn-v17.html 301
 /visa-en      /immigration-en.html    301
+
+/immigration-cn.html   /immigration-cn-v17.html   302

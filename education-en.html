@@ -817,6 +817,23 @@
   .v10-director { padding: 36px 24px; }
   .v10-director-stats { grid-template-columns: repeat(2, 1fr); gap: 16px; }
   .v10-cta { padding: 56px 28px; margin: 0 20px; }
+  /* v15.3 — compact track-card mode for mobile (3 per viewport instead of 2) */
+  .v10-track { padding: 22px 20px; }
+  .v10-track-icon { width: 40px; height: 40px; font-size: 1.05rem; margin-bottom: 12px; border-radius: 10px; }
+  .v10-track-tag { font-size: 0.62rem; letter-spacing: 0.14em; margin-bottom: 8px; }
+  .v10-track h3 { font-size: 1.15rem; margin: 0 0 8px; line-height: 1.3; }
+  .v10-track p { font-size: 0.88rem; line-height: 1.55; margin: 0 0 12px; }
+  /* v15.4 — pricing card mobile fix (was 3-col horizontal scroll, now 1-col stack) */
+  .v10-packages { grid-template-columns: 1fr !important; gap: 16px; }
+  .v10-package:nth-child(4),
+  .v10-package:nth-child(5) { grid-column: auto !important; }
+  .v10-package { padding: 24px 20px; }
+  .v10-package h4 { font-size: 1.15rem !important; margin: 0 0 10px; line-height: 1.3; }
+  .v10-package-desc { font-size: 0.85rem !important; line-height: 1.5; margin-bottom: 14px; }
+  .v10-package-points li { padding: 6px 0 6px 22px; font-size: 0.82rem !important; line-height: 1.45; }
+  .v10-package-tag { font-size: 0.65rem !important; padding: 3px 10px; margin-bottom: 10px; }
+
+
 }
 
 
@@ -1472,6 +1489,23 @@
 /* Ensure no-break on key phrases */
 .no-break { white-space: nowrap; display: inline-block; }
 
+
+/* ============ MOBILE SAFETY (v15 defensive) ============ */
+html, body { width: 100%; max-width: 100%; overflow-x: hidden; margin: 0; padding: 0; }
+img, video, iframe, table { max-width: 100%; }
+@media (max-width: 900px) {
+  .v10-container, .v10-cta-inner, .v10-head,
+  .v10-track, .v10-package, .v10-case, .v10-pricing,
+  .v10-tutor-summary-card, .v10-why-grid > *, .v10-process > *,
+  .v10-tracks, .v10-cases, .v10-packages, .v10-pricing-grid, .v10-tutor-grid {
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .v10-hero { padding-left: 0; padding-right: 0; }
+  .v10-container { padding-left: 16px; padding-right: 16px; }
+}
+
 </style>
 
 <header class="site-header">
@@ -1641,7 +1675,7 @@ CareerForge 鑄途 — Hong Kong education, 一站式陪跑。<br>
   <div class="v10-container">
     <div class="v10-head">
       <span class="eyebrow">Service flow · 3–6 cases月</span>
-      <h2>From諮詢到enrollment，<br>4 步全程有人跟。</h2>
+      <h2>From諮詢到enrollment，<br>4&nbsp;步全程有人跟。</h2>
       <p class="lede">Not piecemeal tiered pricing — 是From 1 位資深consultants + 學科Tutor Team全程跟進  4 步流程。eachEach step has clear deliverables，不會「下一步再算」。</p>
     </div>
 
@@ -1706,7 +1740,7 @@ CareerForge 鑄途 — Hong Kong education, 一站式陪跑。<br>
 
       <div class="v10-tutor-summary-card">
         <span class="v10-tutor-summary-eyebrow">師資優勢</span>
-        <h3>5 大核心優勢</h3>
+        <h3>5&nbsp;大核心優勢</h3>
         <ul class="v10-tutor-summary-list">
           <li><strong>專職而非兼職</strong> — 全職員工，非外判university生或兼職tutors</li>
           <li><strong>教材編制能力</strong> — 內部龐大教材庫，each年為school編制校本材料</li>
@@ -1886,7 +1920,7 @@ CareerForge 鑄途 — Hong Kong education, 一站式陪跑。<br>
     <div class="v10-cta">
       <div class="v10-cta-inner">
         <span class="v10-cta-eyebrow">START YOUR JOURNEY</span>
-        <h2>第一步：30 分鐘免費升學assessment</h2>
+        <h2>第一步：30&nbsp;分鐘免費升學assessment</h2>
         <p>After submitting basic information 24 consultant will reply within 24 hours — Includeschildren學業Initial assessment + 3 升學pathway建議（DSE / IB / A-Level）+ 預計所需time + 後續pathway規劃。</p>
         <div class="v10-cta-actions">
           <a href="https://wa.me/85291371211" class="v10-cta-btn v10-cta-primary">WhatsApp 立即預約</a>

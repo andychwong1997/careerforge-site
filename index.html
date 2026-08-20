@@ -522,6 +522,23 @@
   .v10-pathway-grid { grid-template-columns: 1fr; }
   .v10-contact-grid { grid-template-columns: 1fr; }
   .v10-cta { padding: 56px 28px; margin: 0 20px; }
+  /* v15.3 — compact track-card mode for mobile (3 per viewport instead of 2) */
+  .v10-track { padding: 22px 20px; }
+  .v10-track-icon { width: 40px; height: 40px; font-size: 1.05rem; margin-bottom: 12px; border-radius: 10px; }
+  .v10-track-tag { font-size: 0.62rem; letter-spacing: 0.14em; margin-bottom: 8px; }
+  .v10-track h3 { font-size: 1.15rem; margin: 0 0 8px; line-height: 1.3; }
+  .v10-track p { font-size: 0.88rem; line-height: 1.55; margin: 0 0 12px; }
+  /* v15.4 — pricing card mobile fix (was 3-col horizontal scroll, now 1-col stack) */
+  .v10-packages { grid-template-columns: 1fr !important; gap: 16px; }
+  .v10-package:nth-child(4),
+  .v10-package:nth-child(5) { grid-column: auto !important; }
+  .v10-package { padding: 24px 20px; }
+  .v10-package h4 { font-size: 1.15rem !important; margin: 0 0 10px; line-height: 1.3; }
+  .v10-package-desc { font-size: 0.85rem !important; line-height: 1.5; margin-bottom: 14px; }
+  .v10-package-points li { padding: 6px 0 6px 22px; font-size: 0.82rem !important; line-height: 1.45; }
+  .v10-package-tag { font-size: 0.65rem !important; padding: 3px 10px; margin-bottom: 10px; }
+
+
 }
 
 /* ============ V11 MOBILE TYPOGRAPHY FIX ============ */
@@ -623,6 +640,23 @@
 }
 .hamburger.active span:nth-child(3) {
   transform: translateY(-7px) rotate(-45deg);
+}
+
+
+/* ============ MOBILE SAFETY (v15 defensive) ============ */
+html, body { width: 100%; max-width: 100%; overflow-x: hidden; margin: 0; padding: 0; }
+img, video, iframe, table { max-width: 100%; }
+@media (max-width: 900px) {
+  .v10-container, .v10-cta-inner, .v10-head,
+  .v10-track, .v10-package, .v10-case, .v10-pricing,
+  .v10-tutor-summary-card, .v10-why-grid > *, .v10-process > *,
+  .v10-tracks, .v10-cases, .v10-packages, .v10-pricing-grid, .v10-tutor-grid {
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .v10-hero { padding-left: 0; padding-right: 0; }
+  .v10-container { padding-left: 16px; padding-right: 16px; }
 }
 
 </style>
@@ -749,7 +783,7 @@
   <div class="v10-container">
     <div class="v10-head dark">
       <span class="eyebrow">3 分鐘牛馬測驗</span>
-      <h2>不知自己適合哪一條路？<br>3 分鐘測一測。</h2>
+      <h2>不知自己適合哪一條路？<br>3&nbsp;分鐘測一測。</h2>
       <p class="lede">回答 5 條問題，了解自己的牛馬指數 + 適合的香港身份、升學、職涯路徑方向。</p>
     </div>
     <div class="v10-quiz-cta-actions" style="text-align: center; margin-top: 32px;">
@@ -802,7 +836,7 @@
     <div class="v10-cta">
       <div class="v10-cta-inner">
         <span class="v10-cta-eyebrow">START YOUR JOURNEY</span>
-        <h2>第一步：30 分鐘免費資格評估</h2>
+        <h2>第一步：30&nbsp;分鐘免費資格評估</h2>
         <p>提交基本资料后 24 小时内收到顾问回复 — 包含 3 大業務板塊匹配度评分 + 预计所需时间 + 后续路径建议。</p>
         <div class="v10-cta-actions">
           <a href="https://wa.me/85291371211" class="v10-cta-btn v10-cta-primary">WhatsApp 立即預約</a>

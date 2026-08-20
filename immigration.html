@@ -807,6 +807,23 @@
   .v10-director { padding: 36px 24px; }
   .v10-director-stats { grid-template-columns: repeat(2, 1fr); gap: 16px; }
   .v10-cta { padding: 56px 28px; margin: 0 20px; }
+  /* v15.3 — compact track-card mode for mobile (3 per viewport instead of 2) */
+  .v10-track { padding: 22px 20px; }
+  .v10-track-icon { width: 40px; height: 40px; font-size: 1.05rem; margin-bottom: 12px; border-radius: 10px; }
+  .v10-track-tag { font-size: 0.62rem; letter-spacing: 0.14em; margin-bottom: 8px; }
+  .v10-track h3 { font-size: 1.15rem; margin: 0 0 8px; line-height: 1.3; }
+  .v10-track p { font-size: 0.88rem; line-height: 1.55; margin: 0 0 12px; }
+  /* v15.4 — pricing card mobile fix (was 3-col horizontal scroll, now 1-col stack) */
+  .v10-packages { grid-template-columns: 1fr !important; gap: 16px; }
+  .v10-package:nth-child(4),
+  .v10-package:nth-child(5) { grid-column: auto !important; }
+  .v10-package { padding: 24px 20px; }
+  .v10-package h4 { font-size: 1.15rem !important; margin: 0 0 10px; line-height: 1.3; }
+  .v10-package-desc { font-size: 0.85rem !important; line-height: 1.5; margin-bottom: 14px; }
+  .v10-package-points li { padding: 6px 0 6px 22px; font-size: 0.82rem !important; line-height: 1.45; }
+  .v10-package-tag { font-size: 0.65rem !important; padding: 3px 10px; margin-bottom: 10px; }
+
+
 }
 
 
@@ -1021,13 +1038,16 @@
   flex-shrink: 0;
 }
 
-/* ============ v10-package (3 pricing tiers) ============ */
+/* ============ v10-package (5 plan-based tiers, 3+2 grid) ============ */
 .v10-packages {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   margin-top: 40px;
 }
+/* v14: center the 2 cards in row 2 (cards 4 & 5 → col 1 & col 3, leave col 2 empty) */
+.v10-package:nth-child(4) { grid-column: 1; }
+.v10-package:nth-child(5) { grid-column: 3; }
 .v10-package {
   background: var(--white);
   border: 1px solid var(--ink-100);
@@ -1456,6 +1476,23 @@
 /* Ensure no-break on key phrases */
 .no-break { white-space: nowrap; display: inline-block; }
 
+
+/* ============ MOBILE SAFETY (v15 defensive) ============ */
+html, body { width: 100%; max-width: 100%; overflow-x: hidden; margin: 0; padding: 0; }
+img, video, iframe, table { max-width: 100%; }
+@media (max-width: 900px) {
+  .v10-container, .v10-cta-inner, .v10-head,
+  .v10-track, .v10-package, .v10-case, .v10-pricing,
+  .v10-tutor-summary-card, .v10-why-grid > *, .v10-process > *,
+  .v10-tracks, .v10-cases, .v10-packages, .v10-pricing-grid, .v10-tutor-grid {
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .v10-hero { padding-left: 0; padding-right: 0; }
+  .v10-container { padding-left: 16px; padding-right: 16px; }
+}
+
 </style>
 
 <header class="site-header">
@@ -1494,7 +1531,7 @@
       香港身份與續簽完整對標 · SINCE 2006
     </span>
     <h1 class="v10-hero-title">
-      從首簽到<span class="gold no-break">7 年永居</span>，<br>
+      從首簽到<span class="gold no-break">7&nbsp;年永居</span>，<br>
       同一 CareerForge 主線。
     </h1>
     <p class="v10-hero-sub">
@@ -1732,7 +1769,7 @@
   <div class="v10-container">
     <div class="v10-head">
       <span class="eyebrow">成功案例</span>
-      <h2>每一個案例，<br>都是真實家庭的 7 年躍遷。</h2>
+      <h2>每一個案例，<br>都是真實家庭的&nbsp;7&nbsp;年躍遷。</h2>
       <p class="lede">以下案例由 CareerForge 顧問團隊於 2022–2025 年服務的真實個案 — 為保護家庭私隱，姓名按公開資料標註。</p>
     </div>
 
@@ -1791,7 +1828,7 @@
     <div class="v10-cta">
       <div class="v10-cta-inner">
         <span class="v10-cta-eyebrow">START YOUR JOURNEY</span>
-        <h2>第一步：30 分鐘免費資格評估</h2>
+        <h2>第一步：30&nbsp;分鐘免費資格評估</h2>
         <p>提交基本資料後 24 小時內收到顧問回覆 — 包含 5 大計劃匹配度評分 + 預計所需時間 + 後續路徑規劃。</p>
         <div class="v10-cta-actions">
           <a href="https://wa.me/85291371211" class="v10-cta-btn v10-cta-primary">WhatsApp 立即預約</a>

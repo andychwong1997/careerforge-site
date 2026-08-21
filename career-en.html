@@ -14,6 +14,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Inter:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <script>(function(){function setLang(l){document.cookie='cf_lang='+l+'; path=/; max-age=31536000';try{localStorage.setItem('cf_lang',l);}catch(e){}}document.addEventListener('click',function(e){var t=e.target.closest('[data-lang-target]');if(t)setLang(t.getAttribute('data-lang-target'));});})();</script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js?v=v18.5').catch(() => {});
+      });
+    }
+  </script>
 </head>
 <body data-theme="career">
 

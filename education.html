@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant" data-version="v18.9">
+<html lang="zh-Hant" data-version="v18.11">
 <head>
   <script>
     // CareerForge v18.8+ iPhone Safari disk cache fix
@@ -7,7 +7,7 @@
     // This script uses fetch({cache: 'no-store'}) which iPhone Safari DOES honor,
     // then replaces current page if server-side version doesn't match expected.
     (function() {
-      var EXPECTED_VER = 'v18.9';
+      var EXPECTED_VER = 'v18.11';
       var path = location.pathname + '?cb=' + Date.now();
       if (location.href.indexOf('cb=') !== -1) return;
       fetch(path, {cache: 'no-store'})
@@ -1580,7 +1580,7 @@ img, video, iframe, table { max-width: 100%; }
     </p>
     <div class="v10-hero-trust">
       <div class="v10-hero-trust-item">
-        <strong>15 年</strong>
+        <strong><span class="num-unit"><span class="num-unit">15 年</span></span></strong>
         <span>立足香港教育經驗</span>
       </div>
       <div class="v10-hero-trust-item">
@@ -1622,12 +1622,12 @@ img, video, iframe, table { max-width: 100%; }
       <div class="v10-why-card">
         <span class="v10-why-num">138</span>
         <span class="v10-why-label">內地高校招收</span>
-        <p class="v10-why-desc">清華、北大、復旦、交大 — 129 所內地頂尖學府以 DSE 成績直接錄取，最低門檻僅 3-3-2-2。</p>
+        <p class="v10-why-desc">清華、北大、復旦、交大 — <span class="num-unit">129 所</span>內地頂尖學府以 DSE 成績直接錄取，最低門檻僅 3-3-2-2。</p>
       </div>
       <div class="v10-why-card">
         <span class="v10-why-num">172</span>
         <span class="v10-why-label">免簽國家護照</span>
-        <p class="v10-why-desc">完成 7 年永居後取得香港護照，免簽全球 172 個國家及地區，雙重身份優勢。</p>
+        <p class="v10-why-desc">完成 <span class="num-unit">7 年</span>永居後取得香港護照，免簽全球 <span class="num-unit">172 個</span>國家及地區，雙重身份優勢。</p>
       </div>
     </div>
 
@@ -1640,7 +1640,7 @@ img, video, iframe, table { max-width: 100%; }
       <div class="v10-why-card">
         <span class="v10-why-num">3 + 3</span>
         <span class="v10-why-label">無中考直通高中</span>
-        <p class="v10-why-desc">香港中學初中 3 年 + 高中 3 年（高中屬義務教育），沒有內地「中考」分流壓力。</p>
+        <p class="v10-why-desc">香港中學初中 <span class="num-unit"><span class="num-unit">3 年</span></span> + 高中 <span class="num-unit"><span class="num-unit">3 年</span></span>（高中屬義務教育），沒有內地「中考」分流壓力。</p>
       </div>
       <div class="v10-why-card">
         <span class="v10-why-num">38.5%</span>
@@ -1650,7 +1650,7 @@ img, video, iframe, table { max-width: 100%; }
       <div class="v10-why-card">
         <span class="v10-why-num">2+2</span>
         <span class="v10-why-label">副學士黃金跳板</span>
-        <p class="v10-why-desc">香港 2 年副學士 + 2 年本科 = 完整本科學歷（與 4 年制本科完全一致），多一次選擇機會。</p>
+        <p class="v10-why-desc">香港 <span class="num-unit">2 年</span>副學士 + <span class="num-unit">2 年</span>本科 = 完整本科學歷（與 <span class="num-unit">4 年</span>制本科完全一致），多一次選擇機會。</p>
       </div>
     </div>
   </div>
@@ -1660,9 +1660,9 @@ img, video, iframe, table { max-width: 100%; }
 <section class="v10-section white" id="curriculum">
   <div class="v10-container">
     <div class="v10-head">
-      <span class="eyebrow">3 條升學路徑</span>
+      <span class="eyebrow"><span class="num-unit">3 條</span>升學路徑</span>
       <h2>DSE / IB / A-Level，<br>按孩子節奏揀一條路。</h2>
-      <p class="lede">香港中學文憑（DSE）、國際預科（IB）、英國高中（A-Level）— 3 個主流課程各有定位。我們按家庭目標、孩子能力、英語水平、升學方向，配對最合適的一條。</p>
+      <p class="lede">香港中學文憑（DSE）、國際預科（IB）、英國高中（A-Level）— <span class="num-unit">3 個</span>主流課程各有定位。我們按家庭目標、孩子能力、英語水平、升學方向，配對最合適的一條。</p>
     </div>
 
     <div class="v10-tracks">
@@ -1679,7 +1679,7 @@ img, video, iframe, table { max-width: 100%; }
         <span class="v10-track-icon">IB</span>
         <span class="v10-track-tag">IBDP · 國際預科</span>
         <h3>國際預科證書</h3>
-        <p>由國際文憑組織（IBO）設計的 2 年制預科，強調跨學科思考與全球視野。香港 30+ 所國際學校提供。適合英語能力強、自學能力高的學生。</p>
+        <p>由國際文憑組織（IBO）設計的 <span class="num-unit">2 年</span>制預科，強調跨學科思考與全球視野。香港 30+ 所國際學校提供。適合英語能力強、自學能力高的學生。</p>
       </div>
 
       <!-- A-Level -->
@@ -1697,9 +1697,9 @@ img, video, iframe, table { max-width: 100%; }
 <section class="v10-section canvas" id="service">
   <div class="v10-container">
     <div class="v10-head">
-      <span class="eyebrow">服務流程 · 3–6 個月</span>
+      <span class="eyebrow">服務流程 · 3–<span class="num-unit">6 個</span>月</span>
       <h2>由諮詢到入學，<br>4&nbsp;步全程有人跟。</h2>
-      <p class="lede">不是分階段計費的拼湊服務 — 是由 1 位資深顧問 + 學科導師團隊全程跟進的 4 步流程。每一步都有明確交付物，不會「下一步再算」。</p>
+      <p class="lede">不是分階段計費的拼湊服務 — 是由 <span class="num-unit">1 位</span>資深顧問 + 學科導師團隊全程跟進的 <span class="num-unit">4 步</span>流程。每一步都有明確交付物，不會「下一步再算」。</p>
     </div>
 
     <div class="v10-process">
@@ -1708,7 +1708,7 @@ img, video, iframe, table { max-width: 100%; }
         <span class="v10-process-step-tag">STEP 01</span>
         <h4>初步諮詢</h4>
         <p>了解家長需求、說明香港教育制度、搜集學生校內成績。</p>
-        <p class="step-detail">30 分鐘免費訪談，結合家庭目標、孩子能力、預算區間給出初步路徑建議。</p>
+        <p class="step-detail"><span class="num-unit">30 分鐘</span>免費訪談，結合家庭目標、孩子能力、預算區間給出初步路徑建議。</p>
       </div>
 
       <div class="v10-process-step">
@@ -1723,7 +1723,7 @@ img, video, iframe, table { max-width: 100%; }
         <span class="v10-process-step-num">03</span>
         <span class="v10-process-step-tag">STEP 03</span>
         <h4>選校策略</h4>
-        <p>結合成績、興趣、家庭目標，找出 8–20 間目標學校。</p>
+        <p>結合成績、興趣、家庭目標，找出 8–<span class="num-unit">20 間</span>目標學校。</p>
         <p class="step-detail">首選 / 次選 / 保底三層梯隊，覆蓋本地津校、直資、私立、國際學校 4 大類別。</p>
       </div>
 
@@ -1792,11 +1792,11 @@ img, video, iframe, table { max-width: 100%; }
         <h4>評估 + 諮詢</h4>
         <p class="v10-package-desc">適合剛開始考慮升學的家庭 — 想先了解子女能力 + 適合的路徑方向。</p>
         <ul class="v10-package-points">
-          <li>30 分鐘免費初步諮詢</li>
+          <li><span class="num-unit">30 分鐘</span>免費初步諮詢</li>
           <li>3 小時學業評估（英文 + 數學）</li>
           <li>1 周後評估報告 + 升學路徑建議</li>
-          <li>3 條升學路徑分析（DSE / IB / A-Level）</li>
-          <li>選校方向初稿（8–20 間目標學校）</li>
+          <li><span class="num-unit">3 條</span>升學路徑分析（DSE / IB / A-Level）</li>
+          <li>選校方向初稿（8–<span class="num-unit">20 間</span>目標學校）</li>
         </ul>
       </div>
 
@@ -1807,10 +1807,10 @@ img, video, iframe, table { max-width: 100%; }
         <p class="v10-package-desc">適合已有明確升學目標的家庭 — 由評估到入學全程一條龍跟進。</p>
         <ul class="v10-package-points">
           <li>套餐 A 全部內容</li>
-          <li>1 位資深顧問 + 學科導師團隊全程跟進</li>
+          <li><span class="num-unit">1 位</span>資深顧問 + 學科導師團隊全程跟進</li>
           <li>選校策略 + 三層梯隊（首選 / 次選 / 保底）</li>
           <li>報名、文件準備、面試訓練一條龍</li>
-          <li>3–6 個月服務期，入學後跟進 1 學期</li>
+          <li>3–<span class="num-unit">6 個</span>月服務期，入學後跟進 1 學期</li>
           <li>退款保證寫入合約（25% / 50% 條件）</li>
         </ul>
       </div>
@@ -1903,7 +1903,7 @@ img, video, iframe, table { max-width: 100%; }
 
       <div class="v10-case">
         <span class="v10-case-icon">★</span>
-        <p class="v10-case-quote">「啟思中學 IBMYP 學生，9 月開始補習，下學期成功考入新加坡國際學校」</p>
+        <p class="v10-case-quote">「啟思中學 IBMYP 學生，<span class="num-unit">9 月</span>開始補習，下學期成功考入新加坡國際學校」</p>
         <span class="v10-case-meta">國際學校轉學 · 2025 學年</span>
       </div>
 
@@ -1915,13 +1915,13 @@ img, video, iframe, table { max-width: 100%; }
 
       <div class="v10-case">
         <span class="v10-case-icon">★</span>
-        <p class="v10-case-quote">「8 月下旬來港，由插班試英文『白卷』到 10 月份成功獲得高中取錄」</p>
+        <p class="v10-case-quote">「<span class="num-unit">8 月</span>下旬來港，由插班試英文『白卷』到 <span class="num-unit">10 月</span>份成功獲得高中取錄」</p>
         <span class="v10-case-meta">高中插班 · 2025 學年</span>
       </div>
 
       <div class="v10-case">
         <span class="v10-case-icon">★</span>
-        <p class="v10-case-quote">「兩姊妹申請 8 間一線幼稚園，7 間取錄，最終選定九龍真光中學（幼稚園部）」</p>
+        <p class="v10-case-quote">「兩姊妹申請 <span class="num-unit">8 間</span>一線幼稚園，<span class="num-unit">7 間</span>取錄，最終選定九龍真光中學（幼稚園部）」</p>
         <span class="v10-case-meta">幼稚園入學 · 2024 學年</span>
       </div>
     </div>
@@ -1944,10 +1944,10 @@ img, video, iframe, table { max-width: 100%; }
       <div class="v10-cta-inner">
         <span class="v10-cta-eyebrow">START YOUR JOURNEY</span>
         <h2>第一步：30&nbsp;分鐘免費升學評估</h2>
-        <p>提交基本資料後 24 小時內收到顧問回覆 — 包含子女學業初步評估 + 3 條升學路徑建議（DSE / IB / A-Level）+ 預計所需時間 + 後續路徑規劃。</p>
+        <p>提交基本資料後 24 小時內收到顧問回覆 — 包含子女學業初步評估 + <span class="num-unit">3 條</span>升學路徑建議（DSE / IB / A-Level）+ 預計所需時間 + 後續路徑規劃。</p>
         <div class="v10-cta-actions">
           <a href="https://wa.me/85291371211" class="v10-cta-btn v10-cta-primary">WhatsApp 立即預約</a>
-          <a href="quiz.html" class="v10-cta-btn v10-cta-secondary">先做 3 分鐘牛馬測驗</a>
+          <a href="quiz.html" class="v10-cta-btn v10-cta-secondary">先做 <span class="num-unit">3 分鐘</span>牛馬測驗</a>
         </div>
       </div>
     </div>

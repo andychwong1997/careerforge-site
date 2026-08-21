@@ -2086,3 +2086,45 @@ p, .v10-pillar-desc, .v10-track p, .v10-package-desc, .lede, .card-description {
   .v10-pillar-title, .card-title { font-size: 18px; line-height: 1.4; }
   .v10-pillar-num, .eyebrow { font-size: 13px; }
 }
+
+/* ============ v18.11 — Global Mobile Typography Hardening ============ */
+/* Goal: prevent horizontal overflow, text truncation, orphan punctuation
+   on mobile. Deliberately skips text-align: justify + text-justify: inter-character
+   (v18.6 trial confirmed causes unnatural CJK character stretching, ND feedback
+   '好唔自然' → v18.7 revert). */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+p, span, h1, h2, h3, h4, h5, h6, li, .step-desc, .description-text,
+.v10-pillar-desc, .v10-track p, .card-text, .card-desc,
+.v10-step-desc, .v10-case-quote, .lede {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+p, .step-desc, .description-text, .v10-pillar-desc, .v10-track p,
+.card-text, .v10-step-desc, .lede {
+  line-break: strict;
+  -webkit-line-break: after-white-space;
+}
+
+/* Unit + number keep-together utility class (wrap number+unit in <span class="num-unit">) */
+.num-unit {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  /* Container overflow protection */
+  .step-card, .v10-step, .v10-pillar, .v10-package, .v10-case,
+  [class*="card"], [class*="step"] {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+  body {
+    overflow-x: hidden;
+  }
+}

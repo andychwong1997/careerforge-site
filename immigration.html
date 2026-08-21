@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant" data-version="v18.9">
+<html lang="zh-Hant" data-version="v18.10">
 <head>
   <script>
     // CareerForge v18.8+ iPhone Safari disk cache fix
@@ -7,7 +7,7 @@
     // This script uses fetch({cache: 'no-store'}) which iPhone Safari DOES honor,
     // then replaces current page if server-side version doesn't match expected.
     (function() {
-      var EXPECTED_VER = 'v18.9';
+      var EXPECTED_VER = 'v18.10';
       var path = location.pathname + '?cb=' + Date.now();
       if (location.href.indexOf('cb=') !== -1) return;
       fetch(path, {cache: 'no-store'})
@@ -1300,6 +1300,73 @@
   .v10-diff-cell { padding: 10px 8px; font-size: 0.8rem; }
 }
 
+/* ============ v18.9 — Mobile Comparison Cards (vs 一般中介) ============ */
+/* Desktop: hide mobile cards, show 3-column table */
+/* Mobile <=768px: hide 3-column table, show vertical comparison cards */
+.v10-diff-mobile { display: none; }
+.v10-diff-mobile-row .v10-diff-cross {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  background: #c8c8c8;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .v10-diff-table { display: none; }
+  .v10-diff-mobile { display: block; }
+
+  .v10-diff-mobile-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 18px 16px;
+    margin-bottom: 14px;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+    border: 1px solid rgba(0,0,0,0.04);
+  }
+
+  .v10-diff-mobile-label {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--navy);
+    margin: 0 0 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--ink-100);
+  }
+
+  .v10-diff-mobile-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    margin-bottom: 6px;
+    font-size: 14px;
+    line-height: 1.65;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .v10-diff-mobile-row.us {
+    background: rgba(212,175,55,0.10);
+    color: var(--navy);
+    font-weight: 500;
+  }
+
+  .v10-diff-mobile-row.them {
+    background: #f5f5f5;
+    color: #777;
+  }
+
+  .v10-diff-mobile-row:last-child { margin-bottom: 0; }
+}
+
 
 /* ============ V11 NAVBAR (logo redesign) ============ */
 .site-header {
@@ -1761,28 +1828,57 @@ img, video, iframe, table { max-width: 100%; }
       </div>
       <div class="v10-diff-row">
         <div class="v10-diff-cell v10-diff-label">顧問團隊</div>
-        <div class="v10-diff-cell v10-diff-us"><span class="v10-diff-check">✓</span> 公司專屬顧問，7 年 1 對 1</div>
-        <div class="v10-diff-cell v10-diff-them">外判兼職顧問，每次換人</div>
+        <div class="v10-diff-cell v10-diff-us"><span class="v10-diff-check">✓</span> 公司專屬顧問，7&nbsp;年&nbsp;1對1</div>
+        <div class="v10-diff-cell v10-diff-them">外判兼職顧問，頻繁換人</div>
       </div>
       <div class="v10-diff-row">
         <div class="v10-diff-cell v10-diff-label">入境處對標</div>
         <div class="v10-diff-cell v10-diff-us"><span class="v10-diff-check">✓</span> 持續跟進審查指標更新</div>
-        <div class="v10-diff-cell v10-diff-them">一次性遞交，跟進有限</div>
+        <div class="v10-diff-cell v10-diff-them">一次性遞交，缺乏跟進</div>
       </div>
       <div class="v10-diff-row">
         <div class="v10-diff-cell v10-diff-label">續簽預警</div>
-        <div class="v10-diff-cell v10-diff-us"><span class="v10-diff-check">✓</span> 2 年到期前主動預審</div>
-        <div class="v10-diff-cell v10-diff-them">等客戶主動查詢</div>
+        <div class="v10-diff-cell v10-diff-us"><span class="v10-diff-check">✓</span> 到期前&nbsp;2&nbsp;年主動預審</div>
+        <div class="v10-diff-cell v10-diff-them">無主動提醒，需客戶查詢</div>
       </div>
       <div class="v10-diff-row">
         <div class="v10-diff-cell v10-diff-label">子女教育</div>
-        <div class="v10-diff-cell v10-diff-us"><span class="v10-diff-check">✓</span> 簽證 + 升學同步規劃</div>
-        <div class="v10-diff-cell v10-diff-them">純簽證，無升學支援</div>
+        <div class="v10-diff-cell v10-diff-us"><span class="v10-diff-check">✓</span> 簽證&nbsp;+&nbsp;升學同步規劃</div>
+        <div class="v10-diff-cell v10-diff-them">純辦簽證，無升學支援</div>
       </div>
       <div class="v10-diff-row">
-        <div class="v10-diff-cell v10-diff-label">7 年永居</div>
-        <div class="v10-diff-cell v10-diff-us"><span class="v10-diff-check">✓</span> 證據鏈完整建立</div>
-        <div class="v10-diff-cell v10-diff-them">一般無永居規劃</div>
+        <div class="v10-diff-cell v10-diff-label">7&nbsp;年永居</div>
+        <div class="v10-diff-cell v10-diff-us"><span class="v10-diff-check">✓</span> 完整建立&nbsp;7&nbsp;年證據鏈</div>
+        <div class="v10-diff-cell v10-diff-them">無長期永居規劃</div>
+      </div>
+    </div>
+
+    <!-- MOBILE COMPARISON CARDS (hidden on desktop, shown on <=768px) -->
+    <div class="v10-diff-mobile">
+      <div class="v10-diff-mobile-item">
+        <h3 class="v10-diff-mobile-label">顧問團隊</h3>
+        <div class="v10-diff-mobile-row us"><span class="v10-diff-check">✓</span><span>公司專屬顧問，7&nbsp;年&nbsp;1對1</span></div>
+        <div class="v10-diff-mobile-row them"><span class="v10-diff-cross">✗</span><span>外判兼職顧問，頻繁換人</span></div>
+      </div>
+      <div class="v10-diff-mobile-item">
+        <h3 class="v10-diff-mobile-label">入境處對標</h3>
+        <div class="v10-diff-mobile-row us"><span class="v10-diff-check">✓</span><span>持續跟進審查指標更新</span></div>
+        <div class="v10-diff-mobile-row them"><span class="v10-diff-cross">✗</span><span>一次性遞交，缺乏跟進</span></div>
+      </div>
+      <div class="v10-diff-mobile-item">
+        <h3 class="v10-diff-mobile-label">續簽預警</h3>
+        <div class="v10-diff-mobile-row us"><span class="v10-diff-check">✓</span><span>到期前&nbsp;2&nbsp;年主動預審</span></div>
+        <div class="v10-diff-mobile-row them"><span class="v10-diff-cross">✗</span><span>無主動提醒，需客戶查詢</span></div>
+      </div>
+      <div class="v10-diff-mobile-item">
+        <h3 class="v10-diff-mobile-label">子女教育</h3>
+        <div class="v10-diff-mobile-row us"><span class="v10-diff-check">✓</span><span>簽證&nbsp;+&nbsp;升學同步規劃</span></div>
+        <div class="v10-diff-mobile-row them"><span class="v10-diff-cross">✗</span><span>純辦簽證，無升學支援</span></div>
+      </div>
+      <div class="v10-diff-mobile-item">
+        <h3 class="v10-diff-mobile-label">7&nbsp;年永居</h3>
+        <div class="v10-diff-mobile-row us"><span class="v10-diff-check">✓</span><span>完整建立&nbsp;7&nbsp;年證據鏈</span></div>
+        <div class="v10-diff-mobile-row them"><span class="v10-diff-cross">✗</span><span>無長期永居規劃</span></div>
       </div>
     </div>
   </div>

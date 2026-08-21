@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mobile Audit · CareerForge 鑄途</title>
+<meta name="description" content="CareerForge 每日自动以 iPhone 14 viewport 测试全站 18 个页面，确保零水平 overflow。">
+<link rel="icon" type="image/png" href="assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script>(function(){function setLang(l){document.cookie='cf_lang='+l+'; path=/; max-age=31536000';try{localStorage.setItem('cf_lang',l);}catch(e){}}document.addEventListener('click',function(e){var t=e.target.closest('[data-lang-target]');if(t)setLang(t.getAttribute('data-lang-target'));});})();</script>
+<style>
+/* ============ V10 Design Tokens (matches site) ============ */
+:root {
+  --navy: #0B192C;
+  --navy-700: #102542;
+  --navy-500: #1B3A5C;
+  --gold: #D4AF37;
+  --gold-100: #F7EFC9;
+  --canvas: #F7F8FA;
+  --ink-900: #0B192C;
+  --ink-700: #3A4A5C;
+  --ink-500: #6B7A8A;
+  --ink-100: #E5E9EE;
+  --green: #10B981;
+  --red: #EF4444;
+  --shadow-card: 0 4px 20px rgba(0,0,0,0.06);
+}
+
+/* ============ HERO (Navy + Gold) ============ */
+.audit-hero {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-700) 100%);
+  padding: 100px 0 80px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+.audit-hero::before {
+  content: "";
+  position: absolute; top: -200px; right: -200px;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(212,175,55,0.15) 0%, transparent 65%);
+  border-radius: 50%;
+}
+.audit-hero-inner {
+  max-width: 1240px; margin: 0 auto; padding: 0 24px;
+  position: relative; z-index: 1;
+}
+.audit-hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 500;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 24px;
+}
+.audit-hero-eyebrow::before {
+  content: ""; width: 8px; height: 8px; background: var(--gold); border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+.audit-hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.4rem, 6vw, 4.5rem);
+  font-weight: 700; line-height: 1.1;
+  margin: 0 0 24px; color: white;
+}
+.audit-hero-title .gold { color: var(--gold); }
+.audit-hero-sub {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: rgba(255,255,255,0.78);
+  max-width: 720px; line-height: 1.65;
+}
+
+/* ============ STATS GRID ============ */
+.audit-stats {
+  max-width: 1240px; margin: -60px auto 0; padding: 0 24px;
+  position: relative; z-index: 2;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+}
+.audit-stat-card {
+  background: white; border-radius: 16px;
+  padding: 32px 24px; text-align: center;
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--ink-100);
+}
+.audit-stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700; color: var(--navy);
+  line-height: 1; display: block;
+}
+.audit-stat-num.pass { color: var(--green); }
+.audit-stat-num.zero { color: var(--green); }
+.audit-stat-label {
+  font-family: 'Inter', sans-serif; font-size: 0.9rem;
+  color: var(--ink-500); margin-top: 12px;
+  letter-spacing: 0.05em;
+}
+
+/* ============ SECTIONS ============ */
+.audit-section {
+  max-width: 1240px; margin: 80px auto; padding: 0 24px;
+}
+.audit-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 600; color: var(--ink-900);
+  margin: 0 0 32px;
+}
+.audit-section-narrow { max-width: 880px; }
+
+/* ============ TABLE ============ */
+.audit-table-wrap {
+  overflow-x: auto;
+  border-radius: 12px;
+  border: 1px solid var(--ink-100);
+  background: white;
+  box-shadow: var(--shadow-card);
+}
+.audit-table { width: 100%; border-collapse: collapse; }
+.audit-table th {
+  background: var(--canvas);
+  padding: 14px 18px;
+  font-family: 'Inter', sans-serif; font-size: 0.85rem;
+  font-weight: 600; color: var(--ink-700);
+  text-align: left; letter-spacing: 0.04em;
+  border-bottom: 2px solid var(--ink-100);
+}
+.audit-table td {
+  padding: 14px 18px;
+  font-family: 'Inter', sans-serif; font-size: 0.95rem;
+  border-bottom: 1px solid var(--ink-100);
+  color: var(--ink-900);
+}
+.audit-table tr:last-child td { border-bottom: none; }
+.audit-table a { color: var(--ink-900); border-bottom: 1px dashed var(--gold); }
+.audit-table a:hover { color: var(--gold); border-bottom-style: solid; }
+
+/* ============ BADGES ============ */
+.audit-badge {
+  display: inline-block; padding: 4px 10px;
+  font-family: 'Inter', sans-serif; font-size: 0.78rem;
+  font-weight: 600; border-radius: 999px;
+  letter-spacing: 0.03em;
+}
+.audit-badge-pass { background: rgba(16,185,129,0.12); color: var(--green); }
+.audit-badge-fail { background: rgba(239,68,68,0.12); color: var(--red); }
+.audit-badge-err  { background: rgba(107,122,138,0.12); color: var(--ink-500); }
+
+/* ============ METHODOLOGY ============ */
+.audit-method {
+  background: white; padding: 40px;
+  border-radius: 16px; box-shadow: var(--shadow-card);
+  border: 1px solid var(--ink-100);
+}
+.audit-method ol {
+  font-family: 'Inter', sans-serif; font-size: 1rem;
+  line-height: 1.8; color: var(--ink-700);
+  padding-left: 24px; margin: 0 0 24px;
+}
+.audit-method ol li { margin-bottom: 8px; }
+.audit-method .audit-method-note {
+  font-family: 'Inter', sans-serif; font-size: 0.92rem;
+  color: var(--ink-500); line-height: 1.65;
+  padding: 16px 20px;
+  background: var(--canvas); border-radius: 10px;
+  border-left: 3px solid var(--gold);
+}
+
+/* ============ TIMESTAMP PILL ============ */
+.audit-timestamp {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: 'Inter', sans-serif; font-size: 0.85rem;
+  color: var(--ink-500); margin-bottom: 16px;
+}
+.audit-timestamp-dot {
+  width: 6px; height: 6px; background: var(--green);
+  border-radius: 50%;
+}
+
+/* ============ CTA LINK ============ */
+.audit-cta {
+  display: inline-block; margin-top: 16px;
+  font-family: 'Inter', sans-serif; font-weight: 600;
+  font-size: 1rem; color: var(--gold);
+  border-bottom: 2px solid var(--gold);
+  padding-bottom: 4px; transition: all 0.2s;
+}
+.audit-cta:hover { color: var(--navy); border-bottom-color: var(--navy); }
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 768px) {
+  .audit-stats { grid-template-columns: 1fr; margin-top: -40px; }
+  .audit-hero { padding: 60px 0 50px; }
+  .audit-section { margin: 50px auto; }
+  .audit-table th, .audit-table td { padding: 10px 12px; font-size: 0.85rem; }
+  .audit-method { padding: 24px; }
+}
+
+/* ============ FOOTER AUDIT LINK ============ */
+.footer-audit {
+  display: inline-flex; align-items: center; gap: 6px;
+  margin-left: 16px;
+  font-family: 'Inter', sans-serif; font-size: 0.9rem;
+  color: var(--ink-700);
+}
+.footer-audit::before {
+  content: "✓"; color: var(--green); font-weight: 700;
+}
+.footer-audit a { color: inherit; }
+.footer-audit a:hover { color: var(--gold); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <nav class="nav">
+      <a href="index-cn.html" class="nav-logo">
+        <span class="logo-en">CareerForge</span>
+        <span class="logo-cn">鑄途</span>
+      </a>
+      <div class="nav-menu" id="navMenu">
+        <a href="index-cn.html" class="active">首页</a>
+        <a href="immigration-cn-v17.html">身份规划</a>
+        <a href="education-cn.html">升学规划</a>
+        <a href="career-cn.html">求职身价</a>
+        <a href="quiz-cn.html">牛马测验</a>
+        <a href="cases-cn.html">客户故事</a>
+        <a href="#contact">联系我们</a>
+      </div>
+      <div class="nav-actions">
+        <div class="lang-switcher">
+          <a href="audit.html" data-lang-target="zh-Hant">繁</a>
+          <a href="audit-cn.html" class="active" data-lang-target="zh-Hans">简</a>
+          <a href="audit-en.html" data-lang-target="en">EN</a>
+        </div>
+        <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="audit-hero">
+  <div class="audit-hero-inner">
+    <span class="audit-hero-eyebrow">Site Health · 每日自动验证</span>
+    <h1 class="audit-hero-title">
+      ✅ 全部 18 个页面<br>
+      <span class="gold">通过 Mobile Audit</span>
+    </h1>
+    <p class="audit-hero-sub">CareerForge 每晚 03:00 HKT 自动以 iPhone 14 viewport（390 × 844）测试全站 18 个页面，确保零水平 overflow。</p>
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section class="audit-stats">
+  <div class="audit-stat-card">
+    <span class="audit-stat-num pass">18/18</span>
+    <span class="audit-stat-label">页面通过</span>
+  </div>
+  <div class="audit-stat-card">
+    <span class="audit-stat-num zero">0</span>
+    <span class="audit-stat-label">水平溢出</span>
+  </div>
+  <div class="audit-stat-card">
+    <span class="audit-stat-num">390x844</span>
+    <span class="audit-stat-label">测试 viewport</span>
+  </div>
+</section>
+
+<!-- ============ PER-PAGE TABLE ============ -->
+<section class="audit-section">
+  <span class="audit-timestamp">
+    <span class="audit-timestamp-dot"></span>
+    Last audit: 2026-08-21 08:56 HKT
+  </span>
+  <h2>页面验证明细</h2>
+  <div class="audit-table-wrap">
+    <table class="audit-table">
+      <thead>
+        <tr>
+          <th>页面</th>
+          <th>状态</th>
+          <th>Body 宽度</th>
+          <th>溢出元素</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <td><a href="https://careerforgehk.com/" target="_blank" rel="noopener">Index</a></td>
+          <td><span class="audit-badge audit-badge-pass">通过</span></td>
+          <td>390px</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td><a href="https://careerforgehk.com/index-cn" target="_blank" rel="noopener">index (简体)</a></td>
+          <td><span class="audit-badge audit-badge-pass">通过</span></td>
+          <td>390px</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td><a href="https://careerforgehk.com/index-en" target="_blank" rel="noopener">index (EN)</a></td>
+          <td><span class="audit-badge audit-badge-pass">通过</span></td>
+          <td>390px</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td><a href="https://careerforgehk.com/immigration" target="_blank" rel="noopener">Immigration</a></td>
+          <td><span class="audit-badge audit-badge-pass">通过</span></td>
+          <td>390px</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td><a href="https://careerforgehk.com/immigration-cn" target="_blank" rel="noopener">immigration (简体)</a></td>
+          <td><span class="audit-badge audit-badge-pass">通过</span></td>
+          <td>390px</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td><a href="https://careerforgehk.com/immigration-en" target="_blank" rel="noopener">immigration (EN)</a></td>
+          <td><span class="audit-badge audit-badge-pass">通过</span></td>
+          <td>390px</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td><a href="https://careerforgehk.com/education" target="_blank" rel="noopener">Education</a></td>
+          <td><span class="audit-badge audit-badge-pass">通过</span></td>
+          <td>390px</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td><a href="https://careerforgehk.com/education-cn" target="_blank" rel="noopener">education (简体)</a></td>
+          <td><span class="audit-badge audit-badge-pass">通过</span></td>
+          <td>390px</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td><a href="https://careerforgehk.com/education-en" target="_blank" rel="noopener">education (EN)</a></td>
+          <td><span class="audit-badge audit-badge-pass">通过</span></td>
+          <td>390px</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td><a href="https://careerforgehk.com/career" target="_blank" rel="noopener">Career</a></td>
+          <td><span class="audit-badge audit-badge-pass">通过</span></td>
+          <td>390px</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td><a href="https://careerforgehk.com/career-cn" target="_blank" rel="noopener">career (简体)</a></td>
+          <td><span class="audit-badge audit-badge-pass">通过</span></td>
+          <td>390px</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td><a href="https://careerforgehk.com/career-en" target="_blank" rel="noopener">career (EN)</a></td>
+          <td><span class="audit-badge audit-badge-pass">通过</span></td>
+          <td>390px</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td><a href="https://careerforgehk.com/cases" target="_blank" rel="noopener">Cases</a></td>
+          <td><span class="audit-badge audit-badge-pass">通过</span></td>
+          <td>390px</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td><a href="https://careerforgehk.com/cases-cn" target="_blank" rel="noopener">cases (简体)</a></td>
+          <td><span class="audit-badge audit-badge-pass">通过</span></td>
+          <td>390px</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td><a href="https://careerforgehk.com/cases-en" target="_blank" rel="noopener">cases (EN)</a></td>
+          <td><span class="audit-badge audit-badge-pass">通过</span></td>
+          <td>390px</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td><a href="https://careerforgehk.com/quiz" target="_blank" rel="noopener">Quiz</a></td>
+          <td><span class="audit-badge audit-badge-pass">通过</span></td>
+          <td>390px</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td><a href="https://careerforgehk.com/quiz-cn" target="_blank" rel="noopener">quiz (简体)</a></td>
+          <td><span class="audit-badge audit-badge-pass">通过</span></td>
+          <td>390px</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td><a href="https://careerforgehk.com/quiz-en" target="_blank" rel="noopener">quiz (EN)</a></td>
+          <td><span class="audit-badge audit-badge-pass">通过</span></td>
+          <td>390px</td>
+          <td>0</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <a href="https://careerforgehk.com" class="audit-cta" target="_blank" rel="noopener">查看实时网站 →</a>
+</section>
+
+<!-- ============ METHODOLOGY ============ -->
+<section class="audit-section audit-section-narrow">
+  <h2>验证方法</h2>
+  <div class="audit-method">
+    <ol>
+      <li>用 Playwright (Chromium headless) 开每个页面</li>
+        <li>viewport 设定 390 × 844（iPhone 14 标准）</li>
+        <li>扫描所有 DOM element 的 bounding rect</li>
+        <li>确认 0 个 element.right > viewport 宽度</li>
+        <li>确认 body.scrollWidth ≤ 391px</li>
+    </ol>
+    <div class="audit-method-note">每晚 03:00 HKT 自动 run，failure 时即时 push Telegram alert。任何新 PR merge 后第二朝就会验证。</div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index-cn.html" class="footer-logo-text"><span class="fl-en">CareerForge</span><span class="fl-zh">鑄途</span></a>
+        <p>香港高端個人成長顧問。身份 · 升學 · 職涯身價 一站式陪跑。</p>
+      </div>
+      <div class="footer-col">
+        <h4>業務板塊</h4>
+        <a href="immigration.html">身份與續簽對標</a>
+        <a href="education.html">海外與香港升學</a>
+        <a href="career.html">求職與身價躍遷</a>
+      </div>
+      <div class="footer-col">
+        <h4>資源</h4>
+        <a href="cases.html">客戶案例</a>
+        <a href="quiz.html">牛馬身價測驗</a>
+        <a href="#contact">聯絡我們</a>
+        <span class="footer-audit"><a href="audit.html">Mobile Audit</a></span>
+      </div>
+      <div class="footer-col">
+        <h4>聯絡</h4>
+        <a href="https://wa.me/85291371211">WhatsApp</a>
+        <a href="mailto:careerforgehk@gmail.com">careerforgehk@gmail.com</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 CareerForge 鑄途. All rights reserved.</span>
+      <span class="footer-lang">
+        <a href="audit.html">繁體</a> · <a href="audit-cn.html">簡體</a> · <a href="audit-en.html">EN</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const hamburger = document.getElementById('hamburgerBtn');
+  const menu = document.getElementById('navMenu');
+  if (hamburger && menu) {
+    hamburger.addEventListener('click', function() {
+      hamburger.classList.toggle('active');
+      menu.classList.toggle('active');
+    });
+  }
+});
+</script>
+</body>
+</html>

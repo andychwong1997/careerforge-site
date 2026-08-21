@@ -2018,3 +2018,38 @@ img, video, iframe, table {
   .hero-v4 h1 { line-height: 1.1; }
   .hero-v4 h2 { line-height: 1.2; }
 }
+
+/* ============ FOOTER AUDIT LINK (added 2026-08-21) ============ */
+.footer-audit,
+.footer-v4-audit {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--ink-700);
+  margin: 0 0 0 16px;
+}
+.footer-audit::before,
+.footer-v4-audit::before {
+  content: "✓";
+  color: #10B981;
+  font-weight: 700;
+  font-size: 1rem;
+}
+.footer-audit a,
+.footer-v4-audit a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px dashed transparent;
+  transition: all 0.2s;
+}
+.footer-audit a:hover,
+.footer-v4-audit a:hover {
+  color: var(--gold, #D4AF37);
+  border-bottom-color: var(--gold, #D4AF37);
+}
+.footer-v4-bottom .footer-v4-audit {
+  margin-left: 12px;
+}

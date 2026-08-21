@@ -1,7 +1,7 @@
 // CareerForge Service Worker — auto-update on new deploy
 // Version bump this on every release to force fresh-fetch for returning users.
 
-const VERSION = 'v18.5';
+const VERSION = 'v18.6';
 const CACHE_NAME = `cf-${VERSION}`;
 
 // Minimal precache so first install doesn't break offline nav.

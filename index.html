@@ -14,7 +14,7 @@
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js?v=v18.5').catch(() => {});
+        navigator.serviceWorker.register('/sw.js?v=v18.6').catch(() => {});
       });
     }
   </script>
@@ -231,6 +231,13 @@
   color: var(--ink-700);
   margin: 0 0 24px;
   max-width: 720px;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  line-break: strict;
+  text-align: justify;
+  text-justify: inter-character;
+  -webkit-hyphens: none;
+  hyphens: none;
 }
 .v10-pillar-tags {
   list-style: none;
@@ -525,8 +532,12 @@
   .v10-hero-trust-item { border-right: none; padding-right: 0; }
   .v10-section { padding: 64px 0; }
   .v10-container { padding: 0 20px; }
-  .v10-pillar { grid-template-columns: 1fr; padding: 36px 28px; gap: 28px; }
-  .v10-pillar-cta { justify-self: start; }
+  .v10-pillar { grid-template-columns: 1fr; padding: 24px 18px; gap: 20px; }
+  .v10-pillar-body { width: 100%; max-width: 100%; box-sizing: border-box; }
+  .v10-pillar-desc { font-size: 0.92rem; line-height: 1.65; max-width: 100%; padding: 0; }
+  .v10-pillar-title { font-size: 1.2rem; line-height: 1.35; }
+  .v10-pillar-num { font-size: 0.75rem; letter-spacing: 0.18em; margin-bottom: 12px; }
+  .v10-pillar-cta { justify-self: start; padding: 12px 22px; font-size: 0.88rem; }
   .v10-trust-grid { grid-template-columns: repeat(2, 1fr); }
   .v10-trust-card { border-right: none; border-bottom: 1px solid rgba(212,175,55,0.2); }
   .v10-pathway-grid { grid-template-columns: 1fr; }
@@ -772,9 +783,7 @@ img, video, iframe, table { max-width: 100%; }
         <a href="education.html" class="v10-pillar-cta">了解詳情</a>
       </div>
 
-    </div>
-  </div>
-<!-- Pillar 03 -->
+      <!-- Pillar 03 -->
       <div class="v10-pillar">
         <div class="v10-pillar-body">
           <span class="v10-pillar-num">PILLAR 03 · 職涯增值</span>
@@ -786,7 +795,9 @@ img, video, iframe, table { max-width: 100%; }
         <a href="career.html" class="v10-pillar-cta">了解詳情</a>
       </div>
 
-      </section>
+    </div>
+  </div>
+</section>
 
 <!-- ============ QUIZ CTA (NAVY BG) ============ -->
 <section class="v10-section dark">

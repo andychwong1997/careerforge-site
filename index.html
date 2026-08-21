@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant" data-version="v18.8.2">
+<html lang="zh-Hant" data-version="v18.9">
 <head>
   <script>
     // CareerForge v18.8+ iPhone Safari disk cache fix
@@ -7,7 +7,7 @@
     // This script uses fetch({cache: 'no-store'}) which iPhone Safari DOES honor,
     // then replaces current page if server-side version doesn't match expected.
     (function() {
-      var EXPECTED_VER = 'v18.8.2';
+      var EXPECTED_VER = 'v18.9';
       var path = location.pathname + '?cb=' + Date.now();
       if (location.href.indexOf('cb=') !== -1) return;
       fetch(path, {cache: 'no-store'})
@@ -245,6 +245,9 @@
   color: var(--ink-700);
   margin: 0 0 24px;
   max-width: 720px;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  line-break: strict;
 }
 .v10-pillar-tags {
   list-style: none;
@@ -539,7 +542,12 @@
   .v10-hero-trust-item { border-right: none; padding-right: 0; }
   .v10-section { padding: 64px 0; }
   .v10-container { padding: 0 20px; }
-  .v10-pillar { padding: 36px 28px; }
+  .v10-pillar { padding: 36px 28px; gap: 20px; }
+  .v10-pillar-body { width: 100%; max-width: 100%; box-sizing: border-box; min-width: 0; }
+  .v10-pillar-desc { font-size: 0.94rem; line-height: 1.65; max-width: 100%; padding: 0; word-break: break-word; overflow-wrap: break-word; line-break: strict; }
+  .v10-pillar-title { font-size: 1.18rem; line-height: 1.4; }
+  .v10-pillar-num { font-size: 0.78rem; letter-spacing: 0.18em; margin-bottom: 10px; }
+  .v10-pillar-cta { justify-self: start; padding: 12px 22px; font-size: 0.88rem; }
   .v10-trust-grid { grid-template-columns: repeat(2, 1fr); }
   .v10-trust-card { border-right: none; border-bottom: 1px solid rgba(212,175,55,0.2); }
   .v10-pathway-grid { grid-template-columns: 1fr; }

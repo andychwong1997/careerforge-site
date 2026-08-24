@@ -1,7 +1,31 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-version="v18.12">
 <head>
+  <script>
+    // CareerForge v18.8+ iPhone Safari disk cache fix
+    // iPhone Safari ignores server no-cache + meta no-cache + SW auto-update.
+    // This script uses fetch({cache: 'no-store'}) which iPhone Safari DOES honor,
+    // then replaces current page if server-side version doesn't match expected.
+    (function() {
+      var EXPECTED_VER = 'v18.12';
+      var path = location.pathname + '?cb=' + Date.now();
+      if (location.href.indexOf('cb=') !== -1) return;
+      fetch(path, {cache: 'no-store'})
+        .then(function(r) { return r.text(); })
+        .then(function(html) {
+          if (html.indexOf('data-version="' + EXPECTED_VER + '"') === -1) {
+            document.open();
+            document.write(html);
+            document.close();
+          }
+        })
+        .catch(function() {});
+    })();
+  </script>
 <meta charset="UTF-8">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CareerForge 鑄途 · 香港高端個人成長顧問 · 身份·升學·職涯身價</title>
 <meta name="description" content="CareerForge 鑄途 — 香港高端個人成長顧問。3 大業務板塊：香港身份與續簽對標、赴港求職與職涯身價躍遷、海外與香港升學對標。">
@@ -221,6 +245,9 @@
   color: var(--ink-700);
   margin: 0 0 24px;
   max-width: 720px;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  line-break: strict;
 }
 .v10-pillar-tags {
   list-style: none;
@@ -515,8 +542,12 @@
   .v10-hero-trust-item { border-right: none; padding-right: 0; }
   .v10-section { padding: 64px 0; }
   .v10-container { padding: 0 20px; }
-  .v10-pillar { grid-template-columns: 1fr; padding: 36px 28px; gap: 28px; }
-  .v10-pillar-cta { justify-self: start; }
+  .v10-pillar { padding: 32px 22px; gap: 18px; grid-template-columns: 1fr; }
+  .v10-pillar-body { width: 100%; max-width: 100%; box-sizing: border-box; min-width: 0; grid-column: 1; }
+  .v10-pillar-desc { font-size: 0.94rem; line-height: 1.65; max-width: 100%; padding: 0; word-break: break-word; overflow-wrap: break-word; line-break: strict; }
+  .v10-pillar-title { font-size: 1.18rem; line-height: 1.4; }
+  .v10-pillar-num { font-size: 0.78rem; letter-spacing: 0.18em; margin-bottom: 10px; }
+  .v10-pillar-cta { justify-self: start; padding: 12px 22px; font-size: 0.88rem; grid-column: 1; }
   .v10-trust-grid { grid-template-columns: repeat(2, 1fr); }
   .v10-trust-card { border-right: none; border-bottom: 1px solid rgba(212,175,55,0.2); }
   .v10-pathway-grid { grid-template-columns: 1fr; }
@@ -659,6 +690,285 @@ img, video, iframe, table { max-width: 100%; }
   .v10-container { padding-left: 16px; padding-right: 16px; }
 }
 
+/* ============ STUDY TOUR (NAVY BG) — v18.9.0 ============ */
+.v10-tour-banner {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 28px;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(212,175,55,0.10) 0%, rgba(212,175,55,0.02) 100%);
+  border: 1px solid var(--gold);
+  border-radius: var(--radius);
+  padding: 32px 40px;
+  margin: 0 auto 56px;
+  max-width: 980px;
+  position: relative;
+  overflow: hidden;
+}
+.v10-tour-banner::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 6px;
+  height: 100%;
+  background: var(--gold);
+}
+.v10-tour-banner-flag {
+  font-size: 2.5rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.v10-tour-banner-body { min-width: 0; }
+.v10-tour-banner-eyebrow {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+.v10-tour-banner h3 {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--white);
+  margin: 0 0 8px;
+  line-height: 1.3;
+}
+.v10-tour-banner p {
+  font-size: 0.92rem;
+  color: rgba(255,255,255,0.78);
+  margin: 0 0 10px;
+  line-height: 1.55;
+}
+.v10-tour-banner-meta {
+  display: inline-block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: 0.04em;
+}
+.v10-tour-banner-btn {
+  background: var(--gold);
+  color: var(--navy) !important;
+  border-color: var(--gold);
+  padding: 14px 26px;
+  white-space: nowrap;
+  font-size: 0.9rem;
+}
+
+.v10-tour-modules {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-bottom: 64px;
+}
+.v10-tour-module {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(212,175,55,0.25);
+  border-radius: var(--radius);
+  padding: 32px 28px;
+  position: relative;
+  transition: all .25s ease;
+}
+.v10-tour-module:hover {
+  background: rgba(255,255,255,0.07);
+  border-color: var(--gold);
+  transform: translateY(-2px);
+}
+.v10-tour-module-num {
+  display: inline-block;
+  font-family: 'Playfair Display', serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: var(--gold);
+  margin-bottom: 14px;
+}
+.v10-tour-module h3 {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--white);
+  margin: 0 0 12px;
+  line-height: 1.3;
+}
+.v10-tour-module p {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.78);
+  margin: 0;
+}
+
+.v10-tour-themes {
+  text-align: center;
+  margin-bottom: 72px;
+}
+.v10-tour-themes-label {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+.v10-tour-themes-chips {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.v10-tour-theme {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 28px;
+  background: transparent;
+  border: 1px solid var(--gold);
+  color: var(--white);
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  transition: all .25s ease;
+}
+.v10-tour-theme:hover {
+  background: var(--gold);
+  color: var(--navy) !important;
+}
+.v10-tour-themes-meta {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.6);
+  margin: 12px 0 0;
+}
+
+.v10-tour-block-title {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--white);
+  text-align: center;
+  margin: 0 0 32px;
+  letter-spacing: 0.01em;
+}
+.v10-tour-block-title::before,
+.v10-tour-block-title::after {
+  content: "—";
+  color: var(--gold);
+  margin: 0 14px;
+  opacity: 0.5;
+  font-weight: 400;
+}
+
+.v10-tour-outcomes {
+  margin-bottom: 64px;
+}
+.v10-tour-outcomes-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  max-width: 980px;
+  margin: 0 auto;
+}
+.v10-tour-outcome {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 18px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(212,175,55,0.2);
+  border-radius: var(--radius);
+  font-size: 0.88rem;
+  color: var(--white);
+  line-height: 1.4;
+  transition: all .25s ease;
+}
+.v10-tour-outcome:hover {
+  background: rgba(255,255,255,0.06);
+  border-color: var(--gold);
+}
+.v10-tour-outcome-mark {
+  color: var(--gold);
+  font-weight: 700;
+  flex-shrink: 0;
+  font-size: 1rem;
+}
+
+.v10-tour-package {
+  margin-bottom: 64px;
+}
+.v10-tour-package-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.v10-tour-package-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(212,175,55,0.2);
+  border-radius: var(--radius);
+  padding: 28px 22px;
+  text-align: center;
+  transition: all .25s ease;
+}
+.v10-tour-package-card:hover {
+  background: rgba(255,255,255,0.07);
+  border-color: var(--gold);
+  transform: translateY(-2px);
+}
+.v10-tour-package-icon {
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+  line-height: 1;
+}
+.v10-tour-package-card h4 {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--gold);
+  margin: 0 0 10px;
+}
+.v10-tour-package-card p {
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: rgba(255,255,255,0.72);
+  margin: 0;
+}
+
+.v10-tour-main-cta {
+  text-align: center;
+  margin-top: 56px;
+}
+.v10-cta-sub {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.6);
+  margin: 18px 0 0;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .v10-tour-banner {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 28px 24px;
+    gap: 14px;
+  }
+  .v10-tour-banner::before { width: 100%; height: 4px; }
+  .v10-tour-banner-flag { font-size: 2rem; }
+  .v10-tour-banner h3 { font-size: 1.15rem; }
+  .v10-tour-banner-btn { width: 100%; justify-content: center; }
+
+  .v10-tour-modules { grid-template-columns: 1fr; gap: 14px; }
+  .v10-tour-outcomes-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .v10-tour-package-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+
+  .v10-tour-theme { padding: 10px 20px; font-size: 0.92rem; }
+  .v10-tour-block-title { font-size: 1.2rem; }
+  .v10-tour-block-title::before,
+  .v10-tour-block-title::after { margin: 0 8px; }
+  .v10-tour-outcome { font-size: 0.82rem; padding: 14px 14px; }
+}
+
 </style>
 
 <header class="site-header">
@@ -673,7 +983,7 @@ img, video, iframe, table { max-width: 100%; }
         <a href="immigration.html">身份規劃</a>
         <a href="education.html">升學規劃</a>
         <a href="career.html">求職身價</a>
-        <a href="quiz.html">牛馬測驗</a>
+        <a href="#study-tour">遊學團</a>
         <a href="cases.html">客戶故事</a>
         <a href="#contact">聯絡我們</a>
       </div>
@@ -762,9 +1072,7 @@ img, video, iframe, table { max-width: 100%; }
         <a href="education.html" class="v10-pillar-cta">了解詳情</a>
       </div>
 
-    </div>
-  </div>
-<!-- Pillar 03 -->
+      <!-- Pillar 03 -->
       <div class="v10-pillar">
         <div class="v10-pillar-body">
           <span class="v10-pillar-num">PILLAR 03 · 職涯增值</span>
@@ -776,19 +1084,116 @@ img, video, iframe, table { max-width: 100%; }
         <a href="career.html" class="v10-pillar-cta">了解詳情</a>
       </div>
 
-      </section>
+    </div>
+  </div>
+</section>
 
-<!-- ============ QUIZ CTA (NAVY BG) ============ -->
-<section class="v10-section dark">
+<!-- ============ STUDY TOUR (NAVY BG) — v18.9.0 ============ -->
+<section class="v10-section dark" id="study-tour">
   <div class="v10-container">
+
+    <!-- HERO HEADER -->
     <div class="v10-head dark">
-      <span class="eyebrow">3 分鐘牛馬測驗</span>
-      <h2>不知自己適合哪一條路？<br>3&nbsp;分鐘測一測。</h2>
-      <p class="lede">回答 5 條問題，了解自己的牛馬指數 + 適合的香港身份、升學、職涯路徑方向。</p>
+      <span class="eyebrow">5 天 4 夜 · 香港遊學團</span>
+      <h2>暑假來香港，<br>親身體驗國際大都會。</h2>
+      <p class="lede">為內地高中及大學生打造的深度遊學 — 多元主題 × 4 大核心模塊 × 500 強企業證書。</p>
     </div>
-    <div class="v10-quiz-cta-actions" style="text-align: center; margin-top: 32px;">
-      <a href="quiz.html" class="v10-cta-btn v10-cta-primary">立即做牛馬測驗</a>
+
+    <!-- 國慶限定 BANNER -->
+    <div class="v10-tour-banner">
+      <div class="v10-tour-banner-flag">🇨🇳</div>
+      <div class="v10-tour-banner-body">
+        <span class="v10-tour-banner-eyebrow">國慶限定 · 限量招募</span>
+        <h3>國慶黃金週限定 · 香港遊學團</h3>
+        <p>內地高中及大學生專屬 — 與祖國同慶 + 親歷國際大都會</p>
+        <span class="v10-tour-banner-meta">⏰ 9 月 20 日截止報名</span>
+      </div>
+      <a href="#contact" class="v10-cta-btn v10-tour-banner-btn">立即查詢國慶團</a>
     </div>
+
+    <!-- 4 大核心模塊 -->
+    <div class="v10-tour-modules">
+      <div class="v10-tour-module">
+        <span class="v10-tour-module-num">01 · MODULE</span>
+        <h3>主題探索</h3>
+        <p>從金融到科技，從商業到文化 — 親身體驗多元主題的深度內容。</p>
+      </div>
+      <div class="v10-tour-module">
+        <span class="v10-tour-module-num">02 · MODULE</span>
+        <h3>專業啟蒙</h3>
+        <p>真實企業環境 + 行業前沿認知 — 走進國際大都會的專業世界。</p>
+      </div>
+      <div class="v10-tour-module">
+        <span class="v10-tour-module-num">03 · MODULE</span>
+        <h3>個人成長</h3>
+        <p>性格分析 + 團隊協作 + 商務演講 — 全面提升綜合素質。</p>
+      </div>
+      <div class="v10-tour-module">
+        <span class="v10-tour-module-num">04 · MODULE</span>
+        <h3>升學規劃</h3>
+        <p>港八大名校申請攻略 + IANG 7 年永居路徑全方位解讀。</p>
+      </div>
+    </div>
+
+    <!-- 主題 chips -->
+    <div class="v10-tour-themes">
+      <span class="v10-tour-themes-label">主題方向</span>
+      <div class="v10-tour-themes-chips">
+        <span class="v10-tour-theme">金融</span>
+        <span class="v10-tour-theme">科技</span>
+        <span class="v10-tour-theme">英語學術</span>
+      </div>
+      <p class="v10-tour-themes-meta">多元主題任選，按需求客製化行程</p>
+    </div>
+
+    <!-- 8 大收穫 -->
+    <div class="v10-tour-outcomes">
+      <h3 class="v10-tour-block-title">8 大收穫</h3>
+      <div class="v10-tour-outcomes-grid">
+        <div class="v10-tour-outcome"><span class="v10-tour-outcome-mark">✓</span>500 強金融企業簽發項目證書</div>
+        <div class="v10-tour-outcome"><span class="v10-tour-outcome-mark">✓</span>500 強企業高層推薦信</div>
+        <div class="v10-tour-outcome"><span class="v10-tour-outcome-mark">✓</span>商業策劃書撰寫能力</div>
+        <div class="v10-tour-outcome"><span class="v10-tour-outcome-mark">✓</span>商務演講與團隊協作</div>
+        <div class="v10-tour-outcome"><span class="v10-tour-outcome-mark">✓</span>留港 7 年永居路徑</div>
+        <div class="v10-tour-outcome"><span class="v10-tour-outcome-mark">✓</span>港八大名校申請攻略</div>
+        <div class="v10-tour-outcome"><span class="v10-tour-outcome-mark">✓</span>未來專業職業規劃</div>
+        <div class="v10-tour-outcome"><span class="v10-tour-outcome-mark">✓</span>國際金融視野</div>
+      </div>
+    </div>
+
+    <!-- 配套說明 -->
+    <div class="v10-tour-package">
+      <h3 class="v10-tour-block-title">配套與保障</h3>
+      <div class="v10-tour-package-grid">
+        <div class="v10-tour-package-card">
+          <div class="v10-tour-package-icon">🏨</div>
+          <h4>住宿配套</h4>
+          <p>灣仔/銅鑼灣/旺角三星酒店，4 晚標間/雙人間（含空調、WiFi、獨立衛浴）</p>
+        </div>
+        <div class="v10-tour-package-card">
+          <div class="v10-tour-package-icon">✈️</div>
+          <h4>接送服務</h4>
+          <p>深圳寶安機場 ↔ 香港酒店接送 + 酒店 ↔ 企業交通</p>
+        </div>
+        <div class="v10-tour-package-card">
+          <div class="v10-tour-package-icon">🍽️</div>
+          <h4>餐飲安排</h4>
+          <p>早餐自理；午晚餐以小組用餐（建議帶 ¥2000 人民幣等值港幣餐費）</p>
+        </div>
+        <div class="v10-tour-package-card">
+          <div class="v10-tour-package-icon">🛡️</div>
+          <h4>安全保障</h4>
+          <p>1:20 師生比全程陪同 + 短期意外保險 + 實時家長反饋</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 主 CTA -->
+    <div class="v10-tour-main-cta">
+      <a href="#contact" class="v10-cta-btn v10-cta-primary">立即查詢 5 天 4 夜遊學團</a>
+      <p class="v10-cta-sub">全年滾動招生 · 按需求客製化報價</p>
+    </div>
+
   </div>
 </section>
 
@@ -840,7 +1245,7 @@ img, video, iframe, table { max-width: 100%; }
         <p>提交基本资料后 24 小时内收到顾问回复 — 包含 3 大業務板塊匹配度评分 + 预计所需时间 + 后续路径建议。</p>
         <div class="v10-cta-actions">
           <a href="https://wa.me/85291371211" class="v10-cta-btn v10-cta-primary">WhatsApp 立即預約</a>
-          <a href="quiz.html" class="v10-cta-btn v10-cta-secondary">先做 3 分鐘牛馬測驗</a>
+          <a href="#study-tour" class="v10-cta-btn v10-cta-secondary">了解 5 天 4 夜遊學團</a>
         </div>
       </div>
     </div>
@@ -890,7 +1295,7 @@ img, video, iframe, table { max-width: 100%; }
       <div class="footer-col">
         <h4>资源</h4>
         <a href="cases.html">客戶案例</a>
-        <a href="quiz.html">牛馬身價測驗</a>
+        <a href="#study-tour">遊學團</a>
         <a href="#contact">聯絡我們</a>
       </div>
       <div class="footer-col">
@@ -901,7 +1306,7 @@ img, video, iframe, table { max-width: 100%; }
     </div>
     <div class="footer-bottom">
       <span>© 2026 CareerForge 鑄途. All rights reserved.</span>
-<span class="footer-lang">
+<span class="footer-audit"><a href="audit.html">Mobile Audit</a></span>    <span class="footer-lang">
         <a href="index.html" class="active">繁體</a> · <a href="index-cn.html">简体</a> · <a href="index-en.html">EN</a>
       </span>
     </div>

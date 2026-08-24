@@ -1,7 +1,31 @@
 <!DOCTYPE html>
-<html lang="zh-Hans">
+<html lang="zh-Hans" data-version="v18.9">
 <head>
+  <script>
+    // CareerForge v18.8+ iPhone Safari disk cache fix
+    // iPhone Safari ignores server no-cache + meta no-cache + SW auto-update.
+    // This script uses fetch({cache: 'no-store'}) which iPhone Safari DOES honor,
+    // then replaces current page if server-side version doesn't match expected.
+    (function() {
+      var EXPECTED_VER = 'v18.9';
+      var path = location.pathname + '?cb=' + Date.now();
+      if (location.href.indexOf('cb=') !== -1) return;
+      fetch(path, {cache: 'no-store'})
+        .then(function(r) { return r.text(); })
+        .then(function(html) {
+          if (html.indexOf('data-version="' + EXPECTED_VER + '"') === -1) {
+            document.open();
+            document.write(html);
+            document.close();
+          }
+        })
+        .catch(function() {});
+    })();
+  </script>
 <meta charset="UTF-8">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>客户故事 · CareerForge 铸途</title>
 <meta name="description" content="3,000+ 家庭的真实故事。升学、签证、职涯 — 每个成功个案都是一个家庭的转捩点。">
@@ -22,7 +46,7 @@
       <div class="nav-menu">
         <a href="index-cn.html">首页</a>
         <a href="education-cn.html">升学</a>
-        <a href="immigration-cn.html">签证</a>
+        <a href="immigration-cn-v17.html">签证</a>
         <a href="career-cn.html">职涯</a>
         <a href="quiz-cn.html">牛马测验</a>
         <a href="cases-cn.html" class="active">客户故事</a>
@@ -243,13 +267,13 @@
   <div class="container">
     <div class="footer-v4-grid">
       <div class="footer-v4-brand"><a href="index.html" class="footer-logo-text"><span class="fl-en">CareerForge</span><span class="fl-zh">铸途</span></a><p>立足香港，面向大中华区。20 年来，3,000+ 家庭的升学、签证、职涯选择。</p></div>
-      <div class="footer-v4-col"><h5>服务</h5><ul><li><a href="education-cn.html">升学规划</a></li><li><a href="immigration-cn.html">签证移居</a></li><li><a href="career-cn.html">职涯规划</a></li><li><a href="quiz-cn.html">牛马测验</a></li></ul></div>
+      <div class="footer-v4-col"><h5>服务</h5><ul><li><a href="education-cn.html">升学规划</a></li><li><a href="immigration-cn-v17.html">签证移居</a></li><li><a href="career-cn.html">职涯规划</a></li><li><a href="quiz-cn.html">牛马测验</a></li></ul></div>
       <div class="footer-v4-col"><h5>关于</h5><ul><li><a href="cases-cn.html">客户故事</a></li><li><a href="index.html#contact">联络我们</a></li><li><a href="#">私隐政策</a></li></ul></div>
       <div class="footer-v4-col"><h5>联络</h5><ul><li><a href="https://wa.me/85291371211">WhatsApp</a></li><li><a href="mailto:hello@careerforgehk.com">Email</a></li><li>微信: careerforgehk</li></ul></div>
     </div>
     <div class="footer-v4-bottom">
       <div>© 2026 CareerForge 铸途 · BR 71508236</div>
-      <div class="footer-v4-lang"><a href="cases-cn.html" class="active">繁体</a><a href="cases-cn.html">简体</a><a href="cases-en.html">EN</a></div>
+      <div class="footer-v4-audit"><a href="audit-cn.html">Mobile Audit</a></div>    <div class="footer-v4-lang"><a href="cases-cn.html" class="active">繁体</a><a href="cases-cn.html">简体</a><a href="cases-en.html">EN</a></div>
     </div>
   </div>
 </footer>

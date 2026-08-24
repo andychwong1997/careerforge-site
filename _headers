@@ -1,8 +1,16 @@
-# CareerForge cache-control: HTML 永遠 fetch 最新版
+# CareerForge cache-control: 永遠 fetch 最新版
 # Browser + CDN 都 no-cache，reload 直接見新 deploy
 # https://developers.cloudflare.com/pages/configuration/headers/
+#
+# CRITICAL: CF Pages auto 308 redirect `/immigration-cn.html` → `/immigration-cn`
+# (extensionless). 任何 user-facing path (包括 extensionless 同 .html) 都必須 no-cache，
+# 否則 iOS Safari / Telegram WKWebView 永久 cache stale 內容。
+#
+# Trade-off: catch-all `/*` 會 cache-bust 所有 paths 包括 CSS / JS / images.
+# 但 careerforge 而家 stage assets 唔大，每次 reload cost 可接受。
+# 如日後 assets 變大需要 immutable cache, 再 explicit add exception rules.
 
-/*.html
+/*
   Cache-Control: no-cache, no-store, must-revalidate
   CDN-Cache-Control: no-cache
   Pragma: no-cache

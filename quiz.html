@@ -1,7 +1,31 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-version="v18.9">
 <head>
+  <script>
+    // CareerForge v18.8+ iPhone Safari disk cache fix
+    // iPhone Safari ignores server no-cache + meta no-cache + SW auto-update.
+    // This script uses fetch({cache: 'no-store'}) which iPhone Safari DOES honor,
+    // then replaces current page if server-side version doesn't match expected.
+    (function() {
+      var EXPECTED_VER = 'v18.9';
+      var path = location.pathname + '?cb=' + Date.now();
+      if (location.href.indexOf('cb=') !== -1) return;
+      fetch(path, {cache: 'no-store'})
+        .then(function(r) { return r.text(); })
+        .then(function(html) {
+          if (html.indexOf('data-version="' + EXPECTED_VER + '"') === -1) {
+            document.open();
+            document.write(html);
+            document.close();
+          }
+        })
+        .catch(function() {});
+    })();
+  </script>
 <meta charset="UTF-8">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>牛馬測驗 · CareerForge 鑄途</title>
 <meta name="description" content="3 分鐘測出你最適合的升學 / 簽證 / 職涯路徑。3,000+ 人測過，87% 認同結果。">
@@ -146,7 +170,7 @@
     </div>
     <div class="footer-v4-bottom">
       <div>© 2026 CareerForge 鑄途 · BR 71508236</div>
-      <div class="footer-v4-lang"><a href="quiz.html" class="active">繁體</a><a href="quiz-cn.html">简体</a><a href="quiz-en.html">EN</a></div>
+      <div class="footer-v4-audit"><a href="audit.html">Mobile Audit</a></div>    <div class="footer-v4-lang"><a href="quiz.html" class="active">繁體</a><a href="quiz-cn.html">简体</a><a href="quiz-en.html">EN</a></div>
     </div>
   </div>
 </footer>

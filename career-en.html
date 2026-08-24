@@ -1,7 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-version="v18.9">
 <head>
+  <script>
+    // CareerForge v18.8+ iPhone Safari disk cache fix
+    // iPhone Safari ignores server no-cache + meta no-cache + SW auto-update.
+    // This script uses fetch({cache: 'no-store'}) which iPhone Safari DOES honor,
+    // then replaces current page if server-side version doesn't match expected.
+    (function() {
+      var EXPECTED_VER = 'v18.9';
+      var path = location.pathname + '?cb=' + Date.now();
+      if (location.href.indexOf('cb=') !== -1) return;
+      fetch(path, {cache: 'no-store'})
+        .then(function(r) { return r.text(); })
+        .then(function(html) {
+          if (html.indexOf('data-version="' + EXPECTED_VER + '"') === -1) {
+            document.open();
+            document.write(html);
+            document.close();
+          }
+        })
+        .catch(function() {});
+    })();
+  </script>
 <meta charset="UTF-8">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Career Advancement in Hong Kong · 8 Industries, 30+ Headhunters · CareerForge</title>
 <meta name="description" content="Resume optimisation, interview coaching, salary negotiation, industry switch, career path planning — from graduate to senior, 1-on-1 advisor support.">
@@ -932,7 +956,7 @@ img, video, iframe, table { max-width: 100%; }
     </div>
     <div class="footer-bottom">
       <span>© 2026 CareerForge. All rights reserved.</span>
-      <span class="footer-lang">
+      <span class="footer-audit"><a href="audit-en.html">Mobile Audit</a></span>    <span class="footer-lang">
         <a href="career.html" class="">繁體</a> ·
         <a href="career-cn.html" class="">简体</a> ·
         <a href="career-en.html" class="active">EN</a>

@@ -1,7 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-version="v18.12">
 <head>
+  <script>
+    // CareerForge v18.8+ iPhone Safari disk cache fix
+    // iPhone Safari ignores server no-cache + meta no-cache + SW auto-update.
+    // This script uses fetch({cache: 'no-store'}) which iPhone Safari DOES honor,
+    // then replaces current page if server-side version doesn't match expected.
+    (function() {
+      var EXPECTED_VER = 'v18.12';
+      var path = location.pathname + '?cb=' + Date.now();
+      if (location.href.indexOf('cb=') !== -1) return;
+      fetch(path, {cache: 'no-store'})
+        .then(function(r) { return r.text(); })
+        .then(function(html) {
+          if (html.indexOf('data-version="' + EXPECTED_VER + '"') === -1) {
+            document.open();
+            document.write(html);
+            document.close();
+          }
+        })
+        .catch(function() {});
+    })();
+  </script>
 <meta charset="UTF-8">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CareerForge 鑄途 · Hong Kong Personal Growth Consultancy · Status·Education·career value</title>
 <meta name="description" content="CareerForge 鑄途 — Hong Kong Personal Growth Consultancy.3 service lines:Hong Kong status & renewal,Hong Kong career advancement,Overseas & Hong Kong education alignment.">
@@ -659,6 +683,285 @@ img, video, iframe, table { max-width: 100%; }
   .v10-container { padding-left: 16px; padding-right: 16px; }
 }
 
+/* ============ STUDY TOUR (NAVY BG) — v18.9.0 ============ */
+.v10-tour-banner {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 28px;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(212,175,55,0.10) 0%, rgba(212,175,55,0.02) 100%);
+  border: 1px solid var(--gold);
+  border-radius: var(--radius);
+  padding: 32px 40px;
+  margin: 0 auto 56px;
+  max-width: 980px;
+  position: relative;
+  overflow: hidden;
+}
+.v10-tour-banner::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 6px;
+  height: 100%;
+  background: var(--gold);
+}
+.v10-tour-banner-flag {
+  font-size: 2.5rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.v10-tour-banner-body { min-width: 0; }
+.v10-tour-banner-eyebrow {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+.v10-tour-banner h3 {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--white);
+  margin: 0 0 8px;
+  line-height: 1.3;
+}
+.v10-tour-banner p {
+  font-size: 0.92rem;
+  color: rgba(255,255,255,0.78);
+  margin: 0 0 10px;
+  line-height: 1.55;
+}
+.v10-tour-banner-meta {
+  display: inline-block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: 0.04em;
+}
+.v10-tour-banner-btn {
+  background: var(--gold);
+  color: var(--navy) !important;
+  border-color: var(--gold);
+  padding: 14px 26px;
+  white-space: nowrap;
+  font-size: 0.9rem;
+}
+
+.v10-tour-modules {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-bottom: 64px;
+}
+.v10-tour-module {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(212,175,55,0.25);
+  border-radius: var(--radius);
+  padding: 32px 28px;
+  position: relative;
+  transition: all .25s ease;
+}
+.v10-tour-module:hover {
+  background: rgba(255,255,255,0.07);
+  border-color: var(--gold);
+  transform: translateY(-2px);
+}
+.v10-tour-module-num {
+  display: inline-block;
+  font-family: 'Playfair Display', serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: var(--gold);
+  margin-bottom: 14px;
+}
+.v10-tour-module h3 {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--white);
+  margin: 0 0 12px;
+  line-height: 1.3;
+}
+.v10-tour-module p {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.78);
+  margin: 0;
+}
+
+.v10-tour-themes {
+  text-align: center;
+  margin-bottom: 72px;
+}
+.v10-tour-themes-label {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+.v10-tour-themes-chips {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.v10-tour-theme {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 28px;
+  background: transparent;
+  border: 1px solid var(--gold);
+  color: var(--white);
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  transition: all .25s ease;
+}
+.v10-tour-theme:hover {
+  background: var(--gold);
+  color: var(--navy) !important;
+}
+.v10-tour-themes-meta {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.6);
+  margin: 12px 0 0;
+}
+
+.v10-tour-block-title {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--white);
+  text-align: center;
+  margin: 0 0 32px;
+  letter-spacing: 0.01em;
+}
+.v10-tour-block-title::before,
+.v10-tour-block-title::after {
+  content: "—";
+  color: var(--gold);
+  margin: 0 14px;
+  opacity: 0.5;
+  font-weight: 400;
+}
+
+.v10-tour-outcomes {
+  margin-bottom: 64px;
+}
+.v10-tour-outcomes-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  max-width: 980px;
+  margin: 0 auto;
+}
+.v10-tour-outcome {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 18px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(212,175,55,0.2);
+  border-radius: var(--radius);
+  font-size: 0.88rem;
+  color: var(--white);
+  line-height: 1.4;
+  transition: all .25s ease;
+}
+.v10-tour-outcome:hover {
+  background: rgba(255,255,255,0.06);
+  border-color: var(--gold);
+}
+.v10-tour-outcome-mark {
+  color: var(--gold);
+  font-weight: 700;
+  flex-shrink: 0;
+  font-size: 1rem;
+}
+
+.v10-tour-package {
+  margin-bottom: 64px;
+}
+.v10-tour-package-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.v10-tour-package-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(212,175,55,0.2);
+  border-radius: var(--radius);
+  padding: 28px 22px;
+  text-align: center;
+  transition: all .25s ease;
+}
+.v10-tour-package-card:hover {
+  background: rgba(255,255,255,0.07);
+  border-color: var(--gold);
+  transform: translateY(-2px);
+}
+.v10-tour-package-icon {
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+  line-height: 1;
+}
+.v10-tour-package-card h4 {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--gold);
+  margin: 0 0 10px;
+}
+.v10-tour-package-card p {
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: rgba(255,255,255,0.72);
+  margin: 0;
+}
+
+.v10-tour-main-cta {
+  text-align: center;
+  margin-top: 56px;
+}
+.v10-cta-sub {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.6);
+  margin: 18px 0 0;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .v10-tour-banner {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 28px 24px;
+    gap: 14px;
+  }
+  .v10-tour-banner::before { width: 100%; height: 4px; }
+  .v10-tour-banner-flag { font-size: 2rem; }
+  .v10-tour-banner h3 { font-size: 1.15rem; }
+  .v10-tour-banner-btn { width: 100%; justify-content: center; }
+
+  .v10-tour-modules { grid-template-columns: 1fr; gap: 14px; }
+  .v10-tour-outcomes-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .v10-tour-package-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+
+  .v10-tour-theme { padding: 10px 20px; font-size: 0.92rem; }
+  .v10-tour-block-title { font-size: 1.2rem; }
+  .v10-tour-block-title::before,
+  .v10-tour-block-title::after { margin: 0 8px; }
+  .v10-tour-outcome { font-size: 0.82rem; padding: 14px 14px; }
+}
+
 </style>
 
 <header class="site-header">
@@ -673,7 +976,7 @@ img, video, iframe, table { max-width: 100%; }
         <a href="immigration-en.html">Visa Status</a>
         <a href="education-en.html">EducationPlanning</a>
         <a href="career-en.html">requestcareer value</a>
-        <a href="quiz-en.html">Career Quiz</a>
+        <a href="#study-tour">Study Tour</a>
         <a href="cases-en.html">Client stories</a>
         <a href="#contact">Contact</a>
       </div>
@@ -778,17 +1081,112 @@ img, video, iframe, table { max-width: 100%; }
 
       </section>
 
-<!-- ============ QUIZ CTA (NAVY BG) ============ -->
-<section class="v10-section dark">
+<!-- ============ STUDY TOUR (NAVY BG) — v18.9.0 ============ -->
+<section class="v10-section dark" id="study-tour">
   <div class="v10-container">
+
+    <!-- HERO HEADER -->
     <div class="v10-head dark">
-      <span class="eyebrow">3 minutesCareer Quiz</span>
-      <h2>Not sure which path fits you?<br>3 minutestesttogethertest.</h2>
-      <p class="lede">Answer 5 questions,Discover your Career Index + Suitable Hong Kong visa + Education + Career path direction.</p>
+      <span class="eyebrow">5 Days 4 Nights · Hong Kong Study Tour</span>
+      <h2>Come to Hong Kong this summer,<br>experience a true global metropolis.</h2>
+      <p class="lede">A premium study tour for mainland high-school and university students — diverse subjects × 4 core modules × Fortune-500 certificates.</p>
     </div>
-    <div class="v10-quiz-cta-actions" style="text-align: center; margin-top: 32px;">
-      <a href="quiz-en.html" class="v10-cta-btn v10-cta-primary">Start nowCareer Quiz</a>
+
+    <!-- NATIONAL DAY BANNER -->
+    <div class="v10-tour-banner">
+      <div class="v10-tour-banner-flag">🇨🇳</div>
+      <div class="v10-tour-banner-body">
+        <span class="v10-tour-banner-eyebrow">National Day Special · Limited Seats</span>
+        <h3>National Day Golden Week · Hong Kong Study Tour</h3>
+        <p>Reserved for mainland high-school &amp; university students — celebrate together in an international metropolis.</p>
+        <span class="v10-tour-banner-meta">⏰ Applications close 20 September</span>
+      </div>
+      <a href="#contact" class="v10-cta-btn v10-tour-banner-btn">Inquire about National Day Tour</a>
     </div>
+
+    <!-- 4 CORE MODULES -->
+    <div class="v10-tour-modules">
+      <div class="v10-tour-module">
+        <span class="v10-tour-module-num">01 · MODULE</span>
+        <h3>Subject Discovery</h3>
+        <p>From finance to tech, business to culture — experience in-depth content across diverse subjects.</p>
+      </div>
+      <div class="v10-tour-module">
+        <span class="v10-tour-module-num">02 · MODULE</span>
+        <h3>Industry Insight</h3>
+        <p>Real corporate environments + frontier industry knowledge — step inside the professional world of a global metropolis.</p>
+      </div>
+      <div class="v10-tour-module">
+        <span class="v10-tour-module-num">03 · MODULE</span>
+        <h3>Personal Growth</h3>
+        <p>Personality profiling + team collaboration + business presentation — elevate your holistic competencies.</p>
+      </div>
+      <div class="v10-tour-module">
+        <span class="v10-tour-module-num">04 · MODULE</span>
+        <h3>Education Planning</h3>
+        <p>Top-8 HK universities application playbook + IANG 7-year residency pathway decoded end-to-end.</p>
+      </div>
+    </div>
+
+    <!-- SUBJECT CHIPS -->
+    <div class="v10-tour-themes">
+      <span class="v10-tour-themes-label">Subject Tracks</span>
+      <div class="v10-tour-themes-chips">
+        <span class="v10-tour-theme">Finance</span>
+        <span class="v10-tour-theme">Technology</span>
+        <span class="v10-tour-theme">English Academic</span>
+      </div>
+      <p class="v10-tour-themes-meta">Pick any subject — itinerary customised to your needs</p>
+    </div>
+
+    <!-- 8 OUTCOMES -->
+    <div class="v10-tour-outcomes">
+      <h3 class="v10-tour-block-title">8 Key Outcomes</h3>
+      <div class="v10-tour-outcomes-grid">
+        <div class="v10-tour-outcome"><span class="v10-tour-outcome-mark">✓</span>Fortune-500 financial firm programme certificate</div>
+        <div class="v10-tour-outcome"><span class="v10-tour-outcome-mark">✓</span>Recommendation letter from Fortune-500 executive</div>
+        <div class="v10-tour-outcome"><span class="v10-tour-outcome-mark">✓</span>Business plan drafting capability</div>
+        <div class="v10-tour-outcome"><span class="v10-tour-outcome-mark">✓</span>Business presentation &amp; teamwork</div>
+        <div class="v10-tour-outcome"><span class="v10-tour-outcome-mark">✓</span>7-year Hong Kong residency pathway</div>
+        <div class="v10-tour-outcome"><span class="v10-tour-outcome-mark">✓</span>Top-8 HK universities admission playbook</div>
+        <div class="v10-tour-outcome"><span class="v10-tour-outcome-mark">✓</span>Future academic &amp; career planning</div>
+        <div class="v10-tour-outcome"><span class="v10-tour-outcome-mark">✓</span>Global financial perspective</div>
+      </div>
+    </div>
+
+    <!-- PACKAGE -->
+    <div class="v10-tour-package">
+      <h3 class="v10-tour-block-title">Services &amp; Safeguards</h3>
+      <div class="v10-tour-package-grid">
+        <div class="v10-tour-package-card">
+          <div class="v10-tour-package-icon">🏨</div>
+          <h4>Accommodation</h4>
+          <p>3-star hotels in Wan Chai / Causeway Bay / Mong Kok — 4 nights, twin/double rooms with A/C, WiFi, en-suite bathroom.</p>
+        </div>
+        <div class="v10-tour-package-card">
+          <div class="v10-tour-package-icon">✈️</div>
+          <h4>Airport Transfer</h4>
+          <p>Shenzhen Bao'an Airport ↔ HK hotel transfers + daily hotel ↔ corporate transport.</p>
+        </div>
+        <div class="v10-tour-package-card">
+          <div class="v10-tour-package-icon">🍽️</div>
+          <h4>Meals</h4>
+          <p>Breakfast self-catered; lunch &amp; dinner as a group — bring ~HKD 2,000 equivalent in RMB for meals.</p>
+        </div>
+        <div class="v10-tour-package-card">
+          <div class="v10-tour-package-icon">🛡️</div>
+          <h4>Safety</h4>
+          <p>1:20 staff-to-student ratio throughout + short-term accident insurance + real-time parent updates.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAIN CTA -->
+    <div class="v10-tour-main-cta">
+      <a href="#contact" class="v10-cta-btn v10-cta-primary">Inquire about the 5-Day 4-Night Study Tour</a>
+      <p class="v10-cta-sub">Year-round rolling intake · Tailored quotes on request</p>
+    </div>
+
   </div>
 </section>
 
@@ -840,7 +1238,7 @@ img, video, iframe, table { max-width: 100%; }
         <p>After basic info submission 24 reply within 24 hours by consultant — includes 3 service linesMatch score + Estimated time + Next-step recommendations.</p>
         <div class="v10-cta-actions">
           <a href="https://wa.me/85291371211" class="v10-cta-btn v10-cta-primary">WhatsApp Book now</a>
-          <a href="quiz-en.html" class="v10-cta-btn v10-cta-secondary">firstmake 3 minutesCareer Quiz</a>
+          <a href="#study-tour" class="v10-cta-btn v10-cta-secondary">Discover the 5-Day 4-Night Study Tour</a>
         </div>
       </div>
     </div>
@@ -890,7 +1288,7 @@ img, video, iframe, table { max-width: 100%; }
       <div class="footer-col">
         <h4>Resources</h4>
         <a href="cases-en.html">Client cases</a>
-        <a href="quiz-en.html">Career Index Quiz</a>
+        <a href="#study-tour">Study Tour</a>
         <a href="#contact">Contact</a>
       </div>
       <div class="footer-col">
@@ -901,7 +1299,7 @@ img, video, iframe, table { max-width: 100%; }
     </div>
     <div class="footer-bottom">
       <span>© 2026 CareerForge 鑄途. All rights reserved.</span>
-<span class="footer-lang">
+<span class="footer-audit"><a href="audit-en.html">Mobile Audit</a></span>    <span class="footer-lang">
         <a href="index-en.html" class="active">繁</a> · <a href="index-cn.html">简</a> · <a href="index-en.html">EN</a>
       </span>
     </div>

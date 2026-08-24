@@ -1,7 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-version="v18.9">
 <head>
+  <script>
+    // CareerForge v18.8+ iPhone Safari disk cache fix
+    // iPhone Safari ignores server no-cache + meta no-cache + SW auto-update.
+    // This script uses fetch({cache: 'no-store'}) which iPhone Safari DOES honor,
+    // then replaces current page if server-side version doesn't match expected.
+    (function() {
+      var EXPECTED_VER = 'v18.9';
+      var path = location.pathname + '?cb=' + Date.now();
+      if (location.href.indexOf('cb=') !== -1) return;
+      fetch(path, {cache: 'no-store'})
+        .then(function(r) { return r.text(); })
+        .then(function(html) {
+          if (html.indexOf('data-version="' + EXPECTED_VER + '"') === -1) {
+            document.open();
+            document.write(html);
+            document.close();
+          }
+        })
+        .catch(function() {});
+    })();
+  </script>
 <meta charset="UTF-8">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hong Kong Status & Renewal Planning · Top Talent / Quality Migrant / Employment / 7Y PR · CareerForge</title>
 <meta name="description" content="CareerForge — End-to-end HK status & renewal alignment. 5 visa schemes (TTPS / QMAS / GEP / NEW CIES / IANG), from first visa to 7-year PR, fully compliant.">
@@ -1893,7 +1917,7 @@ img, video, iframe, table { max-width: 100%; }
     </div>
     <div class="footer-bottom">
       <span>© 2026 CareerForge 鑄途. All rights reserved.</span>
-      <span class="footer-lang">
+      <span class="footer-audit"><a href="audit-en.html">Mobile Audit</a></span>    <span class="footer-lang">
         <a href="index.html">繁體</a> · <a href="index-cn.html">简体</a> · <a href="index-en.html" class="active">EN</a>
       </span>
     </div>

@@ -1,7 +1,31 @@
 <!DOCTYPE html>
-<html lang="zh-Hans">
+<html lang="zh-Hans" data-version="v18.11">
 <head>
+  <script>
+    // CareerForge v18.8+ iPhone Safari disk cache fix
+    // iPhone Safari ignores server no-cache + meta no-cache + SW auto-update.
+    // This script uses fetch({cache: 'no-store'}) which iPhone Safari DOES honor,
+    // then replaces current page if server-side version doesn't match expected.
+    (function() {
+      var EXPECTED_VER = 'v18.11';
+      var path = location.pathname + '?cb=' + Date.now();
+      if (location.href.indexOf('cb=') !== -1) return;
+      fetch(path, {cache: 'no-store'})
+        .then(function(r) { return r.text(); })
+        .then(function(html) {
+          if (html.indexOf('data-version="' + EXPECTED_VER + '"') === -1) {
+            document.open();
+            document.write(html);
+            document.close();
+          }
+        })
+        .catch(function() {});
+    })();
+  </script>
 <meta charset="UTF-8">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>香港升学规划 · DSE / IB / A-Level / 海外名校对标 · CareerForge 铸途</title>
 <meta name="description" content="CareerForge 铸途 — 香港升学完整对标。从幼稚园、小学、中学到 DSE / IB / A-Level、大学申请，配合家长签证落地节奏同步推进子女教育路径。">
@@ -1284,7 +1308,7 @@ img, video, iframe, table { max-width: 100%; }
       </a>
       <div class="nav-menu" id="navMenu">
         <a href="index-cn.html">首页</a>
-        <a href="immigration-cn.html">身份规划</a>
+        <a href="immigration-cn-v17.html">身份规划</a>
         <a href="education-cn.html" class="active">升学规划</a>
         <a href="career-cn.html">求职身价</a>
         <a href="quiz-cn.html">牛马测验</a>
@@ -1323,7 +1347,7 @@ img, video, iframe, table { max-width: 100%; }
     </p>
     <div class="v10-hero-trust">
       <div class="v10-hero-trust-item">
-        <strong>15 年</strong>
+        <strong><span class="num-unit">15 年</span></strong>
         <span>立足香港教育经验</span>
       </div>
       <div class="v10-hero-trust-item">
@@ -1365,12 +1389,12 @@ img, video, iframe, table { max-width: 100%; }
       <div class="v10-why-card">
         <span class="v10-why-num">138</span>
         <span class="v10-why-label">内地高校招收</span>
-        <p class="v10-why-desc">清华、北大、复旦、交大 — 129 所内地顶尖学府以 DSE 成绩直接录取，最低门槛仅 3-3-2-2。</p>
+        <p class="v10-why-desc">清华、北大、复旦、交大 — <span class="num-unit">129 所</span>内地顶尖学府以 DSE 成绩直接录取，最低门槛仅 3-3-2-2。</p>
       </div>
       <div class="v10-why-card">
         <span class="v10-why-num">172</span>
         <span class="v10-why-label">免签国家护照</span>
-        <p class="v10-why-desc">完成 7 年永居后取得香港护照，免签全球 172 个国家及地区，双重身份优势。</p>
+        <p class="v10-why-desc">完成 <span class="num-unit">7 年</span>永居后取得香港护照，免签全球 172 个国家及地区，双重身份优势。</p>
       </div>
     </div>
 
@@ -1383,7 +1407,7 @@ img, video, iframe, table { max-width: 100%; }
       <div class="v10-why-card">
         <span class="v10-why-num">3 + 3</span>
         <span class="v10-why-label">无中考直通高中</span>
-        <p class="v10-why-desc">香港中学初中 3 年 + 高中 3 年（高中属义务教育），没有内地「中考」分流压力。</p>
+        <p class="v10-why-desc">香港中学初中 <span class="num-unit">3 年</span> + 高中 <span class="num-unit">3 年</span>（高中属义务教育），没有内地「中考」分流压力。</p>
       </div>
       <div class="v10-why-card">
         <span class="v10-why-num">38.5%</span>
@@ -1393,7 +1417,7 @@ img, video, iframe, table { max-width: 100%; }
       <div class="v10-why-card">
         <span class="v10-why-num">2+2</span>
         <span class="v10-why-label">副学士黄金跳板</span>
-        <p class="v10-why-desc">香港 2 年副学士 + 2 年本科 = 完整本科学历（与 4 年制本科完全一致），多一次选择机会。</p>
+        <p class="v10-why-desc">香港 <span class="num-unit">2 年</span>副学士 + <span class="num-unit">2 年</span>本科 = 完整本科学历（与 <span class="num-unit">4 年</span>制本科完全一致），多一次选择机会。</p>
       </div>
     </div>
   </div>
@@ -1422,7 +1446,7 @@ img, video, iframe, table { max-width: 100%; }
         <span class="v10-track-icon">IB</span>
         <span class="v10-track-tag">IBDP · 国际预科</span>
         <h3>国际预科证书</h3>
-        <p>由国际文凭组织（IBO）设计的 2 年制预科，强调跨学科思考与全球视野。香港 30+ 所国际学校提供。适合英语能力强、自学能力高的学生。</p>
+        <p>由国际文凭组织（IBO）设计的 <span class="num-unit">2 年</span>制预科，强调跨学科思考与全球视野。香港 30+ 所国际学校提供。适合英语能力强、自学能力高的学生。</p>
       </div>
 
       <!-- A-Level -->
@@ -1442,7 +1466,7 @@ img, video, iframe, table { max-width: 100%; }
     <div class="v10-head">
       <span class="eyebrow">服务流程 · 3–6 个月</span>
       <h2>由咨询到入学，<br>4&nbsp;步全程有人跟。</h2>
-      <p class="lede">不是分阶段计费的拼凑服务 — 是由 1 位资深顾问 + 学科导师团队全程跟进的 4 步流程。每一步都有明确交付物，不会「下一步再算」。</p>
+      <p class="lede">不是分阶段计费的拼凑服务 — 是由 <span class="num-unit">1 位</span>资深顾问 + 学科导师团队全程跟进的 <span class="num-unit">4 步</span>流程。每一步都有明确交付物，不会「下一步再算」。</p>
     </div>
 
     <div class="v10-process">
@@ -1535,7 +1559,7 @@ img, video, iframe, table { max-width: 100%; }
         <h4>评估 + 咨询</h4>
         <p class="v10-package-desc">适合刚开始考虑升学的家庭 — 想先了解子女能力 + 适合的路径方向。</p>
         <ul class="v10-package-points">
-          <li>30 分鐘免費初步咨询</li>
+          <li><span class="num-unit">30 分鐘</span>免費初步咨询</li>
           <li>3 小时学业评估（英文 + 數学）</li>
           <li>1 周后评估报告 + 升学路径建议</li>
           <li>3 条升学路径分析（DSE / IB / A-Level）</li>
@@ -1550,7 +1574,7 @@ img, video, iframe, table { max-width: 100%; }
         <p class="v10-package-desc">适合已有明确升学目标的家庭 — 由评估到入学全程一条龙跟进。</p>
         <ul class="v10-package-points">
           <li>套餐 A 全部内容</li>
-          <li>1 位资深顧問 + 学科导师团队全程跟进</li>
+          <li><span class="num-unit">1 位</span>资深顧問 + 学科导师团队全程跟进</li>
           <li>选校策略 + 三層梯隊（首选 / 次选 / 保底）</li>
           <li>报名、文件准备、面试训练一条龙</li>
           <li>3–6 个月服务期，入学后跟进 1 学期</li>
@@ -1646,7 +1670,7 @@ img, video, iframe, table { max-width: 100%; }
 
       <div class="v10-case">
         <span class="v10-case-icon">★</span>
-        <p class="v10-case-quote">「启思中学 IBMYP 学生，9 月开始补习，下学期成功考入新加坡国际学校」</p>
+        <p class="v10-case-quote">「启思中学 IBMYP 学生，<span class="num-unit">9 月</span>开始补习，下学期成功考入新加坡国际学校」</p>
         <span class="v10-case-meta">国际学校转学 · 2025 学年</span>
       </div>
 
@@ -1658,7 +1682,7 @@ img, video, iframe, table { max-width: 100%; }
 
       <div class="v10-case">
         <span class="v10-case-icon">★</span>
-        <p class="v10-case-quote">「8 月下旬来港，由插班试英文『白卷』到 10 月份成功获得高中取录」</p>
+        <p class="v10-case-quote">「<span class="num-unit">8 月</span>下旬来港，由插班试英文『白卷』到 <span class="num-unit">10 月</span>份成功获得高中取录」</p>
         <span class="v10-case-meta">高中插班 · 2025 学年</span>
       </div>
 
@@ -1690,7 +1714,7 @@ img, video, iframe, table { max-width: 100%; }
         <p>提交基本资料後 24 小时內收到顧問回覆 — 包含子女学业初步評估 + 3 条升学路径建議（DSE / IB / A-Level）+ 预計所需时间 + 後續路徑規劃。</p>
         <div class="v10-cta-actions">
           <a href="https://wa.me/85291371211" class="v10-cta-btn v10-cta-primary">WhatsApp 立即预約</a>
-          <a href="quiz-cn.html" class="v10-cta-btn v10-cta-secondary">先做 3 分鐘牛馬測驗</a>
+          <a href="quiz-cn.html" class="v10-cta-btn v10-cta-secondary">先做 <span class="num-unit">3 分鐘</span>牛馬測驗</a>
         </div>
       </div>
     </div>
@@ -1733,7 +1757,7 @@ img, video, iframe, table { max-width: 100%; }
       </div>
       <div class="footer-col">
         <h4>业务板塊</h4>
-        <a href="immigration-cn.html">身份與續簽对標</a>
+        <a href="immigration-cn-v17.html">身份與續簽对標</a>
         <a href="education-cn.html">海外與香港升学</a>
         <a href="career-cn.html">求職與身價躍遷</a>
       </div>
@@ -1751,7 +1775,7 @@ img, video, iframe, table { max-width: 100%; }
     </div>
     <div class="footer-bottom">
       <span>© 2026 CareerForge 鑄途. All rights reserved.</span>
-      <span class="footer-lang">
+      <span class="footer-audit"><a href="audit-cn.html">Mobile Audit</a></span>    <span class="footer-lang">
         <a href="index.html">繁体</a> · <a href="index-cn.html" class="active">简体</a> · <a href="index-en.html">EN</a>
       </span>
     </div>

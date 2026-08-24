@@ -1,7 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-version="v18.11">
 <head>
+  <script>
+    // CareerForge v18.8+ iPhone Safari disk cache fix
+    // iPhone Safari ignores server no-cache + meta no-cache + SW auto-update.
+    // This script uses fetch({cache: 'no-store'}) which iPhone Safari DOES honor,
+    // then replaces current page if server-side version doesn't match expected.
+    (function() {
+      var EXPECTED_VER = 'v18.11';
+      var path = location.pathname + '?cb=' + Date.now();
+      if (location.href.indexOf('cb=') !== -1) return;
+      fetch(path, {cache: 'no-store'})
+        .then(function(r) { return r.text(); })
+        .then(function(html) {
+          if (html.indexOf('data-version="' + EXPECTED_VER + '"') === -1) {
+            document.open();
+            document.write(html);
+            document.close();
+          }
+        })
+        .catch(function() {});
+    })();
+  </script>
 <meta charset="UTF-8">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hong Kong education規劃 · DSE / IB / A-Level / 海外名校對標 · CareerForge 鑄途</title>
 <meta name="description" content="CareerForge 鑄途 — Hong Kong education pathway。從幼稚園、小學、中學到 DSE / IB / A-Level / universityapplication，Aligning children's education path with parents' visa timeline。">
@@ -1557,7 +1581,7 @@ CareerForge 鑄途 — Hong Kong education, 一站式陪跑。<br>
     </p>
     <div class="v10-hero-trust">
       <div class="v10-hero-trust-item">
-        <strong>15 年</strong>
+        <strong><span class="num-unit">15 年</span></strong>
         <span>Rooted in Hong Kong experience</span>
       </div>
       <div class="v10-hero-trust-item">
@@ -1599,7 +1623,7 @@ CareerForge 鑄途 — Hong Kong education, 一站式陪跑。<br>
       <div class="v10-why-card">
         <span class="v10-why-num">138</span>
         <span class="v10-why-label">內地高校招收</span>
-        <p class="v10-why-desc">清華、北大、復旦、交大 — 129 所內地top universities以 DSE 成績直接admission，最低門檻僅 3-3-2-2。</p>
+        <p class="v10-why-desc">清華、北大、復旦、交大 — <span class="num-unit">129 所</span>內地top universities以 DSE 成績直接admission，最低門檻僅 3-3-2-2。</p>
       </div>
       <div class="v10-why-card">
         <span class="v10-why-num">172</span>
@@ -1617,7 +1641,7 @@ CareerForge 鑄途 — Hong Kong education, 一站式陪跑。<br>
       <div class="v10-why-card">
         <span class="v10-why-num">3 + 3</span>
         <span class="v10-why-label">無中考直通高中</span>
-        <p class="v10-why-desc">香港中學初中 3 年 + 高中 3 年（高中屬義務教育），沒有內地「中考」分流壓力。</p>
+        <p class="v10-why-desc">香港中學初中 <span class="num-unit">3 年</span> + 高中 <span class="num-unit">3 年</span>（高中屬義務教育），沒有內地「中考」分流壓力。</p>
       </div>
       <div class="v10-why-card">
         <span class="v10-why-num">38.5%</span>
@@ -1627,7 +1651,7 @@ CareerForge 鑄途 — Hong Kong education, 一站式陪跑。<br>
       <div class="v10-why-card">
         <span class="v10-why-num">2+2</span>
         <span class="v10-why-label">副學士黃金跳板</span>
-        <p class="v10-why-desc">香港 2 年副學士 + 2 年本科 = complete本科學歷（與 4 Year undergraduate degree fully aligned），多一次選擇機會。</p>
+        <p class="v10-why-desc">香港 <span class="num-unit">2 年</span>副學士 + <span class="num-unit">2 年</span>本科 = complete本科學歷（與 4 Year undergraduate degree fully aligned），多一次選擇機會。</p>
       </div>
     </div>
   </div>
@@ -1656,7 +1680,7 @@ CareerForge 鑄途 — Hong Kong education, 一站式陪跑。<br>
         <span class="v10-track-icon">IB</span>
         <span class="v10-track-tag">IBDP · 國際預科</span>
         <h3>國際預科證書</h3>
-        <p>FromInternational Baccalaureate組織（IBO）design  2 年制預科，Emphasizes interdisciplinary thinking and global perspective。香港 30+ 所國際schoolprovide。suitable英語能力強、自學能力高 學生。</p>
+        <p>FromInternational Baccalaureate組織（IBO）design  <span class="num-unit">2 年</span>制預科，Emphasizes interdisciplinary thinking and global perspective。香港 30+ 所國際schoolprovide。suitable英語能力強、自學能力高 學生。</p>
       </div>
 
       <!-- A-Level -->
@@ -1676,7 +1700,7 @@ CareerForge 鑄途 — Hong Kong education, 一站式陪跑。<br>
     <div class="v10-head">
       <span class="eyebrow">Service flow · 3–6 cases月</span>
       <h2>From諮詢到enrollment，<br>4&nbsp;步全程有人跟。</h2>
-      <p class="lede">Not piecemeal tiered pricing — 是From 1 位資深consultants + 學科Tutor Team全程跟進  4 步流程。eachEach step has clear deliverables，不會「下一步再算」。</p>
+      <p class="lede">Not piecemeal tiered pricing — 是From <span class="num-unit">1 位</span>資深consultants + 學科Tutor Team全程跟進  <span class="num-unit">4 步</span>流程。eachEach step has clear deliverables，不會「下一步再算」。</p>
     </div>
 
     <div class="v10-process">
@@ -1685,7 +1709,7 @@ CareerForge 鑄途 — Hong Kong education, 一站式陪跑。<br>
         <span class="v10-process-step-tag">STEP 01</span>
         <h4>初步諮詢</h4>
         <p>understandparents需求、說明香港教育制度、搜集學生校內成績。</p>
-        <p class="step-detail">30 分鐘免費訪談，結合familygoal、children能力、Initial pathway recommendations within budget range。</p>
+        <p class="step-detail"><span class="num-unit">30 分鐘</span>免費訪談，結合familygoal、children能力、Initial pathway recommendations within budget range。</p>
       </div>
 
       <div class="v10-process-step">
@@ -1700,7 +1724,7 @@ CareerForge 鑄途 — Hong Kong education, 一站式陪跑。<br>
         <span class="v10-process-step-num">03</span>
         <span class="v10-process-step-tag">STEP 03</span>
         <h4>選校策略</h4>
-        <p>結合成績、興趣、familygoal，找出 8–20 間goalschool。</p>
+        <p>結合成績、興趣、familygoal，找出 8–<span class="num-unit">20 間</span>goalschool。</p>
         <p class="step-detail">首選 / 次選 / 保底三層梯隊，cover本地津校、直資、私立、國際school 4 大類別。</p>
       </div>
 
@@ -1769,11 +1793,11 @@ CareerForge 鑄途 — Hong Kong education, 一站式陪跑。<br>
         <h4>assessment + 諮詢</h4>
         <p class="v10-package-desc">suitable剛開始考慮升學 family — 想先understandchildren能力 + suitable pathway方向。</p>
         <ul class="v10-package-points">
-          <li>30 分鐘免費初步諮詢</li>
+          <li><span class="num-unit">30 分鐘</span>免費初步諮詢</li>
           <li>3 小時學業assessment（英文 + 數學）</li>
           <li>1 周後assessment報告 + 升學pathway建議</li>
           <li>3 升學pathway分析（DSE / IB / A-Level）</li>
-          <li>選校方向初稿（8–20 間goalschool）</li>
+          <li>選校方向初稿（8–<span class="num-unit">20 間</span>goalschool）</li>
         </ul>
       </div>
 
@@ -1784,7 +1808,7 @@ CareerForge 鑄途 — Hong Kong education, 一站式陪跑。<br>
         <p class="v10-package-desc">Suitable for families with clear education goals — From assessment toenrollment全程full support。</p>
         <ul class="v10-package-points">
           <li>Package A all內容</li>
-          <li>1 位資深consultants + 學科Tutor Team全程跟進</li>
+          <li><span class="num-unit">1 位</span>資深consultants + 學科Tutor Team全程跟進</li>
           <li>選校策略 + 三層梯隊（首選 / 次選 / 保底）</li>
           <li>報名、文件準備、Interview trainingcomprehensive</li>
           <li>3–6 cases月服務期，enrollment後跟進 1 學期</li>
@@ -1880,7 +1904,7 @@ CareerForge 鑄途 — Hong Kong education, 一站式陪跑。<br>
 
       <div class="v10-case">
         <span class="v10-case-icon">★</span>
-        <p class="v10-case-quote">「啟思中學 IBMYP 學生，9 月開始補習，Successfully enrolled in Singapore international school next semester」</p>
+        <p class="v10-case-quote">「啟思中學 IBMYP 學生，<span class="num-unit">9 月</span>開始補習，Successfully enrolled in Singapore international school next semester」</p>
         <span class="v10-case-meta">國際school轉學 · 2025 學年</span>
       </div>
 
@@ -1892,13 +1916,13 @@ CareerForge 鑄途 — Hong Kong education, 一站式陪跑。<br>
 
       <div class="v10-case">
         <span class="v10-case-icon">★</span>
-        <p class="v10-case-quote">「8 月下旬來港，From插班試英文『白卷』到 10 月份成功obtain高中取錄」</p>
+        <p class="v10-case-quote">「<span class="num-unit">8 月</span>下旬來港，From插班試英文『白卷』到 <span class="num-unit">10 月</span>份成功obtain高中取錄」</p>
         <span class="v10-case-meta">高中插班 · 2025 學年</span>
       </div>
 
       <div class="v10-case">
         <span class="v10-case-icon">★</span>
-        <p class="v10-case-quote">「兩姊妹application 8 間一線幼稚園，7 間取錄，Ultimately chose Kowloon True Light Secondary School（幼稚園部）」</p>
+        <p class="v10-case-quote">「兩姊妹application <span class="num-unit">8 間</span>一線幼稚園，<span class="num-unit">7 間</span>取錄，Ultimately chose Kowloon True Light Secondary School（幼稚園部）」</p>
         <span class="v10-case-meta">幼稚園enrollment · 2024 學年</span>
       </div>
     </div>
@@ -1985,7 +2009,7 @@ CareerForge 鑄途 — Hong Kong education, 一站式陪跑。<br>
     </div>
     <div class="footer-bottom">
       <span>© 2026 CareerForge 鑄途. All rights reserved.</span>
-      <span class="footer-lang">
+      <span class="footer-audit"><a href="audit-en.html">Mobile Audit</a></span>    <span class="footer-lang">
         <a href="index-en.html" class="active">繁體</a> · <a href="index-cn.html">简体</a> · <a href="index-en.html">EN</a>
       </span>
     </div>

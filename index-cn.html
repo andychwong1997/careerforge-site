@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hans" data-version="v18.9">
+<html lang="zh-Hans" data-version="v18.12">
 <head>
   <script>
     // CareerForge v18.8+ iPhone Safari disk cache fix
@@ -7,7 +7,7 @@
     // This script uses fetch({cache: 'no-store'}) which iPhone Safari DOES honor,
     // then replaces current page if server-side version doesn't match expected.
     (function() {
-      var EXPECTED_VER = 'v18.9';
+      var EXPECTED_VER = 'v18.12';
       var path = location.pathname + '?cb=' + Date.now();
       if (location.href.indexOf('cb=') !== -1) return;
       fetch(path, {cache: 'no-store'})
@@ -683,6 +683,285 @@ img, video, iframe, table { max-width: 100%; }
   .v10-container { padding-left: 16px; padding-right: 16px; }
 }
 
+/* ============ STUDY TOUR (NAVY BG) — v18.9.0 ============ */
+.v10-tour-banner {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 28px;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(212,175,55,0.10) 0%, rgba(212,175,55,0.02) 100%);
+  border: 1px solid var(--gold);
+  border-radius: var(--radius);
+  padding: 32px 40px;
+  margin: 0 auto 56px;
+  max-width: 980px;
+  position: relative;
+  overflow: hidden;
+}
+.v10-tour-banner::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 6px;
+  height: 100%;
+  background: var(--gold);
+}
+.v10-tour-banner-flag {
+  font-size: 2.5rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.v10-tour-banner-body { min-width: 0; }
+.v10-tour-banner-eyebrow {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+.v10-tour-banner h3 {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--white);
+  margin: 0 0 8px;
+  line-height: 1.3;
+}
+.v10-tour-banner p {
+  font-size: 0.92rem;
+  color: rgba(255,255,255,0.78);
+  margin: 0 0 10px;
+  line-height: 1.55;
+}
+.v10-tour-banner-meta {
+  display: inline-block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: 0.04em;
+}
+.v10-tour-banner-btn {
+  background: var(--gold);
+  color: var(--navy) !important;
+  border-color: var(--gold);
+  padding: 14px 26px;
+  white-space: nowrap;
+  font-size: 0.9rem;
+}
+
+.v10-tour-modules {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-bottom: 64px;
+}
+.v10-tour-module {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(212,175,55,0.25);
+  border-radius: var(--radius);
+  padding: 32px 28px;
+  position: relative;
+  transition: all .25s ease;
+}
+.v10-tour-module:hover {
+  background: rgba(255,255,255,0.07);
+  border-color: var(--gold);
+  transform: translateY(-2px);
+}
+.v10-tour-module-num {
+  display: inline-block;
+  font-family: 'Playfair Display', serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: var(--gold);
+  margin-bottom: 14px;
+}
+.v10-tour-module h3 {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--white);
+  margin: 0 0 12px;
+  line-height: 1.3;
+}
+.v10-tour-module p {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.78);
+  margin: 0;
+}
+
+.v10-tour-themes {
+  text-align: center;
+  margin-bottom: 72px;
+}
+.v10-tour-themes-label {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+.v10-tour-themes-chips {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.v10-tour-theme {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 28px;
+  background: transparent;
+  border: 1px solid var(--gold);
+  color: var(--white);
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  transition: all .25s ease;
+}
+.v10-tour-theme:hover {
+  background: var(--gold);
+  color: var(--navy) !important;
+}
+.v10-tour-themes-meta {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.6);
+  margin: 12px 0 0;
+}
+
+.v10-tour-block-title {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--white);
+  text-align: center;
+  margin: 0 0 32px;
+  letter-spacing: 0.01em;
+}
+.v10-tour-block-title::before,
+.v10-tour-block-title::after {
+  content: "—";
+  color: var(--gold);
+  margin: 0 14px;
+  opacity: 0.5;
+  font-weight: 400;
+}
+
+.v10-tour-outcomes {
+  margin-bottom: 64px;
+}
+.v10-tour-outcomes-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  max-width: 980px;
+  margin: 0 auto;
+}
+.v10-tour-outcome {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 18px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(212,175,55,0.2);
+  border-radius: var(--radius);
+  font-size: 0.88rem;
+  color: var(--white);
+  line-height: 1.4;
+  transition: all .25s ease;
+}
+.v10-tour-outcome:hover {
+  background: rgba(255,255,255,0.06);
+  border-color: var(--gold);
+}
+.v10-tour-outcome-mark {
+  color: var(--gold);
+  font-weight: 700;
+  flex-shrink: 0;
+  font-size: 1rem;
+}
+
+.v10-tour-package {
+  margin-bottom: 64px;
+}
+.v10-tour-package-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.v10-tour-package-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(212,175,55,0.2);
+  border-radius: var(--radius);
+  padding: 28px 22px;
+  text-align: center;
+  transition: all .25s ease;
+}
+.v10-tour-package-card:hover {
+  background: rgba(255,255,255,0.07);
+  border-color: var(--gold);
+  transform: translateY(-2px);
+}
+.v10-tour-package-icon {
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+  line-height: 1;
+}
+.v10-tour-package-card h4 {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--gold);
+  margin: 0 0 10px;
+}
+.v10-tour-package-card p {
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: rgba(255,255,255,0.72);
+  margin: 0;
+}
+
+.v10-tour-main-cta {
+  text-align: center;
+  margin-top: 56px;
+}
+.v10-cta-sub {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.6);
+  margin: 18px 0 0;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .v10-tour-banner {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 28px 24px;
+    gap: 14px;
+  }
+  .v10-tour-banner::before { width: 100%; height: 4px; }
+  .v10-tour-banner-flag { font-size: 2rem; }
+  .v10-tour-banner h3 { font-size: 1.15rem; }
+  .v10-tour-banner-btn { width: 100%; justify-content: center; }
+
+  .v10-tour-modules { grid-template-columns: 1fr; gap: 14px; }
+  .v10-tour-outcomes-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .v10-tour-package-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+
+  .v10-tour-theme { padding: 10px 20px; font-size: 0.92rem; }
+  .v10-tour-block-title { font-size: 1.2rem; }
+  .v10-tour-block-title::before,
+  .v10-tour-block-title::after { margin: 0 8px; }
+  .v10-tour-outcome { font-size: 0.82rem; padding: 14px 14px; }
+}
+
 </style>
 
 <header class="site-header">
@@ -697,7 +976,7 @@ img, video, iframe, table { max-width: 100%; }
         <a href="immigration-cn-v17.html">身份规划</a>
         <a href="education-cn.html">升学规划</a>
         <a href="career-cn.html">求职身价</a>
-        <a href="quiz-cn.html">牛马测验</a>
+        <a href="#study-tour">游学团</a>
         <a href="cases-cn.html">客户故事</a>
         <a href="#contact">联系我们</a>
       </div>
@@ -802,17 +1081,112 @@ img, video, iframe, table { max-width: 100%; }
 
       </section>
 
-<!-- ============ QUIZ CTA (NAVY BG) ============ -->
-<section class="v10-section dark">
+<!-- ============ STUDY TOUR (NAVY BG) — v18.9.0 ============ -->
+<section class="v10-section dark" id="study-tour">
   <div class="v10-container">
+
+    <!-- HERO HEADER -->
     <div class="v10-head dark">
-      <span class="eyebrow">3 分钟牛马测验</span>
-      <h2>不知自己适合哪一条路？<br>3&nbsp;分鐘測一測。</h2>
-      <p class="lede">回答 5 条问题，了解自己的牛马指数 + 适合的香港身份、升学、职涯路径方向。</p>
+      <span class="eyebrow">5 天 4 夜 · 香港游学团</span>
+      <h2>暑假来香港，<br>亲身体验国际大都会。</h2>
+      <p class="lede">为内地高中及大学生打造的深度游学 — 多元主题 × 4 大核心模块 × 500 强企业证书。</p>
     </div>
-    <div class="v10-quiz-cta-actions" style="text-align: center; margin-top: 32px;">
-      <a href="quiz-cn.html" class="v10-cta-btn v10-cta-primary">立即做牛马测验</a>
+
+    <!-- 國慶限定 BANNER -->
+    <div class="v10-tour-banner">
+      <div class="v10-tour-banner-flag">🇨🇳</div>
+      <div class="v10-tour-banner-body">
+        <span class="v10-tour-banner-eyebrow">国庆限定 · 限量招募</span>
+        <h3>国庆黄金周限定 · 香港游学团</h3>
+        <p>内地高中及大学生专属 — 与祖国同庆 + 亲历国际大都会</p>
+        <span class="v10-tour-banner-meta">⏰ 9 月 20 日截止报名</span>
+      </div>
+      <a href="#contact" class="v10-cta-btn v10-tour-banner-btn">立即查询国庆团</a>
     </div>
+
+    <!-- 4 大核心模塊 -->
+    <div class="v10-tour-modules">
+      <div class="v10-tour-module">
+        <span class="v10-tour-module-num">01 · MODULE</span>
+        <h3>主题探索</h3>
+        <p>从金融到科技，从商业到文化 — 亲身体验多元主题的深度内容。</p>
+      </div>
+      <div class="v10-tour-module">
+        <span class="v10-tour-module-num">02 · MODULE</span>
+        <h3>专业启蒙</h3>
+        <p>真实企业环境 + 行业前沿认知 — 走进国际大都会的专业世界。</p>
+      </div>
+      <div class="v10-tour-module">
+        <span class="v10-tour-module-num">03 · MODULE</span>
+        <h3>个人成长</h3>
+        <p>性格分析 + 团队协作 + 商务演讲 — 全面提升综合素质。</p>
+      </div>
+      <div class="v10-tour-module">
+        <span class="v10-tour-module-num">04 · MODULE</span>
+        <h3>升学规划</h3>
+        <p>港八大名校申请攻略 + IANG 7 年永居路径全方位解读。</p>
+      </div>
+    </div>
+
+    <!-- 主題 chips -->
+    <div class="v10-tour-themes">
+      <span class="v10-tour-themes-label">主题方向</span>
+      <div class="v10-tour-themes-chips">
+        <span class="v10-tour-theme">金融</span>
+        <span class="v10-tour-theme">科技</span>
+        <span class="v10-tour-theme">英语学术</span>
+      </div>
+      <p class="v10-tour-themes-meta">多元主题任选，按需求客制化行程</p>
+    </div>
+
+    <!-- 8 大收穫 -->
+    <div class="v10-tour-outcomes">
+      <h3 class="v10-tour-block-title">8 大收获</h3>
+      <div class="v10-tour-outcomes-grid">
+        <div class="v10-tour-outcome"><span class="v10-tour-outcome-mark">✓</span>500 强金融企业签发项目证书</div>
+        <div class="v10-tour-outcome"><span class="v10-tour-outcome-mark">✓</span>500 强企业高层推荐信</div>
+        <div class="v10-tour-outcome"><span class="v10-tour-outcome-mark">✓</span>商业策划书撰写能力</div>
+        <div class="v10-tour-outcome"><span class="v10-tour-outcome-mark">✓</span>商务演讲与团队协作</div>
+        <div class="v10-tour-outcome"><span class="v10-tour-outcome-mark">✓</span>留港 7 年永居路径</div>
+        <div class="v10-tour-outcome"><span class="v10-tour-outcome-mark">✓</span>港八大名校申请攻略</div>
+        <div class="v10-tour-outcome"><span class="v10-tour-outcome-mark">✓</span>未来专业职业规划</div>
+        <div class="v10-tour-outcome"><span class="v10-tour-outcome-mark">✓</span>国际金融视野</div>
+      </div>
+    </div>
+
+    <!-- 配套說明 -->
+    <div class="v10-tour-package">
+      <h3 class="v10-tour-block-title">配套与保障</h3>
+      <div class="v10-tour-package-grid">
+        <div class="v10-tour-package-card">
+          <div class="v10-tour-package-icon">🏨</div>
+          <h4>住宿配套</h4>
+          <p>湾仔/铜锣湾/旺角三星酒店，4 晚标间/双人间（含空调、WiFi、独立卫浴）</p>
+        </div>
+        <div class="v10-tour-package-card">
+          <div class="v10-tour-package-icon">✈️</div>
+          <h4>接送服务</h4>
+          <p>深圳宝安机场 ↔ 香港酒店接送 + 酒店 ↔ 企业交通</p>
+        </div>
+        <div class="v10-tour-package-card">
+          <div class="v10-tour-package-icon">🍽️</div>
+          <h4>餐饮安排</h4>
+          <p>早餐自理；午晚餐以小组用餐（建议带 ¥2000 人民币等值港币餐费）</p>
+        </div>
+        <div class="v10-tour-package-card">
+          <div class="v10-tour-package-icon">🛡️</div>
+          <h4>安全保障</h4>
+          <p>1:20 师生比全程陪同 + 短期意外保险 + 实时家长反馈</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 主 CTA -->
+    <div class="v10-tour-main-cta">
+      <a href="#contact" class="v10-cta-btn v10-cta-primary">立即查询 5 天 4 夜游学团</a>
+      <p class="v10-cta-sub">全年滚动招生 · 按需求客制化报价</p>
+    </div>
+
   </div>
 </section>
 
@@ -864,7 +1238,7 @@ img, video, iframe, table { max-width: 100%; }
         <p>提交基本资料后 24 小时内收到顾问回复 — 包含 3 大业务板块匹配度评分 + 预计所需时间 + 后续路径建议。</p>
         <div class="v10-cta-actions">
           <a href="https://wa.me/85291371211" class="v10-cta-btn v10-cta-primary">WhatsApp 立即预约</a>
-          <a href="quiz-cn.html" class="v10-cta-btn v10-cta-secondary">先做 3 分钟牛马测验</a>
+          <a href="#study-tour" class="v10-cta-btn v10-cta-secondary">了解 5 天 4 夜游学团</a>
         </div>
       </div>
     </div>
@@ -914,7 +1288,7 @@ img, video, iframe, table { max-width: 100%; }
       <div class="footer-col">
         <h4>资源</h4>
         <a href="cases-cn.html">客户案例</a>
-        <a href="quiz-cn.html">牛马身价测验</a>
+        <a href="#study-tour">游学团</a>
         <a href="#contact">联络我们</a>
       </div>
       <div class="footer-col">

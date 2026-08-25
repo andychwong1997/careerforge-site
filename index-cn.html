@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hans" data-version="v18.12.2">
+<html lang="zh-Hans" data-version="v18.13">
 <head>
   <script>
     // CareerForge v18.8+ iPhone Safari disk cache fix
@@ -7,7 +7,7 @@
     // This script uses fetch({cache: 'no-store'}) which iPhone Safari DOES honor,
     // then replaces current page if server-side version doesn't match expected.
     (function() {
-      var EXPECTED_VER = 'v18.12.2';
+      var EXPECTED_VER = 'v18.13';
       var path = location.pathname + '?cb=' + Date.now();
       if (location.href.indexOf('cb=') !== -1) return;
       fetch(path, {cache: 'no-store'})
@@ -941,6 +941,24 @@ img, video, iframe, table { max-width: 100%; }
   text-align: center;
 }
 
+/* v18.13 — learn-more button + breadcrumb (study tour funnel) */
+.v10-tour-learn-more {
+  text-align: center;
+  margin-top: 36px;
+}
+.v10-tour-breadcrumb {
+  margin-bottom: 18px;
+  font-size: 0.85rem;
+}
+.v10-tour-breadcrumb a {
+  color: rgba(212,175,55,0.85);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.v10-tour-breadcrumb a:hover {
+  color: var(--gold);
+}
+
 @media (max-width: 900px) {
   .v10-tour-banner {
     grid-template-columns: 1fr;
@@ -979,7 +997,7 @@ img, video, iframe, table { max-width: 100%; }
         <a href="immigration-cn-v17.html">身份规划</a>
         <a href="education-cn.html">升学规划</a>
         <a href="career-cn.html">求职身价</a>
-        <a href="#study-tour">游学团</a>
+        <a href="tour-cn.html">游学团</a>
         <a href="cases-cn.html">客户故事</a>
         <a href="#contact">联系我们</a>
       </div>
@@ -1107,87 +1125,9 @@ img, video, iframe, table { max-width: 100%; }
       <a href="#contact" class="v10-cta-btn v10-tour-banner-btn">立即查询国庆团</a>
     </div>
 
-    <!-- 4 大核心模塊 -->
-    <div class="v10-tour-modules">
-      <div class="v10-tour-module">
-        <span class="v10-tour-module-num">01 · MODULE</span>
-        <h3>主题探索</h3>
-        <p>从金融到科技，从商业到文化 — 亲身体验多元主题的深度内容。</p>
-      </div>
-      <div class="v10-tour-module">
-        <span class="v10-tour-module-num">02 · MODULE</span>
-        <h3>专业启蒙</h3>
-        <p>真实企业环境 + 行业前沿认知 — 走进国际大都会的专业世界。</p>
-      </div>
-      <div class="v10-tour-module">
-        <span class="v10-tour-module-num">03 · MODULE</span>
-        <h3>个人成长</h3>
-        <p>性格分析 + 团队协作 + 商务演讲 — 全面提升综合素质。</p>
-      </div>
-      <div class="v10-tour-module">
-        <span class="v10-tour-module-num">04 · MODULE</span>
-        <h3>升学规划</h3>
-        <p>港八大名校申请攻略 + IANG 7 年永居路径全方位解读。</p>
-      </div>
-    </div>
-
-    <!-- 主題 chips -->
-    <div class="v10-tour-themes">
-      <span class="v10-tour-themes-label">主题方向</span>
-      <div class="v10-tour-themes-chips">
-        <span class="v10-tour-theme">金融</span>
-        <span class="v10-tour-theme">科技</span>
-        <span class="v10-tour-theme">英语学术</span>
-      </div>
-      <p class="v10-tour-themes-meta">多元主题任选，按需求客制化行程</p>
-    </div>
-
-    <!-- 8 大收穫 -->
-    <div class="v10-tour-outcomes">
-      <h3 class="v10-tour-block-title">8 大收获</h3>
-      <div class="v10-tour-outcomes-grid">
-        <div class="v10-tour-outcome"><span class="v10-tour-outcome-mark">✓</span>500 强金融企业签发项目证书</div>
-        <div class="v10-tour-outcome"><span class="v10-tour-outcome-mark">✓</span>500 强企业高层推荐信</div>
-        <div class="v10-tour-outcome"><span class="v10-tour-outcome-mark">✓</span>商业策划书撰写能力</div>
-        <div class="v10-tour-outcome"><span class="v10-tour-outcome-mark">✓</span>商务演讲与团队协作</div>
-        <div class="v10-tour-outcome"><span class="v10-tour-outcome-mark">✓</span>留港 7 年永居路径</div>
-        <div class="v10-tour-outcome"><span class="v10-tour-outcome-mark">✓</span>港八大名校申请攻略</div>
-        <div class="v10-tour-outcome"><span class="v10-tour-outcome-mark">✓</span>未来专业职业规划</div>
-        <div class="v10-tour-outcome"><span class="v10-tour-outcome-mark">✓</span>国际金融视野</div>
-      </div>
-    </div>
-
-    <!-- 配套說明 -->
-    <div class="v10-tour-package">
-      <h3 class="v10-tour-block-title">配套与保障</h3>
-      <div class="v10-tour-package-grid">
-        <div class="v10-tour-package-card">
-          <div class="v10-tour-package-icon">🏨</div>
-          <h4>住宿配套</h4>
-          <p>湾仔/铜锣湾/旺角三星酒店，4 晚标间/双人间（含空调、WiFi、独立卫浴）</p>
-        </div>
-        <div class="v10-tour-package-card">
-          <div class="v10-tour-package-icon">✈️</div>
-          <h4>接送服务</h4>
-          <p>深圳宝安机场 ↔ 香港酒店接送 + 酒店 ↔ 企业交通</p>
-        </div>
-        <div class="v10-tour-package-card">
-          <div class="v10-tour-package-icon">🍽️</div>
-          <h4>餐饮安排</h4>
-          <p>早餐自理；午晚餐以小组用餐（建议带 ¥2000 人民币等值港币餐费）</p>
-        </div>
-        <div class="v10-tour-package-card">
-          <div class="v10-tour-package-icon">🛡️</div>
-          <h4>安全保障</h4>
-          <p>1:20 师生比全程陪同 + 短期意外保险 + 实时家长反馈</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- 主 CTA -->
-    <div class="v10-tour-main-cta">
-      <a href="#contact" class="v10-cta-btn v10-cta-primary">立即查询 5 天 4 夜游学团</a>
-      <p class="v10-cta-sub">全年滚动招生 · 按需求客制化报价</p>
+    <!-- Learn-more button (v18.13 funnel — link to detail page) -->
+    <div class="v10-tour-learn-more">
+      <a href="tour.html" class="v10-cta-btn v10-cta-secondary">了解 5 天 4 夜完整行程 →</a>
     </div>
 
   </div>
@@ -1241,7 +1181,7 @@ img, video, iframe, table { max-width: 100%; }
         <p>提交基本资料后 24 小时内收到顾问回复 — 包含 3 大业务板块匹配度评分 + 预计所需时间 + 后续路径建议。</p>
         <div class="v10-cta-actions">
           <a href="https://wa.me/85291371211" class="v10-cta-btn v10-cta-primary">WhatsApp 立即预约</a>
-          <a href="#study-tour" class="v10-cta-btn v10-cta-secondary">了解 5 天 4 夜游学团</a>
+          <a href="tour-cn.html" class="v10-cta-btn v10-cta-secondary">了解 5 天 4 夜游学团</a>
         </div>
       </div>
     </div>
@@ -1291,7 +1231,7 @@ img, video, iframe, table { max-width: 100%; }
       <div class="footer-col">
         <h4>资源</h4>
         <a href="cases-cn.html">客户案例</a>
-        <a href="#study-tour">游学团</a>
+        <a href="tour-cn.html">游学团</a>
         <a href="#contact">联络我们</a>
       </div>
       <div class="footer-col">

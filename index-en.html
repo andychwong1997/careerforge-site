@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-version="v18.12.2">
+<html lang="en" data-version="v18.13">
 <head>
   <script>
     // CareerForge v18.8+ iPhone Safari disk cache fix
@@ -7,7 +7,7 @@
     // This script uses fetch({cache: 'no-store'}) which iPhone Safari DOES honor,
     // then replaces current page if server-side version doesn't match expected.
     (function() {
-      var EXPECTED_VER = 'v18.12.2';
+      var EXPECTED_VER = 'v18.13';
       var path = location.pathname + '?cb=' + Date.now();
       if (location.href.indexOf('cb=') !== -1) return;
       fetch(path, {cache: 'no-store'})
@@ -941,6 +941,24 @@ img, video, iframe, table { max-width: 100%; }
   text-align: center;
 }
 
+/* v18.13 — learn-more button + breadcrumb (study tour funnel) */
+.v10-tour-learn-more {
+  text-align: center;
+  margin-top: 36px;
+}
+.v10-tour-breadcrumb {
+  margin-bottom: 18px;
+  font-size: 0.85rem;
+}
+.v10-tour-breadcrumb a {
+  color: rgba(212,175,55,0.85);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.v10-tour-breadcrumb a:hover {
+  color: var(--gold);
+}
+
 @media (max-width: 900px) {
   .v10-tour-banner {
     grid-template-columns: 1fr;
@@ -979,7 +997,7 @@ img, video, iframe, table { max-width: 100%; }
         <a href="immigration-en.html">Visa Status</a>
         <a href="education-en.html">EducationPlanning</a>
         <a href="career-en.html">requestcareer value</a>
-        <a href="#study-tour">Study Tour</a>
+        <a href="tour-en.html">Study Tour</a>
         <a href="cases-en.html">Client stories</a>
         <a href="#contact">Contact</a>
       </div>
@@ -1107,87 +1125,9 @@ img, video, iframe, table { max-width: 100%; }
       <a href="#contact" class="v10-cta-btn v10-tour-banner-btn">Inquire about National Day Tour</a>
     </div>
 
-    <!-- 4 CORE MODULES -->
-    <div class="v10-tour-modules">
-      <div class="v10-tour-module">
-        <span class="v10-tour-module-num">01 · MODULE</span>
-        <h3>Subject Discovery</h3>
-        <p>From finance to tech, business to culture — experience in-depth content across diverse subjects.</p>
-      </div>
-      <div class="v10-tour-module">
-        <span class="v10-tour-module-num">02 · MODULE</span>
-        <h3>Industry Insight</h3>
-        <p>Real corporate environments + frontier industry knowledge — step inside the professional world of a global metropolis.</p>
-      </div>
-      <div class="v10-tour-module">
-        <span class="v10-tour-module-num">03 · MODULE</span>
-        <h3>Personal Growth</h3>
-        <p>Personality profiling + team collaboration + business presentation — elevate your holistic competencies.</p>
-      </div>
-      <div class="v10-tour-module">
-        <span class="v10-tour-module-num">04 · MODULE</span>
-        <h3>Education Planning</h3>
-        <p>Top-8 HK universities application playbook + IANG 7-year residency pathway decoded end-to-end.</p>
-      </div>
-    </div>
-
-    <!-- SUBJECT CHIPS -->
-    <div class="v10-tour-themes">
-      <span class="v10-tour-themes-label">Subject Tracks</span>
-      <div class="v10-tour-themes-chips">
-        <span class="v10-tour-theme">Finance</span>
-        <span class="v10-tour-theme">Technology</span>
-        <span class="v10-tour-theme">English Academic</span>
-      </div>
-      <p class="v10-tour-themes-meta">Pick any subject — itinerary customised to your needs</p>
-    </div>
-
-    <!-- 8 OUTCOMES -->
-    <div class="v10-tour-outcomes">
-      <h3 class="v10-tour-block-title">8 Key Outcomes</h3>
-      <div class="v10-tour-outcomes-grid">
-        <div class="v10-tour-outcome"><span class="v10-tour-outcome-mark">✓</span>Fortune-500 financial firm programme certificate</div>
-        <div class="v10-tour-outcome"><span class="v10-tour-outcome-mark">✓</span>Recommendation letter from Fortune-500 executive</div>
-        <div class="v10-tour-outcome"><span class="v10-tour-outcome-mark">✓</span>Business plan drafting capability</div>
-        <div class="v10-tour-outcome"><span class="v10-tour-outcome-mark">✓</span>Business presentation &amp; teamwork</div>
-        <div class="v10-tour-outcome"><span class="v10-tour-outcome-mark">✓</span>7-year Hong Kong residency pathway</div>
-        <div class="v10-tour-outcome"><span class="v10-tour-outcome-mark">✓</span>Top-8 HK universities admission playbook</div>
-        <div class="v10-tour-outcome"><span class="v10-tour-outcome-mark">✓</span>Future academic &amp; career planning</div>
-        <div class="v10-tour-outcome"><span class="v10-tour-outcome-mark">✓</span>Global financial perspective</div>
-      </div>
-    </div>
-
-    <!-- PACKAGE -->
-    <div class="v10-tour-package">
-      <h3 class="v10-tour-block-title">Services &amp; Safeguards</h3>
-      <div class="v10-tour-package-grid">
-        <div class="v10-tour-package-card">
-          <div class="v10-tour-package-icon">🏨</div>
-          <h4>Accommodation</h4>
-          <p>3-star hotels in Wan Chai / Causeway Bay / Mong Kok — 4 nights, twin/double rooms with A/C, WiFi, en-suite bathroom.</p>
-        </div>
-        <div class="v10-tour-package-card">
-          <div class="v10-tour-package-icon">✈️</div>
-          <h4>Airport Transfer</h4>
-          <p>Shenzhen Bao'an Airport ↔ HK hotel transfers + daily hotel ↔ corporate transport.</p>
-        </div>
-        <div class="v10-tour-package-card">
-          <div class="v10-tour-package-icon">🍽️</div>
-          <h4>Meals</h4>
-          <p>Breakfast self-catered; lunch &amp; dinner as a group — bring ~HKD 2,000 equivalent in RMB for meals.</p>
-        </div>
-        <div class="v10-tour-package-card">
-          <div class="v10-tour-package-icon">🛡️</div>
-          <h4>Safety</h4>
-          <p>1:20 staff-to-student ratio throughout + short-term accident insurance + real-time parent updates.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- MAIN CTA -->
-    <div class="v10-tour-main-cta">
-      <a href="#contact" class="v10-cta-btn v10-cta-primary">Inquire about the 5-Day 4-Night Study Tour</a>
-      <p class="v10-cta-sub">Year-round rolling intake · Tailored quotes on request</p>
+    <!-- Learn-more button (v18.13 funnel — link to detail page) -->
+    <div class="v10-tour-learn-more">
+      <a href="tour.html" class="v10-cta-btn v10-cta-secondary">Explore Full 5-Day 4-Night Itinerary →</a>
     </div>
 
   </div>
@@ -1241,7 +1181,7 @@ img, video, iframe, table { max-width: 100%; }
         <p>After basic info submission 24 reply within 24 hours by consultant — includes 3 service linesMatch score + Estimated time + Next-step recommendations.</p>
         <div class="v10-cta-actions">
           <a href="https://wa.me/85291371211" class="v10-cta-btn v10-cta-primary">WhatsApp Book now</a>
-          <a href="#study-tour" class="v10-cta-btn v10-cta-secondary">Discover the 5-Day 4-Night Study Tour</a>
+          <a href="tour-en.html" class="v10-cta-btn v10-cta-secondary">Discover the 5-Day 4-Night Study Tour</a>
         </div>
       </div>
     </div>
@@ -1291,7 +1231,7 @@ img, video, iframe, table { max-width: 100%; }
       <div class="footer-col">
         <h4>Resources</h4>
         <a href="cases-en.html">Client cases</a>
-        <a href="#study-tour">Study Tour</a>
+        <a href="tour-en.html">Study Tour</a>
         <a href="#contact">Contact</a>
       </div>
       <div class="footer-col">

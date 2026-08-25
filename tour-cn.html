@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hans" data-version="v18.13">
+<html lang="zh-Hans" data-version="v18.14.1">
 <head>
   <script>
     // CareerForge v18.8+ iPhone Safari disk cache fix
@@ -7,7 +7,7 @@
     // This script uses fetch({cache: 'no-store'}) which iPhone Safari DOES honor,
     // then replaces current page if server-side version doesn't match expected.
     (function() {
-      var EXPECTED_VER = 'v18.13';
+      var EXPECTED_VER = 'v18.14.1';
       var path = location.pathname + '?cb=' + Date.now();
       if (location.href.indexOf('cb=') !== -1) return;
       fetch(path, {cache: 'no-store'})
@@ -532,6 +532,165 @@
   letter-spacing: 0.02em;
 }
 
+/* ============ v18.14.1 — TOUR PAGE COMPONENTS ============ */
+/* v10-tracks: 4-col grid (icon + tag + h3 + p) — used for 4 modules + 8 outcomes */
+.v10-tracks {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+.v10-track {
+  background: var(--white);
+  border: 1px solid var(--ink-100);
+  border-radius: var(--radius);
+  padding: 32px 24px;
+  position: relative;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+.v10-track:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+  border-color: var(--gold);
+}
+.v10-track-icon {
+  width: 48px; height: 48px;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-700) 100%);
+  color: var(--gold);
+  border-radius: 10px;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  font-style: italic;
+}
+.v10-track-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--gold-600);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.v10-track h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0 0 10px;
+  letter-spacing: 0.2px;
+  line-height: 1.35;
+}
+.v10-track p {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--ink-700);
+  margin: 0;
+  flex-grow: 1;
+}
+
+/* v10-tour-mentor: mentor highlight box (white bg, gold border-left) */
+.v10-tour-mentor {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 32px;
+  align-items: center;
+  padding: 44px 48px;
+  border-left: 4px solid var(--gold);
+  background: linear-gradient(135deg, #f8f6f1 0%, #ffffff 100%);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  box-shadow: var(--shadow-card);
+  max-width: 880px;
+  margin: 0 auto;
+}
+.v10-tour-mentor-icon {
+  font-size: 4rem;
+  line-height: 1;
+}
+.v10-tour-mentor-body p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--ink-700);
+  margin: 0 0 16px;
+}
+.v10-tour-mentor-detail {
+  display: inline-block;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--navy);
+  letter-spacing: 0.04em;
+  padding: 8px 18px;
+  background: rgba(212,175,55,0.12);
+  border-radius: 999px;
+}
+
+/* v10-included-list: simple bullet, no cards (餐飲 deleted) */
+.v10-included-list {
+  list-style: none;
+  padding: 0;
+  margin: 40px auto 0;
+  max-width: 880px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.v10-included-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 24px;
+  align-items: center;
+  padding: 22px 28px;
+  background: var(--white);
+  border: 1px solid var(--ink-100);
+  border-radius: var(--radius);
+  transition: all 0.3s ease;
+}
+.v10-included-item:hover {
+  border-color: var(--gold);
+  transform: translateX(4px);
+  box-shadow: var(--shadow-card);
+}
+.v10-included-emoji {
+  font-size: 2rem;
+  line-height: 1;
+}
+.v10-included-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.v10-included-body strong {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: 0.2px;
+}
+.v10-included-body span {
+  font-size: 0.92rem;
+  color: var(--ink-500);
+  line-height: 1.5;
+}
+
+/* Mobile responsive for tour components */
+@media (max-width: 900px) {
+  .v10-tracks { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .v10-track { padding: 22px 18px; }
+  .v10-track-icon { width: 40px; height: 40px; font-size: 1rem; margin-bottom: 12px; }
+  .v10-track-tag { font-size: 0.62rem; letter-spacing: 0.14em; margin-bottom: 8px; }
+  .v10-track h3 { font-size: 1rem; margin: 0 0 6px; line-height: 1.3; }
+  .v10-track p { font-size: 0.82rem; line-height: 1.5; }
+  .v10-tour-mentor { grid-template-columns: 1fr; gap: 18px; padding: 28px 22px; text-align: center; }
+  .v10-tour-mentor-icon { font-size: 3rem; }
+  .v10-tour-mentor-body p { font-size: 0.95rem; }
+  .v10-included-item { grid-template-columns: auto 1fr; gap: 16px; padding: 16px 20px; }
+  .v10-included-emoji { font-size: 1.6rem; }
+  .v10-included-body strong { font-size: 0.95rem; }
+  .v10-included-body span { font-size: 0.85rem; }
+}
+
 /* ============ MOBILE ============ */
 @media (max-width: 900px) {
   .v10-hero { padding: 80px 0 64px; }
@@ -941,7 +1100,7 @@ img, video, iframe, table { max-width: 100%; }
   text-align: center;
 }
 
-/* v18.13 — learn-more button + breadcrumb (study tour funnel) */
+/* v18.14 — learn-more button + breadcrumb (study tour funnel) */
 .v10-tour-learn-more {
   text-align: center;
   margin-top: 36px;
@@ -1020,257 +1179,185 @@ img, video, iframe, table { max-width: 100%; }
   <div class="v10-container">
     <span class="v10-hero-eyebrow">
       <span class="v10-hero-eyebrow-dot"></span>
-      香港高端个人成长顾问 · SINCE 2006
+      STUDY TOUR · 内地学生专属深度游学
     </span>
     <h1 class="v10-hero-title">
-      与家庭同行，<br>
-      从身份到<span class="gold no-break">永居七年</span>。<br>
-      从事业到<span class="gold no-break">职涯身价</span>。
+      5 天 4 夜，<br>
+      <span class="gold no-break">香港游学团</span>
     </h1>
-    <p class="v10-hero-sub">
-      CareerForge 鑄途 — 专注香港高才通、优才、专才、留学升港全周期陪跑。<br>
-      三条业务主線：身份对标、升学规划、职涯身价跃迁，每一条都為下一条鋪路。
-    </p>
+    <p class="v10-hero-sub">多元主题 × 4 大核心模块 × 500 强企业证书 — 一次体验，<br>看清未来 7 年的方向。</p>
     <div class="v10-hero-trust">
       <div class="v10-hero-trust-item">
-        <strong>3,000+</strong>
-        <span>累计服务家庭</span>
+        <strong>5 天 4 夜</strong>
+        <span>深度行程</span>
       </div>
       <div class="v10-hero-trust-item">
-        <strong>20 年</strong>
-        <span>立足香港行业经验</span>
+        <strong>1 : 6</strong>
+        <span>师生比全程陪同</span>
       </div>
       <div class="v10-hero-trust-item">
-        <strong>7 年</strong>
-        <span>续签到永居全程陪跑</span>
+        <strong>500 强</strong>
+        <span>企业高层亲授</span>
       </div>
       <div class="v10-hero-trust-item">
-        <strong>3 大</strong>
-        <span>业务板块全打通</span>
+        <strong>10–15</strong>
+        <span>人 1 组 Mentor 带领</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ 3 PILLARS (WHITE CARDS) ============ -->
-<section class="v10-section canvas" id="services">
+<!-- ============ 国慶限定 BANNER (NAVY GOLD ACCENT) ============ -->
+<section class="v10-section canvas tight" style="padding: 48px 0;">
   <div class="v10-container">
-    <div class="v10-head">
-      <span class="eyebrow">3 大业务板块</span>
-      <h2>身份、升学、求职身价，<br>同一 CareerForge 主线。</h2>
-      <p class="lede">把香港身份对标、海外与香港升学衔接、赴港求职身价跃迁打通成一条连续路径 — 详情请浏览各业务板块页面。</p>
-    </div>
-    <div class="v10-pillars">
-
-      <!-- Pillar 01 -->
-      <div class="v10-pillar">
-        <div class="v10-pillar-body">
-          <span class="v10-pillar-num">PILLAR 01 · 身份规划</span>
-          <h3 class="v10-pillar-title">香港身份与续签对标</h3>
-          <p class="v10-pillar-desc">
-            高才通 · 优才 · 专才 · 留学升港 — 4 種主流路径全覆盖。从首签到 7 年永居，由专属顾问全程合规陪跑。
-          </p>
-        </div>
-        <a href="immigration-cn-v17.html" class="v10-pillar-cta">了解詳情</a>
-      </div>
-
-      <!-- Pillar 02 -->
-      <div class="v10-pillar">
-        <div class="v10-pillar-body">
-          <span class="v10-pillar-num">PILLAR 02 · 升学衔接</span>
-          <h3 class="v10-pillar-title">海外与香港升学对标</h3>
-          <p class="v10-pillar-desc">
-            海外中学 / IB / A-Level / DSE 与香港本地学校双向衔接，配合家长签证落地节奏同步推进子女教育路径。
-          </p>
-        </div>
-        <a href="education-cn.html" class="v10-pillar-cta">了解詳情</a>
-      </div>
-
-    </div>
-  </div>
-<!-- Pillar 03 -->
-      <div class="v10-pillar">
-        <div class="v10-pillar-body">
-          <span class="v10-pillar-num">PILLAR 03 · 职涯增值</span>
-          <h3 class="v10-pillar-title">赴港求職與职涯身价躍遷</h3>
-          <p class="v10-pillar-desc">
-            帮助专业人士在香港本地市场实现薪酬跃升、行业转型与长期职业身价增值。
-          </p>
-        </div>
-        <a href="career-cn.html" class="v10-pillar-cta">了解詳情</a>
-      </div>
-
-      </section>
-
-<!-- ============ STUDY TOUR (NAVY BG) — v18.9.0 ============ -->
-<section class="v10-section dark" id="study-tour">
-  <div class="v10-container">
-
-
-    <!-- Breadcrumb (v18.13) -->
-    <div class="v10-tour-breadcrumb"><a href="index.html">← 首頁</a></div>
-
-    <!-- HERO HEADER -->
-    <div class="v10-head dark">
-      <span class="eyebrow">5 天 4 夜 · 香港游学团</span>
-      <h2>暑假来香港，<br>亲身体验国际大都会。</h2>
-      <p class="lede">为内地高中及大学生打造的深度游学 — 多元主题 × 4 大核心模块 × 500 强企业证书。</p>
-    </div>
-
-    <!-- 國慶限定 BANNER -->
     <div class="v10-tour-banner">
-      <div class="v10-tour-banner-flag">🇨🇳</div>
-      <div class="v10-tour-banner-body">
-        <span class="v10-tour-banner-eyebrow">国庆限定 · 限量招募</span>
-        <h3>国庆黄金周限定 · 香港游学团</h3>
-        <p>内地高中及大学生专属 — 与祖国同庆 + 亲历国际大都会</p>
-        <span class="v10-tour-banner-meta">⏰ 9 月 20 日截止报名</span>
+      <div class="v10-tour-banner-text">
+        <span class="v10-tour-banner-eyebrow">国庆限定团 · 限额招生</span>
+        <h3 class="v10-tour-banner-title">10 月 1 日开团</h3>
+        <span class="v10-tour-banner-pill">⏰ 9 月 20 日截止报名</span>
       </div>
       <a href="#contact" class="v10-cta-btn v10-tour-banner-btn">立即查询国庆团</a>
     </div>
-
-    <!-- 4 大核心模塊 -->
-    <div class="v10-tour-modules">
-      <div class="v10-tour-module">
-        <span class="v10-tour-module-num">01 · MODULE</span>
-        <h3>主题探索</h3>
-        <p>从金融到科技，从商业到文化 — 亲身体验多元主题的深度内容。</p>
-      </div>
-      <div class="v10-tour-module">
-        <span class="v10-tour-module-num">02 · MODULE</span>
-        <h3>专业启蒙</h3>
-        <p>真实企业环境 + 行业前沿认知 — 走进国际大都会的专业世界。</p>
-      </div>
-      <div class="v10-tour-module">
-        <span class="v10-tour-module-num">03 · MODULE</span>
-        <h3>个人成长</h3>
-        <p>性格分析 + 团队协作 + 商务演讲 — 全面提升综合素质。</p>
-      </div>
-      <div class="v10-tour-module">
-        <span class="v10-tour-module-num">04 · MODULE</span>
-        <h3>升学规划</h3>
-        <p>港八大名校申请攻略 + IANG 7 年永居路径全方位解读。</p>
-      </div>
-    </div>
-
-    <!-- 主題 chips -->
-    <div class="v10-tour-themes">
-      <span class="v10-tour-themes-label">主题方向</span>
-      <div class="v10-tour-themes-chips">
-        <span class="v10-tour-theme">金融</span>
-        <span class="v10-tour-theme">科技</span>
-        <span class="v10-tour-theme">英语学术</span>
-      </div>
-      <p class="v10-tour-themes-meta">多元主题任选，按需求客制化行程</p>
-    </div>
-
-    <!-- 8 大收穫 -->
-    <div class="v10-tour-outcomes">
-      <h3 class="v10-tour-block-title">8 大收获</h3>
-      <div class="v10-tour-outcomes-grid">
-        <div class="v10-tour-outcome"><span class="v10-tour-outcome-mark">✓</span>500 强金融企业签发项目证书</div>
-        <div class="v10-tour-outcome"><span class="v10-tour-outcome-mark">✓</span>500 强企业高层推荐信</div>
-        <div class="v10-tour-outcome"><span class="v10-tour-outcome-mark">✓</span>商业策划书撰写能力</div>
-        <div class="v10-tour-outcome"><span class="v10-tour-outcome-mark">✓</span>商务演讲与团队协作</div>
-        <div class="v10-tour-outcome"><span class="v10-tour-outcome-mark">✓</span>留港 7 年永居路径</div>
-        <div class="v10-tour-outcome"><span class="v10-tour-outcome-mark">✓</span>港八大名校申请攻略</div>
-        <div class="v10-tour-outcome"><span class="v10-tour-outcome-mark">✓</span>未来专业职业规划</div>
-        <div class="v10-tour-outcome"><span class="v10-tour-outcome-mark">✓</span>国际金融视野</div>
-      </div>
-    </div>
-
-    <!-- 配套說明 -->
-    <div class="v10-tour-package">
-      <h3 class="v10-tour-block-title">配套与保障</h3>
-      <div class="v10-tour-package-grid">
-        <div class="v10-tour-package-card">
-          <div class="v10-tour-package-icon">🏨</div>
-          <h4>住宿配套</h4>
-          <p>湾仔/铜锣湾/旺角三星酒店，4 晚标间/双人间（含空调、WiFi、独立卫浴）</p>
-        </div>
-        <div class="v10-tour-package-card">
-          <div class="v10-tour-package-icon">✈️</div>
-          <h4>接送服务</h4>
-          <p>深圳宝安机场 ↔ 香港酒店接送 + 酒店 ↔ 企业交通</p>
-        </div>
-        <div class="v10-tour-package-card">
-          <div class="v10-tour-package-icon">🍽️</div>
-          <h4>餐饮安排</h4>
-          <p>早餐自理；午晚餐以小组用餐（建议带 ¥2000 人民币等值港币餐费）</p>
-        </div>
-        <div class="v10-tour-package-card">
-          <div class="v10-tour-package-icon">🛡️</div>
-          <h4>安全保障</h4>
-          <p>1:20 师生比全程陪同 + 短期意外保险 + 实时家长反馈</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- 主 CTA -->
-    <div class="v10-tour-main-cta">
-      <a href="#contact" class="v10-cta-btn v10-cta-primary">立即查询 5 天 4 夜游学团</a>
-      <p class="v10-cta-sub">全年滚动招生 · 按需求客制化报价</p>
-    </div>
-
   </div>
 </section>
 
-<!-- ============ TRUST GRID (NAVY BG) ============ -->
-<section class="v10-section dark">
+<!-- ============ 4 MODULES ============ -->
+<section class="v10-section canvas" id="modules">
   <div class="v10-container">
-    <div class="v10-head dark">
-      <span class="eyebrow">数字见证</span>
-      <h2>每一组数字，<br>都是一次人生路径的跃迁。</h2>
-      <p class="lede">从首签到永居 7 年陪跑，全程顾问 1 对 1 — 不只是数字，是真实家庭。</p>
+    <div class="v10-head">
+      <span class="eyebrow">5 天 4 夜行程结构</span>
+      <h2>4 大核心模块，<br>从主题探索到升学规划。</h2>
+      <p class="lede">5 天 4 夜的行程不是观光 — 是系统性的体验。每个模块都有对应导师、企业场景与可带走的成果。</p>
     </div>
-    <div class="v10-trust-grid">
-      <div class="v10-trust-card">
-        <span class="v10-trust-num">3,000+</span>
-        <span class="v10-trust-label">累计服务家庭<small>FAMILIES SERVED</small></span>
+    <div class="v10-tracks">
+      <div class="v10-track">
+        <span class="v10-track-icon">01</span>
+        <span class="v10-track-tag">主题探索</span>
+        <h3>主题探索</h3>
+        <p>从金融到科技、从商业到文化 — 亲身体验多元主题的深度内容,建立国际视野的基础认知。</p>
       </div>
-      <div class="v10-trust-card">
-        <span class="v10-trust-num">4 種</span>
-        <span class="v10-trust-label">主流人才计划<small>VISA SCHEMES</small></span>
+      <div class="v10-track">
+        <span class="v10-track-icon">02</span>
+        <span class="v10-track-tag">专业启蒙</span>
+        <h3>专业启蒙</h3>
+        <p>走进真实企业环境：500 强金融公司、科技独角兽、创业空间 — 看见香港产业的真实运作。</p>
       </div>
-      <div class="v10-trust-card">
-        <span class="v10-trust-num">8 大</span>
-        <span class="v10-trust-label">行业覆盖<small>INDUSTRIES</small></span>
+      <div class="v10-track">
+        <span class="v10-track-icon">03</span>
+        <span class="v10-track-tag">个人成长</span>
+        <h3>个人成长</h3>
+        <p>性格分析 + 团队协作 + 商务演讲 — 导师带领的结构化工作坊,全面提升综合素质。</p>
       </div>
-      <div class="v10-trust-card">
-        <span class="v10-trust-num">7 年</span>
-        <span class="v10-trust-label">续签到永居陪跑<small>FULL-CYCLE</small></span>
+      <div class="v10-track">
+        <span class="v10-track-icon">04</span>
+        <span class="v10-track-tag">升学规划</span>
+        <h3>升学规划</h3>
+        <p>港八大名校申请攻略 + IANG 留港 7 年永居路径全方位解读 — 从游学看见留学的可能。</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ DISCLAIMER (LEGAL COMPLIANCE) ============ -->
+<!-- ============ MENTOR HIGHLIGHT (WHITE BG, gold border-left) ============ -->
+<section class="v10-section white">
+  <div class="v10-container">
+    <div class="v10-head">
+      <span class="eyebrow">OUR COMMITMENT</span>
+      <h2>分组 Mentor 全程跟进</h2>
+      <p class="lede">不只是行程 — 是 5 天 4 夜的结构化指导</p>
+    </div>
+    <div class="v10-tour-mentor">
+      <div class="v10-tour-mentor-icon">👥</div>
+      <div class="v10-tour-mentor-body">
+        <p>我们为每组学生配备专属 Mentor,全程跟进学习进度、批改商业策划书、提供升学与职涯咨询。让每位学生在体验中得到真实可带走的结构化指导。</p>
+        <span class="v10-tour-mentor-detail">10–15 人一组 · 1 位 Mentor 带领 · 7×24 WhatsApp 支援</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 8 OUTCOMES ============ -->
+<section class="v10-section canvas" id="outcomes">
+  <div class="v10-container">
+    <div class="v10-head">
+      <span class="eyebrow">WHAT YOU TAKE AWAY</span>
+      <h2>8 大收获</h2>
+      <p class="lede">完成 5 天 4 夜后,每位学生都会带走真实可验证的成果。</p>
+    </div>
+    <div class="v10-tracks">
+      <div class="v10-track"><span class="v10-track-icon">✓</span><span class="v10-track-tag">OUTCOME</span><h3 style="font-size:1.05rem">500 强金融企业签发项目证书</h3></div>
+      <div class="v10-track"><span class="v10-track-icon">✓</span><span class="v10-track-tag">OUTCOME</span><h3 style="font-size:1.05rem">500 强企业高层推荐信</h3></div>
+      <div class="v10-track"><span class="v10-track-icon">✓</span><span class="v10-track-tag">OUTCOME</span><h3 style="font-size:1.05rem">商业策划书撰写能力（团队作品）</h3></div>
+      <div class="v10-track"><span class="v10-track-icon">✓</span><span class="v10-track-tag">OUTCOME</span><h3 style="font-size:1.05rem">商务演讲与团队协作经验</h3></div>
+      <div class="v10-track"><span class="v10-track-icon">✓</span><span class="v10-track-tag">OUTCOME</span><h3 style="font-size:1.05rem">留港 7 年永居路径全景</h3></div>
+      <div class="v10-track"><span class="v10-track-icon">✓</span><span class="v10-track-tag">OUTCOME</span><h3 style="font-size:1.05rem">港八大名校申请攻略</h3></div>
+      <div class="v10-track"><span class="v10-track-icon">✓</span><span class="v10-track-tag">OUTCOME</span><h3 style="font-size:1.05rem">未来专业职业初步规划</h3></div>
+      <div class="v10-track"><span class="v10-track-icon">✓</span><span class="v10-track-tag">OUTCOME</span><h3 style="font-size:1.05rem">国际金融视野与商业素养</h3></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INCLUDED (簡單 bullet, no cards, 餐飲 deleted) ============ -->
+<section class="v10-section white" id="included">
+  <div class="v10-container">
+    <div class="v10-head">
+      <span class="eyebrow">INCLUDED</span>
+      <h2>配套</h2>
+      <p class="lede">核心配套简明清晰 — 细节将在报名确认后提供完整清单。</p>
+    </div>
+    <ul class="v10-included-list">
+        <li class="v10-included-item">
+          <span class="v10-included-emoji">🏨</span>
+          <div class="v10-included-body">
+            <strong>住宿</strong>
+            <span>湾仔 / 铜锣湾 / 旺角三星酒店 4 晚</span>
+          </div>
+        </li>
+        <li class="v10-included-item">
+          <span class="v10-included-emoji">🚐</span>
+          <div class="v10-included-body">
+            <strong>接送</strong>
+            <span>深圳宝安机场 ↔ 香港酒店</span>
+          </div>
+        </li>
+        <li class="v10-included-item">
+          <span class="v10-included-emoji">🛡️</span>
+          <div class="v10-included-body">
+            <strong>安全</strong>
+            <span>1:6 师生比全程陪同 + 短期意外保险</span>
+          </div>
+        </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ DISCLAIMER ============ -->
 <section class="v10-section canvas tight" style="padding-top: 0;">
   <div class="v10-container">
     <blockquote class="v10-disclaimer">
-      <p class="v10-disclaimer-text">★ CareerForge 坚持合法合规、实事求是的咨询原则，所有升学及身份申请均建立于专业评估与真实能力之上。</p>
+      <p class="v10-disclaimer-text">★ CareerForge 堅持合法合規、實事求是的諮詢原則，所有行程及升學申請均建立於專業評估與真實能力之上。</p>
     </blockquote>
   </div>
 </section>
 
-<!-- ============ CTA (NAVY) ============ -->
+<!-- ============ CTA (WHITE BG) ============ -->
 <section class="v10-section white tight" id="contact">
   <div class="v10-container">
     <div class="v10-cta">
       <div class="v10-cta-inner">
         <span class="v10-cta-eyebrow">START YOUR JOURNEY</span>
-        <h2>第一步：30&nbsp;分钟免费资格评估</h2>
-        <p>提交基本资料后 24 小时内收到顾问回复 — 包含 3 大业务板块匹配度评分 + 预计所需时间 + 后续路径建议。</p>
+        <h2>第一步：30 分钟免费行程咨询</h2>
+        <p>提交基本资料后 24 小时内收到顾问回复 — 包含 5 天 4 夜行程完整建议、预算评估、报名时间表。</p>
         <div class="v10-cta-actions">
           <a href="https://wa.me/85291371211" class="v10-cta-btn v10-cta-primary">WhatsApp 立即预约</a>
-          <a href="index-cn.html#contact" class="v10-cta-btn v10-cta-secondary">了解 5 天 4 夜游学团</a>
+          <a href="index.html" class="v10-cta-btn v10-cta-secondary">或浏览其他业务板块</a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ CONTACT (WHITE CARDS) ============ -->
+<!-- ============ CONTACT GRID ============ -->
 <section class="v10-section canvas tight" style="padding-top: 0;">
   <div class="v10-container">
     <div class="v10-head">
@@ -1281,12 +1368,12 @@ img, video, iframe, table { max-width: 100%; }
       <div class="v10-contact-card">
         <div class="v10-contact-icon">📱</div>
         <h4>WhatsApp / 微信</h4>
-        <p>852-9137-1211<br>顾问 24 小时内回覆</p>
+        <p>852-9137-1211<br>顾问 24 小时内回复</p>
       </div>
       <div class="v10-contact-card">
         <div class="v10-contact-icon">✉️</div>
         <h4>电邮</h4>
-        <p>careerforgehk@gmail.com<br>提供书面方案摘要</p>
+        <p>careerforgehk@gmail.com<br>提供书面行程建议</p>
       </div>
       <div class="v10-contact-card">
         <div class="v10-contact-icon">📍</div>

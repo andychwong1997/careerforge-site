@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-version="v18.13">
+<html lang="en" data-version="v18.14.1">
 <head>
   <script>
     // CareerForge v18.8+ iPhone Safari disk cache fix
@@ -7,7 +7,7 @@
     // This script uses fetch({cache: 'no-store'}) which iPhone Safari DOES honor,
     // then replaces current page if server-side version doesn't match expected.
     (function() {
-      var EXPECTED_VER = 'v18.13';
+      var EXPECTED_VER = 'v18.14.1';
       var path = location.pathname + '?cb=' + Date.now();
       if (location.href.indexOf('cb=') !== -1) return;
       fetch(path, {cache: 'no-store'})
@@ -532,6 +532,165 @@
   letter-spacing: 0.02em;
 }
 
+/* ============ v18.14.1 — TOUR PAGE COMPONENTS ============ */
+/* v10-tracks: 4-col grid (icon + tag + h3 + p) — used for 4 modules + 8 outcomes */
+.v10-tracks {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+.v10-track {
+  background: var(--white);
+  border: 1px solid var(--ink-100);
+  border-radius: var(--radius);
+  padding: 32px 24px;
+  position: relative;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+.v10-track:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+  border-color: var(--gold);
+}
+.v10-track-icon {
+  width: 48px; height: 48px;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-700) 100%);
+  color: var(--gold);
+  border-radius: 10px;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  font-style: italic;
+}
+.v10-track-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--gold-600);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.v10-track h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0 0 10px;
+  letter-spacing: 0.2px;
+  line-height: 1.35;
+}
+.v10-track p {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--ink-700);
+  margin: 0;
+  flex-grow: 1;
+}
+
+/* v10-tour-mentor: mentor highlight box (white bg, gold border-left) */
+.v10-tour-mentor {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 32px;
+  align-items: center;
+  padding: 44px 48px;
+  border-left: 4px solid var(--gold);
+  background: linear-gradient(135deg, #f8f6f1 0%, #ffffff 100%);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  box-shadow: var(--shadow-card);
+  max-width: 880px;
+  margin: 0 auto;
+}
+.v10-tour-mentor-icon {
+  font-size: 4rem;
+  line-height: 1;
+}
+.v10-tour-mentor-body p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--ink-700);
+  margin: 0 0 16px;
+}
+.v10-tour-mentor-detail {
+  display: inline-block;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--navy);
+  letter-spacing: 0.04em;
+  padding: 8px 18px;
+  background: rgba(212,175,55,0.12);
+  border-radius: 999px;
+}
+
+/* v10-included-list: simple bullet, no cards (餐飲 deleted) */
+.v10-included-list {
+  list-style: none;
+  padding: 0;
+  margin: 40px auto 0;
+  max-width: 880px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.v10-included-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 24px;
+  align-items: center;
+  padding: 22px 28px;
+  background: var(--white);
+  border: 1px solid var(--ink-100);
+  border-radius: var(--radius);
+  transition: all 0.3s ease;
+}
+.v10-included-item:hover {
+  border-color: var(--gold);
+  transform: translateX(4px);
+  box-shadow: var(--shadow-card);
+}
+.v10-included-emoji {
+  font-size: 2rem;
+  line-height: 1;
+}
+.v10-included-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.v10-included-body strong {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: 0.2px;
+}
+.v10-included-body span {
+  font-size: 0.92rem;
+  color: var(--ink-500);
+  line-height: 1.5;
+}
+
+/* Mobile responsive for tour components */
+@media (max-width: 900px) {
+  .v10-tracks { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .v10-track { padding: 22px 18px; }
+  .v10-track-icon { width: 40px; height: 40px; font-size: 1rem; margin-bottom: 12px; }
+  .v10-track-tag { font-size: 0.62rem; letter-spacing: 0.14em; margin-bottom: 8px; }
+  .v10-track h3 { font-size: 1rem; margin: 0 0 6px; line-height: 1.3; }
+  .v10-track p { font-size: 0.82rem; line-height: 1.5; }
+  .v10-tour-mentor { grid-template-columns: 1fr; gap: 18px; padding: 28px 22px; text-align: center; }
+  .v10-tour-mentor-icon { font-size: 3rem; }
+  .v10-tour-mentor-body p { font-size: 0.95rem; }
+  .v10-included-item { grid-template-columns: auto 1fr; gap: 16px; padding: 16px 20px; }
+  .v10-included-emoji { font-size: 1.6rem; }
+  .v10-included-body strong { font-size: 0.95rem; }
+  .v10-included-body span { font-size: 0.85rem; }
+}
+
 /* ============ MOBILE ============ */
 @media (max-width: 900px) {
   .v10-hero { padding: 80px 0 64px; }
@@ -941,7 +1100,7 @@ img, video, iframe, table { max-width: 100%; }
   text-align: center;
 }
 
-/* v18.13 — learn-more button + breadcrumb (study tour funnel) */
+/* v18.14 — learn-more button + breadcrumb (study tour funnel) */
 .v10-tour-learn-more {
   text-align: center;
   margin-top: 36px;
@@ -1020,278 +1179,206 @@ img, video, iframe, table { max-width: 100%; }
   <div class="v10-container">
     <span class="v10-hero-eyebrow">
       <span class="v10-hero-eyebrow-dot"></span>
-      Hong Kong Personal Growth Consultancy · SINCE 2006
+      STUDY TOUR · FOR MAINLAND CHINA STUDENTS
     </span>
     <h1 class="v10-hero-title">
-      Walking with families,<br>
-      from status to<span class="gold no-break">PRsevenyears</span>.<br>
-      from career path to<span class="gold no-break">career value</span>.
+      5 Days · 4 Nights，<br>
+      <span class="gold no-break">Hong Kong Immersion</span>
     </h1>
-    <p class="v10-hero-sub">
-      CareerForge 鑄途 — specializedHKhighconnect,better,only,leavelearn Study to HK allweekissuesupport.<br>
-      Three service lines — status matching, career value growth, and education planning — each paving the way for the next.
-    </p>
+    <p class="v10-hero-sub">Multi-theme · 4 core modules · Fortune-500 certificate — <br>One experience, seven years of clarity.</p>
     <div class="v10-hero-trust">
       <div class="v10-hero-trust-item">
-        <strong>3,000+</strong>
-        <span>Families served</span>
+        <strong>5D · 4N</strong>
+        <span>Immersive Itinerary</span>
       </div>
       <div class="v10-hero-trust-item">
-        <strong>20 years</strong>
-        <span>Years in Hong Kong industry</span>
+        <strong>1 : 6</strong>
+        <span>Mentor-to-Student Ratio</span>
       </div>
       <div class="v10-hero-trust-item">
-        <strong>7 years</strong>
-        <span>Renewal to PR full-service</span>
+        <strong>FORTUNE 500</strong>
+        <span>Senior Leaders Teaching</span>
       </div>
       <div class="v10-hero-trust-item">
-        <strong>3 very</strong>
-        <span>Servicesfully integrated</span>
+        <strong>10–15</strong>
+        <span>Per Group, 1 Mentor</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ 3 PILLARS (WHITE CARDS) ============ -->
-<section class="v10-section canvas" id="services">
+<!-- ============ 国慶限定 BANNER (NAVY GOLD ACCENT) ============ -->
+<section class="v10-section canvas tight" style="padding: 48px 0;">
+  <div class="v10-container">
+    <div class="v10-tour-banner">
+      <div class="v10-tour-banner-text">
+        <span class="v10-tour-banner-eyebrow">NATIONAL-DAY SPECIAL COHORT · LIMITED SEATS</span>
+        <h3 class="v10-tour-banner-title">Departing October 1</h3>
+        <span class="v10-tour-banner-pill">⏰ Enrollment closes September 20</span>
+      </div>
+      <a href="#contact" class="v10-cta-btn v10-tour-banner-btn">Reserve National-Day Cohort</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4 MODULES ============ -->
+<section class="v10-section canvas" id="modules">
   <div class="v10-container">
     <div class="v10-head">
-      <span class="eyebrow">3 service lines</span>
-      <h2>Hong Kong status, career value, education —<br>one CareerForge pathway.</h2>
-      <p class="lede">Hong Kong status, career advancement, and education pathways — all integrated into one continuous journey. See individual service pages for details.</p>
+      <span class="eyebrow">5-DAY ITINERARY STRUCTURE</span>
+      <h2>4 Core Modules — <br>From Theme Discovery to Study-Plan Mapping.</h2>
+      <p class="lede">The 5-day programme is not sightseeing — it is a structured experience. Every module pairs dedicated mentors, real industry settings, and tangible deliverables.</p>
     </div>
-    <div class="v10-pillars">
-
-      <!-- Pillar 01 -->
-      <div class="v10-pillar">
-        <div class="v10-pillar-body">
-          <span class="v10-pillar-num">PILLAR 01 · Visa Status</span>
-          <h3 class="v10-pillar-title">Hong Kong status & renewal</h3>
-          <p class="v10-pillar-desc">
-            Top Talent Pass · Quality Migrant · Employment · Study-to-HK — all 4 mainstream paths covered. From first visa to 7-year PR, with dedicated consultant compliance support throughout.
-          </p>
-        </div>
-        <a href="immigration-en.html" class="v10-pillar-cta">Learn more</a>
+    <div class="v10-tracks">
+      <div class="v10-track">
+        <span class="v10-track-icon">01</span>
+        <span class="v10-track-tag">THEME DISCOVERY</span>
+        <h3>Theme Discovery</h3>
+        <p>From finance to tech, from business to culture — first-hand exposure across multi-disciplinary topics, building a foundation of global perspective.</p>
       </div>
-
-      <!-- Pillar 02 -->
-      <div class="v10-pillar">
-        <div class="v10-pillar-body">
-          <span class="v10-pillar-num">PILLAR 02 · Education</span>
-          <h3 class="v10-pillar-title">Overseas & Hong Kong education alignment</h3>
-          <p class="v10-pillar-desc">
-            Overseas secondary schools (IB / A-Level / DSE) and Hong Kong local schools — bi-directional placement aligned with parents' visa timeline.
-          </p>
-        </div>
-        <a href="education-en.html" class="v10-pillar-cta">Learn more</a>
+      <div class="v10-track">
+        <span class="v10-track-icon">02</span>
+        <span class="v10-track-tag">INDUSTRY IMMERSION</span>
+        <h3>Industry Immersion</h3>
+        <p>Step inside real workplaces: Fortune-500 finance firms, tech unicorns, startup spaces — see how Hong Kong industries actually operate.</p>
       </div>
-
-    </div>
-  </div>
-<!-- Pillar 03 -->
-      <div class="v10-pillar">
-        <div class="v10-pillar-body">
-          <span class="v10-pillar-num">PILLAR 03 · Career Value</span>
-          <h3 class="v10-pillar-title">Hong Kong career advancement</h3>
-          <p class="v10-pillar-desc">
-            Helping professionals achieve salary growth, industry transitions, and long-term career value in Hong Kong.
-          </p>
-        </div>
-        <a href="career-en.html" class="v10-pillar-cta">Learn more</a>
-      </div>
-
-      </section>
-
-<!-- ============ STUDY TOUR (NAVY BG) — v18.9.0 ============ -->
-<section class="v10-section dark" id="study-tour">
-  <div class="v10-container">
-
-
-    <!-- Breadcrumb (v18.13) -->
-    <div class="v10-tour-breadcrumb"><a href="index.html">← 首頁</a></div>
-
-    <!-- HERO HEADER -->
-    <div class="v10-head dark">
-      <span class="eyebrow">5 Days 4 Nights · Hong Kong Study Tour</span>
-      <h2>Come to Hong Kong this summer,<br>experience a true global metropolis.</h2>
-      <p class="lede">A premium study tour for mainland high-school and university students — diverse subjects × 4 core modules × Fortune-500 certificates.</p>
-    </div>
-
-    <!-- NATIONAL DAY BANNER -->
-    <div class="v10-tour-banner">
-      <div class="v10-tour-banner-flag">🇨🇳</div>
-      <div class="v10-tour-banner-body">
-        <span class="v10-tour-banner-eyebrow">National Day Special · Limited Seats</span>
-        <h3>National Day Golden Week · Hong Kong Study Tour</h3>
-        <p>Reserved for mainland high-school &amp; university students — celebrate together in an international metropolis.</p>
-        <span class="v10-tour-banner-meta">⏰ Applications close 20 September</span>
-      </div>
-      <a href="#contact" class="v10-cta-btn v10-tour-banner-btn">Inquire about National Day Tour</a>
-    </div>
-
-    <!-- 4 CORE MODULES -->
-    <div class="v10-tour-modules">
-      <div class="v10-tour-module">
-        <span class="v10-tour-module-num">01 · MODULE</span>
-        <h3>Subject Discovery</h3>
-        <p>From finance to tech, business to culture — experience in-depth content across diverse subjects.</p>
-      </div>
-      <div class="v10-tour-module">
-        <span class="v10-tour-module-num">02 · MODULE</span>
-        <h3>Industry Insight</h3>
-        <p>Real corporate environments + frontier industry knowledge — step inside the professional world of a global metropolis.</p>
-      </div>
-      <div class="v10-tour-module">
-        <span class="v10-tour-module-num">03 · MODULE</span>
+      <div class="v10-track">
+        <span class="v10-track-icon">03</span>
+        <span class="v10-track-tag">PERSONAL GROWTH</span>
         <h3>Personal Growth</h3>
-        <p>Personality profiling + team collaboration + business presentation — elevate your holistic competencies.</p>
+        <p>Personality profiling + team collaboration + business-presentation workshops — structured facilitation that lifts综合素质 across the board.</p>
       </div>
-      <div class="v10-tour-module">
-        <span class="v10-tour-module-num">04 · MODULE</span>
-        <h3>Education Planning</h3>
-        <p>Top-8 HK universities application playbook + IANG 7-year residency pathway decoded end-to-end.</p>
-      </div>
-    </div>
-
-    <!-- SUBJECT CHIPS -->
-    <div class="v10-tour-themes">
-      <span class="v10-tour-themes-label">Subject Tracks</span>
-      <div class="v10-tour-themes-chips">
-        <span class="v10-tour-theme">Finance</span>
-        <span class="v10-tour-theme">Technology</span>
-        <span class="v10-tour-theme">English Academic</span>
-      </div>
-      <p class="v10-tour-themes-meta">Pick any subject — itinerary customised to your needs</p>
-    </div>
-
-    <!-- 8 OUTCOMES -->
-    <div class="v10-tour-outcomes">
-      <h3 class="v10-tour-block-title">8 Key Outcomes</h3>
-      <div class="v10-tour-outcomes-grid">
-        <div class="v10-tour-outcome"><span class="v10-tour-outcome-mark">✓</span>Fortune-500 financial firm programme certificate</div>
-        <div class="v10-tour-outcome"><span class="v10-tour-outcome-mark">✓</span>Recommendation letter from Fortune-500 executive</div>
-        <div class="v10-tour-outcome"><span class="v10-tour-outcome-mark">✓</span>Business plan drafting capability</div>
-        <div class="v10-tour-outcome"><span class="v10-tour-outcome-mark">✓</span>Business presentation &amp; teamwork</div>
-        <div class="v10-tour-outcome"><span class="v10-tour-outcome-mark">✓</span>7-year Hong Kong residency pathway</div>
-        <div class="v10-tour-outcome"><span class="v10-tour-outcome-mark">✓</span>Top-8 HK universities admission playbook</div>
-        <div class="v10-tour-outcome"><span class="v10-tour-outcome-mark">✓</span>Future academic &amp; career planning</div>
-        <div class="v10-tour-outcome"><span class="v10-tour-outcome-mark">✓</span>Global financial perspective</div>
+      <div class="v10-track">
+        <span class="v10-track-icon">04</span>
+        <span class="v10-track-tag">STUDY-PLAN MAPPING</span>
+        <h3>Study-Plan Mapping</h3>
+        <p>Hong Kong Top-8 university application playbook + full breakdown of the IANG 7-year path to permanent residency — see留学 possibility from inside.</p>
       </div>
     </div>
-
-    <!-- PACKAGE -->
-    <div class="v10-tour-package">
-      <h3 class="v10-tour-block-title">Services &amp; Safeguards</h3>
-      <div class="v10-tour-package-grid">
-        <div class="v10-tour-package-card">
-          <div class="v10-tour-package-icon">🏨</div>
-          <h4>Accommodation</h4>
-          <p>3-star hotels in Wan Chai / Causeway Bay / Mong Kok — 4 nights, twin/double rooms with A/C, WiFi, en-suite bathroom.</p>
-        </div>
-        <div class="v10-tour-package-card">
-          <div class="v10-tour-package-icon">✈️</div>
-          <h4>Airport Transfer</h4>
-          <p>Shenzhen Bao'an Airport ↔ HK hotel transfers + daily hotel ↔ corporate transport.</p>
-        </div>
-        <div class="v10-tour-package-card">
-          <div class="v10-tour-package-icon">🍽️</div>
-          <h4>Meals</h4>
-          <p>Breakfast self-catered; lunch &amp; dinner as a group — bring ~HKD 2,000 equivalent in RMB for meals.</p>
-        </div>
-        <div class="v10-tour-package-card">
-          <div class="v10-tour-package-icon">🛡️</div>
-          <h4>Safety</h4>
-          <p>1:20 staff-to-student ratio throughout + short-term accident insurance + real-time parent updates.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- MAIN CTA -->
-    <div class="v10-tour-main-cta">
-      <a href="#contact" class="v10-cta-btn v10-cta-primary">Inquire about the 5-Day 4-Night Study Tour</a>
-      <p class="v10-cta-sub">Year-round rolling intake · Tailored quotes on request</p>
-    </div>
-
   </div>
 </section>
 
-<!-- ============ TRUST GRID (NAVY BG) ============ -->
-<section class="v10-section dark">
+<!-- ============ MENTOR HIGHLIGHT (WHITE BG, gold border-left) ============ -->
+<section class="v10-section white">
   <div class="v10-container">
-    <div class="v10-head dark">
-      <span class="eyebrow">By the numbers</span>
-      <h2>Every number,<br>represents a life-path transition.</h2>
-      <p class="lede">From first visa to PR 7 yearssupport,full-processconsultant 1 correct 1 — is not just a number,is a real family.</p>
+    <div class="v10-head">
+      <span class="eyebrow">OUR COMMITMENT</span>
+      <h2>Dedicated Mentor for Every Group</h2>
+      <p class="lede">More than a tour — it is structured guidance across 5 days</p>
     </div>
-    <div class="v10-trust-grid">
-      <div class="v10-trust-card">
-        <span class="v10-trust-num">3,000+</span>
-        <span class="v10-trust-label">Families served<small>FAMILIES SERVED</small></span>
-      </div>
-      <div class="v10-trust-card">
-        <span class="v10-trust-num">4 </span>
-        <span class="v10-trust-label">Mainstream talent schemes<small>VISA SCHEMES</small></span>
-      </div>
-      <div class="v10-trust-card">
-        <span class="v10-trust-num">8 very</span>
-        <span class="v10-trust-label">Industries covered<small>INDUSTRIES</small></span>
-      </div>
-      <div class="v10-trust-card">
-        <span class="v10-trust-num">7 years</span>
-        <span class="v10-trust-label">Renewal to PR support<small>FULL-CYCLE</small></span>
+    <div class="v10-tour-mentor">
+      <div class="v10-tour-mentor-icon">👥</div>
+      <div class="v10-tour-mentor-body">
+        <p>Every group is paired with a dedicated Mentor who tracks learning progress, reviews business-plan drafts, and offers admissions and career consultation. Students leave with real, structured guidance they can apply.</p>
+        <span class="v10-tour-mentor-detail">10–15 students per group · 1 dedicated Mentor · 24×7 WhatsApp support</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ DISCLAIMER (LEGAL COMPLIANCE) ============ -->
+<!-- ============ 8 OUTCOMES ============ -->
+<section class="v10-section canvas" id="outcomes">
+  <div class="v10-container">
+    <div class="v10-head">
+      <span class="eyebrow">WHAT YOU TAKE AWAY</span>
+      <h2>8 Tangible Outcomes</h2>
+      <p class="lede">After the 5-day programme, every student leaves with verifiable成果 they can show.</p>
+    </div>
+    <div class="v10-tracks">
+      <div class="v10-track"><span class="v10-track-icon">✓</span><span class="v10-track-tag">OUTCOME</span><h3 style="font-size:1.05rem">Fortune-500 finance-firm project certificate</h3></div>
+      <div class="v10-track"><span class="v10-track-icon">✓</span><span class="v10-track-tag">OUTCOME</span><h3 style="font-size:1.05rem">Letter of recommendation from senior leaders</h3></div>
+      <div class="v10-track"><span class="v10-track-icon">✓</span><span class="v10-track-tag">OUTCOME</span><h3 style="font-size:1.05rem">Business-plan drafting capability (team deliverable)</h3></div>
+      <div class="v10-track"><span class="v10-track-icon">✓</span><span class="v10-track-tag">OUTCOME</span><h3 style="font-size:1.05rem">Business-presentation and teamwork experience</h3></div>
+      <div class="v10-track"><span class="v10-track-icon">✓</span><span class="v10-track-tag">OUTCOME</span><h3 style="font-size:1.05rem">Full picture of the 7-year HK permanent-residency path</h3></div>
+      <div class="v10-track"><span class="v10-track-icon">✓</span><span class="v10-track-tag">OUTCOME</span><h3 style="font-size:1.05rem">Hong Kong Top-8 university application playbook</h3></div>
+      <div class="v10-track"><span class="v10-track-icon">✓</span><span class="v10-track-tag">OUTCOME</span><h3 style="font-size:1.05rem">Initial专业 career-planning framework</h3></div>
+      <div class="v10-track"><span class="v10-track-icon">✓</span><span class="v10-track-tag">OUTCOME</span><h3 style="font-size:1.05rem">Global financial perspective and business literacy</h3></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INCLUDED (簡單 bullet, no cards, 餐飲 deleted) ============ -->
+<section class="v10-section white" id="included">
+  <div class="v10-container">
+    <div class="v10-head">
+      <span class="eyebrow">INCLUDED</span>
+      <h2>What is Included</h2>
+      <p class="lede">Core inclusions listed clearly — the full checklist arrives with your enrolment confirmation.</p>
+    </div>
+    <ul class="v10-included-list">
+        <li class="v10-included-item">
+          <span class="v10-included-emoji">🏨</span>
+          <div class="v10-included-body">
+            <strong>Accommodation</strong>
+            <span>4 nights in 3-star hotels in Wan Chai / Causeway Bay / Mong Kok</span>
+          </div>
+        </li>
+        <li class="v10-included-item">
+          <span class="v10-included-emoji">🚐</span>
+          <div class="v10-included-body">
+            <strong>Transfer</strong>
+            <span>Shenzhen Bao’an Airport ↔ Hong Kong hotel</span>
+          </div>
+        </li>
+        <li class="v10-included-item">
+          <span class="v10-included-emoji">🛡️</span>
+          <div class="v10-included-body">
+            <strong>Safety</strong>
+            <span>1:6 mentor-to-student supervision + short-term accident insurance</span>
+          </div>
+        </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ DISCLAIMER ============ -->
 <section class="v10-section canvas tight" style="padding-top: 0;">
   <div class="v10-container">
     <blockquote class="v10-disclaimer">
-      <p class="v10-disclaimer-text">★ CareerForge Compliance-first,Pragmatic consulting principles,All education and visa applications are built on professional assessment and genuine capability.</p>
+      <p class="v10-disclaimer-text">★ CareerForge 堅持合法合規、實事求是的諮詢原則，所有行程及升學申請均建立於專業評估與真實能力之上。</p>
     </blockquote>
   </div>
 </section>
 
-<!-- ============ CTA (NAVY) ============ -->
+<!-- ============ CTA (WHITE BG) ============ -->
 <section class="v10-section white tight" id="contact">
   <div class="v10-container">
     <div class="v10-cta">
       <div class="v10-cta-inner">
         <span class="v10-cta-eyebrow">START YOUR JOURNEY</span>
-        <h2>Step 1:30 minutesfree qualification assessment</h2>
-        <p>After basic info submission 24 reply within 24 hours by consultant — includes 3 service linesMatch score + Estimated time + Next-step recommendations.</p>
+        <h2>Step One: 30-Minute Free Consultation</h2>
+        <p>Submit basic details and receive a reply from our advisor within 24 hours — including a full 5-day itinerary proposal, budget estimate, and enrolment timeline.</p>
         <div class="v10-cta-actions">
-          <a href="https://wa.me/85291371211" class="v10-cta-btn v10-cta-primary">WhatsApp Book now</a>
-          <a href="index-en.html#contact" class="v10-cta-btn v10-cta-secondary">Discover the 5-Day 4-Night Study Tour</a>
+          <a href="https://wa.me/85291371211" class="v10-cta-btn v10-cta-primary">WhatsApp Us Now</a>
+          <a href="index.html" class="v10-cta-btn v10-cta-secondary">or explore other services</a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ CONTACT (WHITE CARDS) ============ -->
+<!-- ============ CONTACT GRID ============ -->
 <section class="v10-section canvas tight" style="padding-top: 0;">
   <div class="v10-container">
     <div class="v10-head">
-      <span class="eyebrow">Contact</span>
-      <h2>Choose your preferred channel,<br>Direct consultant chat.</h2>
+      <span class="eyebrow">Contact Us</span>
+      <h2>Reach our advisors<br>the way you prefer.</h2>
     </div>
     <div class="v10-contact-grid">
       <div class="v10-contact-card">
         <div class="v10-contact-icon">📱</div>
         <h4>WhatsApp / WeChat</h4>
-        <p>852-9137-1211<br>consultant reply within 24 hours</p>
+        <p>852-9137-1211<br>Reply within 24 hours</p>
       </div>
       <div class="v10-contact-card">
         <div class="v10-contact-icon">✉️</div>
         <h4>Email</h4>
-        <p>careerforgehk@gmail.com<br>Written summary provided</p>
+        <p>careerforgehk@gmail.com<br>Written proposal on request</p>
       </div>
       <div class="v10-contact-card">
         <div class="v10-contact-icon">📍</div>
-        <h4>Hong Kong office</h4>
-        <p>Kai Tak · Tsim Sha Tsui<br>By appointment 1-on-1</p>
+        <h4>Hong Kong Office</h4>
+        <p>Kai Tak · Tsim Sha Tsui<br>1-on-1 by appointment</p>
       </div>
     </div>
   </div>

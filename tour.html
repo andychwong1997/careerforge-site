@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant" data-version="v18.14.1">
+<html lang="zh-Hant" data-version="v18.14.2">
 <head>
   <script>
     // CareerForge v18.8+ iPhone Safari disk cache fix
@@ -7,7 +7,7 @@
     // This script uses fetch({cache: 'no-store'}) which iPhone Safari DOES honor,
     // then replaces current page if server-side version doesn't match expected.
     (function() {
-      var EXPECTED_VER = 'v18.14.1';
+      var EXPECTED_VER = 'v18.14.2';
       var path = location.pathname + '?cb=' + Date.now();
       if (location.href.indexOf('cb=') !== -1) return;
       fetch(path, {cache: 'no-store'})
@@ -552,7 +552,9 @@
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
+.v10-track h3, .v10-track p { overflow-wrap: break-word; }
 .v10-track:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-card);
@@ -679,8 +681,9 @@
 
 /* Mobile responsive for tour components */
 @media (max-width: 900px) {
-  .v10-tracks { grid-template-columns: 1fr 1fr; gap: 16px; }
-  .v10-track { padding: 22px 18px; }
+  .v10-tracks { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; }
+  .v10-track { padding: 22px 18px; min-width: 0; }
+  .v10-track h3, .v10-track p { overflow-wrap: break-word; word-break: break-word; }
   .v10-track-icon { width: 40px; height: 40px; font-size: 1rem; margin-bottom: 12px; }
   .v10-track-tag { font-size: 0.62rem; letter-spacing: 0.14em; margin-bottom: 8px; }
   .v10-track h3 { font-size: 1rem; margin: 0 0 6px; line-height: 1.3; }

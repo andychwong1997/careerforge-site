@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="香港 5 条主流人才引进路线 — 高才通 / 专才 / 优才 / 投资移民 / 留学进修。提交基本资料后 24 小时内收到顾问回复。">
+<meta name="robots" content="index, follow">
+<title>5 分钟免费初评 — CareerForge 铸途</title>
+<link rel="canonical" href="https://careerforgehk.com/consult.html">
+<link rel="stylesheet" href="css/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+HK:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+  :root {
+    --navy: #0B192C;
+    --navy-700: #102542;
+    --navy-300: rgba(11, 25, 44, 0.78);
+    --gold: #D4AF37;
+    --gold-600: #B8941F;
+    --gold-100: #F7EFC9;
+    --cream: #FBF7EE;
+    --canvas: #F7F8FA;
+    --white: #FFFFFF;
+    --radius: 16px;
+    --radius-sm: 10px;
+    --radius-pill: 999px;
+    --font-serif: 'Playfair Display', 'Noto Serif SC', 'Times New Roman', serif;
+    --font-sans: -apple-system, BlinkMacSystemFont, 'Noto Sans HK', 'Microsoft JhengHei', 'PingFang SC', sans-serif;
+  }
+
+  /* ====== CONSULT FORM ====== */
+  body { background: var(--canvas); }
+
+  .consult-hero {
+    padding: 96px 0 32px;
+    text-align: center;
+    background: linear-gradient(180deg, var(--canvas) 0%, var(--white) 100%);
+  }
+  .consult-hero h1 {
+    font-family: var(--font-serif);
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    color: var(--navy);
+    margin: 0 0 12px;
+    letter-spacing: -0.01em;
+  }
+  .consult-hero p {
+    font-size: 1.05rem;
+    color: var(--navy-300);
+    margin: 0;
+  }
+  .consult-hero .eyebrow {
+    display: inline-block;
+    color: var(--gold-600);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    border-top: 2px solid var(--gold);
+    border-bottom: 2px solid var(--gold);
+    padding: 5px 12px;
+    margin-bottom: 16px;
+  }
+
+  .consult-card {
+    background: var(--white);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: var(--radius);
+    box-shadow: 0 14px 48px rgba(11, 25, 44, 0.08);
+    padding: 40px 44px 36px;
+    margin: 0 auto 80px;
+    max-width: 760px;
+  }
+  @media (max-width: 720px) {
+    .consult-card { padding: 28px 20px 24px; border-radius: 12px; }
+  }
+
+  /* Progress */
+  .consult-progress {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-bottom: 32px;
+  }
+  .consult-progress-seg {
+    height: 4px;
+    background: rgba(212, 175, 55, 0.18);
+    border-radius: 999px;
+    overflow: hidden;
+    position: relative;
+  }
+  .consult-progress-seg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 0%;
+    background: linear-gradient(90deg, var(--gold) 0%, var(--gold-600) 100%);
+    transition: width .35s ease;
+  }
+  .consult-progress-seg.done::after { width: 100%; }
+  .consult-progress-seg.active::after { width: 60%; }
+  .consult-step-indicator {
+    text-align: center;
+    color: var(--navy-300);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  /* Step transitions */
+  .consult-step { display: none; animation: fadeStep .35s ease both; }
+  .consult-step.active { display: block; }
+  @keyframes fadeStep {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .step-title {
+    font-family: var(--font-serif);
+    font-size: clamp(1.4rem, 3vw, 1.85rem);
+    color: var(--navy);
+    margin: 0 0 8px;
+    line-height: 1.25;
+    letter-spacing: -0.005em;
+  }
+  .step-subtitle {
+    color: var(--navy-300);
+    font-size: 0.96rem;
+    margin: 0 0 28px;
+    line-height: 1.55;
+  }
+
+  /* Fields */
+  .consult-field { margin-bottom: 22px; }
+  .consult-field-label {
+    display: block;
+    font-weight: 600;
+    color: var(--navy);
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+  .consult-field-label .req {
+    color: var(--gold-600);
+    margin-left: 4px;
+    font-weight: 700;
+  }
+  .consult-field-subnote {
+    color: var(--navy-300);
+    font-size: 0.82rem;
+    font-weight: 400;
+    margin-top: 4px;
+    display: block;
+    line-height: 1.4;
+  }
+
+  /* Radio + checkbox pills */
+  .option-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 10px;
+  }
+  .option-pill {
+    position: relative;
+    cursor: pointer;
+    display: block;
+  }
+  .option-pill input { position: absolute; opacity: 0; pointer-events: none; }
+  .option-pill span {
+    display: block;
+    padding: 14px 16px;
+    border: 1.5px solid rgba(11, 25, 44, 0.16);
+    border-radius: 10px;
+    background: var(--white);
+    color: var(--navy);
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-align: center;
+    transition: all .2s ease;
+    line-height: 1.3;
+  }
+  .option-pill:hover span { border-color: var(--gold); background: rgba(212, 175, 55, 0.04); }
+  .option-pill input:checked + span {
+    border-color: var(--navy);
+    background: var(--navy);
+    color: var(--white);
+    font-weight: 600;
+  }
+  .option-pill input:focus-visible + span {
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.35);
+    outline: none;
+  }
+
+  /* Select */
+  select.consult-input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1.5px solid rgba(11, 25, 44, 0.16);
+    border-radius: 10px;
+    background: var(--white);
+    color: var(--navy);
+    font-size: 0.95rem;
+    font-family: inherit;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%230B192C' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 44px;
+    cursor: pointer;
+    transition: border-color .2s ease;
+  }
+  select.consult-input:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.25);
+    outline: none;
+  }
+
+  /* Text input */
+  input.consult-input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1.5px solid rgba(11, 25, 44, 0.16);
+    border-radius: 10px;
+    background: var(--white);
+    color: var(--navy);
+    font-size: 0.95rem;
+    font-family: inherit;
+    transition: border-color .2s ease;
+  }
+  input.consult-input:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.25);
+    outline: none;
+  }
+  input.consult-input::placeholder { color: rgba(11, 25, 44, 0.4); }
+
+  .consult-field-error {
+    color: #B33;
+    font-size: 0.82rem;
+    margin-top: 6px;
+    display: none;
+  }
+  .consult-field.has-error .consult-field-error { display: block; }
+  .consult-field.has-error .option-pill span,
+  .consult-field.has-error input.consult-input,
+  .consult-field.has-error select.consult-input {
+    border-color: rgba(187, 51, 51, 0.6);
+  }
+
+  /* Step 2 channel cards */
+  .channel-grid { display: grid; gap: 12px; }
+  .channel-card {
+    position: relative;
+    display: block;
+    cursor: pointer;
+  }
+  .channel-card input { position: absolute; opacity: 0; pointer-events: none; }
+  .channel-card-body {
+    border: 1.5px solid rgba(11, 25, 44, 0.16);
+    border-radius: 12px;
+    padding: 16px 20px;
+    background: var(--white);
+    transition: all .2s ease;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .channel-card:hover .channel-card-body { border-color: var(--gold); }
+  .channel-card input:checked + .channel-card-body {
+    border-color: var(--navy);
+    background: linear-gradient(135deg, #FCFAF4 0%, #FAF5E8 100%);
+    box-shadow: 0 4px 16px rgba(212, 175, 55, 0.18);
+  }
+  .channel-card-code {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    background: var(--navy);
+    color: var(--white);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-serif);
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: -0.02em;
+  }
+  .channel-card-text { flex: 1; min-width: 0; }
+  .channel-card-name {
+    font-weight: 700;
+    color: var(--navy);
+    font-size: 0.98rem;
+    margin-bottom: 4px;
+    line-height: 1.35;
+  }
+  .channel-card-desc {
+    color: var(--navy-300);
+    font-size: 0.85rem;
+    line-height: 1.45;
+  }
+
+  /* Step 3 sections */
+  .step3-section {
+    background: rgba(11, 25, 44, 0.025);
+    border-left: 3px solid var(--gold);
+    border-radius: 0 10px 10px 0;
+    padding: 22px 22px 18px;
+    margin-bottom: 24px;
+  }
+  .step3-section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .step3-section-code {
+    width: 26px; height: 26px;
+    background: var(--gold);
+    color: var(--navy);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+    font-family: var(--font-serif);
+  }
+  .step3-section-title {
+    font-family: var(--font-serif);
+    font-weight: 700;
+    color: var(--navy);
+    font-size: 1.08rem;
+    margin: 0;
+    line-height: 1.3;
+  }
+  .step3-empty {
+    text-align: center;
+    padding: 56px 24px;
+    color: var(--navy-300);
+    background: rgba(212, 175, 55, 0.06);
+    border-radius: 12px;
+    font-size: 0.96rem;
+  }
+
+  /* Nav buttons */
+  .consult-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 32px;
+    padding-top: 28px;
+    border-top: 1px solid rgba(11, 25, 44, 0.08);
+    gap: 12px;
+  }
+  .consult-btn {
+    padding: 14px 28px;
+    border-radius: var(--radius-pill);
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all .2s ease;
+    border: 1.5px solid transparent;
+    font-family: inherit;
+    line-height: 1.2;
+  }
+  .consult-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+  .consult-btn-back {
+    background: transparent;
+    border-color: rgba(11, 25, 44, 0.2);
+    color: var(--navy);
+  }
+  .consult-btn-back:hover:not(:disabled) { border-color: var(--navy); }
+  .consult-btn-next, .consult-btn-submit {
+    background: var(--navy);
+    color: var(--white);
+    border-color: var(--navy);
+  }
+  .consult-btn-next:hover:not(:disabled),
+  .consult-btn-submit:hover:not(:disabled) {
+    background: var(--gold);
+    color: var(--navy);
+    border-color: var(--gold);
+  }
+  .consult-btn-submit:disabled { background: var(--navy); }
+
+  /* Success */
+  .consult-success {
+    text-align: center;
+    padding: 48px 20px;
+  }
+  .consult-success-icon {
+    width: 80px; height: 80px;
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-600) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: var(--white);
+    box-shadow: 0 8px 24px rgba(212, 175, 55, 0.35);
+  }
+  .consult-success h2 {
+    font-family: var(--font-serif);
+    color: var(--navy);
+    font-size: 1.7rem;
+    margin: 0 0 12px;
+  }
+  .consult-success p {
+    color: var(--navy-300);
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 480px;
+    margin: 0 auto 28px;
+  }
+
+  /* Loading state */
+  .spinner {
+    display: inline-block;
+    width: 14px; height: 14px;
+    border: 2px solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: spin .8s linear infinite;
+    vertical-align: -2px;
+    margin-right: 6px;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* Hidden by default */
+  .consult-hidden { display: none !important; }
+
+/* Page-level tweaks */
+.v10-lang-btn { transition: all .2s ease; }
+.v10-lang-btn:hover { border-color: var(--gold) !important; }
+</style>
+</head>
+<body>
+
+<nav class="v10-nav" style="background: var(--white); border-bottom: 1px solid rgba(11, 25, 44, 0.08);">
+  <div class="v10-container" style="display:flex; align-items:center; justify-content:space-between; padding: 16px 0;">
+    <a href="index.html" class="v10-logo" style="display:flex; align-items:center; gap: 10px; text-decoration:none; color: var(--navy);">
+      <span style="font-family: 'Playfair Display'; font-size: 1.35rem; font-weight: 700; letter-spacing: -0.01em;">Career<span style="color: var(--gold-600);">Forge</span></span>
+      <span style="font-size: 0.95rem; color: var(--navy-300); border-left: 1px solid rgba(11,25,44,0.15); padding-left: 10px;">鑄途</span>
+    </a>
+    <div style="display:flex; align-items:center; gap: 14px;">
+      <div class="v10-lang-switch" style="display:flex; gap: 4px;">
+        <button data-lang-target="zh-Hant" class="v10-lang-btn" style="padding: 6px 12px; border: 1px solid rgba(11,25,44,0.16); border-radius: 999px; background: var(--navy); color: var(--white); font-size: 0.78rem; font-weight: 600; cursor: pointer;">繁體</button>
+        <button data-lang-target="zh-Hans" class="v10-lang-btn" style="padding: 6px 12px; border: 1px solid rgba(11,25,44,0.16); border-radius: 999px; background: transparent; color: var(--navy); font-size: 0.78rem; font-weight: 600; cursor: pointer;">简体</button>
+        <button data-lang-target="en" class="v10-lang-btn" style="padding: 6px 12px; border: 1px solid rgba(11,25,44,0.16); border-radius: 999px; background: transparent; color: var(--navy); font-size: 0.78rem; font-weight: 600; cursor: pointer;">EN</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ====== HERO ====== -->
+<section class="consult-hero">
+  <div class="v10-container">
+    <span class="eyebrow">ONLINE CONSULTATION</span>
+    <h1>5 分钟完成 — 免费初评</h1>
+    <p>香港 5 条主流人才引进路线，4 步精准匹配 — 提交后 24 小时内由专属顾问亲自回复。</p>
+  </div>
+</section>
+
+<!-- ====== FORM ====== -->
+<section style="padding: 0 0 80px;">
+  <div class="v10-container">
+    <div class="consult-card">
+
+      <!-- Progress bar -->
+      <div class="consult-progress" aria-label="完成进度">
+        <div class="consult-progress-seg"></div>
+        <div class="consult-progress-seg"></div>
+        <div class="consult-progress-seg"></div>
+        <div class="consult-progress-seg"></div>
+      </div>
+      <div id="step-indicator" class="consult-step-indicator"></div>
+
+      <!-- Step 1: General info -->
+      <div class="consult-step" id="step-1">
+        <h2 class="step-title">一、通用信息</h2>
+        <p class="step-subtitle">为了更准确地评估您的申请通道，请填写以下基本资料。</p>
+        <div id="step-1-fields"></div>
+      </div>
+
+      <!-- Step 2: Channels -->
+      <div class="consult-step" id="step-2">
+        <h2 class="step-title">二、意向申请通道</h2>
+        <p class="step-subtitle">请选择您感兴趣的香港入境计划（可多选）。下一页会根据您的选择显示专属问题。</p>
+        <div id="step-2-channels" class="channel-grid"></div>
+        <div id="step-2-error" class="consult-field" style="margin-top: 16px;">
+          <div class="consult-field-error" id="step-2-error-text" style="display:none;"></div>
+        </div>
+      </div>
+
+      <!-- Step 3: Dynamic per channel -->
+      <div class="consult-step" id="step-3">
+        <h2 class="step-title">三、专属通道问题</h2>
+        <p class="step-subtitle">请回答下列通道专属评估问题。我们会根据您的答案给出最精准的申请可行性。</p>
+        <div id="step-3-content"></div>
+      </div>
+
+      <!-- Step 4: Advisor + Contact -->
+      <div class="consult-step" id="step-4">
+        <h2 class="step-title">三、顾问跟进与联络方式</h2>
+        <p class="step-subtitle">请填写联络资料。如果您已经有 CareerForge 的专属顾问，请输入名称以便安排跟进。</p>
+        <div id="step-4-fields"></div>
+        <p style="color: var(--navy-300); font-size: 0.82rem; margin-top: 24px; line-height: 1.5;">提交即表示您同意 CareerForge 铸途就您的申请意向与您联络。所有资料绝对保密。</p>
+      </div>
+
+      <!-- Success -->
+      <div class="consult-step" id="step-success">
+        <div class="consult-success">
+          <div class="consult-success-icon">✓</div>
+          <h2>✅ 表单已成功提交！</h2>
+          <p>专业资深顾问将于 24 小时内完成初步评估并与您联络。</p>
+          <p id="success-id" style="color: var(--gold-600); font-family: var(--font-serif); font-size: 0.95rem; margin-bottom: 24px; display: none;"></p>
+          <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+            <a href="index.html" class="consult-btn consult-btn-next">返回首页</a>
+            <a href="https://wa.me/85291371211?text=你好，我刚完成 CareerForge 网站的初评表单，想跟进。" class="consult-btn consult-btn-back" target="_blank" rel="noopener">WhatsApp 直接联络 →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nav buttons -->
+      <div class="consult-nav">
+        <button type="button" id="btn-back" class="consult-btn consult-btn-back">← 上一步</button>
+        <button type="button" id="btn-next" class="consult-btn consult-btn-next">下一步 →</button>
+        <button type="button" id="btn-submit" class="consult-btn consult-btn-submit">提交评估</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ====== FOOTER (minimal) ====== -->
+<footer style="padding: 32px 0; border-top: 1px solid rgba(11,25,44,0.08); background: var(--white); text-align: center; color: var(--navy-300); font-size: 0.85rem;">
+  <div class="v10-container">CareerForge 铸途 · 香港高端人才引进顾问</div>
+</footer>
+
+<!-- Schema (always bilingual for client-side dynamic rendering) -->
+<script type="application/json" id="form-schema">{"step1": {"title": {"zh-Hant": "一、通用資訊", "zh-Hans": "一、通用信息", "en": "Step 1: General Information"}, "subtitle": {"zh-Hant": "為咗更準確咁評估您嘅申請通道，請填寫以下基本資料。", "zh-Hans": "为了更准确地评估您的申请通道，请填写以下基本资料。", "en": "Please provide your basic information for accurate pathway assessment."}, "fields": [{"id": "age", "type": "select", "label": {"zh-Hant": "年齡", "zh-Hans": "年龄", "en": "Age"}, "required": true, "options": [{"value": "u18", "label": {"zh-Hant": "18歲以下", "zh-Hans": "18岁以下", "en": "Under 18"}}, {"value": "18-30", "label": {"zh-Hant": "18-30歲", "zh-Hans": "18-30岁", "en": "18-30 years"}}, {"value": "31-40", "label": {"zh-Hant": "31-40歲", "zh-Hans": "31-40岁", "en": "31-40 years"}}, {"value": "41-50", "label": {"zh-Hant": "41-50歲", "zh-Hans": "41-50岁", "en": "41-50 years"}}, {"value": "51+", "label": {"zh-Hant": "51歲以上", "zh-Hans": "51岁以上", "en": "51 or above"}}]}, {"id": "passport", "type": "radio", "label": {"zh-Hant": "國籍及護照", "zh-Hans": "国籍及护照", "en": "Nationality & Passport"}, "required": true, "options": [{"value": "cn-id", "label": {"zh-Hant": "中國內地身份證/護照", "zh-Hans": "中国内地身份证/护照", "en": "Mainland China ID/Passport"}}, {"value": "foreign", "label": {"zh-Hant": "外國護照", "zh-Hans": "外国护照", "en": "Foreign Passport"}}, {"value": "other", "label": {"zh-Hant": "其他", "zh-Hans": "其他", "en": "Other"}}]}, {"id": "education", "type": "radio", "label": {"zh-Hant": "最高學歷", "zh-Hans": "最高学历", "en": "Highest Education"}, "required": true, "options": [{"value": "associate", "label": {"zh-Hant": "大專", "zh-Hans": "大专", "en": "Associate"}}, {"value": "bachelor", "label": {"zh-Hant": "本科/學士", "zh-Hans": "本科/学士", "en": "Bachelor"}}, {"value": "master", "label": {"zh-Hant": "碩士", "zh-Hans": "硕士", "en": "Master"}}, {"value": "phd", "label": {"zh-Hant": "博士", "zh-Hans": "博士", "en": "PhD"}}]}, {"id": "work_exp", "type": "radio", "label": {"zh-Hant": "目前工作經驗年限", "zh-Hans": "目前工作经验年限", "en": "Work Experience"}, "required": true, "options": [{"value": "<3", "label": {"zh-Hant": "少於3年", "zh-Hans": "少于3年", "en": "Under 3 years"}}, {"value": "3-5", "label": {"zh-Hant": "3-5年", "zh-Hans": "3-5年", "en": "3-5 years"}}, {"value": "5-10", "label": {"zh-Hant": "5-10年", "zh-Hans": "5-10年", "en": "5-10 years"}}, {"value": "10+", "label": {"zh-Hant": "10年以上", "zh-Hans": "10年以上", "en": "10+ years"}}]}, {"id": "industry", "type": "select", "label": {"zh-Hant": "目前行業類型", "zh-Hans": "目前行业类型", "en": "Industry"}, "required": true, "options": [{"value": "finance", "label": {"zh-Hant": "金融/保險", "zh-Hans": "金融/保险", "en": "Finance / Insurance"}}, {"value": "tech", "label": {"zh-Hant": "科技/科創", "zh-Hans": "科技/科创", "en": "Tech / Innovation"}}, {"value": "health", "label": {"zh-Hant": "醫療/健康", "zh-Hans": "医疗/健康", "en": "Healthcare"}}, {"value": "legal", "label": {"zh-Hant": "法律/會計", "zh-Hans": "法律/会计", "en": "Legal / Accounting"}}, {"value": "edu", "label": {"zh-Hant": "教育/學術", "zh-Hans": "教育/学术", "en": "Education / Academia"}}, {"value": "other", "label": {"zh-Hant": "其他", "zh-Hans": "其他", "en": "Other"}}]}, {"id": "compliance", "type": "radio", "label": {"zh-Hant": "背景合規", "zh-Hans": "背景合规", "en": "Background Compliance"}, "required": true, "subnote": {"zh-Hant": "（無犯罪紀錄、無嚴重徵信問題、無港澳不良出入境紀錄）", "zh-Hans": "（无犯罪记录、无严重征信问题、无港澳不良出入境记录）", "en": "(No criminal record, no serious credit issues, no HK/Macau immigration issues)"}, "options": [{"value": "yes", "label": {"zh-Hant": "是", "zh-Hans": "是", "en": "Yes"}}, {"value": "no", "label": {"zh-Hant": "否", "zh-Hans": "否", "en": "No"}}]}, {"id": "family", "type": "radio", "label": {"zh-Hant": "隨行意向", "zh-Hans": "随行意向", "en": "Family Inclusion"}, "required": true, "subnote": {"zh-Hant": "（是否有配偶、18歲以下子女隨行意向）", "zh-Hans": "（是否有配偶、18岁以下子女随行意向）", "en": "(Will you bring spouse / children under 18?)"}, "options": [{"value": "yes", "label": {"zh-Hant": "是", "zh-Hans": "是", "en": "Yes"}}, {"value": "no", "label": {"zh-Hant": "否", "zh-Hans": "否", "en": "No"}}]}, {"id": "timeline", "type": "radio", "label": {"zh-Hant": "預計辦理時間", "zh-Hans": "预计办理时间", "en": "Timeline"}, "required": true, "options": [{"value": "now", "label": {"zh-Hant": "立即辦理", "zh-Hans": "立即办理", "en": "Apply Now"}}, {"value": "1-3m", "label": {"zh-Hant": "1-3個月內", "zh-Hans": "1-3个月内", "en": "Within 1-3 months"}}, {"value": "3-6m", "label": {"zh-Hant": "3-6個月內", "zh-Hans": "3-6个月内", "en": "Within 3-6 months"}}, {"value": "wait", "label": {"zh-Hant": "觀望中", "zh-Hans": "观望中", "en": "Just exploring"}}]}]}, "step2": {"title": {"zh-Hant": "二、意向申請通道", "zh-Hans": "二、意向申请通道", "en": "Step 2: Preferred Pathway"}, "subtitle": {"zh-Hant": "請選擇您有興趣嘅香港入境計劃（可多選）。下一頁會根據您嘅選擇顯示專屬問題。", "zh-Hans": "请选择您感兴趣的香港入境计划（可多选）。下一页会根据您的选择显示专属问题。", "en": "Select your preferred HK immigration pathway (multiple OK). Next page will show tailored questions."}, "channels": [{"id": "ttps", "code": "A", "name": {"zh-Hant": "高端人才通行證（高才通）", "zh-Hans": "高端人才通行证（高才通）", "en": "Top Talent Pass Scheme (TTPS)"}, "desc": {"zh-Hant": "近一年個人稅前年收入 ≥ HK$250萬 或 全球百強大學畢業", "zh-Hans": "近一年个人税前年收入 ≥ HK$250万 或 全球百强大学毕业", "en": "Annual income ≥ HK$2.5M OR top 100 global university graduate"}}, {"id": "gep", "code": "B", "name": {"zh-Hant": "輸入內地人才計劃（專才）", "zh-Hans": "输入内地人才计划（专才）", "en": "Admission Scheme for Mainland Talents (ASMT/GEP)"}, "desc": {"zh-Hant": "特定專業技能 / 行業經驗 + 香港僱主 Offer 或 已在港創業", "zh-Hans": "特定专业技能 / 行业经验 + 香港雇主 Offer 或已在港创业", "en": "Specialist expertise + HK employer offer / existing HK business"}}, {"id": "qmas", "code": "C", "name": {"zh-Hant": "優秀人才入境計劃（優才）", "zh-Hans": "优秀人才入境计划（优才）", "en": "Quality Migrant Admission Scheme (QMAS)"}, "desc": {"zh-Hant": "頂尖行業 / 國際獎項 / 高學歷 / 跨國經驗 — 計分制", "zh-Hans": "顶尖行业 / 国际奖项 / 高学历 / 跨国经验 — 计分制", "en": "Top-tier industry / international awards / high edu / global exp — points-based"}}, {"id": "ciis", "code": "D", "name": {"zh-Hant": "新資本投資者入境計劃", "zh-Hans": "新资本投资者入境计划", "en": "Capital Investor Entrant Scheme (CIES)"}, "desc": {"zh-Hant": "淨資產 ≥ HK$3,000萬 + 投資 HK$3,000萬合資格資產", "zh-Hans": "净资产 ≥ HK$3,000万 + 投资 HK$3,000万合资格资产", "en": "Net assets ≥ HK$30M + invest HK$30M in eligible assets"}}, {"id": "study", "code": "E", "name": {"zh-Hant": "香港留學進修（進修移民）", "zh-Hans": "香港留学进修（进修移民）", "en": "Study in Hong Kong (Study Pathway)"}, "desc": {"zh-Hant": "赴港升學 + IANG 簽證留港發展 — 本/碩/博皆可", "zh-Hans": "赴港升学 + IANG 签证留港发展 — 本/硕/博皆可", "en": "Study in HK + IANG visa — Bachelor/Master/PhD"}}]}, "step3_channels": {"ttps": [{"id": "ttps_income", "type": "radio", "label": {"zh-Hant": "近一年個人稅前年收入是否達到港幣 250 萬以上？", "zh-Hans": "近一年个人税前年收入是否达到港币 250 万以上？", "en": "Annual income (pre-tax) ≥ HK$2.5M in past year?"}, "required": true, "options": [{"value": "yes", "label": {"zh-Hant": "是", "zh-Hans": "是", "en": "Yes"}}, {"value": "no", "label": {"zh-Hant": "否", "zh-Hans": "否", "en": "No"}}]}, {"id": "ttps_exec", "type": "radio", "label": {"zh-Hant": "是否為企業高管或核心技術人員？", "zh-Hans": "是否为高管或核心技术？", "en": "Senior executive or core technical role?"}, "required": true, "options": [{"value": "yes", "label": {"zh-Hant": "是", "zh-Hans": "是", "en": "Yes"}}, {"value": "no", "label": {"zh-Hant": "否", "zh-Hans": "否", "en": "No"}}]}], "gep": [{"id": "gep_cert", "type": "radio", "label": {"zh-Hant": "是否持有相關專業或職業資格證書？", "zh-Hans": "是否持有相关专业或职业资格证书？", "en": "Hold relevant professional / vocational qualification?"}, "required": true, "options": [{"value": "yes", "label": {"zh-Hant": "有", "zh-Hans": "有", "en": "Yes"}}, {"value": "no", "label": {"zh-Hant": "無", "zh-Hans": "无", "en": "No"}}]}, {"id": "gep_exp", "type": "radio", "label": {"zh-Hant": "過去 10 年是否有相關行業高管/專業經驗？", "zh-Hans": "过去 10 年是否有相关行业高管 / 专业经验？", "en": "Relevant senior / specialist experience in past 10 years?"}, "required": true, "options": [{"value": "yes", "label": {"zh-Hant": "是", "zh-Hans": "是", "en": "Yes"}}, {"value": "no", "label": {"zh-Hant": "否", "zh-Hans": "否", "en": "No"}}]}, {"id": "gep_offer", "type": "radio", "label": {"zh-Hant": "是否已有香港本地僱主 Offer？", "zh-Hans": "是否已有香港本地雇主 Offer？", "en": "Already have a HK employer offer?"}, "required": true, "options": [{"value": "yes", "label": {"zh-Hant": "是", "zh-Hans": "是", "en": "Yes"}}, {"value": "no", "label": {"zh-Hant": "否", "zh-Hans": "否", "en": "No"}}]}, {"id": "gep_business", "type": "radio", "label": {"zh-Hant": "是否已在香港經營公司或考慮在港創業？", "zh-Hans": "是否已在香港经营公司 或 考虑在港创业？", "en": "Already operate / considering starting business in HK?"}, "required": true, "options": [{"value": "yes", "label": {"zh-Hant": "是", "zh-Hans": "是", "en": "Yes"}}, {"value": "no", "label": {"zh-Hant": "否", "zh-Hans": "否", "en": "No"}}]}], "qmas": [{"id": "qmas_english", "type": "radio", "label": {"zh-Hant": "雅思 7 分 / 托福 94 分以上？", "zh-Hans": "雅思 7 分 / 托福 94 分以上？", "en": "IELTS 7+ / TOEFL 94+?"}, "required": true, "options": [{"value": "yes", "label": {"zh-Hant": "是", "zh-Hans": "是", "en": "Yes"}}, {"value": "no", "label": {"zh-Hant": "否", "zh-Hans": "否", "en": "No"}}]}, {"id": "qmas_industry", "type": "radio", "label": {"zh-Hant": "所屬重點行業", "zh-Hans": "所属重点行业", "en": "Priority Industry"}, "required": true, "options": [{"value": "stem", "label": {"zh-Hant": "科學/技術/工程/STEM", "zh-Hans": "科学/技术/工程/STEM", "en": "Science/Tech/Engineering/STEM"}}, {"value": "finance", "label": {"zh-Hant": "金融/科創", "zh-Hans": "金融/科创", "en": "Finance / Innovation"}}, {"value": "medical", "label": {"zh-Hant": "醫療/法律/建築", "zh-Hans": "医疗/法律/建筑", "en": "Medical / Legal / Architecture"}}, {"value": "arts", "label": {"zh-Hant": "藝術/文化", "zh-Hans": "艺术/文化", "en": "Arts / Culture"}}, {"value": "other", "label": {"zh-Hant": "其他", "zh-Hans": "其他", "en": "Other"}}]}, {"id": "qmas_award", "type": "radio", "label": {"zh-Hant": "擁有專利、國際獎項、科研成果或頂尖資格證書？", "zh-Hans": "拥有专利 / 国际奖项 / 科研成果 或 顶尖资格证书？", "en": "Patents / international awards / research / top certifications?"}, "required": true, "options": [{"value": "yes", "label": {"zh-Hant": "是", "zh-Hans": "是", "en": "Yes"}}, {"value": "no", "label": {"zh-Hant": "否", "zh-Hans": "否", "en": "No"}}]}, {"id": "qmas_mnc", "type": "radio", "label": {"zh-Hant": "3 年以上跨國公司或知名企業（如 Fortune 500）工作經驗？", "zh-Hans": "3 年以上跨国公司 / 知名企业（Fortune 500 等）工作经验？", "en": "3+ years at MNC / known firm (e.g. Fortune 500)?"}, "required": true, "options": [{"value": "yes", "label": {"zh-Hant": "是", "zh-Hans": "是", "en": "Yes"}}, {"value": "no", "label": {"zh-Hant": "否", "zh-Hans": "否", "en": "No"}}]}, {"id": "qmas_overseas", "type": "radio", "label": {"zh-Hant": "2 年以上海外工作經驗？", "zh-Hans": "2 年以上海外工作经验？", "en": "2+ years overseas work experience?"}, "required": true, "options": [{"value": "yes", "label": {"zh-Hant": "是", "zh-Hans": "是", "en": "Yes"}}, {"value": "no", "label": {"zh-Hant": "否", "zh-Hans": "否", "en": "No"}}]}, {"id": "qmas_income", "type": "radio", "label": {"zh-Hant": "申請前一年全年收入是否達 HK$100 萬或以上？", "zh-Hans": "申请前一年全年收入是否达 HK$100 万或以上？", "en": "Annual income ≥ HK$1M in application year?"}, "required": true, "options": [{"value": "yes", "label": {"zh-Hant": "是", "zh-Hans": "是", "en": "Yes"}}, {"value": "no", "label": {"zh-Hant": "否", "zh-Hans": "否", "en": "No"}}]}, {"id": "qmas_business", "type": "radio", "label": {"zh-Hant": "擁有一家全年盈利 ≥ HK$500 萬的公司或上市公司？", "zh-Hans": "拥有一家全年盈利 ≥ HK$500 万的公司 / 上市公司？", "en": "Own a HK$5M+ annual profit business or listed company?"}, "required": true, "options": [{"value": "yes", "label": {"zh-Hant": "是", "zh-Hans": "是", "en": "Yes"}}, {"value": "no", "label": {"zh-Hant": "否", "zh-Hans": "否", "en": "No"}}]}], "ciis": [{"id": "ciis_net", "type": "radio", "label": {"zh-Hant": "具備港幣 3000 萬或以上合規淨資產？", "zh-Hans": "具备港币 3000 万 或 以上合规净资产？", "en": "Net assets ≥ HK$30M?"}, "required": true, "options": [{"value": "yes", "label": {"zh-Hant": "是", "zh-Hans": "是", "en": "Yes"}}, {"value": "no", "label": {"zh-Hant": "否", "zh-Hans": "否", "en": "No"}}]}, {"id": "ciis_invest", "type": "radio", "label": {"zh-Hant": "獲批後願意投資 3000 萬港幣（指定金融資產 / 非住宅房產）？", "zh-Hans": "获批后愿意投资 3000 万港币（指定金融资产 / 非住宅房产）？", "en": "Willing to invest HK$30M in eligible assets / non-residential property after approval?"}, "required": true, "options": [{"value": "yes", "label": {"zh-Hant": "是", "zh-Hans": "是", "en": "Yes"}}, {"value": "no", "label": {"zh-Hant": "否", "zh-Hans": "否", "en": "No"}}]}], "study": [{"id": "study_english", "type": "radio", "label": {"zh-Hant": "英語能力證明（雅思 / 托福 / 英語六級）", "zh-Hans": "英语能力证明（雅思 / 托福 / 英语六级）", "en": "English proof (IELTS / TOEFL / CET-6)"}, "required": true, "options": [{"value": "yes", "label": {"zh-Hant": "有", "zh-Hans": "有", "en": "Yes"}}, {"value": "no", "label": {"zh-Hant": "無", "zh-Hans": "无", "en": "No"}}, {"value": "prep", "label": {"zh-Hant": "準備考", "zh-Hans": "准备考", "en": "Preparing"}}]}, {"id": "study_stage", "type": "radio", "label": {"zh-Hant": "意向申請階段", "zh-Hans": "意向申请阶段", "en": "Target Study Level"}, "required": true, "options": [{"value": "ug", "label": {"zh-Hant": "本科", "zh-Hans": "本科", "en": "Undergraduate"}}, {"value": "pg", "label": {"zh-Hant": "碩士", "zh-Hans": "硕士", "en": "Master's"}}, {"value": "phd", "label": {"zh-Hant": "博士", "zh-Hans": "博士", "en": "PhD"}}, {"value": "taught-cn", "label": {"zh-Hant": "中文授課碩士", "zh-Hans": "中文授课硕士", "en": "Chinese-taught Master's"}}]}, {"id": "study_mode", "type": "radio", "label": {"zh-Hant": "可配合赴港就讀時間", "zh-Hans": "可配合赴港就读时间", "en": "Time commitment"}, "required": true, "options": [{"value": "full", "label": {"zh-Hant": "全日制赴港", "zh-Hans": "全日制赴港", "en": "Full-time in HK"}}, {"value": "flex", "label": {"zh-Hant": "彈性時間", "zh-Hans": "弹性时间", "en": "Flexible / Part-time"}}]}, {"id": "study_stay", "type": "radio", "label": {"zh-Hant": "畢業後是否計畫留港發展？", "zh-Hans": "毕业后是否计划留港发展？", "en": "Plan to stay in HK after graduation?"}, "required": true, "options": [{"value": "yes", "label": {"zh-Hant": "是", "zh-Hans": "是", "en": "Yes"}}, {"value": "no", "label": {"zh-Hant": "否", "zh-Hans": "否", "en": "No"}}]}, {"id": "study_goal", "type": "radio", "label": {"zh-Hant": "核心需求", "zh-Hans": "核心需求", "en": "Primary Goal"}, "required": true, "options": [{"value": "kids_edu", "label": {"zh-Hant": "子女教育", "zh-Hans": "子女教育", "en": "Children's Education"}}, {"value": "residency", "label": {"zh-Hant": "身份規劃", "zh-Hans": "身份规划", "en": "Residency Planning"}}, {"value": "degree", "label": {"zh-Hant": "學歷提升", "zh-Hans": "学历提升", "en": "Degree Advancement"}}, {"value": "other", "label": {"zh-Hant": "其他", "zh-Hans": "其他", "en": "Other"}}]}, {"id": "study_family", "type": "radio", "label": {"zh-Hant": "需要配偶赴港及子女入讀香港學校？", "zh-Hans": "需要配偶赴港 及 子女入读香港学校？", "en": "Need spouse to relocate + HK school for children?"}, "required": true, "options": [{"value": "yes", "label": {"zh-Hant": "是", "zh-Hans": "是", "en": "Yes"}}, {"value": "no", "label": {"zh-Hant": "否", "zh-Hans": "否", "en": "No"}}]}]}, "step4": {"title": {"zh-Hant": "三、顧問跟進與聯絡方式", "zh-Hans": "三、顾问跟进与联络方式", "en": "Step 3: Advisor & Contact"}, "subtitle": {"zh-Hant": "請填寫聯絡資料。如果您已經有 CareerForge 嘅專屬顧問，請輸入名稱以便安排跟進。", "zh-Hans": "请填写联络资料。如果您已经有 CareerForge 的专属顾问，请输入名称以便安排跟进。", "en": "Please provide contact details. If you have an existing CareerForge advisor, enter their name."}, "fields": [{"id": "has_advisor", "type": "radio", "label": {"zh-Hant": "是否有專屬顧問跟進？", "zh-Hans": "是否有专属顾问跟进？", "en": "Do you have an assigned advisor?"}, "required": true, "options": [{"value": "no", "label": {"zh-Hant": "沒有", "zh-Hans": "没有", "en": "No"}}, {"value": "yes", "label": {"zh-Hant": "有", "zh-Hans": "有", "en": "Yes"}}]}, {"id": "advisor_name", "type": "text", "label": {"zh-Hant": "請輸入顧問名稱", "zh-Hans": "请输入顾问名称", "en": "Advisor Name"}, "required": false, "dependsOn": {"field": "has_advisor", "value": "yes"}}, {"id": "contact_name", "type": "text", "label": {"zh-Hant": "聯絡姓名", "zh-Hans": "联络姓名", "en": "Contact Name"}, "required": true, "placeholder": {"zh-Hant": "請填寫您嘅姓名", "zh-Hans": "请填写您的姓名", "en": "Your full name"}}, {"id": "contact_phone", "type": "text", "label": {"zh-Hant": "聯絡電話 / WhatsApp / 微信", "zh-Hans": "联络电话 / WhatsApp / 微信", "en": "Phone / WhatsApp / WeChat"}, "required": true, "placeholder": {"zh-Hant": "請填寫聯絡電話", "zh-Hans": "请填写联络电话", "en": "Your phone number"}}]}, "ui_text": {"step_indicator": {"zh-Hant": "第 {current} 步 / 共 4 步", "zh-Hans": "第 {current} 步 / 共 4 步", "en": "Step {current} of 4"}, "back": {"zh-Hant": "← 上一步", "zh-Hans": "← 上一步", "en": "← Back"}, "next": {"zh-Hant": "下一步 →", "zh-Hans": "下一步 →", "en": "Next →"}, "submit": {"zh-Hant": "提交評估", "zh-Hans": "提交评估", "en": "Submit"}, "submitting": {"zh-Hant": "提交中…", "zh-Hans": "提交中…", "en": "Submitting…"}, "submit_error": {"zh-Hant": "提交失敗，請稍後再試或直接 WhatsApp 我哋", "zh-Hans": "提交失败，请稍后再试 或 直接 WhatsApp 我们", "en": "Submission failed. Please retry or WhatsApp us."}, "success_title": {"zh-Hant": "✅ 表單已成功提交！", "zh-Hans": "✅ 表单已成功提交！", "en": "✅ Form Submitted!"}, "success_msg": {"zh-Hant": "我們嘅專業資深顧問將在 24 小時內完成初步評估並與您聯絡。", "zh-Hans": "我们的专业资深顾问将在 24 小时内完成初步评估并与您联络。", "en": "Our senior advisors will complete initial assessment and contact you within 24 hours."}, "success_cta": {"zh-Hant": "返回首頁", "zh-Hans": "返回首页", "en": "Back to Home"}}, "validation_msg": {"required": {"zh-Hant": "此項為必填", "zh-Hans": "此项必填", "en": "Required"}}}</script>
+
+<!-- Form state machine -->
+<script>
+/* ============================================================
+   CareerForge 鑄途 — Consult Form State Machine
+   4-step dynamic form with channel-specific questions + backend submit
+   ============================================================ */
+
+(function() {
+  'use strict';
+
+  // ====== CONFIG ======
+  const SUBMIT_ENDPOINT = '/api/consult';
+
+  // ====== I18N (lang detect) ======
+  function detectLang() {
+    const url = new URL(location.href);
+    const fromUrl = url.searchParams.get('lang');
+    if (fromUrl && ['zh-Hant', 'zh-Hans', 'en'].includes(fromUrl)) return fromUrl;
+    try {
+      const saved = localStorage.getItem('cf_lang');
+      if (saved && ['zh-Hant', 'zh-Hans', 'en'].includes(saved)) return saved;
+    } catch(e) {}
+    const nav = (navigator.language || 'zh-Hant').toLowerCase();
+    if (nav.startsWith('zh-cn') || nav === 'zh-hans') return 'zh-Hans';
+    if (nav.startsWith('en')) return 'en';
+    return 'zh-Hant';
+  }
+  const LANG = detectLang();
+
+  // Load schema from inline JSON
+  const SCHEMA_NODE = document.getElementById('form-schema');
+  const SCHEMA = JSON.parse(SCHEMA_NODE.textContent);
+
+  // ====== STATE ======
+  const state = {
+    step: 1,
+    data: {
+      step1: {}, // { field_id: value }
+      step2: [], // array of channel ids
+      step3: {}, // { channel_id: { question_id: value } }
+      step4: {}  // { field_id: value }
+    },
+    errors: {},
+    submitted: false
+  };
+
+  // ====== HELPERS ======
+  function t(obj) {
+    // Translate trilingual object
+    if (!obj) return '';
+    if (typeof obj === 'string') return obj;
+    return obj[LANG] || obj['zh-Hant'] || Object.values(obj)[0] || '';
+  }
+  function el(html) {
+    const tmpl = document.createElement('template');
+    tmpl.innerHTML = html.trim();
+    return tmpl.content.firstChild;
+  }
+  function $(sel) { return document.querySelector(sel); }
+  function $$(sel) { return Array.from(document.querySelectorAll(sel)); }
+
+  // ====== RENDER: STEP 1 (general info) ======
+  function renderStep1() {
+    const container = $('#step-1-fields');
+    container.innerHTML = '';
+    SCHEMA.step1.fields.forEach(field => {
+      const wrap = document.createElement('div');
+      wrap.className = 'consult-field';
+      wrap.dataset.field = field.id;
+
+      const label = document.createElement('label');
+      label.className = 'consult-field-label';
+      label.innerHTML = `${t(field.label)}${field.required ? '<span class="req">*</span>' : ''}`;
+      wrap.appendChild(label);
+
+      if (field.subnote) {
+        const sub = document.createElement('span');
+        sub.className = 'consult-field-subnote';
+        sub.textContent = t(field.subnote);
+        wrap.appendChild(sub);
+      }
+
+      if (field.type === 'radio') {
+        const grid = document.createElement('div');
+        grid.className = 'option-grid';
+        field.options.forEach(opt => {
+          const id = `${field.id}-${opt.value}`;
+          const lbl = document.createElement('label');
+          lbl.className = 'option-pill';
+          lbl.htmlFor = id;
+          lbl.innerHTML = `<input type="radio" id="${id}" name="${field.id}" value="${opt.value}" ${state.data.step1[field.id] === opt.value ? 'checked' : ''}><span>${t(opt.label)}</span>`;
+          grid.appendChild(lbl);
+        });
+        wrap.appendChild(grid);
+      } else if (field.type === 'select') {
+        const sel = document.createElement('select');
+        sel.className = 'consult-input';
+        sel.name = field.id;
+        // empty placeholder option
+        const ph = document.createElement('option');
+        ph.value = '';
+        ph.textContent = LANG === 'en' ? '— Please select —' : (LANG === 'zh-Hans' ? '— 请选择 —' : '— 請選擇 —');
+        sel.appendChild(ph);
+        field.options.forEach(opt => {
+          const o = document.createElement('option');
+          o.value = opt.value;
+          o.textContent = t(opt.label);
+          if (state.data.step1[field.id] === opt.value) o.selected = true;
+          sel.appendChild(o);
+        });
+        sel.addEventListener('change', () => {
+          state.data.step1[field.id] = sel.value;
+          clearError(wrap);
+        });
+        wrap.appendChild(sel);
+      }
+
+      // error message
+      const err = document.createElement('div');
+      err.className = 'consult-field-error';
+      err.textContent = t(SCHEMA.validation_msg.required);
+      wrap.appendChild(err);
+
+      // wire radio change
+      wrap.querySelectorAll('input[type="radio"]').forEach(input => {
+        input.addEventListener('change', () => {
+          state.data.step1[field.id] = input.value;
+          clearError(wrap);
+        });
+      });
+
+      container.appendChild(wrap);
+    });
+  }
+
+  // ====== RENDER: STEP 2 (channels) ======
+  function renderStep2() {
+    const container = $('#step-2-channels');
+    container.innerHTML = '';
+    SCHEMA.step2.channels.forEach(ch => {
+      const card = document.createElement('label');
+      card.className = 'channel-card';
+      card.innerHTML = `<input type="checkbox" name="channel" value="${ch.id}" ${state.data.step2.includes(ch.id) ? 'checked' : ''}>
+        <div class="channel-card-body">
+          <div class="channel-card-code">${ch.code}</div>
+          <div class="channel-card-text">
+            <div class="channel-card-name">${t(ch.name)}</div>
+            <div class="channel-card-desc">${t(ch.desc)}</div>
+          </div>
+        </div>`;
+      card.querySelector('input').addEventListener('change', (e) => {
+        if (e.target.checked) {
+          if (!state.data.step2.includes(ch.id)) state.data.step2.push(ch.id);
+        } else {
+          state.data.step2 = state.data.step2.filter(c => c !== ch.id);
+          delete state.data.step3[ch.id];
+        }
+        clearError($('#step-2-error'));
+      });
+      container.appendChild(card);
+    });
+  }
+
+  // ====== RENDER: STEP 3 (dynamic per channel) ======
+  function renderStep3() {
+    const container = $('#step-3-content');
+    container.innerHTML = '';
+    if (state.data.step2.length === 0) {
+      const empty = document.createElement('div');
+      empty.className = 'step3-empty';
+      empty.textContent = LANG === 'en' ? 'Please go back and select at least one pathway.' : (LANG === 'zh-Hans' ? '请返回上一步，至少选择一个通道。' : '請返回上一步，至少選擇一個通道。');
+      container.appendChild(empty);
+      return;
+    }
+    state.data.step2.forEach(channelId => {
+      const channel = SCHEMA.step2.channels.find(c => c.id === channelId);
+      const questions = SCHEMA.step3_channels[channelId];
+      if (!channel || !questions) return;
+
+      const section = document.createElement('div');
+      section.className = 'step3-section';
+      section.dataset.channel = channelId;
+
+      const header = document.createElement('div');
+      header.className = 'step3-section-header';
+      header.innerHTML = `<div class="step3-section-code">${channel.code}</div>
+        <h3 class="step3-section-title">${t(channel.name)}</h3>`;
+      section.appendChild(header);
+
+      questions.forEach(q => {
+        const wrap = document.createElement('div');
+        wrap.className = 'consult-field';
+        wrap.dataset.field = q.id;
+        const label = document.createElement('label');
+        label.className = 'consult-field-label';
+        label.innerHTML = `${t(q.label)}${q.required ? '<span class="req">*</span>' : ''}`;
+        wrap.appendChild(label);
+
+        const grid = document.createElement('div');
+        grid.className = 'option-grid';
+        q.options.forEach(opt => {
+          const id = `${q.id}-${opt.value}`;
+          const lbl = document.createElement('label');
+          lbl.className = 'option-pill';
+          lbl.htmlFor = id;
+          const cur = (state.data.step3[channelId] || {})[q.id];
+          lbl.innerHTML = `<input type="radio" id="${id}" name="${channelId}_${q.id}" value="${opt.value}" ${cur === opt.value ? 'checked' : ''}><span>${t(opt.label)}</span>`;
+          grid.appendChild(lbl);
+        });
+        wrap.appendChild(grid);
+
+        const err = document.createElement('div');
+        err.className = 'consult-field-error';
+        err.textContent = t(SCHEMA.validation_msg.required);
+        wrap.appendChild(err);
+
+        wrap.querySelectorAll('input[type="radio"]').forEach(input => {
+          input.addEventListener('change', () => {
+            if (!state.data.step3[channelId]) state.data.step3[channelId] = {};
+            state.data.step3[channelId][q.id] = input.value;
+            clearError(wrap);
+          });
+        });
+
+        section.appendChild(wrap);
+      });
+      container.appendChild(section);
+    });
+  }
+
+  // ====== RENDER: STEP 4 (advisor + contact) ======
+  function renderStep4() {
+    const container = $('#step-4-fields');
+    container.innerHTML = '';
+    SCHEMA.step4.fields.forEach(field => {
+      const wrap = document.createElement('div');
+      wrap.className = 'consult-field';
+      wrap.dataset.field = field.id;
+      if (field.dependsOn) wrap.dataset.dependsField = field.dependsOn.field;
+      if (field.dependsOn) wrap.dataset.dependsValue = field.dependsOn.value;
+
+      const label = document.createElement('label');
+      label.className = 'consult-field-label';
+      label.innerHTML = `${t(field.label)}${field.required ? '<span class="req">*</span>' : ''}`;
+      wrap.appendChild(label);
+
+      if (field.type === 'radio') {
+        const grid = document.createElement('div');
+        grid.className = 'option-grid';
+        field.options.forEach(opt => {
+          const id = `${field.id}-${opt.value}`;
+          const lbl = document.createElement('label');
+          lbl.className = 'option-pill';
+          lbl.htmlFor = id;
+          lbl.innerHTML = `<input type="radio" id="${id}" name="${field.id}" value="${opt.value}" ${state.data.step4[field.id] === opt.value ? 'checked' : ''}><span>${t(opt.label)}</span>`;
+          grid.appendChild(lbl);
+        });
+        wrap.appendChild(grid);
+
+        wrap.querySelectorAll('input[type="radio"]').forEach(input => {
+          input.addEventListener('change', () => {
+            state.data.step4[field.id] = input.value;
+            clearError(wrap);
+            // toggle dependent fields
+            toggleDependentFields();
+          });
+        });
+      } else if (field.type === 'text') {
+        const inp = document.createElement('input');
+        inp.type = 'text';
+        inp.className = 'consult-input';
+        inp.name = field.id;
+        if (field.placeholder) inp.placeholder = t(field.placeholder);
+        if (state.data.step4[field.id]) inp.value = state.data.step4[field.id];
+        inp.addEventListener('input', () => {
+          state.data.step4[field.id] = inp.value;
+          clearError(wrap);
+        });
+        wrap.appendChild(inp);
+      }
+
+      const err = document.createElement('div');
+      err.className = 'consult-field-error';
+      err.textContent = t(SCHEMA.validation_msg.required);
+      wrap.appendChild(err);
+
+      container.appendChild(wrap);
+    });
+    toggleDependentFields();
+  }
+
+  function toggleDependentFields() {
+    // For Step 4 fields with dependsOn, show/hide based on parent value
+    $$('#step-4-fields .consult-field[data-depends-field]').forEach(wrap => {
+      const depField = wrap.dataset.dependsField;
+      const depVal = wrap.dataset.dependsValue;
+      const cur = state.data.step4[depField];
+      wrap.style.display = (cur === depVal) ? '' : 'none';
+      if (cur !== depVal) {
+        // clear dependent value
+        delete state.data.step4[wrap.dataset.field];
+      }
+    });
+  }
+
+  // ====== VALIDATION ======
+  function clearError(wrap) {
+    if (!wrap) return;
+    wrap.classList.remove('has-error');
+  }
+  function clearAllErrors() {
+    $$('.consult-field.has-error').forEach(el => el.classList.remove('has-error'));
+  }
+
+  function validateStep1() {
+    clearAllErrors();
+    let ok = true;
+    SCHEMA.step1.fields.forEach(field => {
+      const wrap = $(`#step-1-fields .consult-field[data-field="${field.id}"]`);
+      if (field.required && !state.data.step1[field.id]) {
+        wrap.classList.add('has-error');
+        ok = false;
+      }
+    });
+    return ok;
+  }
+
+  function validateStep2() {
+    clearAllErrors();
+    if (state.data.step2.length === 0) {
+      $('#step-2-error').classList.add('has-error');
+      $('#step-2-error-text').style.display = 'block';
+      return false;
+    }
+    $('#step-2-error-text').style.display = 'none';
+    return true;
+  }
+
+  function validateStep3() {
+    clearAllErrors();
+    let ok = true;
+    state.data.step2.forEach(channelId => {
+      const questions = SCHEMA.step3_channels[channelId] || [];
+      questions.forEach(q => {
+        if (q.required) {
+          const wrap = $(`#step-3-content .step3-section[data-channel="${channelId}"] .consult-field[data-field="${q.id}"]`);
+          const val = (state.data.step3[channelId] || {})[q.id];
+          if (!val) {
+            wrap.classList.add('has-error');
+            ok = false;
+          }
+        }
+      });
+    });
+    return ok;
+  }
+
+  function validateStep4() {
+    clearAllErrors();
+    let ok = true;
+    SCHEMA.step4.fields.forEach(field => {
+      if (field.dependsOn) {
+        // only validate if parent is set to required value
+        if (state.data.step4[field.dependsOn.field] !== field.dependsOn.value) return;
+      }
+      const wrap = $(`#step-4-fields .consult-field[data-field="${field.id}"]`);
+      if (field.required && !state.data.step4[field.id]) {
+        wrap.classList.add('has-error');
+        ok = false;
+      }
+    });
+    return ok;
+  }
+
+  // ====== STEP NAVIGATION ======
+  function showStep(step) {
+    state.step = step;
+    $$('.consult-step').forEach(s => s.classList.remove('active'));
+    $(`#step-${step}`).classList.add('active');
+    // Re-render dynamic steps on entry
+    if (step === 3) renderStep3();
+    if (step === 4) renderStep4();
+    // Update progress
+    $$('.consult-progress-seg').forEach((seg, i) => {
+      seg.classList.remove('done', 'active');
+      if (i + 1 < step) seg.classList.add('done');
+      if (i + 1 === step) seg.classList.add('active');
+    });
+    // Update step indicator
+    const indicator = $('#step-indicator');
+    if (step <= 4) {
+      indicator.textContent = t(SCHEMA.ui_text.step_indicator).replace('{current}', step);
+    }
+    // Scroll to top of card
+    $('.consult-card').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // Update nav buttons
+    $('#btn-back').style.display = (step === 1 || step === 'success') ? 'none' : '';
+    $('#btn-next').style.display = (step === 4) ? 'none' : '';
+    $('#btn-submit').style.display = (step === 4) ? '' : 'none';
+    if (step === 'success') {
+      $('#btn-back').style.display = 'none';
+      $('#btn-next').style.display = 'none';
+      $('#btn-submit').style.display = 'none';
+    }
+  }
+
+  function nextStep() {
+    if (state.step === 1 && !validateStep1()) {
+      $('.consult-card').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      return;
+    }
+    if (state.step === 2 && !validateStep2()) {
+      $('.consult-card').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      return;
+    }
+    if (state.step === 3 && !validateStep3()) {
+      $('.consult-card').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      return;
+    }
+    showStep(state.step + 1);
+  }
+
+  function prevStep() {
+    showStep(state.step - 1);
+  }
+
+  // ====== SUBMIT ======
+  async function submit() {
+    if (!validateStep4()) return;
+    const btn = $('#btn-submit');
+    btn.disabled = true;
+    btn.innerHTML = `<span class="spinner"></span>${t(SCHEMA.ui_text.submitting)}`;
+
+    const payload = {
+      lang: LANG,
+      submitted_at: new Date().toISOString(),
+      step1: state.data.step1,
+      step2_channels: state.data.step2,
+      step3: state.data.step3,
+      step4: state.data.step4,
+      advisor_name: (state.data.step4.has_advisor === 'yes') ? (state.data.step4.advisor_name || '') : '',
+      contact_name: state.data.step4.contact_name || '',
+      contact_phone: state.data.step4.contact_phone || ''
+    };
+
+    try {
+      const res = await fetch(SUBMIT_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const json = await res.json().catch(() => ({}));
+      showSuccess(json);
+    } catch (e) {
+      console.error('Submit failed:', e);
+      btn.disabled = false;
+      btn.innerHTML = t(SCHEMA.ui_text.submit);
+      alert(t(SCHEMA.ui_text.submit_error));
+    }
+  }
+
+  function showSuccess(resp) {
+    state.submitted = true;
+    // Show success step
+    $$('.consult-step').forEach(s => s.classList.remove('active'));
+    $('#step-success').classList.add('active');
+    // Hide nav buttons
+    $('#btn-back').style.display = 'none';
+    $('#btn-next').style.display = 'none';
+    $('#btn-submit').style.display = 'none';
+    $('#step-indicator').style.display = 'none';
+    $$('.consult-progress-seg').forEach(seg => {
+      seg.classList.remove('active');
+      seg.classList.add('done');
+    });
+    // If a tracking ID came back, show it
+    if (resp && resp.id) {
+      const idEl = $('#success-id');
+      if (idEl) {
+        idEl.textContent = 'Submission ID: ' + resp.id;
+        idEl.style.display = '';
+      }
+    }
+    $('.consult-card').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  // ====== INIT ======
+  function init() {
+    renderStep1();
+    renderStep2();
+    showStep(1);
+
+    $('#btn-next').addEventListener('click', nextStep);
+    $('#btn-back').addEventListener('click', prevStep);
+    $('#btn-submit').addEventListener('click', submit);
+
+    // Lang switch
+    $$('.v10-lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.dataset.langTarget;
+        try { localStorage.setItem('cf_lang', target); } catch(e) {}
+        // Reload with lang param
+        const url = new URL(location.href);
+        url.searchParams.set('lang', target);
+        location.href = url.toString();
+      });
+    });
+    // Highlight current lang
+    $$('.v10-lang-btn').forEach(btn => {
+      if (btn.dataset.langTarget === LANG) {
+        btn.style.background = 'var(--navy)';
+        btn.style.color = 'var(--white)';
+      } else {
+        btn.style.background = 'transparent';
+        btn.style.color = 'var(--navy)';
+      }
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+
+<!-- i18n helper (lang switch persistence) -->
+<script src="js/i18n.js"></script>
+
+</body>
+</html>

@@ -735,7 +735,8 @@ img, video, iframe, table { max-width: 100%; }
   grid-template-columns: auto 1fr auto;
   gap: 28px;
   align-items: center;
-  background: linear-gradient(135deg, rgba(212,175,55,0.10) 0%, rgba(212,175,55,0.02) 100%);
+  /* v20.0.1: Opaque cream bg so text sits on top of banner bg, not transparent navy underneath */
+  background: linear-gradient(135deg, #FBF7EE 0%, #F5EFE0 100%);
   border: 1px solid var(--gold);
   border-radius: var(--radius);
   padding: 32px 40px;
@@ -743,6 +744,7 @@ img, video, iframe, table { max-width: 100%; }
   max-width: 980px;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 10px 36px rgba(11, 25, 44, 0.22);
 }
 .v10-tour-banner::before {
   content: "";
@@ -763,7 +765,7 @@ img, video, iframe, table { max-width: 100%; }
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.2em;
-  color: var(--gold);
+  color: rgba(11, 25, 44, 0.78);  /* v20.0.1: navy 78% on cream = 6.5:1 contrast (was gold on cream = 2.56:1 fail) */
   margin-bottom: 6px;
   text-transform: uppercase;
 }
@@ -771,21 +773,21 @@ img, video, iframe, table { max-width: 100%; }
   font-family: 'Playfair Display', 'Noto Serif SC', serif;
   font-size: 1.35rem;
   font-weight: 700;
-  color: var(--white);
+  color: var(--navy);  /* v20.0.1: navy on cream = high contrast (was white on transparent navy) */
   margin: 0 0 8px;
   line-height: 1.3;
 }
 .v10-tour-banner p {
   font-size: 0.92rem;
-  color: rgba(255,255,255,0.78);
+  color: rgba(11, 25, 44, 0.78);  /* v20.0.1: dark navy on cream (was white on transparent navy) */
   margin: 0 0 10px;
   line-height: 1.55;
 }
 .v10-tour-banner-meta {
   display: inline-block;
   font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--gold);
+  font-weight: 700;  /* v20.0.1: bumped from 600 → 700 for stronger emphasis on deadline */
+  color: var(--navy);  /* v20.0.1: navy on cream = 11:1 contrast (was gold on cream = 2.56:1 fail) */
   letter-spacing: 0.04em;
 }
 .v10-tour-banner-btn {

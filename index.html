@@ -240,7 +240,7 @@
 .v10-head.dark .lede { color: rgba(255,255,255,0.78); }
 
 /* ============ 3 PILLAR CARDS ============ */
-.v10-pillars { display: flex; flex-direction: column; gap: 32px; }
+.v10-pillars { display: grid; grid-template-columns: 1fr; gap: 32px; grid-auto-rows: 1fr; }
 .v10-pillar {
   background: var(--white);
   border: 1px solid var(--ink-100);
@@ -1037,6 +1037,95 @@ img, video, iframe, table { max-width: 100%; }
   .v10-tour-outcome { font-size: 0.82rem; padding: 14px 14px; }
 }
 
+
+.v10-pillar--image {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  min-height: 420px;
+}
+
+.v10-pillar-bg {
+  position: absolute;
+  inset: 0;
+  background-image: var(--pillar-bg);
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  transition: transform .6s ease;
+}
+
+.v10-pillar-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg,
+    rgba(11, 25, 44, 0.82) 0%,
+    rgba(11, 25, 44, 0.68) 50%,
+    rgba(11, 25, 44, 0.82) 100%
+  );
+  z-index: 1;
+}
+
+.v10-pillar-body,
+.v10-pillar-cta { position: relative; z-index: 2; }
+
+.v10-pillar--image .v10-pillar-num {
+  color: var(--gold-light, #E0C076) !important;
+}
+
+.v10-pillar--image .v10-pillar-title {
+  color: #FFFFFF !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  word-break: keep-all;
+  overflow-wrap: normal;
+}
+
+.v10-pillar--image .v10-pillar-desc {
+  color: rgba(255, 255, 255, 0.92) !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.v10-pillar--image .v10-pillar-cta {
+  background: rgba(255, 255, 255, 0.97) !important;
+  color: var(--navy) !important;
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+}
+
+.v10-pillar--image:hover .v10-pillar-bg { transform: scale(1.05); }
+
+.v10-pillar--image:hover .v10-pillar-overlay {
+  background: linear-gradient(120deg,
+    rgba(11, 25, 44, 0.65) 0%,
+    rgba(11, 25, 44, 0.5) 50%,
+    rgba(11, 25, 44, 0.7) 100%
+  );
+}
+
+.v10-pillar--image:hover .v10-pillar-cta {
+  background: var(--gold-light, #E0C076) !important;
+  color: var(--navy) !important;
+  border-color: var(--gold) !important;
+}
+
+@media (max-width: 768px) {
+  .v10-pillar--image { min-height: 360px; }
+}
+
+@media (max-width: 480px) {
+  .v10-pillar--image { min-height: 320px; }
+}
+
+@media (max-width: 768px) {
+  .v10-pillar--image { min-height: 360px; }
+}
+
+@media (max-width: 480px) {
+  .v10-pillar--image { min-height: 320px; }
+}
+
 </style>
 
 <header class="site-header">
@@ -1118,48 +1207,60 @@ img, video, iframe, table { max-width: 100%; }
     <div class="v10-pillars">
 
       <!-- Pillar 01 -->
-      <div class="v10-pillar">
+      <div class="v10-pillar v10-pillar--image" style="--pillar-bg: url('assets/pillars/web/01-immigration.jpg')">
+        <div class="v10-pillar-bg"></div>
+        <div class="v10-pillar-overlay"></div>
         <div class="v10-pillar-body">
           <span class="v10-pillar-num">PILLAR 01 · 身份規劃</span>
           <h3 class="v10-pillar-title">香港身份與續簽對標</h3>
           <p class="v10-pillar-desc">
-            高才通 · 優才 · 專才 · 留學升港 — 4 條主流路徑全覆蓋。從首簽到 7 年永居，由專屬顧問全程合規陪跑。
+            
+            高才通 · 優才 · 專才 · 留學升港 — 4 條主流路徑全覆蓋。從首簽到 7 年永居，由專屬顧問全程陪跑。
           </p>
         </div>
         <a href="immigration.html" class="v10-pillar-cta">了解詳情</a>
       </div>
 
       <!-- Pillar 02 -->
-      <div class="v10-pillar">
+      <div class="v10-pillar v10-pillar--image" style="--pillar-bg: url('assets/pillars/web/02-education.jpg')">
+        <div class="v10-pillar-bg"></div>
+        <div class="v10-pillar-overlay"></div>
         <div class="v10-pillar-body">
           <span class="v10-pillar-num">PILLAR 02 · 升學銜接</span>
           <h3 class="v10-pillar-title">海外與香港升學對標</h3>
           <p class="v10-pillar-desc">
-            海外中學 / IB / A-Level / DSE 與香港本地學校雙向銜接，配合家長簽證落地節奏同步推進子女教育路徑。
+            
+            海外中學 / IB / A-Level / DSE ↔ 香港本地學校雙向銜接，配合家長簽證節奏推進子女升學路徑。
           </p>
         </div>
         <a href="education.html" class="v10-pillar-cta">了解詳情</a>
       </div>
 
       <!-- Pillar 03 -->
-      <div class="v10-pillar">
+      <div class="v10-pillar v10-pillar--image" style="--pillar-bg: url('assets/pillars/web/03-career.jpg')">
+        <div class="v10-pillar-bg"></div>
+        <div class="v10-pillar-overlay"></div>
         <div class="v10-pillar-body">
           <span class="v10-pillar-num">PILLAR 03 · 職涯增值</span>
           <h3 class="v10-pillar-title">赴港求職與職涯身價躍遷</h3>
           <p class="v10-pillar-desc">
-            幫助專業人士在香港本地市場實現薪酬躍升、行業轉型與長期職業身價增值。
+            
+            協助專業人士在香港市場實現薪酬躍升、行業轉型與長期職涯身價增值。
           </p>
         </div>
         <a href="career.html" class="v10-pillar-cta">了解詳情</a>
       </div>
 
-      <!-- Pillar 04 — v19 國慶團推廣 -->
-      <div class="v10-pillar">
+      <!-- Pillar 04 -->
+      <div class="v10-pillar v10-pillar--image" style="--pillar-bg: url('assets/pillars/web/04-tour.jpg')">
+        <div class="v10-pillar-bg"></div>
+        <div class="v10-pillar-overlay"></div>
         <div class="v10-pillar-body">
           <span class="v10-pillar-num">PILLAR 04 · 遊學團</span>
           <h3 class="v10-pillar-title">5 天 4 夜 · 香港遊學團</h3>
           <p class="v10-pillar-desc">
-            為內地高中及大學生打造的深度遊學 — 金融 · 科技 · 英語學術 3 大主題，國慶 / 暑假限定團，500 強企業導師全程陪跑。
+            
+            5 天 4 夜深度遊學 — 金融 · 科技 · 英語學術 3 大主題，500 強企業導師全程陪跑。
           </p>
         </div>
         <a href="tour.html" class="v10-pillar-cta">了解詳情</a>
@@ -1195,7 +1296,7 @@ img, video, iframe, table { max-width: 100%; }
 
     <!-- Learn-more button (v18.13 funnel — link to detail page) -->
     <div class="v10-tour-learn-more">
-      <a href="tour.html" class="v10-cta-btn v10-cta-secondary">了解 5 天 4 夜完整行程 →</a>
+      <a href="tour.html" class="v10-cta-btn v10-cta-secondary">了解 5 天 4 夜完整行程</a>
     </div>
 
   </div>

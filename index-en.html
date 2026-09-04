@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-version="v20.0.0">
+<html lang="en" data-version="v21.0.0">
 <head>
   <script>
     // CareerForge v18.8+ iPhone Safari disk cache fix
@@ -7,7 +7,7 @@
     // This script uses fetch({cache: 'no-store'}) which iPhone Safari DOES honor,
     // then replaces current page if server-side version doesn't match expected.
     (function() {
-      var EXPECTED_VER = 'v20.0.0';
+      var EXPECTED_VER = 'v21.0.0';
       var path = location.pathname + '?cb=' + Date.now();
       if (location.href.indexOf('cb=') !== -1) return;
       fetch(path, {cache: 'no-store'})

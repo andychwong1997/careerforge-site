@@ -6,6 +6,21 @@ with appropriate attribution as noted below.
 
 ---
 
+## Hero · 首頁主視覺 (Sep 2026)
+**File:** `00-hero-kowloon-day.jpg` — **5.9 MB** — **5616 × 2291 px** (aspect 2.45:1, ultra-wide panorama)
+- **Source:** https://commons.wikimedia.org/wiki/File:Vista_del_Puerto_de_Victoria_desde_Kowloon,_Hong_Kong,_2013-08-11,_DD_02.JPG
+- **Direct download:** https://upload.wikimedia.org/wikipedia/commons/7/77/Vista_del_Puerto_de_Victoria_desde_Kowloon%2C_Hong_Kong%2C_2013-08-11%2C_DD_02.JPG
+- **License:** CC BY-SA 3.0 (dual-licensed CC BY-SA 4.0)
+- **Author:** Diego Delso (Wikimedia Commons user)
+- **Date taken:** 11 August 2013
+- **Camera:** Canon EOS 5D Mark II
+- **Description:** "Panoramic view of the Hong Kong skyline from Tsim Sha Tsui waterfront, Kowloon, looking east towards Hong Kong Island (IFC, Bank of China Tower, HSBC, Central Plaza, HKCEC)."
+- **Match rationale:** **DAYTIME + ground-level horizontal** panorama from Kowloon waterfront looking at HK Island — forms the **"Time × Angle × Mood" differentiation matrix** with Pillar 01 (night + elevated side-view from Peak) and Sky100 (night + aerial vertical). Three images = three perspectives on the same city, so they never visually clash.
+- **Attribution required:** "Photo by Diego Delso, CC BY-SA 3.0, via Wikimedia Commons"
+- **Derivative obligation:** If you modify (resize/crop), the result must also be CC BY-SA 3.0.
+
+---
+
 ## Pillar 01 · 身份規劃 (Immigration)
 **File:** `01-immigration.jpg` — **12.16 MB** — **10439 × 4936 px** (aspect 2.12:1)
 - **Source:** https://commons.wikimedia.org/wiki/File:Hong_Kong_Harbour_Night_2019-06-11.jpg

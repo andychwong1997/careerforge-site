@@ -104,11 +104,31 @@
 
 /* ============ HERO ============ */
 .v10-hero {
-  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-700) 100%);
+  background: var(--navy);
   padding: 120px 0 100px;
   position: relative;
   overflow: hidden;
   color: var(--white);
+  isolation: isolate;
+}
+/* Hero photo bg — Victoria Harbour night panorama (mirrors v10-pillar pattern) */
+.v10-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('assets/pillars/web/00-hero-kowloon-day.jpg');
+  background-size: cover;
+  background-position: center 35%;
+  z-index: 0;
+}
+.v10-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg,
+    rgba(11, 25, 44, 0.78) 0%,
+    rgba(11, 25, 44, 0.58) 50%,
+    rgba(11, 25, 44, 0.78) 100%
+  );
+  z-index: 1;
 }
 .v10-hero::before {
   content: "";
@@ -124,7 +144,7 @@
   background: radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 60%);
   border-radius: 50%;
 }
-.v10-hero .container { position: relative; z-index: 2; max-width: 1180px; margin: 0 auto; padding: 0 32px; }
+.v10-hero > .v10-container { position: relative; z-index: 2; }
 
 .v10-hero-eyebrow {
   display: inline-flex; align-items: center; gap: 12px;
@@ -1160,6 +1180,8 @@ img, video, iframe, table { max-width: 100%; }
 
 <!-- ============ HERO (NAVY) ============ -->
 <section class="v10-hero">
+  <div class="v10-hero-bg"></div>
+  <div class="v10-hero-overlay"></div>
   <div class="decor decor-hero"></div>
   <div class="v10-container">
     <span class="v10-hero-eyebrow">

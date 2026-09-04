@@ -33,11 +33,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Inter:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style.css?v=20260904">
 <script>(function(){function setLang(l){document.cookie='cf_lang='+l+'; path=/; max-age=31536000';try{localStorage.setItem('cf_lang',l);}catch(e){}}document.addEventListener('click',function(e){var t=e.target.closest('[data-lang-target]');if(t)setLang(t.getAttribute('data-lang-target'));});})();</script>
 </head>
 <body data-theme="career">
-
 <style>
 /* ============ V10 — CareerForge (Career) ============ */
 :root {
@@ -61,15 +60,29 @@
   --green:       #047857;
   --green-soft:  #ECFDF5;
 }
-
 * { box-sizing: border-box; }
-
 .v10-hero {
-  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-700) 100%);
+  background: transparent;
   padding: 110px 0 90px;
   position: relative;
   overflow: hidden;
   color: var(--white);
+}
+.v10-hero { isolation: isolate; }
+.v10-hero-bg-career {
+  position: absolute;
+  inset: 0;
+  background-image: url('assets/pillars/web/03-career.jpg');
+  background-size: cover;
+  background-position: center 40%;
+  z-index: -2;
+}
+.v10-hero-overlay-career {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(11,25,44,0.88) 0%, rgba(11,25,44,0.72) 50%, rgba(11,25,44,0.88) 100%);
+  z-index: -1;
 }
 .v10-hero::before {
   content: ""; position: absolute; top: -200px; right: -200px;
@@ -84,7 +97,6 @@
   border-radius: 50%;
 }
 .v10-container { position: relative; z-index: 2; max-width: 1180px; margin: 0 auto; padding: 0 32px; }
-
 .v10-hero-eyebrow {
   display: inline-flex; align-items: center; gap: 12px;
   padding: 10px 22px;
@@ -97,7 +109,6 @@
   margin-bottom: 36px;
 }
 .v10-hero-eyebrow-dot { width: 8px; height: 8px; background: #6EE7B7; border-radius: 50%; box-shadow: 0 0 12px #6EE7B7; }
-
 .v10-hero-title {
   font-family: 'Playfair Display', 'Noto Serif SC', serif;
   font-size: clamp(2.8rem, 7.2vw, 5.6rem);
@@ -112,7 +123,6 @@
 }
 .v10-hero-title .gold { color: var(--gold); font-style: italic; font-weight: 600; }
 .no-break { display: inline-block; white-space: nowrap; }
-
 .v10-hero-sub {
   font-size: clamp(1.05rem, 1.4vw, 1.25rem);
   line-height: 1.7;
@@ -121,7 +131,6 @@
   max-width: 760px;
   font-weight: 400;
 }
-
 .v10-hero-trust {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -148,13 +157,11 @@
   color: rgba(255,255,255,0.65);
   letter-spacing: 0.06em;
 }
-
 .v10-section { padding: 88px 0; position: relative; }
 .v10-section.canvas { background: var(--canvas); }
 .v10-section.white  { background: var(--white); }
 .v10-section.dark   { background: var(--navy); color: var(--white); }
 .v10-section.tight  { padding: 56px 0; }
-
 .v10-head { text-align: center; max-width: 880px; margin: 0 auto 56px; }
 .v10-head .eyebrow {
   display: inline-block;
@@ -185,7 +192,6 @@
   max-width: 680px;
 }
 .v10-head.dark .lede { color: rgba(255,255,255,0.78); }
-
 /* ============ TRACKS (services) ============ */
 .v10-tracks {
   display: grid;
@@ -231,7 +237,6 @@
   color: var(--ink-700);
   margin: 0 0 18px;
 }
-
 /* ============ WHY GRID (numbers) ============ */
 .v10-why-grid {
   display: grid;
@@ -268,7 +273,6 @@
   color: var(--ink-700);
   margin: 0;
 }
-
 /* ============ PATHWAY ============ */
 .v10-pathway-grid {
   display: grid;
@@ -300,7 +304,6 @@
   color: var(--ink-700);
   margin: 0;
 }
-
 /* ============ DIFF TABLE ============ */
 .v10-diff-table {
   background: var(--white);
@@ -328,7 +331,6 @@
 .v10-diff-us { color: var(--ink-900); }
 .v10-diff-them { color: var(--ink-300); }
 .v10-diff-check { color: var(--green); font-weight: 700; margin-right: 6px; }
-
 /* ============ CASES ============ */
 .v10-cases {
   display: grid;
@@ -361,7 +363,6 @@
   letter-spacing: 0.12em;
   color: var(--ink-500);
 }
-
 /* ============ DISCLAIMER ============ */
 .v10-disclaimer {
   background: var(--white);
@@ -377,7 +378,6 @@
   color: var(--ink-700);
   margin: 0;
 }
-
 /* ============ CTA ============ */
 .v10-cta {
   background: linear-gradient(135deg, var(--navy) 0%, var(--navy-700) 100%);
@@ -433,7 +433,6 @@
 .v10-cta-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(0,0,0,0.18); }
 .v10-cta-primary { background: var(--gold); color: var(--navy); }
 .v10-cta-secondary { background: rgba(255,255,255,0.1); color: var(--white); border: 1px solid rgba(255,255,255,0.3); }
-
 /* ============ CONTACT GRID ============ */
 .v10-contact-grid {
   display: grid;
@@ -473,7 +472,6 @@
   color: var(--ink-700);
   margin: 0;
 }
-
 /* ============ FOOTER (same as index V10) ============ */
 .site-footer {
   background: var(--navy);
@@ -530,7 +528,6 @@
   transition: color .2s;
 }
 .footer-lang a.active, .footer-lang a:hover { color: var(--gold); }
-
 /* ============ RESPONSIVE ============ */
 @media (max-width: 900px) {
   .v10-hero { padding: 80px 0 60px; }
@@ -563,15 +560,12 @@
   .v10-package-desc { font-size: 0.85rem !important; line-height: 1.5; margin-bottom: 14px; }
   .v10-package-points li { padding: 6px 0 6px 22px; font-size: 0.82rem !important; line-height: 1.45; }
   .v10-package-tag { font-size: 0.65rem !important; padding: 3px 10px; margin-bottom: 10px; }
-
-
 }
 @media (max-width: 540px) {
   .v10-hero-title { font-size: clamp(1.85rem, 8vw, 2.4rem) !important; }
   .v10-head h2 { font-size: clamp(1.6rem, 6vw, 2rem) !important; }
   .v10-why-grid, .footer-grid { grid-template-columns: 1fr; }
 }
-
 /* ============ MOBILE SAFETY (v15 defensive) ============ */
 html, body { width: 100%; max-width: 100%; overflow-x: hidden; margin: 0; padding: 0; }
 img, video, iframe, table { max-width: 100%; }
@@ -587,35 +581,36 @@ img, video, iframe, table { max-width: 100%; }
   .v10-hero { padding-left: 0; padding-right: 0; }
   .v10-container { padding-left: 16px; padding-right: 16px; }
 }
-
 </style>
-
 <header class="site-header">
   <div class="container">
     <nav class="nav">
-      <a href="career.html" class="nav-logo-text"><span class="nl-en">CareerForge</span><span class="nl-zh">铸途</span></a>
-      <div class="nav-menu">
-        <a href="index.html">首页</a>
-        <a href="education.html">升学</a>
-        <a href="immigration.html">签证</a>
-        <a href="career.html" class="active">职涯</a>
-        <a href="quiz.html">牛马测验</a>
-        <a href="cases.html">客户故事</a>
-      </div>
+      <a href="career-cn.html" class="nav-logo">
+        <span class="logo-en">CareerForge</span>
+        <span class="logo-cn">鑄途</span>
+      </a>
+      <div class="nav-menu" id="navMenu">
+        <a href="index-cn.html" class="nav-link">首页</a>
+        <a href="immigration-cn.html" class="nav-link">身份规划</a>
+        <a href="education-cn.html" class="nav-link">升学规划</a>
+        <a href="career-cn.html" class="nav-link active">求职身价</a>
+        <a href="tour-cn.html" class="nav-link">游学团</a>
+        <a href="#contact" class="nav-link">联系我们</a>
+            </div>
       <div class="nav-actions">
         <div class="lang-switcher">
-          <a href="career.html" class="" data-lang-target="zh-Hant">繁體</a>
-          <a href="career-cn.html" class="active" data-lang-target="zh-Hans">简体</a>
-          <a href="career-en.html" class="" data-lang-target="en">EN</a>
+          <a href="career.html">繁</a>
+          <a href="career-cn.html" class="active">简</a>
+          <a href="career-en.html">EN</a>
         </div>
-        <a href="#contact" class="nav-cta">预约咨询</a>
       </div>
     </nav>
   </div>
 </header>
-
 <!-- ============ HERO ============ -->
 <section class="v10-hero">
+  <div class="v10-hero-bg-career"></div>
+  <div class="v10-hero-overlay-career"></div>
   <div class="v10-container">
     <span class="v10-hero-eyebrow">
       <span class="v10-hero-eyebrow-dot"></span>
@@ -647,7 +642,6 @@ img, video, iframe, table { max-width: 100%; }
     </div>
   </div>
 </section>
-
 <!-- ============ 5 SERVICES (TRACKS) ============ -->
 <section class="v10-section canvas">
   <div class="v10-container">
@@ -661,7 +655,7 @@ img, video, iframe, table { max-width: 100%; }
         <span class="v10-track-icon">履</span>
         <span class="v10-track-tag">RESUME · 简历强化</span>
         <h3>简历 + Cover Letter 精修</h3>
-        <p>前 Google / Goldman Sachs / McKinsey recruitment lead 亲自 review。中英文双版、ATS-friendly 格式、无限次修改。</p>
+        <p>前全球頂尖科技 / 投行 / 戰略顧問公司 recruitment lead 亲自 review。中英文双版、ATS-friendly 格式、无限次修改。</p>
         <span class="v10-track-tag" style="color:var(--green);">3x 面试回复</span>
       </div>
       <div class="v10-track">
@@ -702,7 +696,6 @@ img, video, iframe, table { max-width: 100%; }
     </div>
   </div>
 </section>
-
 <!-- ============ WHY GRID (NUMBERS) ============ -->
 <section class="v10-section white">
   <div class="v10-container">
@@ -757,7 +750,6 @@ img, video, iframe, table { max-width: 100%; }
     </div>
   </div>
 </section>
-
 <!-- ============ 4-STAGE PATHWAY ============ -->
 <section class="v10-section canvas">
   <div class="v10-container">
@@ -790,7 +782,6 @@ img, video, iframe, table { max-width: 100%; }
     </div>
   </div>
 </section>
-
 <!-- ============ DIFF TABLE vs 一般中介 ============ -->
 <section class="v10-section white">
   <div class="v10-container">
@@ -836,7 +827,6 @@ img, video, iframe, table { max-width: 100%; }
     </div>
   </div>
 </section>
-
 <!-- ============ CASES ============ -->
 <section class="v10-section canvas">
   <div class="v10-container">
@@ -853,7 +843,7 @@ img, video, iframe, table { max-width: 100%; }
       </div>
       <div class="v10-case">
         <span class="v10-case-icon">★</span>
-        <p class="v10-case-quote">「Senior engineer 转 product manager，由面试零 offer 到 6 个月内拿到 Google PM offer」</p>
+        <p class="v10-case-quote">「Senior engineer 转 product manager，由面试零 offer 到 6 个月内拿到全球 Top 5 科技巨頭 PM offer」</p>
         <span class="v10-case-meta">Product Management · 2024</span>
       </div>
       <div class="v10-case">
@@ -879,7 +869,6 @@ img, video, iframe, table { max-width: 100%; }
     </div>
   </div>
 </section>
-
 <!-- ============ DISCLAIMER ============ -->
 <section class="v10-section canvas tight" style="padding-top: 0;">
   <div class="v10-container">
@@ -888,7 +877,6 @@ img, video, iframe, table { max-width: 100%; }
     </blockquote>
   </div>
 </section>
-
 <!-- ============ CTA ============ -->
 <section class="v10-section dark" id="contact">
   <div class="v10-container">
@@ -899,13 +887,12 @@ img, video, iframe, table { max-width: 100%; }
         <p>提交基本资料后 24 小时内收到顾问回覆 — 包含行业匹配度评分 + 预计所需时间 + 后续路径建议。</p>
         <div class="v10-cta-actions">
           <a href="https://wa.me/85296966867" class="v10-cta-btn v10-cta-primary">WhatsApp 立即预约</a>
-          <a href="quiz.html" class="v10-cta-btn v10-cta-secondary">先做 3 分钟牛马测验</a>
+          <a href="consult.html" class="v10-cta-btn v10-cta-secondary">预约 30 分钟免费咨询</a>
         </div>
       </div>
     </div>
   </div>
 </section>
-
 <!-- ============ CONTACT (WHITE CARDS) ============ -->
 <section class="v10-section canvas tight" style="padding-top: 0;">
   <div class="v10-container">
@@ -932,7 +919,6 @@ img, video, iframe, table { max-width: 100%; }
     </div>
   </div>
 </section>
-
 <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
@@ -940,18 +926,19 @@ img, video, iframe, table { max-width: 100%; }
         <a href="index.html" class="footer-logo-text"><span class="fl-en">CareerForge</span><span class="fl-zh">铸途</span></a>
         <p>香港高端个人成长顾问。身份、升学、职涯身价一站式陪跑。</p>
       </div>
-      <div class="footer-col"><h4>业务板块</h4>
-        <a href="immigration-cn-v17.html">身份与续签对标</a>
+      <div class="footer-col"><h4>服务</h4>
+        <a href="immigration-cn.html">身份与续签对标</a>
         <a href="education-cn.html">海外与香港升学</a>
         <a href="career-cn.html">求职与身价跃迁</a>
+        <a href="tour-cn.html">海外游学团 5天4夜 / 7天6夜</a>
       </div>
       <div class="footer-col"><h4>资源</h4>
         <a href="cases-cn.html">客户案例</a>
-        <a href="quiz-cn.html">牛马身价测验</a>
-        <a href="#contact">联络我们</a>
+        <a href="#contact">联络我们</a><a href="#">隐私政策</a>
       </div>
       <div class="footer-col"><h4>联络</h4>
         <a href="https://wa.me/85296966867">WhatsApp</a>
+        <a href="mailto:careerforgehk@gmail.com">careerforgehk@gmail.com</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -964,7 +951,6 @@ img, video, iframe, table { max-width: 100%; }
     </div>
   </div>
 </footer>
-
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   const hamburger = document.getElementById('hamburgerBtn');

@@ -31,7 +31,7 @@
 <meta name="description" content="CareerForge 鑄途 — Hong Kong education pathway。從幼稚園、小學、中學到 DSE / IB / A-Level / universityapplication，Aligning children's education path with parents' visa timeline。">
 <link rel="icon" type="image/png" href="assets/icon.png">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700;800&family=Noto+Serif+SC:wght@400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style.css?v=20260904">
 </head>
 <body>
 
@@ -58,12 +58,29 @@
 
 /* ============ HERO ============ */
 .v10-hero {
-  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-700) 100%);
+  background: transparent;
   padding: 120px 0 100px;
   position: relative;
   overflow: hidden;
   color: var(--white);
 }
+.v10-hero { isolation: isolate; }
+.v10-hero-bg-education {
+  position: absolute;
+  inset: 0;
+  background-image: url('assets/pillars/web/02-education.jpg');
+  background-size: cover;
+  background-position: center 40%;
+  z-index: -2;
+}
+.v10-hero-overlay-education {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(20,20,25,0.80) 0%, rgba(30,25,20,0.30) 50%, rgba(20,20,25,0.85) 100%);
+  z-index: -1;
+}
+
 .v10-hero::before {
   content: "";
   position: absolute; top: -200px; right: -200px;
@@ -1336,20 +1353,6 @@
   gap: 8px;
   text-decoration: none;
 }
-.site-header .nav-logo .logo-en {
-  font-family: 'Playfair Display', 'Noto Serif TC', serif;
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: var(--navy);
-  letter-spacing: 0.5px;
-}
-.site-header .nav-logo .logo-cn {
-  font-family: 'Noto Serif TC', serif;
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--gold);
-  letter-spacing: 2px;
-}
 .site-header .nav-menu {
   display: flex;
   gap: 4px;
@@ -1368,10 +1371,7 @@
   background: var(--gold-100);
   color: var(--navy);
 }
-.site-header .nav-menu a.active {
-  background: var(--navy);
-  color: #FFFFFF;
-}
+
 .site-header .nav-actions {
   display: flex;
   align-items: center;
@@ -1455,9 +1455,7 @@
   .site-header .hamburger {
     display: flex;
   }
-  .site-header .nav-logo .logo-en { font-size: 1.3rem; }
-  .site-header .nav-logo .logo-cn { font-size: 1.15rem; }
-}
+  }
 
 /* Hamburger JS toggle */
 .site-header .hamburger.open span:nth-child(1) {
@@ -1500,8 +1498,6 @@
     padding: 4px 8px;
     min-width: 24px;
   }
-  .site-header .nav-logo .logo-en { font-size: 1.05rem !important; }
-  .site-header .nav-logo .logo-cn { font-size: 0.95rem !important; letter-spacing: 1px; }
   .site-header .container { padding: 0 16px; }
   .v10-hero-title { font-size: clamp(1.75rem, 7vw, 4.8rem) !important; }
   .v10-hero-sub { font-size: 0.95rem !important; }
@@ -1540,14 +1536,13 @@ img, video, iframe, table { max-width: 100%; }
         <span class="logo-cn">鑄途</span>
       </a>
       <div class="nav-menu" id="navMenu">
-        <a href="index-en.html">首頁</a>
-        <a href="immigration-en.html">身份規劃</a>
-        <a href="education.html" class="active">Education planning</a>
-        <a href="career-en.html">求職身價</a>
-        <a href="quiz-en.html">牛馬test</a>
-        <a href="cases-en.html">客戶故事</a>
-        <a href="#contact">聯絡我們</a>
-      </div>
+        <a href="index-en.html" class="nav-link">Home</a>
+        <a href="immigration-en.html" class="nav-link">Visa Status</a>
+        <a href="education-en.html" class="nav-link active">Education</a>
+        <a href="career-en.html" class="nav-link">Career</a>
+        <a href="tour-en.html" class="nav-link">Study Tour</a>
+        <a href="#contact" class="nav-link">Contact</a>
+            </div>
       <div class="nav-actions">
         <div class="lang-switcher">
           <a href="index-en.html" class="active">繁</a>
@@ -1564,6 +1559,8 @@ img, video, iframe, table { max-width: 100%; }
 
 <!-- ============ HERO ============ -->
 <section class="v10-hero">
+  <div class="v10-hero-bg-education"></div>
+  <div class="v10-hero-overlay-education"></div>
   <div class="v10-container">
     <span class="v10-hero-eyebrow">
       <span class="v10-hero-eyebrow-dot"></span>
@@ -1948,7 +1945,7 @@ CareerForge 鑄途 — Hong Kong education, 一站式陪跑。<br>
         <p>After submitting basic information 24 consultant will reply within 24 hours — Includeschildren學業Initial assessment + 3 升學pathway建議（DSE / IB / A-Level）+ 預計所需time + 後續pathway規劃。</p>
         <div class="v10-cta-actions">
           <a href="https://wa.me/85296966867" class="v10-cta-btn v10-cta-primary">WhatsApp 立即預約</a>
-          <a href="quiz-en.html" class="v10-cta-btn v10-cta-secondary">Take the 3-minute Quiz</a>
+          <a href="consult-en.html" class="v10-cta-btn v10-cta-secondary">Take the 3-minute Quiz</a>
         </div>
       </div>
     </div>
@@ -1990,19 +1987,21 @@ CareerForge 鑄途 — Hong Kong education, 一站式陪跑。<br>
         <p>香港高端cases人成長consultants。身份 · 升學 · 職涯身價 一站式陪跑。</p>
       </div>
       <div class="footer-col">
-        <h4>業務板塊</h4>
-        <a href="immigration-en.html">身份與續簽對標</a>
-        <a href="education.html">海外與Hong Kong education</a>
-        <a href="career-en.html">求職與身價躍遷</a>
+        <h4>Services</h4>
+        <a href="immigration-en.html">Status & renewal</a>
+        <a href="education.html">Overseas & Hong Kong education</a>
+        <a href="career-en.html">Career advancement</a>
+        <a href="tour-en.html">Study Tour (5D4N / 7D6N)</a>
       </div>
       <div class="footer-col">
-        <h4>資源</h4>
-        <a href="cases-en.html">客戶案例</a>
-        <a href="quiz-en.html">牛馬身價test</a>
-        <a href="#contact">聯絡我們</a>
+        <h4>Resources</h4>
+        <a href="cases-en.html">Client cases</a>
+        <a href="consult-en.html">Free Assessment</a>
+        <a href="#contact">Contact</a>
+        <a href="#">Privacy policy</a>
       </div>
       <div class="footer-col">
-        <h4>聯絡</h4>
+        <h4>Contact</h4>
         <a href="https://wa.me/85296966867">WhatsApp</a>
         <a href="mailto:careerforgehk@gmail.com">careerforgehk@gmail.com</a>
       </div>
@@ -2010,7 +2009,7 @@ CareerForge 鑄途 — Hong Kong education, 一站式陪跑。<br>
     <div class="footer-bottom">
       <span>© 2026 CareerForge 鑄途. All rights reserved.</span>
       <span class="footer-audit"><a href="audit-en.html">Mobile Audit</a></span>    <span class="footer-lang">
-        <a href="index-en.html" class="active">繁體</a> · <a href="index-cn.html">简体</a> · <a href="index-en.html">EN</a>
+        <a href="index-en.html" class="active">繁</a> · <a href="index-cn.html">简</a> · <a href="index-en.html">EN</a>
       </span>
     </div>
   </div>

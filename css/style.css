@@ -182,36 +182,42 @@ p { text-wrap: pretty; }
   border-bottom: 1px solid var(--ink-100);
 }
 .nav { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 32px; }
-.nav-logo-text { display: inline-flex; align-items: baseline; gap: 6px; text-decoration: none; font-weight: 600; font-size: 1.25rem; letter-spacing: -0.01em; line-height: 1.2; }
-.nav-logo-text .nl-en { color: var(--navy, #0B192C); }
-.nav-logo-text .nl-zh { color: var(--gold, #D4AF37); font-weight: 500; }
+.nav-logo-text { display: inline-flex; align-items: baseline; gap: 6px; text-decoration: none; font-weight: 700; font-size: 1.25rem; letter-spacing: -0.01em; line-height: 1.2; font-family: 'Playfair Display', 'Noto Serif TC', 'Noto Serif SC', serif; }
+.nav-logo-text .nl-en { color: var(--navy, #0B192C); font-weight: 700; }
+.nav-logo-text .nl-zh { color: var(--gold, #D4AF37); font-weight: 700; }
 /* V11/V12 legacy span pattern — used by index/immigration/education/quiz/cases */
-.nav-logo { display: inline-flex; align-items: baseline; gap: 6px; text-decoration: none; font-weight: 600; font-size: 1.25rem; letter-spacing: -0.01em; line-height: 1.2; }
-.nav-logo .logo-en { color: var(--navy, #0B192C); }
-.nav-logo .logo-cn { color: var(--gold, #D4AF37); font-weight: 500; }
+.nav-logo { display: inline-flex; align-items: baseline; gap: 6px; text-decoration: none; font-weight: 700; font-size: 1.25rem; letter-spacing: -0.01em; line-height: 1.2; font-family: 'Playfair Display', 'Noto Serif TC', 'Noto Serif SC', serif; }
+.nav-logo .logo-en { color: var(--navy, #0B192C); font-weight: 700; }
+.nav-logo .logo-cn { color: var(--gold, #D4AF37); font-weight: 700; }
 .nav-menu { display: flex; align-items: center; gap: 32px; }
-.nav-menu a {
-  font-size: 0.875rem;
+.nav-menu a:not(.nav-cta) {
+  font-size: 0.875rem !important;
   color: var(--ink-700);
-  font-weight: 400;
+  font-weight: 400 !important;
   padding: 8px 0;
   position: relative;
   transition: color 0.15s;
 }
-.nav-menu a:hover { color: var(--ink-900); }
-.nav-menu a.active { color: var(--ink-900); font-weight: 500; }
+.nav-menu a:not(.nav-cta):hover { color: var(--ink-900); }
+.nav-menu a:not(.nav-cta).active {
+  color: #fff !important;
+  background: var(--ink-900) !important;
+  font-weight: 500 !important;
+  padding: 8px 14px !important;
+  border-radius: var(--radius-pill);
+}
 
 .nav-actions { display: flex; align-items: center; }
 .nav-cta {
-  background: var(--accent);
-  color: #fff;
+  background: #0A4D68 !important;
+  color: #fff !important;
   padding: 10px 20px;
   border-radius: var(--radius-pill);
   font-size: 0.875rem;
   font-weight: 500;
   transition: all 0.2s;
 }
-.nav-cta:hover { background: var(--accent-hover); transform: translateY(-1px); }
+.nav-cta:hover { background: #073D54 !important; transform: translateY(-1px); color: #fff !important; }
 
 /* Mobile menu toggle */
 .nav-toggle {
@@ -991,12 +997,12 @@ body[data-theme="visa"] {
   --theme-soft:    #FEF1F1;
 }
 body[data-theme="career"] {
-  --accent:        #059669;
-  --accent-hover:  #047857;
-  --accent-soft:   #ECFDF5;
-  --accent-glow:   rgba(5, 150, 105, 0.10);
-  --theme-color:   #059669;
-  --theme-soft:    #ECFDF5;
+  --accent: #059669;
+  --accent-hover: #047857;
+  --accent-soft: #ECFDF5;
+  --accent-glow: rgba(5, 150, 105, 0.10);
+  --theme-color: #059669;
+  --theme-soft: #ECFDF5;
 }
 
 /* Home page service-cards: each card has its own color via data-cat */

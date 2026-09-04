@@ -33,7 +33,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style.css?v=20260904">
 <script>(function(){function setLang(l){document.cookie='cf_lang='+l+'; path=/; max-age=31536000';try{localStorage.setItem('cf_lang',l);}catch(e){}}document.addEventListener('click',function(e){var t=e.target.closest('[data-lang-target]');if(t)setLang(t.getAttribute('data-lang-target'));});})();</script>
 </head>
 <body>
@@ -42,22 +42,24 @@
 <header class="site-header">
   <div class="container">
     <nav class="nav">
-      <a href="index-cn.html" class="nav-logo-text"><span class="nl-en">CareerForge</span><span class="nl-zh">铸途</span></a>
-      <div class="nav-menu">
-        <a href="index-cn.html">首页</a>
-        <a href="education-cn.html">升学</a>
-        <a href="immigration-cn-v17.html">签证</a>
-        <a href="career-cn.html">职涯</a>
-        <a href="quiz-cn.html">牛马测验</a>
-        <a href="cases-cn.html" class="active">客户故事</a>
-      </div>
+      <a href="cases-cn.html" class="nav-logo">
+        <span class="logo-en">CareerForge</span>
+        <span class="logo-cn">鑄途</span>
+      </a>
+      <div class="nav-menu" id="navMenu">
+        <a href="index-cn.html" class="nav-link">首页</a>
+        <a href="immigration-cn.html" class="nav-link">身份规划</a>
+        <a href="education-cn.html" class="nav-link">升学规划</a>
+        <a href="career-cn.html" class="nav-link">求职身价</a>
+        <a href="tour-cn.html" class="nav-link">游学团</a>
+        <a href="#contact" class="nav-link">联系我们</a>
+            </div>
       <div class="nav-actions">
         <div class="lang-switcher">
-          <a href="cases-cn.html" class="active" data-lang-target="zh-Hant">繁体</a>
-          <a href="cases-cn.html" data-lang-target="zh-Hans">简体</a>
-          <a href="cases-en.html" data-lang-target="en">EN</a>
+          <a href="cases.html">繁</a>
+          <a href="cases-cn.html" class="active">简</a>
+          <a href="cases-en.html">EN</a>
         </div>
-        <a href="#contact" class="nav-cta">预约咨询</a>
       </div>
     </nav>
   </div>
@@ -202,12 +204,12 @@
         </div>
       </div>
       <div class="bento-card reveal" data-cat="career" data-reveal-delay="100">
-        <div class="quote-v4" style="font-size:1.25rem">「港大 MBA 期间 CareerForge 帮我做 6 场 mock interview，最后入 McKinsey。」</div>
+        <div class="quote-v4" style="font-size:1.25rem">「港大 MBA 期间 CareerForge 帮我做 6 场 mock interview，最后入 頂尖戰略顧問。」</div>
         <div class="case-meta">
           <div class="case-meta-avatar">J</div>
           <div class="case-meta-text">
             <span class="name">J 女士 · 北京</span>
-            <span class="from">MBA → McKinsey · 2023</span>
+            <span class="from">MBA → 頂尖戰略顧問 · 2023</span>
           </div>
         </div>
       </div>
@@ -239,7 +241,7 @@
       </div>
       <div class="stat-item reveal" data-reveal-delay="100">
         <span class="stat-num">4.9<span class="unit">/5</span></span>
-        <span class="stat-label">Google 客户评分</span>
+        <span class="stat-label">客户评分</span>
       </div>
       <div class="stat-item reveal" data-reveal-delay="200">
         <span class="stat-num">98<span class="unit">%</span></span>
@@ -257,23 +259,25 @@
       <p>30 分钟免费咨询，了解您的家庭可以点样 plan。</p>
       <div class="cta-v4-actions">
         <a href="index.html#contact" class="btn-v4-primary">预约咨询 →</a>
-        <a href="quiz-cn.html" class="btn-v4-secondary">先做牛马测验</a>
+        <a href="consult-cn.html" class="btn-v4-secondary">立即預约咨询</a>
       </div>
     </div>
   </div>
 </section>
 
-<footer class="footer-v4">
+<footer class="site-footer">
   <div class="container">
     <div class="footer-v4-grid">
       <div class="footer-v4-brand"><a href="index.html" class="footer-logo-text"><span class="fl-en">CareerForge</span><span class="fl-zh">铸途</span></a><p>立足香港，面向大中华区。20 年来，3,000+ 家庭的升学、签证、职涯选择。</p></div>
-      <div class="footer-v4-col"><h5>服务</h5><ul><li><a href="education-cn.html">升学规划</a></li><li><a href="immigration-cn-v17.html">签证移居</a></li><li><a href="career-cn.html">职涯规划</a></li><li><a href="quiz-cn.html">牛马测验</a></li></ul></div>
-      <div class="footer-v4-col"><h5>关于</h5><ul><li><a href="cases-cn.html">客户故事</a></li><li><a href="index.html#contact">联络我们</a></li><li><a href="#">私隐政策</a></li></ul></div>
-      <div class="footer-v4-col"><h5>联络</h5><ul><li><a href="https://wa.me/85296966867">WhatsApp</a></li><li><a href="mailto:hello@careerforgehk.com">Email</a></li><li>微信: careerforgehk</li></ul></div>
+      <div class="footer-v4-col"><h5>服务</h5><ul><li><a href="education-cn.html">海外与香港升学</a></li><li><a href="immigration-cn.html">身份与续签对标</a></li><li><a href="career-cn.html">求职与身价跃迁</a></li><li><a href="consult-cn.html">免费身价咨询</a></li>
+          <li><a href="tour-cn.html">海外游学团 5天4夜 / 7天6夜</a></li>
+        </ul></div>
+      <div class="footer-v4-col"><h5>关于</h5><ul><li><a href="cases-cn.html">客户案例</a></li><li><a href="#contact">联络我们</a></li><li><a href="#">隐私政策</a></li></ul></div>
+      <div class="footer-v4-col"><h5>联络</h5><ul><li><a href="https://wa.me/85296966867">WhatsApp</a></li><li><a href="mailto:careerforgehk@gmail.com">careerforgehk@gmail.com</a></li><li>微信：careerforgehk</li></ul></div>
     </div>
     <div class="footer-v4-bottom">
       <div>© 2026 CareerForge 铸途 · BR 71508236</div>
-      <div class="footer-v4-audit"><a href="audit-cn.html">Mobile Audit</a></div>    <div class="footer-v4-lang"><a href="cases-cn.html" class="active">繁体</a><a href="cases-cn.html">简体</a><a href="cases-en.html">EN</a></div>
+      <div class="footer-v4-audit"><a href="audit-cn.html">Mobile Audit</a></div>    <div class="footer-v4-lang"><a href="cases.html">繁</a><a href="cases-cn.html" class="active">简</a><a href="cases-en.html">EN</a></div>
     </div>
   </div>
 </footer>

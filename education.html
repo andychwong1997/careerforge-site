@@ -31,7 +31,7 @@
 <meta name="description" content="CareerForge 鑄途 — 香港升學完整對標。從幼稚園、小學、中學到 DSE / IB / A-Level / 大學申請，配合家長簽證落地節奏同步推進子女教育路徑。">
 <link rel="icon" type="image/png" href="assets/icon.png">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700;800&family=Noto+Serif+SC:wght@400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style.css?v=20260904">
 </head>
 <body>
 
@@ -58,12 +58,29 @@
 
 /* ============ HERO ============ */
 .v10-hero {
-  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-700) 100%);
+  background: transparent;
   padding: 120px 0 100px;
   position: relative;
   overflow: hidden;
   color: var(--white);
 }
+.v10-hero { isolation: isolate; }
+.v10-hero-bg-education {
+  position: absolute;
+  inset: 0;
+  background-image: url('assets/pillars/web/02-education.jpg');
+  background-size: cover;
+  background-position: center 40%;
+  z-index: -2;
+}
+.v10-hero-overlay-education {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(20,20,25,0.80) 0%, rgba(30,25,20,0.30) 50%, rgba(20,20,25,0.85) 100%);
+  z-index: -1;
+}
+
 .v10-hero::before {
   content: "";
   position: absolute; top: -200px; right: -200px;
@@ -1336,20 +1353,6 @@
   gap: 8px;
   text-decoration: none;
 }
-.site-header .nav-logo .logo-en {
-  font-family: 'Playfair Display', 'Noto Serif TC', serif;
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: var(--navy);
-  letter-spacing: 0.5px;
-}
-.site-header .nav-logo .logo-cn {
-  font-family: 'Noto Serif TC', serif;
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--gold);
-  letter-spacing: 2px;
-}
 .site-header .nav-menu {
   display: flex;
   gap: 4px;
@@ -1368,10 +1371,7 @@
   background: var(--gold-100);
   color: var(--navy);
 }
-.site-header .nav-menu a.active {
-  background: var(--navy);
-  color: #FFFFFF;
-}
+
 .site-header .nav-actions {
   display: flex;
   align-items: center;
@@ -1455,9 +1455,7 @@
   .site-header .hamburger {
     display: flex;
   }
-  .site-header .nav-logo .logo-en { font-size: 1.3rem; }
-  .site-header .nav-logo .logo-cn { font-size: 1.15rem; }
-}
+  }
 
 /* Hamburger JS toggle */
 .site-header .hamburger.open span:nth-child(1) {
@@ -1500,8 +1498,6 @@
     padding: 4px 8px;
     min-width: 24px;
   }
-  .site-header .nav-logo .logo-en { font-size: 1.05rem !important; }
-  .site-header .nav-logo .logo-cn { font-size: 0.95rem !important; letter-spacing: 1px; }
   .site-header .container { padding: 0 16px; }
   .v10-hero-title { font-size: clamp(1.75rem, 7vw, 4.8rem) !important; }
   .v10-hero-sub { font-size: 0.95rem !important; }
@@ -1540,14 +1536,13 @@ img, video, iframe, table { max-width: 100%; }
         <span class="logo-cn">鑄途</span>
       </a>
       <div class="nav-menu" id="navMenu">
-        <a href="index.html">首頁</a>
-        <a href="immigration.html">身份規劃</a>
-        <a href="education.html" class="active">升學規劃</a>
-        <a href="career.html">求職身價</a>
-        <a href="quiz.html">牛馬測驗</a>
-        <a href="cases.html">客戶故事</a>
-        <a href="#contact">聯絡我們</a>
-      </div>
+        <a href="index.html" class="nav-link">首頁</a>
+        <a href="immigration.html" class="nav-link">身份規劃</a>
+        <a href="education.html" class="nav-link active">升學規劃</a>
+        <a href="career.html" class="nav-link">求職身價</a>
+        <a href="tour.html" class="nav-link">遊學團</a>
+        <a href="#contact" class="nav-link">聯絡我們</a>
+            </div>
       <div class="nav-actions">
         <div class="lang-switcher">
           <a href="index.html" class="active">繁</a>
@@ -1564,6 +1559,8 @@ img, video, iframe, table { max-width: 100%; }
 
 <!-- ============ HERO ============ -->
 <section class="v10-hero">
+  <div class="v10-hero-bg-education"></div>
+  <div class="v10-hero-overlay-education"></div>
   <div class="v10-container">
     <span class="v10-hero-eyebrow">
       <span class="v10-hero-eyebrow-dot"></span>
@@ -1921,7 +1918,7 @@ img, video, iframe, table { max-width: 100%; }
 
       <div class="v10-case">
         <span class="v10-case-icon">★</span>
-        <p class="v10-case-quote">「兩姊妹申請 <span class="num-unit">8 間</span>一線幼稚園，<span class="num-unit">7 間</span>取錄，最終選定九龍真光中學（幼稚園部）」</p>
+        <p class="v10-case-quote">「兩姊妹申請 <span class="num-unit">8 間</span>一線幼稚園，<span class="num-unit">7 間</span>取錄，最終選定香港知名九龍區女子名校（幼稚園部）」</p>
         <span class="v10-case-meta">幼稚園入學 · 2024 學年</span>
       </div>
     </div>
@@ -1947,7 +1944,7 @@ img, video, iframe, table { max-width: 100%; }
         <p>提交基本資料後 24 小時內收到顧問回覆 — 包含子女學業初步評估 + <span class="num-unit">3 條</span>升學路徑建議（DSE / IB / A-Level）+ 預計所需時間 + 後續路徑規劃。</p>
         <div class="v10-cta-actions">
           <a href="https://wa.me/85296966867" class="v10-cta-btn v10-cta-primary">WhatsApp 立即預約</a>
-          <a href="quiz.html" class="v10-cta-btn v10-cta-secondary">先做 <span class="num-unit">3 分鐘</span>牛馬測驗</a>
+          <a href="consult.html" class="v10-cta-btn v10-cta-secondary">先做 <span class="num-unit">3 分鐘</span>5 分鐘免費初評</a>
         </div>
       </div>
     </div>
@@ -1989,16 +1986,18 @@ img, video, iframe, table { max-width: 100%; }
         <p>香港高端個人成長顧問。身份 · 升學 · 職涯身價 一站式陪跑。</p>
       </div>
       <div class="footer-col">
-        <h4>業務板塊</h4>
+        <h4>服務</h4>
         <a href="immigration.html">身份與續簽對標</a>
         <a href="education.html">海外與香港升學</a>
         <a href="career.html">求職與身價躍遷</a>
+        <a href="tour.html">海外遊學團 5天4夜 / 7天6夜</a>
       </div>
       <div class="footer-col">
         <h4>資源</h4>
         <a href="cases.html">客戶案例</a>
-        <a href="quiz.html">牛馬身價測驗</a>
+        <a href="consult.html">免費身價諮詢</a>
         <a href="#contact">聯絡我們</a>
+        <a href="#">私隱政策</a>
       </div>
       <div class="footer-col">
         <h4>聯絡</h4>

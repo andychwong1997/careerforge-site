@@ -36,15 +36,15 @@ with appropriate attribution as noted below.
 ---
 
 ## Pillar 02 · 升學銜接 (Education)
-**File:** `02-education.jpg` — **2.67 MB** — **2112 × 1408 px** (aspect 1.5:1, 3:2)
-- **Source:** https://commons.wikimedia.org/wiki/File:HKU_Centennial_Campus_201412.jpg
-- **Direct download:** https://upload.wikimedia.org/wikipedia/commons/7/7a/HKU_Centennial_Campus_201412.jpg
+**File:** `02-education.jpg` — **498 KB** — **1920 × 1080 px** (aspect 16:9, exact)
+- **Source:** https://commons.wikimedia.org/wiki/File:HKU_Centennial_Campus_View1_201412.jpg
 - **License:** CC BY 3.0
-- **Author:** Wing1990hk (Wikimedia Commons user)
-- **EXIF description:** Modern academic tower at HKU (Centennial Campus, Pok Fu Lam)
-- **Camera:** Panasonic DMC-LX7 (Dec 2014)
-- **Match rationale:** Hong Kong University's modern academic building with curved glass facade — directly evokes "HK tertiary education / university campus" for the 升學 pathway.
-- **Attribution required:** "Photo by Wing1990hk, CC BY 3.0, via Wikimedia Commons"
+- **Author:** Wing1990hk (Wikimedia Commons)
+- **EXIF description:** HKU Centennial Campus 半山俯瞰景 — Simon K.Y. Lee Hall (李國賢堂) + Seymour Hall 紅磚建築群 + 綠化平台，遠眺半山校園 + 大學道
+- **Date taken:** December 2014
+- **Match rationale:** HKU 百周年校園 exterior — 清楚見到「SIMON K.Y. LEE HALL」標記 + 紅磚教學樓 + 多層綠化平台 = instant HKU academic identity。Daytime, sky clarity, professional architectural photo (high angle from opposite building rooftop). Crop to 16:9 keeps the hall signage centered.
+- **Replaces:** HKMU graduation ceremony (v20.3b, 2026-09-04) — ND rejected interior shot，要求 campus exterior 外部外觀。
+- **Attribution required:** "Wing1990hk, CC BY 3.0, via Wikimedia Commons"
 
 ---
 
@@ -62,17 +62,30 @@ with appropriate attribution as noted below.
 ---
 
 ## Pillar 04 · 遊學團 (Study Tour)
-**File:** `04-tour.jpg` — **15.39 MB** — **7296 × 5472 px** (aspect 1.33:1, 4:3)
-- **Source:** https://commons.wikimedia.org/wiki/File:Hong_Kong_student_tour_group_at_Tiger_Hill,_Suzhou-20250402.jpg
-- **Direct download:** https://upload.wikimedia.org/wikipedia/commons/b/b3/Hong_Kong_student_tour_group_at_Tiger_Hill%2C_Suzhou-20250402.jpg
-- **License:** CC BY-SA 4.0
-- **Author:** Shwangtianyuan (Wikimedia Commons user)
-- **Date taken:** 2 April 2025
-- **Description:** "A student tour group from Hong Kong." (Wikimedia caption)
-- **Match rationale:** **The ONLY result on Wikimedia Commons that directly depicts a "Hong Kong student tour group"** — exact topical match for the 遊學團 pillar.
-- **⚠️ Privacy caveat:** Image shows a group of students in matching uniforms at a public tourist site (Tiger Hill, Suzhou). Some faces in the foreground are identifiable. Since this will be used as a **full-bleed card background with a navy gradient overlay** (per Layout A), the text overlay will obscure most faces. If extra caution is required, recommend the parent agent crop the image to the upper 2/3 (showing the pavilion + uniformed group from the side) before deploying.
-- **Attribution required:** "Photo by Shwangtianyuan, CC BY-SA 4.0, via Wikimedia Commons"
-- **Derivative obligation:** If cropped, derivative must remain CC BY-SA 4.0.
+**File:** `04-tour.jpg` — **801 KB** — **1920 × 1080 px** (aspect 16:9, exact)
+- **Source:** https://commons.wikimedia.org/wiki/File:Hong_Kong_University_of_Science_and_Technology_2007.jpg
+- **Direct download:** https://upload.wikimedia.org/wikipedia/commons/a/ac/Hong_Kong_University_of_Science_and_Technology_2007.jpg
+- **License:** CC BY-SA 3.0
+- **Author:** Wikimedia Commons (BetacommandBot upload)
+- **Date taken:** 2 August 2007
+- **Camera:** Sony DSC-W90
+- **Match rationale:** HKUST (Hong Kong University of Science and Technology) 清水灣校園 daytime shot — exact 16:9 aspect ratio, perfect fit for hero. **Replaces previous Suzhou Tiger Hill photo** (off-topic for HK-focused study tour). White academic towers + blue glass + green hills = "study at HK university" instant read.
+- **Reuse scope:** Used both as pillar card background (homepage) AND as Pillar 04 detail page hero (tour.html).
+- **Attribution required:** "Photo: Wikimedia Commons, CC BY-SA 3.0"
+- **Derivative obligation:** If cropped, derivative must remain CC BY-SA 3.0.
+
+---
+
+## Reuse Scope (P1-P4)
+All 4 Pillar photos are reused as:
+1. **Pillar card background** on `index.html` / `index-cn.html` / `index-en.html` (homepage cards, with `--pillar-bg` CSS variable + navy overlay)
+2. **Pillar detail page hero** on `immigration.html` / `education.html` / `career.html` / `tour.html` (× 3 langs = 12 pages), with dedicated `.v10-hero-bg-{slug}` + `.v10-hero-overlay-{slug}` classes.
+
+**Visual differentiation strategy** (per Memory v20.2):
+- Card: tight crop, navy 0.78/0.58/0.78 overlay (lightened to preserve colour)
+- Hero: cover-position, navy 0.88/0.72/0.88 (night photos) or 0.78/0.58/0.78 (daytime photos)
+
+This ensures card vs hero never feel like "two screenshots of the same photo" — different aspect ratio, different overlay intensity.
 
 ---
 

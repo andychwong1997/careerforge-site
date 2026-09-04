@@ -31,7 +31,7 @@
 <meta name="description" content="CareerForge 鑄途 — 香港身份與續簽完整對標。5 大人才計劃（高才通 / 優才 / 專才 / 新資本投資者入境 / 留學升港），由首簽到 7 年永居全程合規陪跑。">
 <link rel="icon" type="image/png" href="assets/icon.png">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700;800&family=Noto+Serif+SC:wght@400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style.css?v=20260904">
 </head>
 <body>
 
@@ -58,12 +58,29 @@
 
 /* ============ HERO ============ */
 .v10-hero {
-  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-700) 100%);
+  background: transparent;
   padding: 120px 0 100px;
   position: relative;
   overflow: hidden;
   color: var(--white);
 }
+.v10-hero { isolation: isolate; }
+.v10-hero-bg-immigration {
+  position: absolute;
+  inset: 0;
+  background-image: url('assets/pillars/web/01-immigration.jpg');
+  background-size: cover;
+  background-position: center 40%;
+  z-index: -2;
+}
+.v10-hero-overlay-immigration {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(11,25,44,0.88) 0%, rgba(11,25,44,0.72) 50%, rgba(11,25,44,0.88) 100%);
+  z-index: -1;
+}
+
 .v10-hero::before {
   content: "";
   position: absolute; top: -200px; right: -200px;
@@ -1390,20 +1407,6 @@
   gap: 8px;
   text-decoration: none;
 }
-.site-header .nav-logo .logo-en {
-  font-family: 'Playfair Display', 'Noto Serif TC', serif;
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: var(--navy);
-  letter-spacing: 0.5px;
-}
-.site-header .nav-logo .logo-cn {
-  font-family: 'Noto Serif TC', serif;
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--gold);
-  letter-spacing: 2px;
-}
 .site-header .nav-menu {
   display: flex;
   gap: 4px;
@@ -1422,10 +1425,7 @@
   background: var(--gold-100);
   color: var(--navy);
 }
-.site-header .nav-menu a.active {
-  background: var(--navy);
-  color: #FFFFFF;
-}
+
 .site-header .nav-actions {
   display: flex;
   align-items: center;
@@ -1509,9 +1509,7 @@
   .site-header .hamburger {
     display: flex;
   }
-  .site-header .nav-logo .logo-en { font-size: 1.3rem; }
-  .site-header .nav-logo .logo-cn { font-size: 1.15rem; }
-}
+  }
 
 /* Hamburger JS toggle */
 .site-header .hamburger.open span:nth-child(1) {
@@ -1554,8 +1552,6 @@
     padding: 4px 8px;
     min-width: 24px;
   }
-  .site-header .nav-logo .logo-en { font-size: 1.05rem !important; }
-  .site-header .nav-logo .logo-cn { font-size: 0.95rem !important; letter-spacing: 1px; }
   .site-header .container { padding: 0 16px; }
   .v10-hero-title { font-size: clamp(1.75rem, 7vw, 4.8rem) !important; }
   .v10-hero-sub { font-size: 0.95rem !important; }
@@ -1594,14 +1590,13 @@ img, video, iframe, table { max-width: 100%; }
         <span class="logo-cn">鑄途</span>
       </a>
       <div class="nav-menu" id="navMenu">
-        <a href="index.html">首頁</a>
-        <a href="immigration.html" class="active">身份規劃</a>
-        <a href="education.html">升學規劃</a>
-        <a href="career.html">求職身價</a>
-        <a href="quiz.html">牛馬測驗</a>
-        <a href="cases.html">客戶故事</a>
-        <a href="#contact">聯絡我們</a>
-      </div>
+        <a href="index.html" class="nav-link">首頁</a>
+        <a href="immigration.html" class="nav-link active">身份規劃</a>
+        <a href="education.html" class="nav-link">升學規劃</a>
+        <a href="career.html" class="nav-link">求職身價</a>
+        <a href="tour.html" class="nav-link">遊學團</a>
+        <a href="#contact" class="nav-link">聯絡我們</a>
+            </div>
       <div class="nav-actions">
         <div class="lang-switcher">
           <a href="index.html" class="active">繁</a>
@@ -1616,6 +1611,8 @@ img, video, iframe, table { max-width: 100%; }
   </div>
 </header><!-- ============ HERO ============ -->
 <section class="v10-hero">
+  <div class="v10-hero-bg-immigration"></div>
+  <div class="v10-hero-overlay-immigration"></div>
   <div class="v10-container">
     <span class="v10-hero-eyebrow">
       <span class="v10-hero-eyebrow-dot"></span>
@@ -1994,16 +1991,18 @@ img, video, iframe, table { max-width: 100%; }
         <p>香港高端个人成长顾问。身份 · 升學 · 職涯身價 一站式陪跑。</p>
       </div>
       <div class="footer-col">
-        <h4>業務板塊</h4>
+        <h4>服務</h4>
         <a href="immigration.html">身份與續簽對標</a>
         <a href="education.html">海外與香港升學</a>
         <a href="career.html">求職與身價躍遷</a>
+        <a href="tour.html">海外遊學團 5天4夜 / 7天6夜</a>
       </div>
       <div class="footer-col">
-        <h4>资源</h4>
+        <h4>資源</h4>
         <a href="cases.html">客戶案例</a>
-        <a href="quiz.html">牛馬身價測驗</a>
+        <a href="consult.html">免費身價諮詢</a>
         <a href="#contact">聯絡我們</a>
+        <a href="#">私隱政策</a>
       </div>
       <div class="footer-col">
         <h4>聯絡</h4>

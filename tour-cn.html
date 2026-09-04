@@ -31,7 +31,7 @@
 <meta name="description" content="CareerForge 5 天 4 夜香港游学团 — 4 大核心模块 + 500 强企业证书。多元主题（金融/科技/英语学术）任选，配套完善（住宿/接送/餐饮/安全）。">
 <link rel="icon" type="image/png" href="assets/icon.png">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700;800&family=Noto+Serif+SC:wght@400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style.css?v=20260904">
 </head>
 <body>
 
@@ -58,12 +58,29 @@
 
 /* ============ HERO ============ */
 .v10-hero {
-  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-700) 100%);
+  background: transparent;
   padding: 120px 0 100px;
   position: relative;
   overflow: hidden;
   color: var(--white);
 }
+.v10-hero { isolation: isolate; }
+.v10-hero-bg-tour {
+  position: absolute;
+  inset: 0;
+  background-image: url('assets/pillars/web/04-tour.jpg');
+  background-size: cover;
+  background-position: center 40%;
+  z-index: -2;
+}
+.v10-hero-overlay-tour {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(11,25,44,0.78) 0%, rgba(11,25,44,0.58) 50%, rgba(11,25,44,0.78) 100%);
+  z-index: -1;
+}
+
 .v10-hero::before {
   content: "";
   position: absolute; top: -200px; right: -200px;
@@ -1155,14 +1172,13 @@ img, video, iframe, table { max-width: 100%; }
         <span class="logo-cn">鑄途</span>
       </a>
       <div class="nav-menu" id="navMenu">
-        <a href="index-cn.html" class="active">首页</a>
-        <a href="immigration-cn-v17.html">身份规划</a>
-        <a href="education-cn.html">升学规划</a>
-        <a href="career-cn.html">求职身价</a>
-        <a href="tour-cn.html" class="active">游学团</a>
-        <a href="cases-cn.html">客户故事</a>
-        <a href="#contact">联系我们</a>
-      </div>
+        <a href="index-cn.html" class="nav-link">首页</a>
+        <a href="immigration-cn.html" class="nav-link">身份规划</a>
+        <a href="education-cn.html" class="nav-link">升学规划</a>
+        <a href="career-cn.html" class="nav-link">求职身价</a>
+        <a href="tour-cn.html" class="nav-link active">游学团</a>
+        <a href="#contact" class="nav-link">联系我们</a>
+            </div>
       <div class="nav-actions">
         <div class="lang-switcher">
           <a href="index.html">繁</a>
@@ -1179,10 +1195,12 @@ img, video, iframe, table { max-width: 100%; }
 
 <!-- ============ HERO (NAVY) ============ -->
 <section class="v10-hero">
+  <div class="v10-hero-bg-tour"></div>
+  <div class="v10-hero-overlay-tour"></div>
   <div class="v10-container">
     <span class="v10-hero-eyebrow">
       <span class="v10-hero-eyebrow-dot"></span>
-      STUDY TOUR · 内地学生专属深度游学
+      STUDY TOUR · 海内外学生深度游学
     </span>
     <h1 class="v10-hero-title">
       5 天 4 夜，<br>
@@ -1395,16 +1413,18 @@ img, video, iframe, table { max-width: 100%; }
         <p>香港高端个人成长顾问。身份 · 升学 · 职涯身价 一站式陪跑。</p>
       </div>
       <div class="footer-col">
-        <h4>业务板块</h4>
-        <a href="immigration-cn-v17.html">身份与续签对标</a>
+        <h4>服务</h4>
+        <a href="immigration-cn.html">身份与续签对标</a>
         <a href="education-cn.html">海外与香港升学</a>
         <a href="career-cn.html">求职与身价跃迁</a>
+        <a href="tour-cn.html">海外游学团 5天4夜 / 7天6夜</a>
       </div>
       <div class="footer-col">
         <h4>资源</h4>
         <a href="cases-cn.html">客户案例</a>
         <a href="tour-cn.html" class="active">游学团</a>
         <a href="#contact">联络我们</a>
+        <a href="#">隐私政策</a>
       </div>
       <div class="footer-col">
         <h4>联络</h4>

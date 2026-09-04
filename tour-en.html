@@ -31,7 +31,7 @@
 <meta name="description" content="CareerForge 5-Day 4-Night Hong Kong Study Tour — 4 core modules + Fortune 500 certificate. Multiple themes (Finance / Tech / English Academic), full logistics (accommodation / transfers / meals / safety).">
 <link rel="icon" type="image/png" href="assets/icon.png">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700;800&family=Noto+Serif+SC:wght@400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style.css?v=20260904">
 </head>
 <body>
 
@@ -58,12 +58,29 @@
 
 /* ============ HERO ============ */
 .v10-hero {
-  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-700) 100%);
+  background: transparent;
   padding: 120px 0 100px;
   position: relative;
   overflow: hidden;
   color: var(--white);
 }
+.v10-hero { isolation: isolate; }
+.v10-hero-bg-tour {
+  position: absolute;
+  inset: 0;
+  background-image: url('assets/pillars/web/04-tour.jpg');
+  background-size: cover;
+  background-position: center 40%;
+  z-index: -2;
+}
+.v10-hero-overlay-tour {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(11,25,44,0.78) 0%, rgba(11,25,44,0.58) 50%, rgba(11,25,44,0.78) 100%);
+  z-index: -1;
+}
+
 .v10-hero::before {
   content: "";
   position: absolute; top: -200px; right: -200px;
@@ -1155,14 +1172,13 @@ img, video, iframe, table { max-width: 100%; }
         <span class="logo-cn">鑄途</span>
       </a>
       <div class="nav-menu" id="navMenu">
-        <a href="index-en.html" class="active">Home</a>
-        <a href="immigration-en.html">Visa Status</a>
-        <a href="education-en.html">EducationPlanning</a>
-        <a href="career-en.html">requestcareer value</a>
-        <a href="tour-en.html" class="active">Study Tour</a>
-        <a href="cases-en.html">Client stories</a>
-        <a href="#contact">Contact</a>
-      </div>
+        <a href="index-en.html" class="nav-link">Home</a>
+        <a href="immigration-en.html" class="nav-link">Visa Status</a>
+        <a href="education-en.html" class="nav-link">Education</a>
+        <a href="career-en.html" class="nav-link">Career</a>
+        <a href="tour-en.html" class="nav-link active">Study Tour</a>
+        <a href="#contact" class="nav-link">Contact</a>
+            </div>
       <div class="nav-actions">
         <div class="lang-switcher">
           <a href="index-en.html" class="active">繁</a>
@@ -1179,6 +1195,8 @@ img, video, iframe, table { max-width: 100%; }
 
 <!-- ============ HERO (NAVY) ============ -->
 <section class="v10-hero">
+  <div class="v10-hero-bg-tour"></div>
+  <div class="v10-hero-overlay-tour"></div>
   <div class="v10-container">
     <span class="v10-hero-eyebrow">
       <span class="v10-hero-eyebrow-dot"></span>
@@ -1399,15 +1417,17 @@ img, video, iframe, table { max-width: 100%; }
         <a href="immigration-en.html">Status & renewal</a>
         <a href="education-en.html">Overseas & Hong Kong education</a>
         <a href="career-en.html">Career advancement</a>
+        <a href="tour-en.html">Study Tour (5D4N / 7D6N)</a>
       </div>
       <div class="footer-col">
         <h4>Resources</h4>
         <a href="cases-en.html">Client cases</a>
         <a href="tour-en.html" class="active">Study Tour</a>
         <a href="#contact">Contact</a>
+        <a href="#">Privacy policy</a>
       </div>
       <div class="footer-col">
-        <h4>contact</h4>
+        <h4>Contact</h4>
         <a href="https://wa.me/85296966867">WhatsApp</a>
         <a href="mailto:careerforgehk@gmail.com">careerforgehk@gmail.com</a>
       </div>

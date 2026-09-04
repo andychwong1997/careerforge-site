@@ -33,7 +33,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style.css?v=20260904">
 <script>(function(){function setLang(l){document.cookie='cf_lang='+l+'; path=/; max-age=31536000';try{localStorage.setItem('cf_lang',l);}catch(e){}}document.addEventListener('click',function(e){var t=e.target.closest('[data-lang-target]');if(t)setLang(t.getAttribute('data-lang-target'));});})();</script>
 </head>
 <body>
@@ -42,22 +42,24 @@
 <header class="site-header">
   <div class="container">
     <nav class="nav">
-      <a href="index.html" class="nav-logo-text"><span class="nl-en">CareerForge</span><span class="nl-zh">鑄途</span></a>
-      <div class="nav-menu">
-        <a href="index.html">首頁</a>
-        <a href="education.html">升學</a>
-        <a href="immigration.html">簽證</a>
-        <a href="career.html">職涯</a>
-        <a href="quiz.html">牛馬測驗</a>
-        <a href="cases.html" class="active">客戶故事</a>
-      </div>
+      <a href="cases.html" class="nav-logo">
+        <span class="logo-en">CareerForge</span>
+        <span class="logo-cn">鑄途</span>
+      </a>
+      <div class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link">首頁</a>
+        <a href="immigration.html" class="nav-link">身份規劃</a>
+        <a href="education.html" class="nav-link">升學規劃</a>
+        <a href="career.html" class="nav-link">求職身價</a>
+        <a href="tour.html" class="nav-link">遊學團</a>
+        <a href="#contact" class="nav-link">聯絡我們</a>
+            </div>
       <div class="nav-actions">
         <div class="lang-switcher">
-          <a href="cases.html" class="active" data-lang-target="zh-Hant">繁體</a>
-          <a href="cases-cn.html" data-lang-target="zh-Hans">简体</a>
-          <a href="cases-en.html" data-lang-target="en">EN</a>
+          <a href="cases.html" class="active">繁</a>
+          <a href="cases-cn.html">简</a>
+          <a href="cases-en.html">EN</a>
         </div>
-        <a href="#contact" class="nav-cta">預約諮詢</a>
       </div>
     </nav>
   </div>
@@ -110,7 +112,7 @@
     </div>
     <div class="bento">
       <div class="bento-card reveal" data-cat="education">
-        <div class="quote-v4" style="font-size:1.25rem">「Howard 由副學士開始 plan，到港大 BBA 畢業、IANG 留港、入貝恩公司 — 4 年全程有人跟。」</div>
+        <div class="quote-v4" style="font-size:1.25rem">「Howard 由副學士開始 plan，到港大 BBA 畢業、IANG 留港、入全球頂尖戰略顧問公司 — 4 年全程有人跟。」</div>
         <div class="case-meta">
           <div class="case-meta-avatar">C</div>
           <div class="case-meta-text">
@@ -202,12 +204,12 @@
         </div>
       </div>
       <div class="bento-card reveal" data-cat="career" data-reveal-delay="100">
-        <div class="quote-v4" style="font-size:1.25rem">「港大 MBA 期間 CareerForge 幫我做 6 場 mock interview，最後入 McKinsey。」</div>
+        <div class="quote-v4" style="font-size:1.25rem">「港大 MBA 期間 CareerForge 幫我做 6 場 mock interview，最後入全球頂尖戰略顧問公司。」</div>
         <div class="case-meta">
           <div class="case-meta-avatar">J</div>
           <div class="case-meta-text">
             <span class="name">J 女士 · 北京</span>
-            <span class="from">MBA → McKinsey · 2023</span>
+            <span class="from">MBA → 頂尖戰略顧問 · 2023</span>
           </div>
         </div>
       </div>
@@ -239,7 +241,7 @@
       </div>
       <div class="stat-item reveal" data-reveal-delay="100">
         <span class="stat-num">4.9<span class="unit">/5</span></span>
-        <span class="stat-label">Google 客戶評分</span>
+        <span class="stat-label">客戶評分</span>
       </div>
       <div class="stat-item reveal" data-reveal-delay="200">
         <span class="stat-num">98<span class="unit">%</span></span>
@@ -257,23 +259,25 @@
       <p>30 分鐘免費諮詢，了解您的家庭可以點樣 plan。</p>
       <div class="cta-v4-actions">
         <a href="index.html#contact" class="btn-v4-primary">預約諮詢 →</a>
-        <a href="quiz.html" class="btn-v4-secondary">先做牛馬測驗</a>
+        <a href="consult.html" class="btn-v4-secondary">預約免費諮詢</a>
       </div>
     </div>
   </div>
 </section>
 
-<footer class="footer-v4">
+<footer class="site-footer">
   <div class="container">
     <div class="footer-v4-grid">
       <div class="footer-v4-brand"><a href="index.html" class="footer-logo-text"><span class="fl-en">CareerForge</span><span class="fl-zh">鑄途</span></a><p>立足香港，面向大中華區。20 年來，3,000+ 家庭的升學、簽證、職涯選擇。</p></div>
-      <div class="footer-v4-col"><h5>服務</h5><ul><li><a href="education.html">升學規劃</a></li><li><a href="immigration.html">簽證移居</a></li><li><a href="career.html">職涯規劃</a></li><li><a href="quiz.html">牛馬測驗</a></li></ul></div>
-      <div class="footer-v4-col"><h5>關於</h5><ul><li><a href="cases.html">客戶故事</a></li><li><a href="index.html#contact">聯絡我們</a></li><li><a href="#">私隱政策</a></li></ul></div>
-      <div class="footer-v4-col"><h5>聯絡</h5><ul><li><a href="https://wa.me/85296966867">WhatsApp</a></li><li><a href="mailto:hello@careerforgehk.com">Email</a></li><li>微信: careerforgehk</li></ul></div>
+      <div class="footer-v4-col"><h5>服務</h5><ul><li><a href="education.html">海外與香港升學</a></li><li><a href="immigration.html">身份與續簽對標</a></li><li><a href="career.html">求職與身價躍遷</a></li><li><a href="consult.html">免費身價諮詢</a></li>
+          <li><a href="tour.html">海外遊學團 5天4夜 / 7天6夜</a></li>
+        </ul></div>
+      <div class="footer-v4-col"><h5>關於</h5><ul><li><a href="cases.html">客戶案例</a></li><li><a href="#contact">聯絡我們</a></li><li><a href="#">私隱政策</a></li></ul></div>
+      <div class="footer-v4-col"><h5>聯絡</h5><ul><li><a href="https://wa.me/85296966867">WhatsApp</a></li><li><a href="mailto:careerforgehk@gmail.com">careerforgehk@gmail.com</a></li><li>微信: careerforgehk</li></ul></div>
     </div>
     <div class="footer-v4-bottom">
       <div>© 2026 CareerForge 鑄途 · BR 71508236</div>
-      <div class="footer-v4-audit"><a href="audit.html">Mobile Audit</a></div>    <div class="footer-v4-lang"><a href="cases.html" class="active">繁體</a><a href="cases-cn.html">简体</a><a href="cases-en.html">EN</a></div>
+      <div class="footer-v4-audit"><a href="audit.html">Mobile Audit</a></div>    <div class="footer-v4-lang"><a href="cases.html" class="active">繁</a><a href="cases-cn.html">简</a><a href="cases-en.html">EN</a></div>
     </div>
   </div>
 </footer>

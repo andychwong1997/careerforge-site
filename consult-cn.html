@@ -437,8 +437,90 @@
 /* Page-level tweaks */
 .v10-lang-btn { transition: all .2s ease; }
 .v10-lang-btn:hover { border-color: var(--gold) !important; }
+
+/* Mobile nav: show lang switcher pill + hamburger */
+@media (max-width: 900px) {
+  .site-header .lang-switcher {
+    display: inline-flex !important;
+  }
+  .site-header .lang-switcher a {
+    font-size: 0.7rem;
+    padding: 4px 8px;
+    min-width: 24px;
+  }
+  .site-header .nav-logo .logo-en { font-size: 1.05rem !important; }
+  .site-header .nav-logo .logo-cn { font-size: 0.95rem !important; letter-spacing: 1px; }
+  .site-header .container { padding: 0 16px; }
+  .site-header .nav-menu { display: none; }
+  .site-header .hamburger {
+    display: flex !important;
+    min-width: 44px;
+    min-height: 44px;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+}
+
+/* Site-header base + nav-menu + hamburger (canonical) */
+.site-header .nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.site-header .hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.site-header .hamburger span {
+  display: block;
+  height: 2px;
+  background: var(--ink-900, #0B192C);
+  border-radius: 2px;
+  transition: all 0.2s;
+}
+.site-header .hamburger.active span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+.site-header .hamburger.active span:nth-child(2) { opacity: 0; }
+.site-header .hamburger.active span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+
 </style>
 </head>
+<header class="site-header">
+  <div class="container">
+    <nav class="nav">
+      <a href="index-cn.html" class="nav-logo">
+        <span class="logo-en">CareerForge</span>
+        <span class="logo-cn">鑄途</span>
+      </a>
+      <div class="nav-menu" id="navMenu">
+        <a href="index-cn.html" class="nav-link">首页</a>
+        <a href="immigration-cn.html" class="nav-link">身份规划</a>
+        <a href="education-cn.html" class="nav-link">升学规划</a>
+        <a href="career-cn.html" class="nav-link">求职身价</a>
+        <a href="tour-cn.html" class="nav-link">游学团</a>
+        <a href="#contact" class="nav-link">联络我们</a>
+      </div>
+      <div class="nav-actions">
+        <div class="lang-switcher">
+          <a href="consult.html">繁</a>
+          <a href="consult-cn.html" class="active">簡</a>
+          <a href="consult-en.html">EN</a>
+        </div>
+        <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+
 <body>
 
 <nav class="v10-nav" style="background: var(--white); border-bottom: 1px solid rgba(11, 25, 44, 0.08);">

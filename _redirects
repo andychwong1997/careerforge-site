@@ -1,3 +1,5 @@
+# CareerForge CF Pages redirects
+# v23.0.3: maintain clean redirects (removed v17 stale cache)
 /visa         /immigration.html       301
 /visa-cn      /immigration-cn.html    301
 /visa-en      /immigration-en.html    301

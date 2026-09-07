@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hans" data-version="v23.0.11f">
+<html lang="zh-Hans" data-version="v23.0.11m">
 <head>
   <script>
     // CareerForge v18.8+ iPhone Safari disk cache fix
@@ -7,7 +7,7 @@
     // This script uses fetch({cache: 'no-store'}) which iPhone Safari DOES honor,
     // then replaces current page if server-side version doesn't match expected.
     (function() {
-      var EXPECTED_VER = 'v23.0.11f';
+      var EXPECTED_VER = 'v23.0.11m';
       var path = location.pathname + '?cb=' + Date.now();
       if (location.href.indexOf('cb=') !== -1) return;
       fetch(path, {cache: 'no-store'})
@@ -559,8 +559,13 @@
   .v10-package-points li { padding: 6px 0 6px 22px; font-size: 0.82rem !important; line-height: 1.45; }
   .v10-package-tag { font-size: 0.65rem !important; padding: 3px 10px; margin-bottom: 10px; }
 }
+.v10-hero-title {
+  font-size: clamp(1.75rem, 7vw, 4.8rem) !important;
+  line-height: 1.18 !important;
+  max-width: 100% !important;
+}
+
 @media (max-width: 540px) {
-  .v10-hero-title { font-size: clamp(1.75rem, 7vw, 4.8rem) !important; line-height: 1.18 !important; max-width: 100% !important; }
   .v10-head h2 { font-size: clamp(1.6rem, 6vw, 2rem) !important; }
   .v10-why-grid, .footer-grid { grid-template-columns: 1fr; }
 }

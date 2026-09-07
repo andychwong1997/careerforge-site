@@ -215,11 +215,44 @@
 .audit-cta:hover { color: var(--navy); border-bottom-color: var(--navy); }
 
 /* ============ RESPONSIVE ============ */
-/* v23.0.11i — unify top bar to match index canonical (lang-switcher + hamburger visible) */
+/* ============ v23.0.11k — unify top bar hamburger to match index canonical ============ */
+/* Hamburger button default (desktop: hidden) */
+.site-header .hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.site-header .hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #0B192C;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+.site-header .hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.site-header .hamburger.active span:nth-child(2) { opacity: 0; }
+.site-header .hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 @media (max-width: 880px) {
-  .lang-switcher { display: inline-flex !important; }
-  .nav-toggle { display: none !important; }
-  .hamburger { display: flex !important; }
+  .site-header .lang-switcher {
+    display: inline-flex !important;
+    font-size: 0.8125rem;
+  }
+  .site-header .lang-switcher a {
+    font-size: 0.7rem !important;
+    padding: 4px 8px !important;
+    min-width: 24px !important;
+  }
+  .site-header .nav-toggle { display: none !important; }
+  .site-header .hamburger { display: flex !important; }
 }
 @media (max-width: 768px) {
   .audit-stats { grid-template-columns: 1fr; margin-top: -40px; }

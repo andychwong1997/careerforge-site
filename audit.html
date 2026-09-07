@@ -215,12 +215,24 @@
 .audit-cta:hover { color: var(--navy); border-bottom-color: var(--navy); }
 
 /* ============ RESPONSIVE ============ */
+/* v23.0.11i — unify top bar to match index canonical (lang-switcher + hamburger visible) */
+@media (max-width: 880px) {
+  .lang-switcher { display: inline-flex !important; }
+  .nav-toggle { display: none !important; }
+  .hamburger { display: flex !important; }
+}
 @media (max-width: 768px) {
   .audit-stats { grid-template-columns: 1fr; margin-top: -40px; }
   .audit-hero { padding: 60px 0 50px; }
   .audit-section { margin: 50px auto; }
   .audit-table th, .audit-table td { padding: 10px 12px; font-size: 0.85rem; }
   .audit-method { padding: 24px; }
+}
+/* Mobile logo sizing to match index canonical (16.8px / 15.2px) */
+@media (max-width: 768px) {
+  .site-header .nav-logo .logo-en { font-size: 1.05rem !important; }
+  .site-header .nav-logo .logo-cn { font-size: 0.95rem !important; letter-spacing: 1px; }
+  .site-header .nav-logo { flex-shrink: 0 !important; white-space: nowrap !important; }
 }
 
 /* ============ FOOTER AUDIT LINK ============ */

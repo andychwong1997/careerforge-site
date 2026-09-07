@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hans" data-version="v23.0.11f">
+<html lang="zh-Hans" data-version="v23.0.11n">
 <head>
   <script>
     // CareerForge v18.8+ iPhone Safari disk cache fix
@@ -7,7 +7,7 @@
     // This script uses fetch({cache: 'no-store'}) which iPhone Safari DOES honor,
     // then replaces current page if server-side version doesn't match expected.
     (function() {
-      var EXPECTED_VER = 'v23.0.11f';
+      var EXPECTED_VER = 'v23.0.11n';
       var path = location.pathname + '?cb=' + Date.now();
       if (location.href.indexOf('cb=') !== -1) return;
       fetch(path, {cache: 'no-store'})
@@ -28,7 +28,7 @@
   <meta http-equiv="Expires" content="0">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mobile Audit · CareerForge 鑄途</title>
-<meta name="description" content="CareerForge 每日自动以 iPhone 14 viewport 测试全站 18 个页面，确保零水平 overflow。">
+<meta name="description" content="CareerForge 每日自动以 iPhone 14 viewport 测试全站 21 个页面，确保零水平 overflow。">
 <link rel="icon" type="image/png" href="assets/icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -280,6 +280,58 @@
 }
 .footer-audit a { color: inherit; }
 .footer-audit a:hover { color: var(--gold); }
+
+/* ============ v23.0.11n — unify audit hero to V10 canonical ============ */
+/* Override .audit-hero-title to match .v10-hero-title spec */
+.audit-hero-title {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif !important;
+  font-size: clamp(2.6rem, 5.8vw, 4.8rem) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.18 !important;
+  margin: 0 0 32px !important;
+  color: white !important;
+  max-width: 100% !important;
+}
+.audit-hero-title .gold {
+  color: var(--gold) !important;
+  font-style: italic !important;
+  font-weight: 600 !important;
+}
+/* Override eyebrow to match V10 gold pill (canonical) */
+.audit-hero-eyebrow {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 8px 16px !important;
+  border: 1px solid rgba(212,175,55,0.4) !important;
+  border-radius: 999px !important;
+  background: rgba(212,175,55,0.06) !important;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 0.82rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  color: var(--gold) !important;
+  margin-bottom: 36px !important;
+}
+.audit-hero-eyebrow::before {
+  content: "" !important;
+  width: 6px !important;
+  height: 6px !important;
+  background: var(--gold) !important;
+  border-radius: 50% !important;
+  box-shadow: 0 0 0 2px rgba(212,175,55,0.18) !important;
+  animation: none !important;
+}
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+/* Mobile override */
+@media (max-width: 540px) {
+  .audit-hero-title {
+    font-size: clamp(1.75rem, 7vw, 4.8rem) !important;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -318,10 +370,10 @@
   <div class="audit-hero-inner">
     <span class="audit-hero-eyebrow">Site Health · 每日自动验证</span>
     <h1 class="audit-hero-title">
-      ✅ 全部 18 个页面<br>
+      ✅ 全部 21 个页面<br>
       <span class="gold">通过 Mobile Audit</span>
     </h1>
-    <p class="audit-hero-sub">CareerForge 每晚 03:00 HKT 自动以 iPhone 14 viewport（390 × 844）测试全站 18 个页面，确保零水平 overflow。</p>
+    <p class="audit-hero-sub">CareerForge 每晚 03:00 HKT 自动以 iPhone 14 viewport（390 × 844）测试全站 21 个页面，确保零水平 overflow。</p>
   </div>
 </section>
 
@@ -555,5 +607,8 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 </script>
+
+<a href="audit-cn.html#results" class="sticky-cta">📊 查看验证结果</a>
+
 </body>
 </html>

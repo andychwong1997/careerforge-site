@@ -1548,7 +1548,10 @@ img, video, iframe, table { max-width: 100%; }
   /* Nav actions + hamburger: never overflow right edge */
   .site-header .nav-actions { display: flex !important; gap: 8px !important; }
   .site-header .hamburger { padding: 6px 10px !important; min-width: 36px !important; }
-  .site-header .nav-logo { flex-shrink: 1 !important; min-width: 0 !important; }
+  /* v23.0.11h — fix logo wrap (was flex-shrink: 1 causing CareerForge + 鑄途 to wrap on 390px) */
+  .site-header .nav-logo { flex-shrink: 0 !important; white-space: nowrap !important; min-width: auto !important; }
+  .site-header .nav-logo .logo-en { font-size: 1.05rem !important; white-space: nowrap; }
+  .site-header .nav-logo .logo-cn { font-size: 0.95rem !important; letter-spacing: 1px; white-space: nowrap; }
 
   /* Tag/badge: kill min-width that forces 120px pill */
   .v10-track-tag, .v10-package-tag, .v10-tag {

@@ -661,6 +661,32 @@
   max-width: 100% !important;
 }
 
+/* v23.0.12h (POLISH) — Pillar description: clamp to 5 lines on mobile to prevent overwhelming text-heavy cards */
+@media (max-width: 720px) {
+  .v10-pillar--image .v10-pillar-desc {
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }
+}
+
+/* v23.0.12h (POLISH) — Pillar CTA: stronger outline treatment (vs WhatsApp gold-filled primary) */
+.v10-pillar--image .v10-pillar-cta {
+  background: transparent !important;
+  color: var(--gold) !important;
+  border: 1.5px solid var(--gold) !important;
+  font-weight: 600;
+}
+.v10-pillar--image .v10-pillar-cta:hover {
+  background: var(--gold) !important;
+  color: var(--navy) !important;
+  border-color: var(--gold) !important;
+}
+
 /* Show lang switcher pill on mobile (smaller) */
 @media (max-width: 900px) {
   .site-header .lang-switcher {

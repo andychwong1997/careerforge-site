@@ -1245,11 +1245,15 @@ img, video, iframe, table { max-width: 100%; }
   );
 }
 .v10-pillar--reverse .v10-pillar-body {
-  margin-left: auto;
-  margin-right: 0;
+  grid-column: 1 / -1;
+  justify-self: end;
   text-align: right;
   align-items: flex-end;
   max-width: 720px;
+}
+.v10-pillar--reverse .v10-pillar-cta {
+  grid-column: 1 / -1;
+  justify-self: end;
 }
 .v10-pillar--reverse .v10-pillar-tags {
   justify-content: flex-end;

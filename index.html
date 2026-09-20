@@ -1243,19 +1243,20 @@ img, video, iframe, table { max-width: 100%; }
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-/* v23.0.12h (POLISH) — Pillar CTA: stronger outline treatment (vs WhatsApp gold-filled primary) */
+/* v23.0.12h (POLISH) — Pillar CTA: gold outline on dark image bg (vs WhatsApp gold-filled primary) */
 .v10-pillar--image .v10-pillar-cta {
   background: transparent !important;
   color: var(--gold) !important;
   border: 1.5px solid var(--gold) !important;
   font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
 }
 .v10-pillar--image .v10-pillar-cta:hover {
   background: var(--gold) !important;
   color: var(--navy) !important;
   border-color: var(--gold) !important;
+  text-shadow: none;
 }
-
 /* v23.0.12h — Pillar 03 reverse layout (visual rhythm vs P01/P02/P04) */
 .v10-pillar--reverse .v10-pillar-overlay {
   background: linear-gradient(240deg,

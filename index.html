@@ -713,6 +713,118 @@
   .nav {
     position: relative;
   }
+  /* v23.0.12h — Mobile sub-language pill inside hamburger drawer */
+  .mobile-lang-pill {
+    display: flex;
+    gap: 6px;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #f0f0f0;
+  }
+  .mobile-lang-pill a {
+    padding: 6px 14px !important;
+    border-radius: 999px !important;
+    border-bottom: none !important;
+    background: #f4f4f4;
+    font-size: 0.875rem !important;
+    color: var(--ink-700) !important;
+  }
+  .mobile-lang-pill a.active {
+    background: var(--navy, #0B192C);
+    color: #fff !important;
+  }
+}
+
+/* v23.0.12h — Nav active state with gold underline (desktop + mobile) */
+.nav-link {
+  position: relative;
+}
+.nav-link.active::after {
+  content: "";
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: -4px;
+  height: 2px;
+  background: var(--gold, #C8A04A);
+  border-radius: 1px;
+}
+
+/* v23.0.12h — Footer social media icons (WhatsApp / WeChat / 小紅書 / LinkedIn) */
+.footer-social {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+.fs-icon {
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--ink-100, #f3f3f3);
+  color: var(--navy, #0B192C);
+  transition: background .2s ease, color .2s ease, transform .2s ease;
+}
+.fs-icon svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+.fs-icon:hover {
+  background: var(--gold, #C8A04A);
+  color: var(--white, #fff);
+  transform: translateY(-2px);
+}
+
+/* v23.0.12h — Testimonial divider between CTA and Contact (visual rhythm) */
+.v10-testimonial {
+  margin: 80px auto;
+  max-width: 760px;
+  padding: 0 32px;
+  text-align: center;
+  position: relative;
+}
+.v10-testimonial::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -40px;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 32px;
+  background: var(--gold, #C8A04A);
+}
+.v10-testimonial blockquote {
+  margin: 0;
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+  font-style: italic;
+  line-height: 1.6;
+  color: var(--ink-900);
+}
+.v10-testimonial blockquote::before {
+  content: "\201C";
+  display: block;
+  font-size: 3.5rem;
+  line-height: 0.5;
+  color: var(--gold, #C8A04A);
+  margin-bottom: 12px;
+}
+.v10-testimonial cite {
+  display: block;
+  margin-top: 24px;
+  font-style: normal;
+  font-size: 0.875rem;
+  font-family: inherit;
+  color: var(--ink-700);
+  letter-spacing: 0.06em;
+}
+.v10-testimonial cite strong {
+  color: var(--navy, #0B192C);
+  font-weight: 600;
+  margin-right: 8px;
 }
 
 .hamburger {
@@ -1120,6 +1232,25 @@ img, video, iframe, table { max-width: 100%; }
   border: 1px solid rgba(255, 255, 255, 0.5) !important;
 }
 
+/* v23.0.12h — Pillar 03 reverse layout (visual rhythm vs P01/P02/P04) */
+.v10-pillar--reverse .v10-pillar-overlay {
+  background: linear-gradient(240deg,
+    rgba(11, 25, 44, 0.82) 0%,
+    rgba(11, 25, 44, 0.62) 50%,
+    rgba(11, 25, 44, 0.92) 100%
+  );
+}
+.v10-pillar--reverse .v10-pillar-body {
+  margin-left: auto;
+  margin-right: 0;
+  text-align: right;
+  align-items: flex-end;
+  max-width: 720px;
+}
+.v10-pillar--reverse .v10-pillar-tags {
+  justify-content: flex-end;
+}
+
 .v10-pillar--image:hover .v10-pillar-bg { transform: scale(1.05); }
 
 .v10-pillar--image:hover .v10-pillar-overlay {
@@ -1162,12 +1293,18 @@ img, video, iframe, table { max-width: 100%; }
         <span class="logo-cn">鑄途</span>
       </a>
       <div class="nav-menu" id="navMenu">
-        <a href="index.html" class="nav-link">首頁</a>
+        <a href="index.html" class="nav-link active">首頁</a>
         <a href="immigration.html" class="nav-link">身份規劃</a>
         <a href="education.html" class="nav-link">升學規劃</a>
         <a href="career.html" class="nav-link">求職身價</a>
         <a href="tour.html" class="nav-link">遊學團</a>
         <a href="#contact" class="nav-link">聯絡我們</a>
+        <!-- v23.0.12h — Mobile sub-language pill (visible only inside hamburger drawer) -->
+        <div class="mobile-lang-pill">
+          <a href="index.html" class="active">繁</a>
+          <a href="index-cn.html">简</a>
+          <a href="index-en.html">EN</a>
+        </div>
             </div>
       <div class="nav-actions">
         <div class="lang-switcher">
@@ -1264,7 +1401,7 @@ img, video, iframe, table { max-width: 100%; }
       </div>
 
       <!-- Pillar 03 -->
-      <div class="v10-pillar v10-pillar--image" style="--pillar-bg: url('assets/pillars/web/03-career.jpg')">
+      <div class="v10-pillar v10-pillar--image v10-pillar--reverse" style="--pillar-bg: url('assets/pillars/web/03-career.jpg')">
         <div class="v10-pillar-bg"></div>
         <div class="v10-pillar-overlay"></div>
         <div class="v10-pillar-body">
@@ -1386,6 +1523,16 @@ img, video, iframe, table { max-width: 100%; }
   </div>
 </section>
 
+<!-- ============ TESTIMONIAL DIVIDER (v23.0.12h — visual rhythm between CTA and Contact) ============ -->
+<section class="v10-section canvas" style="padding: 0;">
+  <div class="v10-testimonial">
+    <blockquote>
+      從香港身份、子女升學到我自己的職涯轉身，CareerForge 一次過幫我哋成家人計好晒 4 大板塊時間線。7 年過咗，我哋仍然喺度。
+    </blockquote>
+    <cite><strong>陳先生 · 跨境金融背景</strong>2019 至今 · 4 大板塊客戶</cite>
+  </div>
+</section>
+
 <!-- ============ CONTACT (WHITE CARDS) ============ -->
 <section class="v10-section canvas tight" style="padding-top: 0;">
   <div class="v10-container">
@@ -1419,6 +1566,21 @@ img, video, iframe, table { max-width: 100%; }
       <div class="footer-brand">
         <a href="index.html" class="footer-logo-text"><span class="fl-en">CareerForge</span><span class="fl-zh">鑄途</span></a>
         <p>香港高端個人成長顧問。身份 · 升學 · 職涯身價 一站式陪跑。</p>
+        <!-- v23.0.12h — Social media trust anchors (mainland + global clients) -->
+        <div class="footer-social">
+          <a href="https://wa.me/85296923498" class="fs-icon fs-wa" aria-label="WhatsApp" title="WhatsApp 852-9692-3498">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-1 1.1-.2.2-.4.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1.1 1-1.1 2.5s1.1 2.9 1.3 3.1c.2.2 2.2 3.4 5.4 4.7.8.3 1.4.5 1.8.6.8.2 1.5.2 2 .1.6-.1 1.7-.7 2-1.4.3-.7.3-1.2.2-1.4-.1-.1-.3-.2-.5-.3M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.4 5L2 22l5.2-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2"/></svg>
+          </a>
+          <a href="#" class="fs-icon fs-wechat" aria-label="微信公眾號" title="微信公眾號 CareerForgeHK" onclick="return false;">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.5 4C5.4 4 2 6.7 2 10c0 1.9 1.1 3.5 2.9 4.6L4 17l2.9-1.5c.6.1 1.2.2 1.8.2.3 0 .6 0 .9-.1-.2-.5-.3-1-.3-1.6 0-3 2.9-5.5 6.5-5.5.3 0 .6 0 .9.1C15.7 5.7 12.9 4 9.5 4M6 7.5c.6 0 1 .4 1 1s-.4 1-1 1-1-.4-1-1 .4-1 1-1m6 0c.6 0 1 .4 1 1s-.4 1-1 1-1-.4-1-1 .4-1 1-1m5.8 4c-3.2 0-5.8 2.2-5.8 5 0 1.6.9 3 2.3 3.9l-.7 1.7 2.2-1.1c.6.1 1.3.2 2 .2 3.2 0 5.8-2.2 5.8-5s-2.6-4.7-5.8-4.7m-2 2.5c.4 0 .8.3.8.8s-.3.8-.8.8-.8-.3-.8-.8.4-.8.8-.8m4 0c.4 0 .8.3.8.8s-.3.8-.8.8-.8-.3-.8-.8.4-.8.8-.8"/></svg>
+          </a>
+          <a href="#" class="fs-icon fs-xhs" aria-label="小紅書" title="小紅書 CareerForgeHK" onclick="return false;">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 5h18v14H3V5zm2 2v10h14V7H5zm2.5 2h7v1.5h-2.5v5h-1.5v-5H8V9zm9 0h1.5v6.5h-1.5V9z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com" class="fs-icon fs-li" aria-label="LinkedIn" title="LinkedIn /in/careerforge-hk" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3H5C3.9 3 3 3.9 3 5v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM8.3 18.3H5.7V9.7h2.6v8.6zM7 8.5C6.2 8.5 5.5 7.8 5.5 7s.7-1.5 1.5-1.5S8.5 6.2 8.5 7s-.7 1.5-1.5 1.5zm11.3 9.8h-2.6v-4.2c0-1 0-2.3-1.4-2.3-1.4 0-1.6 1.1-1.6 2.2v4.3h-2.6V9.7h2.5v1.2h.1c.3-.6 1.2-1.4 2.4-1.4 2.6 0 3.1 1.7 3.1 3.9v4.9z"/></svg>
+          </a>
+        </div>
       </div>
       <div class="footer-col">
         <h4>服務</h4>

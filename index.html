@@ -1316,7 +1316,7 @@ img, video, iframe, table { max-width: 100%; }
         <span class="v10-tour-banner-eyebrow">國慶限定 · 限量招募</span>
         <h3>國慶黃金週限定 · 香港遊學團</h3>
         <p>海內外高中生及大學生專屬 — 親歷國際大都會</p>
-        <span class="v10-tour-banner-meta">⏰ 9 月 20 日截止報名</span>
+        <span class="v10-tour-banner-meta">🔥 國慶最後召集 · <span id="v10-tour-countdown">剩 15 天（10 月 5 日截止）</span></span>
       </div>
       <a href="#contact" class="v10-cta-btn v10-tour-banner-btn">立即查詢國慶團</a>
     </div>
@@ -1340,7 +1340,7 @@ img, video, iframe, table { max-width: 100%; }
     </div>
     <div class="v10-trust-grid">
       <div class="v10-trust-card">
-        <span class="v10-trust-num">服務</span>
+        <span class="v10-trust-num">200+</span>
         <span class="v10-trust-label">累計服務家庭<small>FAMILIES SERVED</small></span>
       </div>
       <div class="v10-trust-card">
@@ -1464,6 +1464,26 @@ document.addEventListener('DOMContentLoaded', function() {
       menu.classList.toggle('active');
     });
   }
+
+  // v23.0.12h — Tour countdown (auto-rotates when expired)
+  (function(){
+      var el = document.getElementById('v10-tour-countdown');
+      if (!el) return;
+      var TARGET = new Date('2026-10-05T23:59:59+08:00').getTime();
+      function update(){
+        var diff = TARGET - Date.now();
+        if (diff <= 0) {
+          el.textContent = '已截止 · 下一團 11 月開課';
+          var banner = el.closest('.v10-tour-banner');
+          if (banner) banner.classList.add('is-expired');
+          return;
+        }
+        var days = Math.floor(diff / 86400000);
+        el.textContent = '剩 ' + days + ' 天（10 月 5 日截止）';
+      }
+      update();
+      setInterval(update, 3600000); // hourly refresh
+    })();
 });
 </script>
 

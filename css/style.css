@@ -1803,11 +1803,17 @@ body[data-theme] .sticky-cta:hover {
   background: var(--theme-color, var(--accent));
 }
 @media (max-width: 720px) {
+  /* v23.0.12h — Mobile full-width sticky bottom bar (was small bubble) */
   .sticky-cta {
-    bottom: 16px;
+    left: 16px;
     right: 16px;
-    padding: 12px 20px;
-    font-size: 0.875rem;
+    bottom: 16px;
+    width: auto;
+    padding: 14px 20px;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    justify-content: center;
+    box-shadow: 0 -4px 16px rgba(29,29,31,0.18), 0 8px 24px rgba(29,29,31,0.28);
   }
 }
 

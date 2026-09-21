@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant" data-version="v23.0.12a">
+<html lang="zh-Hant" data-version="v23.0.12i">
 <head>
   <script>
     // CareerForge v18.8+ iPhone Safari disk cache fix
@@ -7,7 +7,7 @@
     // This script uses fetch({cache: 'no-store'}) which iPhone Safari DOES honor,
     // then replaces current page if server-side version doesn't match expected.
     (function() {
-      var EXPECTED_VER = 'v23.0.12a';
+      var EXPECTED_VER = 'v23.0.12i';
       var path = location.pathname + '?cb=' + Date.now();
       if (location.href.indexOf('cb=') !== -1) return;
       fetch(path, {cache: 'no-store'})
@@ -1400,7 +1400,7 @@ img, video, iframe, table { max-width: 100%; }
     <div class="v10-pillars">
 
       <!-- Pillar 01 -->
-      <div class="v10-pillar v10-pillar--image" style="--pillar-bg: url('assets/pillars/web/01-immigration.jpg')">
+      <div class="v10-pillar v10-pillar--image v10-pillar--reverse" style="--pillar-bg: url('assets/pillars/web/01-immigration.jpg')">
         <div class="v10-pillar-bg"></div>
         <div class="v10-pillar-overlay"></div>
         <div class="v10-pillar-body">
